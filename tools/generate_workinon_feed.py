@@ -257,7 +257,7 @@ This folder contains the first working operational feed for the `workin On` app.
 
 
 def main():
-    hub_root = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path.cwd() / "outputs/indexmaker-hub"
+    hub_root = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
     current_index_path = hub_root / "current" / "index.json"
     tasks_path = hub_root / "tasks" / "index.json"
     output_dir = hub_root / "workinon"
@@ -267,7 +267,7 @@ def main():
 
     index_data = read_json(current_index_path)
     task_data = read_json(tasks_path)
-    now_dt = datetime.fromisoformat("2026-08-02T00:00:00-05:00")
+    now_dt = datetime.now().astimezone()
 
     attention = build_attention_items(index_data)
     due_soon = build_due_task_items(index_data, task_data)
@@ -276,7 +276,7 @@ def main():
     items = sort_items([*attention, *due_soon, *recent, *summaries])
 
     board_feed = {
-        "generatedAt": "2026-08-02T00:00:00-05:00",
+        "generatedAt": now_dt.isoformat(timespec="seconds"),
         "sourceFiles": {
             "inventory": "current/index.json",
             "tasks": "tasks/index.json",

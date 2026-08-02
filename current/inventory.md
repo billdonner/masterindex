@@ -1,12 +1,12 @@
-# IndexMaker Inventory
+# MasterIndex Inventory
 
-As of Saturday, August 1, 2026.
+As of Sunday, August 2, 2026.
 
 ## Scope
 
 - Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
 - Treated all repositories as read-only.
-- Queried App Store Connect live, using the existing local API key, to inventory current apps visible in ASC on August 1, 2026.
+- Queried App Store Connect live, using the existing local API key, to inventory current apps visible in ASC on August 2, 2026.
 - Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
 
 ## Executive Summary
