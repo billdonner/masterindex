@@ -12,8 +12,9 @@ As of Sunday, August 2, 2026.
 ## Executive Summary
 
 - App Store Connect currently shows 23 apps.
-- 11 ASC apps map cleanly to currently active local repositories.
-- 12 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
+- 12 ASC apps map cleanly to currently active local repositories.
+- 10 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
+- Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
   - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` + `server-monitor` (SharedAI unlinked from v1.0, returns with the Instructor tier)
@@ -43,10 +44,11 @@ As of Sunday, August 2, 2026.
 | Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | `1.0.0 (3)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | `0.1.0 (4)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | picklefortunes | `com.picklefortunes.app` | `6775271321` | `~/picklefortunes` | `1.0.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
+| Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | `1.0 (14)` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 13 on both platforms) |
 
 ### Confirmed gaps
 
-- 12 ASC apps did not map cleanly to an active local repository in this scan.
+- 10 ASC apps did not map cleanly to an active local repository (2026-08-02 refresh; Mallinbook resolved to `~/mallinbook`).
 - `grubber-ios` is active locally but did not match a current ASC app.
 - `Zerver Monitor` exists in ASC but only the backend/service repo was present in the local scan.
 - `SharedSpaceLab` is local-only and not in ASC.
@@ -69,6 +71,7 @@ As of Sunday, August 2, 2026.
 - clubsync: `https://bd-clubsync.fly.dev`
 - card-server: `https://bd-cardzerver.fly.dev`
 - server-monitor: `https://bd-server-monitor.fly.dev`
+- Mallinbook repo (public GitHub): `https://github.com/billdonner/mallinbook`
 - Verified App Store page found during the August 2, 2026 link pass:
   - 100 Burfords: `https://apps.apple.com/ca/app/100-burfords/id6766107636`
   - 100 Burfords site (GitHub Pages, privacy policy): `https://billdonner.github.io/100Burfords/`

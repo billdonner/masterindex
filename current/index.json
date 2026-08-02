@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T00:00:00-05:00",
+  "generatedAt": "2026-08-02T12:00:00-05:00",
   "scope": {
     "dateLabel": "Sunday, August 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -16,10 +16,10 @@
   },
   "summary": {
     "ascApps": 23,
-    "mappedAscApps": 11,
-    "unmatchedAscApps": 12,
-    "activeRepos": 34,
-    "clusters": 10,
+    "mappedAscApps": 12,
+    "unmatchedAscApps": 10,
+    "activeRepos": 37,
+    "clusters": 11,
     "liveServices": 5
   },
   "ascApps": {
@@ -111,16 +111,22 @@
         "repo": "~/picklefortunes",
         "localVersion": "1.0.0 (10)",
         "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "Mallinbook",
+        "bundleId": "com.mallinbook.app",
+        "appId": "6785245339",
+        "repo": "~/mallinbook",
+        "localVersion": "1.0 (14)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
       }
     ],
     "unmatched": [
       "screenkr2",
       "com.screenkr.app",
       "Screenker",
-      "Mallinbook",
       "PickleFamilia",
       "amenbeats",
-      "GigStand",
       "Alities",
       "Zerver Monitor",
       "123 Words",
@@ -263,9 +269,46 @@
       "watchpoints": [
         "Client app not matched in ASC"
       ]
+    },
+    {
+      "name": "Mallinbook",
+      "maturity": "pre-submission product, print pipeline proven",
+      "summary": "Directory-book maker: native macOS+iOS app generating print-ready booklet PDFs from one roster source of truth, with the retained Python engine as reference.",
+      "highlights": [
+        "Mallinbook",
+        "bookmaker (Python reference engine)"
+      ],
+      "watchpoints": [
+        "Repo renamed 2026-08-01 (bookmaker-app -> mallinbook); older notes may cite stale paths",
+        "No legacy .bookmaker document support by owner decision"
+      ]
     }
   ],
   "entities": [
+    {
+      "id": "mallinbook-app",
+      "name": "Mallinbook",
+      "kind": "app",
+      "cluster": "Mallinbook",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-01",
+      "repo": "~/mallinbook",
+      "bundleId": "com.mallinbook.app",
+      "release": "ASC mapped, iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 13 VALID on both platforms (2026-08-01)",
+      "description": "Document-based macOS (flagship authoring) + iOS (companion) directory-book app: maintains member/resident rosters and generates print-ready saddle-stitch booklet PDFs, a web view, and Word export from one source of truth. A .mallinbook package = SQLite (GRDB) + lossless photos + frozen editions, synced via iCloud Documents.",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": null,
+        "github": "https://github.com/billdonner/mallinbook"
+      },
+      "notes": [
+        "Renamed 2026-08-01 from bookmaker-app: repo/target/module and the document extension (.bookmaker -> .mallinbook); ASC identity unchanged (app id 6785245339), so earlier scans missed the repo.",
+        "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
+        "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
+        "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households)."
+      ]
+    },
     {
       "id": "pickledballs-app",
       "name": "PickledBalls",
@@ -868,6 +911,13 @@
       "role": "Active, not mapped to an ASC app in this scan"
     },
     {
+      "repo": "~/bookmaker",
+      "branch": "main",
+      "last2026Commit": "2026-07-20",
+      "kind": "reference engine",
+      "role": "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
+    },
+    {
       "repo": "~/card-engine",
       "branch": "main",
       "last2026Commit": "2026-03-23",
@@ -936,6 +986,13 @@
       "last2026Commit": "2026-07-31",
       "kind": "app",
       "role": "ASC-mapped KinFlash app"
+    },
+    {
+      "repo": "~/mallinbook",
+      "branch": "main",
+      "last2026Commit": "2026-08-01",
+      "kind": "app",
+      "role": "ASC-mapped macOS+iOS directory-book app (Mallinbook; renamed 2026-08-01 from bookmaker-app)"
     },
     {
       "repo": "~/nagging-systems-requirements",
@@ -1066,7 +1123,7 @@
   ],
   "gaps": {
     "confirmed": [
-      "No active local repo was found for 12 ASC apps listed in the August 1, 2026 scan.",
+      "No active local repo was found for 10 ASC apps (2026-08-02 refresh; Mallinbook resolved to ~/mallinbook — the 2026-08-01 rename from bookmaker-app hid it from the original scan).",
       "No local iOS companion repo was found for ASC app Zerver Monitor; only the backend/service repo was present.",
       "grubber-ios has an active local client repo but no matching current ASC app was found.",
       "SharedSpaceLab is local-only and not in ASC.",
@@ -1075,7 +1132,8 @@
     "ambiguities": [
       "card-engine and card-server overlap conceptually.",
       "PickledBalls docs describe a rebrand path toward PickleNagz, but the live ASC app is still PickledBalls.",
-      "Flasherz Kids local docs and project.yml disagree on some build text; project.yml was treated as more current."
+      "Flasherz Kids local docs and project.yml disagree on some build text; project.yml was treated as more current.",
+      "summary.activeRepos said 34 while repos[] held 35 rows before the 2026-08-02 Mallinbook refresh; activeRepos is now recounted directly from repos[]."
     ]
   },
   "taskRegistry": {
