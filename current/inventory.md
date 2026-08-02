@@ -34,7 +34,7 @@ As of Sunday, August 2, 2026.
 |---|---|---:|---|---|---|
 | PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; support-page deploy + App Privacy remain) |
 | Qross | `com.qross.app` | `6759799988` | `~/qross` | `0.2 (313)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.0 (7)` | `IOS 1.0 READY_FOR_SALE` |
+| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)` | `IOS 1.0 READY_FOR_SALE` |
 | Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | `1.1 (47)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | `1.4.0 (359)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
@@ -71,6 +71,7 @@ As of Sunday, August 2, 2026.
 - server-monitor: `https://bd-server-monitor.fly.dev`
 - Verified App Store page found during the August 2, 2026 link pass:
   - 100 Burfords: `https://apps.apple.com/ca/app/100-burfords/id6766107636`
+  - 100 Burfords site (GitHub Pages, privacy policy): `https://billdonner.github.io/100Burfords/`
 
 For the other mapped ASC apps, no clearly public App Store page was verified in the web pass. That is consistent with most of them still being in `PREPARE_FOR_SUBMISSION`.
 

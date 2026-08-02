@@ -45,7 +45,7 @@
         "bundleId": "com.billdonner.burfords",
         "appId": "6766107636",
         "repo": "~/100Burfords",
-        "localVersion": "1.0 (7)",
+        "localVersion": "1.1 (9)",
         "ascState": "IOS 1.0 READY_FOR_SALE"
       },
       {
@@ -510,19 +510,22 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "ready-for-sale",
-      "lastModified": "2026-05-03",
+      "lastModified": "2026-08-01",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
       "release": "ASC mapped, iOS 1.0 READY_FOR_SALE",
       "description": "The only ASC-mapped app in this scan marked ready for sale.",
       "dependencies": [],
       "links": {
-        "website": null,
+        "website": "https://billdonner.github.io/100Burfords/",
         "appStore": "https://apps.apple.com/ca/app/100-burfords/id6766107636",
-        "appStoreSource": "verified web search"
+        "appStoreSource": "verified web search",
+        "websiteSource": "verified HTTP 200 on 2026-08-02"
       },
       "notes": [
-        "Strong signal of finished packaging relative to the rest of the portfolio."
+        "Strong signal of finished packaging relative to the rest of the portfolio.",
+        "Live ASC version is 1.0; local 1.1 (9) with build 8 on TestFlight (print-at-home, order-prints-by-mail partner hand-off, signed Fan Club Card, dark mode, 2,787 bundled reader comments).",
+        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots — not yet published to ASC."
       ]
     },
     {
@@ -818,7 +821,7 @@
     {
       "repo": "~/100Burfords",
       "branch": "main",
-      "last2026Commit": "2026-05-03",
+      "last2026Commit": "2026-08-01",
       "kind": "app",
       "role": "ASC-mapped iOS app, sale-ready in ASC"
     },
