@@ -138,7 +138,6 @@
         "nagzerver",
         "clubsync",
         "CourtScheduler",
-        "SharedAI",
         "server-monitor"
       ],
       "watchpoints": [
@@ -273,14 +272,13 @@
       "kind": "app",
       "cluster": "PickledBalls",
       "status": "asc-mapped",
-      "lastModified": "2026-06-17",
-      "repo": "~/pickledballs",
+      "lastModified": "2026-07-31",
+      "repo": "~/PickledBalls",
       "bundleId": "com.pickledballs.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
-      "description": "Pickleball and tennis session-management app currently shipping as PickledBalls with a documented path toward PickleNagz.",
+      "release": "TestFlight 1.0 (354) live; ASC iOS 1.0 PREPARE_FOR_SUBMISSION with metadata complete (Sports category, Free in 175 territories, copyright, privacy/support URLs). Remaining before submit: deploy support.html to IONOS, App Privacy questionnaire. Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
+      "description": "Pickleball, tennis, and ping pong session-management app by 1041Soft, shipping in organizer-focus mode (free Organizer tier; Organizer Pro planned) with a documented path toward PickleNagz.",
       "dependencies": [
         "CourtScheduler",
-        "SharedAI",
         "PickleFortunesKit",
         "nagzerver",
         "clubsync"
@@ -288,12 +286,16 @@
       "links": {
         "website": "https://pickledballs.billdonner.com",
         "websiteSource": "local docs",
-        "appStore": null
+        "appStore": null,
+        "privacyPolicy": "https://pickledballs.billdonner.com/privacy.html",
+        "support": "https://pickledballs.billdonner.com/support.html"
       },
       "notes": [
         "Uses JSON plus GRDB SQLite locally.",
         "Pulls live data from nagzerver and clubsync.",
-        "Marketing site URL is documented locally."
+        "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
+        "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
+        "support.html committed (8d8e938) but 404 until IONOS deploy — privacy.html is verified live."
       ]
     },
     {

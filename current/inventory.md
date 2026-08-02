@@ -16,7 +16,7 @@ As of Sunday, August 2, 2026.
 - 12 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
-  - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` + `SharedAI` + `server-monitor`
+  - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` + `server-monitor` (SharedAI unlinked from v1.0, returns with the Instructor tier)
   - `Qross` + `card-server` + `qross-data` + `card-studio`
   - `Nagz` + `nagzerver` + `nagz-web` + `nagz-ai` + `workinon` + `workinon-mcp`
   - `Flasherz Kids` + `card-server`
@@ -32,7 +32,7 @@ As of Sunday, August 2, 2026.
 
 | ASC app | Bundle ID | ASC app ID | Repo | Local version/build | ASC state |
 |---|---|---:|---|---|---|
-| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/pickledballs` | active 1.x line in docs | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
+| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; support-page deploy + App Privacy remain) |
 | Qross | `com.qross.app` | `6759799988` | `~/qross` | `0.2 (313)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.0 (7)` | `IOS 1.0 READY_FOR_SALE` |
 | Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | `1.1 (47)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
