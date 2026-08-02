@@ -18,7 +18,7 @@
     "ascApps": 23,
     "mappedAscApps": 12,
     "unmatchedAscApps": 10,
-    "activeRepos": 37,
+    "activeRepos": 38,
     "clusters": 11,
     "liveServices": 5
   },
@@ -264,10 +264,11 @@
       "summary": "Transcript-oriented service with a live HTTP and MCP surface plus a newly started client.",
       "highlights": [
         "grubber",
-        "grubber-ios"
+        "grubber-ios",
+        "Sentipods"
       ],
       "watchpoints": [
-        "Client app not matched in ASC"
+        "Two local clients are not yet matched in the recorded ASC inventory"
       ]
     },
     {
@@ -347,7 +348,7 @@
       "kind": "app",
       "cluster": "Qross",
       "status": "asc-mapped",
-      "lastModified": "2026-05-03",
+      "lastModified": "2026-08-02",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
       "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
@@ -577,7 +578,7 @@
       "kind": "service",
       "cluster": "Grubber",
       "status": "live",
-      "lastModified": "2026-07-31",
+      "lastModified": "2026-08-01",
       "repo": "~/grubber",
       "bundleId": null,
       "release": "Live read service at bd-grubber.fly.dev",
@@ -617,12 +618,36 @@
       ]
     },
     {
+      "id": "sentipods-app",
+      "name": "Sentipods",
+      "kind": "app",
+      "cluster": "Grubber",
+      "status": "gap",
+      "lastModified": "2026-08-01",
+      "repo": "~/sentipods",
+      "bundleId": "com.sentipods.app",
+      "release": "Initial local scaffold; ASC mapping not yet verified in this refresh",
+      "description": "iOS and Mac Catalyst client for the grubber podcast-transcription service, with episode search and transcript navigation.",
+      "dependencies": [
+        "grubber"
+      ],
+      "links": {
+        "website": "https://bd-grubber.fly.dev",
+        "websiteSource": "local README",
+        "appStore": null
+      },
+      "notes": [
+        "Uses grubber's /api/v1 surface with an X-Client-Key.",
+        "News and trend features depend on the grubber M3 roadmap."
+      ]
+    },
+    {
       "id": "nagzerver-backend",
       "name": "nagzerver",
       "kind": "backend",
       "cluster": "Nagz",
       "status": "live",
-      "lastModified": "2026-04-29",
+      "lastModified": "2026-08-01",
       "repo": "~/nagzerver",
       "bundleId": null,
       "release": "Live on Fly at bd-nagzerver.fly.dev",
@@ -671,7 +696,7 @@
       "kind": "backend",
       "cluster": "Qross",
       "status": "live",
-      "lastModified": "2026-06-16",
+      "lastModified": "2026-08-01",
       "repo": "~/card-server",
       "bundleId": null,
       "release": "Live on Fly at bd-cardzerver.fly.dev",
@@ -718,7 +743,7 @@
       "kind": "service",
       "cluster": "PickledBalls",
       "status": "live",
-      "lastModified": "2026-06-16",
+      "lastModified": "2026-08-01",
       "repo": "~/server-monitor",
       "bundleId": null,
       "release": "Live on Fly at bd-server-monitor.fly.dev",
@@ -927,21 +952,21 @@
     {
       "repo": "~/card-server",
       "branch": "main",
-      "last2026Commit": "2026-06-16",
+      "last2026Commit": "2026-08-01",
       "kind": "backend",
       "role": "Live backend for Qross and obo-ios"
     },
     {
       "repo": "~/card-studio",
       "branch": "main",
-      "last2026Commit": "2026-04-05",
+      "last2026Commit": "2026-08-01",
       "kind": "admin app",
       "role": "Card editing and admin surface"
     },
     {
       "repo": "~/cardz-studio-ios",
       "branch": "main",
-      "last2026Commit": "2026-03-04",
+      "last2026Commit": "2026-08-01",
       "kind": "app",
       "role": "ASC-mapped admin and editor app"
     },
@@ -969,7 +994,7 @@
     {
       "repo": "~/grubber",
       "branch": "main",
-      "last2026Commit": "2026-07-31",
+      "last2026Commit": "2026-08-01",
       "kind": "backend/service",
       "role": "Live transcript service"
     },
@@ -983,7 +1008,7 @@
     {
       "repo": "~/kinflash",
       "branch": "main",
-      "last2026Commit": "2026-07-31",
+      "last2026Commit": "2026-08-01",
       "kind": "app",
       "role": "ASC-mapped KinFlash app"
     },
@@ -1011,28 +1036,28 @@
     {
       "repo": "~/nagz-ai",
       "branch": "main",
-      "last2026Commit": "2026-04-24",
+      "last2026Commit": "2026-08-01",
       "kind": "shared package",
       "role": "Nagz AI dependency"
     },
     {
       "repo": "~/nagz-ios",
       "branch": "main",
-      "last2026Commit": "2026-04-12",
+      "last2026Commit": "2026-08-01",
       "kind": "app",
       "role": "ASC-mapped Nagz app"
     },
     {
       "repo": "~/nagz-web",
       "branch": "main",
-      "last2026Commit": "2026-03-11",
+      "last2026Commit": "2026-08-01",
       "kind": "web app",
       "role": "Nagz web client"
     },
     {
       "repo": "~/nagzerver",
       "branch": "main",
-      "last2026Commit": "2026-04-29",
+      "last2026Commit": "2026-08-01",
       "kind": "backend",
       "role": "Live Nagz, PickledBalls, workin On, clubwatch backend"
     },
@@ -1046,7 +1071,7 @@
     {
       "repo": "~/obo-ios",
       "branch": "main",
-      "last2026Commit": "2026-04-13",
+      "last2026Commit": "2026-08-01",
       "kind": "app",
       "role": "ASC-mapped Flasherz Kids app"
     },
@@ -1066,8 +1091,8 @@
     },
     {
       "repo": "~/qross",
-      "branch": "main",
-      "last2026Commit": "2026-05-03",
+      "branch": "palette-tournament",
+      "last2026Commit": "2026-08-02",
       "kind": "app",
       "role": "ASC-mapped Qross app"
     },
@@ -1081,9 +1106,16 @@
     {
       "repo": "~/server-monitor",
       "branch": "main",
-      "last2026Commit": "2026-06-16",
+      "last2026Commit": "2026-08-01",
       "kind": "monitoring service",
       "role": "Live monitoring dashboard"
+    },
+    {
+      "repo": "~/sentipods",
+      "branch": "main",
+      "last2026Commit": "2026-08-01",
+      "kind": "app",
+      "role": "New iOS and Mac Catalyst client for the live grubber service; ASC mapping not yet verified"
     },
     {
       "repo": "~/workinon",

@@ -50,6 +50,7 @@ As of Sunday, August 2, 2026.
 
 - 10 ASC apps did not map cleanly to an active local repository (2026-08-02 refresh; Mallinbook resolved to `~/mallinbook`).
 - `grubber-ios` is active locally but did not match a current ASC app.
+- `Sentipods` is a newly observed local iOS and Mac Catalyst client for `grubber` (`com.sentipods.app`); it has no verified ASC mapping in this refresh.
 - `Zerver Monitor` exists in ASC but only the backend/service repo was present in the local scan.
 - `SharedSpaceLab` is local-only and not in ASC.
 
@@ -61,6 +62,12 @@ As of Sunday, August 2, 2026.
 - `bd-grubber.fly.dev` from `~/grubber`
 - `bd-server-monitor.fly.dev` from `~/server-monitor`
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
+
+## Changes Observed In This Refresh
+
+- `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
+- `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
+- Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
 
 ## Public Links
 
