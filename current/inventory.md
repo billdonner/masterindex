@@ -68,6 +68,7 @@ As of Sunday, August 2, 2026.
 - `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
 - `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
 - `~/sentipods` completed a live smoke test and is now at local version `0.1.0 (8)`; its ASC mapping remains unverified in this refresh.
+- `~/sentipods` received a UI and resilience pass and is now at local version `0.1.0 (10)`. During its live smoke test, `grubber`'s `/shows` endpoint responded while `/status` hung; the client safely loads the former first and treats status metadata as best effort.
 - Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
 
 ## Public Links
@@ -93,3 +94,5 @@ Rule going forward: if any entity has a verified external public link, it should
 - `card-engine` and `card-server` overlap conceptually.
 - `PickledBalls` is still the live ASC name even though docs describe a rebrand path toward PickleNagz.
 - `Flasherz Kids` docs and `project.yml` disagree on some build text; `project.yml` was treated as more current.
+- App Store Connect was not re-queried during this refresh, so Sentipods remains an unverified ASC mapping gap.
+- The server-side cause of the observed `grubber /status` hang is not yet confirmed.

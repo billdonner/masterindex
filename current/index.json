@@ -268,7 +268,8 @@
         "Sentipods"
       ],
       "watchpoints": [
-        "Two local clients are not yet matched in the recorded ASC inventory"
+        "Two local clients are not yet matched in the recorded ASC inventory",
+        "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed"
       ]
     },
     {
@@ -626,7 +627,7 @@
       "lastModified": "2026-08-02",
       "repo": "~/sentipods",
       "bundleId": "com.sentipods.app",
-      "release": "Local 0.1.0 (8) after live smoke test; ASC mapping not yet verified in this refresh",
+      "release": "Local 0.1.0 (10) after UI polish and a live smoke test; ASC mapping not yet verified in this refresh",
       "description": "iOS and Mac Catalyst client for the grubber podcast-transcription service, with episode search and transcript navigation.",
       "dependencies": [
         "grubber"
@@ -639,7 +640,8 @@
       "notes": [
         "Uses grubber's /api/v1 surface with an X-Client-Key.",
         "News and trend features depend on the grubber M3 roadmap.",
-        "Observed build 8 after a live smoke test on August 2, 2026."
+        "Observed build 10 after UI polish and a live smoke test on August 2, 2026.",
+        "The client loads /shows first and treats /status metadata as best effort because /status was observed hanging."
       ]
     },
     {
@@ -867,7 +869,7 @@
       "consumers": [
         "grubber clients"
       ],
-      "note": "Transcript read service with HTTP and MCP surfaces."
+      "note": "Transcript read service with HTTP and MCP surfaces; /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive."
     },
     {
       "name": "bd-server-monitor.fly.dev",
@@ -1116,7 +1118,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-02",
       "kind": "app",
-      "role": "New iOS and Mac Catalyst client for the live grubber service; local 0.1.0 (8), ASC mapping not yet verified"
+      "role": "New iOS and Mac Catalyst client for the live grubber service; local 0.1.0 (10), ASC mapping not yet verified"
     },
     {
       "repo": "~/workinon",
@@ -1160,13 +1162,15 @@
       "No local iOS companion repo was found for ASC app Zerver Monitor; only the backend/service repo was present.",
       "grubber-ios has an active local client repo but no matching current ASC app was found.",
       "SharedSpaceLab is local-only and not in ASC.",
-      "As of Sunday, August 2, 2026, only one clearly public App Store page was verified in web results during this pass: 100 Burfords."
+      "As of Sunday, August 2, 2026, only one clearly public App Store page was verified in web results during this pass: 100 Burfords.",
+      "App Store Connect was not re-queried during this refresh; Sentipods therefore remains an unverified ASC mapping gap."
     ],
     "ambiguities": [
       "card-engine and card-server overlap conceptually.",
       "PickledBalls docs describe a rebrand path toward PickleNagz, but the live ASC app is still PickledBalls.",
       "Flasherz Kids local docs and project.yml disagree on some build text; project.yml was treated as more current.",
-      "summary.activeRepos said 34 while repos[] held 35 rows before the 2026-08-02 Mallinbook refresh; activeRepos is now recounted directly from repos[]."
+      "summary.activeRepos said 34 while repos[] held 35 rows before the 2026-08-02 Mallinbook refresh; activeRepos is now recounted directly from repos[].",
+      "grubber /status was observed hanging during a Sentipods live smoke test, while /shows remained responsive; the server-side cause is not yet confirmed."
     ]
   },
   "taskRegistry": {
