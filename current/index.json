@@ -623,10 +623,10 @@
       "kind": "app",
       "cluster": "Grubber",
       "status": "gap",
-      "lastModified": "2026-08-01",
+      "lastModified": "2026-08-02",
       "repo": "~/sentipods",
       "bundleId": "com.sentipods.app",
-      "release": "Initial local scaffold; ASC mapping not yet verified in this refresh",
+      "release": "Local 0.1.0 (8) after live smoke test; ASC mapping not yet verified in this refresh",
       "description": "iOS and Mac Catalyst client for the grubber podcast-transcription service, with episode search and transcript navigation.",
       "dependencies": [
         "grubber"
@@ -638,7 +638,8 @@
       },
       "notes": [
         "Uses grubber's /api/v1 surface with an X-Client-Key.",
-        "News and trend features depend on the grubber M3 roadmap."
+        "News and trend features depend on the grubber M3 roadmap.",
+        "Observed build 8 after a live smoke test on August 2, 2026."
       ]
     },
     {
@@ -1113,9 +1114,9 @@
     {
       "repo": "~/sentipods",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
+      "last2026Commit": "2026-08-02",
       "kind": "app",
-      "role": "New iOS and Mac Catalyst client for the live grubber service; ASC mapping not yet verified"
+      "role": "New iOS and Mac Catalyst client for the live grubber service; local 0.1.0 (8), ASC mapping not yet verified"
     },
     {
       "repo": "~/workinon",
