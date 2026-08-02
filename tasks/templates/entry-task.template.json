@@ -1,0 +1,28 @@
+{
+  "taskId": "pickledballs-release-check",
+  "name": "PickledBalls release check",
+  "targetEntityId": "pickledballs-app",
+  "targetKind": "app",
+  "status": "active",
+  "cadence": {
+    "kind": "rrule",
+    "value": "FREQ=DAILY;INTERVAL=1"
+  },
+  "purpose": "Monitor the release posture and important app metadata for the PickledBalls app.",
+  "expectedInputs": [
+    "current/index.json",
+    "current/inventory.md"
+  ],
+  "actions": [
+    "Locate the target entity by stable id",
+    "Check the latest relevant metadata",
+    "Write any confirmed changes back to the index workflow or report them"
+  ],
+  "expectedOutputs": [
+    "Updated inventory fields or a dated report"
+  ],
+  "owner": "unassigned",
+  "notes": [
+    "Use stable entity ids, not display names, when routing tasks."
+  ]
+}

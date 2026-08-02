@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndexMaker Browser</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="shell">
+    <aside class="sidebar panel">
+      <div class="brand">
+        <span class="eyebrow">IndexMaker</span>
+        <h1>System Browser</h1>
+        <p>GitHub-first portfolio map for agents and humans.</p>
+      </div>
+
+      <div class="filter-block">
+        <h3>Search</h3>
+        <input id="searchInput" class="search" type="search" placeholder="Search apps, repos, services, clusters">
+      </div>
+
+      <div class="filter-block">
+        <h3>Surface</h3>
+        <div id="surfaceChips" class="chips"></div>
+      </div>
+
+      <div class="filter-block">
+        <h3>Status</h3>
+        <div id="statusChips" class="chips"></div>
+      </div>
+
+      <div class="filter-block">
+        <h3>Cluster</h3>
+        <div id="clusterChips" class="chips"></div>
+      </div>
+
+      <div class="filter-block">
+        <p id="filterNote" class="filter-note">Loading inventory.</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="hero panel">
+        <div class="hero-grid">
+          <div>
+            <span class="section-kicker">Cross-App Map</span>
+            <h2>One place to see what connects to what.</h2>
+            <p id="heroScope">Loading scope.</p>
+          </div>
+          <div class="stats" id="statGrid"></div>
+        </div>
+      </section>
+
+      <section class="lane">
+        <div class="section panel">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Inventory Cards</span>
+              <h3>Apps, repos, services, and packages</h3>
+            </div>
+            <p id="resultCount"></p>
+          </div>
+          <div id="entityGrid" class="grid"></div>
+        </div>
+
+        <div class="detail panel" id="detailPanel"></div>
+      </section>
+
+      <section class="lane">
+        <div class="section panel">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Product Clusters</span>
+              <h3>Deep-dive by ecosystem</h3>
+            </div>
+            <p>Each cluster groups the strongest observed relationships.</p>
+          </div>
+          <div id="clusterList" class="cluster-list"></div>
+        </div>
+
+        <div class="section panel">
+          <div class="section-head">
+            <div>
+              <span class="section-kicker">Shared Backbone</span>
+              <h3>Live services and data patterns</h3>
+            </div>
+            <p>What gets reused across products.</p>
+          </div>
+          <div id="serviceList" class="mini-list"></div>
+        </div>
+      </section>
+
+      <section class="section panel">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">2026 Repository Sweep</span>
+            <h3>Active repository inventory</h3>
+          </div>
+          <p>Read-only scan across `~/` plus current Codex experiments.</p>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Repo</th>
+                <th>Branch</th>
+                <th>Last 2026 commit</th>
+                <th>Kind</th>
+                <th>Role</th>
+              </tr>
+            </thead>
+            <tbody id="repoTableBody"></tbody>
+          </table>
+        </div>
+        <div class="footer-note" id="footerNote"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

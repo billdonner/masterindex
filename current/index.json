@@ -1,0 +1,1084 @@
+{
+  "generatedAt": "2026-08-01T00:00:00-05:00",
+  "scope": {
+    "dateLabel": "Saturday, August 1, 2026",
+    "defaultSort": "most-recently-modified",
+    "roots": [
+      "~/",
+      "~/Documents/Codex/Experiments"
+    ],
+    "appStoreConnectAccess": "available",
+    "notes": [
+      "Reviewed local git repositories with 2026 activity.",
+      "Treated repositories as read-only during the scan.",
+      "Ignored older inactive repos unless directly connected to a 2026-active project."
+    ]
+  },
+  "summary": {
+    "ascApps": 23,
+    "mappedAscApps": 11,
+    "unmatchedAscApps": 12,
+    "activeRepos": 34,
+    "clusters": 10,
+    "liveServices": 5
+  },
+  "ascApps": {
+    "mapped": [
+      {
+        "name": "PickledBalls",
+        "bundleId": "com.pickledballs.app",
+        "appId": "6762310890",
+        "repo": "~/pickledballs",
+        "localVersion": "active 1.x line in docs",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "Qross",
+        "bundleId": "com.qross.app",
+        "appId": "6759799988",
+        "repo": "~/qross",
+        "localVersion": "0.2 (313)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "100 Burfords",
+        "bundleId": "com.billdonner.burfords",
+        "appId": "6766107636",
+        "repo": "~/100Burfords",
+        "localVersion": "1.0 (7)",
+        "ascState": "IOS 1.0 READY_FOR_SALE"
+      },
+      {
+        "name": "Flasherz Kids",
+        "bundleId": "com.billdonner.obo",
+        "appId": "6759509933",
+        "repo": "~/obo-ios",
+        "localVersion": "1.1 (47)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "Nagz",
+        "bundleId": "com.nagz.app",
+        "appId": "6759530926",
+        "repo": "~/nagz-ios",
+        "localVersion": "1.4.0 (359)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "Cardz Studio",
+        "bundleId": "com.billdonner.cardz-studio",
+        "appId": "6759624116",
+        "repo": "~/cardz-studio-ios",
+        "localVersion": "1.0 (10)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "KinFlash",
+        "bundleId": "com.billdonner.kinflash",
+        "appId": "6762008872",
+        "repo": "~/kinflash",
+        "localVersion": "1.0.0 (62)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "workin On",
+        "bundleId": "com.workinon.app",
+        "appId": "6762529338",
+        "repo": "~/workinon",
+        "localVersion": "0.9.1 (52)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "Famster",
+        "bundleId": "com.famster.app",
+        "appId": "6763581385",
+        "repo": "~/famster-ios",
+        "localVersion": "1.0.0 (3)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "LtWatcher",
+        "bundleId": "com.ltwatch.app",
+        "appId": "6764622141",
+        "repo": "~/clubwatch",
+        "localVersion": "0.1.0 (4)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "picklefortunes",
+        "bundleId": "com.picklefortunes.app",
+        "appId": "6775271321",
+        "repo": "~/picklefortunes",
+        "localVersion": "1.0.0 (10)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+      }
+    ],
+    "unmatched": [
+      "screenkr2",
+      "com.screenkr.app",
+      "Screenker",
+      "Mallinbook",
+      "PickleFamilia",
+      "amenbeats",
+      "GigStand",
+      "Alities",
+      "Zerver Monitor",
+      "123 Words",
+      "PickleBrains",
+      "Quackman"
+    ]
+  },
+  "clusters": [
+    {
+      "name": "PickledBalls",
+      "maturity": "active beta or transition product",
+      "summary": "Organizer and sports cluster centered on PickledBalls with live scheduling and session backends.",
+      "highlights": [
+        "PickledBalls",
+        "nagzerver",
+        "clubsync",
+        "CourtScheduler",
+        "SharedAI",
+        "server-monitor"
+      ],
+      "watchpoints": [
+        "Rebrand still pending",
+        "Depends on multiple shared services"
+      ]
+    },
+    {
+      "name": "Qross",
+      "maturity": "active product and tooling ecosystem",
+      "summary": "Mature content and editorial pipeline with live backend and local cache.",
+      "highlights": [
+        "Qross",
+        "card-server",
+        "qross-data",
+        "card-studio"
+      ],
+      "watchpoints": [
+        "Backend overlap ambiguity with card-engine"
+      ]
+    },
+    {
+      "name": "Nagz",
+      "maturity": "multi-repo product platform",
+      "summary": "Main family-oriented app platform with mobile client, backend, AI package, web client, and tooling.",
+      "highlights": [
+        "Nagz",
+        "nagzerver",
+        "nagz-web",
+        "nagz-ai",
+        "workin On",
+        "workinon-mcp"
+      ],
+      "watchpoints": [
+        "Shared backend carries many responsibilities"
+      ]
+    },
+    {
+      "name": "Flasherz",
+      "maturity": "active but architecturally split",
+      "summary": "Flashcard and card-corpus cluster spanning consumer, admin, and backend surfaces.",
+      "highlights": [
+        "Flasherz Kids",
+        "obo",
+        "Cardz Studio",
+        "card-server",
+        "card-engine"
+      ],
+      "watchpoints": [
+        "card-engine vs card-server ownership remains unclear"
+      ]
+    },
+    {
+      "name": "Famster",
+      "maturity": "early app with backend URL in place",
+      "summary": "Smaller ecosystem anchored by the Famster app and the 1041Kit package.",
+      "highlights": [
+        "Famster",
+        "1041Kit"
+      ],
+      "watchpoints": [
+        "Backend repo not identified"
+      ]
+    },
+    {
+      "name": "LtWatcher",
+      "maturity": "early but real multi-service app",
+      "summary": "Club-watch experience with widget and notification extension architecture.",
+      "highlights": [
+        "LtWatcher",
+        "clubsync",
+        "nagzerver"
+      ],
+      "watchpoints": [
+        "Some live activity work still deferred"
+      ]
+    },
+    {
+      "name": "KinFlash",
+      "maturity": "active standalone app",
+      "summary": "Self-contained multi-platform package and document product with limited visible server coupling.",
+      "highlights": [
+        "KinFlash"
+      ],
+      "watchpoints": [
+        "Less ecosystem context surfaced in the scan"
+      ]
+    },
+    {
+      "name": "picklefortunes",
+      "maturity": "active standalone app plus reusable package",
+      "summary": "Fortune app plus shared kit reused by other products, especially PickledBalls.",
+      "highlights": [
+        "picklefortunes",
+        "PickleFortunesKit"
+      ],
+      "watchpoints": [
+        "Backend mode remains optional and secondary"
+      ]
+    },
+    {
+      "name": "Codex Experiments",
+      "maturity": "prototype and lab only",
+      "summary": "New local-only experiments exploring conversation and shared-surface ideas without production backends.",
+      "highlights": [
+        "ConversationLab",
+        "CoordinationLab",
+        "SharedSpaceLab"
+      ],
+      "watchpoints": [
+        "No commits yet",
+        "No ASC or deployed service path"
+      ]
+    },
+    {
+      "name": "Grubber",
+      "maturity": "active service plus new client app",
+      "summary": "Transcript-oriented service with a live HTTP and MCP surface plus a newly started client.",
+      "highlights": [
+        "grubber",
+        "grubber-ios"
+      ],
+      "watchpoints": [
+        "Client app not matched in ASC"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "pickledballs-app",
+      "name": "PickledBalls",
+      "kind": "app",
+      "cluster": "PickledBalls",
+      "status": "asc-mapped",
+      "lastModified": "2026-06-17",
+      "repo": "~/pickledballs",
+      "bundleId": "com.pickledballs.app",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "Pickleball and tennis session-management app currently shipping as PickledBalls with a documented path toward PickleNagz.",
+      "dependencies": [
+        "CourtScheduler",
+        "SharedAI",
+        "PickleFortunesKit",
+        "nagzerver",
+        "clubsync"
+      ],
+      "links": {
+        "website": "https://pickledballs.billdonner.com",
+        "websiteSource": "local docs",
+        "appStore": null
+      },
+      "notes": [
+        "Uses JSON plus GRDB SQLite locally.",
+        "Pulls live data from nagzerver and clubsync.",
+        "Marketing site URL is documented locally."
+      ]
+    },
+    {
+      "id": "qross-app",
+      "name": "Qross",
+      "kind": "app",
+      "cluster": "Qross",
+      "status": "asc-mapped",
+      "lastModified": "2026-05-03",
+      "repo": "~/qross",
+      "bundleId": "com.qross.app",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
+      "dependencies": [
+        "card-server",
+        "qross-data",
+        "card-studio"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Stores a large local question cache with GRDB."
+      ]
+    },
+    {
+      "id": "nagz-app",
+      "name": "Nagz",
+      "kind": "app",
+      "cluster": "Nagz",
+      "status": "asc-mapped",
+      "lastModified": "2026-04-12",
+      "repo": "~/nagz-ios",
+      "bundleId": "com.nagz.app",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "Family-oriented AI-mediated reminder app with split on-device and server-side AI architecture.",
+      "dependencies": [
+        "nagzerver",
+        "nagz-web",
+        "nagz-ai"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Shares API versioning with nagzerver and nagz-web."
+      ]
+    },
+    {
+      "id": "obo-ios-app",
+      "name": "Flasherz Kids",
+      "kind": "app",
+      "cluster": "Flasherz",
+      "status": "asc-mapped",
+      "lastModified": "2026-04-13",
+      "repo": "~/obo-ios",
+      "bundleId": "com.billdonner.obo",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by card-server.",
+      "dependencies": [
+        "card-server",
+        "obo"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Falls back to bundled sample decks when the server is unavailable."
+      ]
+    },
+    {
+      "id": "cardz-studio-ios-app",
+      "name": "Cardz Studio",
+      "kind": "app",
+      "cluster": "Flasherz",
+      "status": "asc-mapped",
+      "lastModified": "2026-03-04",
+      "repo": "~/cardz-studio-ios",
+      "bundleId": "com.billdonner.cardz-studio",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "Admin and editor client for decks, family endpoints, ingestion controls, and search against the card backend.",
+      "dependencies": [
+        "card-server"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Operator-facing companion surface."
+      ]
+    },
+    {
+      "id": "workinon-app",
+      "name": "workin On",
+      "kind": "app",
+      "cluster": "Nagz",
+      "status": "asc-mapped",
+      "lastModified": "2026-04-27",
+      "repo": "~/workinon",
+      "bundleId": "com.workinon.app",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "AI-powered focus list app with widget, share extension, URL scheme, and nagzerver-backed sync.",
+      "dependencies": [
+        "nagzerver",
+        "workinon-mcp"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Silent APNs pushes update the list without opening the app."
+      ]
+    },
+    {
+      "id": "famster-app",
+      "name": "Famster",
+      "kind": "app",
+      "cluster": "Famster",
+      "status": "asc-mapped",
+      "lastModified": "2026-04-30",
+      "repo": "~/famster-ios",
+      "bundleId": "com.famster.app",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "Family coordination app using 1041Kit and an external backend at api.famster.app.",
+      "dependencies": [
+        "1041Kit",
+        "api.famster.app"
+      ],
+      "links": {
+        "website": "https://api.famster.app",
+        "websiteSource": "local docs",
+        "appStore": null
+      },
+      "notes": [
+        "Backend repo was not identified in this scan."
+      ]
+    },
+    {
+      "id": "clubwatch-app",
+      "name": "LtWatcher",
+      "kind": "app",
+      "cluster": "LtWatcher",
+      "status": "asc-mapped",
+      "lastModified": "2026-04-30",
+      "repo": "~/clubwatch",
+      "bundleId": "com.ltwatch.app",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "iOS app, widget, and notification service extension for club watch summaries.",
+      "dependencies": [
+        "clubsync",
+        "nagzerver"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Uses an App Group cache and widget or NSE architecture."
+      ]
+    },
+    {
+      "id": "kinflash-app",
+      "name": "KinFlash",
+      "kind": "app",
+      "cluster": "KinFlash",
+      "status": "asc-mapped",
+      "lastModified": "2026-07-31",
+      "repo": "~/kinflash",
+      "bundleId": "com.billdonner.kinflash",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "Multi-platform app with local package and document architecture.",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Bundle identity comes from xcconfig."
+      ]
+    },
+    {
+      "id": "picklefortunes-app",
+      "name": "picklefortunes",
+      "kind": "app",
+      "cluster": "picklefortunes",
+      "status": "asc-mapped",
+      "lastModified": "2026-06-16",
+      "repo": "~/picklefortunes",
+      "bundleId": "com.picklefortunes.app",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "description": "Standalone app plus reusable kit, with offline core behavior and optional backend paths.",
+      "dependencies": [
+        "PickleFortunesKit",
+        "PickledBalls"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Its shared kit is reused by PickledBalls."
+      ]
+    },
+    {
+      "id": "burfords-app",
+      "name": "100 Burfords",
+      "kind": "app",
+      "cluster": "Standalone",
+      "status": "ready-for-sale",
+      "lastModified": "2026-05-03",
+      "repo": "~/100Burfords",
+      "bundleId": "com.billdonner.burfords",
+      "release": "ASC mapped, iOS 1.0 READY_FOR_SALE",
+      "description": "The only ASC-mapped app in this scan marked ready for sale.",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": "https://apps.apple.com/ca/app/100-burfords/id6766107636",
+        "appStoreSource": "verified web search"
+      },
+      "notes": [
+        "Strong signal of finished packaging relative to the rest of the portfolio."
+      ]
+    },
+    {
+      "id": "grubber-service",
+      "name": "grubber",
+      "kind": "service",
+      "cluster": "Grubber",
+      "status": "live",
+      "lastModified": "2026-07-31",
+      "repo": "~/grubber",
+      "bundleId": null,
+      "release": "Live read service at bd-grubber.fly.dev",
+      "description": "Transcript-oriented read service exposing both HTTP and MCP surfaces.",
+      "dependencies": [
+        "grubber-ios"
+      ],
+      "links": {
+        "website": "https://bd-grubber.fly.dev",
+        "websiteSource": "local docs",
+        "appStore": null
+      },
+      "notes": [
+        "Public API and MCP are treated as the stable contract."
+      ]
+    },
+    {
+      "id": "grubber-ios-app",
+      "name": "grubber-ios",
+      "kind": "app",
+      "cluster": "Grubber",
+      "status": "gap",
+      "lastModified": "2026-07-31",
+      "repo": "~/grubber-ios",
+      "bundleId": "com.billdonner.grubber",
+      "release": "Local active client app, no matching ASC app found",
+      "description": "New iOS or macOS client app paired with the grubber service.",
+      "dependencies": [
+        "grubber"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Active locally but not matched in ASC."
+      ]
+    },
+    {
+      "id": "nagzerver-backend",
+      "name": "nagzerver",
+      "kind": "backend",
+      "cluster": "Nagz",
+      "status": "live",
+      "lastModified": "2026-04-29",
+      "repo": "~/nagzerver",
+      "bundleId": null,
+      "release": "Live on Fly at bd-nagzerver.fly.dev",
+      "description": "Multi-product backend serving Nagz, PickledBalls session APIs, workinOn routes, and clubwatch APNs transport.",
+      "dependencies": [
+        "Nagz",
+        "PickledBalls",
+        "workin On",
+        "LtWatcher"
+      ],
+      "links": {
+        "website": "https://bd-nagzerver.fly.dev",
+        "websiteSource": "local docs"
+      },
+      "notes": [
+        "One of the clearest shared backbones across the portfolio."
+      ]
+    },
+    {
+      "id": "clubsync-backend",
+      "name": "clubsync",
+      "kind": "backend",
+      "cluster": "LtWatcher",
+      "status": "live",
+      "lastModified": "2026-04-30",
+      "repo": "~/clubsync",
+      "bundleId": null,
+      "release": "Live on Fly at bd-clubsync.fly.dev",
+      "description": "Postgres-backed sports scheduling publisher consumed by PickledBalls and LtWatcher.",
+      "dependencies": [
+        "PickledBalls",
+        "LtWatcher",
+        "nagzerver"
+      ],
+      "links": {
+        "website": "https://bd-clubsync.fly.dev",
+        "websiteSource": "local docs"
+      },
+      "notes": [
+        "Owns watch data model and read API for the clubwatch flow."
+      ]
+    },
+    {
+      "id": "card-server-backend",
+      "name": "card-server",
+      "kind": "backend",
+      "cluster": "Qross",
+      "status": "live",
+      "lastModified": "2026-06-16",
+      "repo": "~/card-server",
+      "bundleId": null,
+      "release": "Live on Fly at bd-cardzerver.fly.dev",
+      "description": "Swift or Hummingbird Postgres-backed card and trivia API serving Qross and Flasherz-related clients.",
+      "dependencies": [
+        "Qross",
+        "Flasherz Kids",
+        "Cardz Studio",
+        "card-studio"
+      ],
+      "links": {
+        "website": "https://bd-cardzerver.fly.dev",
+        "websiteSource": "local docs"
+      },
+      "notes": [
+        "Current deployed source of truth for the card corpus."
+      ]
+    },
+    {
+      "id": "card-engine-backend",
+      "name": "card-engine",
+      "kind": "backend",
+      "cluster": "Flasherz",
+      "status": "active",
+      "lastModified": "2026-03-23",
+      "repo": "~/card-engine",
+      "bundleId": null,
+      "release": "Active repo, relationship to deployed path remains ambiguous",
+      "description": "Parallel or alternate backend track for flashcards and trivia with conceptual overlap with card-server.",
+      "dependencies": [
+        "Flasherz Kids",
+        "Alities"
+      ],
+      "links": {
+        "website": null
+      },
+      "notes": [
+        "One of the main architecture ambiguities in the inventory."
+      ]
+    },
+    {
+      "id": "server-monitor-service",
+      "name": "server-monitor",
+      "kind": "service",
+      "cluster": "PickledBalls",
+      "status": "live",
+      "lastModified": "2026-06-16",
+      "repo": "~/server-monitor",
+      "bundleId": null,
+      "release": "Live on Fly at bd-server-monitor.fly.dev",
+      "description": "Monitoring dashboard for multiple backends across the product landscape.",
+      "dependencies": [
+        "nagzerver",
+        "clubsync",
+        "card-server"
+      ],
+      "links": {
+        "website": "https://bd-server-monitor.fly.dev",
+        "websiteSource": "local docs",
+        "appStore": null
+      },
+      "notes": [
+        "ASC has Zerver Monitor, but the local iOS companion repo was not present in this scan."
+      ]
+    },
+    {
+      "id": "sharedspace-lab",
+      "name": "SharedSpaceLab",
+      "kind": "app",
+      "cluster": "Codex Experiments",
+      "status": "lab",
+      "lastModified": "2026-07-31",
+      "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
+      "bundleId": "com.1041soft.experiments.sharedspacelab",
+      "release": "Local-only experiment, not in ASC",
+      "description": "Shared household voice-and-screen iPad experiment built from ConversationLab and CoordinationLab.",
+      "dependencies": [
+        "ConversationLab",
+        "CoordinationLab"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Explicitly does not connect to PickledBalls, Nagz, or any backend."
+      ]
+    },
+    {
+      "id": "conversationlab-package",
+      "name": "ConversationLab",
+      "kind": "package",
+      "cluster": "Codex Experiments",
+      "status": "lab",
+      "lastModified": "2026-07-31",
+      "repo": "~/Documents/Codex/Experiments/ConversationLab",
+      "bundleId": null,
+      "release": "Local package, no commits yet",
+      "description": "New local package providing ConversationCore and AppleConversation.",
+      "dependencies": [
+        "SharedSpaceLab"
+      ],
+      "links": {
+        "website": null
+      },
+      "notes": [
+        "Created July 31, 2026."
+      ]
+    },
+    {
+      "id": "coordinationlab-package",
+      "name": "CoordinationLab",
+      "kind": "package",
+      "cluster": "Codex Experiments",
+      "status": "lab",
+      "lastModified": "2026-07-31",
+      "repo": "~/Documents/Codex/Experiments/CoordinationLab",
+      "bundleId": null,
+      "release": "Local package, no commits yet",
+      "description": "Pure Swift coordination model package used in SharedSpaceLab.",
+      "dependencies": [
+        "SharedSpaceLab"
+      ],
+      "links": {
+        "website": null
+      },
+      "notes": [
+        "Created July 31, 2026."
+      ]
+    }
+  ],
+  "services": [
+    {
+      "name": "bd-nagzerver.fly.dev",
+      "repo": "~/nagzerver",
+      "consumers": [
+        "Nagz",
+        "PickledBalls",
+        "workin On",
+        "LtWatcher transport"
+      ],
+      "note": "Most shared utility backend in the inventory."
+    },
+    {
+      "name": "bd-clubsync.fly.dev",
+      "repo": "~/clubsync",
+      "consumers": [
+        "PickledBalls",
+        "LtWatcher"
+      ],
+      "note": "Sports-club schedule publisher with Postgres."
+    },
+    {
+      "name": "bd-cardzerver.fly.dev",
+      "repo": "~/card-server",
+      "consumers": [
+        "Qross",
+        "Flasherz Kids",
+        "card-studio",
+        "likely Cardz Studio"
+      ],
+      "note": "Current deployed card and trivia API path."
+    },
+    {
+      "name": "bd-grubber.fly.dev",
+      "repo": "~/grubber",
+      "consumers": [
+        "grubber clients"
+      ],
+      "note": "Transcript read service with HTTP and MCP surfaces."
+    },
+    {
+      "name": "bd-server-monitor.fly.dev",
+      "repo": "~/server-monitor",
+      "consumers": [
+        "operations and monitoring"
+      ],
+      "note": "Monitors several other live services."
+    },
+    {
+      "name": "api.famster.app",
+      "repo": "unidentified",
+      "consumers": [
+        "Famster"
+      ],
+      "note": "Confirmed in local app docs, but backend repo was not found."
+    }
+  ],
+  "repos": [
+    {
+      "repo": "~/100Burfords",
+      "branch": "main",
+      "last2026Commit": "2026-05-03",
+      "kind": "app",
+      "role": "ASC-mapped iOS app, sale-ready in ASC"
+    },
+    {
+      "repo": "~/1041Kit",
+      "branch": "main",
+      "last2026Commit": "2026-04-24",
+      "kind": "shared package",
+      "role": "Famster dependency"
+    },
+    {
+      "repo": "~/CourtScheduler",
+      "branch": "main",
+      "last2026Commit": "2026-05-01",
+      "kind": "shared package",
+      "role": "PickledBalls scheduling dependency"
+    },
+    {
+      "repo": "~/Flyz",
+      "branch": "main",
+      "last2026Commit": "2026-04-28",
+      "kind": "deployment/config",
+      "role": "Fly deployment support repo"
+    },
+    {
+      "repo": "~/SharedAI",
+      "branch": "main",
+      "last2026Commit": "2026-06-16",
+      "kind": "shared package",
+      "role": "PickledBalls AI dependency"
+    },
+    {
+      "repo": "~/ado-data",
+      "branch": "main",
+      "last2026Commit": "2026-06-10",
+      "kind": "data/support",
+      "role": "Appears paired with adology pulse workflows"
+    },
+    {
+      "repo": "~/adology-pulse",
+      "branch": "main",
+      "last2026Commit": "2026-06-10",
+      "kind": "app/data/support",
+      "role": "Active, not mapped to an ASC app in this scan"
+    },
+    {
+      "repo": "~/card-engine",
+      "branch": "main",
+      "last2026Commit": "2026-03-23",
+      "kind": "backend",
+      "role": "Card and trivia backend track"
+    },
+    {
+      "repo": "~/card-server",
+      "branch": "main",
+      "last2026Commit": "2026-06-16",
+      "kind": "backend",
+      "role": "Live backend for Qross and obo-ios"
+    },
+    {
+      "repo": "~/card-studio",
+      "branch": "main",
+      "last2026Commit": "2026-04-05",
+      "kind": "admin app",
+      "role": "Card editing and admin surface"
+    },
+    {
+      "repo": "~/cardz-studio-ios",
+      "branch": "main",
+      "last2026Commit": "2026-03-04",
+      "kind": "app",
+      "role": "ASC-mapped admin and editor app"
+    },
+    {
+      "repo": "~/clubsync",
+      "branch": "main",
+      "last2026Commit": "2026-04-30",
+      "kind": "backend",
+      "role": "Live sports scheduling backend"
+    },
+    {
+      "repo": "~/clubwatch",
+      "branch": "main",
+      "last2026Commit": "2026-04-30",
+      "kind": "app",
+      "role": "ASC-mapped LtWatcher app"
+    },
+    {
+      "repo": "~/famster-ios",
+      "branch": "main",
+      "last2026Commit": "2026-04-30",
+      "kind": "app",
+      "role": "ASC-mapped Famster app"
+    },
+    {
+      "repo": "~/grubber",
+      "branch": "main",
+      "last2026Commit": "2026-07-31",
+      "kind": "backend/service",
+      "role": "Live transcript service"
+    },
+    {
+      "repo": "~/grubber-ios",
+      "branch": "main",
+      "last2026Commit": "2026-07-31",
+      "kind": "app",
+      "role": "Local app, no ASC match found"
+    },
+    {
+      "repo": "~/kinflash",
+      "branch": "main",
+      "last2026Commit": "2026-07-31",
+      "kind": "app",
+      "role": "ASC-mapped KinFlash app"
+    },
+    {
+      "repo": "~/nagging-systems-requirements",
+      "branch": "main",
+      "last2026Commit": "2026-02-15",
+      "kind": "docs repo",
+      "role": "Requirements and docs support"
+    },
+    {
+      "repo": "~/nagz",
+      "branch": "main",
+      "last2026Commit": "2026-04-20",
+      "kind": "umbrella/docs repo",
+      "role": "Cross-product docs hub"
+    },
+    {
+      "repo": "~/nagz-ai",
+      "branch": "main",
+      "last2026Commit": "2026-04-24",
+      "kind": "shared package",
+      "role": "Nagz AI dependency"
+    },
+    {
+      "repo": "~/nagz-ios",
+      "branch": "main",
+      "last2026Commit": "2026-04-12",
+      "kind": "app",
+      "role": "ASC-mapped Nagz app"
+    },
+    {
+      "repo": "~/nagz-web",
+      "branch": "main",
+      "last2026Commit": "2026-03-11",
+      "kind": "web app",
+      "role": "Nagz web client"
+    },
+    {
+      "repo": "~/nagzerver",
+      "branch": "main",
+      "last2026Commit": "2026-04-29",
+      "kind": "backend",
+      "role": "Live Nagz, PickledBalls, workin On, clubwatch backend"
+    },
+    {
+      "repo": "~/obo",
+      "branch": "main",
+      "last2026Commit": "2026-03-15",
+      "kind": "docs hub",
+      "role": "OBO ecosystem hub"
+    },
+    {
+      "repo": "~/obo-ios",
+      "branch": "main",
+      "last2026Commit": "2026-04-13",
+      "kind": "app",
+      "role": "ASC-mapped Flasherz Kids app"
+    },
+    {
+      "repo": "~/pickledballs",
+      "branch": "main",
+      "last2026Commit": "2026-06-17",
+      "kind": "app",
+      "role": "ASC-mapped PickledBalls app"
+    },
+    {
+      "repo": "~/picklefortunes",
+      "branch": "main",
+      "last2026Commit": "2026-06-16",
+      "kind": "app + package",
+      "role": "ASC-mapped app and PickledBalls dependency"
+    },
+    {
+      "repo": "~/qross",
+      "branch": "main",
+      "last2026Commit": "2026-05-03",
+      "kind": "app",
+      "role": "ASC-mapped Qross app"
+    },
+    {
+      "repo": "~/qross-data",
+      "branch": "main",
+      "last2026Commit": "2026-06-10",
+      "kind": "data/support",
+      "role": "Qross pulse and data repo"
+    },
+    {
+      "repo": "~/server-monitor",
+      "branch": "main",
+      "last2026Commit": "2026-06-16",
+      "kind": "monitoring service",
+      "role": "Live monitoring dashboard"
+    },
+    {
+      "repo": "~/workinon",
+      "branch": "main",
+      "last2026Commit": "2026-04-27",
+      "kind": "app",
+      "role": "ASC-mapped workin On app"
+    },
+    {
+      "repo": "~/workinon-mcp",
+      "branch": "main",
+      "last2026Commit": "2026-04-24",
+      "kind": "MCP/tooling",
+      "role": "workin On companion server"
+    },
+    {
+      "repo": "~/Documents/Codex/Experiments/ConversationLab",
+      "branch": "main",
+      "last2026Commit": "no commits yet",
+      "kind": "shared package",
+      "role": "New local experiment"
+    },
+    {
+      "repo": "~/Documents/Codex/Experiments/CoordinationLab",
+      "branch": "main",
+      "last2026Commit": "no commits yet",
+      "kind": "shared package",
+      "role": "New local experiment"
+    },
+    {
+      "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
+      "branch": "main",
+      "last2026Commit": "no commits yet",
+      "kind": "app experiment",
+      "role": "New local-only iPad experiment"
+    }
+  ],
+  "gaps": {
+    "confirmed": [
+      "No active local repo was found for 12 ASC apps listed in the August 1, 2026 scan.",
+      "No local iOS companion repo was found for ASC app Zerver Monitor; only the backend/service repo was present.",
+      "grubber-ios has an active local client repo but no matching current ASC app was found.",
+      "SharedSpaceLab is local-only and not in ASC.",
+      "As of Sunday, August 2, 2026, only one clearly public App Store page was verified in web results during this pass: 100 Burfords."
+    ],
+    "ambiguities": [
+      "card-engine and card-server overlap conceptually.",
+      "PickledBalls docs describe a rebrand path toward PickleNagz, but the live ASC app is still PickledBalls.",
+      "Flasherz Kids local docs and project.yml disagree on some build text; project.yml was treated as more current."
+    ]
+  },
+  "taskRegistry": {
+    "path": "tasks/index.json",
+    "stableTargetKey": "entities[].id",
+    "notes": [
+      "Recurring agent work is intentionally stored outside the main inventory file.",
+      "Use tasks/index.json to attach periodic work to specific entries."
+    ]
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "generatedAt": "2026-08-02T00:00:00-05:00",
+  "schemaVersion": "1.0",
+  "description": "Recurring and agentic task registry for MasterIndex entities.",
+  "defaultExecutionAssumptions": {
+    "canonicalInventoryPath": "current/index.json",
+    "canonicalNarrativePath": "current/inventory.md",
+    "stableTargetKey": "entities[].id",
+    "notes": [
+      "Use entry ids from current/index.json as task target keys.",
+      "Tasks are intentionally stored outside the core inventory file."
+    ]
+  },
+  "globalTasks": [
+    {
+      "taskId": "masterindex-refresh",
+      "name": "MasterIndex refresh",
+      "status": "active",
+      "cadence": {
+        "kind": "rrule",
+        "value": "FREQ=HOURLY;INTERVAL=6"
+      },
+      "purpose": "Refresh the shared inventory baseline and preserve schema stability.",
+      "expectedInputs": [
+        "current/index.json",
+        "current/inventory.md"
+      ],
+      "expectedOutputs": [
+        "Refreshed current/index.json",
+        "Refreshed current/inventory.md"
+      ],
+      "owner": "this Codex task"
+    }
+  ],
+  "entryTasks": {
+    "pickledballs-app": [
+      {
+        "taskId": "pickledballs-link-and-release-check",
+        "name": "PickledBalls link and release check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Watch release posture and public links for the PickledBalls app and website.",
+        "expectedInputs": [
+          "current/index.json",
+          "current/inventory.md"
+        ],
+        "expectedOutputs": [
+          "Updated link fields",
+          "Updated release notes in the inventory"
+        ]
+      }
+    ],
+    "qross-app": [
+      {
+        "taskId": "qross-release-check",
+        "name": "Qross release check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Track release-state changes and any new public links for Qross.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated Qross app entry"
+        ]
+      }
+    ],
+    "nagz-app": [
+      {
+        "taskId": "nagz-release-check",
+        "name": "Nagz release check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Track ASC release-state changes and discover any public app page for Nagz.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated Nagz app entry"
+        ]
+      }
+    ],
+    "obo-ios-app": [
+      {
+        "taskId": "flasherz-release-check",
+        "name": "Flasherz Kids release check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=WEEKLY;INTERVAL=1"
+        },
+        "purpose": "Watch for App Store publication and link availability for Flasherz Kids.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated Flasherz Kids links or release notes"
+        ]
+      }
+    ],
+    "cardz-studio-ios-app": [],
+    "workinon-app": [
+      {
+        "taskId": "workinon-release-check",
+        "name": "workin On release check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=WEEKLY;INTERVAL=1"
+        },
+        "purpose": "Check whether a public App Store page becomes available for workin On.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated workin On links"
+        ]
+      }
+    ],
+    "famster-app": [
+      {
+        "taskId": "famster-link-check",
+        "name": "Famster link check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=WEEKLY;INTERVAL=1"
+        },
+        "purpose": "Validate the backend domain and discover any public app or marketing links for Famster.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated Famster link fields"
+        ]
+      }
+    ],
+    "clubwatch-app": [],
+    "kinflash-app": [],
+    "picklefortunes-app": [],
+    "burfords-app": [
+      {
+        "taskId": "burfords-public-page-check",
+        "name": "100 Burfords public page check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=WEEKLY;INTERVAL=1"
+        },
+        "purpose": "Keep the verified App Store page current and watch for a dedicated website.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated 100 Burfords links"
+        ]
+      }
+    ],
+    "grubber-service": [],
+    "grubber-ios-app": [],
+    "nagzerver-backend": [
+      {
+        "taskId": "nagzerver-health-check",
+        "name": "nagzerver health check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=HOURLY;INTERVAL=6"
+        },
+        "purpose": "Confirm the shared backend remains reachable and linked correctly in the index.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated backend status if it changes"
+        ]
+      }
+    ],
+    "clubsync-backend": [
+      {
+        "taskId": "clubsync-health-check",
+        "name": "clubsync health check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=HOURLY;INTERVAL=6"
+        },
+        "purpose": "Confirm the clubsync service remains reachable and linked correctly in the index.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated clubsync status if it changes"
+        ]
+      }
+    ],
+    "card-server-backend": [
+      {
+        "taskId": "card-server-health-check",
+        "name": "card-server health check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=HOURLY;INTERVAL=6"
+        },
+        "purpose": "Confirm the card-server service remains reachable and linked correctly in the index.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated card-server status if it changes"
+        ]
+      }
+    ],
+    "card-engine-backend": [],
+    "server-monitor-service": [
+      {
+        "taskId": "server-monitor-link-check",
+        "name": "server-monitor link check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Keep the monitoring service link current and note if a matching public app page appears.",
+        "expectedInputs": [
+          "current/index.json"
+        ],
+        "expectedOutputs": [
+          "Updated server-monitor links"
+        ]
+      }
+    ],
+    "sharedspace-lab": [],
+    "conversationlab-package": [],
+    "coordinationlab-package": []
+  }
+}

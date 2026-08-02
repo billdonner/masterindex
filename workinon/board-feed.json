@@ -1,0 +1,556 @@
+{
+  "generatedAt": "2026-08-02T00:00:00-05:00",
+  "sourceFiles": {
+    "inventory": "current/index.json",
+    "tasks": "tasks/index.json"
+  },
+  "intendedSurface": "workin On",
+  "defaultLanes": [
+    "Needs Attention",
+    "Due Soon",
+    "Recently Changed",
+    "Summaries"
+  ],
+  "itemCount": 36,
+  "items": [
+    {
+      "id": "due-card-server-health-check",
+      "type": "due-task",
+      "entityId": "card-server-backend",
+      "taskId": "card-server-health-check",
+      "title": "card-server health check due",
+      "body": "Task is due in this six-hour cycle.",
+      "priority": "high",
+      "tags": [
+        "task",
+        "backend",
+        "qross"
+      ],
+      "deepLink": "site/index.html#card-server-backend",
+      "statusKey": "masterindex.due.card-server-health-check"
+    },
+    {
+      "id": "due-clubsync-health-check",
+      "type": "due-task",
+      "entityId": "clubsync-backend",
+      "taskId": "clubsync-health-check",
+      "title": "clubsync health check due",
+      "body": "Task is due in this six-hour cycle.",
+      "priority": "high",
+      "tags": [
+        "task",
+        "backend",
+        "ltwatcher"
+      ],
+      "deepLink": "site/index.html#clubsync-backend",
+      "statusKey": "masterindex.due.clubsync-health-check"
+    },
+    {
+      "id": "due-nagzerver-health-check",
+      "type": "due-task",
+      "entityId": "nagzerver-backend",
+      "taskId": "nagzerver-health-check",
+      "title": "nagzerver health check due",
+      "body": "Task is due in this six-hour cycle.",
+      "priority": "high",
+      "tags": [
+        "task",
+        "backend",
+        "nagz"
+      ],
+      "deepLink": "site/index.html#nagzerver-backend",
+      "statusKey": "masterindex.due.nagzerver-health-check"
+    },
+    {
+      "id": "attention-cardz-studio-ios-app-no-public-links",
+      "type": "attention",
+      "entityId": "cardz-studio-ios-app",
+      "title": "Cardz Studio missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "flasherz"
+      ],
+      "deepLink": "site/index.html#cardz-studio-ios-app",
+      "statusKey": "masterindex.attention.cardz-studio-ios-app.no-public-links"
+    },
+    {
+      "id": "attention-famster-app-missing-appstore-link",
+      "type": "attention",
+      "entityId": "famster-app",
+      "title": "Famster missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "app-store",
+        "famster"
+      ],
+      "deepLink": "site/index.html#famster-app",
+      "statusKey": "masterindex.attention.famster-app.missing-appstore"
+    },
+    {
+      "id": "attention-obo-ios-app-no-public-links",
+      "type": "attention",
+      "entityId": "obo-ios-app",
+      "title": "Flasherz Kids missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "flasherz"
+      ],
+      "deepLink": "site/index.html#obo-ios-app",
+      "statusKey": "masterindex.attention.obo-ios-app.no-public-links"
+    },
+    {
+      "id": "attention-kinflash-app-no-public-links",
+      "type": "attention",
+      "entityId": "kinflash-app",
+      "title": "KinFlash missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "kinflash"
+      ],
+      "deepLink": "site/index.html#kinflash-app",
+      "statusKey": "masterindex.attention.kinflash-app.no-public-links"
+    },
+    {
+      "id": "attention-clubwatch-app-no-public-links",
+      "type": "attention",
+      "entityId": "clubwatch-app",
+      "title": "LtWatcher missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "ltwatcher"
+      ],
+      "deepLink": "site/index.html#clubwatch-app",
+      "statusKey": "masterindex.attention.clubwatch-app.no-public-links"
+    },
+    {
+      "id": "attention-nagz-app-no-public-links",
+      "type": "attention",
+      "entityId": "nagz-app",
+      "title": "Nagz missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "nagz"
+      ],
+      "deepLink": "site/index.html#nagz-app",
+      "statusKey": "masterindex.attention.nagz-app.no-public-links"
+    },
+    {
+      "id": "attention-pickledballs-app-missing-appstore-link",
+      "type": "attention",
+      "entityId": "pickledballs-app",
+      "title": "PickledBalls missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "app-store",
+        "pickledballs"
+      ],
+      "deepLink": "site/index.html#pickledballs-app",
+      "statusKey": "masterindex.attention.pickledballs-app.missing-appstore"
+    },
+    {
+      "id": "attention-qross-app-no-public-links",
+      "type": "attention",
+      "entityId": "qross-app",
+      "title": "Qross missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "qross"
+      ],
+      "deepLink": "site/index.html#qross-app",
+      "statusKey": "masterindex.attention.qross-app.no-public-links"
+    },
+    {
+      "id": "attention-sharedspace-lab-no-public-links",
+      "type": "attention",
+      "entityId": "sharedspace-lab",
+      "title": "SharedSpaceLab missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "codex experiments"
+      ],
+      "deepLink": "site/index.html#sharedspace-lab",
+      "statusKey": "masterindex.attention.sharedspace-lab.no-public-links"
+    },
+    {
+      "id": "attention-grubber-ios-app-no-public-links",
+      "type": "attention",
+      "entityId": "grubber-ios-app",
+      "title": "grubber-ios missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "grubber"
+      ],
+      "deepLink": "site/index.html#grubber-ios-app",
+      "statusKey": "masterindex.attention.grubber-ios-app.no-public-links"
+    },
+    {
+      "id": "attention-picklefortunes-app-no-public-links",
+      "type": "attention",
+      "entityId": "picklefortunes-app",
+      "title": "picklefortunes missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "picklefortunes"
+      ],
+      "deepLink": "site/index.html#picklefortunes-app",
+      "statusKey": "masterindex.attention.picklefortunes-app.no-public-links"
+    },
+    {
+      "id": "attention-workinon-app-no-public-links",
+      "type": "attention",
+      "entityId": "workinon-app",
+      "title": "workin On missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "medium",
+      "tags": [
+        "links",
+        "public",
+        "nagz"
+      ],
+      "deepLink": "site/index.html#workinon-app",
+      "statusKey": "masterindex.attention.workinon-app.no-public-links"
+    },
+    {
+      "id": "due-burfords-public-page-check",
+      "type": "due-task",
+      "entityId": "burfords-app",
+      "taskId": "burfords-public-page-check",
+      "title": "100 Burfords public page check due",
+      "body": "Task is part of the weekly cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "app",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#burfords-app",
+      "statusKey": "masterindex.due.burfords-public-page-check"
+    },
+    {
+      "id": "due-famster-link-check",
+      "type": "due-task",
+      "entityId": "famster-app",
+      "taskId": "famster-link-check",
+      "title": "Famster link check due",
+      "body": "Task is part of the weekly cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "app",
+        "famster"
+      ],
+      "deepLink": "site/index.html#famster-app",
+      "statusKey": "masterindex.due.famster-link-check"
+    },
+    {
+      "id": "due-flasherz-release-check",
+      "type": "due-task",
+      "entityId": "obo-ios-app",
+      "taskId": "flasherz-release-check",
+      "title": "Flasherz Kids release check due",
+      "body": "Task is part of the weekly cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "app",
+        "flasherz"
+      ],
+      "deepLink": "site/index.html#obo-ios-app",
+      "statusKey": "masterindex.due.flasherz-release-check"
+    },
+    {
+      "id": "due-nagz-release-check",
+      "type": "due-task",
+      "entityId": "nagz-app",
+      "taskId": "nagz-release-check",
+      "title": "Nagz release check due",
+      "body": "Task is due in the daily cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "app",
+        "nagz"
+      ],
+      "deepLink": "site/index.html#nagz-app",
+      "statusKey": "masterindex.due.nagz-release-check"
+    },
+    {
+      "id": "due-pickledballs-link-and-release-check",
+      "type": "due-task",
+      "entityId": "pickledballs-app",
+      "taskId": "pickledballs-link-and-release-check",
+      "title": "PickledBalls link and release check due",
+      "body": "Task is due in the daily cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "app",
+        "pickledballs"
+      ],
+      "deepLink": "site/index.html#pickledballs-app",
+      "statusKey": "masterindex.due.pickledballs-link-and-release-check"
+    },
+    {
+      "id": "due-qross-release-check",
+      "type": "due-task",
+      "entityId": "qross-app",
+      "taskId": "qross-release-check",
+      "title": "Qross release check due",
+      "body": "Task is due in the daily cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "app",
+        "qross"
+      ],
+      "deepLink": "site/index.html#qross-app",
+      "statusKey": "masterindex.due.qross-release-check"
+    },
+    {
+      "id": "due-server-monitor-link-check",
+      "type": "due-task",
+      "entityId": "server-monitor-service",
+      "taskId": "server-monitor-link-check",
+      "title": "server-monitor link check due",
+      "body": "Task is due in the daily cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "service",
+        "pickledballs"
+      ],
+      "deepLink": "site/index.html#server-monitor-service",
+      "statusKey": "masterindex.due.server-monitor-link-check"
+    },
+    {
+      "id": "due-workinon-release-check",
+      "type": "due-task",
+      "entityId": "workinon-app",
+      "taskId": "workinon-release-check",
+      "title": "workin On release check due",
+      "body": "Task is part of the weekly cycle.",
+      "priority": "medium",
+      "tags": [
+        "task",
+        "app",
+        "nagz"
+      ],
+      "deepLink": "site/index.html#workinon-app",
+      "statusKey": "masterindex.due.workinon-release-check"
+    },
+    {
+      "id": "recent-conversationlab-package",
+      "type": "recent-change",
+      "entityId": "conversationlab-package",
+      "title": "ConversationLab changed recently",
+      "body": "Last modified 2026-07-31.",
+      "priority": "medium",
+      "tags": [
+        "recent",
+        "package",
+        "codex experiments"
+      ],
+      "deepLink": "site/index.html#conversationlab-package",
+      "statusKey": "masterindex.recent.conversationlab-package"
+    },
+    {
+      "id": "recent-coordinationlab-package",
+      "type": "recent-change",
+      "entityId": "coordinationlab-package",
+      "title": "CoordinationLab changed recently",
+      "body": "Last modified 2026-07-31.",
+      "priority": "medium",
+      "tags": [
+        "recent",
+        "package",
+        "codex experiments"
+      ],
+      "deepLink": "site/index.html#coordinationlab-package",
+      "statusKey": "masterindex.recent.coordinationlab-package"
+    },
+    {
+      "id": "recent-kinflash-app",
+      "type": "recent-change",
+      "entityId": "kinflash-app",
+      "title": "KinFlash changed recently",
+      "body": "Last modified 2026-07-31.",
+      "priority": "medium",
+      "tags": [
+        "recent",
+        "app",
+        "kinflash"
+      ],
+      "deepLink": "site/index.html#kinflash-app",
+      "statusKey": "masterindex.recent.kinflash-app"
+    },
+    {
+      "id": "recent-sharedspace-lab",
+      "type": "recent-change",
+      "entityId": "sharedspace-lab",
+      "title": "SharedSpaceLab changed recently",
+      "body": "Last modified 2026-07-31.",
+      "priority": "medium",
+      "tags": [
+        "recent",
+        "app",
+        "codex experiments"
+      ],
+      "deepLink": "site/index.html#sharedspace-lab",
+      "statusKey": "masterindex.recent.sharedspace-lab"
+    },
+    {
+      "id": "recent-grubber-service",
+      "type": "recent-change",
+      "entityId": "grubber-service",
+      "title": "grubber changed recently",
+      "body": "Last modified 2026-07-31.",
+      "priority": "medium",
+      "tags": [
+        "recent",
+        "service",
+        "grubber"
+      ],
+      "deepLink": "site/index.html#grubber-service",
+      "statusKey": "masterindex.recent.grubber-service"
+    },
+    {
+      "id": "recent-grubber-ios-app",
+      "type": "recent-change",
+      "entityId": "grubber-ios-app",
+      "title": "grubber-ios changed recently",
+      "body": "Last modified 2026-07-31.",
+      "priority": "medium",
+      "tags": [
+        "recent",
+        "app",
+        "grubber"
+      ],
+      "deepLink": "site/index.html#grubber-ios-app",
+      "statusKey": "masterindex.recent.grubber-ios-app"
+    },
+    {
+      "id": "attention-conversationlab-package-no-public-links",
+      "type": "attention",
+      "entityId": "conversationlab-package",
+      "title": "ConversationLab missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "tags": [
+        "links",
+        "public",
+        "codex experiments"
+      ],
+      "deepLink": "site/index.html#conversationlab-package",
+      "statusKey": "masterindex.attention.conversationlab-package.no-public-links"
+    },
+    {
+      "id": "attention-coordinationlab-package-no-public-links",
+      "type": "attention",
+      "entityId": "coordinationlab-package",
+      "title": "CoordinationLab missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "tags": [
+        "links",
+        "public",
+        "codex experiments"
+      ],
+      "deepLink": "site/index.html#coordinationlab-package",
+      "statusKey": "masterindex.attention.coordinationlab-package.no-public-links"
+    },
+    {
+      "id": "attention-card-engine-backend-no-public-links",
+      "type": "attention",
+      "entityId": "card-engine-backend",
+      "title": "card-engine missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "tags": [
+        "links",
+        "public",
+        "flasherz"
+      ],
+      "deepLink": "site/index.html#card-engine-backend",
+      "statusKey": "masterindex.attention.card-engine-backend.no-public-links"
+    },
+    {
+      "id": "summary-asc-gaps",
+      "type": "summary",
+      "title": "ASC coverage gaps",
+      "body": "12 App Store Connect apps still do not map cleanly to an active local repository.",
+      "priority": "low",
+      "tags": [
+        "summary",
+        "asc"
+      ],
+      "statusKey": "masterindex.summary.asc-gaps"
+    },
+    {
+      "id": "summary-public-link-gaps",
+      "type": "summary",
+      "title": "Public link gaps",
+      "body": "15 entries still need verified public links or App Store pages.",
+      "priority": "low",
+      "tags": [
+        "summary",
+        "links"
+      ],
+      "statusKey": "masterindex.summary.public-link-gaps"
+    },
+    {
+      "id": "summary-recent-changes",
+      "type": "summary",
+      "title": "Recent changes",
+      "body": "6 entries were modified in the last 7 days.",
+      "priority": "low",
+      "tags": [
+        "summary",
+        "recent"
+      ],
+      "statusKey": "masterindex.summary.recent-changes"
+    },
+    {
+      "id": "summary-due-tasks",
+      "type": "summary",
+      "title": "Tasks due soon",
+      "body": "11 recurring entry tasks are currently in the operational queue.",
+      "priority": "low",
+      "tags": [
+        "summary",
+        "tasks"
+      ],
+      "statusKey": "masterindex.summary.due-tasks"
+    }
+  ]
+}

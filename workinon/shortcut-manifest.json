@@ -1,0 +1,366 @@
+{
+  "generatedAt": "2026-08-02T00:00:00-05:00",
+  "namespace": "masterindex",
+  "items": [
+    {
+      "id": "due-card-server-health-check",
+      "title": "card-server health check due",
+      "statusKey": "masterindex.due.card-server-health-check",
+      "url": "workinon://post?key=masterindex.due.card-server-health-check&text=card-server+health+check+due+-+Task+is+due+in+this+six-hour+cycle.",
+      "entityId": "card-server-backend",
+      "taskId": "card-server-health-check",
+      "type": "due-task",
+      "priority": "high"
+    },
+    {
+      "id": "due-clubsync-health-check",
+      "title": "clubsync health check due",
+      "statusKey": "masterindex.due.clubsync-health-check",
+      "url": "workinon://post?key=masterindex.due.clubsync-health-check&text=clubsync+health+check+due+-+Task+is+due+in+this+six-hour+cycle.",
+      "entityId": "clubsync-backend",
+      "taskId": "clubsync-health-check",
+      "type": "due-task",
+      "priority": "high"
+    },
+    {
+      "id": "due-nagzerver-health-check",
+      "title": "nagzerver health check due",
+      "statusKey": "masterindex.due.nagzerver-health-check",
+      "url": "workinon://post?key=masterindex.due.nagzerver-health-check&text=nagzerver+health+check+due+-+Task+is+due+in+this+six-hour+cycle.",
+      "entityId": "nagzerver-backend",
+      "taskId": "nagzerver-health-check",
+      "type": "due-task",
+      "priority": "high"
+    },
+    {
+      "id": "attention-cardz-studio-ios-app-no-public-links",
+      "title": "Cardz Studio missing public links",
+      "statusKey": "masterindex.attention.cardz-studio-ios-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.cardz-studio-ios-app.no-public-links&text=Cardz+Studio+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "cardz-studio-ios-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-famster-app-missing-appstore-link",
+      "title": "Famster missing public App Store page",
+      "statusKey": "masterindex.attention.famster-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.famster-app.missing-appstore&text=Famster+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "famster-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-obo-ios-app-no-public-links",
+      "title": "Flasherz Kids missing public links",
+      "statusKey": "masterindex.attention.obo-ios-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.obo-ios-app.no-public-links&text=Flasherz+Kids+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "obo-ios-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-kinflash-app-no-public-links",
+      "title": "KinFlash missing public links",
+      "statusKey": "masterindex.attention.kinflash-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.kinflash-app.no-public-links&text=KinFlash+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "kinflash-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-clubwatch-app-no-public-links",
+      "title": "LtWatcher missing public links",
+      "statusKey": "masterindex.attention.clubwatch-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.clubwatch-app.no-public-links&text=LtWatcher+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "clubwatch-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-nagz-app-no-public-links",
+      "title": "Nagz missing public links",
+      "statusKey": "masterindex.attention.nagz-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.nagz-app.no-public-links&text=Nagz+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "nagz-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-pickledballs-app-missing-appstore-link",
+      "title": "PickledBalls missing public App Store page",
+      "statusKey": "masterindex.attention.pickledballs-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.pickledballs-app.missing-appstore&text=PickledBalls+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "pickledballs-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-qross-app-no-public-links",
+      "title": "Qross missing public links",
+      "statusKey": "masterindex.attention.qross-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.qross-app.no-public-links&text=Qross+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "qross-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-sharedspace-lab-no-public-links",
+      "title": "SharedSpaceLab missing public links",
+      "statusKey": "masterindex.attention.sharedspace-lab.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.sharedspace-lab.no-public-links&text=SharedSpaceLab+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "sharedspace-lab",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-grubber-ios-app-no-public-links",
+      "title": "grubber-ios missing public links",
+      "statusKey": "masterindex.attention.grubber-ios-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.grubber-ios-app.no-public-links&text=grubber-ios+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "grubber-ios-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-picklefortunes-app-no-public-links",
+      "title": "picklefortunes missing public links",
+      "statusKey": "masterindex.attention.picklefortunes-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.picklefortunes-app.no-public-links&text=picklefortunes+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "picklefortunes-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-workinon-app-no-public-links",
+      "title": "workin On missing public links",
+      "statusKey": "masterindex.attention.workinon-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.workinon-app.no-public-links&text=workin+On+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "workinon-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "medium"
+    },
+    {
+      "id": "due-burfords-public-page-check",
+      "title": "100 Burfords public page check due",
+      "statusKey": "masterindex.due.burfords-public-page-check",
+      "url": "workinon://post?key=masterindex.due.burfords-public-page-check&text=100+Burfords+public+page+check+due+-+Task+is+part+of+the+weekly+cycle.",
+      "entityId": "burfords-app",
+      "taskId": "burfords-public-page-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-famster-link-check",
+      "title": "Famster link check due",
+      "statusKey": "masterindex.due.famster-link-check",
+      "url": "workinon://post?key=masterindex.due.famster-link-check&text=Famster+link+check+due+-+Task+is+part+of+the+weekly+cycle.",
+      "entityId": "famster-app",
+      "taskId": "famster-link-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-flasherz-release-check",
+      "title": "Flasherz Kids release check due",
+      "statusKey": "masterindex.due.flasherz-release-check",
+      "url": "workinon://post?key=masterindex.due.flasherz-release-check&text=Flasherz+Kids+release+check+due+-+Task+is+part+of+the+weekly+cycle.",
+      "entityId": "obo-ios-app",
+      "taskId": "flasherz-release-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-nagz-release-check",
+      "title": "Nagz release check due",
+      "statusKey": "masterindex.due.nagz-release-check",
+      "url": "workinon://post?key=masterindex.due.nagz-release-check&text=Nagz+release+check+due+-+Task+is+due+in+the+daily+cycle.",
+      "entityId": "nagz-app",
+      "taskId": "nagz-release-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-pickledballs-link-and-release-check",
+      "title": "PickledBalls link and release check due",
+      "statusKey": "masterindex.due.pickledballs-link-and-release-check",
+      "url": "workinon://post?key=masterindex.due.pickledballs-link-and-release-check&text=PickledBalls+link+and+release+check+due+-+Task+is+due+in+the+daily+cycle.",
+      "entityId": "pickledballs-app",
+      "taskId": "pickledballs-link-and-release-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-qross-release-check",
+      "title": "Qross release check due",
+      "statusKey": "masterindex.due.qross-release-check",
+      "url": "workinon://post?key=masterindex.due.qross-release-check&text=Qross+release+check+due+-+Task+is+due+in+the+daily+cycle.",
+      "entityId": "qross-app",
+      "taskId": "qross-release-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-server-monitor-link-check",
+      "title": "server-monitor link check due",
+      "statusKey": "masterindex.due.server-monitor-link-check",
+      "url": "workinon://post?key=masterindex.due.server-monitor-link-check&text=server-monitor+link+check+due+-+Task+is+due+in+the+daily+cycle.",
+      "entityId": "server-monitor-service",
+      "taskId": "server-monitor-link-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-workinon-release-check",
+      "title": "workin On release check due",
+      "statusKey": "masterindex.due.workinon-release-check",
+      "url": "workinon://post?key=masterindex.due.workinon-release-check&text=workin+On+release+check+due+-+Task+is+part+of+the+weekly+cycle.",
+      "entityId": "workinon-app",
+      "taskId": "workinon-release-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-conversationlab-package",
+      "title": "ConversationLab changed recently",
+      "statusKey": "masterindex.recent.conversationlab-package",
+      "url": "workinon://post?key=masterindex.recent.conversationlab-package&text=ConversationLab+changed+recently+-+Last+modified+2026-07-31.",
+      "entityId": "conversationlab-package",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-coordinationlab-package",
+      "title": "CoordinationLab changed recently",
+      "statusKey": "masterindex.recent.coordinationlab-package",
+      "url": "workinon://post?key=masterindex.recent.coordinationlab-package&text=CoordinationLab+changed+recently+-+Last+modified+2026-07-31.",
+      "entityId": "coordinationlab-package",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-kinflash-app",
+      "title": "KinFlash changed recently",
+      "statusKey": "masterindex.recent.kinflash-app",
+      "url": "workinon://post?key=masterindex.recent.kinflash-app&text=KinFlash+changed+recently+-+Last+modified+2026-07-31.",
+      "entityId": "kinflash-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-sharedspace-lab",
+      "title": "SharedSpaceLab changed recently",
+      "statusKey": "masterindex.recent.sharedspace-lab",
+      "url": "workinon://post?key=masterindex.recent.sharedspace-lab&text=SharedSpaceLab+changed+recently+-+Last+modified+2026-07-31.",
+      "entityId": "sharedspace-lab",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-grubber-service",
+      "title": "grubber changed recently",
+      "statusKey": "masterindex.recent.grubber-service",
+      "url": "workinon://post?key=masterindex.recent.grubber-service&text=grubber+changed+recently+-+Last+modified+2026-07-31.",
+      "entityId": "grubber-service",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-grubber-ios-app",
+      "title": "grubber-ios changed recently",
+      "statusKey": "masterindex.recent.grubber-ios-app",
+      "url": "workinon://post?key=masterindex.recent.grubber-ios-app&text=grubber-ios+changed+recently+-+Last+modified+2026-07-31.",
+      "entityId": "grubber-ios-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "attention-conversationlab-package-no-public-links",
+      "title": "ConversationLab missing public links",
+      "statusKey": "masterindex.attention.conversationlab-package.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.conversationlab-package.no-public-links&text=ConversationLab+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "conversationlab-package",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-coordinationlab-package-no-public-links",
+      "title": "CoordinationLab missing public links",
+      "statusKey": "masterindex.attention.coordinationlab-package.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.coordinationlab-package.no-public-links&text=CoordinationLab+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "coordinationlab-package",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-card-engine-backend-no-public-links",
+      "title": "card-engine missing public links",
+      "statusKey": "masterindex.attention.card-engine-backend.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.card-engine-backend.no-public-links&text=card-engine+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "card-engine-backend",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "summary-asc-gaps",
+      "title": "ASC coverage gaps",
+      "statusKey": "masterindex.summary.asc-gaps",
+      "url": "workinon://post?key=masterindex.summary.asc-gaps&text=ASC+coverage+gaps+-+12+App+Store+Connect+apps+still+do+not+map+cleanly+to+an+active+local+repository.",
+      "entityId": null,
+      "taskId": null,
+      "type": "summary",
+      "priority": "low"
+    },
+    {
+      "id": "summary-public-link-gaps",
+      "title": "Public link gaps",
+      "statusKey": "masterindex.summary.public-link-gaps",
+      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+15+entries+still+need+verified+public+links+or+App+Store+pages.",
+      "entityId": null,
+      "taskId": null,
+      "type": "summary",
+      "priority": "low"
+    },
+    {
+      "id": "summary-recent-changes",
+      "title": "Recent changes",
+      "statusKey": "masterindex.summary.recent-changes",
+      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+6+entries+were+modified+in+the+last+7+days.",
+      "entityId": null,
+      "taskId": null,
+      "type": "summary",
+      "priority": "low"
+    },
+    {
+      "id": "summary-due-tasks",
+      "title": "Tasks due soon",
+      "statusKey": "masterindex.summary.due-tasks",
+      "url": "workinon://post?key=masterindex.summary.due-tasks&text=Tasks+due+soon+-+11+recurring+entry+tasks+are+currently+in+the+operational+queue.",
+      "entityId": null,
+      "taskId": null,
+      "type": "summary",
+      "priority": "low"
+    }
+  ]
+}
