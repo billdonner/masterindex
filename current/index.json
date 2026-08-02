@@ -119,6 +119,14 @@
         "repo": "~/mallinbook",
         "localVersion": "1.0 (14)",
         "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
+      },
+      {
+        "name": "123 Words",
+        "bundleId": "com.123words.app",
+        "appId": "6766975041",
+        "repo": "~/123words",
+        "localVersion": "1.11 (40)",
+        "ascState": "IOS 1.11 READY_FOR_SALE; 1.12 draft (screenshots published 2026-08-01)"
       }
     ],
     "unmatched": [
@@ -828,6 +836,26 @@
       },
       "notes": [
         "Created July 31, 2026."
+      ]
+    },
+    {
+      "id": "words123-app",
+      "name": "123 Words",
+      "kind": "app",
+      "cluster": "Standalone",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-01",
+      "repo": "~/123words",
+      "bundleId": "com.123words.app",
+      "release": "ASC mapped; 1.11 live, 1.12 draft holds the new 7-slot Screenker gallery (critic 90)",
+      "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Was missing from the index entirely; added 2026-08-02 during the Screenker gallery sweep."
       ]
     }
   ],
