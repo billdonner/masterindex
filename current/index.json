@@ -17,8 +17,8 @@
   },
   "summary": {
     "ascApps": 19,
-    "mappedAscApps": 12,
-    "unmatchedAscApps": 7,
+    "mappedAscApps": 13,
+    "unmatchedAscApps": 6,
     "activeRepos": 38,
     "clusters": 11,
     "liveServices": 5
@@ -120,6 +120,14 @@
         "repo": "~/123words",
         "localVersion": "1.11 (40)",
         "ascState": "IOS 1.11 READY_FOR_SALE; 1.12 draft (screenshots published 2026-08-01)"
+      },
+      {
+        "name": "SentiPods",
+        "bundleId": "com.sentipods.app",
+        "appId": null,
+        "repo": "~/sentipods",
+        "localVersion": "1.0 (15)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 14 uploaded"
       }
     ],
     "unmatched": [
@@ -127,7 +135,6 @@
       "MastPex Mac",
       "PickleFamilia",
       "Screenker",
-      "SentiPods",
       "Zerver Monitor",
       "amenbeats"
     ]
@@ -626,11 +633,11 @@
       "name": "Sentipods",
       "kind": "app",
       "cluster": "Grubber",
-      "status": "gap",
-      "lastModified": "2026-08-02",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-03",
       "repo": "~/sentipods",
       "bundleId": "com.sentipods.app",
-      "release": "Local 0.1.0 (14) after TestFlight upload of the new icon; ASC now lists SentiPods, but the mapping is not yet verified",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION; local 1.0 (15), with TestFlight build 14 uploaded",
       "description": "iOS and Mac Catalyst client for the grubber podcast-transcription service, with episode search and transcript navigation.",
       "dependencies": [
         "grubber"
@@ -643,8 +650,8 @@
       "notes": [
         "Uses grubber's /api/v1 surface with an X-Client-Key.",
         "News and trend features depend on the grubber M3 roadmap.",
-        "Observed build 14 after TestFlight upload of the new icon on August 3, 2026.",
-        "SentiPods is now visible in ASC; match its ASC record to this repository before treating the mapping as confirmed.",
+        "Observed local build 15 after the project was aligned to the SentiPods ASC 1.0 record; TestFlight build 14 is uploaded with the new icon.",
+        "ASC app ID was not surfaced in the current local scan.",
         "The client loads /shows first and treats /status metadata as best effort because /status was observed hanging."
       ]
     },
@@ -1140,9 +1147,9 @@
     {
       "repo": "~/sentipods",
       "branch": "main",
-      "last2026Commit": "2026-08-02",
+      "last2026Commit": "2026-08-03",
       "kind": "app",
-      "role": "New iOS and Mac Catalyst client for the live grubber service; local 0.1.0 (14), SentiPods ASC mapping not yet verified"
+      "role": "iOS and Mac Catalyst client for the live grubber service; ASC-mapped SentiPods, local 1.0 (15)"
     },
     {
       "repo": "~/workinon",
