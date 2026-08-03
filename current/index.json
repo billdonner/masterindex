@@ -326,7 +326,7 @@
       "lastModified": "2026-07-31",
       "repo": "~/PickledBalls",
       "bundleId": "com.pickledballs.app",
-      "release": "TestFlight 1.0 (354) live; ASC iOS 1.0 PREPARE_FOR_SUBMISSION with metadata complete (Sports category, Free in 175 territories, copyright, privacy/support URLs). Remaining before submit: App Privacy questionnaire (ASC web UI). Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
+      "release": "TestFlight 1.0 (354) live; ASC iOS 1.0 PREPARE_FOR_SUBMISSION with metadata complete (Sports category, Free in 175 territories, copyright, privacy/support URLs). GATE: do NOT submit for review until app ownership is transferred to 1041Soft; App Privacy questionnaire also remains. Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
       "description": "Pickleball, tennis, and ping pong session-management app by 1041Soft, shipping in organizer-focus mode (free Organizer tier; Organizer Pro planned) with a documented path toward PickleNagz.",
       "dependencies": [
         "CourtScheduler",
@@ -346,7 +346,8 @@
         "Pulls live data from nagzerver and clubsync.",
         "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
         "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
-        "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200)."
+        "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
+        "Submission gate (2026-08-03): transfer ASC app ownership to 1041Soft first, then submit 1.0 (354) for review. Everything else is ready."
       ]
     },
     {

@@ -51,6 +51,24 @@
           "Updated link fields",
           "Updated release notes in the inventory"
         ]
+      },
+      {
+        "taskId": "pickledballs-submit-after-1041soft-transfer",
+        "name": "Submit PickledBalls 1.0 for review after 1041Soft ownership transfer",
+        "status": "blocked",
+        "cadence": {
+          "kind": "one-shot",
+          "value": "on-unblock"
+        },
+        "purpose": "PickledBalls 1.0 (354) is fully submission-ready (metadata, price, availability, screenshots, URLs). Hold submission until ASC app ownership is transferred to 1041Soft, then complete the App Privacy questionnaire check and submit for review.",
+        "blockedOn": "ASC ownership transfer to 1041Soft (human step)",
+        "expectedInputs": [
+          "ASC app 6762310890 under 1041Soft"
+        ],
+        "expectedOutputs": [
+          "reviewSubmission created for iOS 1.0 (354)"
+        ],
+        "owner": "Bill + Claude (qross sessions)"
       }
     ],
     "qross-app": [
