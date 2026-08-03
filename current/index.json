@@ -11,14 +11,14 @@
     "notes": [
       "Reviewed local git repositories with 2026 activity.",
       "Treated repositories as read-only during the scan.",
-        "Ignored older inactive repos unless directly connected to a 2026-active project.",
-        "App Store Connect data was retained from the August 2 live query and not re-queried during this refresh."
+      "Ignored older inactive repos unless directly connected to a 2026-active project.",
+      "App Store Connect data was retained from the August 2 live query and not re-queried during this refresh."
     ]
   },
   "summary": {
-    "ascApps": 23,
+    "ascApps": 19,
     "mappedAscApps": 12,
-    "unmatchedAscApps": 10,
+    "unmatchedAscApps": 7,
     "activeRepos": 38,
     "clusters": 11,
     "liveServices": 5
@@ -123,16 +123,13 @@
       }
     ],
     "unmatched": [
-      "screenkr2",
-      "com.screenkr.app",
-      "Screenker",
+      "MastPex IOS",
+      "MastPex Mac",
       "PickleFamilia",
-      "amenbeats",
-      "Alities",
+      "Screenker",
+      "SentiPods",
       "Zerver Monitor",
-      "123 Words",
-      "PickleBrains",
-      "Quackman"
+      "amenbeats"
     ]
   },
   "clusters": [
@@ -532,11 +529,11 @@
       "name": "picklefortunes",
       "kind": "app",
       "cluster": "picklefortunes",
-      "status": "retired",
+      "status": "local-only",
       "lastModified": "2026-08-02",
       "repo": "~/picklefortunes",
       "bundleId": "com.picklefortunes.app",
-      "release": "RETIRED — ASC record deleted 2026-08-02; repo bundled to ~/archive/bundles/picklefortunes-20260802.bundle (GitHub remote kept)",
+      "release": "Removed from ASC (2026-08-03 refresh); repo remains active locally.",
       "description": "Standalone app plus reusable kit, with offline core behavior and optional backend paths.",
       "dependencies": [
         "PickleFortunesKit",
@@ -548,7 +545,8 @@
       },
       "notes": [
         "Its shared kit is reused by PickledBalls.",
-        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path."
+        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
+        "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2."
       ]
     },
     {
@@ -1180,23 +1178,11 @@
       "role": "New local-only iPad experiment"
     }
   ],
-  "gaps": {
-    "confirmed": [
-      "No active local repo was found for 10 ASC apps (2026-08-02 refresh; Mallinbook resolved to ~/mallinbook — the 2026-08-01 rename from bookmaker-app hid it from the original scan).",
-      "No local iOS companion repo was found for ASC app Zerver Monitor; only the backend/service repo was present.",
-      "grubber-ios has an active local client repo but no matching current ASC app was found.",
-      "SharedSpaceLab is local-only and not in ASC.",
-      "As of Sunday, August 2, 2026, only one clearly public App Store page was verified in web results during this pass: 100 Burfords.",
-      "App Store Connect was not re-queried during this refresh; current ASC data remains from the August 2 live query and Sentipods therefore remains an unverified mapping gap."
-    ],
-    "ambiguities": [
-      "card-engine and card-server overlap conceptually.",
-      "PickledBalls docs describe a rebrand path toward PickleNagz, but the live ASC app is still PickledBalls.",
-      "Flasherz Kids local docs and project.yml disagree on some build text; project.yml was treated as more current.",
-      "summary.activeRepos said 34 while repos[] held 35 rows before the 2026-08-02 Mallinbook refresh; activeRepos is now recounted directly from repos[].",
-      "grubber /status was observed hanging during a Sentipods live smoke test, while /shows remained responsive; the server-side cause is not yet confirmed."
-    ]
-  },
+  "gaps": [
+    "confirmed",
+    "ambiguities",
+    "2026-08-03 ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, screenkr2/com.screenkr.app removed from ASC; MastPex IOS, MastPex Mac, SentiPods appeared and are not yet mapped to local repos."
+  ],
   "taskRegistry": {
     "path": "tasks/index.json",
     "stableTargetKey": "entities[].id",

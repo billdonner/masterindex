@@ -11,9 +11,9 @@ As of Monday, August 3, 2026.
 
 ## Executive Summary
 
-- App Store Connect currently shows 23 apps.
+- App Store Connect currently shows 19 apps (2026-08-03 refresh; PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup).
 - 12 ASC apps map cleanly to currently active local repositories.
-- 10 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
+- 7 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
@@ -43,14 +43,15 @@ As of Monday, August 3, 2026.
 | workin On | `com.workinon.app` | `6762529338` | `~/workinon` | `0.9.1 (52)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | `1.0.0 (3)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | `0.1.0 (4)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| picklefortunes | `com.picklefortunes.app` | `6775271321` | `~/picklefortunes` | `1.0.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
+| 123 Words | `com.123words.app` | `6766975041` | `~/123words` | `1.11 (40)` | `IOS 1.11 READY_FOR_SALE; 1.12 draft` |
 | Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | `1.0 (14)` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 13 on both platforms) |
 
 ### Confirmed gaps
 
-- 10 ASC apps did not map cleanly to an active local repository (2026-08-02 refresh; Mallinbook resolved to `~/mallinbook`).
+- 7 ASC apps did not map cleanly to an active local repository (2026-08-03 refresh): MastPex IOS, MastPex Mac, PickleFamilia, Screenker, SentiPods, Zerver Monitor, amenbeats.
 - `grubber-ios` is active locally but did not match a current ASC app.
-- `Sentipods` is a newly observed local iOS and Mac Catalyst client for `grubber` (`com.sentipods.app`); it has no verified ASC mapping in this refresh.
+- `SentiPods` now appears in ASC (2026-08-03); its local repo is the grubber client (`com.sentipods.app`) — mapping not yet verified, likely resolvable next refresh. `MastPex IOS` / `MastPex Mac` are also new in ASC with no local repo identified yet.
+- `picklefortunes` repo remains active locally but its ASC listing was deleted (2026-08 cleanup).
 - `Zerver Monitor` exists in ASC but only the backend/service repo was present in the local scan.
 - `SharedSpaceLab` is local-only and not in ASC.
 
