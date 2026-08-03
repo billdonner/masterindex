@@ -584,8 +584,8 @@
       "lastModified": "2026-08-02",
       "repo": "~/grubber",
       "bundleId": null,
-      "release": "Live read service at bd-grubber.fly.dev; M2 analysis pipeline now adds embeddings, clustering, and trending reads",
-      "description": "Transcript-oriented read service exposing HTTP, MCP, and analysis surfaces for podcast-versus-news trends.",
+      "release": "Live read service at bd-grubber.fly.dev; M3 analysis now adds LLM topic labels, claim comparison, and daily briefs behind a $10 daily cap",
+      "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
       "dependencies": [
         "grubber-ios"
       ],
@@ -596,7 +596,8 @@
       },
       "notes": [
         "Public API and MCP are treated as the stable contract.",
-        "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}."
+        "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
+        "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}."
       ]
     },
     {
@@ -892,7 +893,7 @@
       "consumers": [
         "grubber clients"
       ],
-      "note": "Transcript read service with HTTP, MCP, and M2 trend-analysis surfaces; /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive."
+      "note": "Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive."
     },
     {
       "name": "bd-server-monitor.fly.dev",
@@ -1022,7 +1023,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-02",
       "kind": "backend/service",
-      "role": "Live transcript and M2 trend-analysis service"
+      "role": "Live transcript and M3 trend-analysis service with budget-gated LLM enrichment"
     },
     {
       "repo": "~/grubber-ios",
