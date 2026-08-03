@@ -105,14 +105,6 @@
         "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
       },
       {
-        "name": "picklefortunes",
-        "bundleId": "com.picklefortunes.app",
-        "appId": "6775271321",
-        "repo": "~/picklefortunes",
-        "localVersion": "1.0.0 (10)",
-        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-      },
-      {
         "name": "Mallinbook",
         "bundleId": "com.mallinbook.app",
         "appId": "6785245339",
@@ -539,11 +531,11 @@
       "name": "picklefortunes",
       "kind": "app",
       "cluster": "picklefortunes",
-      "status": "asc-mapped",
-      "lastModified": "2026-06-16",
+      "status": "retired",
+      "lastModified": "2026-08-02",
       "repo": "~/picklefortunes",
       "bundleId": "com.picklefortunes.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "release": "RETIRED — ASC record deleted 2026-08-02; repo bundled to ~/archive/bundles/picklefortunes-20260802.bundle (GitHub remote kept)",
       "description": "Standalone app plus reusable kit, with offline core behavior and optional backend paths.",
       "dependencies": [
         "PickleFortunesKit",
@@ -554,7 +546,8 @@
         "appStore": null
       },
       "notes": [
-        "Its shared kit is reused by PickledBalls."
+        "Its shared kit is reused by PickledBalls.",
+        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path."
       ]
     },
     {
