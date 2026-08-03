@@ -291,7 +291,7 @@
       "kind": "app",
       "cluster": "Mallinbook",
       "status": "asc-mapped",
-      "lastModified": "2026-08-01",
+      "lastModified": "2026-08-03",
       "repo": "~/mallinbook",
       "bundleId": "com.mallinbook.app",
       "release": "ASC mapped, iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 13 VALID on both platforms (2026-08-01)",
@@ -306,7 +306,8 @@
         "Renamed 2026-08-01 from bookmaker-app: repo/target/module and the document extension (.bookmaker -> .mallinbook); ASC identity unchanged (app id 6785245339), so earlier scans missed the repo.",
         "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
         "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
-        "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households)."
+        "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
+        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code."
       ]
     },
     {
