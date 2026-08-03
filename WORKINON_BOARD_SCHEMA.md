@@ -52,6 +52,7 @@ Suggested fields:
   "title": "PickledBalls missing public App Store page",
   "body": "Website exists, but no verified public App Store page is recorded yet.",
   "priority": "medium",
+  "lane": "Needs Attention",
   "tags": ["links", "app-store", "pickledballs"],
   "deepLink": "site/index.html#pickledballs-app"
 }
@@ -78,6 +79,7 @@ Suggested fields:
   "title": "nagzerver health check due",
   "body": "Shared backend health check is due in this six-hour cycle.",
   "priority": "high",
+  "lane": "Due Soon",
   "tags": ["backend", "health", "due"],
   "deepLink": "site/index.html#nagzerver-backend"
 }
@@ -102,6 +104,8 @@ Suggested fields:
   "title": "grubber changed recently",
   "body": "Last modified July 31, 2026.",
   "priority": "low",
+  "lane": "Recent Activity",
+  "sortDate": "2026-07-31T09:12:00-05:00",
   "tags": ["recent", "grubber"],
   "deepLink": "site/index.html#grubber-service"
 }
@@ -126,6 +130,7 @@ Suggested fields:
   "title": "Public link gaps",
   "body": "Several entries still lack a verified website or App Store page.",
   "priority": "low",
+  "lane": "Summaries",
   "tags": ["summary", "links"]
 }
 ```
@@ -134,17 +139,16 @@ Suggested fields:
 
 If `workin On` supports grouping, use these lanes:
 
-1. `Needs Attention`
+1. `Recent Activity`
 2. `Due Soon`
-3. `Recently Changed`
+3. `Needs Attention`
 4. `Summaries`
 
 If not, interleave by priority with this sort order:
 
-1. high priority attention
+1. recent changes, newest first
 2. due-soon tasks
-3. medium priority attention
-4. recent changes
+3. attention cards
 5. summaries
 
 ## Priority rules
@@ -188,6 +192,8 @@ Start with only:
 - due tasks
 - recent changes in the last 7 days
 - backend failures
+
+Recent changes should lead the feed so the app tab and widget foreground the repos a user touched most recently.
 
 That is enough to make `workin On` genuinely useful without overwhelming it.
 

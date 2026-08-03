@@ -21,6 +21,15 @@ def parse_date_value(value: str | None) -> float:
         return float("-inf")
 
 
+def parse_datetime(value: str | None) -> datetime | None:
+    if not value or value == "no commits yet":
+        return None
+    try:
+        return datetime.fromisoformat(value)
+    except ValueError:
+        return None
+
+
 def days_since(value: str | None, now_dt: datetime) -> int | None:
     ts = parse_date_value(value)
     if not math.isfinite(ts):
@@ -55,7 +64,8 @@ def build_attention_items(index_data: dict) -> list[dict]:
                     "entityId": entity["id"],
                     "title": f"{entity['name']} missing public links",
                     "body": "No verified website or public App Store page is recorded yet.",
-                    "priority": "medium" if is_app else "low",
+                    "priority": "low",
+                    "lane": "Needs Attention",
                     "tags": ["links", "public", entity["cluster"].lower()],
                     "deepLink": deep_link(entity["id"]),
                     "statusKey": board_key("attention", f"{entity['id']}.no-public-links"),
@@ -76,7 +86,8 @@ def build_attention_items(index_data: dict) -> list[dict]:
                     "entityId": entity["id"],
                     "title": f"{entity['name']} missing public App Store page",
                     "body": body,
-                    "priority": "medium",
+                    "priority": "low",
+                    "lane": "Needs Attention",
                     "tags": ["links", "app-store", entity["cluster"].lower()],
                     "deepLink": deep_link(entity["id"]),
                     "statusKey": board_key("attention", f"{entity['id']}.missing-appstore"),
@@ -117,6 +128,7 @@ def build_due_task_items(index_data: dict, task_data: dict) -> list[dict]:
                     "title": f"{task['name']} due",
                     "body": cadence_summary(task.get("cadence")),
                     "priority": "high" if "INTERVAL=6" in cadence_value else "medium",
+                    "lane": "Due Soon",
                     "tags": ["task", entity["kind"], entity["cluster"].lower()],
                     "deepLink": deep_link(entity_id),
                     "statusKey": board_key("due", task["taskId"]),
@@ -139,6 +151,8 @@ def build_recent_change_items(index_data: dict, now_dt: datetime) -> list[dict]:
                 "title": f"{entity['name']} changed recently",
                 "body": f"Last modified {entity['lastModified']}.",
                 "priority": "medium" if age_days <= 2 else "low",
+                "lane": "Recent Activity",
+                "sortDate": entity["lastModified"],
                 "tags": ["recent", entity["kind"], entity["cluster"].lower()],
                 "deepLink": deep_link(entity["id"]),
                 "statusKey": board_key("recent", entity["id"]),
@@ -158,6 +172,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "Public link gaps",
             "body": f"{missing_links_count} entries still need verified public links or App Store pages.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "links"],
             "statusKey": board_key("summary", "public-link-gaps"),
         },
@@ -167,6 +182,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "Tasks due soon",
             "body": f"{due_task_count} recurring entry tasks are currently in the operational queue.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "tasks"],
             "statusKey": board_key("summary", "due-tasks"),
         },
@@ -176,6 +192,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "Recent changes",
             "body": f"{recent_count} entries were modified in the last 7 days.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "recent"],
             "statusKey": board_key("summary", "recent-changes"),
         },
@@ -185,6 +202,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "ASC coverage gaps",
             "body": f"{index_data['summary']['unmatchedAscApps']} App Store Connect apps still do not map cleanly to an active local repository.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "asc"],
             "statusKey": board_key("summary", "asc-gaps"),
         },
@@ -196,13 +214,24 @@ def priority_score(priority: str) -> int:
 
 
 def type_score(item_type: str) -> int:
-    return {"attention": 0, "due-task": 1, "recent-change": 2}.get(item_type, 3)
+    return {"recent-change": 0, "due-task": 1, "attention": 2, "summary": 3}.get(item_type, 4)
 
 
 def sort_items(items: list[dict]) -> list[dict]:
+    def recency_score(item: dict) -> float:
+        if item["type"] != "recent-change":
+            return float("inf")
+        dt = parse_datetime(item.get("sortDate"))
+        return -dt.timestamp() if dt else float("inf")
+
     return sorted(
         items,
-        key=lambda item: (priority_score(item["priority"]), type_score(item["type"]), item["title"]),
+        key=lambda item: (
+            type_score(item["type"]),
+            recency_score(item),
+            priority_score(item["priority"]),
+            item["title"],
+        ),
     )
 
 
