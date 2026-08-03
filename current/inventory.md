@@ -1,12 +1,12 @@
 # MasterIndex Inventory
 
-As of Sunday, August 2, 2026.
+As of Monday, August 3, 2026.
 
 ## Scope
 
 - Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
 - Treated all repositories as read-only.
-- Queried App Store Connect live, using the existing local API key, to inventory current apps visible in ASC on August 2, 2026.
+- Retained the App Store Connect inventory from the live query on August 2, 2026; ASC was not re-queried during this refresh.
 - Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
 
 ## Executive Summary
@@ -68,7 +68,8 @@ As of Sunday, August 2, 2026.
 - `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
 - `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
 - `~/sentipods` completed a live smoke test and is now at local version `0.1.0 (8)`; its ASC mapping remains unverified in this refresh.
-- `~/sentipods` received a UI and resilience pass and is now at local version `0.1.0 (10)`. During its live smoke test, `grubber`'s `/shows` endpoint responded while `/status` hung; the client safely loads the former first and treats status metadata as best effort.
+- `~/sentipods` received a UI and resilience pass and is now at local version `0.1.0 (12)` following its TestFlight upload. During its live smoke test, `grubber`'s `/shows` endpoint responded while `/status` hung; the client safely loads the former first and treats status metadata as best effort.
+- `~/grubber` completed M2 of its pods-versus-news analysis pipeline: idempotent embeddings, topic clustering, daily rollups, and two new read endpoints for trending topics and topic detail.
 - Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
 
 ## Public Links
@@ -94,5 +95,5 @@ Rule going forward: if any entity has a verified external public link, it should
 - `card-engine` and `card-server` overlap conceptually.
 - `PickledBalls` is still the live ASC name even though docs describe a rebrand path toward PickleNagz.
 - `Flasherz Kids` docs and `project.yml` disagree on some build text; `project.yml` was treated as more current.
-- App Store Connect was not re-queried during this refresh, so Sentipods remains an unverified ASC mapping gap.
+- App Store Connect was not re-queried during this refresh; the inventory remains from the August 2 live query, so Sentipods remains an unverified ASC mapping gap.
 - The server-side cause of the observed `grubber /status` hang is not yet confirmed.

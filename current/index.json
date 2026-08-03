@@ -1,17 +1,18 @@
 {
-  "generatedAt": "2026-08-02T12:00:00-05:00",
+  "generatedAt": "2026-08-03T00:15:00-05:00",
   "scope": {
-    "dateLabel": "Sunday, August 2, 2026",
+    "dateLabel": "Monday, August 3, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
       "~/Documents/Codex/Experiments"
     ],
-    "appStoreConnectAccess": "available",
+    "appStoreConnectAccess": "not-requeried-this-refresh",
     "notes": [
       "Reviewed local git repositories with 2026 activity.",
       "Treated repositories as read-only during the scan.",
-      "Ignored older inactive repos unless directly connected to a 2026-active project."
+        "Ignored older inactive repos unless directly connected to a 2026-active project.",
+        "App Store Connect data was retained from the August 2 live query and not re-queried during this refresh."
     ]
   },
   "summary": {
@@ -580,11 +581,11 @@
       "kind": "service",
       "cluster": "Grubber",
       "status": "live",
-      "lastModified": "2026-08-01",
+      "lastModified": "2026-08-02",
       "repo": "~/grubber",
       "bundleId": null,
-      "release": "Live read service at bd-grubber.fly.dev",
-      "description": "Transcript-oriented read service exposing both HTTP and MCP surfaces.",
+      "release": "Live read service at bd-grubber.fly.dev; M2 analysis pipeline now adds embeddings, clustering, and trending reads",
+      "description": "Transcript-oriented read service exposing HTTP, MCP, and analysis surfaces for podcast-versus-news trends.",
       "dependencies": [
         "grubber-ios"
       ],
@@ -594,7 +595,8 @@
         "appStore": null
       },
       "notes": [
-        "Public API and MCP are treated as the stable contract."
+        "Public API and MCP are treated as the stable contract.",
+        "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}."
       ]
     },
     {
@@ -628,7 +630,7 @@
       "lastModified": "2026-08-02",
       "repo": "~/sentipods",
       "bundleId": "com.sentipods.app",
-      "release": "Local 0.1.0 (10) after UI polish and a live smoke test; ASC mapping not yet verified in this refresh",
+      "release": "Local 0.1.0 (12) after UI polish, live smoke testing, and TestFlight upload; ASC mapping not yet verified in this refresh",
       "description": "iOS and Mac Catalyst client for the grubber podcast-transcription service, with episode search and transcript navigation.",
       "dependencies": [
         "grubber"
@@ -641,7 +643,7 @@
       "notes": [
         "Uses grubber's /api/v1 surface with an X-Client-Key.",
         "News and trend features depend on the grubber M3 roadmap.",
-        "Observed build 10 after UI polish and a live smoke test on August 2, 2026.",
+        "Observed build 12 after TestFlight upload on August 2, 2026.",
         "The client loads /shows first and treats /status metadata as best effort because /status was observed hanging."
       ]
     },
@@ -890,7 +892,7 @@
       "consumers": [
         "grubber clients"
       ],
-      "note": "Transcript read service with HTTP and MCP surfaces; /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive."
+      "note": "Transcript read service with HTTP, MCP, and M2 trend-analysis surfaces; /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive."
     },
     {
       "name": "bd-server-monitor.fly.dev",
@@ -1018,9 +1020,9 @@
     {
       "repo": "~/grubber",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
+      "last2026Commit": "2026-08-02",
       "kind": "backend/service",
-      "role": "Live transcript service"
+      "role": "Live transcript and M2 trend-analysis service"
     },
     {
       "repo": "~/grubber-ios",
@@ -1139,7 +1141,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-02",
       "kind": "app",
-      "role": "New iOS and Mac Catalyst client for the live grubber service; local 0.1.0 (10), ASC mapping not yet verified"
+      "role": "New iOS and Mac Catalyst client for the live grubber service; local 0.1.0 (12), ASC mapping not yet verified"
     },
     {
       "repo": "~/workinon",
@@ -1184,7 +1186,7 @@
       "grubber-ios has an active local client repo but no matching current ASC app was found.",
       "SharedSpaceLab is local-only and not in ASC.",
       "As of Sunday, August 2, 2026, only one clearly public App Store page was verified in web results during this pass: 100 Burfords.",
-      "App Store Connect was not re-queried during this refresh; Sentipods therefore remains an unverified ASC mapping gap."
+      "App Store Connect was not re-queried during this refresh; current ASC data remains from the August 2 live query and Sentipods therefore remains an unverified mapping gap."
     ],
     "ambiguities": [
       "card-engine and card-server overlap conceptually.",
