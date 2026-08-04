@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T00:15:00-05:00",
+  "generatedAt": "2026-08-03T19:48:00-05:00",
   "scope": {
     "dateLabel": "Monday, August 3, 2026",
     "defaultSort": "most-recently-modified",
@@ -19,8 +19,8 @@
     "ascApps": 19,
     "mappedAscApps": 13,
     "unmatchedAscApps": 6,
-    "activeRepos": 38,
-    "clusters": 12,
+    "activeRepos": 39,
+    "clusters": 13,
     "liveServices": 5
   },
   "ascApps": {
@@ -298,6 +298,21 @@
       ],
       "watchpoints": [
         "Monitors nagzerver, clubsync, and card-server across clusters"
+      ]
+    },
+    {
+      "name": "adspill",
+      "maturity": "research and lab; strategic scoping",
+      "summary": "Bill + Jim exploration of selling excess advertising capacity, split into an auction/exchange modeling sandbox (Project 1, Bill) and a self-serve create-and-sell layer for long-tail local video ads (Project 2, Jim).",
+      "highlights": [
+        "adspill sim + monitor (Project 1)",
+        "FloSports/NWL diligence",
+        "two-project direction split"
+      ],
+      "watchpoints": [
+        "Gated on the NWL in-stream ad-rights question after Flo's exclusive deal",
+        "Project 2 still at framing stage, no build",
+        "Exchange layer largely exists in the wild - sandbox, not product"
       ]
     }
   ],
@@ -872,6 +887,31 @@
       "notes": [
         "Was missing from the index entirely; added 2026-08-02 during the Screenker gallery sweep."
       ]
+    },
+    {
+      "id": "adspill-sim",
+      "name": "adspill",
+      "kind": "package",
+      "cluster": "adspill",
+      "status": "lab",
+      "lastModified": "2026-07-29",
+      "repo": "~/adspill",
+      "bundleId": null,
+      "release": null,
+      "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": null,
+        "github": "https://github.com/billdonner/adspill"
+      },
+      "notes": [
+        "Symmetric full-admin access for @billdonner and @jrforster; coordination via git + GitHub issues/PRs, human nudges via send-jim / send-bill CLIs (Gmail/iCloud SMTP, no drafts).",
+        "Project 1 (Bill): /sim - pure clear() auction core (8 unit tests green), scale harness (~20k avails in ~12s), monitor.html live board. stdlib-only, no store/network; storage + wire protocols deliberately deferred. Bill now treats this as a personal sandbox on v0 defaults.",
+        "Project 2 (Jim): self-serve create-and-sell for long-tail local video ads; framing only, no build yet.",
+        "FloSports/NWL diligence (docs/flosports-diligence.md) reframed the effort: empty ad slots are a demand + rights + sales-cost problem, not a plumbing/exchange one (Flo is already fully programmatic). Pivotal gating question, answerable only by a team: do Northwoods League teams retain in-stream ad rights after Flo's exclusive global deal?",
+        "Bill has stepped back to an observer role on Project 2, tracking progress for his own edification."
+      ]
     }
   ],
   "services": [
@@ -1197,6 +1237,13 @@
       "last2026Commit": "no commits yet",
       "kind": "app experiment",
       "role": "New local-only iPad experiment"
+    },
+    {
+      "repo": "~/adspill",
+      "branch": "main",
+      "last2026Commit": "2026-07-29",
+      "kind": "package",
+      "role": "Bill+Jim ad-capacity experiments: auction sim/monitor (Project 1) + create-and-sell framing (Project 2)"
     }
   ],
   "gaps": [
