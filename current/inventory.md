@@ -40,7 +40,7 @@ As of Monday, August 3, 2026.
 | Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | `1.1 (47)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | `1.4.0 (359)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| KinFlash | `com.billdonner.kinflash` | `6762008872` | `~/kinflash` | `1.0.0 (62)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
+| KinFlash | `com.billdonner.kinflash` | `6762008872` | `~/kinflash` | `1.0.0 (65)` uploaded; TestFlight processing | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | workin On | `com.workinon.app` | `6762529338` | `~/workinon` | `0.9.1 (52)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | `1.0.0 (3)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | `0.1.0 (4)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
