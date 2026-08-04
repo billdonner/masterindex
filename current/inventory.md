@@ -12,9 +12,10 @@ As of Monday, August 3, 2026.
 ## Executive Summary
 
 - App Store Connect currently shows 19 apps (2026-08-03 refresh; PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup).
-- 13 ASC apps map cleanly to currently active local repositories.
-- 6 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
+- 14 ASC apps map cleanly to currently active local repositories.
+- 5 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
+- AmenBeats was resolved on 2026-08-04: its repo is `~/drumbeats` (App Store name ≠ repo name hid it from earlier scans). A Bill + Jim SwiftUI drum-machine app; Jim (`@jrforster`) added as full admin, now a shared build.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
   - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` (SharedAI unlinked from v1.0, returns with the Instructor tier; server-monitor moved to the Infrastructure cluster)
@@ -50,7 +51,7 @@ As of Monday, August 3, 2026.
 
 ### Confirmed gaps
 
-- 6 ASC apps did not map cleanly to an active local repository (2026-08-03 refresh): MastPex IOS, MastPex Mac, PickleFamilia, Screenker, Zerver Monitor, amenbeats.
+- 5 ASC apps did not map cleanly to an active local repository (2026-08-04): MastPex IOS, MastPex Mac, PickleFamilia, Screenker, Zerver Monitor. (`amenbeats` resolved to `~/drumbeats` on 2026-08-04.)
 - `grubber-ios` is active locally but did not match a current ASC app.
 - `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan. `MastPex IOS` / `MastPex Mac` are also new in ASC with no local repo identified yet.
 - `picklefortunes` repo remains active locally but its ASC listing was deleted (2026-08 cleanup).
@@ -74,7 +75,7 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 
 | Collaborator | Role | Repo | Last activity | Awaiting Bill |
 |---|---|---|---|---|
-| Jim Forster (`@jrforster`) | dev collaborator | `billdonner/adspill` | commit 2026-07-30 (project-direction split); 2 open issues | No — ball in Jim's court on issue #2 |
+| Jim Forster (`@jrforster`) | dev collaborator | `billdonner/adspill`, `billdonner/drumbeats` | adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): joined as admin 2026-08-04, feature work starting | No |
 | Carol (`@cuchif`) | dev collaborator | `billdonner/qross` | 3 open PRs from Carol (#172/#173/#174, 07-25/26) | **Yes — 3 PRs need review** |
 | Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio` | 2 open PRs on his product (#3/#4) from `@rachelelise` | **Yes — 2 PRs need review** |
 
