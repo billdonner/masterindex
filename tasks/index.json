@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T00:00:00-05:00",
+  "generatedAt": "2026-08-04T12:00:00-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -30,6 +30,35 @@
         "Refreshed current/inventory.md"
       ],
       "owner": "this Codex task"
+    },
+    {
+      "taskId": "collaborator-activity-watch",
+      "name": "Collaborator activity watch",
+      "status": "active",
+      "cadence": {
+        "kind": "rrule",
+        "value": "FREQ=HOURLY;INTERVAL=6"
+      },
+      "purpose": "Keep a unified snapshot of collaborator (Jim / Carol / Steve) repo activity so Bill can see, from the dashboard, where each stands and what awaits his action — without opening a session per collaborator.",
+      "procedure": [
+        "For each entry in current/index.json `collaborators[]`, for each repo in `.repos`:",
+        "  gh api repos/{repo}/commits?per_page=1  -> lastCommit {sha,date,by,summary}",
+        "  gh pr list --repo {repo} --state open   -> openPRs; count those NOT authored by billdonner as collaboratorOpenPRs",
+        "  gh issue list --repo {repo} --state open -> openIssues",
+        "Set awaitingYourAction = true when the newest open PR (or newest issue/comment) on the repo is authored by someone other than billdonner.",
+        "Write results back into collaborators[].lastActivity and set checkedAt to the run date. GitHub only (no email scan)."
+      ],
+      "expectedInputs": [
+        "current/index.json (collaborators[])"
+      ],
+      "expectedOutputs": [
+        "Refreshed collaborators[].lastActivity in current/index.json"
+      ],
+      "owner": "this Codex task",
+      "notes": [
+        "Declared per Bill's request 2026-08-04; runs on the same executor as masterindex-refresh (option b).",
+        "Steve maps to pfolio as end-user; the repo's code collaborator is @rachelelise — reconcile if Steve should have his own GitHub identity tracked."
+      ]
     }
   ],
   "entryTasks": {

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T19:48:00-05:00",
+  "generatedAt": "2026-08-04T12:00:00-05:00",
   "scope": {
     "dateLabel": "Monday, August 3, 2026",
     "defaultSort": "most-recently-modified",
@@ -21,7 +21,8 @@
     "unmatchedAscApps": 6,
     "activeRepos": 39,
     "clusters": 13,
-    "liveServices": 5
+    "liveServices": 5,
+    "collaborators": 3
   },
   "ascApps": {
     "mapped": [
@@ -914,6 +915,85 @@
         "FloSports/NWL diligence (docs/flosports-diligence.md) reframed the effort: empty ad slots are a demand + rights + sales-cost problem, not a plumbing/exchange one (Flo is already fully programmatic). Pivotal gating question, answerable only by a team: do Northwoods League teams retain in-stream ad rights after Flo's exclusive global deal?",
         "Bill has stepped back to an observer role on Project 2, tracking progress for his own edification."
       ]
+    }
+  ],
+  "collaborators": [
+    {
+      "id": "jim",
+      "name": "Jim Forster",
+      "role": "dev collaborator",
+      "github": "jrforster",
+      "email": "jrforster@mac.com",
+      "sendTool": "send-jim",
+      "cluster": "adspill",
+      "repos": [
+        "billdonner/adspill"
+      ],
+      "lastActivity": {
+        "checkedAt": "2026-08-04",
+        "lastCommit": {
+          "sha": "e846ca0",
+          "date": "2026-07-30",
+          "by": "jrforster",
+          "summary": "Merge pull request #4 (project-direction split)"
+        },
+        "openPRs": 0,
+        "openIssues": 2,
+        "awaitingYourAction": false,
+        "note": "Split adspill into Project 1 (Bill) + Project 2 (Jim); heads-down on Project 2 framing. Ball is in Jim's court on issue #2; no new pushes since 07-30."
+      }
+    },
+    {
+      "id": "carol",
+      "name": "Carol",
+      "role": "dev collaborator",
+      "github": "cuchif",
+      "email": "carcartalk@gmail.com",
+      "sendTool": "send-carol",
+      "cluster": "Qross",
+      "repos": [
+        "billdonner/qross"
+      ],
+      "lastActivity": {
+        "checkedAt": "2026-08-04",
+        "lastCommit": {
+          "sha": "0b20cdc",
+          "date": "2026-08-03",
+          "by": "billdonner",
+          "summary": "Marketing: swap a Screenker original, update project.json"
+        },
+        "openPRs": 4,
+        "collaboratorOpenPRs": 3,
+        "openIssues": 18,
+        "awaitingYourAction": true,
+        "note": "3 open PRs from @cuchif awaiting Bill's review: #172, #173, #174 (opened 07-25/26). PR #175 is Bill's own."
+      }
+    },
+    {
+      "id": "steve",
+      "name": "Steve Gould",
+      "role": "pfolio end-user / stakeholder (not the repo's code collaborator)",
+      "github": null,
+      "email": "stephen.gould@comcast.net",
+      "sendTool": "send-steve",
+      "cluster": "pfolio",
+      "repos": [
+        "billdonner/pfolio"
+      ],
+      "lastActivity": {
+        "checkedAt": "2026-08-04",
+        "lastCommit": {
+          "sha": "b407e24",
+          "date": "2026-07-24",
+          "by": "billdonner",
+          "summary": "Merge pull request #2 (soften sandbox guardrail)"
+        },
+        "openPRs": 2,
+        "collaboratorOpenPRs": 2,
+        "openIssues": 1,
+        "awaitingYourAction": true,
+        "note": "Steve is the pfolio end-user; dev work on his product is done by @rachelelise, whose 2 open PRs (#3, #4, 07-30/08-02) await Bill's review. Steve himself is not a GitHub collaborator on the repo."
+      }
     }
   ],
   "services": [

@@ -66,6 +66,24 @@ As of Monday, August 3, 2026.
 - `bd-server-monitor.fly.dev` from `~/server-monitor`
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
 
+## Collaborators
+
+Unified watch over the people Bill co-works with, refreshed every 6h by the
+`collaborator-activity-watch` task (`tasks/index.json`). Canonical data lives in
+`current/index.json` under `collaborators[]`; this table is presentation only.
+
+| Collaborator | Role | Repo | Last activity | Awaiting Bill |
+|---|---|---|---|---|
+| Jim Forster (`@jrforster`) | dev collaborator | `billdonner/adspill` | commit 2026-07-30 (project-direction split); 2 open issues | No — ball in Jim's court on issue #2 |
+| Carol (`@cuchif`) | dev collaborator | `billdonner/qross` | 3 open PRs from Carol (#172/#173/#174, 07-25/26) | **Yes — 3 PRs need review** |
+| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio` | 2 open PRs on his product (#3/#4) from `@rachelelise` | **Yes — 2 PRs need review** |
+
+- **Reconcile:** Steve is mapped to `pfolio` as its end-user; the repo's code
+  collaborator is `@rachelelise`, not a Steve GitHub identity. Decide whether
+  Steve should be tracked as a stakeholder only (current) or given his own
+  GitHub handle.
+- Scope is GitHub only (commits, PRs, issues); no email inbox is scanned.
+
 ## Changes Observed In This Refresh
 
 - `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
