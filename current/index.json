@@ -20,7 +20,7 @@
     "mappedAscApps": 13,
     "unmatchedAscApps": 6,
     "activeRepos": 38,
-    "clusters": 11,
+    "clusters": 12,
     "liveServices": 5
   },
   "ascApps": {
@@ -148,8 +148,7 @@
         "PickledBalls",
         "nagzerver",
         "clubsync",
-        "CourtScheduler",
-        "server-monitor"
+        "CourtScheduler"
       ],
       "watchpoints": [
         "Rebrand still pending",
@@ -288,6 +287,17 @@
       "watchpoints": [
         "Repo renamed 2026-08-01 (bookmaker-app -> mallinbook); older notes may cite stale paths",
         "No legacy .bookmaker document support by owner decision"
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "maturity": "live internal tooling",
+      "summary": "Portfolio-wide monitoring and ops tooling, not tied to any single product cluster.",
+      "highlights": [
+        "server-monitor"
+      ],
+      "watchpoints": [
+        "Monitors nagzerver, clubsync, and card-server across clusters"
       ]
     }
   ],
@@ -756,7 +766,7 @@
       "id": "server-monitor-service",
       "name": "server-monitor",
       "kind": "service",
-      "cluster": "PickledBalls",
+      "cluster": "Infrastructure",
       "status": "live",
       "lastModified": "2026-08-01",
       "repo": "~/server-monitor",
