@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Monday, August 3, 2026.
+As of Tuesday, August 5, 2026.
 
 ## Scope
 
@@ -100,6 +100,8 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 - `~/sentipods` is now at local version `1.0 (15)`, aligned with its ASC 1.0 PREPARE_FOR_SUBMISSION record. TestFlight build `14`, including its new icon, is uploaded.
 - `~/grubber` completed M2 of its pods-versus-news analysis pipeline: idempotent embeddings, topic clustering, daily rollups, and two new read endpoints for trending topics and topic detail.
 - `~/grubber` completed M3: LLM topic labeling, podcast-versus-news claim comparison, and daily digest generation. The producer-side LLM work has a `$5` soft and `$10` hard spending cap per UTC day; digest reads are available as markdown or JSON.
+- `~/grubber` completed M4 in code (222 tests): APNs device registration, push dispatch, and hourly analysis scheduling. The live Fly service still needs deployment, and the producer role needs a deliberate handoff to avoid duplicate scheduled work.
+- `~/kinflash` expanded the native Mac MCP surface for voice testing: capture, transcription, feedback, run logs, settings, and a smoke-test script. This is active local development; no new ASC release was observed.
 - Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
 - `~/adspill` was added to the index: a two-person (Bill + Jim) ad-capacity experiment. Project 1 is a working Python auction sim plus a real-time monitor UI (8 unit tests green, stdlib-only, no store/network yet); Project 2 is framing-stage only. A FloSports/Northwoods diligence memo reframed the effort as a demand + rights + sales-cost problem rather than an exchange build, gated on whether Northwoods League teams retain in-stream ad rights after FloSports' exclusive global deal. Repo is private, so no public link is recorded.
 

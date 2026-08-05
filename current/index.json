@@ -1,7 +1,7 @@
 {
- "generatedAt": "2026-08-05T13:00:00-05:00",
+ "generatedAt": "2026-08-05T17:55:00-05:00",
  "scope": {
-  "dateLabel": "Monday, August 3, 2026",
+  "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
   "roots": [
    "~/",
@@ -644,10 +644,10 @@
    "kind": "app",
    "cluster": "KinFlash",
    "status": "asc-mapped",
-   "lastModified": "2026-08-03",
+   "lastModified": "2026-08-05",
    "repo": "~/kinflash",
    "bundleId": "com.billdonner.kinflash",
-   "release": "iOS 1.0.0 build 65 uploaded to TestFlight; processing",
+   "release": "Development active: iOS 1.0.0 build 65 previously uploaded to TestFlight; Mac MCP voice-testing interfaces expanded 2026-08-05.",
    "description": "Privacy-first iPhone and iPad family-tree editor with AI interviews, relationship flashcards, GEDCOM exchange, read-only family packages, and native Mac MCP automation.",
    "dependencies": [],
    "links": {
@@ -657,7 +657,8 @@
    "notes": [
     "Bundle identity comes from xcconfig.",
     "Targets iOS 26 and uses the on-device Foundation Models API.",
-    "No verified public website or App Store product page is available yet."
+   "No verified public website or App Store product page is available yet.",
+   "2026-08-05: Mac MCP tooling added voice-capture, transcription, feedback, and run-log interfaces plus a smoke-test script; this is local development work, not a new ASC release."
    ]
   },
   {
@@ -716,10 +717,10 @@
    "kind": "service",
    "cluster": "Grubber",
    "status": "live",
-   "lastModified": "2026-08-02",
+   "lastModified": "2026-08-03",
    "repo": "~/grubber",
    "bundleId": null,
-   "release": "Live read service at bd-grubber.fly.dev; M3 analysis now adds LLM topic labels, claim comparison, and daily briefs behind a $10 daily cap",
+   "release": "Live read service at bd-grubber.fly.dev; M4 APNs device-registration and push-dispatch code is shipped locally but deployment is pending on the machine with Fly and producer credentials.",
    "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
    "dependencies": [
     "grubber-ios"
@@ -732,7 +733,8 @@
    "notes": [
     "Public API and MCP are treated as the stable contract.",
     "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
-    "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}."
+   "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
+   "M4 shipped in code with 222 passing tests on 2026-08-03: APNs device endpoints, push dispatch, and hourly analysis scheduling. Fly deployment and producer handoff remain pending."
    ]
   },
   {
@@ -1435,9 +1437,9 @@
   {
    "repo": "~/grubber",
    "branch": "main",
-   "last2026Commit": "2026-08-02",
+   "last2026Commit": "2026-08-03",
    "kind": "backend/service",
-   "role": "Live transcript and M3 trend-analysis service with budget-gated LLM enrichment"
+   "role": "Live transcript service; M4 APNs/push code shipped locally but deployment and producer handoff remain pending"
   },
   {
    "repo": "~/grubber-ios",
@@ -1449,9 +1451,9 @@
   {
    "repo": "~/kinflash",
    "branch": "main",
-   "last2026Commit": "2026-08-03",
+   "last2026Commit": "2026-08-05",
    "kind": "app",
-   "role": "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight"
+   "role": "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight; Mac MCP voice-testing interfaces expanded 2026-08-05"
   },
   {
    "repo": "~/mallinbook",
