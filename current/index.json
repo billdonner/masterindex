@@ -19,7 +19,7 @@
     "ascApps": 19,
     "mappedAscApps": 14,
     "unmatchedAscApps": 5,
-    "activeRepos": 39,
+    "activeRepos": 40,
     "clusters": 13,
     "liveServices": 5,
     "collaborators": 3
@@ -325,6 +325,33 @@
     }
   ],
   "entities": [
+    {
+      "id": "local-model-lab",
+      "name": "local-model-lab (mlxsrv)",
+      "kind": "service",
+      "cluster": "Qross",
+      "status": "active",
+      "lastModified": "2026-08-04",
+      "repo": "~/mlxsrv/local-model-lab",
+      "bundleId": null,
+      "release": "local tooling only — no ASC presence",
+      "description": "Local MLX model evaluation lab: runs quantized models (Qwen3-4B etc.) on-device via an OpenAI-compatible local server and benchmarks them against the full 177,501-question Qross corpus (no_hint and on_request_hint modes), with an OpenAI GPT-5 runner for paid-API comparison. Produces per-run answer logs, wrong-answer exports, and a leaderboard.",
+      "dependencies": [
+        "qross-app"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null,
+        "github": "https://github.com/billdonner/local-model-lab"
+      },
+      "notes": [
+        "Lives at ~/mlxsrv/local-model-lab (parent dir ~/mlxsrv is not itself a repo); previously missed by scans because it sits one level below ~.",
+        "Full-corpus leaderboard (2026-08-04): local baseline 85.90% no-hint / 88.72% hinted; qwen3-4b-instruct 84.12% no-hint; OpenAI gpt-5 98.34% on a 10k subset (~$0.94).",
+        "Hinted qwen3-4b full-corpus run in progress (resumable via QROSS_RUN_ID checkpointing); ~47% complete as of 2026-08-04.",
+        "STATE.yaml next action: design a bridge/domain-specific benchmark before deleting any model caches.",
+        "Raw answers.jsonl files over 100MB are gitignored (GitHub limit) and kept local-only; summaries and wrong-answer exports are pushed."
+      ]
+    },
     {
       "id": "mallinbook-app",
       "name": "Mallinbook",

@@ -19,7 +19,7 @@ As of Monday, August 3, 2026.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
   - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` (SharedAI unlinked from v1.0, returns with the Instructor tier; server-monitor moved to the Infrastructure cluster)
-  - `Qross` + `card-server` + `qross-data` + `card-studio`
+  - `Qross` + `card-server` + `qross-data` + `card-studio` + `local-model-lab` (MLX eval lab at `~/mlxsrv/local-model-lab` benchmarking local models against the full Qross corpus; added 2026-08-04)
   - `Nagz` + `nagzerver` + `nagz-web` + `nagz-ai` + `workinon` + `workinon-mcp`
   - `Flasherz Kids` + `card-server`
   - `LtWatcher` + `clubsync` + `nagzerver`
