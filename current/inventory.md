@@ -48,6 +48,7 @@ As of Monday, August 3, 2026.
 | 123 Words | `com.123words.app` | `6766975041` | `~/123words` | `1.11 (40)` | `IOS 1.11 READY_FOR_SALE; 1.12 draft` |
 | SentiPods | `com.sentipods.app` | not surfaced in local scan | `~/sentipods` | `1.0 (15)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 14 uploaded) |
 | Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | `1.0 (14)` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 13 on both platforms) |
+| Oliopfolio | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | `1.0.0 (7)`; build 6 uploaded both platforms 2026-08-04 | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (record created 2026-08-04; Mac is the primary platform) |
 
 ### Confirmed gaps
 
@@ -65,6 +66,7 @@ As of Monday, August 3, 2026.
 - `bd-cardzerver.fly.dev` from `~/card-server`
 - `bd-grubber.fly.dev` from `~/grubber`
 - `bd-server-monitor.fly.dev` from `~/server-monitor`
+- `bd-pfolio.fly.dev` from `~/pfolio` (portfolio tracker API; shares bd-postgres)
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
 
 ## Collaborators
@@ -77,7 +79,7 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 |---|---|---|---|---|
 | Jim Forster (`@jrforster`) | dev collaborator | `billdonner/adspill`, `billdonner/drumbeats` | adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): joined as admin 2026-08-04, feature work starting | No |
 | Carol (`@cuchif`) | dev collaborator | `billdonner/qross` | 3 open PRs from Carol (#172/#173/#174, 07-25/26) | **Yes — 3 PRs need review** |
-| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio` | 2 open PRs on his product (#3/#4) from `@rachelelise` | **Yes — 2 PRs need review** |
+| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio`, `billdonner/pfolio-app` | 4 open PRs on his product from `@rachelelise` (pfolio #3/#4, pfolio-app #1/#2) | **Yes — 4 PRs need review** |
 
 - **Reconcile:** Steve is mapped to `pfolio` as its end-user; the repo's code
   collaborator is `@rachelelise`, not a Steve GitHub identity. Decide whether
