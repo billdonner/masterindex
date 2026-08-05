@@ -33,6 +33,7 @@ const surfaces = [
 const statuses = [
   { key: "all", label: "All statuses" },
   { key: "asc-mapped", label: "ASC mapped" },
+  { key: "asc-unmapped", label: "ASC only / unlinked" },
   { key: "ready-for-sale", label: "Ready for sale" },
   { key: "live", label: "Live services" },
   { key: "gap", label: "Coverage gaps" },
@@ -67,6 +68,7 @@ function kindLabel(kind) {
 function statusText(entity) {
   if (entity.status === "ready-for-sale") return "Ready for sale";
   if (entity.status === "asc-mapped") return "ASC mapped";
+  if (entity.status === "asc-unmapped") return "ASC only / unlinked";
   if (entity.status === "live") return "Live";
   if (entity.status === "gap") return "Gap";
   if (entity.status === "lab") return "Lab";

@@ -20,7 +20,7 @@
     "mappedAscApps": 15,
     "unmatchedAscApps": 5,
     "activeRepos": 42,
-    "clusters": 14,
+    "clusters": 15,
     "liveServices": 6,
     "collaborators": 3
   },
@@ -30,7 +30,7 @@
         "name": "PickledBalls",
         "bundleId": "com.pickledballs.app",
         "appId": "6762310890",
-        "repo": "~/pickledballs",
+        "repo": "~/PickledBalls",
         "localVersion": "active 1.x line in docs",
         "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
       },
@@ -346,6 +346,22 @@
         "Single shared backend user until multi-user lands",
         "Stacked PRs from rachelelise awaiting review in both repos"
       ]
+    },
+    {
+      "name": "Unmapped ASC",
+      "maturity": "inventory gap",
+      "summary": "App Store Connect records with no verified local source repository or public product record in the current portfolio scan.",
+      "highlights": [
+        "MastPex IOS",
+        "MastPex Mac",
+        "PickleFamilia",
+        "Screenker",
+        "Zerver Monitor"
+      ],
+      "watchpoints": [
+        "Repository, bundle identifier, and release details still need owner verification.",
+        "No verified public website or App Store product page was found in the current link pass."
+      ]
     }
   ],
   "entities": [
@@ -653,7 +669,7 @@
       "lastModified": "2026-08-02",
       "repo": "~/picklefortunes",
       "bundleId": "com.picklefortunes.app",
-      "release": "Removed from ASC (2026-08-03 refresh); repo remains active locally.",
+      "release": "Retired: removed from ASC in the 2026-08 cleanup; repository archived and its reusable kit retained by PickledBalls.",
       "description": "Standalone app plus reusable kit, with offline core behavior and optional backend paths.",
       "dependencies": [
         "PickleFortunesKit",
@@ -666,7 +682,8 @@
       "notes": [
         "Its shared kit is reused by PickledBalls.",
         "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
-        "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2."
+        "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
+        "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product."
       ]
     },
     {
@@ -1027,7 +1044,7 @@
       "name": "Oliopfolio (pfolio-app)",
       "kind": "app",
       "cluster": "pfolio",
-      "status": "active",
+      "status": "asc-mapped",
       "lastModified": "2026-08-04",
       "repo": "~/pfolio-app",
       "bundleId": "com.pfolio.app",
@@ -1045,6 +1062,96 @@
         "GitHub repo renamed pfolio-ios -> pfolio-app 2026-08-04 (redirects intact).",
         "Paid-upfront $14.99, Finance category, ASC record Oliopfolio (6797993806) created 2026-08-04.",
         "UI tests are data-driven against a seeded local backend (demo portfolio)."
+      ]
+    },
+    {
+      "id": "mastpex-ios-asc-app",
+      "name": "MastPex IOS",
+      "kind": "app",
+      "cluster": "Unmapped ASC",
+      "status": "asc-unmapped",
+      "lastModified": null,
+      "repo": null,
+      "bundleId": null,
+      "release": "Development or release status unverified; visible in App Store Connect.",
+      "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
+      "dependencies": [],
+      "links": { "website": null, "appStore": null },
+      "notes": [
+        "No matching local 2026 repository was found in the latest inventory.",
+        "No verified public website or App Store product page was found in the current link pass."
+      ]
+    },
+    {
+      "id": "mastpex-macos-asc-app",
+      "name": "MastPex Mac",
+      "kind": "app",
+      "cluster": "Unmapped ASC",
+      "status": "asc-unmapped",
+      "lastModified": null,
+      "repo": null,
+      "bundleId": null,
+      "release": "Development or release status unverified; visible in App Store Connect.",
+      "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
+      "dependencies": [],
+      "links": { "website": null, "appStore": null },
+      "notes": [
+        "No matching local 2026 repository was found in the latest inventory.",
+        "No verified public website or App Store product page was found in the current link pass."
+      ]
+    },
+    {
+      "id": "picklefamilia-asc-app",
+      "name": "PickleFamilia",
+      "kind": "app",
+      "cluster": "Unmapped ASC",
+      "status": "asc-unmapped",
+      "lastModified": null,
+      "repo": null,
+      "bundleId": null,
+      "release": "Development or release status unverified; visible in App Store Connect.",
+      "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
+      "dependencies": [],
+      "links": { "website": null, "appStore": null },
+      "notes": [
+        "No matching local 2026 repository was found in the latest inventory.",
+        "No verified public website or App Store product page was found in the current link pass."
+      ]
+    },
+    {
+      "id": "screenker-asc-app",
+      "name": "Screenker",
+      "kind": "app",
+      "cluster": "Unmapped ASC",
+      "status": "asc-unmapped",
+      "lastModified": null,
+      "repo": null,
+      "bundleId": null,
+      "release": "Development or release status unverified; visible in App Store Connect.",
+      "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
+      "dependencies": [],
+      "links": { "website": null, "appStore": null },
+      "notes": [
+        "No matching local 2026 repository was found in the latest inventory.",
+        "No verified public website or App Store product page was found in the current link pass."
+      ]
+    },
+    {
+      "id": "zerver-monitor-asc-app",
+      "name": "Zerver Monitor",
+      "kind": "app",
+      "cluster": "Unmapped ASC",
+      "status": "asc-unmapped",
+      "lastModified": null,
+      "repo": null,
+      "bundleId": null,
+      "release": "Development or release status unverified; visible in App Store Connect.",
+      "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
+      "dependencies": ["server-monitor"],
+      "links": { "website": null, "appStore": null },
+      "notes": [
+        "The live server-monitor service may be related, but no companion app repository or direct mapping is verified.",
+        "No verified public website or App Store product page was found in the current link pass."
       ]
     }
   ],
@@ -1486,7 +1593,8 @@
   "gaps": [
     "confirmed",
     "ambiguities",
-    "2026-08-03 ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, screenkr2/com.screenkr.app removed from ASC; MastPex IOS, MastPex Mac, SentiPods appeared and are not yet mapped to local repos."
+    "2026-08-03 ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, screenkr2/com.screenkr.app removed from ASC; MastPex IOS, MastPex Mac, PickleFamilia, Screenker, and Zerver Monitor remain ASC-only records without verified local repositories.",
+    "App Store Connect credentials were not available for this audit. The recorded 20-app ASC inventory is preserved and each record is represented in MasterIndex."
   ],
   "taskRegistry": {
     "path": "tasks/index.json",

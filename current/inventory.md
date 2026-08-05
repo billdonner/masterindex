@@ -6,13 +6,13 @@ As of Monday, August 3, 2026.
 
 - Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
 - Treated all repositories as read-only.
-- Retained the App Store Connect inventory from the live query on August 2, 2026; ASC was not re-queried during this refresh.
+- Retained the recorded 20-app App Store Connect inventory; no live ASC credentials were available for this audit, so ASC was not re-queried.
 - Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
 
 ## Executive Summary
 
-- App Store Connect currently shows 19 apps (2026-08-03 refresh; PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup).
-- 14 ASC apps map cleanly to currently active local repositories.
+- App Store Connect currently shows 20 apps (2026-08-04 inventory; PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup).
+- 15 ASC apps map cleanly to currently active local repositories.
 - 5 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - AmenBeats was resolved on 2026-08-04: its repo is `~/drumbeats` (App Store name ≠ repo name hid it from earlier scans). A Bill + Jim SwiftUI drum-machine app; Jim (`@jrforster`) added as full admin, now a shared build.
@@ -33,29 +33,31 @@ As of Monday, August 3, 2026.
 
 ### ASC apps mapped to active local repos
 
-| ASC app | Bundle ID | ASC app ID | Repo | Local version/build | ASC state |
-|---|---|---:|---|---|---|
-| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) |
-| Qross | `com.qross.app` | `6759799988` | `~/qross` | `0.2 (313)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)` | `IOS 1.0 READY_FOR_SALE` |
-| Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | `1.1 (47)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | `1.4.0 (359)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| KinFlash | `com.billdonner.kinflash` | `6762008872` | `~/kinflash` | `1.0.0 (65)` uploaded; TestFlight processing | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| workin On | `com.workinon.app` | `6762529338` | `~/workinon` | `0.9.1 (52)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | `1.0.0 (3)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | `0.1.0 (4)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| 123 Words | `com.123words.app` | `6766975041` | `~/123words` | `1.11 (40)` | `IOS 1.11 READY_FOR_SALE; 1.12 draft` |
-| SentiPods | `com.sentipods.app` | not surfaced in local scan | `~/sentipods` | `1.0 (15)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 14 uploaded) |
-| Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | `1.0 (14)` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 13 on both platforms) |
-| Oliopfolio | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | `1.0.0 (7)`; build 6 uploaded both platforms 2026-08-04 | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (record created 2026-08-04; Mac is the primary platform) |
+| ASC app | Bundle ID | ASC app ID | Repo | Local version/build | ASC state | Public link |
+|---|---|---:|---|---|---|---|
+| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) | `https://pickledballs.billdonner.com` |
+| Qross | `com.qross.app` | `6759799988` | `~/qross` | `0.2 (313)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)` | `IOS 1.0 READY_FOR_SALE` | Verified website and App Store link in `index.json` |
+| Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | `1.1 (47)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | `1.4.0 (359)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| KinFlash | `com.billdonner.kinflash` | `6762008872` | `~/kinflash` | `1.0.0 (65)` uploaded; TestFlight processing | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| workin On | `com.workinon.app` | `6762529338` | `~/workinon` | `0.9.1 (52)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | `1.0.0 (3)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://api.famster.app` |
+| LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | `0.1.0 (4)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| 123 Words | `com.123words.app` | `6766975041` | `~/123words` | `1.11 (40)` | `IOS 1.11 READY_FOR_SALE; 1.12 draft` | No verified public link |
+| AmenBeats | `com.billdonner.drumbeats` | `6778510642` | `~/drumbeats` | TestFlight build `5+` | `IOS 1.0 DRAFT` | No verified public link |
+| SentiPods | `com.sentipods.app` | not surfaced in local scan | `~/sentipods` | `1.0 (15)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 14 uploaded) | `https://bd-grubber.fly.dev` |
+| Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | `1.0 (14)` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 13 on both platforms) | No verified public link |
+| Oliopfolio | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | `1.0.0 (7)`; build 6 uploaded both platforms 2026-08-04 | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (record created 2026-08-04; Mac is the primary platform) | No verified public link |
 
 ### Confirmed gaps
 
-- 5 ASC apps did not map cleanly to an active local repository (2026-08-04): MastPex IOS, MastPex Mac, PickleFamilia, Screenker, Zerver Monitor. (`amenbeats` resolved to `~/drumbeats` on 2026-08-04.)
+- The five ASC-only records are now browseable MasterIndex entities: MastPex IOS, MastPex Mac, PickleFamilia, Screenker, and Zerver Monitor. No corresponding active local repository was verified in the 2026-08-04 scan. (`AmenBeats` resolved to `~/drumbeats` on 2026-08-04.)
+- MasterIndex policy: every ASC app has an entity. A verified public website or App Store page is stored in `links`; when neither is verified, the entity's `release` field explicitly records its known release or development status.
 - `grubber-ios` is active locally but did not match a current ASC app.
-- `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan. `MastPex IOS` / `MastPex Mac` are also new in ASC with no local repo identified yet.
-- `picklefortunes` repo remains active locally but its ASC listing was deleted (2026-08 cleanup).
+- `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan.
+- `picklefortunes` is retired: its ASC listing was deleted in the 2026-08 cleanup, its repository is archived, and its reusable kit is retained in PickledBalls.
 - `Zerver Monitor` exists in ASC but only the backend/service repo was present in the local scan.
 - `SharedSpaceLab` is local-only and not in ASC.
 
