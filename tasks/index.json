@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T12:00:00-05:00",
+  "generatedAt": "2026-08-05T14:00:00-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -289,6 +289,26 @@
     ],
     "sharedspace-lab": [],
     "conversationlab-package": [],
-    "coordinationlab-package": []
+    "coordinationlab-package": [],
+    "amenbeats-app": [
+      {
+        "taskId": "amenbeats-link-and-release-check",
+        "name": "AmenBeats link and release check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Watch release posture (local build vs TestFlight vs ASC 1.0 draft) and public links for the AmenBeats / drumbeats app. Repo is private; feature work is landing on main ahead of the next TestFlight build (App Store copy held until a build ships).",
+        "expectedInputs": [
+          "current/index.json",
+          "current/inventory.md"
+        ],
+        "expectedOutputs": [
+          "Updated release notes in the inventory",
+          "Updated link fields if any go public"
+        ]
+      }
+    ]
   }
 }
