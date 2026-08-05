@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T14:00:00-05:00",
+  "generatedAt": "2026-08-05T14:40:00-05:00",
   "scope": {
     "dateLabel": "Tuesday, August 5, 2026",
     "defaultSort": "most-recently-modified",
@@ -436,7 +436,7 @@
       },
       "notes": [
         "App Store name is AmenBeats; repo/module is DrumBeats/drumbeats - the name mismatch hid it from earlier scans (same pattern as Mallinbook/bookmaker). Resolved 2026-08-04.",
-        "Active feature work (Aug 2026): 8 break templates (PR #1); mute/solo, pattern save/load library, song mode (PR #2); humanize, per-voice lay-back, MIDI import (PR #3). 53 tests green on main. Not yet on TestFlight - App Store copy unchanged. Next: UI/feel pass before a build.",
+        "Active feature work (Aug 2026): 8 templates (PR #1); mute/solo, pattern save/load, song mode (PR #2); humanize, per-voice lay-back, MIDI import (PR #3); v1.0 UI/feel pass + a reproducible screenshot pipeline for App Store shots (PR #6). 53 unit tests green. Restyle + iPad-specific layout tracked for v1.1 (issue #5). Not yet on TestFlight - App Store copy held until a build ships.",
         "Bill + Jim app; Jim (@jrforster) added as full admin 2026-08-04. Coordination protocol + Jim bootstrap live in the repo (CLAUDE.md, docs/jim-claude-code-instructions.md).",
         "Standalone - no backend. App Store copy: ~/coworking/AmenBeats-AppStore.md; push via /asc-push AmenBeats.",
         "Repo private. Heads-up: CLAUDE.md has an internal bundle-id inconsistency - com.billdonner.drumbeats in the ASC/registry section vs com.drumbeats.app in the build/ship section - reconcile before the next TestFlight upload."
@@ -1206,7 +1206,7 @@
         "openPRs": 0,
         "openIssues": 2,
         "awaitingYourAction": false,
-        "note": "adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): shared build, active feature work - PRs #1-#3 merged to main (templates; mute/solo, library, song mode; humanize, lay-back, MIDI import). 53 tests green. UI/feel pass next before TestFlight."
+        "note": "adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): shared build, PRs #1-#3 (features) + #6 (UI pass + screenshot pipeline) merged to main; 53 tests green. v1.1 restyle/iPad tracked (issue #5)."
       }
     },
     {
