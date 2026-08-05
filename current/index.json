@@ -1129,25 +1129,31 @@
     "No verified public website or App Store product page was found in the current link pass."
    ]
   },
-  {
-   "id": "screenker-asc-app",
-   "name": "Screenker",
+    {
+      "id": "screenker-asc-app",
+      "name": "Screenker",
    "kind": "app",
    "cluster": "Unmapped ASC",
    "status": "asc-unmapped",
    "lastModified": null,
    "repo": null,
    "bundleId": null,
-   "release": "Development or release status unverified; visible in App Store Connect.",
-   "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
-   "dependencies": [],
+      "release": "Development or release status unverified; visible in App Store Connect. Its shared screenshot-composition workflow is actively used for current App Store galleries.",
+      "description": "ASC record with a verified shared marketing-workflow relationship, but no standalone Screenker source repository, bundle identifier, or public product page identified yet.",
+      "dependencies": [
+        "Qross",
+        "123 Words",
+        "100 Burfords"
+      ],
    "links": {
     "website": null,
     "appStore": null
    },
    "notes": [
-    "No matching local 2026 repository was found in the latest inventory.",
-    "No verified public website or App Store product page was found in the current link pass."
+        "Qross marketing sources identify Screenker as the screenshot-composition workflow used for its current App Store gallery.",
+        "123 Words and 100 Burfords also contain Screenker-generated gallery references.",
+        "No standalone local 2026 Screenker repository was found in the latest inventory.",
+        "No verified public website or App Store product page was found in the current link pass."
    ]
   },
   {

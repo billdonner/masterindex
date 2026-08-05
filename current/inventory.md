@@ -55,6 +55,7 @@ As of Monday, August 3, 2026.
 ### Confirmed gaps
 
 - The five ASC-only records are now browseable MasterIndex entities: MastPex IOS, MastPex Mac, PickleFamilia, Screenker, and Zerver Monitor. No corresponding active local repository was verified in the 2026-08-04 scan. (`AmenBeats` resolved to `~/drumbeats` on 2026-08-04.)
+- Screenker is now wired to Qross, 123 Words, and 100 Burfords as their observed shared App Store screenshot-composition workflow. Its standalone app source, bundle ID, and public product page remain unverified.
 - MasterIndex policy: every ASC app has an entity. A verified public website or App Store page is stored in `links`; when neither is verified, the entity's `release` field explicitly records its known release or development status.
 - `grubber-ios` is active locally but did not match a current ASC app.
 - `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan.
