@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-04T21:00:00-05:00",
+  "generatedAt": "2026-08-05T12:00:00-05:00",
   "scope": {
     "dateLabel": "Monday, August 3, 2026",
     "defaultSort": "most-recently-modified",
@@ -423,10 +423,10 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-04",
+      "lastModified": "2026-08-05",
       "repo": "~/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
-      "release": "ASC app id 6778510642, iOS 1.0 draft; TestFlight build 5+. Bill + Jim app.",
+      "release": "ASC app id 6778510642, iOS 1.0 draft; TestFlight build 5+. Bill + Jim app, under active co-development (features landing on main ahead of the next TestFlight build).",
       "description": "Single-screen SwiftUI iPhone drum machine: a 16-step, 4-voice sequencer for studying and remixing famous breaks (Amen, Funky Drummer, Apache, Think). Drums are synthesized at runtime (no audio files); MIDI out, Standard MIDI clip export, and Ableton Link tempo sync (vendored LinkKit). XcodeGen, iOS 18+, portrait-only.",
       "dependencies": [],
       "links": {
@@ -436,6 +436,7 @@
       },
       "notes": [
         "App Store name is AmenBeats; repo/module is DrumBeats/drumbeats - the name mismatch hid it from earlier scans (same pattern as Mallinbook/bookmaker). Resolved 2026-08-04.",
+        "Active feature work (Aug 2026): 8 break templates (PR #1); mute/solo, pattern save/load library, and song mode (PR #2). 43 tests green on main. Not yet shipped to TestFlight - App Store copy unchanged until a build is cut.",
         "Bill + Jim app; Jim (@jrforster) added as full admin 2026-08-04. Coordination protocol + Jim bootstrap live in the repo (CLAUDE.md, docs/jim-claude-code-instructions.md).",
         "Standalone - no backend. App Store copy: ~/coworking/AmenBeats-AppStore.md; push via /asc-push AmenBeats.",
         "Repo private. Heads-up: CLAUDE.md has an internal bundle-id inconsistency - com.billdonner.drumbeats in the ASC/registry section vs com.drumbeats.app in the build/ship section - reconcile before the next TestFlight upload."
@@ -1185,7 +1186,7 @@
         "billdonner/drumbeats"
       ],
       "lastActivity": {
-        "checkedAt": "2026-08-04",
+        "checkedAt": "2026-08-05",
         "lastCommit": {
           "sha": "e846ca0",
           "date": "2026-07-30",
@@ -1195,7 +1196,7 @@
         "openPRs": 0,
         "openIssues": 2,
         "awaitingYourAction": false,
-        "note": "Split adspill into Project 1 (Bill) + Project 2 (Jim); heads-down on Project 2 framing. Ball is in Jim's court on issue #2; no new pushes since 07-30. Also now co-owns AmenBeats/drumbeats (added as full admin 2026-08-04); features work starting."
+        "note": "adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): shared build, active feature work - PRs #1 (templates) and #2 (mute/solo, library, song mode) merged to main; Jim to pull. 43 tests green."
       }
     },
     {
