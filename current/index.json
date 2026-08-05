@@ -369,16 +369,14 @@
       "id": "local-model-lab",
       "name": "local-model-lab (mlxsrv)",
       "kind": "service",
-      "cluster": "Qross",
+      "cluster": "Standalone",
       "status": "active",
       "lastModified": "2026-08-04",
       "repo": "~/mlxsrv/local-model-lab",
       "bundleId": null,
       "release": "local tooling only — no ASC presence",
       "description": "Local MLX model evaluation lab: runs quantized models (Qwen3-4B etc.) on-device via an OpenAI-compatible local server and benchmarks them against the full 177,501-question Qross corpus (no_hint and on_request_hint modes), with an OpenAI GPT-5 runner for paid-API comparison. Produces per-run answer logs, wrong-answer exports, and a leaderboard.",
-      "dependencies": [
-        "qross-app"
-      ],
+      "dependencies": [],
       "links": {
         "website": null,
         "appStore": null,
@@ -386,6 +384,7 @@
       },
       "notes": [
         "Lives at ~/mlxsrv/local-model-lab (parent dir ~/mlxsrv is not itself a repo); previously missed by scans because it sits one level below ~.",
+        "Standalone lab — not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
         "Full-corpus leaderboard (2026-08-04): local baseline 85.90% no-hint / 88.72% hinted; qwen3-4b-instruct 84.12% no-hint; OpenAI gpt-5 98.34% on a 10k subset (~$0.94).",
         "Hinted qwen3-4b full-corpus run in progress (resumable via QROSS_RUN_ID checkpointing); ~47% complete as of 2026-08-04.",
         "STATE.yaml next action: design a bridge/domain-specific benchmark before deleting any model caches.",
@@ -1076,7 +1075,10 @@
       "release": "Development or release status unverified; visible in App Store Connect.",
       "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
       "dependencies": [],
-      "links": { "website": null, "appStore": null },
+      "links": {
+        "website": null,
+        "appStore": null
+      },
       "notes": [
         "No matching local 2026 repository was found in the latest inventory.",
         "No verified public website or App Store product page was found in the current link pass."
@@ -1094,7 +1096,10 @@
       "release": "Development or release status unverified; visible in App Store Connect.",
       "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
       "dependencies": [],
-      "links": { "website": null, "appStore": null },
+      "links": {
+        "website": null,
+        "appStore": null
+      },
       "notes": [
         "No matching local 2026 repository was found in the latest inventory.",
         "No verified public website or App Store product page was found in the current link pass."
@@ -1112,7 +1117,10 @@
       "release": "Development or release status unverified; visible in App Store Connect.",
       "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
       "dependencies": [],
-      "links": { "website": null, "appStore": null },
+      "links": {
+        "website": null,
+        "appStore": null
+      },
       "notes": [
         "No matching local 2026 repository was found in the latest inventory.",
         "No verified public website or App Store product page was found in the current link pass."
@@ -1130,7 +1138,10 @@
       "release": "Development or release status unverified; visible in App Store Connect.",
       "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
       "dependencies": [],
-      "links": { "website": null, "appStore": null },
+      "links": {
+        "website": null,
+        "appStore": null
+      },
       "notes": [
         "No matching local 2026 repository was found in the latest inventory.",
         "No verified public website or App Store product page was found in the current link pass."
@@ -1147,8 +1158,13 @@
       "bundleId": null,
       "release": "Development or release status unverified; visible in App Store Connect.",
       "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
-      "dependencies": ["server-monitor"],
-      "links": { "website": null, "appStore": null },
+      "dependencies": [
+        "server-monitor"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
       "notes": [
         "The live server-monitor service may be related, but no companion app repository or direct mapping is verified.",
         "No verified public website or App Store product page was found in the current link pass."

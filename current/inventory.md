@@ -19,7 +19,7 @@ As of Monday, August 3, 2026.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
   - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` (SharedAI unlinked from v1.0, returns with the Instructor tier; server-monitor moved to the Infrastructure cluster)
-  - `Qross` + `card-server` + `qross-data` + `card-studio` + `local-model-lab` (MLX eval lab at `~/mlxsrv/local-model-lab` benchmarking local models against the full Qross corpus; added 2026-08-04)
+  - `Qross` + `card-server` + `qross-data` + `card-studio`
   - `Nagz` + `nagzerver` + `nagz-web` + `nagz-ai` + `workinon` + `workinon-mcp`
   - `Flasherz Kids` + `card-server`
   - `LtWatcher` + `clubsync` + `nagzerver`
@@ -28,6 +28,7 @@ As of Monday, August 3, 2026.
   - `CoordinationLab`
   - `SharedSpaceLab`
 - `adspill` (new cluster): a Bill + Jim (`@jrforster`) private research collaboration on selling excess advertising capacity, split into Project 1 (auction/exchange modeling sandbox, Bill's track) and Project 2 (self-serve create-and-sell for long-tail local video ads, Jim's track). Lab/scoping stage.
+- `local-model-lab` (standalone, added 2026-08-04): MLX local-model evaluation lab at `~/mlxsrv/local-model-lab`, benchmarking on-device quantized models (and OpenAI GPT-5 for comparison) against an exported 177k-question Qross corpus snapshot. No dependency on the Qross app/repos — the corpus is just benchmark data.
 
 ## Current ASC Apps
 
