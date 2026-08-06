@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T00:00:00-05:00",
+  "generatedAt": "2026-08-05T00:00:00-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -9,6 +9,23 @@
     "notes": [
       "Use entry ids from current/index.json as task target keys.",
       "Tasks are intentionally stored outside the core inventory file."
+    ]
+  },
+  "entityCoveragePolicy": {
+    "appliesTo": "Every current/index.json entities[].id, including entities with an empty entryTasks array.",
+    "verificationCadence": {
+      "kind": "rrule",
+      "value": "FREQ=HOURLY;INTERVAL=6"
+    },
+    "refreshCadence": {
+      "kind": "rrule",
+      "value": "FREQ=DAILY;INTERVAL=1"
+    },
+    "requiredBehavior": [
+      "On each six-hour cycle, verify the entity's local repository or service and record a gap or ambiguity when it cannot be checked.",
+      "On each daily cycle, refresh observed entity facts in current/index.json first, then current/inventory.md when its narrative is affected.",
+      "Before acting, read current/handoffs/index.json and apply active directives targeted to the entity or to all entities.",
+      "Do not create or alter an entry-specific task merely because the coverage policy ran."
     ]
   },
   "globalTasks": [
@@ -33,6 +50,7 @@
     }
   ],
   "entryTasks": {
+    "mallinbook-app": [],
     "pickledballs-app": [
       {
         "taskId": "pickledballs-link-and-release-check",
@@ -242,6 +260,8 @@
     ],
     "sharedspace-lab": [],
     "conversationlab-package": [],
-    "coordinationlab-package": []
+    "coordinationlab-package": [],
+    "sentipods-app": [],
+    "words123-app": []
   }
 }

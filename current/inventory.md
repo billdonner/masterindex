@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Monday, August 3, 2026.
+As of Wednesday, August 5, 2026.
 
 ## Scope
 
@@ -8,6 +8,7 @@ As of Monday, August 3, 2026.
 - Treated all repositories as read-only.
 - Retained the App Store Connect inventory from the live query on August 2, 2026; ASC was not re-queried during this refresh.
 - Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
+- Operations policy: every entity receives a verification pass every six hours and a full refresh daily through `tasks/index.json`. Agents must read `current/handoffs/index.json` before a cycle so a targeted instruction can change the next cycle's behavior without changing the inventory schema.
 
 ## Executive Summary
 
@@ -26,6 +27,7 @@ As of Monday, August 3, 2026.
   - `ConversationLab`
   - `CoordinationLab`
   - `SharedSpaceLab`
+- MasterIndex instruction coverage audit (2026-08-05): 14 of 38 tracked repositories already have `AGENTS.md`; 24 require the standard injection. `~/bookmaker` and `~/mallinbook` were listed but did not resolve as directories during this audit, so they are recorded as gaps rather than modified.
 
 ## Current ASC Apps
 
@@ -33,7 +35,7 @@ As of Monday, August 3, 2026.
 
 | ASC app | Bundle ID | ASC app ID | Repo | Local version/build | ASC state |
 |---|---|---:|---|---|---|
-| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) |
+| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/pickledballs` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) |
 | Qross | `com.qross.app` | `6759799988` | `~/qross` | `0.2 (313)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)` | `IOS 1.0 READY_FOR_SALE` |
 | Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | `1.1 (47)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T00:15:00-05:00",
+  "generatedAt": "2026-08-05T00:00:00-05:00",
   "scope": {
     "dateLabel": "Monday, August 3, 2026",
     "defaultSort": "most-recently-modified",
@@ -22,6 +22,11 @@
     "activeRepos": 38,
     "clusters": 11,
     "liveServices": 5
+  },
+  "automation": {
+    "taskRegistry": "tasks/index.json",
+    "handoffRegistry": "current/handoffs/index.json",
+    "policy": "Every entity inherits a six-hour verification check and a daily inventory refresh from the task registry. Targeted handoffs may alter the next applicable cycle without changing this inventory schema."
   },
   "ascApps": {
     "mapped": [
@@ -324,7 +329,7 @@
       "cluster": "PickledBalls",
       "status": "asc-mapped",
       "lastModified": "2026-07-31",
-      "repo": "~/PickledBalls",
+    "repo": "~/pickledballs",
       "bundleId": "com.pickledballs.app",
       "release": "TestFlight 1.0 (354) live; ASC iOS 1.0 PREPARE_FOR_SUBMISSION with metadata complete (Sports category, Free in 175 territories, copyright, privacy/support URLs). Remaining before submit: App Privacy questionnaire (ASC web UI). Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
       "description": "Pickleball, tennis, and ping pong session-management app by 1041Soft, shipping in organizer-focus mode (free Organizer tier; Organizer Pro planned) with a documented path toward PickleNagz.",

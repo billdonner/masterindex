@@ -15,10 +15,11 @@ Before doing portfolio-wide, cross-repo, cross-app, or cross-machine work:
    - current/index.json
 2. Read the task registry if recurring or operational work is involved:
    - tasks/index.json
-3. Use entities[].id as the canonical target keys.
-4. Prefer most recently modified entries first unless the task requires another sort.
-5. Treat the web page as presentation only, not source of truth.
-6. Preserve verified external public links in each entry's links object.
+3. Before periodic or operational work, read current/handoffs/index.json. Apply active directives addressed to the target entity id or all-entities; this is the canonical next-cycle behavior channel.
+4. Use entities[].id as the canonical target keys.
+5. Prefer most recently modified entries first unless the task requires another sort.
+6. Treat the web page as presentation only, not source of truth.
+7. Preserve verified external public links in each entry's links object.
 
 When updating MasterIndex:
 
@@ -26,6 +27,7 @@ When updating MasterIndex:
 - update current/inventory.md second only if the narrative needs to change
 - do not silently rewrite tasks/index.json during a normal inventory refresh
 - report gaps, blocked access, and ambiguities explicitly
+- follow the inherited entity coverage policy: verify every entity every six hours and refresh its observed facts daily
 ```
 
 ## What this file is for
