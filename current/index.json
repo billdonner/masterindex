@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-06T14:09:57-05:00",
+ "generatedAt": "2026-08-06T20:24:58-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -839,10 +839,10 @@
    "kind": "service",
    "cluster": "Grubber",
    "status": "live",
-   "lastModified": "2026-08-03",
+   "lastModified": "2026-08-06",
    "repo": "~/grubber",
    "bundleId": null,
-   "release": "Live read service at bd-grubber.fly.dev; M4 APNs device-registration and push-dispatch code is shipped locally but deployment is pending on the machine with Fly and producer credentials.",
+   "release": "Live read service at bd-grubber.fly.dev; August 6 analysis live-update and progress-view code is committed locally. Production deployment of the new work is not yet verified.",
    "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
    "dependencies": [
     "grubber-ios"
@@ -856,7 +856,8 @@
     "Public API and MCP are treated as the stable contract.",
     "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
     "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
-    "M4 shipped in code with 222 passing tests on 2026-08-03: APNs device endpoints, push dispatch, and hourly analysis scheduling. Fly deployment and producer handoff remain pending."
+   "M4 shipped in code with 222 passing tests on 2026-08-03: APNs device endpoints, push dispatch, and hourly analysis scheduling. Fly deployment and producer handoff remain pending.",
+   "August 6: analysis queries and progress APIs, live update behavior, a fast analysis tick, CLI support, and associated tests were added. Deployment remains unverified."
    ]
   },
   {
@@ -1561,9 +1562,9 @@
   {
    "repo": "~/grubber",
    "branch": "main",
-   "last2026Commit": "2026-08-03",
+   "last2026Commit": "2026-08-06",
    "kind": "backend/service",
-   "role": "Live transcript service; M4 APNs/push code shipped locally but deployment and producer handoff remain pending"
+   "role": "Live transcript service; analysis live-update and progress-view code added 2026-08-06, with production deployment unverified"
   },
   {
    "repo": "~/grubber-ios",
