@@ -244,6 +244,12 @@ function renderDetail() {
         ${entity.links?.appStore
           ? `<div class="detail-item"><strong>App Store</strong><span><a href="${entity.links.appStore}" target="_blank" rel="noreferrer">${entity.links.appStore}</a>${entity.links.appStoreSource ? ` (${entity.links.appStoreSource})` : ""}</span></div>`
           : ""}
+        ${entity.links?.testFlight
+          ? `<div class="detail-item"><strong>TestFlight</strong><span><a href="${entity.links.testFlight}" target="_blank" rel="noreferrer">${entity.links.testFlight}</a></span></div>`
+          : ""}
+        ${entity.links?.service
+          ? `<div class="detail-item"><strong>Service</strong><span><a href="${entity.links.service}" target="_blank" rel="noreferrer">${entity.links.service}</a></span></div>`
+          : ""}
         ${!entity.links?.website && !entity.links?.appStore
           ? `<div class="detail-item"><strong>No public link recorded yet</strong><span>This entry does not yet have a verified website or public App Store page in the shared index.</span></div>`
           : ""}

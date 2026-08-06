@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-05T15:30:00-05:00",
+ "generatedAt": "2026-08-06T14:09:57-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -7,12 +7,12 @@
    "~/",
    "~/Documents/Codex/Experiments"
   ],
-  "appStoreConnectAccess": "not-requeried-this-refresh",
+  "appStoreConnectAccess": "live-api-refresh-2026-08-06",
   "notes": [
    "Reviewed local git repositories with 2026 activity.",
    "Treated repositories as read-only during the scan.",
    "Ignored older inactive repos unless directly connected to a 2026-active project.",
-   "App Store Connect data was retained from the August 2 live query and not re-queried during this refresh."
+   "App Store Connect data was refreshed from the live API on August 6, 2026."
   ]
  },
  "summary": {
@@ -519,7 +519,7 @@
    "description": "Document-based macOS (flagship authoring) + iOS (companion) directory-book app: maintains member/resident rosters and generates print-ready saddle-stitch booklet PDFs, a web view, and Word export from one source of truth. A .mallinbook package = SQLite (GRDB) + lossless photos + frozen editions, synced via iCloud Documents.",
    "dependencies": [],
    "links": {
-    "website": null,
+    "website": "https://billdonner.com/apps/mallinbook/",
     "appStore": null,
     "github": "https://github.com/billdonner/mallinbook"
    },
@@ -545,7 +545,8 @@
    "description": "Single-screen SwiftUI iPhone drum machine: a 16-step, 4-voice sequencer for studying and remixing famous breaks (Amen, Funky Drummer, Apache, Think). Drums are synthesized at runtime (no audio files); MIDI out, Standard MIDI clip export, and Ableton Link tempo sync (vendored LinkKit). XcodeGen, iOS 18+, portrait-only.",
    "dependencies": [],
    "links": {
-    "website": null,
+    "website": "https://billdonner.com/apps/amenbeats/",
+    "testFlight": "https://testflight.apple.com/join/YNtJvFDf",
     "appStore": null,
     "github": "https://github.com/billdonner/drumbeats"
    },
@@ -607,7 +608,8 @@
     "card-studio"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/qross/",
+    "testFlight": "https://testflight.apple.com/join/W6VjPWV6",
     "appStore": null
    },
    "notes": [
@@ -631,7 +633,8 @@
     "nagz-ai"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/nagz/",
+    "testFlight": "https://testflight.apple.com/join/Xfcvv9w5",
     "appStore": null
    },
    "notes": [
@@ -654,7 +657,7 @@
     "obo"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/obo-ios/",
     "appStore": null
    },
    "notes": [
@@ -699,7 +702,8 @@
     "workinon-mcp"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/workinon/",
+    "testFlight": "https://testflight.apple.com/join/FbsJBmc7",
     "appStore": null
    },
    "notes": [
@@ -722,7 +726,9 @@
     "api.famster.app"
    ],
    "links": {
-    "website": "https://api.famster.app",
+    "website": "https://billdonner.com/apps/famster/",
+    "service": "https://api.famster.app",
+    "testFlight": "https://testflight.apple.com/join/aQG4apn7",
     "websiteSource": "local docs",
     "appStore": null
    },
@@ -746,7 +752,7 @@
     "nagzerver"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.com/apps/ltwatcher/",
     "appStore": null
    },
    "notes": [
@@ -766,7 +772,8 @@
    "description": "Privacy-first iPhone and iPad family-tree editor with AI interviews, relationship flashcards, GEDCOM exchange, read-only family packages, and native Mac MCP automation.",
    "dependencies": [],
    "links": {
-    "website": null,
+    "website": "https://billdonner.com/apps/kinflash/",
+    "testFlight": "https://testflight.apple.com/join/WkcUxvt3",
     "appStore": null
    },
    "notes": [
@@ -889,7 +896,8 @@
     "grubber"
    ],
    "links": {
-    "website": "https://bd-grubber.fly.dev",
+    "website": "https://billdonner.com/apps/sentipods/",
+    "service": "https://bd-grubber.fly.dev",
     "websiteSource": "local README",
     "appStore": null
    },
@@ -1100,7 +1108,8 @@
    "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
    "dependencies": [],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/123words/",
+    "testFlight": "https://testflight.apple.com/join/G6eyk4CT",
     "appStore": null
    },
    "notes": [
@@ -1171,7 +1180,7 @@
     "pfolio"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.com/apps/oliopfolio/",
     "appStore": null,
     "github": "https://github.com/billdonner/pfolio-app"
    },
@@ -1191,8 +1200,8 @@
    "status": "asc-unmapped",
    "lastModified": null,
    "repo": null,
-   "bundleId": null,
-   "release": "Development or release status unverified; visible in App Store Connect.",
+   "bundleId": "com.billdonner.mastpex",
+   "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
    "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
    "dependencies": [],
    "links": {
@@ -1212,8 +1221,8 @@
    "status": "asc-unmapped",
    "lastModified": null,
    "repo": null,
-   "bundleId": null,
-   "release": "Development or release status unverified; visible in App Store Connect.",
+   "bundleId": "com.billdonner.mastpex.mac",
+   "release": "Development: macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
    "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
    "dependencies": [],
    "links": {
@@ -1233,12 +1242,12 @@
    "status": "asc-unmapped",
    "lastModified": null,
    "repo": null,
-   "bundleId": null,
-   "release": "Development or release status unverified; visible in App Store Connect.",
+   "bundleId": "com.picklefamilia.app",
+   "release": "Development: iOS and macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 2 uploaded 2026-06-30.",
    "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
    "dependencies": [],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/picklefamilia-ios/",
     "appStore": null
    },
    "notes": [
@@ -1254,8 +1263,8 @@
    "status": "asc-unmapped",
    "lastModified": null,
    "repo": null,
-   "bundleId": null,
-   "release": "Development or release status unverified; visible in App Store Connect. Its shared screenshot-composition workflow is actively used for current App Store galleries.",
+   "bundleId": "com.screenker.app",
+   "release": "Development: macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 5 uploaded 2026-07-29. Its shared screenshot-composition workflow is actively used for current App Store galleries.",
    "description": "ASC record with a verified shared marketing-workflow relationship, but no standalone Screenker source repository, bundle identifier, or public product page identified yet.",
    "dependencies": [
     "Qross",
@@ -1263,7 +1272,7 @@
     "100 Burfords"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/screenker/",
     "appStore": null
    },
    "notes": [
@@ -1281,8 +1290,8 @@
    "status": "asc-unmapped",
    "lastModified": null,
    "repo": null,
-   "bundleId": null,
-   "release": "Development or release status unverified; visible in App Store Connect.",
+   "bundleId": "com.billdonner.ZerverMonitor",
+   "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 4 uploaded 2026-02-27 and is expired.",
    "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
    "dependencies": [
     "server-monitor"
@@ -1742,8 +1751,7 @@
  "gaps": [
   "confirmed",
   "ambiguities",
-  "2026-08-03 ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, screenkr2/com.screenkr.app removed from ASC; MastPex IOS, MastPex Mac, PickleFamilia, Screenker, and Zerver Monitor remain ASC-only records without verified local repositories.",
-  "App Store Connect credentials were not available for this audit. The recorded 20-app ASC inventory is preserved and each record is represented in MasterIndex."
+  "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. MastPex IOS, MastPex Mac, PickleFamilia, Screenker, and Zerver Monitor have ASC records but no verified local source repository."
  ],
  "taskRegistry": {
   "path": "tasks/index.json",
