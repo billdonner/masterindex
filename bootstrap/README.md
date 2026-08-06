@@ -5,6 +5,7 @@ This folder contains the exact reusable text for injecting MasterIndex behavior 
 ## Files
 
 - `MASTERINDEX_UNIVERSAL_INJECTION.md` — preferred single file for injecting MasterIndex everywhere except `workin On`
+- `MASTERINDEX_MANAGED_BLOCK.md` — delimited agent-neutral block for `AGENTS.md` and `CLAUDE.md`
 - `AGENTS_SNIPPET.md` — drop-in text for `AGENTS.md`
 - `masterindex-bootstrap-skill/SKILL.md` — personal Codex skill starter
 - `housekeeping-task-template.md` — starter prompt for periodic tasks

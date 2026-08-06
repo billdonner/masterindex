@@ -6,8 +6,9 @@ If you are an agent consuming or updating this index:
 
 1. Read `current/index.json`
 2. Read `tasks/index.json` if you need to discover periodic work assigned to entries
-3. Use `current/inventory.md` only for narrative context
-4. Treat `site/` as presentation, not source of truth
+3. Read `current/handoffs/index.json` before periodic or operational work; apply active directives for the entity or `all-entities`
+4. Use `current/inventory.md` only for narrative context
+5. Treat `site/` as presentation, not source of truth
 
 ## Write rules
 
@@ -35,6 +36,10 @@ If you are an agent consuming or updating this index:
 ## Required file for periodic task routing
 
 - `tasks/index.json`
+
+## Required file for targeted next-cycle behavior
+
+- `current/handoffs/index.json`
 
 ## Stability expectations
 

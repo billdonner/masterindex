@@ -11,6 +11,16 @@
       "Tasks are intentionally stored outside the core inventory file."
     ]
   },
+  "entityCoveragePolicy": {
+    "appliesTo": "Every current/index.json entities[].id, including entities without an entry-specific task.",
+    "verificationCadence": { "kind": "rrule", "value": "FREQ=HOURLY;INTERVAL=6" },
+    "refreshCadence": { "kind": "rrule", "value": "FREQ=DAILY;INTERVAL=1" },
+    "requiredBehavior": [
+      "Verify each entity every six hours and record gaps or ambiguities explicitly.",
+      "Refresh observed facts daily in current/index.json first, then current/inventory.md when affected.",
+      "Read current/handoffs/index.json and apply active directives addressed to the entity or all-entities."
+    ]
+  },
   "globalTasks": [
     {
       "taskId": "masterindex-refresh",

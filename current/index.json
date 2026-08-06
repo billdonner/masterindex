@@ -15,7 +15,7 @@
    "App Store Connect data was retained from the August 2 live query and not re-queried during this refresh."
   ]
  },
- "summary": {
+  "summary": {
   "ascApps": 20,
   "mappedAscApps": 15,
   "unmatchedAscApps": 5,
@@ -23,6 +23,11 @@
   "clusters": 15,
   "liveServices": 6,
   "collaborators": 3
+ },
+ "automation": {
+  "taskRegistry": "tasks/index.json",
+  "handoffRegistry": "current/handoffs/index.json",
+  "policy": "Every entity inherits a six-hour verification check and a daily inventory refresh from the task registry."
  },
  "ascApps": {
   "mapped": [
