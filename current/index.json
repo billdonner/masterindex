@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T00:00:00-05:00",
+  "generatedAt": "2026-08-06T14:55:12-05:00",
   "scope": {
     "dateLabel": "Monday, August 3, 2026",
     "defaultSort": "most-recently-modified",
@@ -592,10 +592,10 @@
       "kind": "service",
       "cluster": "Grubber",
       "status": "live",
-      "lastModified": "2026-08-02",
+      "lastModified": "2026-08-06",
       "repo": "~/grubber",
       "bundleId": null,
-      "release": "Live read service at bd-grubber.fly.dev; M3 analysis now adds LLM topic labels, claim comparison, and daily briefs behind a $10 daily cap",
+      "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, and the public live progress view are deployed",
       "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
       "dependencies": [
         "grubber-ios"
@@ -608,7 +608,9 @@
       "notes": [
         "Public API and MCP are treated as the stable contract.",
         "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
-        "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}."
+        "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
+        "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
+        "The Mac producer runs text, audio, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures."
       ]
     },
     {
