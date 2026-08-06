@@ -842,7 +842,7 @@
    "lastModified": "2026-08-06",
    "repo": "~/grubber",
    "bundleId": null,
-   "release": "Live read service at bd-grubber.fly.dev; August 6 analysis live-update and progress-view code is committed locally. Production deployment of the new work is not yet verified.",
+   "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, and the public live progress view are deployed.",
    "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
    "dependencies": [
     "grubber-ios"
@@ -856,8 +856,8 @@
     "Public API and MCP are treated as the stable contract.",
     "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
     "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
-   "M4 shipped in code with 222 passing tests on 2026-08-03: APNs device endpoints, push dispatch, and hourly analysis scheduling. Fly deployment and producer handoff remain pending.",
-   "August 6: analysis queries and progress APIs, live update behavior, a fast analysis tick, CLI support, and associated tests were added. Deployment remains unverified."
+   "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
+   "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures."
    ]
   },
   {
