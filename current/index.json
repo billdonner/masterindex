@@ -29,6 +29,20 @@
   "handoffRegistry": "current/handoffs/index.json",
   "policy": "Every entity inherits a six-hour verification check and a daily inventory refresh from the task registry."
  },
+ "flyOperations": {
+  "observedAt": "2026-08-06T00:00:00-05:00",
+  "costCurrency": "USD",
+  "costStatus": "unavailable",
+  "costNote": "The authenticated Fly CLI exposes deployment state on this machine, but no billing or usage amount was observed. Do not infer costs from deployment status.",
+  "services": [
+   { "app": "bd-cardzerver", "entityId": "card-server-backend", "status": "deployed", "latestDeploy": "2026-07-06T01:01:00-05:00", "cost": null },
+   { "app": "bd-nagzerver", "entityId": "nagzerver-backend", "status": "deployed", "latestDeploy": "2026-06-30T21:01:00-05:00", "cost": null },
+   { "app": "bd-grubber", "entityId": "grubber-service", "status": "deployed", "latestDeploy": "observed 2026-08-06; Fly reported 12h26m ago", "cost": null },
+   { "app": "bd-server-monitor", "entityId": "server-monitor-service", "status": "deployed", "latestDeploy": "2026-06-16T16:01:00-05:00", "cost": null },
+   { "app": "bd-pfolio", "entityId": "pfolio-backend", "status": "deployed", "latestDeploy": "2026-07-22T18:08:00-05:00", "cost": null },
+   { "app": "bd-clubsync", "entityId": "clubsync-backend", "status": "not-found-in-personal-app-list", "latestDeploy": null, "cost": null, "note": "The inventory records a live clubsync service, but the authenticated personal Fly app list showed bd-clubsync-db rather than bd-clubsync. Resolve ownership/app-name mapping." }
+  ]
+ },
  "ascApps": {
   "source": "App Store Connect API (api.appstoreconnect.apple.com/v1), full pull",
   "pulledAt": "2026-08-06T08:10:38-0500",

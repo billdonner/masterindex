@@ -309,6 +309,27 @@ function renderRepoTable() {
   `).join("");
 }
 
+function renderFlyOperations() {
+  const operations = state.data.flyOperations;
+  const table = document.getElementById("flyTableBody");
+  if (!operations) {
+    table.innerHTML = `<tr><td colspan="5">No Fly.io operations data has been recorded.</td></tr>`;
+    return;
+  }
+  document.getElementById("flyObservedAt").textContent = `Observed: ${operations.observedAt || "unknown"}`;
+  document.getElementById("flyCostNote").textContent =
+    `Cost status: ${operations.costStatus || "unknown"}. ${operations.costNote || ""}`;
+  table.innerHTML = operations.services.map(service => `
+    <tr>
+      <td>${service.app}</td>
+      <td><span class="status-dot ${service.status === "deployed" ? "status-live" : ""}">${service.status}</span></td>
+      <td>${service.latestDeploy || "Not observed"}</td>
+      <td>${service.cost == null ? "Not observed" : `${operations.costCurrency || "USD"} ${service.cost}`}</td>
+      <td>${service.note || "—"}</td>
+    </tr>
+  `).join("");
+}
+
 function bindSearch() {
   const input = document.getElementById("searchInput");
   input.addEventListener("input", event => {
@@ -322,6 +343,7 @@ function render() {
   renderEntities();
   renderDetail();
   renderClusters();
+  renderFlyOperations();
   renderRepoTable();
 }
 

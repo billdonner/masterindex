@@ -23,6 +23,26 @@
   },
   "globalTasks": [
     {
+      "taskId": "fly-operations-check",
+      "name": "Fly.io operations check",
+      "status": "active",
+      "cadence": { "kind": "rrule", "value": "FREQ=HOURLY;INTERVAL=6" },
+      "purpose": "Refresh Fly deployment state for every indexed Fly service and explicitly record service or ownership mismatches.",
+      "expectedInputs": ["current/index.json", "fly apps list", "fly status -a <app>"],
+      "expectedOutputs": ["Refreshed flyOperations.services deployment facts"],
+      "owner": "this Codex task"
+    },
+    {
+      "taskId": "fly-cost-projection-refresh",
+      "name": "Fly.io cost projection refresh",
+      "status": "active",
+      "cadence": { "kind": "rrule", "value": "FREQ=DAILY;INTERVAL=1" },
+      "purpose": "Record observed Fly billing or usage, derive a clearly labeled month-end projection when source data is available, and otherwise retain costStatus=unavailable.",
+      "expectedInputs": ["current/index.json", "authenticated Fly billing or usage source"],
+      "expectedOutputs": ["Refreshed flyOperations cost fields and projection provenance"],
+      "owner": "this Codex task"
+    },
+    {
       "taskId": "masterindex-refresh",
       "name": "MasterIndex refresh",
       "status": "active",

@@ -73,6 +73,10 @@ As of Tuesday, August 5, 2026.
 - `bd-pfolio.fly.dev` from `~/pfolio` (portfolio tracker API; shares bd-postgres)
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
 
+## Fly.io Operations and Cost Reporting
+
+MasterIndex now records Fly deployment status under `flyOperations` in `current/index.json`. The August 6 authenticated CLI check observed deployed cardzerver, nagzerver, grubber, server-monitor, and pfolio apps. `bd-clubsync` did not appear in the personal app list (while `bd-clubsync-db` did), so that ownership/app-name mapping remains a recorded gap. No billing or usage amount was available from the observed CLI surface; cost status is explicitly `unavailable` and no projection is fabricated.
+
 ## Collaborators
 
 Unified watch over the people Bill co-works with, refreshed every 6h by the
