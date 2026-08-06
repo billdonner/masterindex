@@ -15,7 +15,7 @@
    "App Store Connect data was retained from the August 2 live query and not re-queried during this refresh."
   ]
  },
-  "summary": {
+ "summary": {
   "ascApps": 20,
   "mappedAscApps": 15,
   "unmatchedAscApps": 5,
@@ -30,134 +30,230 @@
   "policy": "Every entity inherits a six-hour verification check and a daily inventory refresh from the task registry."
  },
  "ascApps": {
+  "source": "App Store Connect API (api.appstoreconnect.apple.com/v1), full pull",
+  "pulledAt": "2026-08-06T08:10:38-0500",
+  "note": "Refreshed 2026-08-06 from the live ASC API while regenerating billdonner.com's apps pages. 'unmatched' is gone: every ASC record is listed here with its real per-platform state. GigStand is intentionally excluded per the standing rule.",
   "mapped": [
-   {
-    "name": "PickledBalls",
-    "bundleId": "com.pickledballs.app",
-    "appId": "6762310890",
-    "repo": "~/PickledBalls",
-    "localVersion": "active 1.x line in docs",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "Qross",
-    "bundleId": "com.qross.app",
-    "appId": "6759799988",
-    "repo": "~/qross",
-    "localVersion": "0.2 (313)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
    {
     "name": "100 Burfords",
     "bundleId": "com.billdonner.burfords",
     "appId": "6766107636",
-    "repo": "~/100Burfords",
-    "localVersion": "1.1 (9)",
-    "ascState": "IOS 1.0 READY_FOR_SALE"
-   },
-   {
-    "name": "Flasherz Kids",
-    "bundleId": "com.billdonner.obo",
-    "appId": "6759509933",
-    "repo": "~/obo-ios",
-    "localVersion": "1.1 (47)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "Nagz",
-    "bundleId": "com.nagz.app",
-    "appId": "6759530926",
-    "repo": "~/nagz-ios",
-    "localVersion": "1.4.0 (359)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "Cardz Studio",
-    "bundleId": "com.billdonner.cardz-studio",
-    "appId": "6759624116",
-    "repo": "~/cardz-studio-ios",
-    "localVersion": "1.0 (10)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "KinFlash",
-    "bundleId": "com.billdonner.kinflash",
-    "appId": "6762008872",
-    "repo": "~/kinflash",
-    "localVersion": "1.0.0 (62)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "workin On",
-    "bundleId": "com.workinon.app",
-    "appId": "6762529338",
-    "repo": "~/workinon",
-    "localVersion": "0.9.1 (52)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "Famster",
-    "bundleId": "com.famster.app",
-    "appId": "6763581385",
-    "repo": "~/famster-ios",
-    "localVersion": "1.0.0 (3)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "LtWatcher",
-    "bundleId": "com.ltwatch.app",
-    "appId": "6764622141",
-    "repo": "~/clubwatch",
-    "localVersion": "0.1.0 (4)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
-   },
-   {
-    "name": "Mallinbook",
-    "bundleId": "com.mallinbook.app",
-    "appId": "6785245339",
-    "repo": "~/mallinbook",
-    "localVersion": "1.0 (14)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
+    "ascState": "IOS 1.0 READY_FOR_DISTRIBUTION",
+    "live": true,
+    "publicTestFlight": "https://testflight.apple.com/join/c3ncdHVQ",
+    "latestBuild": "8 uploaded 2026-07-28",
+    "marketingUrl": "https://billdonner.github.io/100Burfords/",
+    "descriptionChars": 941
    },
    {
     "name": "123 Words",
     "bundleId": "com.123words.app",
     "appId": "6766975041",
-    "repo": "~/123words",
-    "localVersion": "1.11 (40)",
-    "ascState": "IOS 1.11 READY_FOR_SALE; 1.12 draft (screenshots published 2026-08-01)"
+    "ascState": "IOS 1.0 READY_FOR_DISTRIBUTION; IOS 1.1 READY_FOR_DISTRIBUTION; IOS 1.11 READY_FOR_DISTRIBUTION; IOS 1.12 PREPARE_FOR_SUBMISSION",
+    "live": true,
+    "publicTestFlight": "https://testflight.apple.com/join/G6eyk4CT",
+    "latestBuild": "41 uploaded 2026-05-20",
+    "marketingUrl": "https://billdonner.github.io/123words/",
+    "descriptionChars": 2646
    },
    {
-    "name": "SentiPods",
-    "bundleId": "com.sentipods.app",
-    "appId": null,
-    "repo": "~/sentipods",
-    "localVersion": "1.0 (15)",
-    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 14 uploaded"
-   },
-   {
-    "name": "AmenBeats",
+    "name": "amenbeats",
     "bundleId": "com.billdonner.drumbeats",
     "appId": "6778510642",
-    "repo": "~/drumbeats",
-    "localVersion": "TestFlight build 5+",
-    "ascState": "IOS 1.0 draft"
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": "https://testflight.apple.com/join/YNtJvFDf",
+    "latestBuild": "7 uploaded 2026-08-05",
+    "marketingUrl": "https://billdonner.com/apps/amenbeats/",
+    "descriptionChars": 1744
+   },
+   {
+    "name": "Cardz Studio",
+    "bundleId": "com.billdonner.cardz-studio",
+    "appId": "6759624116",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "10 uploaded 2026-03-04 (EXPIRED)",
+    "marketingUrl": null,
+    "descriptionChars": 0
+   },
+   {
+    "name": "Famster",
+    "bundleId": "com.famster.app",
+    "appId": "6763581385",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": "https://testflight.apple.com/join/aQG4apn7",
+    "latestBuild": "3 uploaded 2026-04-30 (EXPIRED)",
+    "marketingUrl": "https://billdonner.com/apps/famster/",
+    "descriptionChars": 1287
+   },
+   {
+    "name": "Flasherz Kids",
+    "bundleId": "com.billdonner.obo",
+    "appId": "6759509933",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "47 uploaded 2026-04-13 (EXPIRED)",
+    "marketingUrl": "https://billdonner.github.io/obo-ios/",
+    "descriptionChars": 1991
+   },
+   {
+    "name": "KinFlash",
+    "bundleId": "com.billdonner.kinflash",
+    "appId": "6762008872",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": "https://testflight.apple.com/join/WkcUxvt3",
+    "latestBuild": "65 uploaded 2026-08-03",
+    "marketingUrl": "https://billdonner.com/apps/kinflash/",
+    "descriptionChars": 1752
+   },
+   {
+    "name": "LtWatcher",
+    "bundleId": "com.ltwatch.app",
+    "appId": "6764622141",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "2 uploaded 2026-04-29 (EXPIRED)",
+    "marketingUrl": "https://billdonner.com/apps/ltwatcher/",
+    "descriptionChars": 1516
+   },
+   {
+    "name": "Mallinbook",
+    "bundleId": "com.mallinbook.app",
+    "appId": "6785245339",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; MAC_OS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "18 uploaded 2026-08-03",
+    "marketingUrl": "https://billdonner.com/apps/mallinbook/",
+    "descriptionChars": 1873
+   },
+   {
+    "name": "MastPex IOS",
+    "bundleId": "com.billdonner.mastpex",
+    "appId": "6797321392",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "1 uploaded 2026-08-02",
+    "marketingUrl": null,
+    "descriptionChars": 0
+   },
+   {
+    "name": "MastPex Mac",
+    "bundleId": "com.billdonner.mastpex.mac",
+    "appId": "6797321653",
+    "ascState": "MAC_OS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "1 uploaded 2026-08-02",
+    "marketingUrl": null,
+    "descriptionChars": 0
+   },
+   {
+    "name": "Nagz",
+    "bundleId": "com.nagz.app",
+    "appId": "6759530926",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": "https://testflight.apple.com/join/Xfcvv9w5",
+    "latestBuild": "359 uploaded 2026-04-12 (EXPIRED)",
+    "marketingUrl": "https://billdonner.github.io/nagz/",
+    "descriptionChars": 1662
    },
    {
     "name": "Oliopfolio",
     "bundleId": "com.pfolio.app",
     "appId": "6797993806",
-    "repo": "~/pfolio-app",
-    "localVersion": "1.0.0 (7); build 6 uploaded for iOS + macOS 2026-08-04",
-    "ascState": "IOS+MACOS 1.0 PREPARE_FOR_SUBMISSION"
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; MAC_OS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "6 uploaded 2026-08-04",
+    "marketingUrl": "https://billdonner.com/apps/oliopfolio/",
+    "descriptionChars": 1982
+   },
+   {
+    "name": "PickledBalls",
+    "bundleId": "com.pickledballs.app",
+    "appId": "6762310890",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": "https://testflight.apple.com/join/xa71Ymwt",
+    "latestBuild": "354 uploaded 2026-07-23",
+    "marketingUrl": "https://pickledballs.billdonner.com",
+    "descriptionChars": 2371
+   },
+   {
+    "name": "PickleFamilia",
+    "bundleId": "com.picklefamilia.app",
+    "appId": "6786064830",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; MAC_OS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "2 uploaded 2026-06-30",
+    "marketingUrl": "https://billdonner.github.io/picklefamilia-ios/",
+    "descriptionChars": 1490
+   },
+   {
+    "name": "Qross",
+    "bundleId": "com.qross.app",
+    "appId": "6759799988",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": "https://testflight.apple.com/join/W6VjPWV6",
+    "latestBuild": "389 uploaded 2026-07-25",
+    "marketingUrl": "https://billdonner.github.io/qross/",
+    "descriptionChars": 2150
+   },
+   {
+    "name": "Screenker",
+    "bundleId": "com.screenker.app",
+    "appId": "6795592147",
+    "ascState": "MAC_OS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "5 uploaded 2026-07-29",
+    "marketingUrl": "https://billdonner.github.io/screenker/",
+    "descriptionChars": 3588
+   },
+   {
+    "name": "SentiPods",
+    "bundleId": "com.sentipods.app",
+    "appId": "6797132650",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; MAC_OS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "15 uploaded 2026-08-05",
+    "marketingUrl": "https://billdonner.com/apps/sentipods/",
+    "descriptionChars": 2611
+   },
+   {
+    "name": "workin On",
+    "bundleId": "com.workinon.app",
+    "appId": "6762529338",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": "https://testflight.apple.com/join/FbsJBmc7",
+    "latestBuild": "65 uploaded 2026-08-03",
+    "marketingUrl": "https://billdonner.github.io/workinon/",
+    "descriptionChars": 1805
+   },
+   {
+    "name": "Zerver Monitor",
+    "bundleId": "com.billdonner.ZerverMonitor",
+    "appId": "6759637400",
+    "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION",
+    "live": false,
+    "publicTestFlight": null,
+    "latestBuild": "4 uploaded 2026-02-27 (EXPIRED)",
+    "marketingUrl": null,
+    "descriptionChars": 0
    }
-  ],
-  "unmatched": [
-   "MastPex IOS",
-   "MastPex Mac",
-   "PickleFamilia",
-   "Screenker",
-   "Zerver Monitor"
   ]
  },
  "clusters": [
@@ -379,7 +475,7 @@
    "lastModified": "2026-08-05",
    "repo": "~/mlxsrv/local-model-lab",
    "bundleId": null,
-   "release": "local tooling only \u2014 no ASC presence",
+   "release": "local tooling only — no ASC presence",
    "description": "Local MLX model evaluation lab: runs quantized models (Qwen3-4B etc.) on-device via an OpenAI-compatible local server and benchmarks them against the full 177,501-question Qross corpus (no_hint and on_request_hint modes), with an OpenAI GPT-5 runner for paid-API comparison. Produces per-run answer logs, wrong-answer exports, and a leaderboard.",
    "dependencies": [],
    "links": {
@@ -389,11 +485,11 @@
    },
    "notes": [
     "Lives at ~/mlxsrv/local-model-lab (parent dir ~/mlxsrv is not itself a repo); previously missed by scans because it sits one level below ~.",
-    "Standalone lab \u2014 not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
+    "Standalone lab — not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
     "Full-corpus leaderboard (2026-08-04): local baseline 85.90% no-hint / 88.72% hinted; qwen3-4b-instruct 84.12% no-hint; OpenAI gpt-5 98.34% on a 10k subset (~$0.94).",
     "Raw answers.jsonl files over 100MB are gitignored (GitHub limit) and kept local-only; summaries and wrong-answer exports are pushed.",
     "Hinted qwen3-4b full-corpus run completed 2026-08-04: 84.84% (vs 84.12% no-hint; hints give qwen3-4b only +0.73 lift).",
-    "2026-08-05: SwiftChat became the common interface \u2014 four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB \u2192 7.7GB (kept qwen3-4b + baseline; others re-downloadable)."
+    "2026-08-05: SwiftChat became the common interface — four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB → 7.7GB (kept qwen3-4b + baseline; others re-downloadable)."
    ]
   },
   {
@@ -415,10 +511,10 @@
    },
    "notes": [
     "Renamed 2026-08-01 from bookmaker-app: repo/target/module and the document extension (.bookmaker -> .mallinbook); ASC identity unchanged (app id 6785245339), so earlier scans missed the repo.",
-    "Local version 1.0 (14) is one build ahead of TestFlight (13) \u2014 committed, not yet uploaded.",
+    "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
     "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
     "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
-    "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core \u2014 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
+    "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
     "PARKED 2026-08-03 by owner: resume near the iOS 27 release, when App Store submission can go through the release iOS-27 toolchain. State at park: build 18 live on TestFlight (both platforms); feature-complete for v1 (custom pages, filler pool, recto section starts with PD art dividers, menu parity, -exportPDF); 67 app + 27 MCP tests green; mallinbook-mcp installed at ~/bin and registered with Claude Code; 44-page Maplecrest print PDF ready for the bindery. Resume checklist: confirm xcode-select is the release Xcode, archive via scripts/preflight-testflight.sh flow, then App Store metadata/review."
    ]
   },
@@ -474,9 +570,9 @@
    "notes": [
     "Uses JSON plus GRDB SQLite locally.",
     "Pulls live data from nagzerver and clubsync.",
-    "SharedAI unlinked from v1.0 (2026-07-23) \u2014 re-add when the Instructor tier ships.",
+    "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
     "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
-    "Site fully deployed 2026-08-02 \u2014 support.html and privacy.html both verified live (200).",
+    "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
     "Submission gate (2026-08-03): transfer ASC app ownership to 1041Soft first, then submit 1.0 (354) for review. Everything else is ready."
    ]
   },
@@ -687,7 +783,7 @@
    },
    "notes": [
     "Its shared kit is reused by PickledBalls.",
-    "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement \u2014 PickledBalls consumed it via a local SPM path.",
+    "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
     "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
     "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product."
    ]
@@ -713,7 +809,7 @@
    "notes": [
     "Strong signal of finished packaging relative to the rest of the portfolio.",
     "Live ASC version is 1.0; local 1.1 (9) with build 8 on TestFlight (print-at-home, order-prints-by-mail partner hand-off, signed Fan Club Card, dark mode, 2,787 bundled reader comments).",
-    "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots \u2014 not yet published to ASC."
+    "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots — not yet published to ASC."
    ]
   },
   {
@@ -987,7 +1083,7 @@
    "repo": "~/123words",
    "bundleId": "com.123words.app",
    "release": "ASC mapped; 1.11 live, 1.12 draft holds the new 7-slot Screenker gallery (critic 90)",
-   "description": "Kids 2\u20137 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+   "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
    "dependencies": [],
    "links": {
     "website": null,
@@ -1007,7 +1103,7 @@
    "repo": "~/adspill",
    "bundleId": null,
    "release": null,
-   "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 \u2014 an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) \u2014 and Project 2 \u2014 a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
+   "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
    "dependencies": [],
    "links": {
     "website": null,
@@ -1388,7 +1484,7 @@
    "branch": "main",
    "last2026Commit": "2026-07-20",
    "kind": "reference engine",
-   "role": "Python FastAPI/WeasyPrint directory-book engine \u2014 read-only reference for Mallinbook; one-time lossless photo extraction"
+   "role": "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
   },
   {
    "repo": "~/card-engine",
