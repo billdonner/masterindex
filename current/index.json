@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T14:40:00-05:00",
+  "generatedAt": "2026-08-05T15:30:00-05:00",
   "scope": {
     "dateLabel": "Tuesday, August 5, 2026",
     "defaultSort": "most-recently-modified",
@@ -426,7 +426,7 @@
       "lastModified": "2026-08-05",
       "repo": "~/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
-      "release": "ASC app id 6778510642, iOS 1.0 draft; TestFlight build 5+. Bill + Jim app, under active co-development (features landing on main ahead of the next TestFlight build).",
+      "release": "ASC app id 6778510642, iOS 1.0 draft. TestFlight build 7 uploaded 2026-08-05 (first build with the full feature set); App Store copy (description/keywords/promo) pushed to the 1.0 draft. Bill + Jim shared build.",
       "description": "Single-screen SwiftUI iPhone drum machine: a 16-step, 4-voice sequencer for studying and remixing famous breaks (Amen, Funky Drummer, Apache, Think). Drums are synthesized at runtime (no audio files); MIDI out, Standard MIDI clip export, and Ableton Link tempo sync (vendored LinkKit). XcodeGen, iOS 18+, portrait-only.",
       "dependencies": [],
       "links": {
