@@ -593,7 +593,8 @@
     "Bill + Jim app; Jim (@jrforster) added as full admin 2026-08-04. Coordination protocol + Jim bootstrap live in the repo (CLAUDE.md, docs/jim-claude-code-instructions.md).",
     "Standalone - no backend. App Store copy: ~/coworking/AmenBeats-AppStore.md; push via /asc-push AmenBeats.",
     "First App Store gallery published to ASC 2026-08-05: 5 iPhone 6.9\" slots, screenker-critic 52->93 HAPPY, version 1.0 iPhone set. Source in ~/drumbeats/marketing/ (amenbeats-ios.screenker + raw-ios captures), PR #8 merged (1cf4f5f). CLAUDE.md bundle-id inconsistency resolved in the same PR (com.billdonner.drumbeats is correct).",
-    "Gallery re-shot with the App Store 9:41 status bar and republished to ASC 2026-08-07 (PR #9, 10af69b) after the capture rig was fixed (5df6d6e: resolve UDID, boot, override, target by id; stage in temp dir; strip XCTest name suffix)."
+    "Gallery re-shot with the App Store 9:41 status bar and republished to ASC 2026-08-07 (PR #9, 10af69b) after the capture rig was fixed (5df6d6e: resolve UDID, boot, override, target by id; stage in temp dir; strip XCTest name suffix).",
+    "UI audit 2026-08-07 (/ui-critique): at accessibility text sizes every slider label, the tempo readout, two transport buttons and three voice tags truncated, and the title ran through the header icons -- all from fixed-size frames under scaling text. Fixes in PR #10 (open for review; capping Dynamic Type on the step grid is a deliberate trade)."
    ]
   },
   {
