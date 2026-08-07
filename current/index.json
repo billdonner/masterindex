@@ -35,12 +35,49 @@
   "costStatus": "unavailable",
   "costNote": "The authenticated Fly CLI exposes deployment state on this machine, but no billing or usage amount was observed. Do not infer costs from deployment status.",
   "services": [
-   { "app": "bd-cardzerver", "entityId": "card-server-backend", "status": "deployed", "latestDeploy": "2026-07-06T01:01:00-05:00", "cost": null },
-   { "app": "bd-nagzerver", "entityId": "nagzerver-backend", "status": "deployed", "latestDeploy": "2026-06-30T21:01:00-05:00", "cost": null },
-   { "app": "bd-grubber", "entityId": "grubber-service", "status": "deployed", "latestDeploy": "observed 2026-08-06; Fly reported 12h26m ago", "cost": null },
-   { "app": "bd-server-monitor", "entityId": "server-monitor-service", "status": "deployed", "latestDeploy": "2026-06-16T16:01:00-05:00", "cost": null },
-   { "app": "bd-pfolio", "entityId": "pfolio-backend", "status": "deployed", "latestDeploy": "2026-07-22T18:08:00-05:00", "cost": null },
-   { "app": "bd-clubsync", "entityId": "clubsync-backend", "status": "not-found-in-personal-app-list", "latestDeploy": null, "cost": null, "note": "The inventory records a live clubsync service, but the authenticated personal Fly app list showed bd-clubsync-db rather than bd-clubsync. Resolve ownership/app-name mapping." }
+   {
+    "app": "bd-cardzerver",
+    "entityId": "card-server-backend",
+    "status": "deployed",
+    "latestDeploy": "2026-07-06T01:01:00-05:00",
+    "cost": null
+   },
+   {
+    "app": "bd-nagzerver",
+    "entityId": "nagzerver-backend",
+    "status": "deployed",
+    "latestDeploy": "2026-06-30T21:01:00-05:00",
+    "cost": null
+   },
+   {
+    "app": "bd-grubber",
+    "entityId": "grubber-service",
+    "status": "deployed",
+    "latestDeploy": "observed 2026-08-06; Fly reported 12h26m ago",
+    "cost": null
+   },
+   {
+    "app": "bd-server-monitor",
+    "entityId": "server-monitor-service",
+    "status": "deployed",
+    "latestDeploy": "2026-06-16T16:01:00-05:00",
+    "cost": null
+   },
+   {
+    "app": "bd-pfolio",
+    "entityId": "pfolio-backend",
+    "status": "deployed",
+    "latestDeploy": "2026-07-22T18:08:00-05:00",
+    "cost": null
+   },
+   {
+    "app": "bd-clubsync",
+    "entityId": "clubsync-backend",
+    "status": "not-found-in-personal-app-list",
+    "latestDeploy": null,
+    "cost": null,
+    "note": "The inventory records a live clubsync service, but the authenticated personal Fly app list showed bd-clubsync-db rather than bd-clubsync. Resolve ownership/app-name mapping."
+   }
   ]
  },
  "ascApps": {
@@ -489,7 +526,7 @@
    "lastModified": "2026-08-05",
    "repo": "~/mlxsrv/local-model-lab",
    "bundleId": null,
-   "release": "local tooling only — no ASC presence",
+   "release": "local tooling only \u2014 no ASC presence",
    "description": "Local MLX model evaluation lab: runs quantized models (Qwen3-4B etc.) on-device via an OpenAI-compatible local server and benchmarks them against the full 177,501-question Qross corpus (no_hint and on_request_hint modes), with an OpenAI GPT-5 runner for paid-API comparison. Produces per-run answer logs, wrong-answer exports, and a leaderboard.",
    "dependencies": [],
    "links": {
@@ -499,11 +536,11 @@
    },
    "notes": [
     "Lives at ~/mlxsrv/local-model-lab (parent dir ~/mlxsrv is not itself a repo); previously missed by scans because it sits one level below ~.",
-    "Standalone lab — not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
+    "Standalone lab \u2014 not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
     "Full-corpus leaderboard (2026-08-04): local baseline 85.90% no-hint / 88.72% hinted; qwen3-4b-instruct 84.12% no-hint; OpenAI gpt-5 98.34% on a 10k subset (~$0.94).",
     "Raw answers.jsonl files over 100MB are gitignored (GitHub limit) and kept local-only; summaries and wrong-answer exports are pushed.",
     "Hinted qwen3-4b full-corpus run completed 2026-08-04: 84.84% (vs 84.12% no-hint; hints give qwen3-4b only +0.73 lift).",
-    "2026-08-05: SwiftChat became the common interface — four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB → 7.7GB (kept qwen3-4b + baseline; others re-downloadable)."
+    "2026-08-05: SwiftChat became the common interface \u2014 four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB \u2192 7.7GB (kept qwen3-4b + baseline; others re-downloadable)."
    ]
   },
   {
@@ -525,10 +562,10 @@
    },
    "notes": [
     "Renamed 2026-08-01 from bookmaker-app: repo/target/module and the document extension (.bookmaker -> .mallinbook); ASC identity unchanged (app id 6785245339), so earlier scans missed the repo.",
-    "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
+    "Local version 1.0 (14) is one build ahead of TestFlight (13) \u2014 committed, not yet uploaded.",
     "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
     "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
-    "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
+    "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core \u2014 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
     "PARKED 2026-08-03 by owner: resume near the iOS 27 release, when App Store submission can go through the release iOS-27 toolchain. State at park: build 18 live on TestFlight (both platforms); feature-complete for v1 (custom pages, filler pool, recto section starts with PD art dividers, menu parity, -exportPDF); 67 app + 27 MCP tests green; mallinbook-mcp installed at ~/bin and registered with Claude Code; 44-page Maplecrest print PDF ready for the bindery. Resume checklist: confirm xcode-select is the release Xcode, archive via scripts/preflight-testflight.sh flow, then App Store metadata/review."
    ]
   },
@@ -538,7 +575,7 @@
    "kind": "app",
    "cluster": "Standalone",
    "status": "asc-mapped",
-   "lastModified": "2026-08-05",
+   "lastModified": "2026-08-07",
    "repo": "~/drumbeats",
    "bundleId": "com.billdonner.drumbeats",
    "release": "ASC app id 6778510642, iOS 1.0 draft. TestFlight build 7 uploaded 2026-08-05 (first build with the full feature set); App Store copy (description/keywords/promo) pushed to the 1.0 draft. Bill + Jim shared build.",
@@ -555,7 +592,8 @@
     "Active feature work (Aug 2026): 8 templates (PR #1); mute/solo, pattern save/load, song mode (PR #2); humanize, per-voice lay-back, MIDI import (PR #3); v1.0 UI/feel pass + a reproducible screenshot pipeline for App Store shots (PR #6). 53 unit tests green. Restyle + iPad-specific layout tracked for v1.1 (issue #5). Not yet on TestFlight - App Store copy held until a build ships.",
     "Bill + Jim app; Jim (@jrforster) added as full admin 2026-08-04. Coordination protocol + Jim bootstrap live in the repo (CLAUDE.md, docs/jim-claude-code-instructions.md).",
     "Standalone - no backend. App Store copy: ~/coworking/AmenBeats-AppStore.md; push via /asc-push AmenBeats.",
-    "First App Store gallery published to ASC 2026-08-05: 5 iPhone 6.9\" slots, screenker-critic 52->93 HAPPY, version 1.0 iPhone set. Source in ~/drumbeats/marketing/ (amenbeats-ios.screenker + raw-ios captures), PR #8 merged (1cf4f5f). CLAUDE.md bundle-id inconsistency resolved in the same PR (com.billdonner.drumbeats is correct)."
+    "First App Store gallery published to ASC 2026-08-05: 5 iPhone 6.9\" slots, screenker-critic 52->93 HAPPY, version 1.0 iPhone set. Source in ~/drumbeats/marketing/ (amenbeats-ios.screenker + raw-ios captures), PR #8 merged (1cf4f5f). CLAUDE.md bundle-id inconsistency resolved in the same PR (com.billdonner.drumbeats is correct).",
+    "Gallery re-shot with the App Store 9:41 status bar and republished to ASC 2026-08-07 (PR #9, 10af69b) after the capture rig was fixed (5df6d6e: resolve UDID, boot, override, target by id; stage in temp dir; strip XCTest name suffix)."
    ]
   },
   {
@@ -585,9 +623,9 @@
    "notes": [
     "Uses JSON plus GRDB SQLite locally.",
     "Pulls live data from nagzerver and clubsync.",
-    "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
+    "SharedAI unlinked from v1.0 (2026-07-23) \u2014 re-add when the Instructor tier ships.",
     "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
-    "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
+    "Site fully deployed 2026-08-02 \u2014 support.html and privacy.html both verified live (200).",
     "Submission gate (2026-08-03): transfer ASC app ownership to 1041Soft first, then submit 1.0 (354) for review. Everything else is ready."
    ]
   },
@@ -804,7 +842,7 @@
    },
    "notes": [
     "Its shared kit is reused by PickledBalls.",
-    "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
+    "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement \u2014 PickledBalls consumed it via a local SPM path.",
     "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
     "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product."
    ]
@@ -830,7 +868,7 @@
    "notes": [
     "Strong signal of finished packaging relative to the rest of the portfolio.",
     "Live ASC version is 1.0; local 1.1 (9) with build 8 on TestFlight (print-at-home, order-prints-by-mail partner hand-off, signed Fan Club Card, dark mode, 2,787 bundled reader comments).",
-    "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots — not yet published to ASC."
+    "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots \u2014 not yet published to ASC."
    ]
   },
   {
@@ -856,8 +894,8 @@
     "Public API and MCP are treated as the stable contract.",
     "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
     "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
-   "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
-   "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures."
+    "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
+    "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures."
    ]
   },
   {
@@ -1106,7 +1144,7 @@
    "repo": "~/123words",
    "bundleId": "com.123words.app",
    "release": "ASC mapped; 1.11 live, 1.12 draft holds the new 7-slot Screenker gallery (critic 90)",
-   "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+   "description": "Kids 2\u20137 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
    "dependencies": [],
    "links": {
     "website": "https://billdonner.github.io/123words/",
@@ -1127,7 +1165,7 @@
    "repo": "~/adspill",
    "bundleId": null,
    "release": null,
-   "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
+   "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 \u2014 an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) \u2014 and Project 2 \u2014 a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
    "dependencies": [],
    "links": {
     "website": null,
@@ -1172,7 +1210,7 @@
    "kind": "app",
    "cluster": "pfolio",
    "status": "asc-mapped",
-   "lastModified": "2026-08-05",
+   "lastModified": "2026-08-07",
    "repo": "~/pfolio-app",
    "bundleId": "com.pfolio.app",
    "release": "Build 6 uploaded to ASC for iOS and macOS 2026-08-04; local build 9",
@@ -1190,7 +1228,8 @@
     "Paid-upfront $14.99, Finance category, ASC record Oliopfolio (6797993806) created 2026-08-04.",
     "UI tests are data-driven against a seeded local backend (demo portfolio).",
     "App Store screenshot galleries live on ASC (2026-08-05): Mac 6 slots (critic 88, incl. Targets-sheet slide) + iPhone 6.9\" 5 slots (critic 97). Sources in ~/pfolio-app/marketing/ (raw captures + .screenker packages).",
-    "Build 9 fixes (2026-08-05): Targets sheet layout on macOS, Return-to-send in Ask, summary-first allocation columns on compact width; -selectedTab launch-arg capture hook (build 8)."
+    "Build 9 fixes (2026-08-05): Targets sheet layout on macOS, Return-to-send in Ask, summary-first allocation columns on compact width; -selectedTab launch-arg capture hook (build 8).",
+    "UI audit 2026-08-07 via the new /ui-critique skill: found a regression where the phone Allocation tab clipped Target and hid Drift (and hid EVERY number at accessibility sizes). Fixed in PR #6 (bill/ui-audit-fixes -> merge-steve-ux) along with currency wrapping mid-number, three WCAG contrast failures, sub-44pt touch targets, and a banner reading 'this Mac only' on iPhone. Capture rig: marketing/uicapture/capture_ui_variants.sh."
    ]
   },
   {
@@ -1508,7 +1547,7 @@
    "branch": "main",
    "last2026Commit": "2026-07-20",
    "kind": "reference engine",
-   "role": "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
+   "role": "Python FastAPI/WeasyPrint directory-book engine \u2014 read-only reference for Mallinbook; one-time lossless photo extraction"
   },
   {
    "repo": "~/card-engine",
