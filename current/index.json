@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-07T21:52:47-05:00",
+ "generatedAt": "2026-08-08T05:23:49-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -17,9 +17,9 @@
  },
  "summary": {
   "ascApps": 20,
-  "mappedAscApps": 16,
-  "unmatchedAscApps": 4,
-  "activeRepos": 43,
+  "mappedAscApps": 18,
+  "unmatchedAscApps": 2,
+  "activeRepos": 44,
   "clusters": 15,
   "liveServices": 6,
   "collaborators": 3
@@ -504,15 +504,12 @@
    "maturity": "inventory gap",
    "summary": "App Store Connect records with no verified local source repository or public product record in the current portfolio scan.",
    "highlights": [
-    "MastPex IOS",
-    "MastPex Mac",
     "PickleFamilia",
-    "Screenker",
-    "Zerver Monitor"
+    "Screenker"
    ],
    "watchpoints": [
-    "Repository, bundle identifier, and release details still need owner verification.",
-    "No verified public website or App Store product page was found in the current link pass."
+    "Local source repositories are still unverified.",
+    "Verified public product pages exist, but no standalone source repository was found in the latest scan."
    ]
   }
  ],
@@ -1817,7 +1814,7 @@
  "gaps": [
   "confirmed",
   "ambiguities",
-  "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. MastPex IOS, MastPex Mac, PickleFamilia, and Screenker have ASC records but no verified local source repository."
+  "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. PickleFamilia and Screenker have ASC records but no verified local source repository."
  ],
  "taskRegistry": {
   "path": "tasks/index.json",

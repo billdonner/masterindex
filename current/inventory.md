@@ -12,8 +12,8 @@ As of Wednesday, August 6, 2026.
 ## Executive Summary
 
 - App Store Connect currently shows 20 apps from the August 6 live API pull. PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings remain removed from ASC.
-- 16 ASC apps map cleanly to currently active local repositories.
-- 4 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
+- 18 ASC apps map cleanly to currently active local repositories.
+- 2 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - AmenBeats was resolved on 2026-08-04: its repo is `~/drumbeats` (App Store name ≠ repo name hid it from earlier scans). A Bill + Jim SwiftUI drum-machine app; Jim (`@jrforster`) added as full admin, now a shared build.
 - MastPex was resolved on 2026-08-07: its iOS and macOS ASC records map to `~/Documents/Codex/2026-08-02/masterindex-explorer`, the native read-only explorer for compatible MasterIndex files.
@@ -49,6 +49,8 @@ As of Wednesday, August 6, 2026.
 | LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | build `2` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/ltwatcher/` |
 | 123 Words | `com.123words.app` | `6766975041` | `~/123words` | build `41` uploaded | versions `1.0`, `1.1`, and `1.11` ready for distribution; `1.12` in preparation | `https://billdonner.github.io/123words/` |
 | AmenBeats | `com.billdonner.drumbeats` | `6778510642` | `~/drumbeats` | build `7` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/amenbeats/` |
+| MastPex IOS | `com.billdonner.mastpex` | `6797321392` | `~/Documents/Codex/2026-08-02/masterindex-explorer` | build `1` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
+| MastPex Mac | `com.billdonner.mastpex.mac` | `6797321653` | `~/Documents/Codex/2026-08-02/masterindex-explorer` | build `1` uploaded | `MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
 | SentiPods | `com.sentipods.app` | `6797132650` | `~/sentipods` | build `15` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/sentipods/` |
 | Zerver Monitor | `com.billdonner.ZerverMonitor` | `6759637400` | `~/server-monitor-ios` | build `4` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/server-monitor-ios/` |
 | Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | build `18` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/mallinbook/` |
