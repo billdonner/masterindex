@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-08T13:26:21-05:00",
+ "generatedAt": "2026-08-08T15:26:21-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -1384,7 +1384,7 @@
     "appStore": null
    },
    "notes": [
-    "Initialized Git repository on main with no commits yet; all current app, package, test, and specification files are uncommitted.",
+    "Initial commit f634ccf (2026-08-08) contains the offline capture spike, shared domain package, tests, decision records, and product specification.",
     "Working spike supports camera or photo-library import, on-device Vision OCR, restart-safe local persistence, candidate review/correction, and confirmed Wine, Vintage, and Bottle records.",
     "Recognition is a clearly labeled deterministic development stub; no image or data leaves the device.",
     "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete."
@@ -1850,10 +1850,10 @@
   },
   {
    "repo": "~/oenora",
-   "branch": "main (no commits yet)",
-   "last2026Commit": "no commits yet",
+   "branch": "main",
+   "last2026Commit": "2026-08-08",
    "kind": "iOS app + product specification",
-   "role": "Oenora wine-collection knowledge system; working iOS technical spike with local OCR/cellar flow plus product and technical specifications"
+   "role": "Oenora wine-collection knowledge system; committed iOS technical spike with local OCR/cellar flow plus product and technical specifications"
   }
  ],
  "gaps": [
