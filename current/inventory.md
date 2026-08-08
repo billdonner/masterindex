@@ -97,7 +97,7 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 |---|---|---|---|---|
 | Jim Forster (`@jrforster`) | dev collaborator | `billdonner/adspill`, `billdonner/drumbeats` | adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): joined as admin 2026-08-04, feature work starting | No |
 | Carol (`@cuchif`) | dev collaborator | `billdonner/qross` | 3 open PRs from Carol (#172/#173/#174, 07-25/26) | **Yes — 3 PRs need review** |
-| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio`, `billdonner/pfolio-app` | His UX work is merged (pfolio-app #5, which he reviewed hands-on and approved 2026-08-07). His older PRs #3/#4 and #1/#2 remain open but their content is largely superseded. | **Partly — close the superseded PRs; settle the app name** |
+| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio`, `billdonner/pfolio-app` | His UX work is merged (pfolio-app #5, reviewed hands-on and approved 2026-08-07) and all four of his PRs were closed as superseded on 2026-08-08, each with a comment tracing where the work landed. His classification backlog moved to pfolio issue #7. | **No — nothing of his is waiting on Bill** |
 
 - **Reconcile:** Steve is mapped to `pfolio` as its end-user; the repo's code
   collaborator is `@rachelelise`, not a Steve GitHub identity. Decide whether

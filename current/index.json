@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-08T15:26:21-05:00",
+ "generatedAt": "2026-08-08T17:55:38-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -1219,8 +1219,8 @@
     "Fund look-through: GET /portfolio/exposure/{ticker} returns direct + indirect exposure with its own coverage figure. On the demo portfolio NVIDIA went from $85,000 direct to $130,454 true (+53%); Broadcom from $0 to $17,326.",
     "CUSIP->ticker resolution via openFIGI is load-bearing, not a fallback: real N-PORT filings carried a ticker on 122 of 35,556 constituent rows. PF_OPENFIGI_API_KEY (free) cuts a full 22k-CUSIP pass from ~90 min to ~3 min.",
     "pfolio-mcp: 16-tool stdio MCP server, registered in Claude Code. Deliberately an HTTP client over the API, never a second DB client.",
-    "100 backend tests. Steve's PRs #3/#4 still open; #4's content is already merged into the multi-user-backend line. main is branch-protected in both pfolio repos.",
-    "Open: paid-app entitlement table exists (migration 018) but nothing reads it; Plaid Investments production access still pending Plaid review."
+    "Open: paid-app entitlement table exists (migration 018) but nothing reads it; Plaid Investments production access still pending Plaid review.",
+    "Steve's PRs closed as superseded 2026-08-08 (pfolio #3/#4, pfolio-app #1/#2), each with a comment tracing where the work landed. His classification backlog was carried out of PR #3 into issue #7 so it did not close with the PR: (1) one security can still be classified two ways via account-level mandates, needs a reconciliation view; (2) 'Individual Stocks' is full of defaults rather than decisions, needs a finder screen. Fund look-through makes both worse if left, since a mis-bucketed security now mis-attributes every fund that holds it."
    ]
   },
   {
@@ -1252,7 +1252,8 @@
     "App Store galleries on ASC (2026-08-05): Mac 6 slots (critic 88) + iPhone 6.9\" 5 slots (critic 97). Sources in ~/pfolio-app/marketing/.",
     "UI tests are data-driven against a seeded local backend. ./run-tests.sh runs all three suites (backend, iOS unit+UI, Mac build).",
     "Open before launch: GitHub Pages is not yet enabled for pfolio-app, so the new privacy policy (docs/privacy.html, written 2026-08-07) is not yet live — it needs Pages on main/docs, same as qross, and the file must reach main first. Mac archive also never uploaded.",
-    "Plaid SPM dependency removed 2026-08-07: nothing had imported LinkKit since both platforms moved to Hosted Link, but it was still shipping in the iOS binary. The app now links only Apple frameworks."
+    "Plaid SPM dependency removed 2026-08-07: nothing had imported LinkKit since both platforms moved to Hosted Link, but it was still shipping in the iOS binary. The app now links only Apple frameworks.",
+    "Verifying Steve's PRs before closing them caught a regression my merge had introduced: his 'blue means summary' rule was applied to the Grand Total as Color.accentColor, but this app's accent is a dark navy, so the Grand Total rendered a different colour from the category bands. Fixed (9e15952) and tied to tint() so they cannot drift. Neither SHA comparison nor git cherry could detect this — the commits were modified during conflict resolution, so it took checking semantics in the tree."
    ]
   },
   {
@@ -1266,7 +1267,9 @@
    "bundleId": "com.billdonner.mastpex",
    "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
    "description": "Native iPhone and iPad explorer for a compatible MasterIndex: browse a read-only software portfolio map with search, relationships, drill-down, links, and explicit gaps.",
-   "dependencies": ["MasterIndex"],
+   "dependencies": [
+    "MasterIndex"
+   ],
    "links": {
     "website": null,
     "appStore": null
@@ -1287,7 +1290,9 @@
    "bundleId": "com.billdonner.mastpex.mac",
    "release": "Development: macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
    "description": "Native Mac explorer for a compatible MasterIndex: a read-only desktop map of apps, repositories, services, links, relationships, and known gaps.",
-   "dependencies": ["MasterIndex"],
+   "dependencies": [
+    "MasterIndex"
+   ],
    "links": {
     "website": null,
     "appStore": null
@@ -1472,8 +1477,8 @@
     "awaitingYourAction": true,
     "note": "Steve is the pfolio end-user; dev work on his product is done by @rachelelise. Open PRs as of 2026-08-04: pfolio #3/#4 (taxonomy, classification, tax treatment, demo seeder), pfolio-app #1/#2 (allocation matrix, classify UI). App repo renamed pfolio-ios -> pfolio-app; Oliopfolio builds uploaded to TestFlight (iOS + macOS)."
    },
-   "lastReviewed": "2026-08-07",
-   "status": "His UX work is merged into the Mac line (pfolio-app PR #5), which he reviewed hands-on against a seeded portfolio and approved on 2026-08-07. His four older PRs are still open but largely superseded and should be closed. Outstanding decision for Bill: the app name."
+   "lastReviewed": "2026-08-08",
+   "status": "All four of his PRs closed as superseded 2026-08-08; his work is in the Mac line and his review of PR #5 is addressed. Nothing of his is awaiting Bill. Open on Bill's side: rename the ASC record to Oliofolio, publish the privacy page, merge the branch stack to main."
   }
  ],
  "services": [
