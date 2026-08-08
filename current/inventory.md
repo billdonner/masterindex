@@ -30,6 +30,7 @@ As of Wednesday, August 6, 2026.
   - `SharedSpaceLab`
 - `adspill` (new cluster): a Bill + Jim (`@jrforster`) private research collaboration on selling excess advertising capacity, split into Project 1 (auction/exchange modeling sandbox, Bill's track) and Project 2 (self-serve create-and-sell for long-tail local video ads, Jim's track). Lab/scoping stage.
 - `local-model-lab` (standalone, added 2026-08-04): MLX local-model evaluation lab at `~/mlxsrv/local-model-lab`, benchmarking on-device quantized models (and OpenAI GPT-5 for comparison) against an exported 177k-question Qross corpus snapshot. No dependency on the Qross app/repos — the corpus is just benchmark data.
+- `Oenora` (added 2026-08-07) is an early, local-only wine-collector product specification at `~/oenora`: iPhone bottle photography, trusted cellar knowledge, Mac management, and collection-aware AI advice. The name remains provisional pending clearance; no app target, Git repo, backend, or public link has been observed.
 
 ## Current ASC Apps
 

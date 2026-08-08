@@ -500,6 +500,21 @@
    ]
   },
   {
+   "name": "Oenora",
+   "maturity": "pre-build product specification",
+   "summary": "Personal wine knowledge system for collectors, beginning with low-friction bottle capture and trusted cellar intelligence.",
+   "highlights": [
+    "Oenora product and technical specifications",
+    "iPhone bottle photography",
+    "Mac cellar management",
+    "collection-aware AI advisor"
+   ],
+   "watchpoints": [
+    "Working name requires trademark, App Store, and domain clearance",
+    "No application target, backend, or public product surface has been observed"
+   ]
+  },
+  {
    "name": "Unmapped ASC",
    "maturity": "inventory gap",
    "summary": "App Store Connect records with no verified local source repository or public product record in the current portfolio scan.",
@@ -1351,6 +1366,27 @@
     "Direct source match verified 2026-08-08: project.yml declares com.billdonner.ZerverMonitor and the Zerver Monitor display name.",
     "Public GitHub Pages site verified with HTTP 200 on 2026-08-08."
    ]
+  },
+  {
+   "id": "oenora-app",
+   "name": "Oenora",
+   "kind": "app",
+   "cluster": "Oenora",
+   "status": "planning",
+   "lastModified": "2026-08-07",
+   "repo": "~/oenora",
+   "bundleId": null,
+   "release": "Pre-build product and technical specification; working name pending trademark, App Store, and domain clearance.",
+   "description": "Personal wine knowledge system for collectors: iPhone bottle photography, trusted wine identification, a Mac cellar-management workspace, and collection-aware AI advice.",
+   "dependencies": [],
+   "links": {
+    "website": null,
+    "appStore": null
+   },
+   "notes": [
+    "Local planning workspace only; no Git repository, app target, bundle ID, service, or public link observed.",
+    "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete."
+   ]
   }
  ],
  "collaborators": [
@@ -1809,6 +1845,13 @@
    "last2026Commit": "2026-08-05",
    "kind": "app",
    "role": "ASC-mapped iOS drum-machine (App Store name AmenBeats); Bill + Jim shared build"
+  },
+  {
+   "repo": "~/oenora",
+   "branch": "not a Git repository",
+   "last2026Commit": "not applicable",
+   "kind": "product specification",
+   "role": "Oenora wine-collection knowledge system; planning workspace with product and technical specifications"
   }
  ],
  "gaps": [
