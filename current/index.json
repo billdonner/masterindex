@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-07T20:32:19-05:00",
+ "generatedAt": "2026-08-07T21:52:47-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -1212,7 +1212,7 @@
   },
   {
    "id": "pfolio-app",
-   "name": "Oliopfolio (pfolio-app)",
+   "name": "Oliofolio (pfolio-app)",
    "kind": "app",
    "cluster": "pfolio",
    "status": "asc-mapped",
@@ -1232,13 +1232,14 @@
    "notes": [
     "GitHub repo renamed pfolio-ios -> pfolio-app 2026-08-04 (redirects intact).",
     "Paid-upfront $14.99, Finance category, ASC record (6797993806) created 2026-08-04.",
-    "NAME UNDER DISCUSSION: Steve objects to 'Oliopfolio' (he mistyped it as 'oilopfolio' on first use); Bill has proposed dropping the p -> 'Oliofolio'. Settle before touching the ASC record.",
+    "NAME SETTLED 2026-08-07: Oliofolio (dropped the p; the 'pf' cluster was why Steve mistyped it as 'oilopfolio'). In-app strings, plists, Reminders list and icon generator all renamed. THE ASC RECORD STILL SAYS 'Oliopfolio' and must be renamed by hand.",
     "Steve's UX branch merged into the Mac line 2026-08-06 (PR #5) and approved by him after hands-on testing. His macOS review items are fixed: sheets opened unsized, Form interiors misrendered, Settings gear was iOS-only.",
     "Two Mac invariants that compile fine and only show up by running the app: macOS does not size a sheet from its content (use .sheetSize()), and macOS defaults Form to a two-column label/content layout (use .pfFormStyle()).",
     "New app icon 2026-08-06: 'Op' on a green gradient over a $ watermark; regenerate via Assets.xcassets/AppIcon.appiconset/make_icon.py.",
     "App Store galleries on ASC (2026-08-05): Mac 6 slots (critic 88) + iPhone 6.9\" 5 slots (critic 97). Sources in ~/pfolio-app/marketing/.",
     "UI tests are data-driven against a seeded local backend. ./run-tests.sh runs all three suites (backend, iOS unit+UI, Mac build).",
-    "Open before launch: privacy policy URL does not exist; Mac archive never uploaded; the name."
+    "Open before launch: GitHub Pages is not yet enabled for pfolio-app, so the new privacy policy (docs/privacy.html, written 2026-08-07) is not yet live — it needs Pages on main/docs, same as qross, and the file must reach main first. Mac archive also never uploaded.",
+    "Plaid SPM dependency removed 2026-08-07: nothing had imported LinkKit since both platforms moved to Hosted Link, but it was still shipping in the iOS binary. The app now links only Apple frameworks."
    ]
   },
   {
