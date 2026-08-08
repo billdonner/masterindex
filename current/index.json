@@ -587,7 +587,7 @@
    "kind": "app",
    "cluster": "Standalone",
    "status": "asc-mapped",
-   "lastModified": "2026-08-07",
+   "lastModified": "2026-08-08",
    "repo": "~/drumbeats",
    "bundleId": "com.billdonner.drumbeats",
    "release": "ASC app id 6778510642, iOS 1.0 draft. TestFlight build 7 uploaded 2026-08-05 (first build with the full feature set); App Store copy (description/keywords/promo) pushed to the 1.0 draft. Bill + Jim shared build.",
@@ -816,10 +816,10 @@
    "kind": "app",
    "cluster": "KinFlash",
    "status": "asc-mapped",
-   "lastModified": "2026-08-07",
+   "lastModified": "2026-08-08",
    "repo": "~/kinflash",
    "bundleId": "com.billdonner.kinflash",
-   "release": "Development active: iOS 1.0.0 build 65 previously uploaded to TestFlight; Mac MCP voice testing and safe Mallinbook-family export fixtures expanded through 2026-08-07.",
+   "release": "Development active: iOS 1.0.0 build 65 previously uploaded to TestFlight; Mac MCP voice testing and safe fictional-pedigree export fixtures expanded through 2026-08-08.",
    "description": "Privacy-first iPhone and iPad family-tree editor with AI interviews, relationship flashcards, GEDCOM exchange, read-only family packages, and native Mac MCP automation.",
    "dependencies": [],
    "links": {
@@ -832,7 +832,8 @@
     "Targets iOS 26 and uses the on-device Foundation Models API.",
     "No verified public website or App Store product page is available yet.",
     "2026-08-05: Mac MCP tooling added voice-capture, transcription, feedback, and run-log interfaces plus a smoke-test script; this is local development work, not a new ASC release.",
-    "2026-08-07: replaced the Mallinbook family fixture with safe lineages and added a rendered constellation export; no new ASC release was observed."
+    "2026-08-07: replaced the Mallinbook family fixture with safe lineages and added a rendered constellation export; no new ASC release was observed.",
+    "2026-08-08: separated roster data from the fictional-pedigree fixture and refreshed its rendered export; no new ASC release was observed."
    ]
   },
   {
@@ -1376,7 +1377,7 @@
    "lastModified": "2026-08-08",
    "repo": "~/oenora",
    "bundleId": "com.billdonner.oenora",
-   "release": "Active local iPhone technical spike for iOS 18; no ASC record, deployment, or public product link observed. Working name remains pending trademark, App Store, and domain clearance.",
+   "release": "Active local iPhone technical spike for iOS 18; App Store Connect registration tooling is prepared, but no ASC record, deployment, or public product link has been observed. Working name remains pending trademark, App Store, and domain clearance.",
    "description": "Personal wine knowledge system for collectors: a working iPhone photo-to-cellar spike plus a longer-term Mac workspace and collection-aware AI roadmap.",
    "dependencies": [],
    "links": {
@@ -1387,7 +1388,8 @@
     "Initial commit f634ccf (2026-08-08) contains the offline capture spike, shared domain package, tests, decision records, and product specification.",
     "Working spike supports camera or photo-library import, on-device Vision OCR, restart-safe local persistence, candidate review/correction, and confirmed Wine, Vintage, and Bottle records.",
     "Recognition is a clearly labeled deterministic development stub; no image or data leaves the device.",
-    "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete."
+    "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete.",
+    "2026-08-08: added a local App Store Connect app-registration script and documentation; this is setup tooling, not evidence that the app has been registered or released."
    ]
   }
  ],
@@ -1664,7 +1666,7 @@
    "branch": "main",
    "last2026Commit": "2026-08-07",
    "kind": "app",
-   "role": "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight; safe Mallinbook-family fixture/export work added 2026-08-07"
+   "role": "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight; safe fictional-pedigree fixture/export work refreshed 2026-08-08"
   },
   {
    "repo": "~/mallinbook",
@@ -1853,7 +1855,7 @@
    "branch": "main",
    "last2026Commit": "2026-08-08",
    "kind": "iOS app + product specification",
-   "role": "Oenora wine-collection knowledge system; committed iOS technical spike with local OCR/cellar flow plus product and technical specifications"
+   "role": "Oenora wine-collection knowledge system; committed iOS technical spike with local OCR/cellar flow, product and technical specifications, and unexecuted ASC registration tooling"
   }
  ],
  "gaps": [
