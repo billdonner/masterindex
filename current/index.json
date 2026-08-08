@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-06T20:24:58-05:00",
+ "generatedAt": "2026-08-08T01:21:17-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -17,8 +17,8 @@
  },
  "summary": {
   "ascApps": 20,
-  "mappedAscApps": 15,
-  "unmatchedAscApps": 5,
+  "mappedAscApps": 16,
+  "unmatchedAscApps": 4,
   "activeRepos": 43,
   "clusters": 15,
   "liveServices": 6,
@@ -804,10 +804,10 @@
    "kind": "app",
    "cluster": "KinFlash",
    "status": "asc-mapped",
-   "lastModified": "2026-08-05",
+   "lastModified": "2026-08-07",
    "repo": "~/kinflash",
    "bundleId": "com.billdonner.kinflash",
-   "release": "Development active: iOS 1.0.0 build 65 previously uploaded to TestFlight; Mac MCP voice-testing interfaces expanded 2026-08-05.",
+   "release": "Development active: iOS 1.0.0 build 65 previously uploaded to TestFlight; Mac MCP voice testing and safe Mallinbook-family export fixtures expanded through 2026-08-07.",
    "description": "Privacy-first iPhone and iPad family-tree editor with AI interviews, relationship flashcards, GEDCOM exchange, read-only family packages, and native Mac MCP automation.",
    "dependencies": [],
    "links": {
@@ -819,7 +819,8 @@
     "Bundle identity comes from xcconfig.",
     "Targets iOS 26 and uses the on-device Foundation Models API.",
     "No verified public website or App Store product page is available yet.",
-    "2026-08-05: Mac MCP tooling added voice-capture, transcription, feedback, and run-log interfaces plus a smoke-test script; this is local development work, not a new ASC release."
+   "2026-08-05: Mac MCP tooling added voice-capture, transcription, feedback, and run-log interfaces plus a smoke-test script; this is local development work, not a new ASC release.",
+   "2026-08-07: replaced the Mallinbook family fixture with safe lineages and added a rendered constellation export; no new ASC release was observed."
    ]
   },
   {
@@ -1067,7 +1068,7 @@
     "appStore": null
    },
    "notes": [
-    "ASC has Zerver Monitor, but the local iOS companion repo was not present in this scan."
+    "Its companion app is Zerver Monitor at ~/server-monitor-ios; the direct bundle-ID match was verified 2026-08-08."
    ]
   },
   {
@@ -1327,23 +1328,23 @@
    "id": "zerver-monitor-asc-app",
    "name": "Zerver Monitor",
    "kind": "app",
-   "cluster": "Unmapped ASC",
-   "status": "asc-unmapped",
-   "lastModified": null,
-   "repo": null,
+   "cluster": "Infrastructure",
+   "status": "asc-mapped",
+   "lastModified": "2026-02-27",
+   "repo": "~/server-monitor-ios",
    "bundleId": "com.billdonner.ZerverMonitor",
    "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 4 uploaded 2026-02-27 and is expired.",
-   "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
+   "description": "iOS, watchOS, widget, and web companion for the server-monitor service, showing health, metrics, sparklines, and alerts across HTTP, Redis, and PostgreSQL targets.",
    "dependencies": [
     "server-monitor"
    ],
    "links": {
-    "website": null,
+    "website": "https://billdonner.github.io/server-monitor-ios/",
     "appStore": null
    },
    "notes": [
-    "The live server-monitor service may be related, but no companion app repository or direct mapping is verified.",
-    "No verified public website or App Store product page was found in the current link pass."
+    "Direct source match verified 2026-08-08: project.yml declares com.billdonner.ZerverMonitor and the Zerver Monitor display name.",
+    "Public GitHub Pages site verified with HTTP 200 on 2026-08-08."
    ]
   }
  ],
@@ -1604,7 +1605,7 @@
    "branch": "main",
    "last2026Commit": "2026-08-06",
    "kind": "backend/service",
-   "role": "Live transcript service; analysis live-update and progress-view code added 2026-08-06, with production deployment unverified"
+   "role": "Live transcript service; analysis live-update and progress view deployed 2026-08-06"
   },
   {
    "repo": "~/grubber-ios",
@@ -1616,9 +1617,9 @@
   {
    "repo": "~/kinflash",
    "branch": "main",
-   "last2026Commit": "2026-08-05",
+   "last2026Commit": "2026-08-07",
    "kind": "app",
-   "role": "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight; Mac MCP voice-testing interfaces expanded 2026-08-05"
+   "role": "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight; safe Mallinbook-family fixture/export work added 2026-08-07"
   },
   {
    "repo": "~/mallinbook",
@@ -1719,6 +1720,13 @@
    "role": "Live monitoring dashboard"
   },
   {
+   "repo": "~/server-monitor-ios",
+   "branch": "main",
+   "last2026Commit": "2026-02-27",
+   "kind": "app",
+   "role": "ASC-mapped Zerver Monitor iOS + watchOS client, widget, and public GitHub Pages support site"
+  },
+  {
    "repo": "~/sentipods",
    "branch": "main",
    "last2026Commit": "2026-08-03",
@@ -1792,7 +1800,7 @@
  "gaps": [
   "confirmed",
   "ambiguities",
-  "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. MastPex IOS, MastPex Mac, PickleFamilia, Screenker, and Zerver Monitor have ASC records but no verified local source repository."
+  "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. MastPex IOS, MastPex Mac, PickleFamilia, and Screenker have ASC records but no verified local source repository."
  ],
  "taskRegistry": {
   "path": "tasks/index.json",

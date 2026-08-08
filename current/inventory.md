@@ -12,8 +12,8 @@ As of Wednesday, August 6, 2026.
 ## Executive Summary
 
 - App Store Connect currently shows 20 apps from the August 6 live API pull. PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings remain removed from ASC.
-- 15 ASC apps map cleanly to currently active local repositories.
-- 5 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
+- 16 ASC apps map cleanly to currently active local repositories.
+- 4 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - AmenBeats was resolved on 2026-08-04: its repo is `~/drumbeats` (App Store name ≠ repo name hid it from earlier scans). A Bill + Jim SwiftUI drum-machine app; Jim (`@jrforster`) added as full admin, now a shared build.
 - Default browsing order should normally be most recently modified first.
@@ -49,19 +49,20 @@ As of Wednesday, August 6, 2026.
 | 123 Words | `com.123words.app` | `6766975041` | `~/123words` | build `41` uploaded | versions `1.0`, `1.1`, and `1.11` ready for distribution; `1.12` in preparation | `https://billdonner.github.io/123words/` |
 | AmenBeats | `com.billdonner.drumbeats` | `6778510642` | `~/drumbeats` | build `7` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/amenbeats/` |
 | SentiPods | `com.sentipods.app` | `6797132650` | `~/sentipods` | build `15` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/sentipods/` |
+| Zerver Monitor | `com.billdonner.ZerverMonitor` | `6759637400` | `~/server-monitor-ios` | build `4` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/server-monitor-ios/` |
 | Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | build `18` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/mallinbook/` |
 | Oliopfolio | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | build `6` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
 
 ### Confirmed gaps
 
-- The five ASC records without a matched active local repository remain browseable entities: MastPex IOS, MastPex Mac, PickleFamilia, Screenker, and Zerver Monitor. The August 6 ASC pull supplied their real bundle IDs, platform status, and build metadata.
+- The four ASC records without a matched active local repository remain browseable entities: MastPex IOS, MastPex Mac, PickleFamilia, and Screenker. The August 6 ASC pull supplied their real bundle IDs, platform status, and build metadata.
 - PickleFamilia has a verified public product page at `https://billdonner.github.io/picklefamilia-ios/`; its source repository is still unverified.
 - Screenker is wired to Qross, 123 Words, and 100 Burfords as their observed shared App Store screenshot-composition workflow. It also has a verified public product page at `https://billdonner.github.io/screenker/`, but its standalone local source repository remains unverified.
+- Zerver Monitor is now resolved to `~/server-monitor-ios`: its `project.yml` declares the exact ASC bundle ID, and it contains the iOS, watchOS, widget, and web-support sources. Its public GitHub Pages site is `https://billdonner.github.io/server-monitor-ios/`.
 - MasterIndex policy: every ASC app has an entity. A verified public website or App Store page is stored in `links`; when neither is verified, the entity's `release` field explicitly records its known release or development status.
 - `grubber-ios` is active locally but did not match a current ASC app.
 - `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan.
 - `picklefortunes` is retired: its ASC listing was deleted in the 2026-08 cleanup, its repository is archived, and its reusable kit is retained in PickledBalls.
-- `Zerver Monitor` exists in ASC but only the backend/service repo was present in the local scan.
 - `SharedSpaceLab` is local-only and not in ASC.
 
 ## Shared Services
