@@ -51,7 +51,7 @@ As of Wednesday, August 6, 2026.
 | SentiPods | `com.sentipods.app` | `6797132650` | `~/sentipods` | build `15` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/sentipods/` |
 | Zerver Monitor | `com.billdonner.ZerverMonitor` | `6759637400` | `~/server-monitor-ios` | build `4` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/server-monitor-ios/` |
 | Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | build `18` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/mallinbook/` |
-| Oliopfolio | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | build `6` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
+| Oliopfolio* | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | build `9` uploaded (local 25) | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
 
 ### Confirmed gaps
 
@@ -72,6 +72,10 @@ As of Wednesday, August 6, 2026.
 - `bd-cardzerver.fly.dev` from `~/card-server`
 - `bd-grubber.fly.dev` from `~/grubber`
 - `bd-server-monitor.fly.dev` from `~/server-monitor`
+\* The app name is under discussion: Steve objects to "Oliopfolio" (he mistyped it
+as "oilopfolio" on first use) and Bill has proposed "Oliofolio". Nothing is renamed
+yet — settle it before touching the ASC record.
+
 - `bd-pfolio.fly.dev` from `~/pfolio` (portfolio tracker API; shares bd-postgres)
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
 
@@ -89,7 +93,7 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 |---|---|---|---|---|
 | Jim Forster (`@jrforster`) | dev collaborator | `billdonner/adspill`, `billdonner/drumbeats` | adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): joined as admin 2026-08-04, feature work starting | No |
 | Carol (`@cuchif`) | dev collaborator | `billdonner/qross` | 3 open PRs from Carol (#172/#173/#174, 07-25/26) | **Yes — 3 PRs need review** |
-| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio`, `billdonner/pfolio-app` | 4 open PRs on his product from `@rachelelise` (pfolio #3/#4, pfolio-app #1/#2) | **Yes — 4 PRs need review** |
+| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio`, `billdonner/pfolio-app` | His UX work is merged (pfolio-app #5, which he reviewed hands-on and approved 2026-08-07). His older PRs #3/#4 and #1/#2 remain open but their content is largely superseded. | **Partly — close the superseded PRs; settle the app name** |
 
 - **Reconcile:** Steve is mapped to `pfolio` as its end-user; the repo's code
   collaborator is `@rachelelise`, not a Steve GitHub identity. Decide whether

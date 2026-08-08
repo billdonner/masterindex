@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-08T01:21:17-05:00",
+ "generatedAt": "2026-08-07T20:32:19-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -526,7 +526,7 @@
    "lastModified": "2026-08-05",
    "repo": "~/mlxsrv/local-model-lab",
    "bundleId": null,
-   "release": "local tooling only \u2014 no ASC presence",
+   "release": "local tooling only — no ASC presence",
    "description": "Local MLX model evaluation lab: runs quantized models (Qwen3-4B etc.) on-device via an OpenAI-compatible local server and benchmarks them against the full 177,501-question Qross corpus (no_hint and on_request_hint modes), with an OpenAI GPT-5 runner for paid-API comparison. Produces per-run answer logs, wrong-answer exports, and a leaderboard.",
    "dependencies": [],
    "links": {
@@ -536,11 +536,11 @@
    },
    "notes": [
     "Lives at ~/mlxsrv/local-model-lab (parent dir ~/mlxsrv is not itself a repo); previously missed by scans because it sits one level below ~.",
-    "Standalone lab \u2014 not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
+    "Standalone lab — not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
     "Full-corpus leaderboard (2026-08-04): local baseline 85.90% no-hint / 88.72% hinted; qwen3-4b-instruct 84.12% no-hint; OpenAI gpt-5 98.34% on a 10k subset (~$0.94).",
     "Raw answers.jsonl files over 100MB are gitignored (GitHub limit) and kept local-only; summaries and wrong-answer exports are pushed.",
     "Hinted qwen3-4b full-corpus run completed 2026-08-04: 84.84% (vs 84.12% no-hint; hints give qwen3-4b only +0.73 lift).",
-    "2026-08-05: SwiftChat became the common interface \u2014 four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB \u2192 7.7GB (kept qwen3-4b + baseline; others re-downloadable)."
+    "2026-08-05: SwiftChat became the common interface — four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB → 7.7GB (kept qwen3-4b + baseline; others re-downloadable)."
    ]
   },
   {
@@ -562,10 +562,10 @@
    },
    "notes": [
     "Renamed 2026-08-01 from bookmaker-app: repo/target/module and the document extension (.bookmaker -> .mallinbook); ASC identity unchanged (app id 6785245339), so earlier scans missed the repo.",
-    "Local version 1.0 (14) is one build ahead of TestFlight (13) \u2014 committed, not yet uploaded.",
+    "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
     "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
     "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
-    "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core \u2014 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
+    "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
     "PARKED 2026-08-03 by owner: resume near the iOS 27 release, when App Store submission can go through the release iOS-27 toolchain. State at park: build 18 live on TestFlight (both platforms); feature-complete for v1 (custom pages, filler pool, recto section starts with PD art dividers, menu parity, -exportPDF); 67 app + 27 MCP tests green; mallinbook-mcp installed at ~/bin and registered with Claude Code; 44-page Maplecrest print PDF ready for the bindery. Resume checklist: confirm xcode-select is the release Xcode, archive via scripts/preflight-testflight.sh flow, then App Store metadata/review."
    ]
   },
@@ -624,9 +624,9 @@
    "notes": [
     "Uses JSON plus GRDB SQLite locally.",
     "Pulls live data from nagzerver and clubsync.",
-    "SharedAI unlinked from v1.0 (2026-07-23) \u2014 re-add when the Instructor tier ships.",
+    "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
     "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
-    "Site fully deployed 2026-08-02 \u2014 support.html and privacy.html both verified live (200).",
+    "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
     "Submission gate (2026-08-03): transfer ASC app ownership to 1041Soft first, then submit 1.0 (354) for review. Everything else is ready."
    ]
   },
@@ -819,8 +819,8 @@
     "Bundle identity comes from xcconfig.",
     "Targets iOS 26 and uses the on-device Foundation Models API.",
     "No verified public website or App Store product page is available yet.",
-   "2026-08-05: Mac MCP tooling added voice-capture, transcription, feedback, and run-log interfaces plus a smoke-test script; this is local development work, not a new ASC release.",
-   "2026-08-07: replaced the Mallinbook family fixture with safe lineages and added a rendered constellation export; no new ASC release was observed."
+    "2026-08-05: Mac MCP tooling added voice-capture, transcription, feedback, and run-log interfaces plus a smoke-test script; this is local development work, not a new ASC release.",
+    "2026-08-07: replaced the Mallinbook family fixture with safe lineages and added a rendered constellation export; no new ASC release was observed."
    ]
   },
   {
@@ -844,7 +844,7 @@
    },
    "notes": [
     "Its shared kit is reused by PickledBalls.",
-    "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement \u2014 PickledBalls consumed it via a local SPM path.",
+    "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
     "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
     "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product."
    ]
@@ -870,7 +870,7 @@
    "notes": [
     "Strong signal of finished packaging relative to the rest of the portfolio.",
     "Live ASC version is 1.0; local 1.1 (9) with build 8 on TestFlight (print-at-home, order-prints-by-mail partner hand-off, signed Fan Club Card, dark mode, 2,787 bundled reader comments).",
-    "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots \u2014 not yet published to ASC."
+    "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots — not yet published to ASC."
    ]
   },
   {
@@ -1146,7 +1146,7 @@
    "repo": "~/123words",
    "bundleId": "com.123words.app",
    "release": "ASC mapped; 1.11 live, 1.12 draft holds the new 7-slot Screenker gallery (critic 90)",
-   "description": "Kids 2\u20137 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+   "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
    "dependencies": [],
    "links": {
     "website": "https://billdonner.github.io/123words/",
@@ -1167,7 +1167,7 @@
    "repo": "~/adspill",
    "bundleId": null,
    "release": null,
-   "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 \u2014 an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) \u2014 and Project 2 \u2014 a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
+   "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
    "dependencies": [],
    "links": {
     "website": null,
@@ -1188,11 +1188,11 @@
    "kind": "backend",
    "cluster": "pfolio",
    "status": "live",
-   "lastModified": "2026-08-04",
+   "lastModified": "2026-08-07",
    "repo": "~/pfolio",
    "bundleId": null,
-   "release": "Live on Fly at bd-pfolio.fly.dev (shares bd-postgres, db pfolio)",
-   "description": "Portfolio-tracker backend: FastAPI + asyncpg. Plaid Investments holdings in (sandbox now; production access pending Plaid review), asset-allocation analytics, allocation matrix/targets, manual classification overrides, and Claude-grounded portfolio Q&A. Demo seeder (scripts/seed_demo.py) creates a fictional ~$6.28M portfolio for development and App Review.",
+   "release": "Live on Fly at bd-pfolio.fly.dev (shares bd-postgres, db pfolio). Multi-user deployed 2026-08-06; migrations 003-020 applied then (production had been an empty stub at migration 002).",
+   "description": "Portfolio-tracker backend: FastAPI + asyncpg. Plaid Investments holdings in, asset-allocation analytics, allocation matrix/targets, manual classification overrides, fund look-through (what stocks are inside each ETF/mutual fund, from SEC N-PORT filings), and Claude-grounded portfolio Q&A. Multi-user via Sign in with Apple. Ships pfolio-mcp, a stdio MCP server over the API. Demo seeder (scripts/seed_demo.py) creates a fictional ~$6.28M portfolio for development and App Review.",
    "dependencies": [
     "Oliopfolio"
    ],
@@ -1202,8 +1202,12 @@
    },
    "notes": [
     "Local dev on port 9840 (range 9840-9849).",
-    "Single shared PF_DEFAULT_USER_ID user; multi-user seam (config.current_user_id) is the gating backend task before testers beyond Bill+Steve.",
-    "Open PRs #3/#4 from rachelelise (taxonomy, classification overrides, tax treatment, demo seeding) await billdonner review; main is branch-protected in both pfolio repos as of 2026-08-04."
+    "Multi-user shipped: Sign in with Apple + per-user sessions. The legacy shared PF_API_TOKEN still authenticates and resolves to PF_DEFAULT_USER_ID, so pre-multi-user installs keep working; POST /auth/apple/claim upgrades one in place with no data loss and no Plaid re-linking.",
+    "Fund look-through: GET /portfolio/exposure/{ticker} returns direct + indirect exposure with its own coverage figure. On the demo portfolio NVIDIA went from $85,000 direct to $130,454 true (+53%); Broadcom from $0 to $17,326.",
+    "CUSIP->ticker resolution via openFIGI is load-bearing, not a fallback: real N-PORT filings carried a ticker on 122 of 35,556 constituent rows. PF_OPENFIGI_API_KEY (free) cuts a full 22k-CUSIP pass from ~90 min to ~3 min.",
+    "pfolio-mcp: 16-tool stdio MCP server, registered in Claude Code. Deliberately an HTTP client over the API, never a second DB client.",
+    "100 backend tests. Steve's PRs #3/#4 still open; #4's content is already merged into the multi-user-backend line. main is branch-protected in both pfolio repos.",
+    "Open: paid-app entitlement table exists (migration 018) but nothing reads it; Plaid Investments production access still pending Plaid review."
    ]
   },
   {
@@ -1215,8 +1219,8 @@
    "lastModified": "2026-08-07",
    "repo": "~/pfolio-app",
    "bundleId": "com.pfolio.app",
-   "release": "Build 6 uploaded to ASC for iOS and macOS 2026-08-04; local build 9",
-   "description": "SwiftUI client for the pfolio backend. Native Mac app is the PRIMARY platform (Catalyst removed 2026-08-04); iOS 26 iPhone/iPad app is the companion. One shared source folder, two targets, same bundle id for universal purchase. Settings (Cmd-comma / gear) manages server URL + Keychain-stored API token. Mac connects accounts via Plaid Hosted Link in the browser; iOS uses LinkKit.",
+   "release": "Build 9 is the newest on ASC (2026-08-05); local build 25. Mac scheme has never been archived or uploaded.",
+   "description": "SwiftUI client for the pfolio backend. Native Mac app is the PRIMARY platform (Catalyst removed 2026-08-04); iOS 26 iPhone/iPad app is the companion. One shared source folder, two targets, same bundle id for universal purchase. Gated behind Sign in with Apple. Both platforms connect accounts via Plaid Hosted Link in the browser (LinkKit no longer used).",
    "dependencies": [
     "pfolio"
    ],
@@ -1227,11 +1231,14 @@
    },
    "notes": [
     "GitHub repo renamed pfolio-ios -> pfolio-app 2026-08-04 (redirects intact).",
-    "Paid-upfront $14.99, Finance category, ASC record Oliopfolio (6797993806) created 2026-08-04.",
-    "UI tests are data-driven against a seeded local backend (demo portfolio).",
-    "App Store screenshot galleries live on ASC (2026-08-05): Mac 6 slots (critic 88, incl. Targets-sheet slide) + iPhone 6.9\" 5 slots (critic 97). Sources in ~/pfolio-app/marketing/ (raw captures + .screenker packages).",
-    "Build 9 fixes (2026-08-05): Targets sheet layout on macOS, Return-to-send in Ask, summary-first allocation columns on compact width; -selectedTab launch-arg capture hook (build 8).",
-    "UI audit 2026-08-07 via the new /ui-critique skill: found a regression where the phone Allocation tab clipped Target and hid Drift (and hid EVERY number at accessibility sizes). Fixed in PR #6 (bill/ui-audit-fixes -> merge-steve-ux) along with currency wrapping mid-number, three WCAG contrast failures, sub-44pt touch targets, and a banner reading 'this Mac only' on iPhone. Capture rig: marketing/uicapture/capture_ui_variants.sh."
+    "Paid-upfront $14.99, Finance category, ASC record (6797993806) created 2026-08-04.",
+    "NAME UNDER DISCUSSION: Steve objects to 'Oliopfolio' (he mistyped it as 'oilopfolio' on first use); Bill has proposed dropping the p -> 'Oliofolio'. Settle before touching the ASC record.",
+    "Steve's UX branch merged into the Mac line 2026-08-06 (PR #5) and approved by him after hands-on testing. His macOS review items are fixed: sheets opened unsized, Form interiors misrendered, Settings gear was iOS-only.",
+    "Two Mac invariants that compile fine and only show up by running the app: macOS does not size a sheet from its content (use .sheetSize()), and macOS defaults Form to a two-column label/content layout (use .pfFormStyle()).",
+    "New app icon 2026-08-06: 'Op' on a green gradient over a $ watermark; regenerate via Assets.xcassets/AppIcon.appiconset/make_icon.py.",
+    "App Store galleries on ASC (2026-08-05): Mac 6 slots (critic 88) + iPhone 6.9\" 5 slots (critic 97). Sources in ~/pfolio-app/marketing/.",
+    "UI tests are data-driven against a seeded local backend. ./run-tests.sh runs all three suites (backend, iOS unit+UI, Mac build).",
+    "Open before launch: privacy policy URL does not exist; Mac archive never uploaded; the name."
    ]
   },
   {
@@ -1426,7 +1433,9 @@
     "openIssues": 1,
     "awaitingYourAction": true,
     "note": "Steve is the pfolio end-user; dev work on his product is done by @rachelelise. Open PRs as of 2026-08-04: pfolio #3/#4 (taxonomy, classification, tax treatment, demo seeder), pfolio-app #1/#2 (allocation matrix, classify UI). App repo renamed pfolio-ios -> pfolio-app; Oliopfolio builds uploaded to TestFlight (iOS + macOS)."
-   }
+   },
+   "lastReviewed": "2026-08-07",
+   "status": "His UX work is merged into the Mac line (pfolio-app PR #5), which he reviewed hands-on against a seeded portfolio and approved on 2026-08-07. His four older PRs are still open but largely superseded and should be closed. Outstanding decision for Bill: the app name."
   }
  ],
  "services": [
@@ -1549,7 +1558,7 @@
    "branch": "main",
    "last2026Commit": "2026-07-20",
    "kind": "reference engine",
-   "role": "Python FastAPI/WeasyPrint directory-book engine \u2014 read-only reference for Mallinbook; one-time lossless photo extraction"
+   "role": "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
   },
   {
    "repo": "~/card-engine",
