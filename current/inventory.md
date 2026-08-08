@@ -16,6 +16,7 @@ As of Wednesday, August 6, 2026.
 - 4 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - AmenBeats was resolved on 2026-08-04: its repo is `~/drumbeats` (App Store name ≠ repo name hid it from earlier scans). A Bill + Jim SwiftUI drum-machine app; Jim (`@jrforster`) added as full admin, now a shared build.
+- MastPex was resolved on 2026-08-07: its iOS and macOS ASC records map to `~/Documents/Codex/2026-08-02/masterindex-explorer`, the native read-only explorer for compatible MasterIndex files.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
   - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` (SharedAI unlinked from v1.0, returns with the Instructor tier; server-monitor moved to the Infrastructure cluster)
@@ -55,7 +56,7 @@ As of Wednesday, August 6, 2026.
 
 ### Confirmed gaps
 
-- The four ASC records without a matched active local repository remain browseable entities: MastPex IOS, MastPex Mac, PickleFamilia, and Screenker. The August 6 ASC pull supplied their real bundle IDs, platform status, and build metadata.
+- The two ASC records without a matched active local repository remain browseable entities: PickleFamilia and Screenker. The August 6 ASC pull supplied their real bundle IDs, platform status, and build metadata. MastPex was resolved on 2026-08-07 to `~/Documents/Codex/2026-08-02/masterindex-explorer`.
 - PickleFamilia has a verified public product page at `https://billdonner.github.io/picklefamilia-ios/`; its source repository is still unverified.
 - Screenker is wired to Qross, 123 Words, and 100 Burfords as their observed shared App Store screenshot-composition workflow. It also has a verified public product page at `https://billdonner.github.io/screenker/`, but its standalone local source repository remains unverified.
 - Zerver Monitor is now resolved to `~/server-monitor-ios`: its `project.yml` declares the exact ASC bundle ID, and it contains the iOS, watchOS, widget, and web-support sources. Its public GitHub Pages site is `https://billdonner.github.io/server-monitor-ios/`.

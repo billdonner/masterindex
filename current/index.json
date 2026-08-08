@@ -1246,20 +1246,20 @@
    "id": "mastpex-ios-asc-app",
    "name": "MastPex IOS",
    "kind": "app",
-   "cluster": "Unmapped ASC",
-   "status": "asc-unmapped",
-   "lastModified": null,
-   "repo": null,
+   "cluster": "Infrastructure",
+   "status": "asc-mapped",
+   "lastModified": "2026-08-05",
+   "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
    "bundleId": "com.billdonner.mastpex",
    "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
-   "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
-   "dependencies": [],
+   "description": "Native iPhone and iPad explorer for a compatible MasterIndex: browse a read-only software portfolio map with search, relationships, drill-down, links, and explicit gaps.",
+   "dependencies": ["MasterIndex"],
    "links": {
     "website": null,
     "appStore": null
    },
    "notes": [
-    "No matching local 2026 repository was found in the latest inventory.",
+    "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact iOS ASC bundle ID com.billdonner.mastpex.",
     "No verified public website or App Store product page was found in the current link pass."
    ]
   },
@@ -1267,20 +1267,20 @@
    "id": "mastpex-macos-asc-app",
    "name": "MastPex Mac",
    "kind": "app",
-   "cluster": "Unmapped ASC",
-   "status": "asc-unmapped",
-   "lastModified": null,
-   "repo": null,
+   "cluster": "Infrastructure",
+   "status": "asc-mapped",
+   "lastModified": "2026-08-05",
+   "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
    "bundleId": "com.billdonner.mastpex.mac",
    "release": "Development: macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
-   "description": "App Store Connect-only record awaiting repository, identifier, and product-status verification.",
-   "dependencies": [],
+   "description": "Native Mac explorer for a compatible MasterIndex: a read-only desktop map of apps, repositories, services, links, relationships, and known gaps.",
+   "dependencies": ["MasterIndex"],
    "links": {
     "website": null,
     "appStore": null
    },
    "notes": [
-    "No matching local 2026 repository was found in the latest inventory.",
+    "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact macOS ASC bundle ID com.billdonner.mastpex.mac.",
     "No verified public website or App Store product page was found in the current link pass."
    ]
   },
@@ -1735,6 +1735,13 @@
    "last2026Commit": "2026-02-27",
    "kind": "app",
    "role": "ASC-mapped Zerver Monitor iOS + watchOS client, widget, and public GitHub Pages support site"
+  },
+  {
+   "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
+   "branch": "main",
+   "last2026Commit": "2026-08-05",
+   "kind": "multiplatform app",
+   "role": "ASC-mapped MastPex iOS + macOS read-only explorer for a compatible MasterIndex"
   },
   {
    "repo": "~/sentipods",
