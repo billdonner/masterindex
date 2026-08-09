@@ -55,7 +55,7 @@ As of Wednesday, August 6, 2026.
 | SentiPods | `com.sentipods.app` | `6797132650` | `~/sentipods` | build `15` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/sentipods/` |
 | Zerver Monitor | `com.billdonner.ZerverMonitor` | `6759637400` | `~/server-monitor-ios` | build `4` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/server-monitor-ios/` |
 | Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | build `18` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/mallinbook/` |
-| Oliofolio Portfolio* | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | macOS `28` VALID; iOS `6` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
+| Pfoliolio* | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | macOS `28` VALID; iOS `6` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
 
 ### Confirmed gaps
 
@@ -76,12 +76,10 @@ As of Wednesday, August 6, 2026.
 - `bd-cardzerver.fly.dev` from `~/card-server`
 - `bd-grubber.fly.dev` from `~/grubber`
 - `bd-server-monitor.fly.dev` from `~/server-monitor`
-\* The name went Oliopfolio -> Oliofolio (dropping the p, which is what Steve kept
-mistyping). **"Oliofolio" turns out to be taken on the App Store by another account,
-as is "Olio Folio"** — so the store listing is "Oliofolio Portfolio", the nearest free
-variant, pending confirmation. The app itself shows the short "Oliofolio" on device.
-Privacy policy is live at https://billdonner.github.io/pfolio-app/privacy.html and
-attached to the ASC record.
+\* Name settled **Pfoliolio** on 2026-08-09. Steve was given the choice with a
+6pm ET deadline and did not reply, so Bill's stated default applied. Verified taken
+by other accounts: Oliofolio, Olio Folio, Foliolio. Privacy policy is live at
+https://billdonner.github.io/pfolio-app/privacy.html and attached to the ASC record.
 
 - `bd-pfolio.fly.dev` from `~/pfolio` (portfolio tracker API; shares bd-postgres)
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan

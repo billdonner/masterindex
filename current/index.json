@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-09T08:41:16-05:00",
+ "generatedAt": "2026-08-09T17:15:16-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -1226,7 +1226,7 @@
   },
   {
    "id": "pfolio-app",
-   "name": "Oliofolio (pfolio-app)",
+   "name": "Pfoliolio (pfolio-app)",
    "kind": "app",
    "cluster": "pfolio",
    "status": "asc-mapped",
@@ -1247,7 +1247,7 @@
    "notes": [
     "GitHub repo renamed pfolio-ios -> pfolio-app 2026-08-04 (redirects intact).",
     "Paid-upfront $14.99, Finance category, ASC record (6797993806) created 2026-08-04.",
-    "NAME: holding at 'Oliofolio Portfolio' per Bill (2026-08-09). Verified TAKEN on the App Store by other accounts: Oliofolio, Olio Folio, Foliolio — the bare one-word forms are all claimed. Verified FREE: 'Foliolio Portfolio', 'Foliolio: Your Portfolio'. Candidates can be tested against the ASC API in seconds.",
+    "NAME SETTLED 2026-08-09: 'Pfoliolio'. Steve was given the choice with a 6pm ET deadline and did not reply (verified: no comment on issue #9, no email), so Bill's stated default applied. Set in ASC and matched across every in-app surface. Verified TAKEN by other accounts: Oliofolio, Olio Folio, Foliolio — the bare one-word forms are nearly all claimed.",
     "Privacy policy LIVE at https://billdonner.github.io/pfolio-app/privacy.html (GitHub Pages from main/docs, enabled 2026-08-09) and attached to the ASC record. This was the hard App Store blocker. Written for what the app actually does rather than copied from another app, since a policy claiming 'we collect no email and no financial data' would be false here.",
     "Steve's UX branch merged into the Mac line 2026-08-06 (PR #5) and approved by him after hands-on testing. His macOS review items are fixed: sheets opened unsized, Form interiors misrendered, Settings gear was iOS-only.",
     "Two Mac invariants that compile fine and only show up by running the app: macOS does not size a sheet from its content (use .sheetSize()), and macOS defaults Form to a two-column label/content layout (use .pfFormStyle()).",
@@ -1256,7 +1256,9 @@
     "UI tests are data-driven against a seeded local backend. ./run-tests.sh runs all three suites (backend, iOS unit+UI, Mac build).",
     "Plaid SPM dependency removed 2026-08-07: nothing had imported LinkKit since both platforms moved to Hosted Link, but it was still shipping in the iOS binary. The app now links only Apple frameworks.",
     "Verifying Steve's PRs before closing them caught a regression my merge had introduced: his 'blue means summary' rule was applied to the Grand Total as Color.accentColor, but this app's accent is a dark navy, so the Grand Total rendered a different colour from the category bands. Fixed (9e15952) and tied to tint() so they cannot drift. Neither SHA comparison nor git cherry could detect this — the commits were modified during conflict resolution, so it took checking semantics in the tree.",
-    "CORRECTION 2026-08-09: an earlier MasterIndex entry said the Mac scheme had never been archived or uploaded. That was wrong — build 6 went to ASC for BOTH platforms on 2026-08-04. Checked against the ASC API. macOS is now build 28; the iOS archive is the stale side."
+    "CORRECTION 2026-08-09: an earlier MasterIndex entry said the Mac scheme had never been archived or uploaded. That was wrong — build 6 went to ASC for BOTH platforms on 2026-08-04. Checked against the ASC API. macOS is now build 28; the iOS archive is the stale side.",
+    "The Reminders list is matched by TITLE, so RemindersManager.formerListTitles must keep every past name forever (Oliopfolio -> Oliofolio -> Pfoliolio). Dropping one gives a user who skipped a release a second list holding a duplicate of every reminder. Append on any future rename.",
+    "scripts/name_decision.py (launchd) settled the name unattended and exposed a real bug worth remembering: launchd's minimal PATH excluded Homebrew, `gh` was missing, reading the issue failed, and that failure was indistinguishable from 'nobody replied' — so it defaulted. Correct only by luck. 'Could not read' is now a distinct outcome that escalates instead of defaulting."
    ]
   },
   {
