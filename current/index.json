@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-08-08T17:55:38-05:00",
+ "generatedAt": "2026-08-09T00:32:31-05:00",
  "scope": {
   "dateLabel": "Tuesday, August 5, 2026",
   "defaultSort": "most-recently-modified",
@@ -1201,7 +1201,7 @@
    "kind": "backend",
    "cluster": "pfolio",
    "status": "live",
-   "lastModified": "2026-08-07",
+   "lastModified": "2026-08-09",
    "repo": "~/pfolio",
    "bundleId": null,
    "release": "Live on Fly at bd-pfolio.fly.dev (shares bd-postgres, db pfolio). Multi-user deployed 2026-08-06; migrations 003-020 applied then (production had been an empty stub at migration 002).",
@@ -1220,7 +1220,7 @@
     "CUSIP->ticker resolution via openFIGI is load-bearing, not a fallback: real N-PORT filings carried a ticker on 122 of 35,556 constituent rows. PF_OPENFIGI_API_KEY (free) cuts a full 22k-CUSIP pass from ~90 min to ~3 min.",
     "pfolio-mcp: 16-tool stdio MCP server, registered in Claude Code. Deliberately an HTTP client over the API, never a second DB client.",
     "Open: paid-app entitlement table exists (migration 018) but nothing reads it; Plaid Investments production access still pending Plaid review.",
-    "Steve's PRs closed as superseded 2026-08-08 (pfolio #3/#4, pfolio-app #1/#2), each with a comment tracing where the work landed. His classification backlog was carried out of PR #3 into issue #7 so it did not close with the PR: (1) one security can still be classified two ways via account-level mandates, needs a reconciliation view; (2) 'Individual Stocks' is full of defaults rather than decisions, needs a finder screen. Fund look-through makes both worse if left, since a mis-bucketed security now mis-attributes every fund that holds it."
+    "All work merged to main 2026-08-09; every PR closed in both repos. Steve's four PRs were closed as superseded on 2026-08-08 with comments tracing where the work landed, and his classification backlog moved to issue #7 so it did not close with PR #3."
    ]
   },
   {
@@ -1229,10 +1229,10 @@
    "kind": "app",
    "cluster": "pfolio",
    "status": "asc-mapped",
-   "lastModified": "2026-08-07",
+   "lastModified": "2026-08-09",
    "repo": "~/pfolio-app",
    "bundleId": "com.pfolio.app",
-   "release": "Build 9 is the newest on ASC (2026-08-05); local build 25. Mac scheme has never been archived or uploaded.",
+   "release": "All work merged to main 2026-08-09; every PR in both repos closed. Build 9 is still the newest on ASC; local build 28. The Mac scheme has never been archived or uploaded.",
    "description": "SwiftUI client for the pfolio backend. Native Mac app is the PRIMARY platform (Catalyst removed 2026-08-04); iOS 26 iPhone/iPad app is the companion. One shared source folder, two targets, same bundle id for universal purchase. Gated behind Sign in with Apple. Both platforms connect accounts via Plaid Hosted Link in the browser (LinkKit no longer used).",
    "dependencies": [
     "pfolio"
@@ -1240,18 +1240,19 @@
    "links": {
     "website": "https://billdonner.com/apps/oliopfolio/",
     "appStore": null,
-    "github": "https://github.com/billdonner/pfolio-app"
+    "github": "https://github.com/billdonner/pfolio-app",
+    "privacyPolicy": "https://billdonner.github.io/pfolio-app/privacy.html"
    },
    "notes": [
     "GitHub repo renamed pfolio-ios -> pfolio-app 2026-08-04 (redirects intact).",
     "Paid-upfront $14.99, Finance category, ASC record (6797993806) created 2026-08-04.",
-    "NAME SETTLED 2026-08-07: Oliofolio (dropped the p; the 'pf' cluster was why Steve mistyped it as 'oilopfolio'). In-app strings, plists, Reminders list and icon generator all renamed. THE ASC RECORD STILL SAYS 'Oliopfolio' and must be renamed by hand.",
+    "NAME: 'Oliofolio' is TAKEN on the App Store by another account, and so is 'Olio Folio' (both verified against the ASC API, 409 DUPLICATE.DIFFERENT_ACCOUNT). The store listing is now 'Oliofolio Portfolio' — the nearest free variant — pending Bill's confirmation. The app shows the short 'Oliofolio' on the device.",
+    "Privacy policy LIVE at https://billdonner.github.io/pfolio-app/privacy.html (GitHub Pages from main/docs, enabled 2026-08-09) and attached to the ASC record. This was the hard App Store blocker. Written for what the app actually does rather than copied from another app, since a policy claiming 'we collect no email and no financial data' would be false here.",
     "Steve's UX branch merged into the Mac line 2026-08-06 (PR #5) and approved by him after hands-on testing. His macOS review items are fixed: sheets opened unsized, Form interiors misrendered, Settings gear was iOS-only.",
     "Two Mac invariants that compile fine and only show up by running the app: macOS does not size a sheet from its content (use .sheetSize()), and macOS defaults Form to a two-column label/content layout (use .pfFormStyle()).",
     "New app icon 2026-08-06: 'Op' on a green gradient over a $ watermark; regenerate via Assets.xcassets/AppIcon.appiconset/make_icon.py.",
     "App Store galleries on ASC (2026-08-05): Mac 6 slots (critic 88) + iPhone 6.9\" 5 slots (critic 97). Sources in ~/pfolio-app/marketing/.",
     "UI tests are data-driven against a seeded local backend. ./run-tests.sh runs all three suites (backend, iOS unit+UI, Mac build).",
-    "Open before launch: GitHub Pages is not yet enabled for pfolio-app, so the new privacy policy (docs/privacy.html, written 2026-08-07) is not yet live — it needs Pages on main/docs, same as qross, and the file must reach main first. Mac archive also never uploaded.",
     "Plaid SPM dependency removed 2026-08-07: nothing had imported LinkKit since both platforms moved to Hosted Link, but it was still shipping in the iOS binary. The app now links only Apple frameworks.",
     "Verifying Steve's PRs before closing them caught a regression my merge had introduced: his 'blue means summary' rule was applied to the Grand Total as Color.accentColor, but this app's accent is a dark navy, so the Grand Total rendered a different colour from the category bands. Fixed (9e15952) and tied to tint() so they cannot drift. Neither SHA comparison nor git cherry could detect this — the commits were modified during conflict resolution, so it took checking semantics in the tree."
    ]

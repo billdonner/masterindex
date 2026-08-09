@@ -55,7 +55,7 @@ As of Wednesday, August 6, 2026.
 | SentiPods | `com.sentipods.app` | `6797132650` | `~/sentipods` | build `15` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/sentipods/` |
 | Zerver Monitor | `com.billdonner.ZerverMonitor` | `6759637400` | `~/server-monitor-ios` | build `4` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/server-monitor-ios/` |
 | Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | build `18` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/mallinbook/` |
-| Oliofolio* | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | build `9` uploaded (local 25) | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
+| Oliofolio Portfolio* | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | build `9` uploaded (local 28) | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
 
 ### Confirmed gaps
 
@@ -76,9 +76,12 @@ As of Wednesday, August 6, 2026.
 - `bd-cardzerver.fly.dev` from `~/card-server`
 - `bd-grubber.fly.dev` from `~/grubber`
 - `bd-server-monitor.fly.dev` from `~/server-monitor`
-\* Renamed to **Oliofolio** on 2026-08-07 (dropped the p — the "pf" cluster was why
-Steve mistyped it as "oilopfolio"). The app, its plists and its Reminders list are
-renamed; **the ASC record still reads "Oliopfolio" and must be changed by hand.**
+\* The name went Oliopfolio -> Oliofolio (dropping the p, which is what Steve kept
+mistyping). **"Oliofolio" turns out to be taken on the App Store by another account,
+as is "Olio Folio"** — so the store listing is "Oliofolio Portfolio", the nearest free
+variant, pending confirmation. The app itself shows the short "Oliofolio" on device.
+Privacy policy is live at https://billdonner.github.io/pfolio-app/privacy.html and
+attached to the ASC record.
 
 - `bd-pfolio.fly.dev` from `~/pfolio` (portfolio tracker API; shares bd-postgres)
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
