@@ -30,7 +30,7 @@ As of Wednesday, August 6, 2026.
   - `SharedSpaceLab`
 - `adspill` (new cluster): a Bill + Jim (`@jrforster`) private research collaboration on selling excess advertising capacity, split into Project 1 (auction/exchange modeling sandbox, Bill's track) and Project 2 (self-serve create-and-sell for long-tail local video ads, Jim's track). Lab/scoping stage.
 - `local-model-lab` (standalone, added 2026-08-04): MLX local-model evaluation lab at `~/mlxsrv/local-model-lab`, benchmarking on-device quantized models (and OpenAI GPT-5 for comparison) against an exported 177k-question Qross corpus snapshot. No dependency on the Qross app/repos — the corpus is just benchmark data.
-- `Oenora` is an active local iOS technical spike at `~/oenora`: camera/photo-library capture, on-device OCR, local restart-safe persistence, candidate review/correction, and cellar history all work without data leaving the device. Its August 8 commits contain the Xcode project, Swift package, tests, decision records, product specification, app icon, launch copy, and local ASC tooling. No ASC record, deployment, or public product link has been observed; the name remains provisional pending clearance.
+- `Oenora` is an active local iOS technical spike at `~/oenora`: camera/photo-library capture, on-device OCR, local restart-safe persistence, candidate review/correction, confirmed-label identity autofill, and cellar history all work without data leaving the device. Its August 8-9 commits contain the Xcode project, Swift package, tests, decision records, product specification, app icon, launch copy, and local ASC tooling. No ASC record, deployment, or public product link has been observed; the name remains provisional pending clearance.
 
 ## Current ASC Apps
 
@@ -122,6 +122,8 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 - `~/kinflash` separated its roster data from a fictional-pedigree fixture and refreshed the rendered export. This is internal development work; no new ASC release was observed.
 - `~/oenora` added local App Store Connect app-registration documentation and tooling. It does not establish an ASC record, deployment, or public release; the provisional product name still requires clearance.
 - `~/oenora` added an app icon, App Store and website copy, plus local ASC inspection and metadata-update scripts. These are launch-preparation assets, not evidence of an ASC record or public website.
+- `~/oenora` corrected confirmed identity autofill to use label evidence and added local test coverage. This remains on-device development work.
+- `~/kinflash` added repository documentation for its fictional pedigree and flashcard direction. The likely GitHub Pages address returned HTTP 404 during this refresh, so the pages are not recorded as public.
 - Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
 - `~/adspill` was added to the index: a two-person (Bill + Jim) ad-capacity experiment. Project 1 is a working Python auction sim plus a real-time monitor UI (8 unit tests green, stdlib-only, no store/network yet); Project 2 is framing-stage only. A FloSports/Northwoods diligence memo reframed the effort as a demand + rights + sales-cost problem rather than an exchange build, gated on whether Northwoods League teams retain in-stream ad rights after FloSports' exclusive global deal. Repo is private, so no public link is recorded.
 
