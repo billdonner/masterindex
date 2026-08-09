@@ -1382,7 +1382,7 @@
    "lastModified": "2026-08-08",
    "repo": "~/oenora",
    "bundleId": "com.billdonner.oenora",
-   "release": "Active local iPhone technical spike for iOS 18; App Store Connect registration tooling is prepared, but no ASC record, deployment, or public product link has been observed. Working name remains pending trademark, App Store, and domain clearance.",
+   "release": "Active local iPhone technical spike for iOS 18 with launch-preparation assets and App Store Connect tooling. No ASC record, deployment, or public product link has been observed. Working name remains pending trademark, App Store, and domain clearance.",
    "description": "Personal wine knowledge system for collectors: a working iPhone photo-to-cellar spike plus a longer-term Mac workspace and collection-aware AI roadmap.",
    "dependencies": [],
    "links": {
@@ -1394,7 +1394,8 @@
     "Working spike supports camera or photo-library import, on-device Vision OCR, restart-safe local persistence, candidate review/correction, and confirmed Wine, Vintage, and Bottle records.",
     "Recognition is a clearly labeled deterministic development stub; no image or data leaves the device.",
     "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete.",
-    "2026-08-08: added a local App Store Connect app-registration script and documentation; this is setup tooling, not evidence that the app has been registered or released."
+    "2026-08-08: added a local App Store Connect app-registration script and documentation; this is setup tooling, not evidence that the app has been registered or released.",
+    "2026-08-08: added app-icon assets, App Store copy, website copy, and local ASC inspection/metadata-update scripts. These are launch-preparation materials, not evidence of an ASC record or public website."
    ]
   }
  ],
