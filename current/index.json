@@ -1413,7 +1413,8 @@
         "2026-08-09: added a network-aware queue that retains scans offline and sends up to three photos plus OCR evidence to the deployed recognition API when configured.",
         "2026-08-09: completed guided offline capture recovery and encrypted founder-beta backup, including a stable recovery code and corruption-rejection coverage.",
         "2026-08-10: added an independent simulator walkthrough with screenshot evidence for capture, offline guidance, recognition review, cellar, and history flows.",
-        "2026-08-10: added external TestFlight preparation tooling; this is not evidence of an ASC registration or uploaded beta build."
+        "2026-08-10: added external TestFlight preparation tooling; this is not evidence of an ASC registration or uploaded beta build.",
+        "2026-08-10: added six iPhone product screenshots for beta/App Store preparation; no ASC upload was observed."
       ]
     }
     ,
