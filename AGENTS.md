@@ -21,6 +21,18 @@ If you are an agent consuming or updating this index:
 - If App Store Connect access is unavailable, record that explicitly
 - If an entry has any verified external public link, include it in the entry data
 
+## Session routing
+
+- For a modification inside an indexed repository, first prefer an already-open
+  agent session whose working directory is that repository.
+- Use the MasterIndex session for inventory updates, cross-repository planning,
+  routing, and work that has no active repository session.
+- Do not duplicate implementation in MasterIndex when a repository-root
+  session is known to be active; give that session the bounded handoff instead.
+- If no such session is known or available, say so and proceed from the
+  repository's working directory only after checking its agent instructions and
+  working-tree status.
+
 ## Required top-level sections in `current/index.json`
 
 - `generatedAt`
