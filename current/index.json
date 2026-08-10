@@ -818,10 +818,10 @@
       "kind": "app",
       "cluster": "KinFlash",
       "status": "asc-mapped",
-      "lastModified": "2026-08-09",
+      "lastModified": "2026-08-10",
       "repo": "~/kinflash",
       "bundleId": "com.billdonner.kinflash",
-      "release": "Development active: iOS 1.0.0 build 65 previously uploaded to TestFlight; Mac MCP voice testing, safe fictional-pedigree fixtures, and repository documentation expanded through 2026-08-09.",
+      "release": "Development active: iOS 1.0.0 build 65 previously uploaded to TestFlight; Mac MCP voice testing, safe fictional-pedigree fixtures, documentation, and persisted Mac flashcard review expanded through 2026-08-10.",
       "description": "Privacy-first iPhone and iPad family-tree editor with AI interviews, relationship flashcards, GEDCOM exchange, read-only family packages, and native Mac MCP automation.",
       "dependencies": [],
       "links": {
@@ -837,7 +837,8 @@
         "2026-08-07: replaced the Mallinbook family fixture with safe lineages and added a rendered constellation export; no new ASC release was observed.",
         "2026-08-08: separated roster data from the fictional-pedigree fixture and refreshed its rendered export; no new ASC release was observed.",
         "2026-08-09: added static pedigree and flashcard documentation to the repository. The probable GitHub Pages URL returned HTTP 404, so those pages are not recorded as public.",
-        "2026-08-09: added native Mac GEDCOM import/export actions and bundled fictional examples. Import is intentionally limited to empty documents until a merge-conflict workflow exists."
+        "2026-08-09: added native Mac GEDCOM import/export actions and bundled fictional examples. Import is intentionally limited to empty documents until a merge-conflict workflow exists.",
+        "2026-08-10: Mac flashcard review now persists in one deck; no new ASC release was observed."
       ]
     },
     {
@@ -1717,7 +1718,7 @@
     {
       "repo": "~/kinflash",
       "branch": "main",
-      "last2026Commit": "2026-08-09",
+      "last2026Commit": "2026-08-10",
       "kind": "app",
       "role": "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight; safe fictional-pedigree fixture/export work and unpublished repository documentation refreshed 2026-08-09"
     },
