@@ -1,18 +1,18 @@
 # MasterIndex Inventory
 
-As of Wednesday, August 6, 2026.
+As of Sunday, August 10, 2026.
 
 ## Scope
 
 - Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
 - Treated all repositories as read-only.
-- Refreshed the full 20-app App Store Connect inventory from the live ASC API on August 6, 2026.
+- Retained the full 20-app App Store Connect baseline from August 6, 2026 and added Oenora from a live August 10 observation, bringing the recorded portfolio to 21 apps.
 - Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
 
 ## Executive Summary
 
-- App Store Connect currently shows 20 apps from the August 6 live API pull. PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings remain removed from ASC.
-- 18 ASC apps map cleanly to currently active local repositories.
+- App Store Connect currently records 21 apps: the August 6 portfolio baseline plus Oenora, observed live on August 10. PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings remain removed from ASC.
+- 19 ASC apps map cleanly to currently active local repositories.
 - 2 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - AmenBeats was resolved on 2026-08-04: its repo is `~/drumbeats` (App Store name ≠ repo name hid it from earlier scans). A Bill + Jim SwiftUI drum-machine app; Jim (`@jrforster`) added as full admin, now a shared build.
@@ -30,7 +30,7 @@ As of Wednesday, August 6, 2026.
   - `SharedSpaceLab`
 - `adspill` (new cluster): a Bill + Jim (`@jrforster`) private research collaboration on selling excess advertising capacity, split into Project 1 (auction/exchange modeling sandbox, Bill's track) and Project 2 (self-serve create-and-sell for long-tail local video ads, Jim's track). Lab/scoping stage.
 - `local-model-lab` (standalone, added 2026-08-04): MLX local-model evaluation lab at `~/mlxsrv/local-model-lab`, benchmarking on-device quantized models (and OpenAI GPT-5 for comparison) against an exported 177k-question Qross corpus snapshot. No dependency on the Qross app/repos — the corpus is just benchmark data.
-- `Oenora` is an active local iOS technical spike at `~/oenora`: camera/photo-library capture, on-device OCR, local restart-safe persistence, candidate review/correction, confirmed-label identity autofill, and cellar history all work without data leaving the device. Its network-aware queue and encrypted founder-beta backup are recorded as live in the current device test plan; backup uses a stable recovery code and retains encrypted originals plus the collection snapshot. No ASC record or public product link has been observed; the name remains provisional pending clearance.
+- `Oenora` is now an invitation-only external TestFlight beta at `~/oenora`. Offline camera/photo-library capture, on-device OCR, restart-safe persistence, cloud recognition after connectivity returns, candidate review/correction, cellar history, and client-encrypted backup are implemented. ASC app `6799520155` has VALID iOS build 1 waiting for Beta App Review; the private Founders Beta group has no public link. Sign in with Apple is deferred until the first founder field-test cycle is complete.
 
 ## Current ASC Apps
 
@@ -38,6 +38,7 @@ As of Wednesday, August 6, 2026.
 
 | ASC app | Bundle ID | ASC app ID | Repo | Local version/build | ASC state | Public link |
 |---|---|---:|---|---|---|---|
+| Oenora | `com.billdonner.oenora` | `6799520155` | `~/oenora` | `1.0 (1)` VALID, uploaded 2026-08-10 | Private external TestFlight, `WAITING_FOR_BETA_REVIEW` | None; invitation-only by design |
 | PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) | `https://pickledballs.billdonner.com` |
 | Qross | `com.qross.app` | `6759799988` | `~/qross` | build `389` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/qross/` |
 | 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)`, observed 2026-08-06 | `IOS 1.0 READY_FOR_SALE` | Verified website and App Store link in `index.json` |
@@ -82,7 +83,7 @@ by other accounts: Oliofolio, Olio Folio, Foliolio. Privacy policy is live at
 https://billdonner.github.io/pfolio-app/privacy.html and attached to the ASC record.
 
 - `bd-pfolio.fly.dev` from `~/pfolio` (portfolio tracker API; shares bd-postgres)
-- `bd-oenora-recognition.fly.dev` from `~/oenora` (health endpoint verified live; the August 9 device test plan records cloud recognition as live)
+- `bd-oenora-recognition.fly.dev` from `~/oenora` (token-protected cloud recognition; end-to-end recognition verified in the August 10 simulator walkthrough)
 - `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
 
 ## Fly.io Operations and Cost Reporting
@@ -131,8 +132,8 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 - `~/kinflash` added package-scoped Mac attachments. This is active local development; no new ASC release was observed.
 - `~/workinon` added bundled MasterIndex operational-feed surfaces, feed tests, shortcut updates, and board-feed data. This is active local development; no new ASC release was observed.
 - `~/oenora` added an independent simulator walkthrough with evidence for capture, offline guidance, recognition review, cellar, and history flows. This is test documentation, not a public release.
-- `~/oenora` added external TestFlight preparation tooling. No ASC registration or uploaded beta build was observed in this refresh.
-- `~/oenora` added six iPhone product screenshots for beta/App Store preparation. No ASC upload was observed.
+- `~/oenora` added plain-language four-screen onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, human-reviewed recognition, cellar, history, and an empty-state reference.
+- Oenora ASC app `6799520155` and VALID iOS build 1 were observed live on August 10. Build 1 is waiting for Beta App Review in the private, invitation-only Founders Beta group; no public TestFlight link exists. Sign in with Apple is intentionally deferred until after the first founder field test.
 - Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
 - `~/adspill` was added to the index: a two-person (Bill + Jim) ad-capacity experiment. Project 1 is a working Python auction sim plus a real-time monitor UI (8 unit tests green, stdlib-only, no store/network yet); Project 2 is framing-stage only. A FloSports/Northwoods diligence memo reframed the effort as a demand + rights + sales-cost problem rather than an exchange build, gated on whether Northwoods League teams retain in-stream ad rights after FloSports' exclusive global deal. Repo is private, so no public link is recorded.
 

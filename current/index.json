@@ -1,23 +1,23 @@
 {
-  "generatedAt": "2026-08-09T19:11:02-05:00",
+  "generatedAt": "2026-08-10T15:49:35-05:00",
   "scope": {
-    "dateLabel": "Tuesday, August 5, 2026",
+    "dateLabel": "Sunday, August 10, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
       "~/Documents/Codex/Experiments"
     ],
-    "appStoreConnectAccess": "live-api-refresh-2026-08-06",
+    "appStoreConnectAccess": "Oenora-live-api-observation-2026-08-10; portfolio-baseline-2026-08-06",
     "notes": [
       "Reviewed local git repositories with 2026 activity.",
       "Treated repositories as read-only during the scan.",
       "Ignored older inactive repos unless directly connected to a 2026-active project.",
-      "App Store Connect data was refreshed from the live API on August 6, 2026."
+      "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026."
     ]
   },
   "summary": {
-    "ascApps": 20,
-    "mappedAscApps": 18,
+    "ascApps": 21,
+    "mappedAscApps": 19,
     "unmatchedAscApps": 2,
     "activeRepos": 45,
     "clusters": 15,
@@ -227,6 +227,17 @@
         "latestBuild": "6 uploaded 2026-08-04",
         "marketingUrl": "https://billdonner.com/apps/oliopfolio/",
         "descriptionChars": 1982
+      },
+      {
+        "name": "Oenora",
+        "bundleId": "com.billdonner.oenora",
+        "appId": "6799520155",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 1 WAITING_FOR_BETA_REVIEW",
+        "live": false,
+        "publicTestFlight": null,
+        "latestBuild": "1 uploaded 2026-08-10 (VALID)",
+        "marketingUrl": null,
+        "descriptionChars": 0
       },
       {
         "name": "PickledBalls",
@@ -501,8 +512,8 @@
     },
     {
       "name": "Oenora",
-      "maturity": "active local technical spike",
-      "summary": "Personal wine knowledge system for collectors with a working iPhone capture-to-cellar spike and a broader product specification.",
+      "maturity": "private external TestFlight beta",
+      "summary": "Personal wine knowledge system for collectors with a working offline iPhone capture-to-cellar loop, cloud recognition, encrypted backup, and a broader Mac/advisor roadmap.",
       "highlights": [
         "Oenora product and technical specifications",
         "iPhone bottle photography",
@@ -510,9 +521,9 @@
         "collection-aware AI advisor"
       ],
       "watchpoints": [
-        "Working name requires trademark, App Store, and domain clearance",
-        "No ASC record or public product surface has been observed",
-        "Recognition API health endpoint is live; valid cloud recognition remains blocked by its provider key"
+        "Working name still requires formal trademark and domain clearance",
+        "TestFlight is invitation-only with no public link",
+        "Sign in with Apple is deliberately deferred until the first founder field-test cycle is complete"
       ]
     },
     {
@@ -1389,11 +1400,11 @@
       "name": "Oenora",
       "kind": "app",
       "cluster": "Oenora",
-      "status": "active",
+      "status": "asc-mapped",
       "lastModified": "2026-08-10",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
-      "release": "Active local iPhone technical spike for iOS 18 with live cloud recognition and encrypted founder-beta backup. External TestFlight preparation tooling was added 2026-08-10, but no ASC record, uploaded build, or public product link has been observed. Working name remains pending trademark, App Store, and domain clearance.",
+      "release": "ASC app 6799520155; iOS 1.0 build 1 is VALID and submitted to private external TestFlight beta review on 2026-08-10. The Founders Beta group is invitation-only with no public link. Working name remains pending formal trademark and domain clearance.",
       "description": "Personal wine knowledge system for collectors: a working iPhone photo-to-cellar spike plus a longer-term Mac workspace and collection-aware AI roadmap.",
       "dependencies": [
         "oenora-recognition-service"
@@ -1405,7 +1416,7 @@
       "notes": [
         "Initial commit f634ccf (2026-08-08) contains the offline capture spike, shared domain package, tests, decision records, and product specification.",
         "Working spike supports camera or photo-library import, on-device Vision OCR, restart-safe local persistence, candidate review/correction, and confirmed Wine, Vintage, and Bottle records.",
-        "Recognition is a clearly labeled deterministic development stub; no image or data leaves the device.",
+        "Capture and Apple Vision OCR work offline. When connectivity returns, saved label images and OCR evidence are sent to the token-protected Oenora recognition service; structured suggestions remain untrusted until human confirmation.",
         "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete.",
         "2026-08-08: added a local App Store Connect app-registration script and documentation; this is setup tooling, not evidence that the app has been registered or released.",
         "2026-08-08: added app-icon assets, App Store copy, website copy, and local ASC inspection/metadata-update scripts. These are launch-preparation materials, not evidence of an ASC record or public website.",
@@ -1413,8 +1424,9 @@
         "2026-08-09: added a network-aware queue that retains scans offline and sends up to three photos plus OCR evidence to the deployed recognition API when configured.",
         "2026-08-09: completed guided offline capture recovery and encrypted founder-beta backup, including a stable recovery code and corruption-rejection coverage.",
         "2026-08-10: added an independent simulator walkthrough with screenshot evidence for capture, offline guidance, recognition review, cellar, and history flows.",
-        "2026-08-10: added external TestFlight preparation tooling; this is not evidence of an ASC registration or uploaded beta build.",
-        "2026-08-10: added six iPhone product screenshots for beta/App Store preparation; no ASC upload was observed."
+        "2026-08-10: added four-screen high-school-level onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
+        "2026-08-10: ASC app 6799520155 and VALID build 1 were observed. Build 1 is attached to the private Founders Beta group and is waiting for Beta App Review; Jon Packer is the named invite-only tester, automatic notification is enabled, and no public TestFlight link exists.",
+        "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge."
       ]
     }
     ,
@@ -1596,7 +1608,7 @@
       "consumers": [
         "Oenora"
       ],
-      "note": "Live health endpoint; token-protected cloud wine-recognition API. Recognition remains blocked pending a valid OpenAI provider key."
+      "note": "Live token-protected cloud wine-recognition API used by the iPhone beta; health and end-to-end recognition were verified during the August 10 simulator walkthrough."
     }
   ],
   "repos": [
@@ -1913,7 +1925,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-10",
       "kind": "iOS app + product specification",
-      "role": "Oenora wine-collection knowledge system; committed iOS technical spike with local OCR/cellar flow, confirmed-label identity autofill, product and technical specifications, and unexecuted ASC registration tooling"
+      "role": "Oenora personal wine knowledge system; offline iPhone capture/OCR, human-reviewed cloud recognition, encrypted backup, onboarding, App Store screenshots, and private external TestFlight build 1"
     }
   ],
   "gaps": [
