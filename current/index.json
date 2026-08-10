@@ -896,7 +896,7 @@
       "kind": "service",
       "cluster": "Grubber",
       "status": "live",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-09",
       "repo": "~/grubber",
       "bundleId": null,
       "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, and the public live progress view are deployed.",
@@ -914,7 +914,8 @@
         "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
         "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
         "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
-        "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures."
+        "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
+        "2026-08-09: centralized the database lock across analysis, news pull, and export writers; test coverage confirms all producer database writers serialize safely."
       ]
     },
     {
@@ -1702,7 +1703,7 @@
     {
       "repo": "~/grubber",
       "branch": "main",
-      "last2026Commit": "2026-08-06",
+      "last2026Commit": "2026-08-09",
       "kind": "backend/service",
       "role": "Live transcript service; analysis live-update and progress view deployed 2026-08-06"
     },
