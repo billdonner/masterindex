@@ -6,6 +6,8 @@ This folder contains the exact reusable text for injecting MasterIndex behavior 
 
 - `MASTERINDEX_UNIVERSAL_INJECTION.md` — preferred single file for injecting MasterIndex everywhere except `workin On`
 - `MASTERINDEX_MANAGED_BLOCK.md` — delimited agent-neutral block for `AGENTS.md` and `CLAUDE.md`
+- `MASTERINDEX_DRIFT_LAUNCHAGENT.md` — install, test, and unload notes for the safe six-hour drift checker
+- `install-masterindex-drift-launchagent.sh` — installs the safe read-only drift LaunchAgent
 - `AGENTS_SNIPPET.md` — drop-in text for `AGENTS.md`
 - `masterindex-bootstrap-skill/SKILL.md` — personal Codex skill starter
 - `housekeeping-task-template.md` — starter prompt for periodic tasks
