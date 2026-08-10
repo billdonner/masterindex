@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T17:15:16-05:00",
+  "generatedAt": "2026-08-09T19:11:02-05:00",
   "scope": {
     "dateLabel": "Tuesday, August 5, 2026",
     "defaultSort": "most-recently-modified",
@@ -870,10 +870,10 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "ready-for-sale",
-      "lastModified": "2026-08-01",
+      "lastModified": "2026-08-06",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
-      "release": "ASC mapped, iOS 1.0 READY_FOR_SALE",
+      "release": "ASC iOS 1.0 READY_FOR_SALE; observed local release 1.1 (9) on 2026-08-06",
       "description": "The only ASC-mapped app in this scan marked ready for sale.",
       "dependencies": [],
       "links": {
@@ -1558,7 +1558,7 @@
     {
       "repo": "~/100Burfords",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
+      "last2026Commit": "2026-08-05",
       "kind": "app",
       "role": "ASC-mapped iOS app, sale-ready in ASC"
     },

@@ -40,7 +40,7 @@ As of Wednesday, August 6, 2026.
 |---|---|---:|---|---|---|---|
 | PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) | `https://pickledballs.billdonner.com` |
 | Qross | `com.qross.app` | `6759799988` | `~/qross` | build `389` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/qross/` |
-| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)` | `IOS 1.0 READY_FOR_SALE` | Verified website and App Store link in `index.json` |
+| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)`, observed 2026-08-06 | `IOS 1.0 READY_FOR_SALE` | Verified website and App Store link in `index.json` |
 | Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | build `47` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/obo-ios/` |
 | Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | build `359` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/nagz/` |
 | Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
