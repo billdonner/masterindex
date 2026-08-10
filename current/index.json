@@ -21,7 +21,7 @@
     "unmatchedAscApps": 2,
     "activeRepos": 45,
     "clusters": 15,
-    "liveServices": 6,
+    "liveServices": 8,
     "collaborators": 3
   },
   "automation": {
@@ -511,7 +511,8 @@
       ],
       "watchpoints": [
         "Working name requires trademark, App Store, and domain clearance",
-        "No ASC record, backend, or public product surface has been observed"
+        "No ASC record or public product surface has been observed",
+        "Recognition API health endpoint is live; valid cloud recognition remains blocked by its provider key"
       ]
     },
     {
@@ -1388,9 +1389,11 @@
       "lastModified": "2026-08-08",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
-      "release": "Active local iPhone technical spike for iOS 18 with launch-preparation assets and App Store Connect tooling. Confirmed-label identity autofill was improved on 2026-08-09. No ASC record, deployment, or public product link has been observed. Working name remains pending trademark, App Store, and domain clearance.",
+      "release": "Active local iPhone technical spike for iOS 18 with launch-preparation assets and App Store Connect tooling. Confirmed-label identity autofill and a network-aware cloud-recognition queue were added on 2026-08-09. No ASC record or public product link has been observed. Working name remains pending trademark, App Store, and domain clearance.",
       "description": "Personal wine knowledge system for collectors: a working iPhone photo-to-cellar spike plus a longer-term Mac workspace and collection-aware AI roadmap.",
-      "dependencies": [],
+      "dependencies": [
+        "oenora-recognition-service"
+      ],
       "links": {
         "website": null,
         "appStore": null
@@ -1402,7 +1405,33 @@
         "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete.",
         "2026-08-08: added a local App Store Connect app-registration script and documentation; this is setup tooling, not evidence that the app has been registered or released.",
         "2026-08-08: added app-icon assets, App Store copy, website copy, and local ASC inspection/metadata-update scripts. These are launch-preparation materials, not evidence of an ASC record or public website.",
-        "2026-08-09: corrected confirmed identity autofill to use label evidence; local test coverage was added."
+        "2026-08-09: corrected confirmed identity autofill to use label evidence; local test coverage was added.",
+        "2026-08-09: added a network-aware queue that retains scans offline and sends up to three photos plus OCR evidence to the deployed recognition API when configured."
+      ]
+    }
+    ,
+    {
+      "id": "oenora-recognition-service",
+      "name": "Oenora Recognition API",
+      "kind": "service",
+      "cluster": "Oenora",
+      "status": "live",
+      "lastModified": "2026-08-09",
+      "repo": "~/oenora",
+      "bundleId": null,
+      "release": "Fly health endpoint is live at bd-oenora-recognition.fly.dev. Cloud recognition is not accepted for use until the service has a valid OpenAI provider key.",
+      "description": "Token-protected API that accepts one to three label images and OCR evidence, requests up to three structured wine candidates from OpenAI, and returns them for explicit user review.",
+      "dependencies": [
+        "Oenora"
+      ],
+      "links": {
+        "website": "https://bd-oenora-recognition.fly.dev/health",
+        "websiteSource": "verified HTTP 200 on 2026-08-10",
+        "appStore": null
+      },
+      "notes": [
+        "The iOS app sends no images while offline; queued scans survive restart and retry when connectivity returns.",
+        "The August 9 device test plan records that the service provider key was invalid, so requests safely fail to retryable state."
       ]
     }
   ],
@@ -1552,6 +1581,14 @@
         "Oliopfolio (Mac + iOS)"
       ],
       "note": "Portfolio aggregation API; token-guarded; shares bd-postgres cluster (database pfolio)."
+    },
+    {
+      "name": "bd-oenora-recognition.fly.dev",
+      "repo": "~/oenora",
+      "consumers": [
+        "Oenora"
+      ],
+      "note": "Live health endpoint; token-protected cloud wine-recognition API. Recognition remains blocked pending a valid OpenAI provider key."
     }
   ],
   "repos": [
