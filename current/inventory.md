@@ -130,6 +130,7 @@ Unified watch over the people Bill co-works with, refreshed every 6h by the
 - `~/kinflash` now keeps Mac flashcard review in a single persistent deck. This is active local development; no new ASC release was observed.
 - `~/kinflash` added package-scoped Mac attachments. This is active local development; no new ASC release was observed.
 - `~/workinon` added bundled MasterIndex operational-feed surfaces, feed tests, shortcut updates, and board-feed data. This is active local development; no new ASC release was observed.
+- `~/oenora` added an independent simulator walkthrough with evidence for capture, offline guidance, recognition review, cellar, and history flows. This is test documentation, not a public release.
 - Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
 - `~/adspill` was added to the index: a two-person (Bill + Jim) ad-capacity experiment. Project 1 is a working Python auction sim plus a real-time monitor UI (8 unit tests green, stdlib-only, no store/network yet); Project 2 is framing-stage only. A FloSports/Northwoods diligence memo reframed the effort as a demand + rights + sales-cost problem rather than an exchange build, gated on whether Northwoods League teams retain in-stream ad rights after FloSports' exclusive global deal. Repo is private, so no public link is recorded.
 

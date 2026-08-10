@@ -1390,7 +1390,7 @@
       "kind": "app",
       "cluster": "Oenora",
       "status": "active",
-      "lastModified": "2026-08-09",
+      "lastModified": "2026-08-10",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
       "release": "Active local iPhone technical spike for iOS 18 with live cloud recognition and encrypted founder-beta backup, plus launch-preparation assets and App Store Connect tooling. No ASC record or public product link has been observed. Working name remains pending trademark, App Store, and domain clearance.",
@@ -1411,7 +1411,8 @@
         "2026-08-08: added app-icon assets, App Store copy, website copy, and local ASC inspection/metadata-update scripts. These are launch-preparation materials, not evidence of an ASC record or public website.",
         "2026-08-09: corrected confirmed identity autofill to use label evidence; local test coverage was added.",
         "2026-08-09: added a network-aware queue that retains scans offline and sends up to three photos plus OCR evidence to the deployed recognition API when configured.",
-        "2026-08-09: completed guided offline capture recovery and encrypted founder-beta backup, including a stable recovery code and corruption-rejection coverage."
+        "2026-08-09: completed guided offline capture recovery and encrypted founder-beta backup, including a stable recovery code and corruption-rejection coverage.",
+        "2026-08-10: added an independent simulator walkthrough with screenshot evidence for capture, offline guidance, recognition review, cellar, and history flows."
       ]
     }
     ,
@@ -1908,7 +1909,7 @@
     {
       "repo": "~/oenora",
       "branch": "main",
-      "last2026Commit": "2026-08-09",
+      "last2026Commit": "2026-08-10",
       "kind": "iOS app + product specification",
       "role": "Oenora wine-collection knowledge system; committed iOS technical spike with local OCR/cellar flow, confirmed-label identity autofill, product and technical specifications, and unexecuted ASC registration tooling"
     }
