@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-06T14:55:12-05:00",
+  "generatedAt": "2026-08-09T22:35:27-05:00",
   "scope": {
     "dateLabel": "Monday, August 3, 2026",
     "defaultSort": "most-recently-modified",
@@ -91,8 +91,8 @@
         "bundleId": "com.workinon.app",
         "appId": "6762529338",
         "repo": "~/workinon",
-        "localVersion": "0.9.1 (52)",
-        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION"
+        "localVersion": "0.9.1 (67)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 67 uploaded and processing 2026-08-09"
       },
       {
         "name": "Famster",
@@ -360,7 +360,7 @@
       "kind": "app",
       "cluster": "Qross",
       "status": "asc-mapped",
-      "lastModified": "2026-08-02",
+      "lastModified": "2026-08-06",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
       "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
@@ -453,11 +453,11 @@
       "kind": "app",
       "cluster": "Nagz",
       "status": "asc-mapped",
-      "lastModified": "2026-04-27",
+      "lastModified": "2026-08-09",
       "repo": "~/workinon",
       "bundleId": "com.workinon.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
-      "description": "AI-powered focus list app with widget, share extension, URL scheme, and nagzerver-backed sync.",
+      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION; workinOn 0.9.1 (67) uploaded to TestFlight on 2026-08-09 and entered App Store Connect processing.",
+      "description": "AI-powered focus list app with widget, share extension, URL scheme, nagzerver-backed sync, and a bundled MasterIndex operational board.",
       "dependencies": [
         "nagzerver",
         "workinon-mcp"
@@ -467,7 +467,9 @@
         "appStore": null
       },
       "notes": [
-        "Silent APNs pushes update the list without opening the app."
+        "Silent APNs pushes update the list without opening the app.",
+        "MasterIndex board now loads from a bundled operational feed, groups cards by lane, and supports inline row detail reveal in both the MasterIndex and Focus tabs.",
+        "Recent-change MasterIndex cards use concise titles such as 'Qross changed' and now include latest git commit subjects in the body when the entity repo is available; missing repos fall back to last-modified dates."
       ]
     },
     {
@@ -543,7 +545,7 @@
       "kind": "app",
       "cluster": "picklefortunes",
       "status": "local-only",
-      "lastModified": "2026-08-02",
+      "lastModified": "2026-08-06",
       "repo": "~/picklefortunes",
       "bundleId": "com.picklefortunes.app",
       "release": "Removed from ASC (2026-08-03 refresh); repo remains active locally.",
@@ -1161,9 +1163,9 @@
     {
       "repo": "~/workinon",
       "branch": "main",
-      "last2026Commit": "2026-04-27",
+      "last2026Commit": "2026-08-09",
       "kind": "app",
-      "role": "ASC-mapped workin On app"
+      "role": "ASC-mapped workin On app; local 0.9.1 (67) with MasterIndex board/feed detail work uploaded to TestFlight"
     },
     {
       "repo": "~/workinon-mcp",

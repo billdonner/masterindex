@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Thursday, August 6, 2026.
+As of Sunday, August 9, 2026.
 
 ## Scope
 
@@ -42,7 +42,7 @@ As of Thursday, August 6, 2026.
 | Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | `1.4.0 (359)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | KinFlash | `com.billdonner.kinflash` | `6762008872` | `~/kinflash` | `1.0.0 (62)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| workin On | `com.workinon.app` | `6762529338` | `~/workinon` | `0.9.1 (52)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
+| workin On | `com.workinon.app` | `6762529338` | `~/workinon` | `0.9.1 (67)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 67 uploaded and processing 2026-08-09) |
 | Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | `1.0.0 (3)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | `0.1.0 (4)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
 | 123 Words | `com.123words.app` | `6766975041` | `~/123words` | `1.11 (40)` | `IOS 1.11 READY_FOR_SALE; 1.12 draft` |
@@ -78,6 +78,8 @@ As of Thursday, August 6, 2026.
 - `~/grubber` completed M3: LLM topic labeling, podcast-versus-news claim comparison, and daily digest generation. The producer-side LLM work has a `$5` soft and `$10` hard spending cap per UTC day; digest reads are available as markdown or JSON.
 - `~/grubber` completed M4 and its fast live-update lane: APNs device registration/dispatch, `/api/v1/updates/recent`, `/api/v1/topics/{topic_id}/compare`, and the public live producer view at `https://bd-grubber.fly.dev/progress` are deployed. The fast and full analysis lanes serialize SQLite writes with a shared lock.
 - Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
+- `~/workinon` is now at local version `0.9.1 (67)`. TestFlight build `67` was uploaded on 2026-08-09 and entered App Store Connect processing. The build includes the bundled MasterIndex operational board, inline detail reveal in both the MasterIndex and Focus tabs, and shorter recent-change titles.
+- `~/masterindex` regenerated the `workin On` feed so recent-change cards keep concise titles such as `Qross changed` while the body records the latest git commit subject when available, falling back to the last-modified date when the repo is unavailable.
 
 ## Public Links
 

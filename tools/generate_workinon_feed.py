@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -47,6 +48,37 @@ def board_key(kind: str, suffix: str) -> str:
 
 def deep_link(entity_id: str) -> str:
     return f"site/index.html#{entity_id}"
+
+
+def latest_commit_subject(repo_path: str | None) -> str | None:
+    if not repo_path:
+        return None
+
+    path = Path(repo_path).expanduser()
+    if not path.exists():
+        return None
+
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(path), "log", "-1", "--pretty=format:%s"],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+    except (subprocess.SubprocessError, OSError):
+        return None
+
+    subject = result.stdout.strip()
+    return subject or None
+
+
+def recent_change_body(entity: dict) -> str:
+    modified = entity.get("lastModified")
+    commit_subject = latest_commit_subject(entity.get("repo"))
+    if commit_subject:
+        return f"Latest commit: {commit_subject}. Last modified {modified}."
+    return f"Last modified {modified}."
 
 
 def build_attention_items(index_data: dict) -> list[dict]:
@@ -148,8 +180,8 @@ def build_recent_change_items(index_data: dict, now_dt: datetime) -> list[dict]:
                 "id": f"recent-{entity['id']}",
                 "type": "recent-change",
                 "entityId": entity["id"],
-                "title": f"{entity['name']} changed recently",
-                "body": f"Last modified {entity['lastModified']}.",
+                "title": f"{entity['name']} changed",
+                "body": recent_change_body(entity),
                 "priority": "medium" if age_days <= 2 else "low",
                 "lane": "Recent Activity",
                 "sortDate": entity["lastModified"],

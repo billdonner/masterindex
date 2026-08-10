@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-02T16:02:27-05:00",
+  "generatedAt": "2026-08-09T22:52:25-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,17 +11,34 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 46,
+  "itemCount": 39,
   "items": [
+    {
+      "id": "recent-workinon-app",
+      "type": "recent-change",
+      "entityId": "workinon-app",
+      "title": "workin On changed",
+      "body": "Latest commit: Build 52: wire approved public TestFlight link FbsJBmc7. Last modified 2026-08-09.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-09",
+      "tags": [
+        "recent",
+        "app",
+        "nagz"
+      ],
+      "deepLink": "site/index.html#workinon-app",
+      "statusKey": "masterindex.recent.workinon-app"
+    },
     {
       "id": "recent-qross-app",
       "type": "recent-change",
       "entityId": "qross-app",
-      "title": "Qross changed recently",
-      "body": "Last modified 2026-08-02.",
-      "priority": "medium",
+      "title": "Qross changed",
+      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-06.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-02",
+      "sortDate": "2026-08-06",
       "tags": [
         "recent",
         "app",
@@ -31,82 +48,14 @@
       "statusKey": "masterindex.recent.qross-app"
     },
     {
-      "id": "recent-sentipods-app",
-      "type": "recent-change",
-      "entityId": "sentipods-app",
-      "title": "Sentipods changed recently",
-      "body": "Last modified 2026-08-02.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-02",
-      "tags": [
-        "recent",
-        "app",
-        "grubber"
-      ],
-      "deepLink": "site/index.html#sentipods-app",
-      "statusKey": "masterindex.recent.sentipods-app"
-    },
-    {
-      "id": "recent-burfords-app",
-      "type": "recent-change",
-      "entityId": "burfords-app",
-      "title": "100 Burfords changed recently",
-      "body": "Last modified 2026-08-01.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-01",
-      "tags": [
-        "recent",
-        "app",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#burfords-app",
-      "statusKey": "masterindex.recent.burfords-app"
-    },
-    {
-      "id": "recent-mallinbook-app",
-      "type": "recent-change",
-      "entityId": "mallinbook-app",
-      "title": "Mallinbook changed recently",
-      "body": "Last modified 2026-08-01.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-01",
-      "tags": [
-        "recent",
-        "app",
-        "mallinbook"
-      ],
-      "deepLink": "site/index.html#mallinbook-app",
-      "statusKey": "masterindex.recent.mallinbook-app"
-    },
-    {
-      "id": "recent-card-server-backend",
-      "type": "recent-change",
-      "entityId": "card-server-backend",
-      "title": "card-server changed recently",
-      "body": "Last modified 2026-08-01.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-01",
-      "tags": [
-        "recent",
-        "backend",
-        "qross"
-      ],
-      "deepLink": "site/index.html#card-server-backend",
-      "statusKey": "masterindex.recent.card-server-backend"
-    },
-    {
       "id": "recent-grubber-service",
       "type": "recent-change",
       "entityId": "grubber-service",
-      "title": "grubber changed recently",
-      "body": "Last modified 2026-08-01.",
-      "priority": "medium",
+      "title": "grubber changed",
+      "body": "Latest commit: fix(producer): serialize all grubber database writers. Last modified 2026-08-06.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-01",
+      "sortDate": "2026-08-06",
       "tags": [
         "recent",
         "service",
@@ -116,140 +65,55 @@
       "statusKey": "masterindex.recent.grubber-service"
     },
     {
-      "id": "recent-nagzerver-backend",
+      "id": "recent-picklefortunes-app",
       "type": "recent-change",
-      "entityId": "nagzerver-backend",
-      "title": "nagzerver changed recently",
-      "body": "Last modified 2026-08-01.",
-      "priority": "medium",
+      "entityId": "picklefortunes-app",
+      "title": "picklefortunes changed",
+      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-06.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-01",
-      "tags": [
-        "recent",
-        "backend",
-        "nagz"
-      ],
-      "deepLink": "site/index.html#nagzerver-backend",
-      "statusKey": "masterindex.recent.nagzerver-backend"
-    },
-    {
-      "id": "recent-server-monitor-service",
-      "type": "recent-change",
-      "entityId": "server-monitor-service",
-      "title": "server-monitor changed recently",
-      "body": "Last modified 2026-08-01.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-01",
-      "tags": [
-        "recent",
-        "service",
-        "pickledballs"
-      ],
-      "deepLink": "site/index.html#server-monitor-service",
-      "statusKey": "masterindex.recent.server-monitor-service"
-    },
-    {
-      "id": "recent-conversationlab-package",
-      "type": "recent-change",
-      "entityId": "conversationlab-package",
-      "title": "ConversationLab changed recently",
-      "body": "Last modified 2026-07-31.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-07-31",
-      "tags": [
-        "recent",
-        "package",
-        "codex experiments"
-      ],
-      "deepLink": "site/index.html#conversationlab-package",
-      "statusKey": "masterindex.recent.conversationlab-package"
-    },
-    {
-      "id": "recent-coordinationlab-package",
-      "type": "recent-change",
-      "entityId": "coordinationlab-package",
-      "title": "CoordinationLab changed recently",
-      "body": "Last modified 2026-07-31.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-07-31",
-      "tags": [
-        "recent",
-        "package",
-        "codex experiments"
-      ],
-      "deepLink": "site/index.html#coordinationlab-package",
-      "statusKey": "masterindex.recent.coordinationlab-package"
-    },
-    {
-      "id": "recent-kinflash-app",
-      "type": "recent-change",
-      "entityId": "kinflash-app",
-      "title": "KinFlash changed recently",
-      "body": "Last modified 2026-07-31.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-07-31",
+      "sortDate": "2026-08-06",
       "tags": [
         "recent",
         "app",
-        "kinflash"
+        "picklefortunes"
       ],
-      "deepLink": "site/index.html#kinflash-app",
-      "statusKey": "masterindex.recent.kinflash-app"
+      "deepLink": "site/index.html#picklefortunes-app",
+      "statusKey": "masterindex.recent.picklefortunes-app"
     },
     {
-      "id": "recent-pickledballs-app",
+      "id": "recent-mallinbook-app",
       "type": "recent-change",
-      "entityId": "pickledballs-app",
-      "title": "PickledBalls changed recently",
-      "body": "Last modified 2026-07-31.",
-      "priority": "medium",
+      "entityId": "mallinbook-app",
+      "title": "Mallinbook changed",
+      "body": "Last modified 2026-08-03.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-07-31",
+      "sortDate": "2026-08-03",
       "tags": [
         "recent",
         "app",
-        "pickledballs"
+        "mallinbook"
       ],
-      "deepLink": "site/index.html#pickledballs-app",
-      "statusKey": "masterindex.recent.pickledballs-app"
+      "deepLink": "site/index.html#mallinbook-app",
+      "statusKey": "masterindex.recent.mallinbook-app"
     },
     {
-      "id": "recent-sharedspace-lab",
+      "id": "recent-sentipods-app",
       "type": "recent-change",
-      "entityId": "sharedspace-lab",
-      "title": "SharedSpaceLab changed recently",
-      "body": "Last modified 2026-07-31.",
-      "priority": "medium",
+      "entityId": "sentipods-app",
+      "title": "Sentipods changed",
+      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-03.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-07-31",
-      "tags": [
-        "recent",
-        "app",
-        "codex experiments"
-      ],
-      "deepLink": "site/index.html#sharedspace-lab",
-      "statusKey": "masterindex.recent.sharedspace-lab"
-    },
-    {
-      "id": "recent-grubber-ios-app",
-      "type": "recent-change",
-      "entityId": "grubber-ios-app",
-      "title": "grubber-ios changed recently",
-      "body": "Last modified 2026-07-31.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-07-31",
+      "sortDate": "2026-08-03",
       "tags": [
         "recent",
         "app",
         "grubber"
       ],
-      "deepLink": "site/index.html#grubber-ios-app",
-      "statusKey": "masterindex.recent.grubber-ios-app"
+      "deepLink": "site/index.html#sentipods-app",
+      "statusKey": "masterindex.recent.sentipods-app"
     },
     {
       "id": "due-card-server-health-check",
@@ -437,6 +301,22 @@
       ],
       "deepLink": "site/index.html#workinon-app",
       "statusKey": "masterindex.due.workinon-release-check"
+    },
+    {
+      "id": "attention-words123-app-no-public-links",
+      "type": "attention",
+      "entityId": "words123-app",
+      "title": "123 Words missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#words123-app",
+      "statusKey": "masterindex.attention.words123-app.no-public-links"
     },
     {
       "id": "attention-cardz-studio-ios-app-no-public-links",
@@ -714,7 +594,7 @@
       "id": "summary-asc-gaps",
       "type": "summary",
       "title": "ASC coverage gaps",
-      "body": "10 App Store Connect apps still do not map cleanly to an active local repository.",
+      "body": "6 App Store Connect apps still do not map cleanly to an active local repository.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -727,7 +607,7 @@
       "id": "summary-public-link-gaps",
       "type": "summary",
       "title": "Public link gaps",
-      "body": "17 entries still need verified public links or App Store pages.",
+      "body": "18 entries still need verified public links or App Store pages.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -740,7 +620,7 @@
       "id": "summary-recent-changes",
       "type": "summary",
       "title": "Recent changes",
-      "body": "14 entries were modified in the last 7 days.",
+      "body": "6 entries were modified in the last 7 days.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

@@ -5,6 +5,9 @@ This folder contains the exact reusable text for injecting MasterIndex behavior 
 ## Files
 
 - `MASTERINDEX_UNIVERSAL_INJECTION.md` — preferred single file for injecting MasterIndex everywhere except `workin On`
+- `MASTERINDEX_MANAGED_BLOCK.md` — delimited agent-neutral block for both `AGENTS.md` and `CLAUDE.md`
+- `install-agent-handoff.sh` — idempotently installs the managed block in tracked local repositories
+- `OTHER_MACHINE_SETUP.md` — concise setup and scheduling guidance for a second Mac
 - `AGENTS_SNIPPET.md` — drop-in text for `AGENTS.md`
 - `masterindex-bootstrap-skill/SKILL.md` — personal Codex skill starter
 - `housekeeping-task-template.md` — starter prompt for periodic tasks

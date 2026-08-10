@@ -1,146 +1,66 @@
 {
-  "generatedAt": "2026-08-02T16:02:27-05:00",
+  "generatedAt": "2026-08-09T22:52:25-05:00",
   "namespace": "masterindex",
   "items": [
     {
+      "id": "recent-workinon-app",
+      "title": "workin On changed",
+      "statusKey": "masterindex.recent.workinon-app",
+      "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+Build+52%3A+wire+approved+public+TestFlight+link+FbsJBmc7.+Last+modified+2026-08-09.",
+      "entityId": "workinon-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
       "id": "recent-qross-app",
-      "title": "Qross changed recently",
+      "title": "Qross changed",
       "statusKey": "masterindex.recent.qross-app",
-      "url": "workinon://post?key=masterindex.recent.qross-app&text=Qross+changed+recently+-+Last+modified+2026-08-02.",
+      "url": "workinon://post?key=masterindex.recent.qross-app&text=Qross+changed+-+Latest+commit%3A+Add+MasterIndex+agent+handoff.+Last+modified+2026-08-06.",
       "entityId": "qross-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-sentipods-app",
-      "title": "Sentipods changed recently",
-      "statusKey": "masterindex.recent.sentipods-app",
-      "url": "workinon://post?key=masterindex.recent.sentipods-app&text=Sentipods+changed+recently+-+Last+modified+2026-08-02.",
-      "entityId": "sentipods-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-burfords-app",
-      "title": "100 Burfords changed recently",
-      "statusKey": "masterindex.recent.burfords-app",
-      "url": "workinon://post?key=masterindex.recent.burfords-app&text=100+Burfords+changed+recently+-+Last+modified+2026-08-01.",
-      "entityId": "burfords-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-mallinbook-app",
-      "title": "Mallinbook changed recently",
-      "statusKey": "masterindex.recent.mallinbook-app",
-      "url": "workinon://post?key=masterindex.recent.mallinbook-app&text=Mallinbook+changed+recently+-+Last+modified+2026-08-01.",
-      "entityId": "mallinbook-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-card-server-backend",
-      "title": "card-server changed recently",
-      "statusKey": "masterindex.recent.card-server-backend",
-      "url": "workinon://post?key=masterindex.recent.card-server-backend&text=card-server+changed+recently+-+Last+modified+2026-08-01.",
-      "entityId": "card-server-backend",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-grubber-service",
-      "title": "grubber changed recently",
+      "title": "grubber changed",
       "statusKey": "masterindex.recent.grubber-service",
-      "url": "workinon://post?key=masterindex.recent.grubber-service&text=grubber+changed+recently+-+Last+modified+2026-08-01.",
+      "url": "workinon://post?key=masterindex.recent.grubber-service&text=grubber+changed+-+Latest+commit%3A+fix%28producer%29%3A+serialize+all+grubber+database+writers.+Last+modified+2026-08-06.",
       "entityId": "grubber-service",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
-      "id": "recent-nagzerver-backend",
-      "title": "nagzerver changed recently",
-      "statusKey": "masterindex.recent.nagzerver-backend",
-      "url": "workinon://post?key=masterindex.recent.nagzerver-backend&text=nagzerver+changed+recently+-+Last+modified+2026-08-01.",
-      "entityId": "nagzerver-backend",
+      "id": "recent-picklefortunes-app",
+      "title": "picklefortunes changed",
+      "statusKey": "masterindex.recent.picklefortunes-app",
+      "url": "workinon://post?key=masterindex.recent.picklefortunes-app&text=picklefortunes+changed+-+Latest+commit%3A+Add+MasterIndex+agent+handoff.+Last+modified+2026-08-06.",
+      "entityId": "picklefortunes-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
-      "id": "recent-server-monitor-service",
-      "title": "server-monitor changed recently",
-      "statusKey": "masterindex.recent.server-monitor-service",
-      "url": "workinon://post?key=masterindex.recent.server-monitor-service&text=server-monitor+changed+recently+-+Last+modified+2026-08-01.",
-      "entityId": "server-monitor-service",
+      "id": "recent-mallinbook-app",
+      "title": "Mallinbook changed",
+      "statusKey": "masterindex.recent.mallinbook-app",
+      "url": "workinon://post?key=masterindex.recent.mallinbook-app&text=Mallinbook+changed+-+Last+modified+2026-08-03.",
+      "entityId": "mallinbook-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
-      "id": "recent-conversationlab-package",
-      "title": "ConversationLab changed recently",
-      "statusKey": "masterindex.recent.conversationlab-package",
-      "url": "workinon://post?key=masterindex.recent.conversationlab-package&text=ConversationLab+changed+recently+-+Last+modified+2026-07-31.",
-      "entityId": "conversationlab-package",
+      "id": "recent-sentipods-app",
+      "title": "Sentipods changed",
+      "statusKey": "masterindex.recent.sentipods-app",
+      "url": "workinon://post?key=masterindex.recent.sentipods-app&text=Sentipods+changed+-+Latest+commit%3A+Add+MasterIndex+agent+handoff.+Last+modified+2026-08-03.",
+      "entityId": "sentipods-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-coordinationlab-package",
-      "title": "CoordinationLab changed recently",
-      "statusKey": "masterindex.recent.coordinationlab-package",
-      "url": "workinon://post?key=masterindex.recent.coordinationlab-package&text=CoordinationLab+changed+recently+-+Last+modified+2026-07-31.",
-      "entityId": "coordinationlab-package",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-kinflash-app",
-      "title": "KinFlash changed recently",
-      "statusKey": "masterindex.recent.kinflash-app",
-      "url": "workinon://post?key=masterindex.recent.kinflash-app&text=KinFlash+changed+recently+-+Last+modified+2026-07-31.",
-      "entityId": "kinflash-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-pickledballs-app",
-      "title": "PickledBalls changed recently",
-      "statusKey": "masterindex.recent.pickledballs-app",
-      "url": "workinon://post?key=masterindex.recent.pickledballs-app&text=PickledBalls+changed+recently+-+Last+modified+2026-07-31.",
-      "entityId": "pickledballs-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-sharedspace-lab",
-      "title": "SharedSpaceLab changed recently",
-      "statusKey": "masterindex.recent.sharedspace-lab",
-      "url": "workinon://post?key=masterindex.recent.sharedspace-lab&text=SharedSpaceLab+changed+recently+-+Last+modified+2026-07-31.",
-      "entityId": "sharedspace-lab",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-grubber-ios-app",
-      "title": "grubber-ios changed recently",
-      "statusKey": "masterindex.recent.grubber-ios-app",
-      "url": "workinon://post?key=masterindex.recent.grubber-ios-app&text=grubber-ios+changed+recently+-+Last+modified+2026-07-31.",
-      "entityId": "grubber-ios-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "due-card-server-health-check",
@@ -251,6 +171,16 @@
       "taskId": "workinon-release-check",
       "type": "due-task",
       "priority": "medium"
+    },
+    {
+      "id": "attention-words123-app-no-public-links",
+      "title": "123 Words missing public links",
+      "statusKey": "masterindex.attention.words123-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.words123-app.no-public-links&text=123+Words+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "words123-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
     },
     {
       "id": "attention-cardz-studio-ios-app-no-public-links",
@@ -426,7 +356,7 @@
       "id": "summary-asc-gaps",
       "title": "ASC coverage gaps",
       "statusKey": "masterindex.summary.asc-gaps",
-      "url": "workinon://post?key=masterindex.summary.asc-gaps&text=ASC+coverage+gaps+-+10+App+Store+Connect+apps+still+do+not+map+cleanly+to+an+active+local+repository.",
+      "url": "workinon://post?key=masterindex.summary.asc-gaps&text=ASC+coverage+gaps+-+6+App+Store+Connect+apps+still+do+not+map+cleanly+to+an+active+local+repository.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -436,7 +366,7 @@
       "id": "summary-public-link-gaps",
       "title": "Public link gaps",
       "statusKey": "masterindex.summary.public-link-gaps",
-      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+17+entries+still+need+verified+public+links+or+App+Store+pages.",
+      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+18+entries+still+need+verified+public+links+or+App+Store+pages.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -446,7 +376,7 @@
       "id": "summary-recent-changes",
       "title": "Recent changes",
       "statusKey": "masterindex.summary.recent-changes",
-      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+14+entries+were+modified+in+the+last+7+days.",
+      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+6+entries+were+modified+in+the+last+7+days.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
