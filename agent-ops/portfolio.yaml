@@ -3,6 +3,18 @@
 # type/lifecycle/standardization start UNKNOWN/UNASSESSED; fill in only as an
 # actual agent-ops run (see PROCESS.md) inspects that repository directly.
 repositories:
+  1041soft:
+    repository: "1041soft"
+    path: "~/1041soft"
+    type: "documentation/knowledge repo"  # LLC formation records; verified by direct inspection 2026-08-11, not present in current/index.json["repos"]
+    lifecycle: active
+    standardization: IN_ASSESSMENT
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "github.com/billdonner/1041soft — LLC formation docs (articles of organization, EIN confirmation, operating agreement), 3 commits as of 2026-08-11"
+      - "No AGENTS.md/CLAUDE.md yet; run started 2026-08-11, see agent-ops/runs/1041soft-2026-08-11/"
+      - "Not an application/service/library — no build, test, or CI"
   100Burfords:
     repository: "100Burfords"
     path: "~/100Burfords"
