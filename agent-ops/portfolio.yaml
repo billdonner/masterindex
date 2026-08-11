@@ -1,0 +1,500 @@
+# Orchestration ledger only — NOT a replacement for current/index.json.
+# Populated conservatively from current/index.json["repos"] (verified) at bootstrap time.
+# type/lifecycle/standardization start UNKNOWN/UNASSESSED; fill in only as an
+# actual agent-ops run (see PROCESS.md) inspects that repository directly.
+repositories:
+  100Burfords:
+    repository: "100Burfords"
+    path: "~/100Burfords"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped iOS app, sale-ready in ASC"
+      - "Last 2026 commit observed in Master Index: 2026-08-05"
+  1041Kit:
+    repository: "1041Kit"
+    path: "~/1041Kit"
+    type: "shared package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Famster dependency"
+      - "Last 2026 commit observed in Master Index: 2026-04-24"
+  CourtScheduler:
+    repository: "CourtScheduler"
+    path: "~/CourtScheduler"
+    type: "shared package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "PickledBalls scheduling dependency"
+      - "Last 2026 commit observed in Master Index: 2026-05-01"
+  Flyz:
+    repository: "Flyz"
+    path: "~/Flyz"
+    type: "deployment/config"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Fly deployment support repo"
+      - "Last 2026 commit observed in Master Index: 2026-04-28"
+  SharedAI:
+    repository: "SharedAI"
+    path: "~/SharedAI"
+    type: "shared package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "PickledBalls AI dependency"
+      - "Last 2026 commit observed in Master Index: 2026-06-16"
+  ado-data:
+    repository: "ado-data"
+    path: "~/ado-data"
+    type: "data/support"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Appears paired with adology pulse workflows"
+      - "Last 2026 commit observed in Master Index: 2026-06-10"
+  adology-pulse:
+    repository: "adology-pulse"
+    path: "~/adology-pulse"
+    type: "app/data/support"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Active, not mapped to an ASC app in this scan"
+      - "Last 2026 commit observed in Master Index: 2026-06-10"
+  bookmaker:
+    repository: "bookmaker"
+    path: "~/bookmaker"
+    type: "reference engine"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
+      - "Last 2026 commit observed in Master Index: 2026-07-20"
+  card-engine:
+    repository: "card-engine"
+    path: "~/card-engine"
+    type: "backend"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Card and trivia backend track"
+      - "Last 2026 commit observed in Master Index: 2026-03-23"
+  card-server:
+    repository: "card-server"
+    path: "~/card-server"
+    type: "backend"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Live backend for Qross and obo-ios"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  card-studio:
+    repository: "card-studio"
+    path: "~/card-studio"
+    type: "admin app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Card editing and admin surface"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  cardz-studio-ios:
+    repository: "cardz-studio-ios"
+    path: "~/cardz-studio-ios"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped admin and editor app"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  clubsync:
+    repository: "clubsync"
+    path: "~/clubsync"
+    type: "backend"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Live sports scheduling backend"
+      - "Last 2026 commit observed in Master Index: 2026-04-30"
+  clubwatch:
+    repository: "clubwatch"
+    path: "~/clubwatch"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped LtWatcher app"
+      - "Last 2026 commit observed in Master Index: 2026-04-30"
+  famster-ios:
+    repository: "famster-ios"
+    path: "~/famster-ios"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped Famster app"
+      - "Last 2026 commit observed in Master Index: 2026-04-30"
+  grubber:
+    repository: "grubber"
+    path: "~/grubber"
+    type: "backend/service"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Live transcript service; analysis live-update and progress view deployed 2026-08-06"
+      - "Last 2026 commit observed in Master Index: 2026-08-09"
+  grubber-ios:
+    repository: "grubber-ios"
+    path: "~/grubber-ios"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Local app, no ASC match found"
+      - "Last 2026 commit observed in Master Index: 2026-07-31"
+  kinflash:
+    repository: "kinflash"
+    path: "~/kinflash"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped KinFlash app; iOS 1.0.0 build 65 uploaded to TestFlight; safe fictional-pedigree fixtures, unpublished documentation, persistent Mac flashcard review, and package-scoped Mac attachments refreshed through 2026-08-10"
+      - "Last 2026 commit observed in Master Index: 2026-08-10"
+  mallinbook:
+    repository: "mallinbook"
+    path: "~/mallinbook"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped macOS+iOS directory-book app (Mallinbook; renamed 2026-08-01 from bookmaker-app)"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  nagging-systems-requirements:
+    repository: "nagging-systems-requirements"
+    path: "~/nagging-systems-requirements"
+    type: "docs repo"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Requirements and docs support"
+      - "Last 2026 commit observed in Master Index: 2026-02-15"
+  nagz:
+    repository: "nagz"
+    path: "~/nagz"
+    type: "umbrella/docs repo"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Cross-product docs hub"
+      - "Last 2026 commit observed in Master Index: 2026-04-20"
+  nagz-ai:
+    repository: "nagz-ai"
+    path: "~/nagz-ai"
+    type: "shared package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Nagz AI dependency"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  nagz-ios:
+    repository: "nagz-ios"
+    path: "~/nagz-ios"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped Nagz app"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  nagz-web:
+    repository: "nagz-web"
+    path: "~/nagz-web"
+    type: "web app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Nagz web client"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  nagzerver:
+    repository: "nagzerver"
+    path: "~/nagzerver"
+    type: "backend"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Live Nagz, PickledBalls, workin On, clubwatch backend"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  obo:
+    repository: "obo"
+    path: "~/obo"
+    type: "docs hub"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "OBO ecosystem hub"
+      - "Last 2026 commit observed in Master Index: 2026-03-15"
+  obo-ios:
+    repository: "obo-ios"
+    path: "~/obo-ios"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped Flasherz Kids app"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  pickledballs:
+    repository: "pickledballs"
+    path: "~/pickledballs"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped PickledBalls app"
+      - "Last 2026 commit observed in Master Index: 2026-06-17"
+  picklefortunes:
+    repository: "picklefortunes"
+    path: "~/picklefortunes"
+    type: "app + package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped app and PickledBalls dependency"
+      - "Last 2026 commit observed in Master Index: 2026-06-16"
+  qross:
+    repository: "qross"
+    path: "~/qross"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped Qross app"
+      - "Last 2026 commit observed in Master Index: 2026-08-02"
+  qross-data:
+    repository: "qross-data"
+    path: "~/qross-data"
+    type: "data/support"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Qross pulse and data repo"
+      - "Last 2026 commit observed in Master Index: 2026-06-10"
+  server-monitor:
+    repository: "server-monitor"
+    path: "~/server-monitor"
+    type: "monitoring service"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Live monitoring dashboard"
+      - "Last 2026 commit observed in Master Index: 2026-08-01"
+  server-monitor-ios:
+    repository: "server-monitor-ios"
+    path: "~/server-monitor-ios"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped Zerver Monitor iOS + watchOS client, widget, and public GitHub Pages support site"
+      - "Last 2026 commit observed in Master Index: 2026-02-27"
+  Documents-Codex-2026-08-02-masterindex-explorer:
+    repository: "Documents-Codex-2026-08-02-masterindex-explorer"
+    path: "~/Documents/Codex/2026-08-02/masterindex-explorer"
+    type: "multiplatform app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped MastPex iOS + macOS read-only explorer for a compatible MasterIndex"
+      - "Last 2026 commit observed in Master Index: 2026-08-05"
+  sentipods:
+    repository: "sentipods"
+    path: "~/sentipods"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "iOS and Mac Catalyst client for the live grubber service; ASC-mapped SentiPods, local 1.0 (15)"
+      - "Last 2026 commit observed in Master Index: 2026-08-03"
+  workinon:
+    repository: "workinon"
+    path: "~/workinon"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped workin On app with bundled MasterIndex operational-feed surfaces"
+      - "Last 2026 commit observed in Master Index: 2026-08-10"
+  workinon-mcp:
+    repository: "workinon-mcp"
+    path: "~/workinon-mcp"
+    type: "MCP/tooling"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "workin On companion server"
+      - "Last 2026 commit observed in Master Index: 2026-04-24"
+  Documents-Codex-Experiments-ConversationLab:
+    repository: "Documents-Codex-Experiments-ConversationLab"
+    path: "~/Documents/Codex/Experiments/ConversationLab"
+    type: "shared package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "New local experiment"
+      - "Last 2026 commit observed in Master Index: no commits yet"
+  Documents-Codex-Experiments-CoordinationLab:
+    repository: "Documents-Codex-Experiments-CoordinationLab"
+    path: "~/Documents/Codex/Experiments/CoordinationLab"
+    type: "shared package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "New local experiment"
+      - "Last 2026 commit observed in Master Index: no commits yet"
+  Documents-Codex-Experiments-SharedSpaceLab:
+    repository: "Documents-Codex-Experiments-SharedSpaceLab"
+    path: "~/Documents/Codex/Experiments/SharedSpaceLab"
+    type: "app experiment"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "New local-only iPad experiment"
+      - "Last 2026 commit observed in Master Index: no commits yet"
+  adspill:
+    repository: "adspill"
+    path: "~/adspill"
+    type: "package"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Bill+Jim ad-capacity experiments: auction sim/monitor (Project 1) + create-and-sell framing (Project 2)"
+      - "Last 2026 commit observed in Master Index: 2026-07-29"
+  pfolio:
+    repository: "pfolio"
+    path: "~/pfolio"
+    type: "backend"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "pfolio portfolio-tracker API (Fly bd-pfolio); PRs #3/#4/#5 open"
+      - "Last 2026 commit observed in Master Index: 2026-08-04"
+  pfolio-app:
+    repository: "pfolio-app"
+    path: "~/pfolio-app"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Oliopfolio client, Mac-first + iOS; renamed from pfolio-ios 2026-08-04; PRs #1/#2/#3 open"
+      - "Last 2026 commit observed in Master Index: 2026-08-04"
+  drumbeats:
+    repository: "drumbeats"
+    path: "~/drumbeats"
+    type: "app"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "ASC-mapped iOS drum-machine (App Store name AmenBeats); Bill + Jim shared build"
+      - "Last 2026 commit observed in Master Index: 2026-08-05"
+  oenora:
+    repository: "oenora"
+    path: "~/oenora"
+    type: "iOS app + product specification"  # from current/index.json["repos"].kind, not independently verified
+    lifecycle: unknown
+    standardization: UNASSESSED
+    last_reviewed: null
+    authoritative_project_instructions: null
+    notes:
+      - "Oenora wine-collection knowledge system; committed iOS technical spike with local OCR/cellar flow, confirmed-label identity autofill, product and technical specifications, and unexecuted ASC registration tooling"
+      - "Last 2026 commit observed in Master Index: 2026-08-10"

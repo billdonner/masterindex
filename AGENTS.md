@@ -70,3 +70,43 @@ This file set is designed so housekeeping agents on other machines can:
 - detect gaps
 - choose the right repo or service before starting work
 - discover which recurring tasks belong to which entity ids
+
+## Repository classification
+
+Master Index is a coordination/data-registry repository: a canonical
+inventory + task registry + static browser, not an application, service,
+or library. It has no build step, no deployed runtime of its own, and no
+automated test suite. Validate it with `tools/masterindex-drift-check.sh
+--strict`, which is read-only (see that script and
+`bootstrap/MASTERINDEX_DRIFT_LAUNCHAGENT.md`).
+
+## Architectural boundaries — do not change casually
+
+- The schema of `current/index.json`, `tasks/index.json`, and
+  `current/handoffs/index.json` (required top-level keys are enforced by
+  `tools/masterindex-drift-check.sh`).
+- The relative path layout between `site/`, `current/`, and `tasks/` —
+  `site/app.js` fetches `../current/index.json`.
+- The read/write order and stability rules already defined above in this
+  file — they are relied on by other repositories' agent instructions
+  (e.g. `~/qross/CLAUDE.md`, `~/drumbeats/CLAUDE.md` inject the delimited
+  block from `bootstrap/MASTERINDEX_MANAGED_BLOCK.md`).
+- `bootstrap/` — the existing mechanism for injecting *Master Index
+  awareness* into other repositories. Keep this distinct from
+  `agent-ops/`, which is a separate, additive layer for standardizing
+  *other repositories' own* agent instructions and review process (see
+  `agent-ops/README.md`). Neither replaces the other.
+
+## Full system reference
+
+For a verified, detailed map of this repository's architecture, readers,
+writers, generated vs. authoritative files, and open unknowns, see
+`docs/agent-bootstrap/master-index-current-system.md`.
+
+## Agent-orchestration sidecar
+
+`agent-ops/` holds an additive, opt-in workflow for standardizing *other*
+repositories in this portfolio (AGENTS.md normalization, independent
+review, cross-agent-system review, adjudication). It does not change how
+Master Index itself is read or written. See `agent-ops/README.md` before
+using it.
