@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T16:55:00-05:00",
+  "generatedAt": "2026-08-11T17:35:00-05:00",
   "scope": {
     "dateLabel": "Sunday, August 10, 2026",
     "defaultSort": "most-recently-modified",
@@ -601,7 +601,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-08",
+      "lastModified": "2026-08-09",
       "repo": "~/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
       "release": "ASC app id 6778510642, iOS 1.0 draft. TestFlight build 7 uploaded 2026-08-05 (first build with the full feature set); App Store copy (description/keywords/promo) pushed to the 1.0 draft. Bill + Jim shared build.",
@@ -1918,7 +1918,7 @@
     {
       "repo": "~/drumbeats",
       "branch": "main",
-      "last2026Commit": "2026-08-05",
+      "last2026Commit": "2026-08-09",
       "kind": "app",
       "role": "ASC-mapped iOS drum-machine (App Store name AmenBeats); Bill + Jim shared build"
     },
