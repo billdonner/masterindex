@@ -1426,7 +1426,8 @@
         "2026-08-10: added an independent simulator walkthrough with screenshot evidence for capture, offline guidance, recognition review, cellar, and history flows.",
         "2026-08-10: added four-screen high-school-level onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
         "2026-08-10: ASC app 6799520155 and VALID build 1 were observed. Build 1 is attached to the private Founders Beta group and is waiting for Beta App Review; Jon Packer is the named invite-only tester, automatic notification is enabled, and no public TestFlight link exists.",
-        "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge."
+        "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge.",
+        "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed."
       ]
     }
     ,
