@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T15:15:00-05:00",
+  "generatedAt": "2026-08-11T15:47:00-05:00",
   "scope": {
     "dateLabel": "Sunday, August 10, 2026",
     "defaultSort": "most-recently-modified",
@@ -877,7 +877,8 @@
         "Its shared kit is reused by PickledBalls.",
         "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
         "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
-        "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product."
+        "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product.",
+        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds — no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone — clear it manually in the TestFlight app (Remove App)."
       ]
     },
     {
@@ -1932,7 +1933,7 @@
   "gaps": [
     "confirmed",
     "ambiguities",
-    "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. PickleFamilia and Screenker have ASC records but no verified local source repository.",
+    "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. PickleFamilia and Screenker have ASC records but no verified local source repository. 2026-08-11: owner confirmed picklefortunes and screenkr2/com.screenkr.app still show as lingering entries in the on-device TestFlight app; re-verified live that neither has an ASC app record or queryable build — expected TestFlight client-side cache behavior with no API-side fix, resolved by manual removal on-device.",
     "2026-08-11 cross-system review: clusters[] has 16 entries but summary.clusters records 15 — pre-existing mismatch, not caused by the agent-orchestration bootstrap, not enforced by tools/masterindex-drift-check.sh. Needs reconciliation in a normal inventory refresh."
   ],
   "taskRegistry": {
