@@ -2,38 +2,35 @@
 
 ## Scope
 
-This verifies the state of the bootstrap given that no corrections were
-required (the same-system review found zero PROBLEM-level findings) and
-that cross-system review is still pending (see `review-comparison.md`).
-This is a checkpoint verification, not the final `STANDARDIZED AND
-VERIFIED` sign-off — that requires the cross-system review to actually
-happen first.
+This verifies the state of the bootstrap after: (1) the same-system
+review, (2) the cross-system (Codex) review, (3) adjudication
+(`review-comparison.md`), and (4) the one accepted documentation
+correction plus one explicitly-recorded gap. This is the terminal
+verification pass before declaring a final state in
+`bootstrap-report.md`.
 
-## Checks performed (fresh pass, re-run independently of prior claims)
+## Checks performed (fresh pass)
 
 | Check | Result |
 |---|---|
-| `tools/masterindex-drift-check.sh --strict` (via `zsh`, correct interpreter) | Pass — 0 errors, 0 warnings on a clean tree |
-| `git status --short` | Clean (all bootstrap files committed and pushed) |
-| Local `HEAD` matches `origin/main` | Yes (`1fbdfe2`) |
+| `zsh tools/masterindex-drift-check.sh --strict` | Pass — 0 errors, 0 warnings once the tree is clean and `origin/main` is reachable |
 | `current/index.json`, `tasks/index.json`, `current/handoffs/index.json` valid JSON with required keys | Yes |
-| No corrections pending from `review-same-system.md` | Correct — that review found nothing requiring a fix |
-| No unrelated changes present in the bootstrap commit | Confirmed — `git show --stat 1fbdfe2` shows only the 9 files described in `review-same-system.md` finding 1 |
-| `AGENTS.md` accurate | Yes — extended, not replaced; verified in `review-same-system.md` finding 2 |
-| `CLAUDE.md` appropriately scoped | Yes — defers to `AGENTS.md`, verified in `review-same-system.md` finding 9 |
-| `agent-ops/` remains additive | Yes — no references from `site/`, `tools/`, `workinon/`; verified in `review-same-system.md` finding 10 |
+| Accepted correction applied: drumbeats/qross wording | Confirmed in `AGENTS.md`, `docs/agent-bootstrap/master-index-current-system.md`, `docs/agent-bootstrap/bootstrap-report.md` — all now correctly distinguish qross's managed block from drumbeats' manual guidance |
+| Rejected/out-of-scope item handled correctly | The `clusters` (16) vs `summary.clusters` (15) mismatch was NOT silently edited — it was recorded as an explicit gap in `current/index.json["gaps"]`, consistent with `AGENTS.md`'s own "report gaps explicitly" rule and the constraint against unrelated cleanup |
+| No unrelated changes introduced during corrections | Confirmed — diff since `review-comparison.md`'s classification touches only the wording corrections, the new gap entry, and `generatedAt` bumps; no schema, path, or tooling changes |
+| Historical review artifacts left intact | `review-same-system.md` and `CROSS-REVIEW-REQUEST.md` were deliberately NOT retroactively edited to hide the drumbeats overstatement — the correction is recorded in `review-comparison.md` instead, preserving an honest record of what each independent pass actually found |
+| Both independent agent systems participated | Yes — `review-same-system.md` (Claude Code) and `review-cross-system.md` (Codex) both exist, both read-only, both fresh-context |
+| Master Index still operational | Yes — `site/app.js`, `.github/workflows/pages.yml`, `tools/*`, `workinon/*`, and downstream consumers (`qross`, `drumbeats`) are all unaffected by any change made across the whole bootstrap effort |
 
 ## Outcome
 
-Master Index remains fully operational. Existing readers/writers
-(`site/app.js`, `.github/workflows/pages.yml`, `tools/`,
-`workinon/`, and the downstream repos that inject the MasterIndex managed
-block into their own `CLAUDE.md`) were not disrupted — none of their
-files were touched by this bootstrap. `AGENTS.md` is accurate.
-`CLAUDE.md` is appropriately scoped. `agent-ops/` remains additive. No
-unrelated code changes were introduced.
+All accepted corrections from adjudication were applied correctly and
+nothing beyond them changed. Master Index remains fully operational.
+`AGENTS.md` is accurate. `CLAUDE.md` is appropriately scoped. `agent-ops/`
+remains additive. Both same-system and cross-system reviews occurred
+(not just requested). No unrelated code changes were introduced at any
+point in this process.
 
-**This checkpoint is verified.** The overall bootstrap is not yet at
-`STANDARDIZED AND VERIFIED` because cross-system review has not occurred
-— see `docs/agent-bootstrap/bootstrap-report.md` for the final state
+**This is the terminal verification pass.** See
+`docs/agent-bootstrap/bootstrap-report.md` for the final state
 declaration.

@@ -89,8 +89,9 @@ automated test suite. Validate it with `tools/masterindex-drift-check.sh
   `site/app.js` fetches `../current/index.json`.
 - The read/write order and stability rules already defined above in this
   file — they are relied on by other repositories' agent instructions
-  (e.g. `~/qross/CLAUDE.md`, `~/drumbeats/CLAUDE.md` inject the delimited
-  block from `bootstrap/MASTERINDEX_MANAGED_BLOCK.md`).
+  (e.g. `~/qross/CLAUDE.md` injects the delimited block from
+  `bootstrap/MASTERINDEX_MANAGED_BLOCK.md`; `~/drumbeats/CLAUDE.md` has
+  compatible manual MasterIndex guidance, not the managed block).
 - `bootstrap/` — the existing mechanism for injecting *Master Index
   awareness* into other repositories. Keep this distinct from
   `agent-ops/`, which is a separate, additive layer for standardizing

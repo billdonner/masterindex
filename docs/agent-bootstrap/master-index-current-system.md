@@ -100,11 +100,15 @@ masterindex/
   `bootstrap/` injection snippets, agents read `current/index.json`,
   `tasks/index.json`, and `current/handoffs/index.json` before portfolio-
   wide or cross-repo work. **Verified in the wild**: `~/qross/CLAUDE.md`
-  and `~/drumbeats/CLAUDE.md` both contain the delimited
-  `<!-- MASTERINDEX:START -->…<!-- MASTERINDEX:END -->` managed block from
-  `bootstrap/MASTERINDEX_MANAGED_BLOCK.md`, confirming this repo is
-  actively consumed by at least two other repositories' agent instructions
-  today.
+  contains the delimited `<!-- MASTERINDEX:START -->…<!-- MASTERINDEX:END -->`
+  managed block from `bootstrap/MASTERINDEX_MANAGED_BLOCK.md`.
+  `~/drumbeats/CLAUDE.md` has compatible manual MasterIndex guidance
+  (entity id, read/write order) but not the delimited managed block and
+  no explicit `current/handoffs/index.json` reference — corrected here
+  after the cross-system review (`review-cross-system.md` finding 9)
+  caught this repo overstating it as two managed-block consumers. Either
+  way, this confirms Master Index is actively consumed by at least two
+  other repositories' agent instructions today.
 - **`site/app.js`** — static browser; does `fetch("../current/index.json")`
   relative to `site/`, i.e. it must be served with `site/` and `current/`
   as siblings. Read-only; presentation layer only (per both `AGENTS.md`

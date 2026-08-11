@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-11T14:56:35-05:00",
+  "generatedAt": "2026-08-11T15:15:00-05:00",
   "scope": {
     "dateLabel": "Sunday, August 10, 2026",
     "defaultSort": "most-recently-modified",
@@ -1932,7 +1932,8 @@
   "gaps": [
     "confirmed",
     "ambiguities",
-    "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. PickleFamilia and Screenker have ASC records but no verified local source repository."
+    "2026-08-06 live ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app remain removed from ASC. PickleFamilia and Screenker have ASC records but no verified local source repository.",
+    "2026-08-11 cross-system review: clusters[] has 16 entries but summary.clusters records 15 — pre-existing mismatch, not caused by the agent-orchestration bootstrap, not enforced by tools/masterindex-drift-check.sh. Needs reconciliation in a normal inventory refresh."
   ],
   "taskRegistry": {
     "path": "tasks/index.json",
