@@ -233,9 +233,9 @@
         "name": "Oenora",
         "bundleId": "com.billdonner.oenora",
         "appId": "6799520155",
-        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 1 WAITING_FOR_BETA_REVIEW",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 1 approved for external distribution",
         "live": false,
-        "publicTestFlight": null,
+        "publicTestFlight": "https://testflight.apple.com/join/M6vwHjHB",
         "latestBuild": "1 uploaded 2026-08-10 (VALID)",
         "marketingUrl": null,
         "descriptionChars": 0
@@ -1403,17 +1403,18 @@
       "kind": "app",
       "cluster": "Oenora",
       "status": "asc-mapped",
-      "lastModified": "2026-08-10",
+      "lastModified": "2026-08-12",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
-      "release": "ASC app 6799520155; iOS 1.0 build 1 is VALID and submitted to private external TestFlight beta review on 2026-08-10. The Founders Beta group is invitation-only with no public link. Working name remains pending formal trademark and domain clearance.",
+      "release": "ASC app 6799520155; iOS 1.0 build 1 is VALID and approved for external TestFlight distribution as of 2026-08-12, with a public join link. Working name remains pending formal trademark and domain clearance.",
       "description": "Personal wine knowledge system for collectors: a working iPhone photo-to-cellar spike plus a longer-term Mac workspace and collection-aware AI roadmap.",
       "dependencies": [
         "oenora-recognition-service"
       ],
       "links": {
         "website": null,
-        "appStore": null
+        "appStore": null,
+        "publicTestFlight": "https://testflight.apple.com/join/M6vwHjHB"
       },
       "notes": [
         "Initial commit f634ccf (2026-08-08) contains the offline capture spike, shared domain package, tests, decision records, and product specification.",
@@ -1429,7 +1430,8 @@
         "2026-08-10: added four-screen high-school-level onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
         "2026-08-10: ASC app 6799520155 and VALID build 1 were observed. Build 1 is attached to the private Founders Beta group and is waiting for Beta App Review; Jon Packer is the named invite-only tester, automatic notification is enabled, and no public TestFlight link exists.",
         "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge.",
-        "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed."
+        "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed.",
+        "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB)."
       ]
     },
     {
