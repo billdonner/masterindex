@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-09T22:52:25-05:00",
+  "generatedAt": "2026-08-11T08:23:24-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,14 +11,14 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 39,
+  "itemCount": 37,
   "items": [
     {
       "id": "recent-workinon-app",
       "type": "recent-change",
       "entityId": "workinon-app",
       "title": "workin On changed",
-      "body": "Latest commit: Build 52: wire approved public TestFlight link FbsJBmc7. Last modified 2026-08-09.",
+      "body": "Latest commit: Add MasterIndex operational feed surfaces. Last modified 2026-08-09.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-08-09",
@@ -80,40 +80,6 @@
       ],
       "deepLink": "site/index.html#picklefortunes-app",
       "statusKey": "masterindex.recent.picklefortunes-app"
-    },
-    {
-      "id": "recent-mallinbook-app",
-      "type": "recent-change",
-      "entityId": "mallinbook-app",
-      "title": "Mallinbook changed",
-      "body": "Last modified 2026-08-03.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-03",
-      "tags": [
-        "recent",
-        "app",
-        "mallinbook"
-      ],
-      "deepLink": "site/index.html#mallinbook-app",
-      "statusKey": "masterindex.recent.mallinbook-app"
-    },
-    {
-      "id": "recent-sentipods-app",
-      "type": "recent-change",
-      "entityId": "sentipods-app",
-      "title": "Sentipods changed",
-      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-03.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-03",
-      "tags": [
-        "recent",
-        "app",
-        "grubber"
-      ],
-      "deepLink": "site/index.html#sentipods-app",
-      "statusKey": "masterindex.recent.sentipods-app"
     },
     {
       "id": "due-card-server-health-check",
@@ -620,7 +586,7 @@
       "id": "summary-recent-changes",
       "type": "summary",
       "title": "Recent changes",
-      "body": "6 entries were modified in the last 7 days.",
+      "body": "4 entries were modified in the last 7 days.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

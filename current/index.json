@@ -1,18 +1,19 @@
 {
-  "generatedAt": "2026-08-09T22:35:27-05:00",
+  "generatedAt": "2026-08-11T08:22:52-05:00",
   "scope": {
-    "dateLabel": "Monday, August 3, 2026",
+    "dateLabel": "Tuesday, August 11, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
       "~/Documents/Codex/Experiments"
     ],
-    "appStoreConnectAccess": "not-requeried-this-refresh",
+    "appStoreConnectAccess": "not-requeried-this-audit",
     "notes": [
       "Reviewed local git repositories with 2026 activity.",
       "Treated repositories as read-only during the scan.",
       "Ignored older inactive repos unless directly connected to a 2026-active project.",
-      "App Store Connect data was retained from the August 2 live query and not re-queried during this refresh."
+      "App Store Connect data was retained from the August 2 live query and not re-queried during this audit.",
+      "August 11 reboot-readiness audit verified canonical JSON shape, task coverage, and local path availability without changing retained ASC states."
     ]
   },
   "summary": {
@@ -1197,9 +1198,26 @@
     }
   ],
   "gaps": [
-    "confirmed",
-    "ambiguities",
-    "2026-08-03 ASC refresh: PickleBrains, picklefortunes, Alities, Quackman, screenkr2/com.screenkr.app removed from ASC; MastPex IOS, MastPex Mac, SentiPods appeared and are not yet mapped to local repos."
+    {
+      "kind": "asc-unmatched",
+      "observedAt": "2026-08-03",
+      "summary": "MastPex IOS, MastPex Mac, PickleFamilia, Screenker, Zerver Monitor, and amenbeats are visible in retained ASC data but do not have clearly corresponding 2026-active local repositories in this scan."
+    },
+    {
+      "kind": "asc-removed",
+      "observedAt": "2026-08-03",
+      "summary": "PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app were removed from ASC during the 2026-08 cleanup. The picklefortunes local repo remains active locally."
+    },
+    {
+      "kind": "local-path-missing",
+      "observedAt": "2026-08-11",
+      "summary": "Recorded repo paths ~/123words, ~/bookmaker, and ~/mallinbook did not resolve as local directories on this machine during the reboot-readiness audit; retained entity facts are preserved from prior observed scans."
+    },
+    {
+      "kind": "ambiguity",
+      "observedAt": "2026-08-11",
+      "summary": "SentiPods is mapped to ~/sentipods and retained as ASC 1.0 PREPARE_FOR_SUBMISSION, but its ASC app ID was not surfaced in the local scan."
+    }
   ],
   "taskRegistry": {
     "path": "tasks/index.json",

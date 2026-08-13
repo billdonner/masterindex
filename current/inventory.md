@@ -1,12 +1,12 @@
 # MasterIndex Inventory
 
-As of Sunday, August 9, 2026.
+As of Tuesday, August 11, 2026.
 
 ## Scope
 
 - Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
 - Treated all repositories as read-only.
-- Retained the App Store Connect inventory from the live query on August 2, 2026; ASC was not re-queried during this refresh.
+- Retained the App Store Connect inventory from the live query on August 2, 2026; ASC was not re-queried during this reboot-readiness audit.
 - Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
 - Operations policy: every entity receives a verification pass every six hours and a full refresh daily through `tasks/index.json`. Agents must read `current/handoffs/index.json` before a cycle so a targeted instruction can change the next cycle's behavior without changing the inventory schema.
 
@@ -27,7 +27,9 @@ As of Sunday, August 9, 2026.
   - `ConversationLab`
   - `CoordinationLab`
   - `SharedSpaceLab`
-- MasterIndex instruction coverage audit (2026-08-05): 14 of 38 tracked repositories already have `AGENTS.md`; 24 require the standard injection. `~/bookmaker` and `~/mallinbook` were listed but did not resolve as directories during this audit, so they are recorded as gaps rather than modified.
+- MasterIndex reboot-readiness audit (2026-08-11): the canonical JSON files parse cleanly, every `entities[].id` has a key in `tasks/index.json`, and `current/handoffs/index.json` has no active directives.
+- Local path availability audit (2026-08-11): `~/123words`, `~/bookmaker`, and `~/mallinbook` are retained from prior observed scans but did not resolve as local directories on this machine, so they are recorded as gaps rather than removed.
+- MasterIndex instruction coverage audit (2026-08-05): 14 of 38 tracked repositories already have `AGENTS.md`; 24 require the standard injection.
 
 ## Current ASC Apps
 
@@ -54,6 +56,7 @@ As of Sunday, August 9, 2026.
 - 6 ASC apps did not map cleanly to an active local repository (2026-08-03 refresh): MastPex IOS, MastPex Mac, PickleFamilia, Screenker, Zerver Monitor, amenbeats.
 - `grubber-ios` is active locally but did not match a current ASC app.
 - `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan. `MastPex IOS` / `MastPex Mac` are also new in ASC with no local repo identified yet.
+- Retained repo paths `~/123words`, `~/bookmaker`, and `~/mallinbook` did not resolve locally during the August 11 reboot-readiness audit; keep their prior facts, but verify or restore the directories before doing local work against them.
 - `picklefortunes` repo remains active locally but its ASC listing was deleted (2026-08 cleanup).
 - `Zerver Monitor` exists in ASC but only the backend/service repo was present in the local scan.
 - `SharedSpaceLab` is local-only and not in ASC.
@@ -104,5 +107,5 @@ Rule going forward: if any entity has a verified external public link, it should
 - `card-engine` and `card-server` overlap conceptually.
 - `PickledBalls` is still the live ASC name even though docs describe a rebrand path toward PickleNagz.
 - `Flasherz Kids` docs and `project.yml` disagree on some build text; `project.yml` was treated as more current.
-- App Store Connect was not re-queried during this refresh; the inventory remains from the August 2 live query, so Sentipods remains an unverified ASC mapping gap.
+- App Store Connect was not re-queried during this refresh; the inventory remains from the August 2 live query. SentiPods is mapped to `~/sentipods`, but its ASC app ID remains unsurfaced in the local scan.
 - The server-side cause of the observed `grubber /status` hang is not yet confirmed.
