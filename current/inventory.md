@@ -1,20 +1,23 @@
 # MasterIndex Inventory
 
-As of Tuesday, August 11, 2026.
+As of Thursday, August 13, 2026.
 
 ## Scope
 
 - Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
 - Treated all repositories as read-only.
-- Retained the App Store Connect inventory from the live query on August 2, 2026; ASC was not re-queried during this reboot-readiness audit.
+- Queried App Store Connect live on August 13, 2026 through the ASC API (key `MN6H2P6385`). This replaces the retained August 2 snapshot; every `ascApps` entry now reflects the live query, including per-platform version states.
 - Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
 - Operations policy: every entity receives a verification pass every six hours and a full refresh daily through `tasks/index.json`. Agents must read `current/handoffs/index.json` before a cycle so a targeted instruction can change the next cycle's behavior without changing the inventory schema.
 
 ## Executive Summary
 
-- App Store Connect currently shows 19 apps (2026-08-03 refresh; PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup).
-- 13 ASC apps map cleanly to currently active local repositories.
-- 6 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
+- App Store Connect shows 23 apps as of the 2026-08-13 live query, up from 19 on 2026-08-03. (PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup and remain absent.)
+- 20 ASC apps map to a local or GitHub repository. 3 do not: `MastPex IOS` and `MastPex Mac` (owner describes both as placeholders) and `GigStand` (app ID 428849240, a long-lived record at 1.020 READY_FOR_SALE).
+- Three apps previously listed as unmatched were resolved on 2026-08-13 by reading `PRODUCT_BUNDLE_IDENTIFIER` out of each `project.yml`: `Zerver Monitor` → `~/server-monitor-ios`, `Oenora` → `~/oenora`, `SharedSpaceLab` → `~/SharedSpaceLab`. `SharedSpaceLab` is therefore no longer local-only; it does have an ASC record.
+- 8 ASC records carry a macOS version, but only 4 correspond to a project that declares a macOS target: **Mallinbook, Pfoliolio, Screenker, SentiPods**. `Oenora` and `SharedSpaceLab` are `platform: iOS` only — their macOS records are phantoms that can never receive a build. `MastPex Mac` is a placeholder and `PickleFamilia` is on hold.
+- Every macOS record sits at 1.0 `PREPARE_FOR_SUBMISSION`; none has been submitted. Primary category is unset on 7 of 8 and age rating on 7 of 8 — both hard submission gates.
+- Mac-specific App Store collateral was written on 2026-08-13 for the four real Mac apps, kept deliberately distinct from their iPhone listings (`AppStore/mac/APP-STORE-MAC.md` in each repo; Pfoliolio via PR #15, since its CLAUDE.md forbids commits to `main`).
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
@@ -53,13 +56,14 @@ As of Tuesday, August 11, 2026.
 
 ### Confirmed gaps
 
-- 6 ASC apps did not map cleanly to an active local repository (2026-08-03 refresh): MastPex IOS, MastPex Mac, PickleFamilia, Screenker, Zerver Monitor, amenbeats.
+- 3 ASC apps do not map to any repository (2026-08-13 live query): `MastPex IOS`, `MastPex Mac`, `GigStand`. The MastPex pair are placeholders per the owner; `GigStand` (app ID 428849240) predates this index and is at 1.020 READY_FOR_SALE.
+- **Phantom macOS records.** `Oenora` and `SharedSpaceLab` each hold a `MAC_OS 1.0` record in ASC, but their `project.yml` files declare `platform: iOS` and nothing else. No build can be uploaded to either record. Add a Mac target or delete the macOS version record — until then any Mac store copy for them describes an app that cannot exist.
+- **macOS submission gates.** Primary category is unset on 7 of the 8 macOS records (only Pfoliolio has Finance) and age rating on 7 of 8 (only Screenker is 4+). Mallinbook has no build attached to its macOS record. These are ASC web-UI fields; no written collateral clears them.
+- `SentiPods` `README.md` claims the Mac bundle is `com.sentipods.mac`, but `project.yml` sets the `SentipodsMac` target to `com.sentipods.app` — one universal-purchase record, not two apps. The README is stale.
+- `SentiPods` desktop screenshots existed locally (`AppStoreScreenshots/mac/`) but had never been uploaded to ASC, which is why the record showed zero. Committed 2026-08-13.
 - `grubber-ios` is active locally but did not match a current ASC app.
-- `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan. `MastPex IOS` / `MastPex Mac` are also new in ASC with no local repo identified yet.
-- Retained repo paths `~/123words`, `~/bookmaker`, and `~/mallinbook` did not resolve locally during the August 11 reboot-readiness audit; keep their prior facts, but verify or restore the directories before doing local work against them.
+- Retained repo paths `~/123words`, `~/bookmaker`, and `~/mallinbook` did not resolve locally during the August 11 reboot-readiness audit; keep their prior facts, but verify or restore the directories before doing local work against them. `~/mallinbook` was cloned to a scratch path on 2026-08-13 for the collateral pass and is still absent from the home directory.
 - `picklefortunes` repo remains active locally but its ASC listing was deleted (2026-08 cleanup).
-- `Zerver Monitor` exists in ASC but only the backend/service repo was present in the local scan.
-- `SharedSpaceLab` is local-only and not in ASC.
 
 ## Shared Services
 
