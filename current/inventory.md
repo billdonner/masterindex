@@ -15,13 +15,14 @@ As of Thursday, August 13, 2026.
 - App Store Connect shows 23 apps as of the 2026-08-13 live query, up from 19 on 2026-08-03. (PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup and remain absent.)
 - 20 ASC apps map to a local or GitHub repository. 3 do not: `MastPex IOS` and `MastPex Mac` (owner describes both as placeholders) and `GigStand` (app ID 428849240, a long-lived record at 1.020 READY_FOR_SALE).
 - Three apps previously listed as unmatched were resolved on 2026-08-13 by reading `PRODUCT_BUNDLE_IDENTIFIER` out of each `project.yml`: `Zerver Monitor` → `~/server-monitor-ios`, `Oenora` → `~/oenora`, `SharedSpaceLab` → `~/SharedSpaceLab`. `SharedSpaceLab` is therefore no longer local-only; it does have an ASC record.
-- 8 ASC records carry a macOS version, but only 4 correspond to a project that declares a macOS target: **Mallinbook, Pfoliolio, Screenker, SentiPods**. `Oenora` and `SharedSpaceLab` are `platform: iOS` only — their macOS records are phantoms that can never receive a build. `MastPex Mac` is a placeholder and `PickleFamilia` is on hold.
-- Every macOS record sits at 1.0 `PREPARE_FOR_SUBMISSION`; none has been submitted. Primary category is unset on 7 of 8 and age rating on 7 of 8 — both hard submission gates.
+- 8 ASC records carry a macOS version; **6 are real apps**: Mallinbook, Pfoliolio, Screenker, SentiPods, and — as of 2026-08-13 — Oenora and SharedSpaceLab, which gained Mac Catalyst support that day. `MastPex Mac` is a placeholder and `PickleFamilia` is on hold.
+- Oenora and SharedSpaceLab were `platform: iOS` only until 2026-08-13, making their macOS records phantoms. Both now build for Mac Catalyst with their bundle identifiers preserved, so those records can receive builds. Catalyst was chosen over native AppKit because both view layers are UIKit-coupled.
+- Every macOS record sits at 1.0 `PREPARE_FOR_SUBMISSION`; none has been submitted. After the 2026-08-13 ASC write pass, all 6 real records have a primary category and copyright; age rating is set for Mallinbook, Pfoliolio, and Screenker.
 - Mac-specific App Store collateral was written on 2026-08-13 for the four real Mac apps, kept deliberately distinct from their iPhone listings (`AppStore/mac/APP-STORE-MAC.md` in each repo; Pfoliolio via PR #15, since its CLAUDE.md forbids commits to `main`).
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
-  - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` + `server-monitor` (SharedAI unlinked from v1.0, returns with the Instructor tier)
+  - `PickledBalls` + `CourtScheduler` + `server-monitor` (nagzerver and Clubsync are future service connections; Clubsync is tied to a future IAP package; SharedAI unlinked from v1.0, returns with the Instructor tier)
   - `Qross` + `card-server` + `qross-data` + `card-studio`
   - `Nagz` + `nagzerver` + `nagz-web` + `nagz-ai` + `workinon` + `workinon-mcp`
   - `Flasherz Kids` + `card-server`
@@ -57,8 +58,12 @@ As of Thursday, August 13, 2026.
 ### Confirmed gaps
 
 - 3 ASC apps do not map to any repository (2026-08-13 live query): `MastPex IOS`, `MastPex Mac`, `GigStand`. The MastPex pair are placeholders per the owner; `GigStand` (app ID 428849240) predates this index and is at 1.020 READY_FOR_SALE.
-- **Phantom macOS records.** `Oenora` and `SharedSpaceLab` each hold a `MAC_OS 1.0` record in ASC, but their `project.yml` files declare `platform: iOS` and nothing else. No build can be uploaded to either record. Add a Mac target or delete the macOS version record — until then any Mac store copy for them describes an app that cannot exist.
-- **macOS submission gates.** Primary category is unset on 7 of the 8 macOS records (only Pfoliolio has Finance) and age rating on 7 of 8 (only Screenker is 4+). Mallinbook has no build attached to its macOS record. These are ASC web-UI fields; no written collateral clears them.
+- **Phantom macOS records — resolved 2026-08-13.** `Oenora` and `SharedSpaceLab` held `MAC_OS 1.0` records against iOS-only projects. Both now set `SUPPORTS_MACCATALYST: YES` with `DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER: NO`, verified building via `xcodebuild -destination 'platform=macOS,variant=Mac Catalyst'`. Their existing ASC records can now receive builds under the same bundle ID.
+- **Age rating still unset on three records**, each pending an owner judgment call that should not be guessed, since the declaration is a representation to Apple:
+  - `Oenora` — a wine app, so `alcoholTobaccoOrDrugUseOrReferences` is core subject matter rather than incidental; an honest answer may force a 17+ rating.
+  - `SharedSpaceLab` — ships real peer-to-peer nearby chat and household broadcasts, so `messagingAndChat` is almost certainly true.
+  - `SentiPods` — surfaces unfiltered third-party podcast and news content, putting `profanityOrCrudeHumor` and `matureOrSuggestiveThemes` genuinely in play.
+- **Remaining non-metadata macOS gaps.** `Mallinbook` has no build attached to its macOS record. `SentiPods` desktop screenshots exist at `sentipods/AppStoreScreenshots/mac/` but have not been uploaded to ASC.
 - `SentiPods` `README.md` claims the Mac bundle is `com.sentipods.mac`, but `project.yml` sets the `SentipodsMac` target to `com.sentipods.app` — one universal-purchase record, not two apps. The README is stale.
 - `SentiPods` desktop screenshots existed locally (`AppStoreScreenshots/mac/`) but had never been uploaded to ASC, which is why the record showed zero. Committed 2026-08-13.
 - `grubber-ios` is active locally but did not match a current ASC app.
@@ -67,8 +72,8 @@ As of Thursday, August 13, 2026.
 
 ## Shared Services
 
-- `bd-nagzerver.fly.dev` from `~/nagzerver`
-- `bd-clubsync.fly.dev` from `~/clubsync`
+- `bd-nagzerver.fly.dev` from `~/nagzerver` (Nagz/workin On/LtWatcher now; future PickledBalls service work)
+- `bd-clubsync.fly.dev` from `~/clubsync` (LtWatcher now; future PickledBalls IAP package)
 - `bd-cardzerver.fly.dev` from `~/card-server`
 - `bd-grubber.fly.dev` from `~/grubber`
 - `bd-server-monitor.fly.dev` from `~/server-monitor`
@@ -77,6 +82,7 @@ As of Thursday, August 13, 2026.
 ## Changes Observed In This Refresh
 
 - `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
+- `PickledBalls` does not depend on `nagzerver` or `clubsync` in the current core release; both are future service connections, with `clubsync` tied to a future IAP package.
 - `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
 - `~/sentipods` completed a live smoke test and is now at local version `0.1.0 (8)`; its ASC mapping remains unverified in this refresh.
 - `~/sentipods` received a UI and resilience pass and is now at local version `0.1.0 (12)` following its TestFlight upload. During its live smoke test, `grubber`'s `/shows` endpoint responded while `/status` hung; the client safely loads the former first and treats status metadata as best effort.
