@@ -18,7 +18,38 @@ As of Friday, August 14, 2026.
 - The registry tracks 56 repositories, of which 52 remain active after the feedback replacement and prior retirements.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
-- App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps; tester data remains on this Mac.
+- App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
+- The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment.
+
+## Product Lines
+
+### BillDonner.com — always free
+
+Personal utilities, experiments, and children-oriented apps. Users are never charged; a Mac
+version and MCP surface are optional. Confirmed assignments are `workin On`, `MastPex IOS`,
+and `MastPex Mac` (the two MasterIndex Explorer binaries).
+
+### 1041soft.com — commercial
+
+Products intended for sale or another explicit revenue model. These carry a higher quality,
+testing, documentation, privacy, and support bar; they should normally have a real Mac version
+and an MCP or automation surface when that fits the product.
+
+The remaining apps are not yet classified. Presentation drift remains open until that is done:
+the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
+`/workinon/` even though workin On belongs exclusively to BillDonner.com.
+
+## Feedback Recovery
+
+The App Feedback working store remains under `~/Library/Application Support/AppFeedback` and
+is served only on `127.0.0.1`. After every successful two-hour collection, it is compressed and
+AES-256 encrypted before being written to `iCloud Drive/AppFeedback Backups`. The job retains
+14 days of recent snapshots, 90 daily snapshots, and 24 monthly snapshots.
+
+The encryption key is in the login Keychain under
+`com.billdonner.app-feedback.backup`. The first encrypted snapshot was independently restored
+on 2026-08-14; its 41-item JSON state and all screenshot files matched the live store byte for
+byte. Source, restore commands, and recovery-key instructions are in `~/app-feedback`.
 
 ## Completed Reconciliation
 
@@ -131,7 +162,7 @@ Pages, Let's Encrypt certificate covering apex and `www`, valid to 2026-11-12, H
 enforced with HTTP 301ing to it. DNS at Namecheap: apex A records to
 `185.199.108–111.153`, `www` CNAME to `billdonner.github.io.`
 
-Paths: `/qross/`, `/nagz/`, `/workinon/`, `/flasherz/`, `/zervermonitor/`,
+Observed paths: `/qross/`, `/nagz/`, `/workinon/`, `/flasherz/`, `/zervermonitor/`,
 `/screenker/`, `/mallinbook/`, `/sentipods/`, `/pfolio/` — each with support and
 privacy pages. All 24 routes verified 200 over HTTPS.
 
@@ -139,9 +170,9 @@ privacy pages. All 24 routes verified 200 over HTTPS.
 open web regardless of repo visibility, and bills Actions minutes on private repos.
 Add a subpath here instead.
 
-This site coexists with the now-live `billdonner.com/apps` portfolio catalog. Qross
-and workinOn keep their existing `billdonner.com/apps/...` support URLs, which
-resolve and were deliberately left unchanged.
+This site coexists with the now-live `billdonner.com/apps` portfolio catalog. The owner has now
+assigned workin On exclusively to the permanently free BillDonner.com line, making the live
+1041soft.com `/workinon/` path a presentation drift rather than a canonical product home.
 
 ## Preserved Main-Only Facts
 
