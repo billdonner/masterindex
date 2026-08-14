@@ -112,6 +112,26 @@ Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, p
 - `publish/billdonner.com/apps/oliopfolio/index.html` redirects the obsolete name to Pfoliolio.
 - The live IONOS site remains unchanged because no usable SFTP credential exists in the keychain, repository configuration, or available browser session.
 
+### Company Website — `1041soft.com` (live 2026-08-14)
+
+Canonical app-website home. Public repo `billdonner/1041soft-site`, served by GitHub
+Pages, Let's Encrypt certificate covering apex and `www`, valid to 2026-11-12, HTTPS
+enforced with HTTP 301ing to it. DNS at Namecheap: apex A records to
+`185.199.108–111.153`, `www` CNAME to `billdonner.github.io.`
+
+Paths: `/qross/`, `/nagz/`, `/workinon/`, `/flasherz/`, `/zervermonitor/`,
+`/screenker/`, `/mallinbook/`, `/sentipods/`, `/pfolio/` — each with support and
+privacy pages. All 24 routes verified 200 over HTTPS.
+
+**Rule: never enable GitHub Pages on a private repo.** Pages publishes `docs/` to the
+open web regardless of repo visibility, and bills Actions minutes on private repos.
+Add a subpath here instead.
+
+This site coexists with the `billdonner.com/apps` publication bundle above; that one
+remains blocked on the IONOS SFTP credential. Qross and workinOn keep their existing
+`billdonner.com/apps/...` support URLs, which resolve and were deliberately left
+unchanged.
+
 ## Preserved Main-Only Facts
 
 - `local-model-lab` is parked, with its historical MLX/Qross corpus benchmark results retained.
@@ -122,11 +142,13 @@ Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, p
 ## Remaining Gaps
 
 - The IONOS SFTP password is required to publish the prepared `billdonner.com` fix.
-- Mallinbook's ASC privacy URL still points to a removed GitHub Pages route and returns 404.
-- SentiPods still has no ASC privacyPolicyUrl.
+- Mallinbook's ASC privacy URL still points to a removed GitHub Pages route and returns 404. A working replacement now exists at `https://1041soft.com/mallinbook/privacy`; the ASC field still needs setting.
+- SentiPods still has no ASC privacyPolicyUrl. A working page exists at `https://1041soft.com/sentipods/privacy`; the ASC field still needs setting.
+- **Closed 2026-08-14 — unintended public exposure.** Seven private repos (qross, nagz, nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook) were publishing `docs/` to the open web through GitHub Pages. Verified world-readable at the time: qross business plans, risk register, `architecture/cardzerver-operational-roadmap.md`, `decisions/ADR-009-secret-management.md`, `carol-claude-code-instructions.md`; and nagz `DEPLOYMENT_PLAN.md`, `CODE_REVIEW_FINDINGS.md`, `CONTRIBUTOR_GUIDE.md`. Scanned for live credential patterns and found none. Pages disabled on all seven; every path re-verified 404.
+- `nagz/docs/.well-known/apple-app-site-association` never actually served — Jekyll ignores dot-directories — so universal links have never worked from that domain. Not a regression from the migration.
 - Age ratings remain unset for Oenora, SharedSpaceLab, and SentiPods pending owner decisions.
 - `~/peerlink` is missing and no matching GitHub repository was found, so PickledBalls project generation remains blocked on this machine.
-- `1041soft.com` still points at Namecheap forwarding/parking rather than its GitHub Pages source; HTTPS is unusable.
+- ~~`1041soft.com` still points at Namecheap forwarding/parking; HTTPS is unusable.~~ **Resolved 2026-08-14** — see Company Website below. Apex now serves from GitHub Pages over enforced HTTPS.
 - Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 
 ## Operational Rule
