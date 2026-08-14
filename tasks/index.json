@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T13:16:00-05:00",
+  "generatedAt": "2026-08-14T15:08:27-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -247,15 +247,17 @@
           "kind": "rrule",
           "value": "FREQ=DAILY;INTERVAL=1"
         },
-        "purpose": "Verify the local dashboard, two-hour collector, deduplication ledger, screenshot preservation, and collection error count without exporting tester data.",
+        "purpose": "Verify the local dashboard, two-hour collector, deduplication ledger, screenshot preservation, collection error count, and newest client-encrypted recovery snapshot without exposing tester data.",
         "expectedInputs": [
           "current/index.json",
           "~/Library/Application Support/AppFeedback/items.json",
+          "~/Library/Mobile Documents/com~apple~CloudDocs/AppFeedback Backups/LATEST",
           "~/Library/Logs/app-feedback-collect.log",
           "~/Library/Logs/app-feedback-server.log"
         ],
         "expectedOutputs": [
-          "Updated App Feedback operational facts or a recorded gap"
+          "Updated App Feedback operational facts or a recorded gap",
+          "Successful npm run backup:verify result for the newest snapshot"
         ]
       }
     ],

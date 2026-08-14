@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T13:16:00-05:00",
+  "generatedAt": "2026-08-14T15:08:27-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -27,7 +27,8 @@
       "Reviewed local git repositories with 2026 activity.",
       "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026.",
       "August 14: consolidated all app websites onto 1041soft.com (public repo billdonner/1041soft-site, GitHub Pages, Let's Encrypt cert valid to 2026-11-12). Disabled GitHub Pages on seven private repos, which closed an unintended public exposure of internal documents.",
-      "August 14: replaced the repeating zkraper email/watermark workflow with a local App Feedback dashboard that collects TestFlight comments, screenshots, crashes, and App Store reviews across all active ASC apps without exporting tester data."
+      "August 14: replaced the repeating zkraper email/watermark workflow with a local App Feedback dashboard that collects TestFlight comments, screenshots, crashes, and App Store reviews across all active ASC apps. The working store remains local; client-encrypted, versioned recovery snapshots are written to iCloud Drive.",
+      "August 14 owner policy: BillDonner.com is the permanently free personal/children's/utility product line; 1041soft.com is the commercial-grade product line. workin On and both MasterIndex Explorer binaries are explicitly assigned to BillDonner.com."
     ]
   },
   "summary": {
@@ -47,6 +48,22 @@
     "handoffRegistry": "current/handoffs/index.json",
     "policy": "Every entity inherits a six-hour verification check and a daily inventory refresh from the task registry. Targeted handoffs may alter the next applicable cycle without changing this inventory schema."
   },
+  "productLines": [
+    {
+      "id": "billdonner-free",
+      "name": "BillDonner.com",
+      "domain": "https://billdonner.com/",
+      "pricingPolicy": "always-free",
+      "commitment": "Personal utilities, experiments, and children-oriented apps; users are never charged and Mac or MCP surfaces are optional."
+    },
+    {
+      "id": "1041soft-commercial",
+      "name": "1041soft.com",
+      "domain": "https://1041soft.com/",
+      "pricingPolicy": "commercial",
+      "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model."
+    }
+  ],
   "flyOperations": {
     "observedAt": "2026-08-06T00:00:00-05:00",
     "costCurrency": "USD",
@@ -724,6 +741,8 @@
       "lastModified": "2026-08-09",
       "repo": "~/workinon",
       "bundleId": "com.workinon.app",
+      "productLine": "billdonner-free",
+      "pricingPolicy": "always-free",
       "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION; workinOn 0.9.1 (67) uploaded to TestFlight on 2026-08-09 and entered App Store Connect processing.",
       "description": "AI-powered focus list app with widget, share extension, URL scheme, nagzerver-backed sync, and a bundled MasterIndex operational board.",
       "dependencies": [
@@ -1371,6 +1390,7 @@
       "lastModified": "2026-08-14",
       "repo": "github:billdonner/1041soft-site",
       "bundleId": null,
+      "productLine": "1041soft-commercial",
       "release": "Public GitHub Pages site with apex and www DNS on GitHub Pages, HTTPS enforced, and a Let's Encrypt certificate valid through 2026-11-12",
       "description": "Company landing page and shared support/privacy source for Screenker, Mallinbook, SentiPods, and Pfoliolio.",
       "dependencies": [],
@@ -1393,6 +1413,7 @@
       "lastModified": "2026-08-14",
       "repo": "~/masterindex",
       "bundleId": null,
+      "productLine": "billdonner-free",
       "release": "Published to IONOS on 2026-08-14 from the MasterIndex generator with 19 active entries",
       "description": "Public directory of App Store, TestFlight, and in-development apps.",
       "dependencies": [],
@@ -1414,7 +1435,7 @@
       "lastModified": "2026-08-14",
       "repo": "~/app-feedback",
       "bundleId": null,
-      "release": "Local dashboard live at 127.0.0.1:4317; silent launchd collection runs at login and every two hours",
+      "release": "Local dashboard live at 127.0.0.1:4317; silent launchd collection runs at login and every two hours, followed by an encrypted and verified iCloud Drive snapshot",
       "description": "Account-wide local triage inbox for TestFlight comments, screenshots, crash feedback, and App Store reviews across active apps.",
       "dependencies": [],
       "links": {
@@ -1425,8 +1446,10 @@
         "The initial 2026-08-14 collection scanned 21 non-retired ASC apps and stored 41 deduplicated items: 36 screenshot submissions and 5 crash reports, with 36 screenshot files preserved and zero API errors.",
         "A launchd-triggered second pass queued zero items, recognized all 41 existing source ids, reported zero errors, and exited 0.",
         "Triage supports New, Triaged, and Done states; high, normal, and low priority; app/type/status/priority/text filters; local notes; preserved screenshots; and copy-ready issue text.",
-        "Tester email addresses, comments, screenshots, and triage state stay under ~/Library/Application Support/AppFeedback and are neither committed nor uploaded. The HTTP server binds only to 127.0.0.1.",
+        "Tester email addresses, comments, screenshots, and triage state remain in the live store under ~/Library/Application Support/AppFeedback and are never committed. The HTTP server binds only to 127.0.0.1.",
         "com.billdonner.app-feedback-server keeps the dashboard available; com.billdonner.app-feedback-collect runs at login and every 7200 seconds. Logs are under ~/Library/Logs.",
+        "Each successful collection creates an AES-256 encrypted snapshot under iCloud Drive/AppFeedback Backups, verifies its checksum, fully decrypts it, validates items.json, and retains recent copies for 14 days, daily copies for 90 days, and monthly copies for two years.",
+        "The backup key is stored in the login Keychain as com.billdonner.app-feedback.backup (fingerprint d929fd31f130433b). The first 2026-08-14 snapshot was independently restored and matched the 41-item live store byte-for-byte.",
         "The private zkraper and asc-feedback repositories carry replacement notices and were archived after this dashboard passed end-to-end verification."
       ]
     },
@@ -1491,6 +1514,8 @@
       "lastModified": "2026-08-05",
       "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
       "bundleId": "com.billdonner.mastpex",
+      "productLine": "billdonner-free",
+      "pricingPolicy": "always-free",
       "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
       "description": "Native iPhone and iPad explorer for a compatible MasterIndex: browse a read-only software portfolio map with search, relationships, drill-down, links, and explicit gaps.",
       "dependencies": [
@@ -1514,6 +1539,8 @@
       "lastModified": "2026-08-05",
       "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
       "bundleId": "com.billdonner.mastpex.mac",
+      "productLine": "billdonner-free",
+      "pricingPolicy": "always-free",
       "release": "Development: macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
       "description": "Native Mac explorer for a compatible MasterIndex: a read-only desktop map of apps, repositories, services, links, relationships, and known gaps.",
       "dependencies": [
@@ -1723,7 +1750,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-14",
       "kind": "local operations tool",
-      "role": "Active local-only all-app feedback collector and triage dashboard; source mirrored in private github:billdonner/app-feedback"
+      "role": "Active local all-app feedback collector and triage dashboard with client-encrypted iCloud Drive recovery snapshots; source mirrored in private github:billdonner/app-feedback"
     },
     {
       "repo": "github:billdonner/zkraper",
@@ -2218,9 +2245,14 @@
       "summary": "nagz/docs/.well-known/apple-app-site-association existed but was never served - Jekyll ignores dot-directories by default, so the URL returned 404 for as long as the site was up. Universal links from that domain have therefore never functioned; this is not a regression from the 1041soft.com migration. Making them work needs a .nojekyll file, the AASA served with the correct content type, and the app's associated-domains entitlement pointed at 1041soft.com."
     },
     {
+      "kind": "product-line-presentation-drift",
+      "observedAt": "2026-08-14",
+      "summary": "Owner established two product lines: BillDonner.com apps are permanently free, while 1041soft.com is commercial-grade. workin On and the two MasterIndex Explorer binaries are confirmed BillDonner.com products. The current presentations do not yet enforce the split: billdonner.com/apps lists every active app and 1041soft.com still serves /workinon/. Keep this gap open until all apps are classified and both publication pipelines filter by productLine."
+    },
+    {
       "kind": "feedback-workflow-redesign-resolved",
       "observedAt": "2026-08-14",
-      "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. Data remains local, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived."
+      "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived."
     }
   ],
   "taskRegistry": {
