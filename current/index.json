@@ -233,10 +233,10 @@
         "name": "Oenora",
         "bundleId": "com.billdonner.oenora",
         "appId": "6799520155",
-        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 3 WAITING_FOR_REVIEW (external Founders Beta group)",
+        "ascState": "IOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 6 APPROVED for external Founders Beta",
         "live": false,
         "publicTestFlight": "https://testflight.apple.com/join/M6vwHjHB",
-        "latestBuild": "3 uploaded 2026-08-12 (VALID) — adds cellar rack/row/column location tracking + map view",
+        "latestBuild": "6 uploaded 2026-08-14 (VALID, beta-APPROVED) — CloudKit sync, recognition config fix, overnight-soak-verified",
         "marketingUrl": null,
         "descriptionChars": 0
       },
@@ -1434,7 +1434,9 @@
         "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB).",
         "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW.",
         "2026-08-13: CloudKit sync shipped and verified on two physical iPads (ADR-006: CKSyncEngine beside local JSON, single Cellar zone in the private database, confirmed-cellar records only, last-writer-wins). Gated off by default via OENORA_CLOUDKIT_SYNC_ENABLED; Jon's beta build unaffected.",
-        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target."
+        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
+        "2026-08-14 overnight: automated soak (Mac driver + two physical iPads, 98 Mac cycles / 48 verification cycles) caught and fixed three CloudKit sync bugs — insert-vs-update conflicts (system-fields archiving), stale-device bootstrap overwrite (fetch-first + once-only bootstrap), and a fetch freeze from CKSyncEngine's automatic scheduler (now automaticallySync=false). Final state: three-way agreement at 98 bottles, zero duplicates.",
+        "2026-08-14: recognition token rotated and live-verified (fixes Jon's 'not configured' report); CloudKit schema deployed to Production; TestFlight build 6 (sync + recognition + location fixes) APPROVED for the external Founders Beta — Jon auto-notified. Mac app notarized via Developer ID (profile created through the ASC API) and delivered as a stapled zip; it syncs with iOS build 6 through Production CloudKit. Test data wiped from the dev environment after the soak."
       ]
     },
     {
