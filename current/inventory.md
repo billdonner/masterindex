@@ -46,6 +46,7 @@ As of Friday, August 14, 2026.
 | Qross | 392 | 392 VALID | Aligned; clean worktree used without touching the active feature branch |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
+| Oenora iOS | 1.0 (5) | 5 VALID | Aligned; native Mac uses a separate Developer ID bundle |
 
 Pfoliolio export used App Store-managed numbering, so Apple accepted both platforms as build 35. Source was aligned and pushed in commit `2d73c97`.
 
@@ -116,7 +117,7 @@ Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, p
 - `local-model-lab` is parked, with its historical MLX/Qross corpus benchmark results retained.
 - `adspill` remains a two-person advertising-capacity research sandbox.
 - The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
-- Oenora's public TestFlight invite and external-beta history are retained alongside the newer build 3 ASC observation.
+- Oenora's public TestFlight invite, iOS build 5, CloudKit verification, and native Mac history are retained.
 
 ## Remaining Gaps
 
@@ -126,6 +127,7 @@ Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, p
 - Age ratings remain unset for Oenora, SharedSpaceLab, and SentiPods pending owner decisions.
 - `~/peerlink` is missing and no matching GitHub repository was found, so PickledBalls project generation remains blocked on this machine.
 - `1041soft.com` still points at Namecheap forwarding/parking rather than its GitHub Pages source; HTTPS is unusable.
+- Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 
 ## Operational Rule
 

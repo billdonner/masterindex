@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:32:01-05:00",
+  "generatedAt": "2026-08-14T01:35:34-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -129,8 +129,8 @@
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/oenora",
-        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13",
-        "localVersion": "1.0 (3); ASC build 3 VALID"
+        "repoEvidence": "Origin main project.yml verified 2026-08-14: iOS bundle com.billdonner.oenora and native Developer ID macOS bundle com.billdonner.oenora.mac",
+        "localVersion": "iOS 1.0 (5), ASC build 5 VALID; native macOS 1.0 (1) is outside the existing ASC bundle"
       },
       {
         "name": "SharedSpaceLab",
@@ -850,7 +850,7 @@
       "id": "burfords-app",
       "name": "100 Burfords",
       "kind": "app",
-      "cluster": "Standalone",
+      "cluster": "Oenora",
       "status": "ready-for-sale",
       "lastModified": "2026-08-14",
       "repo": "~/100Burfords",
@@ -1117,8 +1117,7 @@
         "github": "https://github.com/billdonner/conversationlab"
       },
       "notes": [
-        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff.",
-        "Created July 31, 2026."
+        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
       ]
     },
     {
@@ -1140,8 +1139,7 @@
         "github": "https://github.com/billdonner/coordinationlab"
       },
       "notes": [
-        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff.",
-        "Created July 31, 2026."
+        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
       ]
     },
     {
@@ -1233,8 +1231,8 @@
       "lastModified": "2026-08-13",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
-      "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 3 VALID; Mac Catalyst supported",
-      "description": "Personal wine knowledge system for iPhone and Mac with CloudKit-backed cellar synchronization.",
+      "release": "ASC iOS 1.0 build 5 VALID; public TestFlight exists. Native OenoraMac 1.0 (1) uses Developer ID bundle com.billdonner.oenora.mac; the existing ASC MAC_OS record under com.billdonner.oenora has no builds.",
+      "description": "Personal wine knowledge system for collectors with iPhone capture, CloudKit-backed cellar synchronization, and a native Mac cellar workspace.",
       "dependencies": [
         "oenora-recognition-service"
       ],
@@ -1261,7 +1259,9 @@
         "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge.",
         "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed.",
         "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB).",
-        "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW."
+        "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW.",
+        "2026-08-13: CloudKit sync shipped and verified on two physical iPads (ADR-006: CKSyncEngine beside local JSON, single Cellar zone in the private database, confirmed-cellar records only, last-writer-wins). Gated off by default via OENORA_CLOUDKIT_SYNC_ENABLED; Jon's beta build unaffected.",
+        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target."
       ]
     },
     {
@@ -1679,11 +1679,11 @@
     {
       "name": "bd-oenora-recognition.fly.dev",
       "repo": "~/oenora",
-      "status": "live",
       "consumers": [
         "Oenora"
       ],
-      "note": "Deployed on Fly and verified HTTP 200 at /health on 2026-08-14; token-protected recognition API used by Oenora."
+      "note": "Deployed on Fly and verified HTTP 200 at /health on 2026-08-14; token-protected recognition API used by Oenora.",
+      "status": "live"
     }
   ],
   "repos": [
@@ -1972,7 +1972,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-13",
       "kind": "app",
-      "role": "ASC-mapped iOS and Mac Catalyst wine app"
+      "role": "ASC-mapped iOS build 5 plus native Developer ID macOS cellar app; CloudKit sync verified"
     },
     {
       "repo": "~/pfolio-app",
@@ -2081,9 +2081,9 @@
       "summary": "sentipods README.md states the Mac bundle is com.sentipods.mac, but project.yml sets the SentipodsMac target to com.sentipods.app - one universal-purchase record, not two apps. README is stale."
     },
     {
-      "kind": "asc-phantom-macos-record-resolved",
-      "observedAt": "2026-08-13",
-      "summary": "Resolved. Oenora and SharedSpaceLab now build for Mac Catalyst (SUPPORTS_MACCATALYST=YES, DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER=NO), so their existing macOS ASC records can receive builds under the same bundle ID. Both verified with 'xcodebuild -destination platform=macOS,variant=Mac Catalyst'. Catalyst was chosen over native AppKit because both view layers are UIKit-coupled."
+      "kind": "asc-macos-record-drift",
+      "observedAt": "2026-08-14",
+      "summary": "SharedSpaceLab remains aligned through Mac Catalyst. Oenora deliberately reverted Catalyst and added a native Developer ID target with bundle com.billdonner.oenora.mac; its existing ASC MAC_OS 1.0 record belongs to com.billdonner.oenora and has no builds. Preserve the intentional direct-distribution target, but decide whether to remove the unused ASC macOS version or add a separate App Store-compatible target."
     },
     {
       "kind": "asc-unmatched",

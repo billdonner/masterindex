@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:32:09-05:00",
+  "generatedAt": "2026-08-14T01:35:47-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -25,7 +25,7 @@
       "tags": [
         "recent",
         "app",
-        "standalone"
+        "oenora"
       ],
       "deepLink": "site/index.html#burfords-app",
       "statusKey": "masterindex.recent.burfords-app"
@@ -222,7 +222,7 @@
       "type": "recent-change",
       "entityId": "oenora-app",
       "title": "Oenora changed",
-      "body": "Latest commit: Fix CloudKit sync: retain delegate, single Cellar zone, explicit fetch/send. Last modified 2026-08-13.",
+      "body": "Latest commit: Harden CloudKit sync startup from Codex review findings. Last modified 2026-08-13.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-08-13",
@@ -324,7 +324,7 @@
       "type": "recent-change",
       "entityId": "oenora-recognition-service",
       "title": "Oenora Recognition API changed",
-      "body": "Latest commit: Fix CloudKit sync: retain delegate, single Cellar zone, explicit fetch/send. Last modified 2026-08-09.",
+      "body": "Latest commit: Harden CloudKit sync startup from Codex review findings. Last modified 2026-08-09.",
       "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-08-09",
@@ -399,7 +399,7 @@
       "tags": [
         "task",
         "app",
-        "standalone"
+        "oenora"
       ],
       "deepLink": "site/index.html#burfords-app",
       "statusKey": "masterindex.due.burfords-public-page-check"

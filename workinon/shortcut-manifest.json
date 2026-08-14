@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:32:09-05:00",
+  "generatedAt": "2026-08-14T01:35:47-05:00",
   "namespace": "masterindex",
   "items": [
     {
@@ -126,7 +126,7 @@
       "id": "recent-oenora-app",
       "title": "Oenora changed",
       "statusKey": "masterindex.recent.oenora-app",
-      "url": "workinon://post?key=masterindex.recent.oenora-app&text=Oenora+changed+-+Latest+commit%3A+Fix+CloudKit+sync%3A+retain+delegate%2C+single+Cellar+zone%2C+explicit+fetch%2Fsend.+Last+modified+2026-08-13.",
+      "url": "workinon://post?key=masterindex.recent.oenora-app&text=Oenora+changed+-+Latest+commit%3A+Harden+CloudKit+sync+startup+from+Codex+review+findings.+Last+modified+2026-08-13.",
       "entityId": "oenora-app",
       "taskId": null,
       "type": "recent-change",
@@ -186,7 +186,7 @@
       "id": "recent-oenora-recognition-service",
       "title": "Oenora Recognition API changed",
       "statusKey": "masterindex.recent.oenora-recognition-service",
-      "url": "workinon://post?key=masterindex.recent.oenora-recognition-service&text=Oenora+Recognition+API+changed+-+Latest+commit%3A+Fix+CloudKit+sync%3A+retain+delegate%2C+single+Cellar+zone%2C+explicit+fetch%2Fsend.+Last+modified+2026-08-09.",
+      "url": "workinon://post?key=masterindex.recent.oenora-recognition-service&text=Oenora+Recognition+API+changed+-+Latest+commit%3A+Harden+CloudKit+sync+startup+from+Codex+review+findings.+Last+modified+2026-08-09.",
       "entityId": "oenora-recognition-service",
       "taskId": null,
       "type": "recent-change",
