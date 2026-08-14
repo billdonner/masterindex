@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T15:34:54-05:00",
+  "generatedAt": "2026-08-14T15:45:13-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -32,7 +32,7 @@
       "August 14 household-communications audit: SharedSpaceLab is the active successor experiment, Nagz is the working legacy reference, and Famster is a thin concept shell rather than an implemented product. Nagzerver remains shared production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On; SharedSpaceLab has no runtime dependency on it.",
       "August 14 deployment recovery: the exact non-secret source from Fly release v100 of bd-nagzerver was preserved on private branch recovery/deployed-2026-06-30 because production PickledBalls and PickleFamilia routes were absent from Git main. The recovered source matches all 163 live API paths; 1,113 tests pass and one PickledBalls schedule test fails.",
       "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history.",
-      "August 14: doubleqross.app was registered at IONOS. DNS, HTTPS, and forwarding are not configured yet; the intended initial use is an HTTPS HTTP redirect to the maintained DoubleQross page at 1041soft.com/qross/."
+      "August 14 correction: the registered IONOS domain is doubleqross.com, not doubleqross.app. Apex and www DNS resolve and HTTP requests redirect to the maintained DoubleQross page at 1041soft.com/qross/; HTTPS on the source domain still fails pending activation of the included IONOS certificate."
     ]
   },
   "summary": {
@@ -655,9 +655,9 @@
         "appStore": null
       },
       "domain": {
-        "name": "doubleqross.app",
+        "name": "doubleqross.com",
         "registrar": "IONOS",
-        "status": "registered-unconfigured",
+        "status": "http-redirect-live-https-pending",
         "observedAt": "2026-08-14",
         "intendedDestination": "https://1041soft.com/qross/"
       },
@@ -666,7 +666,7 @@
         "The live backend is the Python card-engine deployment at bd-cardzerver.fly.dev.",
         "The retired card-server repository corrected its historical Qross App Store ID before archival; Card Engine remains the only live backend.",
         "The old billdonner.github.io/qross product URL returns 404 because Pages was deliberately disabled on the private app repository; 1041soft.com/qross is the maintained product page.",
-        "doubleqross.app currently has no A, AAAA, CNAME, or delegated DNS response. Configure an HTTPS HTTP redirect, including www, before using it in App Store Connect."
+        "doubleqross.com and www.doubleqross.com resolve through IONOS and return HTTP 302 to https://1041soft.com/qross/; HTTPS currently fails during TLS negotiation pending activation of the included IONOS certificate."
       ]
     },
     {
@@ -2255,7 +2255,7 @@
     {
       "kind": "registered-domain-unconfigured",
       "observedAt": "2026-08-14",
-      "summary": "OPEN. doubleqross.app is registered at IONOS but has no resolvable DNS or HTTPS service yet. Configure IONOS HTTP forwarding for the apex and www to https://1041soft.com/qross/, verify the .app HTTPS path and redirect, then promote the branded domain to DoubleQross's marketing URL. Do not use frame forwarding."
+      "summary": "OPEN. Corrected domain is doubleqross.com, registered at IONOS. Apex and www resolve and HTTP requests return 302 to https://1041soft.com/qross/, but HTTPS fails during TLS negotiation. Activate the included IONOS SSL certificate for the domain, verify HTTPS redirects for apex and www, then promote the branded domain to DoubleQross's marketing URL. No premium certificate purchase is required."
     },
     {
       "kind": "asc-public-link-inconsistency",
@@ -2339,9 +2339,9 @@
       "pfolio": "/pfolio/"
     },
     "brandedDomains": {
-      "doubleqross.app": {
+      "doubleqross.com": {
         "registrar": "IONOS",
-        "status": "registered-unconfigured",
+        "status": "http-redirect-live-https-pending",
         "intendedDestination": "https://1041soft.com/qross/",
         "redirectType": "HTTPS HTTP redirect, not frame forwarding",
         "includeWww": true

@@ -23,7 +23,7 @@ As of Friday, August 14, 2026.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
-- `doubleqross.app` is registered at IONOS but is not live yet. Its initial role is a branded HTTPS redirect to the maintained DoubleQross page at `1041soft.com/qross/`; the stale private-repo Pages link was removed from the canonical record.
+- `doubleqross.com` is registered at IONOS. Apex and `www` DNS and HTTP forwarding are live to `1041soft.com/qross/`; HTTPS still needs the included IONOS certificate activated. The stale private-repo Pages link was removed from the canonical record.
 
 ## Product Lines
 
@@ -202,10 +202,10 @@ Observed paths: `/qross/`, `/nagz/`, `/workinon/`, `/flasherz/`, `/zervermonitor
 `/screenker/`, `/mallinbook/`, `/sentipods/`, `/pfolio/` — each with support and
 privacy pages. All 24 routes verified 200 over HTTPS.
 
-`doubleqross.app` was registered at IONOS on 2026-08-14 but currently has no resolvable DNS or
-HTTPS endpoint. Configure an IONOS HTTP redirect for both the apex and `www` to
-`https://1041soft.com/qross/`. Do not use frame forwarding. Because `.app` is HSTS-preloaded,
-the HTTPS source must work before the domain is placed in App Store Connect or published broadly.
+`doubleqross.com` was registered at IONOS on 2026-08-14. Apex and `www` resolve through IONOS,
+and HTTP requests return 302 to `https://1041soft.com/qross/`. HTTPS currently fails during TLS
+negotiation. Activate the included IONOS SSL certificate for the domain; do not buy a premium
+certificate. Verify HTTPS forwarding before placing the domain in App Store Connect.
 
 **Rule: never enable GitHub Pages on a private repo.** Pages publishes `docs/` to the
 open web regardless of repo visibility, and bills Actions minutes on private repos.
@@ -234,7 +234,7 @@ assigned workin On exclusively to the permanently free BillDonner.com line, maki
 - Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 - Nagzerver Git `main` does not reproduce the deployed PickledBalls and PickleFamilia API. The exact deployed source is preserved on `recovery/deployed-2026-06-30`, but its one failing schedule test must be resolved before review and merge.
 - SharedSpaceLab's public product name, product-line assignment, business model, and eventual server boundary remain undecided. Famster must not be expanded as a parallel implementation while those decisions are open.
-- `doubleqross.app` remains registered but unconfigured at IONOS. DNS and HTTPS must resolve, and both apex and `www` must redirect to `https://1041soft.com/qross/`, before it replaces the current DoubleQross marketing URL in ASC.
+- `doubleqross.com` has working DNS and HTTP redirects at IONOS, but HTTPS still fails. Activate the included certificate and verify both apex and `www` HTTPS redirects before it replaces the current DoubleQross marketing URL in ASC.
 
 ## Operational Rule
 
