@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:35:47-05:00",
+  "generatedAt": "2026-08-14T08:06:00-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -63,6 +63,23 @@
       ],
       "deepLink": "site/index.html#clubwatch-app",
       "statusKey": "masterindex.recent.clubwatch-app"
+    },
+    {
+      "id": "recent-oenora-app",
+      "type": "recent-change",
+      "entityId": "oenora-app",
+      "title": "Oenora changed",
+      "body": "Latest commit: Harden CloudKit sync startup from Codex review findings. Last modified 2026-08-14.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-14",
+      "tags": [
+        "recent",
+        "app",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#oenora-app",
+      "statusKey": "masterindex.recent.oenora-app"
     },
     {
       "id": "recent-pfolio-app",
@@ -216,23 +233,6 @@
       ],
       "deepLink": "site/index.html#mallinbook-app",
       "statusKey": "masterindex.recent.mallinbook-app"
-    },
-    {
-      "id": "recent-oenora-app",
-      "type": "recent-change",
-      "entityId": "oenora-app",
-      "title": "Oenora changed",
-      "body": "Latest commit: Harden CloudKit sync startup from Codex review findings. Last modified 2026-08-13.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-13",
-      "tags": [
-        "recent",
-        "app",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#oenora-app",
-      "statusKey": "masterindex.recent.oenora-app"
     },
     {
       "id": "recent-screenker-asc-app",

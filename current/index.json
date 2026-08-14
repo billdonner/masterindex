@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:35:34-05:00",
+  "generatedAt": "2026-08-14T08:05:07-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -22,6 +22,7 @@
       "Clubsync is deferred until PickledBalls v2; its database remains deployed, but it is not an active monitored application dependency.",
       "Server Monitor production probes were corrected and verified live with seven targets, no Clubsync target, and successful Nagzerver and Card Engine HTTP checks.",
       "App Store Connect validation reconciled Pfoliolio iOS/macOS 35, Qross 392, SentiPods macOS 21, and 123 Words 1.12 (59); source metadata was aligned for amenbeats 8 and 100 Burfords 1.1 (9).",
+      "Oenora iOS build 6 was approved for the external Founders Beta after a three-device CloudKit soak; its recognition configuration was repaired and its native Developer ID Mac app was notarized and delivered.",
       "A generated billdonner.com apps catalog and Pfoliolio route now live under publish/billdonner.com; IONOS publication remains blocked on an unavailable SFTP credential.",
       "Reviewed local git repositories with 2026 activity.",
       "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026."
@@ -130,7 +131,7 @@
         ],
         "repo": "~/oenora",
         "repoEvidence": "Origin main project.yml verified 2026-08-14: iOS bundle com.billdonner.oenora and native Developer ID macOS bundle com.billdonner.oenora.mac",
-        "localVersion": "iOS 1.0 (5), ASC build 5 VALID; native macOS 1.0 (1) is outside the existing ASC bundle"
+        "localVersion": "iOS 1.0 (6), ASC build 6 VALID and approved for external Founders Beta; native macOS is notarized for Developer ID delivery outside the existing ASC bundle"
       },
       {
         "name": "SharedSpaceLab",
@@ -1228,10 +1229,10 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-13",
+      "lastModified": "2026-08-14",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
-      "release": "ASC iOS 1.0 build 5 VALID; public TestFlight exists. Native OenoraMac 1.0 (1) uses Developer ID bundle com.billdonner.oenora.mac; the existing ASC MAC_OS record under com.billdonner.oenora has no builds.",
+      "release": "ASC iOS 1.0 build 6 VALID and approved for the external Founders Beta; public TestFlight exists. Native OenoraMac uses Developer ID bundle com.billdonner.oenora.mac and has been notarized and delivered; the existing ASC MAC_OS record under com.billdonner.oenora has no builds.",
       "description": "Personal wine knowledge system for collectors with iPhone capture, CloudKit-backed cellar synchronization, and a native Mac cellar workspace.",
       "dependencies": [
         "oenora-recognition-service"
@@ -1261,7 +1262,9 @@
         "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB).",
         "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW.",
         "2026-08-13: CloudKit sync shipped and verified on two physical iPads (ADR-006: CKSyncEngine beside local JSON, single Cellar zone in the private database, confirmed-cellar records only, last-writer-wins). Gated off by default via OENORA_CLOUDKIT_SYNC_ENABLED; Jon's beta build unaffected.",
-        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target."
+        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
+        "2026-08-14 overnight: automated soak (Mac driver plus two physical iPads, 98 Mac cycles and 48 verification cycles) caught and fixed CloudKit insert-versus-update conflicts, stale-device bootstrap overwrite, and a CKSyncEngine scheduler fetch freeze. Final state reached three-way agreement at 98 bottles with zero duplicates.",
+        "2026-08-14: recognition token was rotated and verified live, CloudKit schema was deployed to Production, and TestFlight build 6 was approved for the external Founders Beta with Jon auto-notified. The native Mac app was notarized for Developer ID distribution, delivered as a stapled zip, and verified syncing with iOS build 6 through Production CloudKit."
       ]
     },
     {
@@ -1506,7 +1509,7 @@
       "lastModified": "2026-08-09",
       "repo": "~/oenora",
       "bundleId": null,
-      "release": "Fly health endpoint is live at bd-oenora-recognition.fly.dev; the August 9 device test plan records cloud recognition as live.",
+      "release": "Fly health endpoint is live at bd-oenora-recognition.fly.dev; the recognition token was rotated and live-verified on 2026-08-14 after correcting the client configuration.",
       "description": "Token-protected API that accepts one to three label images and OCR evidence, requests up to three structured wine candidates from OpenAI, and returns them for explicit user review.",
       "dependencies": [
         "Oenora"

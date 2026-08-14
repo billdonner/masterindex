@@ -46,7 +46,7 @@ As of Friday, August 14, 2026.
 | Qross | 392 | 392 VALID | Aligned; clean worktree used without touching the active feature branch |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
-| Oenora iOS | 1.0 (5) | 5 VALID | Aligned; native Mac uses a separate Developer ID bundle |
+| Oenora iOS | 1.0 (6) | 6 VALID, external beta approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
 
 Pfoliolio export used App Store-managed numbering, so Apple accepted both platforms as build 35. Source was aligned and pushed in commit `2d73c97`.
 
@@ -117,7 +117,7 @@ Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, p
 - `local-model-lab` is parked, with its historical MLX/Qross corpus benchmark results retained.
 - `adspill` remains a two-person advertising-capacity research sandbox.
 - The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
-- Oenora's public TestFlight invite, iOS build 5, CloudKit verification, and native Mac history are retained.
+- Oenora's public TestFlight invite, externally approved iOS build 6, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
 
 ## Remaining Gaps
 
