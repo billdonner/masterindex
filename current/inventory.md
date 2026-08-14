@@ -23,6 +23,7 @@ As of Friday, August 14, 2026.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
+- `doubleqross.app` is registered at IONOS but is not live yet. Its initial role is a branded HTTPS redirect to the maintained DoubleQross page at `1041soft.com/qross/`; the stale private-repo Pages link was removed from the canonical record.
 
 ## Product Lines
 
@@ -97,7 +98,7 @@ byte. Source, restore commands, and recovery-key instructions are in `~/app-feed
 | Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
 | amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
 | 100 Burfords | 1.1 (9) | 1.1 (9) draft | Aligned in GitHub commit `48192f3` |
-| Qross | 392 | 392 VALID | Aligned; clean worktree used without touching the active feature branch |
+| DoubleQross | 392 | 392 VALID | Aligned; bundle id remains com.qross.app |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
 | Oenora iOS | 1.0 (7) | 7 VALID, external beta submitted; 6 remains approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
@@ -129,7 +130,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | Famster | com.famster.app | ~/famster-ios | Concept-only shell; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
-| Qross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
@@ -201,6 +202,11 @@ Observed paths: `/qross/`, `/nagz/`, `/workinon/`, `/flasherz/`, `/zervermonitor
 `/screenker/`, `/mallinbook/`, `/sentipods/`, `/pfolio/` — each with support and
 privacy pages. All 24 routes verified 200 over HTTPS.
 
+`doubleqross.app` was registered at IONOS on 2026-08-14 but currently has no resolvable DNS or
+HTTPS endpoint. Configure an IONOS HTTP redirect for both the apex and `www` to
+`https://1041soft.com/qross/`. Do not use frame forwarding. Because `.app` is HSTS-preloaded,
+the HTTPS source must work before the domain is placed in App Store Connect or published broadly.
+
 **Rule: never enable GitHub Pages on a private repo.** Pages publishes `docs/` to the
 open web regardless of repo visibility, and bills Actions minutes on private repos.
 Add a subpath here instead.
@@ -228,6 +234,7 @@ assigned workin On exclusively to the permanently free BillDonner.com line, maki
 - Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 - Nagzerver Git `main` does not reproduce the deployed PickledBalls and PickleFamilia API. The exact deployed source is preserved on `recovery/deployed-2026-06-30`, but its one failing schedule test must be resolved before review and merge.
 - SharedSpaceLab's public product name, product-line assignment, business model, and eventual server boundary remain undecided. Famster must not be expanded as a parallel implementation while those decisions are open.
+- `doubleqross.app` remains registered but unconfigured at IONOS. DNS and HTTPS must resolve, and both apex and `www` must redirect to `https://1041soft.com/qross/`, before it replaces the current DoubleQross marketing URL in ASC.
 
 ## Operational Rule
 
