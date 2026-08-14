@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T08:20:44-05:00",
+  "generatedAt": "2026-08-14T13:16:00-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -26,14 +26,15 @@
       "The generated billdonner.com apps catalog was published to IONOS on August 14 with 19 active entries, a live Pfoliolio route, an Oliopfolio redirect, and LtWatcher removed from the public apps tree.",
       "Reviewed local git repositories with 2026 activity.",
       "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026.",
-      "August 14: consolidated all app websites onto 1041soft.com (public repo billdonner/1041soft-site, GitHub Pages, Let's Encrypt cert valid to 2026-11-12). Disabled GitHub Pages on seven private repos, which closed an unintended public exposure of internal documents."
+      "August 14: consolidated all app websites onto 1041soft.com (public repo billdonner/1041soft-site, GitHub Pages, Let's Encrypt cert valid to 2026-11-12). Disabled GitHub Pages on seven private repos, which closed an unintended public exposure of internal documents.",
+      "August 14: replaced the repeating zkraper email/watermark workflow with a local App Feedback dashboard that collects TestFlight comments, screenshots, crashes, and App Store reviews across all active ASC apps without exporting tester data."
     ]
   },
   "summary": {
     "ascApps": 23,
     "mappedAscApps": 20,
     "unmatchedAscApps": 3,
-    "activeRepos": 51,
+    "activeRepos": 52,
     "clusters": 16,
     "liveServices": 7,
     "collaborators": 3,
@@ -1405,6 +1406,31 @@
       ]
     },
     {
+      "id": "app-feedback-inbox",
+      "name": "App Feedback",
+      "kind": "tool",
+      "cluster": "Standalone",
+      "status": "live",
+      "lastModified": "2026-08-14",
+      "repo": "~/app-feedback",
+      "bundleId": null,
+      "release": "Local dashboard live at 127.0.0.1:4317; silent launchd collection runs at login and every two hours",
+      "description": "Account-wide local triage inbox for TestFlight comments, screenshots, crash feedback, and App Store reviews across active apps.",
+      "dependencies": [],
+      "links": {
+        "dashboard": "http://127.0.0.1:4317/",
+        "github": "https://github.com/billdonner/app-feedback"
+      },
+      "notes": [
+        "The initial 2026-08-14 collection scanned 21 non-retired ASC apps and stored 41 deduplicated items: 36 screenshot submissions and 5 crash reports, with 36 screenshot files preserved and zero API errors.",
+        "A launchd-triggered second pass queued zero items, recognized all 41 existing source ids, reported zero errors, and exited 0.",
+        "Triage supports New, Triaged, and Done states; high, normal, and low priority; app/type/status/priority/text filters; local notes; preserved screenshots; and copy-ready issue text.",
+        "Tester email addresses, comments, screenshots, and triage state stay under ~/Library/Application Support/AppFeedback and are neither committed nor uploaded. The HTTP server binds only to 127.0.0.1.",
+        "com.billdonner.app-feedback-server keeps the dashboard available; com.billdonner.app-feedback-collect runs at login and every 7200 seconds. Logs are under ~/Library/Logs.",
+        "The private zkraper and asc-feedback repositories carry replacement notices and were archived after this dashboard passed end-to-end verification."
+      ]
+    },
+    {
       "id": "local-model-lab",
       "name": "local-model-lab (mlxsrv)",
       "kind": "service",
@@ -1692,6 +1718,27 @@
     }
   ],
   "repos": [
+    {
+      "repo": "~/app-feedback",
+      "branch": "main",
+      "last2026Commit": "2026-08-14",
+      "kind": "local operations tool",
+      "role": "Active local-only all-app feedback collector and triage dashboard; source mirrored in private github:billdonner/app-feedback"
+    },
+    {
+      "repo": "github:billdonner/zkraper",
+      "branch": "main",
+      "last2026Commit": "2026-08-14",
+      "kind": "archived tool",
+      "role": "Retired repeating TestFlight email and manual watermark collector; superseded by App Feedback"
+    },
+    {
+      "repo": "github:billdonner/asc-feedback",
+      "branch": "main",
+      "last2026Commit": "2026-08-14",
+      "kind": "archived tool",
+      "role": "Retired ASC CLI with obsolete TestFlight feedback assumptions; superseded by App Feedback"
+    },
     {
       "repo": "~/100Burfords",
       "branch": "main",
@@ -2169,6 +2216,11 @@
       "kind": "universal-links-never-worked",
       "observedAt": "2026-08-14",
       "summary": "nagz/docs/.well-known/apple-app-site-association existed but was never served - Jekyll ignores dot-directories by default, so the URL returned 404 for as long as the site was up. Universal links from that domain have therefore never functioned; this is not a regression from the 1041soft.com migration. Making them work needs a .nojekyll file, the AASA served with the correct content type, and the app's associated-domains entitlement pointed at 1041soft.com."
+    },
+    {
+      "kind": "feedback-workflow-redesign-resolved",
+      "observedAt": "2026-08-14",
+      "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. Data remains local, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived."
     }
   ],
   "taskRegistry": {

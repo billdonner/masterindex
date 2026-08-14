@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T08:21:00-05:00",
+  "generatedAt": "2026-08-14T13:17:31-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,25 +11,8 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 63,
+  "itemCount": 65,
   "items": [
-    {
-      "id": "recent-burfords-app",
-      "type": "recent-change",
-      "entityId": "burfords-app",
-      "title": "100 Burfords changed",
-      "body": "Latest commit: chore: restore 1.1 build 9 metadata. Last modified 2026-08-14.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
-      "tags": [
-        "recent",
-        "app",
-        "oenora"
-      ],
-      "deepLink": "site/index.html#burfords-app",
-      "statusKey": "masterindex.recent.burfords-app"
-    },
     {
       "id": "recent-company-site-1041soft",
       "type": "recent-change",
@@ -65,11 +48,28 @@
       "statusKey": "masterindex.recent.words123-app"
     },
     {
+      "id": "recent-app-feedback-inbox",
+      "type": "recent-change",
+      "entityId": "app-feedback-inbox",
+      "title": "App Feedback changed",
+      "body": "Latest commit: keep feedback local and add triage dashboard. Last modified 2026-08-14.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-14",
+      "tags": [
+        "recent",
+        "tool",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#app-feedback-inbox",
+      "statusKey": "masterindex.recent.app-feedback-inbox"
+    },
+    {
       "id": "recent-portfolio-app-directory",
       "type": "recent-change",
       "entityId": "portfolio-app-directory",
       "title": "Bill Donner Apps changed",
-      "body": "Latest commit: Record 1041soft.com consolidation and closed Pages exposure. Last modified 2026-08-14.",
+      "body": "Latest commit: 100 Burfords: clear drift \u2014 local truth is 1.1 (9) @ 2026-08-06. Last modified 2026-08-14.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-08-14",
@@ -80,6 +80,23 @@
       ],
       "deepLink": "site/index.html#portfolio-app-directory",
       "statusKey": "masterindex.recent.portfolio-app-directory"
+    },
+    {
+      "id": "recent-qross-app",
+      "type": "recent-change",
+      "entityId": "qross-app",
+      "title": "DoubleQross changed",
+      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-14.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-14",
+      "tags": [
+        "recent",
+        "app",
+        "qross"
+      ],
+      "deepLink": "site/index.html#qross-app",
+      "statusKey": "masterindex.recent.qross-app"
     },
     {
       "id": "recent-clubwatch-app",
@@ -103,7 +120,7 @@
       "type": "recent-change",
       "entityId": "oenora-app",
       "title": "Oenora changed",
-      "body": "Latest commit: Harden CloudKit sync startup from Codex review findings. Last modified 2026-08-14.",
+      "body": "Latest commit: Add macOS App Store collateral. Last modified 2026-08-14.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-08-14",
@@ -131,23 +148,6 @@
       ],
       "deepLink": "site/index.html#pfolio-app",
       "statusKey": "masterindex.recent.pfolio-app"
-    },
-    {
-      "id": "recent-qross-app",
-      "type": "recent-change",
-      "entityId": "qross-app",
-      "title": "Qross changed",
-      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-14.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
-      "tags": [
-        "recent",
-        "app",
-        "qross"
-      ],
-      "deepLink": "site/index.html#qross-app",
-      "statusKey": "masterindex.recent.qross-app"
     },
     {
       "id": "recent-sentipods-app",
@@ -273,7 +273,7 @@
       "type": "recent-change",
       "entityId": "sharedspace-lab",
       "title": "SharedSpaceLab changed",
-      "body": "Latest commit: Add Mac Catalyst support. Last modified 2026-08-13.",
+      "body": "Latest commit: Add macOS App Store collateral. Last modified 2026-08-13.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-08-13",
@@ -341,7 +341,7 @@
       "type": "recent-change",
       "entityId": "oenora-recognition-service",
       "title": "Oenora Recognition API changed",
-      "body": "Latest commit: Harden CloudKit sync startup from Codex review findings. Last modified 2026-08-09.",
+      "body": "Latest commit: Add macOS App Store collateral. Last modified 2026-08-09.",
       "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-08-09",
@@ -420,6 +420,23 @@
       ],
       "deepLink": "site/index.html#burfords-app",
       "statusKey": "masterindex.due.burfords-public-page-check"
+    },
+    {
+      "id": "due-app-feedback-operational-check",
+      "type": "due-task",
+      "entityId": "app-feedback-inbox",
+      "taskId": "app-feedback-operational-check",
+      "title": "App Feedback operational check due",
+      "body": "Task is due in the daily cycle.",
+      "priority": "medium",
+      "lane": "Due Soon",
+      "tags": [
+        "task",
+        "tool",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#app-feedback-inbox",
+      "statusKey": "masterindex.due.app-feedback-operational-check"
     },
     {
       "id": "due-famster-link-check",
@@ -541,6 +558,22 @@
       "statusKey": "masterindex.due.workinon-release-check"
     },
     {
+      "id": "attention-app-feedback-inbox-no-public-links",
+      "type": "attention",
+      "entityId": "app-feedback-inbox",
+      "title": "App Feedback missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#app-feedback-inbox",
+      "statusKey": "masterindex.attention.app-feedback-inbox.no-public-links"
+    },
+    {
       "id": "attention-cardz-studio-ios-app-no-public-links",
       "type": "attention",
       "entityId": "cardz-studio-ios-app",
@@ -587,6 +620,22 @@
       ],
       "deepLink": "site/index.html#coordinationlab-package",
       "statusKey": "masterindex.attention.coordinationlab-package.no-public-links"
+    },
+    {
+      "id": "attention-qross-app-missing-appstore-link",
+      "type": "attention",
+      "entityId": "qross-app",
+      "title": "DoubleQross missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "app-store",
+        "qross"
+      ],
+      "deepLink": "site/index.html#qross-app",
+      "statusKey": "masterindex.attention.qross-app.missing-appstore"
     },
     {
       "id": "attention-famster-app-missing-appstore-link",
@@ -779,22 +828,6 @@
       ],
       "deepLink": "site/index.html#pickledballs-app",
       "statusKey": "masterindex.attention.pickledballs-app.missing-appstore"
-    },
-    {
-      "id": "attention-qross-app-missing-appstore-link",
-      "type": "attention",
-      "entityId": "qross-app",
-      "title": "Qross missing public App Store page",
-      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "app-store",
-        "qross"
-      ],
-      "deepLink": "site/index.html#qross-app",
-      "statusKey": "masterindex.attention.qross-app.missing-appstore"
     },
     {
       "id": "attention-screenker-asc-app-missing-appstore-link",
@@ -1005,7 +1038,7 @@
       "id": "summary-public-link-gaps",
       "type": "summary",
       "title": "Public link gaps",
-      "body": "28 entries still need verified public links or App Store pages.",
+      "body": "29 entries still need verified public links or App Store pages.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -1031,7 +1064,7 @@
       "id": "summary-due-tasks",
       "type": "summary",
       "title": "Tasks due soon",
-      "body": "9 recurring entry tasks are currently in the operational queue.",
+      "body": "10 recurring entry tasks are currently in the operational queue.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

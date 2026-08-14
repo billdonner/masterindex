@@ -6,7 +6,7 @@ As of Friday, August 14, 2026.
 
 - Reconciled App Store Connect, active GitHub sources, local repositories, Fly deployments, and public product URLs.
 - Applied no handoff directives because `current/handoffs/index.json` has none.
-- Performed the requested retirements, operational fixes, and website publications; observed facts and remaining product gaps are kept distinct below.
+- Performed the requested retirements, operational fixes, website publications, and feedback-workflow replacement; observed facts and remaining product gaps are kept distinct below.
 
 ## Executive Summary
 
@@ -15,9 +15,10 @@ As of Friday, August 14, 2026.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
-- The registry tracks 53 repositories, of which 51 remain active after the two retirements.
+- The registry tracks 56 repositories, of which 52 remain active after the feedback replacement and prior retirements.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
+- App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps; tester data remains on this Mac.
 
 ## Completed Reconciliation
 
@@ -46,7 +47,7 @@ As of Friday, August 14, 2026.
 | Qross | 392 | 392 VALID | Aligned; clean worktree used without touching the active feature branch |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
-| Oenora iOS | 1.0 (6) | 6 VALID, external beta approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
+| Oenora iOS | 1.0 (7) | 7 VALID, external beta submitted; 6 remains approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
 
 Pfoliolio export used App Store-managed numbering, so Apple accepted both platforms as build 35. Source was aligned and pushed in commit `2d73c97`.
 
@@ -104,6 +105,16 @@ Unmatched or intentionally retained:
 
 Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca` and `bd-podcast-brands`.
 
+## Feedback Triage
+
+- `~/app-feedback` is the active source and local installation; its private GitHub mirror contains code only.
+- The dashboard is live at `http://127.0.0.1:4317` and binds only to localhost.
+- The initial collection scanned 21 active ASC apps and retained 41 items: 36 screenshot submissions, five crash reports, and 36 downloaded screenshots, with zero API errors.
+- A second launchd collection recognized all 41 source ids, queued nothing, produced no duplicates, and exited 0.
+- New, Triaged, and Done states, priority, notes, screenshots, search, and app/type/status filters are stored under `~/Library/Application Support/AppFeedback` and are never uploaded.
+- `com.billdonner.app-feedback-collect` runs at login and every two hours; `com.billdonner.app-feedback-server` keeps the dashboard available.
+- The retired `zkraper` and `asc-feedback` private repositories contain replacement notices and are archived. Their email, manual watermark, and Qross-only flows must not be scheduled.
+
 ## Website Publication
 
 - `tools/generate_billdonner_apps.py` generates the active catalog from canonical JSON.
@@ -137,7 +148,7 @@ resolve and were deliberately left unchanged.
 - `local-model-lab` is parked, with its historical MLX/Qross corpus benchmark results retained.
 - `adspill` remains a two-person advertising-capacity research sandbox.
 - The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
-- Oenora's public TestFlight invite, externally approved iOS build 6, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
+- Oenora's public TestFlight invite, approved build 6, submitted build 7 with sealed-case tracking, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
 
 ## Remaining Gaps
 
