@@ -132,7 +132,7 @@
         ],
         "repo": "~/oenora",
         "repoEvidence": "Origin main project.yml verified 2026-08-14: iOS bundle com.billdonner.oenora and native Developer ID macOS bundle com.billdonner.oenora.mac",
-        "localVersion": "iOS 1.0 (6), ASC build 6 VALID and approved for external Founders Beta; native macOS is notarized for Developer ID delivery outside the existing ASC bundle"
+        "localVersion": "iOS 1.0 (7), ASC build 7 VALID and submitted to external Founders Beta (adds sealed-case tracking; build 6 remains approved); native macOS is notarized for Developer ID delivery outside the existing ASC bundle"
       },
       {
         "name": "SharedSpaceLab",
@@ -1233,7 +1233,7 @@
       "lastModified": "2026-08-14",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
-      "release": "ASC iOS 1.0 build 6 VALID and approved for the external Founders Beta; public TestFlight exists. Native OenoraMac uses Developer ID bundle com.billdonner.oenora.mac and has been notarized and delivered; the existing ASC MAC_OS record under com.billdonner.oenora has no builds.",
+      "release": "ASC iOS 1.0 build 7 VALID, submitted to the external Founders Beta (adds sealed-case tracking; build 6 remains approved and available); public TestFlight exists. Native OenoraMac uses Developer ID bundle com.billdonner.oenora.mac and has been notarized and delivered; the existing ASC MAC_OS record under com.billdonner.oenora has no builds.",
       "description": "Personal wine knowledge system for collectors with iPhone capture, CloudKit-backed cellar synchronization, and a native Mac cellar workspace.",
       "dependencies": [
         "oenora-recognition-service"
@@ -1265,7 +1265,8 @@
         "2026-08-13: CloudKit sync shipped and verified on two physical iPads (ADR-006: CKSyncEngine beside local JSON, single Cellar zone in the private database, confirmed-cellar records only, last-writer-wins). Gated off by default via OENORA_CLOUDKIT_SYNC_ENABLED; Jon's beta build unaffected.",
         "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) \u2014 NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
         "2026-08-14 overnight: automated soak (Mac driver plus two physical iPads, 98 Mac cycles and 48 verification cycles) caught and fixed CloudKit insert-versus-update conflicts, stale-device bootstrap overwrite, and a CKSyncEngine scheduler fetch freeze. Final state reached three-way agreement at 98 bottles with zero duplicates.",
-        "2026-08-14: recognition token was rotated and verified live, CloudKit schema was deployed to Production, and TestFlight build 6 was approved for the external Founders Beta with Jon auto-notified. The native Mac app was notarized for Developer ID distribution, delivered as a stapled zip, and verified syncing with iOS build 6 through Production CloudKit."
+        "2026-08-14: recognition token was rotated and verified live, CloudKit schema was deployed to Production, and TestFlight build 6 was approved for the external Founders Beta with Jon auto-notified. The native Mac app was notarized for Developer ID distribution, delivered as a stapled zip, and verified syncing with iOS build 6 through Production CloudKit.",
+        "2026-08-14: added sealed-case tracking (SealedCase: exterior-readable identity, 3/6/12 case size, bottle format, shelf location; Cases view in the Cellar tab) for Jon's ~140 shelves of unopened wooden cases. Cross-device sync verified iPad-to-iPad in Development; SealedCase record type deployed to Production. Uploaded as build 7 and submitted to the external Founders Beta. Case deletion does not yet propagate between devices (no tombstones)."
       ]
     },
     {
