@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T00:00:00-05:00",
+  "generatedAt": "2026-08-14T01:23:29-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -203,42 +203,8 @@
         ]
       }
     ],
-    "clubsync-backend": [
-      {
-        "taskId": "clubsync-health-check",
-        "name": "clubsync health check",
-        "status": "active",
-        "cadence": {
-          "kind": "rrule",
-          "value": "FREQ=HOURLY;INTERVAL=6"
-        },
-        "purpose": "Confirm the clubsync service remains reachable and linked correctly in the index.",
-        "expectedInputs": [
-          "current/index.json"
-        ],
-        "expectedOutputs": [
-          "Updated clubsync status if it changes"
-        ]
-      }
-    ],
-    "card-server-backend": [
-      {
-        "taskId": "card-server-health-check",
-        "name": "card-server health check",
-        "status": "active",
-        "cadence": {
-          "kind": "rrule",
-          "value": "FREQ=HOURLY;INTERVAL=6"
-        },
-        "purpose": "Confirm the card-server service remains reachable and linked correctly in the index.",
-        "expectedInputs": [
-          "current/index.json"
-        ],
-        "expectedOutputs": [
-          "Updated card-server status if it changes"
-        ]
-      }
-    ],
+    "clubsync-backend": [],
+    "card-server-backend": [],
     "card-engine-backend": [],
     "server-monitor-service": [
       {
@@ -262,6 +228,15 @@
     "conversationlab-package": [],
     "coordinationlab-package": [],
     "sentipods-app": [],
-    "words123-app": []
+    "words123-app": [],
+    "pfoliolio-app": [],
+    "pfolio-backend": [],
+    "oenora-app": [],
+    "amenbeats-app": [],
+    "screenker-app": [],
+    "zerver-monitor-app": [],
+    "picklefamilia-app": [],
+    "company-site-1041soft": [],
+    "portfolio-app-directory": []
   }
 }

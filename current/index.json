@@ -1,30 +1,38 @@
 {
-  "generatedAt": "2026-08-13T18:05:00-05:00",
+  "generatedAt": "2026-08-14T01:23:29-05:00",
   "scope": {
-    "dateLabel": "Thursday, August 13, 2026",
+    "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
       "~/Documents/Codex/Experiments"
     ],
-    "appStoreConnectAccess": "live-query-and-write-2026-08-13",
+    "appStoreConnectAccess": "live-read-write-2026-08-14",
     "notes": [
-      "Reviewed local git repositories with 2026 activity.",
+      "Reviewed local git repositories with 2026 activity and the active GitHub inventory, including repositories not cloned on this machine.",
       "Treated repositories as read-only during the scan.",
       "Ignored older inactive repos unless directly connected to a 2026-active project.",
       "August 11 reboot-readiness audit verified canonical JSON shape, task coverage, and local path availability without changing retained ASC states.",
       "App Store Connect was queried live on August 13, 2026 via the ASC API (key MN6H2P6385). All ascApps entries reflect that query, replacing the retained August 2 snapshot.",
       "August 13 write pass: set primary category on 5 macOS records, copyright on all 6, and completed the age-rating questionnaire for Mallinbook and Pfoliolio via the ASC API. Oenora, SharedSpaceLab, and SentiPods age ratings were deliberately left unset - each raises a content question the owner must answer.",
-      "August 13 second write pass: uploaded SentiPods macOS screenshots, and removed GigStand from sale in all 175 territories."
+      "August 13 second write pass: uploaded SentiPods macOS screenshots, and removed GigStand from sale in all 175 territories.",
+      "August 13 correlation pass queried App Store Connect read-only, inspected current GitHub repositories, checked Fly.io app state, and verified first-party public URLs over HTTP and HTTPS.",
+      "The public portfolio page at billdonner.com/apps and the 1041soft.com GitHub Pages configuration were treated as presentation surfaces, not as authoritative replacements for ASC or repository settings.",
+      "August 14 reconciliation archived LtWatcher and card-server after checking their consumers and replacement paths; their ASC records remain retained.",
+      "Clubsync is deferred until PickledBalls v2; its database remains deployed, but it is not an active monitored application dependency.",
+      "Server Monitor production probes were corrected and verified live with seven targets, no Clubsync target, and successful Nagzerver and Card Engine HTTP checks.",
+      "App Store Connect validation reconciled Pfoliolio iOS/macOS 35, Qross 392, and SentiPods macOS 21; 123 Words 59 was uploaded, and source metadata was aligned for amenbeats 8 and 100 Burfords 1.1 (9).",
+      "A generated billdonner.com apps catalog and Pfoliolio route now live under publish/billdonner.com; IONOS publication remains blocked on an unavailable SFTP credential."
     ]
   },
   "summary": {
     "ascApps": 23,
     "mappedAscApps": 20,
     "unmatchedAscApps": 3,
-    "activeRepos": 38,
+    "activeRepos": 49,
     "clusters": 11,
-    "liveServices": 5,
+    "liveServices": 6,
+    "unreachableServices": 0,
     "ascMacOsRecords": 8,
     "ascMacOsWithMacTarget": 6
   },
@@ -44,7 +52,8 @@
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/pfolio-app",
-        "repoEvidence": "GitHub repo billdonner/pfolio-app cloned locally on 2026-08-13"
+        "repoEvidence": "GitHub repo billdonner/pfolio-app cloned locally on 2026-08-13",
+        "localVersion": "1.0.0 (35); ASC iOS and macOS build 35 VALID"
       },
       {
         "name": "amenbeats",
@@ -54,7 +63,8 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "github:billdonner/drumbeats",
-        "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13"
+        "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13",
+        "localVersion": "1.0 (8); ASC build 8 VALID"
       },
       {
         "name": "Oenora",
@@ -65,7 +75,8 @@
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/oenora",
-        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13"
+        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13",
+        "localVersion": "1.0 (3); ASC build 3 VALID"
       },
       {
         "name": "SharedSpaceLab",
@@ -75,8 +86,8 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION",
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
-        "repo": "~/SharedSpaceLab",
-        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13"
+        "repo": "github:billdonner/sharedspacelab",
+        "repoEvidence": "GitHub repo and PRODUCT_BUNDLE_IDENTIFIER in project.yml verified 2026-08-13; not cloned on this machine"
       },
       {
         "name": "SentiPods",
@@ -87,7 +98,8 @@
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/sentipods",
-        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13"
+        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13",
+        "localVersion": "1.0 (iOS 20, macOS 21); ASC macOS build 21 VALID"
       },
       {
         "name": "Screenker",
@@ -97,7 +109,8 @@
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "github:billdonner/screenker",
-        "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13"
+        "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13",
+        "localVersion": "1.0.0 (44); ASC build 44 VALID"
       },
       {
         "name": "workin On",
@@ -118,7 +131,7 @@
           "IOS 1.1 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/100Burfords",
-        "localVersion": "1.1 (9)"
+        "localVersion": "repo config and ASC draft aligned at 1.1 (9)"
       },
       {
         "name": "Zerver Monitor",
@@ -128,7 +141,8 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/server-monitor-ios",
-        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13"
+        "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13",
+        "localVersion": "1.0 (5); ASC build 5 VALID"
       },
       {
         "name": "Famster",
@@ -158,7 +172,7 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/qross",
-        "localVersion": "0.2 (313)"
+        "localVersion": "1.0 (392); ASC build 392 VALID"
       },
       {
         "name": "LtWatcher",
@@ -168,7 +182,7 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/clubwatch",
-        "localVersion": "0.1.0 (4)"
+        "localVersion": "retired at 0.1.0 (4); GitHub repository archived 2026-08-14"
       },
       {
         "name": "Flasherz Kids",
@@ -189,7 +203,8 @@
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "github:billdonner/picklefamilia-ios",
-        "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13"
+        "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13",
+        "localVersion": "1.0 (2); ASC build 2 VALID"
       },
       {
         "name": "Mallinbook",
@@ -199,8 +214,8 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION",
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
-        "repo": "~/mallinbook",
-        "localVersion": "1.0 (14)"
+        "repo": "github:billdonner/mallinbook",
+        "localVersion": "1.0 (18); ASC build 18 VALID on both platforms"
       },
       {
         "name": "KinFlash",
@@ -210,7 +225,7 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/kinflash",
-        "localVersion": "1.0.0 (62)"
+        "localVersion": "1.0.0 (65); ASC build 65 VALID"
       },
       {
         "name": "PickledBalls",
@@ -232,8 +247,8 @@
           "IOS 1.11 READY_FOR_SALE",
           "IOS 1.12 PREPARE_FOR_SUBMISSION"
         ],
-        "repo": "~/123words",
-        "localVersion": "1.11 (40)"
+        "repo": "github:billdonner/123words",
+        "localVersion": "1.12 (59); ASC upload succeeded and is processing"
       },
       {
         "name": "Cardz Studio",
@@ -256,15 +271,17 @@
     {
       "name": "PickledBalls",
       "maturity": "active beta or transition product",
-      "summary": "Organizer and sports cluster centered on PickledBalls; nagzerver and Clubsync are future service connections rather than current core-release dependencies.",
+      "summary": "Organizer and sports cluster centered on current PickledBalls; Clubsync and HarvestSync are deferred until PickledBalls v2.",
       "highlights": [
         "PickledBalls",
         "CourtScheduler",
-        "server-monitor"
+        "server-monitor",
+        "nagzerver"
       ],
       "watchpoints": [
         "Rebrand still pending",
-        "nagzerver and Clubsync are future PickledBalls service connections, not required by the current core release"
+        "Clubsync decision deferred until PickledBalls v2",
+        "PeerLink is a required local package but is missing on this machine"
       ]
     },
     {
@@ -273,12 +290,12 @@
       "summary": "Mature content and editorial pipeline with live backend and local cache.",
       "highlights": [
         "Qross",
-        "card-server",
+        "card-engine",
         "qross-data",
         "card-studio"
       ],
       "watchpoints": [
-        "Backend overlap ambiguity with card-engine"
+        "Card Server is retired; preserve its two observed legacy API contract differences when evaluating Card Studio compatibility"
       ]
     },
     {
@@ -299,17 +316,16 @@
     },
     {
       "name": "Flasherz",
-      "maturity": "active but architecturally split",
+      "maturity": "active with duplicate deployment definitions",
       "summary": "Flashcard and card-corpus cluster spanning consumer, admin, and backend surfaces.",
       "highlights": [
         "Flasherz Kids",
         "obo",
         "Cardz Studio",
-        "card-server",
         "card-engine"
       ],
       "watchpoints": [
-        "card-engine vs card-server ownership remains unclear"
+        "Card Engine is the sole live backend; Card Server is archived as historical implementation"
       ]
     },
     {
@@ -326,15 +342,13 @@
     },
     {
       "name": "LtWatcher",
-      "maturity": "early but real multi-service app",
-      "summary": "Club-watch experience with widget and notification extension architecture.",
+      "maturity": "retired",
+      "summary": "Retired Clubsync-dependent app retained as an archived repository and ASC record.",
       "highlights": [
-        "LtWatcher",
-        "clubsync",
-        "nagzerver"
+        "LtWatcher"
       ],
       "watchpoints": [
-        "Some live activity work still deferred"
+        "No active work; revisit capability only through the PickledBalls v2 decision"
       ]
     },
     {
@@ -362,16 +376,16 @@
     },
     {
       "name": "Codex Experiments",
-      "maturity": "prototype and lab only",
-      "summary": "New local-only experiments exploring conversation and shared-surface ideas without production backends.",
+      "maturity": "prototype packages plus ASC-mapped app",
+      "summary": "Conversation and coordination experiments now stored on GitHub; SharedSpaceLab is an ASC-mapped iOS and Mac Catalyst app, not a local-only lab.",
       "highlights": [
         "ConversationLab",
         "CoordinationLab",
         "SharedSpaceLab"
       ],
       "watchpoints": [
-        "No commits yet",
-        "No ASC or deployed service path"
+        "None of the three repositories is cloned on this machine",
+        "SharedSpaceLab has no uploaded ASC build yet"
       ]
     },
     {
@@ -384,7 +398,7 @@
         "Sentipods"
       ],
       "watchpoints": [
-        "Two local clients are not yet matched in the recorded ASC inventory",
+        "grubber-ios remains unmatched in ASC; SentiPods is mapped as app 6797132650",
         "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed"
       ]
     },
@@ -409,23 +423,25 @@
       "kind": "app",
       "cluster": "Mallinbook",
       "status": "asc-mapped",
-      "lastModified": "2026-08-03",
-      "repo": "~/mallinbook",
+      "lastModified": "2026-08-13",
+      "repo": "github:billdonner/mallinbook",
       "bundleId": "com.mallinbook.app",
-      "release": "ASC mapped, iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; TestFlight build 13 VALID on both platforms (2026-08-01)",
+      "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 18 VALID on both platforms; repository is not cloned on this machine",
       "description": "Document-based macOS (flagship authoring) + iOS (companion) directory-book app: maintains member/resident rosters and generates print-ready saddle-stitch booklet PDFs, a web view, and Word export from one source of truth. A .mallinbook package = SQLite (GRDB) + lossless photos + frozen editions, synced via iCloud Documents.",
       "dependencies": [],
       "links": {
-        "website": null,
+        "website": "https://billdonner.com/apps/mallinbook/",
+        "support": "https://billdonner.com/apps/mallinbook/#support",
         "appStore": null,
         "github": "https://github.com/billdonner/mallinbook"
       },
       "notes": [
         "Renamed 2026-08-01 from bookmaker-app: repo/target/module and the document extension (.bookmaker -> .mallinbook); ASC identity unchanged (app id 6785245339), so earlier scans missed the repo.",
-        "Local version 1.0 (14) is one build ahead of TestFlight (13) \u2014 committed, not yet uploaded.",
-        "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
+        "GitHub project.yml and ASC both identify build 18 as current; the prior build 13/14 inventory was stale.",
+        "The ASC privacy URL still points to https://billdonner.github.io/bookmaker-app/privacy-policy.html, which returns 404.",
+        "github:billdonner/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
         "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
-        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core \u2014 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code."
+        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code."
       ]
     },
     {
@@ -442,24 +458,26 @@
       "dependencies": [
         "CourtScheduler",
         "PickleFortunesKit",
-        "PeerLink"
+        "PeerLink",
+        "nagzerver"
       ],
       "links": {
         "website": "https://pickledballs.billdonner.com",
-        "websiteSource": "local docs",
+        "websiteSource": "verified HTTP 200 on 2026-08-13",
         "appStore": null,
         "privacyPolicy": "https://pickledballs.billdonner.com/privacy.html",
-        "support": "https://pickledballs.billdonner.com/support.html"
+        "support": "https://pickledballs.billdonner.com/support.html",
+        "testFlight": "https://testflight.apple.com/join/xa71Ymwt",
+        "portfolioPage": "https://billdonner.com/apps/pickledballs/"
       },
       "notes": [
         "Uses JSON plus GRDB SQLite locally.",
         "Current project.yml links local packages CourtScheduler, vendored PickleFortunesKit, and PeerLink.",
         "PeerLink is expected at ../peerlink for local builds; that sibling package was missing on this machine during the 2026-08-13 cleanup.",
-        "Current core release does not depend on nagzerver or Clubsync.",
-        "nagzerver and Clubsync are future PickledBalls service connections; Clubsync is tied to a future IAP package.",
-        "SharedAI unlinked from v1.0 (2026-07-23) \u2014 re-add when the Instructor tier ships.",
+        "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
         "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
-        "Site fully deployed 2026-08-02 \u2014 support.html and privacy.html both verified live (200)."
+        "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
+        "HarvestSync and Clubsync are deferred until PickledBalls v2; they are not part of the current useful product path."
       ]
     },
     {
@@ -468,22 +486,26 @@
       "kind": "app",
       "cluster": "Qross",
       "status": "asc-mapped",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-14",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; source and ASC build 392 VALID on 2026-08-14",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
-        "card-server",
+        "card-engine",
         "qross-data",
         "card-studio"
       ],
       "links": {
-        "website": null,
+        "website": "https://billdonner.com/apps/qross/",
+        "productSite": "https://billdonner.github.io/qross/",
+        "testFlight": "https://testflight.apple.com/join/W6VjPWV6",
         "appStore": null
       },
       "notes": [
-        "Stores a large local question cache with GRDB."
+        "Stores a large local question cache with GRDB.",
+        "The live backend is the Python card-engine deployment at bd-cardzerver.fly.dev.",
+        "The retired card-server repository corrected its historical Qross App Store ID before archival; Card Engine remains the only live backend."
       ]
     },
     {
@@ -503,7 +525,7 @@
         "nagz-ai"
       ],
       "links": {
-        "website": null,
+        "website": "https://billdonner.github.io/nagz/",
         "appStore": null
       },
       "notes": [
@@ -520,13 +542,14 @@
       "repo": "~/obo-ios",
       "bundleId": "com.billdonner.obo",
       "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
-      "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by card-server.",
+      "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by the live card-engine service at bd-cardzerver.fly.dev.",
       "dependencies": [
-        "card-server",
+        "card-engine",
         "obo"
       ],
       "links": {
-        "website": null,
+        "website": "https://billdonner.github.io/obo-ios/",
+        "portfolioPage": "https://billdonner.com/apps/flasherz-kids/",
         "appStore": null
       },
       "notes": [
@@ -545,7 +568,7 @@
       "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
       "description": "Admin and editor client for decks, family endpoints, ingestion controls, and search against the card backend.",
       "dependencies": [
-        "card-server"
+        "card-engine"
       ],
       "links": {
         "website": null,
@@ -571,7 +594,11 @@
         "workinon-mcp"
       ],
       "links": {
-        "website": null,
+        "website": "https://billdonner.github.io/workinon/",
+        "privacyPolicy": "https://billdonner.github.io/workinon/privacy.html",
+        "support": "https://billdonner.github.io/workinon/support.html",
+        "testFlight": "https://testflight.apple.com/join/FbsJBmc7",
+        "portfolioPage": "https://billdonner.com/apps/workinon/",
         "appStore": null
       },
       "notes": [
@@ -609,22 +636,20 @@
       "name": "LtWatcher",
       "kind": "app",
       "cluster": "LtWatcher",
-      "status": "asc-mapped",
-      "lastModified": "2026-04-30",
+      "status": "retired",
+      "lastModified": "2026-08-14",
       "repo": "~/clubwatch",
       "bundleId": "com.ltwatch.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "release": "Retired 2026-08-14; GitHub repository archived read-only; ASC record retained",
       "description": "iOS app, widget, and notification service extension for club watch summaries.",
-      "dependencies": [
-        "clubsync",
-        "nagzerver"
-      ],
+      "dependencies": [],
       "links": {
-        "website": null,
+        "github": "https://github.com/billdonner/clubwatch",
         "appStore": null
       },
       "notes": [
-        "Uses an App Group cache and widget or NSE architecture."
+        "Retired because its Clubsync dependency is not deployed and that capability is deferred until PickledBalls v2.",
+        "No current production consumer depends on LtWatcher."
       ]
     },
     {
@@ -640,7 +665,9 @@
       "description": "Multi-platform app with local package and document architecture.",
       "dependencies": [],
       "links": {
-        "website": null,
+        "website": "https://billdonner.com/apps/kinflash/",
+        "testFlight": "https://testflight.apple.com/join/WkcUxvt3",
+        "github": "https://github.com/billdonner/kinflash",
         "appStore": null
       },
       "notes": [
@@ -668,7 +695,7 @@
       },
       "notes": [
         "Its shared kit is reused by PickledBalls.",
-        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement \u2014 PickledBalls consumed it via a local SPM path.",
+        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
         "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2."
       ]
     },
@@ -678,10 +705,10 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "ready-for-sale",
-      "lastModified": "2026-08-01",
+      "lastModified": "2026-08-14",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
-      "release": "ASC mapped, iOS 1.0 READY_FOR_SALE",
+      "release": "iOS 1.0 READY_FOR_SALE; 1.1 PREPARE_FOR_SUBMISSION; source and ASC draft aligned at build 9",
       "description": "The only ASC-mapped app in this scan marked ready for sale.",
       "dependencies": [],
       "links": {
@@ -692,8 +719,8 @@
       },
       "notes": [
         "Strong signal of finished packaging relative to the rest of the portfolio.",
-        "Live ASC version is 1.0; local 1.1 (9) with build 8 on TestFlight (print-at-home, order-prints-by-mail partner hand-off, signed Fan Club Card, dark mode, 2,787 bundled reader comments).",
-        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots \u2014 not yet published to ASC."
+        "Live ASC version is 1.0 and ASC has valid build 9 for the 1.1 draft, but the clean local repo's project.yml and generated Xcode project currently declare 1.0 (7). Regenerating or uploading from this checkout would regress the version/build.",
+        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots — not yet published to ASC."
       ]
     },
     {
@@ -747,29 +774,31 @@
     },
     {
       "id": "sentipods-app",
-      "name": "Sentipods",
+      "name": "SentiPods",
       "kind": "app",
       "cluster": "Grubber",
       "status": "asc-mapped",
-      "lastModified": "2026-08-03",
+      "lastModified": "2026-08-14",
       "repo": "~/sentipods",
       "bundleId": "com.sentipods.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION; local 1.0 (15), with TestFlight build 14 uploaded",
-      "description": "iOS and Mac Catalyst client for the grubber podcast-transcription service, with episode search and transcript navigation.",
+      "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; iOS build 20 and macOS build 21 VALID",
+      "description": "Native iOS and macOS client for the grubber podcast-transcription service, with episode search and transcript navigation.",
       "dependencies": [
         "grubber"
       ],
       "links": {
-        "website": "https://bd-grubber.fly.dev",
-        "websiteSource": "local README",
+        "website": "https://billdonner.com/apps/sentipods/",
+        "support": "https://billdonner.com/apps/sentipods/#support",
+        "backend": "https://bd-grubber.fly.dev",
+        "websiteSource": "ASC metadata and verified HTTP 200 on 2026-08-13",
         "appStore": null
       },
       "notes": [
         "Uses grubber's /api/v1 surface with an X-Client-Key.",
-        "News and trend features depend on the grubber M3 roadmap.",
-        "Observed local build 15 after the project was aligned to the SentiPods ASC 1.0 record; TestFlight build 14 is uploaded with the new icon.",
-        "ASC app ID was not surfaced in the current local scan.",
-        "The client loads /shows first and treats /status metadata as best effort because /status was observed hanging."
+        "ASC app ID 6797132650 was confirmed by live API query.",
+        "ASC has no privacyPolicyUrl set. The newest repo metadata points support and privacy to https://1041soft.com, but that domain has no working HTTPS service.",
+        "The client loads /shows first and treats /status metadata as best effort because /status was observed hanging.",
+        "Both iOS and native macOS targets use the ASC bundle id com.sentipods.app; stale .mac documentation was corrected."
       ]
     },
     {
@@ -801,23 +830,21 @@
       "name": "clubsync",
       "kind": "backend",
       "cluster": "LtWatcher",
-      "status": "live",
-      "lastModified": "2026-04-30",
+      "status": "deferred",
+      "lastModified": "2026-08-14",
       "repo": "~/clubsync",
       "bundleId": null,
-      "release": "Live on Fly at bd-clubsync.fly.dev",
-      "description": "Postgres-backed sports scheduling publisher consumed by LtWatcher and planned for a future PickledBalls IAP package.",
+      "release": "Application tier intentionally deferred until PickledBalls v2; bd-clubsync-db remains deployed",
+      "description": "Deferred sports-facility synchronization backend retained for possible PickledBalls v2 work.",
       "dependencies": [
-        "LtWatcher",
-        "nagzerver"
+        "PickledBalls v2"
       ],
       "links": {
-        "website": "https://bd-clubsync.fly.dev",
-        "websiteSource": "local docs"
+        "github": "https://github.com/billdonner/clubsync"
       },
       "notes": [
-        "Owns watch data model and read API for the clubwatch flow.",
-        "Connected to a future PickledBalls IAP package; do not treat it as a current PickledBalls 1.0 core dependency."
+        "Not an active production dependency or monitored service.",
+        "The database is retained to preserve data until the PickledBalls v2 decision."
       ]
     },
     {
@@ -825,24 +852,21 @@
       "name": "card-server",
       "kind": "backend",
       "cluster": "Qross",
-      "status": "live",
-      "lastModified": "2026-08-01",
+      "status": "retired",
+      "lastModified": "2026-08-14",
       "repo": "~/card-server",
       "bundleId": null,
-      "release": "Live on Fly at bd-cardzerver.fly.dev",
-      "description": "Swift or Hummingbird Postgres-backed card and trivia API serving Qross and Flasherz-related clients.",
+      "release": "Retired 2026-08-14; GitHub repository archived and Fly deployment descriptor removed",
+      "description": "Swift/Hummingbird card and trivia backend that targets the same Fly app name as card-engine.",
       "dependencies": [
-        "Qross",
-        "Flasherz Kids",
-        "Cardz Studio",
-        "card-studio"
+        "card-engine (successor)"
       ],
       "links": {
-        "website": "https://bd-cardzerver.fly.dev",
-        "websiteSource": "local docs"
+        "github": "https://github.com/billdonner/card-server"
       },
       "notes": [
-        "Current deployed source of truth for the card corpus."
+        "Card Engine is the verified deployed source for bd-cardzerver.fly.dev and all observed current consumers.",
+        "Legacy tests exposed two contract differences against Card Engine: nonexistent bulk delete returns 422 rather than 200, and an invalid daily-score date returns 404 rather than 400."
       ]
     },
     {
@@ -850,21 +874,26 @@
       "name": "card-engine",
       "kind": "backend",
       "cluster": "Flasherz",
-      "status": "active",
-      "lastModified": "2026-03-23",
+      "status": "live",
+      "lastModified": "2026-08-13",
       "repo": "~/card-engine",
       "bundleId": null,
-      "release": "Active repo, relationship to deployed path remains ambiguous",
-      "description": "Parallel or alternate backend track for flashcards and trivia with conceptual overlap with card-server.",
+      "release": "Live on Fly at bd-cardzerver.fly.dev; machine version 134 started with passing health check",
+      "description": "Deployed Python/FastAPI unified content backend for flashcards and trivia.",
       "dependencies": [
+        "Qross",
         "Flasherz Kids",
+        "Cardz Studio",
+        "card-studio",
         "Alities"
       ],
       "links": {
-        "website": null
+        "website": "https://bd-cardzerver.fly.dev",
+        "openapi": "https://bd-cardzerver.fly.dev/openapi.json"
       },
       "notes": [
-        "One of the main architecture ambiguities in the inventory."
+        "Live /openapi.json identifies the service as card-engine version 0.1.0.",
+        "The 256 MB Fly machine was OOM-killed and restarted on 2026-08-13; direct /health is currently 200."
       ]
     },
     {
@@ -873,15 +902,15 @@
       "kind": "service",
       "cluster": "PickledBalls",
       "status": "live",
-      "lastModified": "2026-08-01",
+      "lastModified": "2026-08-14",
       "repo": "~/server-monitor",
       "bundleId": null,
-      "release": "Live on Fly at bd-server-monitor.fly.dev",
+      "release": "Fly production deployment verified 2026-08-14 with seven configured targets and current probes",
       "description": "Monitoring dashboard for multiple backends across the product landscape.",
       "dependencies": [
         "nagzerver",
-        "clubsync",
-        "card-server"
+        "card-engine",
+        "grubber"
       ],
       "links": {
         "website": "https://bd-server-monitor.fly.dev",
@@ -889,7 +918,8 @@
         "appStore": null
       },
       "notes": [
-        "ASC has Zerver Monitor, but the local iOS companion repo was not present in this scan."
+        "Production config omits deferred Clubsync, uses public Nagzerver and Card Engine health endpoints, and identifies Card Engine with the canonical card-engine-backend id.",
+        "Live /api/status showed successful HTTP 200 probes for Nagzerver and Cardzerver after deployment; remaining warning colors are database metric thresholds, not endpoint failures."
       ]
     },
     {
@@ -897,11 +927,11 @@
       "name": "SharedSpaceLab",
       "kind": "app",
       "cluster": "Codex Experiments",
-      "status": "lab",
-      "lastModified": "2026-07-31",
-      "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-13",
+      "repo": "github:billdonner/sharedspacelab",
       "bundleId": "com.1041soft.experiments.sharedspacelab",
-      "release": "Local-only experiment, not in ASC",
+      "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; GitHub project 0.1 (2) supports Mac Catalyst; no uploaded ASC builds",
       "description": "Shared household voice-and-screen iPad experiment built from ConversationLab and CoordinationLab.",
       "dependencies": [
         "ConversationLab",
@@ -909,10 +939,12 @@
       ],
       "links": {
         "website": null,
-        "appStore": null
+        "appStore": null,
+        "github": "https://github.com/billdonner/sharedspacelab"
       },
       "notes": [
-        "Explicitly does not connect to PickledBalls, Nagz, or any backend."
+        "Explicitly does not connect to PickledBalls, Nagz, or any backend.",
+        "Repository is not cloned on this machine; the old ~/Documents/Codex/Experiments/SharedSpaceLab path is stale."
       ]
     },
     {
@@ -921,19 +953,20 @@
       "kind": "package",
       "cluster": "Codex Experiments",
       "status": "lab",
-      "lastModified": "2026-07-31",
-      "repo": "~/Documents/Codex/Experiments/ConversationLab",
+      "lastModified": "2026-08-05",
+      "repo": "github:billdonner/conversationlab",
       "bundleId": null,
-      "release": "Local package, no commits yet",
-      "description": "New local package providing ConversationCore and AppleConversation.",
+      "release": "GitHub package; not cloned on this machine",
+      "description": "Package providing ConversationCore and AppleConversation.",
       "dependencies": [
         "SharedSpaceLab"
       ],
       "links": {
-        "website": null
+        "website": null,
+        "github": "https://github.com/billdonner/conversationlab"
       },
       "notes": [
-        "Created July 31, 2026."
+        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
       ]
     },
     {
@@ -942,19 +975,20 @@
       "kind": "package",
       "cluster": "Codex Experiments",
       "status": "lab",
-      "lastModified": "2026-07-31",
-      "repo": "~/Documents/Codex/Experiments/CoordinationLab",
+      "lastModified": "2026-08-05",
+      "repo": "github:billdonner/coordinationlab",
       "bundleId": null,
-      "release": "Local package, no commits yet",
+      "release": "GitHub package; not cloned on this machine",
       "description": "Pure Swift coordination model package used in SharedSpaceLab.",
       "dependencies": [
         "SharedSpaceLab"
       ],
       "links": {
-        "website": null
+        "website": null,
+        "github": "https://github.com/billdonner/coordinationlab"
       },
       "notes": [
-        "Created July 31, 2026."
+        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
       ]
     },
     {
@@ -963,18 +997,226 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-01",
-      "repo": "~/123words",
+      "lastModified": "2026-08-14",
+      "repo": "github:billdonner/123words",
       "bundleId": "com.123words.app",
-      "release": "ASC mapped; 1.11 live, 1.12 draft holds the new 7-slot Screenker gallery (critic 90)",
-      "description": "Kids 2\u20137 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+      "release": "iOS 1.11 READY_FOR_SALE and 1.12 PREPARE_FOR_SUBMISSION; source 1.12 build 59 upload succeeded on 2026-08-14 and is processing",
+      "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+      "dependencies": [],
+      "links": {
+        "website": "https://billdonner.github.io/123words/",
+        "portfolioPage": "https://billdonner.com/apps/123words/",
+        "appStore": "https://apps.apple.com/us/app/id6766975041",
+        "github": "https://github.com/billdonner/123words"
+      },
+      "notes": [
+        "GitHub source is aligned to the open ASC 1.12 train at build 59; the initial 1.11 upload was rejected because that train is closed, then the corrected 1.12 upload succeeded."
+      ]
+    },
+    {
+      "id": "pfoliolio-app",
+      "name": "Pfoliolio",
+      "kind": "app",
+      "cluster": "Standalone",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-14",
+      "repo": "~/pfolio-app",
+      "bundleId": "com.pfolio.app",
+      "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; source and both VALID ASC builds aligned at 35",
+      "description": "Native iOS and macOS multi-account portfolio client backed by pfolio, with Plaid connections, manual holdings, allocation analysis, reminders, and an AI question-and-answer surface.",
+      "dependencies": [
+        "pfolio"
+      ],
+      "links": {
+        "website": "https://billdonner.com/apps/pfoliolio/",
+        "privacyPolicy": "https://billdonner.github.io/pfolio-app/privacy.html",
+        "backend": "https://bd-pfolio.fly.dev",
+        "github": "https://github.com/billdonner/pfolio-app",
+        "appStore": null,
+        "support": "https://billdonner.com/apps/pfoliolio/#support"
+      },
+      "notes": [
+        "The generated billdonner.com publication bundle adds the canonical /apps/pfoliolio route and redirects the old /apps/oliopfolio route.",
+        "Publication to IONOS is pending the SFTP credential."
+      ]
+    },
+    {
+      "id": "pfolio-backend",
+      "name": "pfolio",
+      "kind": "backend",
+      "cluster": "Standalone",
+      "status": "live",
+      "lastModified": "2026-08-13",
+      "repo": "github:billdonner/pfolio",
+      "bundleId": null,
+      "release": "Fly app bd-pfolio deployed with machine version 6 and a passing health check",
+      "description": "PostgreSQL-backed portfolio service used by Pfoliolio, with Plaid production integration and chat support.",
+      "dependencies": [
+        "Pfoliolio"
+      ],
+      "links": {
+        "website": "https://bd-pfolio.fly.dev",
+        "health": "https://bd-pfolio.fly.dev/health",
+        "github": "https://github.com/billdonner/pfolio"
+      },
+      "notes": [
+        "The backend is live but is not cloned on this machine."
+      ]
+    },
+    {
+      "id": "oenora-app",
+      "name": "Oenora",
+      "kind": "app",
+      "cluster": "Standalone",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-13",
+      "repo": "~/oenora",
+      "bundleId": "com.billdonner.oenora",
+      "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 3 VALID; Mac Catalyst supported",
+      "description": "Personal wine knowledge system for iPhone and Mac with CloudKit-backed cellar synchronization.",
       "dependencies": [],
       "links": {
         "website": null,
+        "github": "https://github.com/billdonner/oenora",
         "appStore": null
       },
       "notes": [
-        "Was missing from the index entirely; added 2026-08-02 during the Screenker gallery sweep."
+        "Age rating remains unset because alcohol references are core subject matter."
+      ]
+    },
+    {
+      "id": "amenbeats-app",
+      "name": "amenbeats",
+      "kind": "app",
+      "cluster": "Standalone",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-14",
+      "repo": "github:billdonner/drumbeats",
+      "bundleId": "com.billdonner.drumbeats",
+      "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 8 VALID; public TestFlight invite resolves",
+      "description": "Pocket 16-step sequencer for studying and remixing well-known drum breaks.",
+      "dependencies": [],
+      "links": {
+        "website": "https://billdonner.com/apps/amenbeats/",
+        "testFlight": "https://testflight.apple.com/join/YNtJvFDf",
+        "github": "https://github.com/billdonner/drumbeats",
+        "appStore": null
+      },
+      "notes": [
+        "GitHub source and ASC are aligned at build 8."
+      ]
+    },
+    {
+      "id": "screenker-app",
+      "name": "Screenker",
+      "kind": "app",
+      "cluster": "Standalone",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-13",
+      "repo": "github:billdonner/screenker",
+      "bundleId": "com.screenker.app",
+      "release": "ASC macOS 1.0 PREPARE_FOR_SUBMISSION; build 44 VALID",
+      "description": "Mac studio for creating and evaluating App Store screenshot galleries.",
+      "dependencies": [],
+      "links": {
+        "website": "https://billdonner.github.io/screenker/",
+        "support": "https://billdonner.github.io/screenker/support.html",
+        "privacyPolicy": "https://billdonner.github.io/screenker/privacy.html",
+        "portfolioPage": "https://billdonner.com/apps/screenker/",
+        "github": "https://github.com/billdonner/screenker",
+        "appStore": null
+      },
+      "notes": [
+        "Current ASC links all return 200.",
+        "The newest repo collateral points at 1041soft.com, whose HTTPS endpoint is unavailable; ASC has not been changed to those broken URLs."
+      ]
+    },
+    {
+      "id": "zerver-monitor-app",
+      "name": "Zerver Monitor",
+      "kind": "app",
+      "cluster": "PickledBalls",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-11",
+      "repo": "~/server-monitor-ios",
+      "bundleId": "com.billdonner.ZerverMonitor",
+      "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 5 VALID",
+      "description": "iPhone, widget, and watch companion for the server-monitor service.",
+      "dependencies": [
+        "server-monitor"
+      ],
+      "links": {
+        "website": "https://bd-server-monitor.fly.dev",
+        "github": "https://github.com/billdonner/server-monitor-ios",
+        "appStore": null
+      },
+      "notes": [
+        "The prior index mapped this ASC app in ascApps but omitted its entity even though the local repo was present."
+      ]
+    },
+    {
+      "id": "picklefamilia-app",
+      "name": "PickleFamilia",
+      "kind": "app",
+      "cluster": "PickledBalls",
+      "status": "asc-mapped",
+      "lastModified": "2026-06-30",
+      "repo": "github:billdonner/picklefamilia-ios",
+      "bundleId": "com.picklefamilia.app",
+      "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 2 VALID",
+      "description": "Weekly game scheduling and self-service player slot coordination app.",
+      "dependencies": [],
+      "links": {
+        "website": "https://billdonner.github.io/picklefamilia-ios/",
+        "portfolioPage": "https://billdonner.com/apps/picklefamilia/",
+        "github": "https://github.com/billdonner/picklefamilia-ios",
+        "appStore": null
+      },
+      "notes": [
+        "Repository is active on GitHub but not cloned on this machine."
+      ]
+    },
+    {
+      "id": "company-site-1041soft",
+      "name": "1041soft.com",
+      "kind": "website",
+      "cluster": "Standalone",
+      "status": "misconfigured",
+      "lastModified": "2026-08-13",
+      "repo": "github:billdonner/1041soft-site",
+      "bundleId": null,
+      "release": "GitHub Pages reports built, but custom-domain DNS points to Namecheap forwarding and HTTPS is unavailable",
+      "description": "Company landing page and shared support/privacy source for Screenker, Mallinbook, SentiPods, and Pfoliolio.",
+      "dependencies": [],
+      "links": {
+        "website": "http://1041soft.com/",
+        "github": "https://github.com/billdonner/1041soft-site"
+      },
+      "notes": [
+        "1041soft.com A resolves to 192.64.119.126 (Namecheap forwarding), not GitHub Pages; www points at Namecheap parking.",
+        "GitHub Pages has https_enforced=false and the HTTPS endpoint times out or fails TLS.",
+        "The repository contains the expected support/privacy paths, but several privacy pages still contain TODO disclosures."
+      ]
+    },
+    {
+      "id": "portfolio-app-directory",
+      "name": "Bill Donner Apps",
+      "kind": "website",
+      "cluster": "Standalone",
+      "status": "stale",
+      "lastModified": "2026-08-06",
+      "repo": "unidentified",
+      "bundleId": null,
+      "release": "Public at billdonner.com/apps; page says generated from ASC on 2026-08-06",
+      "description": "Public directory of App Store, TestFlight, and in-development apps.",
+      "dependencies": [],
+      "links": {
+        "website": "https://billdonner.com/apps/"
+      },
+      "notes": [
+        "The page claims every app and 14 total, while live ASC contains 23 records.",
+        "It still calls Pfoliolio Oliopfolio and serves only the old /apps/oliopfolio route.",
+        "The source repository or publishing workflow was not identified; billdonner.github.io does not contain the /apps tree."
       ]
     }
   ],
@@ -982,9 +1224,10 @@
     {
       "name": "bd-nagzerver.fly.dev",
       "repo": "~/nagzerver",
+      "status": "live",
       "consumers": [
         "Nagz",
-        "PickledBalls future service work",
+        "PickledBalls",
         "workin On",
         "LtWatcher transport"
       ],
@@ -993,26 +1236,28 @@
     {
       "name": "bd-clubsync.fly.dev",
       "repo": "~/clubsync",
+      "status": "deferred",
       "consumers": [
-        "PickledBalls future IAP package",
-        "LtWatcher"
+        "PickledBalls v2 (future)"
       ],
-      "note": "Sports-club schedule publisher with Postgres; connected to a future PickledBalls IAP package rather than the current core release."
+      "note": "Application tier intentionally deferred until PickledBalls v2; bd-clubsync-db is retained."
     },
     {
       "name": "bd-cardzerver.fly.dev",
-      "repo": "~/card-server",
+      "repo": "~/card-engine",
+      "status": "live",
       "consumers": [
         "Qross",
         "Flasherz Kids",
         "card-studio",
         "likely Cardz Studio"
       ],
-      "note": "Current deployed card and trivia API path."
+      "note": "Live OpenAPI identifies Card Engine 0.1.0; the competing Card Server deployment definition was removed and its repository archived."
     },
     {
       "name": "bd-grubber.fly.dev",
       "repo": "~/grubber",
+      "status": "live",
       "consumers": [
         "grubber clients"
       ],
@@ -1021,27 +1266,38 @@
     {
       "name": "bd-server-monitor.fly.dev",
       "repo": "~/server-monitor",
+      "status": "live",
       "consumers": [
         "operations and monitoring"
       ],
-      "note": "Monitors several other live services."
+      "note": "Seven-target production config verified live with current Nagzerver and Card Engine probes; Clubsync is intentionally omitted."
     },
     {
       "name": "api.famster.app",
       "repo": "unidentified",
+      "status": "live",
       "consumers": [
         "Famster"
       ],
-      "note": "Confirmed in local app docs, but backend repo was not found."
+      "note": "The /version endpoint returned 200; backend repo remains unidentified."
+    },
+    {
+      "name": "bd-pfolio.fly.dev",
+      "repo": "github:billdonner/pfolio",
+      "status": "live",
+      "consumers": [
+        "Pfoliolio"
+      ],
+      "note": "Fly machine version 6 is started with a passing health check; /health reports database, Plaid production, and chat healthy."
     }
   ],
   "repos": [
     {
       "repo": "~/100Burfords",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
+      "last2026Commit": "2026-08-10 remote; local checkout 2026-08-05",
       "kind": "app",
-      "role": "ASC-mapped iOS app, sale-ready in ASC"
+      "role": "ASC-mapped iOS app, sale-ready in ASC; local config regressed behind ASC draft build"
     },
     {
       "repo": "~/1041Kit",
@@ -1060,7 +1316,7 @@
     {
       "repo": "~/Flyz",
       "branch": "main",
-      "last2026Commit": "2026-04-28",
+      "last2026Commit": "2026-08-11",
       "kind": "deployment/config",
       "role": "Fly deployment support repo"
     },
@@ -1079,39 +1335,32 @@
       "role": "PickledBalls local-network PeerLink dependency; expected by project.yml but missing on this machine"
     },
     {
-      "repo": "~/ado-data",
-      "branch": "main",
-      "last2026Commit": "2026-06-10",
-      "kind": "data/support",
-      "role": "Appears paired with adology pulse workflows"
-    },
-    {
       "repo": "~/adology-pulse",
       "branch": "main",
       "last2026Commit": "2026-06-10",
       "kind": "app/data/support",
-      "role": "Active, not mapped to an ASC app in this scan"
+      "role": "Active, not mapped to an ASC app in this scan; ~/ado-data is a filesystem alias to this repository"
     },
     {
-      "repo": "~/bookmaker",
+      "repo": "github:billdonner/bookmaker",
       "branch": "main",
       "last2026Commit": "2026-07-20",
       "kind": "reference engine",
-      "role": "Python FastAPI/WeasyPrint directory-book engine \u2014 read-only reference for Mallinbook; one-time lossless photo extraction"
+      "role": "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
     },
     {
       "repo": "~/card-engine",
       "branch": "main",
-      "last2026Commit": "2026-03-23",
+      "last2026Commit": "2026-08-05",
       "kind": "backend",
-      "role": "Card and trivia backend track"
+      "role": "Live Python/FastAPI source for bd-cardzerver.fly.dev"
     },
     {
       "repo": "~/card-server",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
-      "kind": "backend",
-      "role": "Live backend for Qross and obo-ios"
+      "last2026Commit": "2026-08-14",
+      "kind": "archived backend",
+      "role": "Retired Swift/Hummingbird alternate; Card Engine is the live successor"
     },
     {
       "repo": "~/card-studio",
@@ -1131,15 +1380,15 @@
       "repo": "~/clubsync",
       "branch": "main",
       "last2026Commit": "2026-04-30",
-      "kind": "backend",
-      "role": "Live sports scheduling backend"
+      "kind": "deferred backend",
+      "role": "Retained for possible PickledBalls v2 work; application tier is not deployed"
     },
     {
       "repo": "~/clubwatch",
       "branch": "main",
-      "last2026Commit": "2026-04-30",
-      "kind": "app",
-      "role": "ASC-mapped LtWatcher app"
+      "last2026Commit": "2026-08-14",
+      "kind": "archived app",
+      "role": "Retired LtWatcher app; GitHub repository archived"
     },
     {
       "repo": "~/famster-ios",
@@ -1151,7 +1400,7 @@
     {
       "repo": "~/grubber",
       "branch": "main",
-      "last2026Commit": "2026-08-02",
+      "last2026Commit": "2026-08-09",
       "kind": "backend/service",
       "role": "Live transcript and M3 trend-analysis service with budget-gated LLM enrichment"
     },
@@ -1165,14 +1414,14 @@
     {
       "repo": "~/kinflash",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
+      "last2026Commit": "2026-08-10",
       "kind": "app",
       "role": "ASC-mapped KinFlash app"
     },
     {
-      "repo": "~/mallinbook",
+      "repo": "github:billdonner/mallinbook",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
+      "last2026Commit": "2026-08-13",
       "kind": "app",
       "role": "ASC-mapped macOS+iOS directory-book app (Mallinbook; renamed 2026-08-01 from bookmaker-app)"
     },
@@ -1216,7 +1465,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-01",
       "kind": "backend",
-      "role": "Live Nagz, workin On, clubwatch backend; future PickledBalls service work"
+      "role": "Live Nagz, workin On, clubwatch, and PickledBalls backend"
     },
     {
       "repo": "~/obo",
@@ -1235,7 +1484,7 @@
     {
       "repo": "~/pickledballs",
       "branch": "main",
-      "last2026Commit": "2026-06-17",
+      "last2026Commit": "2026-08-13",
       "kind": "app",
       "role": "ASC-mapped PickledBalls app"
     },
@@ -1263,21 +1512,21 @@
     {
       "repo": "~/server-monitor",
       "branch": "main",
-      "last2026Commit": "2026-08-01",
+      "last2026Commit": "2026-08-14",
       "kind": "monitoring service",
-      "role": "Live monitoring dashboard"
+      "role": "Live operations dashboard with corrected seven-target production probes"
     },
     {
       "repo": "~/sentipods",
       "branch": "main",
-      "last2026Commit": "2026-08-03",
+      "last2026Commit": "2026-08-13",
       "kind": "app",
-      "role": "iOS and Mac Catalyst client for the live grubber service; ASC-mapped SentiPods, local 1.0 (15)"
+      "role": "Native iOS and macOS client for grubber; ASC-mapped SentiPods, local iOS 20 and macOS 21"
     },
     {
       "repo": "~/workinon",
       "branch": "main",
-      "last2026Commit": "2026-08-09",
+      "last2026Commit": "2026-08-10",
       "kind": "app",
       "role": "ASC-mapped workin On app; local 0.9.1 (67) with MasterIndex board/feed detail work uploaded to TestFlight"
     },
@@ -1289,25 +1538,116 @@
       "role": "workin On companion server"
     },
     {
-      "repo": "~/Documents/Codex/Experiments/ConversationLab",
+      "repo": "github:billdonner/conversationlab",
       "branch": "main",
-      "last2026Commit": "no commits yet",
+      "last2026Commit": "2026-08-05",
       "kind": "shared package",
-      "role": "New local experiment"
+      "role": "Conversation experiment package; not cloned locally"
     },
     {
-      "repo": "~/Documents/Codex/Experiments/CoordinationLab",
+      "repo": "github:billdonner/coordinationlab",
       "branch": "main",
-      "last2026Commit": "no commits yet",
+      "last2026Commit": "2026-08-05",
       "kind": "shared package",
-      "role": "New local experiment"
+      "role": "Coordination experiment package; not cloned locally"
     },
     {
-      "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
+      "repo": "github:billdonner/sharedspacelab",
       "branch": "main",
-      "last2026Commit": "no commits yet",
+      "last2026Commit": "2026-08-13",
       "kind": "app experiment",
-      "role": "New local-only iPad experiment"
+      "role": "ASC-mapped iOS and Mac Catalyst experiment; not cloned locally"
+    },
+    {
+      "repo": "github:billdonner/123words",
+      "branch": "main",
+      "last2026Commit": "2026-08-10",
+      "kind": "app",
+      "role": "ASC-mapped iOS app; source build 59 accepted by ASC"
+    },
+    {
+      "repo": "~/1041soft",
+      "branch": "main",
+      "last2026Commit": "2026-08-13",
+      "kind": "business/admin",
+      "role": "1041Soft formation and product-planning repository"
+    },
+    {
+      "repo": "github:billdonner/1041soft-site",
+      "branch": "main",
+      "last2026Commit": "2026-08-13",
+      "kind": "website",
+      "role": "Company site plus shared support/privacy pages; GitHub Pages built but custom-domain DNS and HTTPS are misconfigured"
+    },
+    {
+      "repo": "github:billdonner/billdonner.github.io",
+      "branch": "master",
+      "last2026Commit": "2026-07-28",
+      "kind": "website",
+      "role": "Personal GitHub Pages source; does not contain the billdonner.com/apps directory"
+    },
+    {
+      "repo": "~/masterindex",
+      "branch": "wip/workinon-2026-08-03",
+      "last2026Commit": "2026-08-13",
+      "kind": "inventory",
+      "role": "Canonical portfolio inventory and presentation site"
+    },
+    {
+      "repo": "~/oenora",
+      "branch": "main",
+      "last2026Commit": "2026-08-13",
+      "kind": "app",
+      "role": "ASC-mapped iOS and Mac Catalyst wine app"
+    },
+    {
+      "repo": "~/pfolio-app",
+      "branch": "main",
+      "last2026Commit": "2026-08-13",
+      "kind": "app",
+      "role": "ASC-mapped native iOS and macOS Pfoliolio client"
+    },
+    {
+      "repo": "github:billdonner/pfolio",
+      "branch": "main",
+      "last2026Commit": "2026-08-13",
+      "kind": "backend",
+      "role": "Live Pfoliolio backend; not cloned locally"
+    },
+    {
+      "repo": "~/server-monitor-ios",
+      "branch": "main",
+      "last2026Commit": "2026-08-11",
+      "kind": "app",
+      "role": "ASC-mapped Zerver Monitor iPhone, widget, and watch client"
+    },
+    {
+      "repo": "github:billdonner/screenker",
+      "branch": "main",
+      "last2026Commit": "2026-08-13",
+      "kind": "app",
+      "role": "ASC-mapped macOS screenshot studio; not cloned locally"
+    },
+    {
+      "repo": "github:billdonner/drumbeats",
+      "branch": "main",
+      "last2026Commit": "2026-08-09",
+      "kind": "app",
+      "role": "ASC-mapped amenbeats iOS app; not cloned locally"
+    },
+    {
+      "repo": "github:billdonner/picklefamilia-ios",
+      "branch": "main",
+      "last2026Commit": "2026-06-30",
+      "kind": "app",
+      "role": "ASC-mapped iOS and macOS PickleFamilia app; not cloned locally"
+    },
+    {
+      "repo": "github:billdonner/local-model-lab",
+      "branch": "main",
+      "last2026Commit": "2026-08-09",
+      "kind": "lab",
+      "role": "Local-model experiment explicitly on hold; not cloned locally"
     }
   ],
   "gaps": [
@@ -1322,9 +1662,9 @@
       "summary": "Recorded repo paths ~/123words, ~/bookmaker, and ~/mallinbook did not resolve as local directories on this machine during the reboot-readiness audit; retained entity facts are preserved from prior observed scans."
     },
     {
-      "kind": "ambiguity",
-      "observedAt": "2026-08-11",
-      "summary": "SentiPods is mapped to ~/sentipods and retained as ASC 1.0 PREPARE_FOR_SUBMISSION, but its ASC app ID was not surfaced in the local scan."
+      "kind": "ambiguity-resolved",
+      "observedAt": "2026-08-13",
+      "summary": "Resolved: live ASC query confirms SentiPods app ID 6797132650, bundle com.sentipods.app, with iOS and macOS 1.0 PREPARE_FOR_SUBMISSION records."
     },
     {
       "kind": "metadata-inconsistency",
@@ -1349,17 +1689,62 @@
     {
       "kind": "asc-submission-blockers",
       "observedAt": "2026-08-13",
-      "summary": "All 6 real macOS records have primary category and copyright. Age rating set for Mallinbook, Pfoliolio, Screenker; still UNSET for Oenora, SharedSpaceLab, SentiPods pending owner judgment (wine subject matter, peer-to-peer chat, and unfiltered third-party content respectively). SentiPods desktop screenshots uploaded 2026-08-13 (3 at 2880x1800, assetDeliveryState COMPLETE). Mallinbook still has no build on its macOS record."
+      "summary": "All 6 real macOS records have primary category and copyright. Age rating set for Mallinbook, Pfoliolio, Screenker; still UNSET for Oenora, SharedSpaceLab, SentiPods pending owner judgment (wine subject matter, peer-to-peer chat, and unfiltered third-party content respectively). SentiPods desktop screenshots uploaded 2026-08-13 (3 at 2880x1800, assetDeliveryState COMPLETE). Mallinbook now has valid build 18 on both platforms; the earlier no-build statement was stale."
     },
     {
-      "kind": "signing-key-unavailable",
-      "observedAt": "2026-08-13",
-      "summary": "This machine cannot produce App Store archives. The Apple Developer account holds a valid DISTRIBUTION certificate (expires 2027-05-31), but its private key is absent from this Mac's keychain - 'security find-identity -v -p codesigning' returns only 'Apple Development: William Donner (S4D2FRNLHV)'. Distribution signing therefore fails here. The key is presumed to be on the other machine referenced by the 2026-08 machine-switch commits. Resolve by exporting the identity as .p12 from that Mac and importing it, or archive there."
+      "kind": "signing-capability-resolved",
+      "observedAt": "2026-08-14",
+      "summary": "Resolved. Xcode cloud-managed distribution signing successfully archived and uploaded Pfoliolio, Qross, SentiPods, and 123 Words from this machine using the ASC API key."
     },
     {
       "kind": "local-path-missing",
       "observedAt": "2026-08-13",
       "summary": "PickledBalls project.yml now links a local PeerLink package at ../peerlink for local-network live game transport. The sibling ~/peerlink directory is missing on this machine, and obvious GitHub repo names billdonner/peerlink, billdonner/pickledpeerlink, and billdonner/picklepeerlink were not found. Local PickledBalls builds cannot be regenerated or verified here until PeerLink is restored or its source repo is identified."
+    },
+    {
+      "kind": "deployment-source-inconsistency-resolved",
+      "observedAt": "2026-08-14",
+      "summary": "Resolved. Card Engine is the sole verified source for bd-cardzerver.fly.dev; Card Server's Fly descriptor was removed and its repository archived."
+    },
+    {
+      "kind": "service-deferred",
+      "observedAt": "2026-08-14",
+      "summary": "Clubsync is intentionally deferred until PickledBalls v2. Its application tier remains absent and bd-clubsync-db is retained; LtWatcher is retired and current PickledBalls no longer records Clubsync as an active dependency."
+    },
+    {
+      "kind": "monitor-configuration-drift-resolved",
+      "observedAt": "2026-08-14",
+      "summary": "Resolved in server-monitor commits 7216455 and 6972c20. Production now omits Clubsync, probes public Nagzerver/Card Engine health endpoints, and uses canonical entity IDs; live verification returned HTTP 200 for both endpoints."
+    },
+    {
+      "kind": "website-dns-and-tls",
+      "observedAt": "2026-08-13",
+      "summary": "1041soft-site is built on GitHub Pages, but 1041soft.com points to Namecheap forwarding (192.64.119.126), www points to parking, HTTPS enforcement is disabled, and HTTPS requests time out or fail TLS. Repo collateral for SentiPods, Screenker, and Mallinbook points at this unusable HTTPS domain."
+    },
+    {
+      "kind": "asc-public-link-inconsistency",
+      "observedAt": "2026-08-14",
+      "summary": "The prepared billdonner.com bundle fixes the Pfoliolio marketing/support route and legacy Oliopfolio redirect, but is not live pending IONOS credentials. Mallinbook's ASC privacy URL remains 404 and SentiPods still has no ASC privacyPolicyUrl."
+    },
+    {
+      "kind": "portfolio-website-stale",
+      "observedAt": "2026-08-14",
+      "summary": "A canonical generated replacement now exists at publish/billdonner.com/apps with 19 active ASC-mapped apps, no LtWatcher, and corrected Pfoliolio routes. The live IONOS site remains stale because the SFTP password is unavailable on this machine."
+    },
+    {
+      "kind": "version-build-drift-resolved",
+      "observedAt": "2026-08-14",
+      "summary": "Resolved for every identified drift: Pfoliolio 35, Qross 392, and SentiPods macOS 21 are VALID in ASC; 123 Words 59 was uploaded; amenbeats source is 8; 100 Burfords source is 1.1 (9)."
+    },
+    {
+      "kind": "repository-coverage",
+      "observedAt": "2026-08-13",
+      "summary": "The prior entities list omitted Pfoliolio, amenbeats, Oenora, Screenker, Zerver Monitor, PickleFamilia, the pfolio backend, and both active portfolio websites. Those entries are now represented; remote-only repositories are explicitly labeled github: rather than as missing local paths."
+    },
+    {
+      "kind": "retired-card-server-contract-differences",
+      "observedAt": "2026-08-14",
+      "summary": "Before Card Server archival, its legacy production-contract tests found two Card Engine response differences: nonexistent bulk delete returns 422 instead of expected 200, and invalid daily-score dates return 404 instead of expected 400. No current consumer was found to require Card Server, but these differences matter to any legacy Card Studio migration."
     }
   ],
   "taskRegistry": {

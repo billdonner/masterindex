@@ -6,16 +6,18 @@ const state = {
   selectedCluster: null
 };
 
-const badgeClassMap = { app: "b-app", backend: "b-backend", package: "b-package", service: "b-service" };
+const badgeClassMap = { app: "b-app", backend: "b-backend", package: "b-package", service: "b-service", website: "b-service" };
 const surfaces = [
   { key: "all", label: "Everything" }, { key: "app", label: "Apps" },
   { key: "backend", label: "Backends" }, { key: "service", label: "Services" },
-  { key: "package", label: "Packages" }
+  { key: "package", label: "Packages" }, { key: "website", label: "Websites" }
 ];
 const statuses = [
   { key: "all", label: "All statuses" }, { key: "asc-mapped", label: "ASC mapped" },
   { key: "ready-for-sale", label: "Ready for sale" }, { key: "live", label: "Live services" },
-  { key: "gap", label: "Coverage gaps" }, { key: "lab", label: "Labs" }
+  { key: "deferred", label: "Deferred" }, { key: "retired", label: "Retired" },
+  { key: "unreachable", label: "Unreachable" }, { key: "misconfigured", label: "Misconfigured" },
+  { key: "stale", label: "Stale" }, { key: "gap", label: "Coverage gaps" }, { key: "lab", label: "Labs" }
 ];
 const reviewFilters = [
   { key: "all", label: "All records" }, { key: "missing-links", label: "Missing public links" },
@@ -30,11 +32,11 @@ function parseDateValue(value) { const ms = Date.parse(value); return Number.isN
 function sortByMostRecent(items, getter) {
   return [...items].sort((a, b) => parseDateValue(getter(b)) - parseDateValue(getter(a)) || String(a.name || a.repo).localeCompare(String(b.name || b.repo)));
 }
-function kindLabel(kind) { return ({ app: "Application", backend: "Backend", service: "Service", package: "Shared package" })[kind] || kind; }
-function statusText(entity) { return ({ "ready-for-sale": "Ready for sale", "asc-mapped": "ASC mapped", live: "Live", gap: "Gap", lab: "Lab", "local-only": "Local only", active: "Active" })[entity.status] || entity.status; }
+function kindLabel(kind) { return ({ app: "Application", backend: "Backend", service: "Service", package: "Shared package", website: "Website" })[kind] || kind; }
+function statusText(entity) { return ({ "ready-for-sale": "Ready for sale", "asc-mapped": "ASC mapped", live: "Live", "live-degraded-probes": "Live, probes degraded", deferred: "Deferred", retired: "Retired", unreachable: "Unreachable", misconfigured: "Misconfigured", stale: "Stale", "active-alternate": "Active alternate", gap: "Gap", lab: "Lab", "local-only": "Local only", active: "Active" })[entity.status] || entity.status; }
 function stat(label, value) { return `<div class="stat"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`; }
 function entityTasks(entityId) { return (state.tasks?.entryTasks?.[entityId] || []).filter(task => task.status === "active"); }
-function hasPublicLink(entity) { return Boolean(entity.links?.website || entity.links?.appStore); }
+function hasPublicLink(entity) { return Object.values(entity.links || {}).some(value => typeof value === "string" && /^https?:\/\//.test(value)); }
 function formatCadence(task) {
   const value = task.cadence?.value || "";
   if (value.includes("HOURLY;INTERVAL=6")) return "Every six hours";
@@ -72,7 +74,7 @@ function matchesEntity(entity) {
 }
 function renderStats() {
   const summary = state.data.summary;
-  document.getElementById("statGrid").innerHTML = [stat("ASC apps", summary.ascApps), stat("Mapped to active repos", summary.mappedAscApps), stat("Coverage gaps", summary.unmatchedAscApps), stat("2026-active repos", summary.activeRepos)].join("");
+  document.getElementById("statGrid").innerHTML = [stat("ASC apps", summary.ascApps), stat("Mapped ASC records", summary.mappedAscApps), stat("Coverage gaps", summary.unmatchedAscApps), stat("2026-active repos", summary.activeRepos)].join("");
 }
 function renderAttention() {
   const missingLinks = state.data.entities.filter(entity => !hasPublicLink(entity)).length;
@@ -99,7 +101,7 @@ function renderEntities() {
   const entities = sortByMostRecent(state.data.entities.filter(matchesEntity), entity => entity.lastModified);
   if (!entities.some(entity => entity.id === state.selectedEntityId)) state.selectedEntityId = entities[0]?.id || state.data.entities[0]?.id;
   document.getElementById("entityGrid").innerHTML = entities.length ? entities.map(entity => `<article class="card ${entity.id === state.selectedEntityId ? "selected" : ""}" data-id="${escapeHtml(entity.id)}" tabindex="0" role="button" aria-label="View ${escapeHtml(entity.name)} details">
-    <div class="card-top"><div><div class="subline">${escapeHtml(entity.cluster)}</div><h4>${escapeHtml(entity.name)}</h4></div><div class="status-dot ${entity.status === "live" || entity.status === "ready-for-sale" ? "status-live" : entity.status === "lab" ? "status-lab" : ""}">${escapeHtml(statusText(entity))}</div></div>
+    <div class="card-top"><div><div class="subline">${escapeHtml(entity.cluster)}</div><h4>${escapeHtml(entity.name)}</h4></div><div class="status-dot ${entity.status.startsWith("live") || entity.status === "ready-for-sale" ? "status-live" : entity.status === "lab" ? "status-lab" : ""}">${escapeHtml(statusText(entity))}</div></div>
     <div class="badge-row"><span class="badge ${badgeClassMap[entity.kind] || ""}">${escapeHtml(kindLabel(entity.kind))}</span>${entity.bundleId ? `<span class="badge b-asc">${escapeHtml(entity.bundleId)}</span>` : ""}${entityTasks(entity.id).length ? `<span class="badge b-task">${entityTasks(entity.id).length} active task${entityTasks(entity.id).length === 1 ? "" : "s"}</span>` : ""}</div>
     <div class="subline">${escapeHtml(entity.description)}</div><div class="subline"><strong>Repo:</strong> ${escapeHtml(entity.repo || "Not identified")}</div></article>`).join("") : `<p class="empty-state">No entries match the current filters.</p>`;
   document.querySelectorAll(".card").forEach(card => {
@@ -115,7 +117,13 @@ function renderDetail() {
   const entity = state.data.entities.find(item => item.id === state.selectedEntityId) || state.data.entities[0];
   if (!entity) return;
   const links = entity.links || {};
-  const knownLinks = [["Website", links.website, links.websiteSource], ["App Store", links.appStore, links.appStoreSource], ["GitHub", links.github], ["Privacy policy", links.privacyPolicy], ["Support", links.support]].filter(([, url]) => url);
+  const knownLinks = [
+    ["Website", links.website, links.websiteSource], ["Product site", links.productSite],
+    ["Portfolio page", links.portfolioPage], ["App Store", links.appStore, links.appStoreSource],
+    ["TestFlight", links.testFlight], ["GitHub", links.github],
+    ["Privacy policy", links.privacyPolicy], ["Support", links.support],
+    ["Backend", links.backend], ["Health", links.health], ["OpenAPI", links.openapi]
+  ].filter(([, url]) => url);
   const tasks = entityTasks(entity.id);
   document.getElementById("detailPanel").innerHTML = `<div class="detail-top"><div><span class="section-kicker">${escapeHtml(entity.cluster)}</span><h3 class="detail-title">${escapeHtml(entity.name)}</h3><div class="subline">${escapeHtml(entity.description)}</div></div></div>
     <div class="detail-grid"><div class="detail-metric"><label>Kind</label><strong>${escapeHtml(kindLabel(entity.kind))}</strong></div><div class="detail-metric"><label>Status</label><strong>${escapeHtml(statusText(entity))}</strong></div><div class="detail-metric"><label>Repository</label><strong>${escapeHtml(entity.repo || "Not identified")}</strong></div><div class="detail-metric"><label>Last modified</label><strong>${escapeHtml(entity.lastModified || "Unknown")}</strong></div><div class="detail-metric"><label>Bundle ID</label><strong>${escapeHtml(entity.bundleId || "None surfaced in scan")}</strong></div></div>

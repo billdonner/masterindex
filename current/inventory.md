@@ -1,126 +1,123 @@
 # MasterIndex Inventory
 
-As of Thursday, August 13, 2026.
+As of Friday, August 14, 2026.
 
 ## Scope
 
-- Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
-- Treated all repositories as read-only.
-- Queried App Store Connect live on August 13, 2026 through the ASC API (key `MN6H2P6385`). This replaces the retained August 2 snapshot; every `ascApps` entry now reflects the live query, including per-platform version states.
-- Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
-- Operations policy: every entity receives a verification pass every six hours and a full refresh daily through `tasks/index.json`. Agents must read `current/handoffs/index.json` before a cycle so a targeted instruction can change the next cycle's behavior without changing the inventory schema.
+- Reconciled App Store Connect, active GitHub sources, local repositories, Fly deployments, and public product URLs.
+- Applied no handoff directives because `current/handoffs/index.json` has none.
+- Performed the requested retirements and operational fixes; observed facts and unresolved publication access are kept distinct below.
 
 ## Executive Summary
 
-- App Store Connect shows 23 apps as of the 2026-08-13 live query, up from 19 on 2026-08-03. (PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup and remain absent.)
-- 20 ASC apps map to a local or GitHub repository. 2 do not: `MastPex IOS` and `MastPex Mac`, both placeholders per the owner.
-- `GigStand` (app ID 428849240) shipped 2011-05-04 and had been dead ~15 years. Apple never permits deleting an app that has been on sale, so it was **removed from sale** on 2026-08-13 instead — all 175 territories set unavailable. The record stays in ASC permanently; do not re-flag it as an unmatched app.
-- Three apps previously listed as unmatched were resolved on 2026-08-13 by reading `PRODUCT_BUNDLE_IDENTIFIER` out of each `project.yml`: `Zerver Monitor` → `~/server-monitor-ios`, `Oenora` → `~/oenora`, `SharedSpaceLab` → `~/SharedSpaceLab`. `SharedSpaceLab` is therefore no longer local-only; it does have an ASC record.
-- 8 ASC records carry a macOS version; **6 are real apps**: Mallinbook, Pfoliolio, Screenker, SentiPods, and — as of 2026-08-13 — Oenora and SharedSpaceLab, which gained Mac Catalyst support that day. `MastPex Mac` is a placeholder and `PickleFamilia` is on hold.
-- Oenora and SharedSpaceLab were `platform: iOS` only until 2026-08-13, making their macOS records phantoms. Both now build for Mac Catalyst with their bundle identifiers preserved, so those records can receive builds. Catalyst was chosen over native AppKit because both view layers are UIKit-coupled.
-- Every macOS record sits at 1.0 `PREPARE_FOR_SUBMISSION`; none has been submitted. After the 2026-08-13 ASC write pass, all 6 real records have a primary category and copyright; age rating is set for Mallinbook, Pfoliolio, and Screenker.
-- Mac-specific App Store collateral was written on 2026-08-13 for the four real Mac apps, kept deliberately distinct from their iPhone listings (`AppStore/mac/APP-STORE-MAC.md` in each repo; Pfoliolio via PR #15, since its CLAUDE.md forbids commits to `main`).
-- Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
-- Default browsing order should normally be most recently modified first.
-- Strongest active clusters:
-  - `PickledBalls` + `CourtScheduler` + `PeerLink` + `server-monitor` (nagzerver and Clubsync are future service connections; Clubsync is tied to a future IAP package; SharedAI unlinked from v1.0, returns with the Instructor tier)
-  - `Qross` + `card-server` + `qross-data` + `card-studio`
-  - `Nagz` + `nagzerver` + `nagz-web` + `nagz-ai` + `workinon` + `workinon-mcp`
-  - `Flasherz Kids` + `card-server`
-  - `LtWatcher` + `clubsync` + `nagzerver`
-- Current Codex experiments are local-only:
-  - `ConversationLab`
-  - `CoordinationLab`
-  - `SharedSpaceLab`
-- MasterIndex reboot-readiness audit (2026-08-11): the canonical JSON files parse cleanly, every `entities[].id` has a key in `tasks/index.json`, and `current/handoffs/index.json` has no active directives.
-- Local path availability audit (2026-08-11): `~/123words`, `~/bookmaker`, and `~/mallinbook` are retained from prior observed scans but did not resolve as local directories on this machine, so they are recorded as gaps rather than removed.
-- MasterIndex instruction coverage audit (2026-08-05): 14 of 38 tracked repositories already have `AGENTS.md`; 24 require the standard injection.
+- ASC contains 23 app records: 20 map to repositories, two MastPex records are placeholders, and GigStand is the intentionally retained retired record.
+- LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
+- Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
+- Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
+- Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
+- The registry tracks 51 repositories, of which 49 remain active after the two retirements.
+- A canonical `billdonner.com/apps` publication bundle is now generated from `current/index.json`; the live IONOS site cannot be updated until its SFTP password is supplied.
+
+## Completed Reconciliation
+
+### Product lifecycle
+
+- LtWatcher was retired because its Clubsync dependency is absent and that capability has no useful path before PickledBalls v2.
+- Clubsync was removed from current PickledBalls dependencies and from recurring health checks. The source and database remain available for the v2 decision.
+- Card Server was checked against current consumers and the live service before retirement. All observed current consumers use Card Engine.
+- Card Server's historical Qross App Store ID was corrected before archival, and its deployment descriptor was removed to prevent accidental replacement of Card Engine.
+
+### Server Monitor
+
+- Production uses public `/healthz` and `/health` endpoints for Nagzerver and Card Engine.
+- Cardzerver records now use canonical entity id `card-engine-backend`.
+- Clubsync is no longer a monitored production target.
+- Live `/api/status` reported seven configured targets and successful HTTP 200 probes for Nagzerver and Cardzerver.
+- Remaining yellow/red display values are database thresholds such as cache rate and historical failed deliveries, not failed endpoint checks.
+
+### Version and build drift
+
+| App | Source | App Store Connect | Result |
+|---|---:|---:|---|
+| Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
+| amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
+| 100 Burfords | 1.1 (9) | 1.1 (9) draft | Aligned in GitHub commit `48192f3` |
+| Qross | 392 | 392 VALID | Aligned; clean worktree used without touching the active feature branch |
+| 123 Words | 1.12 (59) | 59 upload processing | Aligned to the open 1.12 train in commit `3f89587` |
+| SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
+
+Pfoliolio export used App Store-managed numbering, so Apple accepted both platforms as build 35. Source was aligned and pushed in commit `2d73c97`.
+
+## Card Server Compatibility Finding
+
+The retirement check exposed two response-contract differences when the legacy Card Server suite was pointed at production Card Engine:
+
+- Bulk deletion of a nonexistent item returns 422; the legacy suite expected 200.
+- An invalid daily-score date returns 404; the legacy suite expected 400.
+
+No current consumer was found to require Card Server, so these do not block retirement. They remain recorded for any Card Studio or legacy-client migration work.
 
 ## Current ASC Apps
 
-### ASC apps mapped to active local repos
+| App | Bundle ID | Repository | State |
+|---|---|---|---|
+| Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| amenbeats | com.billdonner.drumbeats | github:billdonner/drumbeats | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| SharedSpaceLab | com.1041soft.experiments.sharedspacelab | github:billdonner/sharedspacelab | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
+| SentiPods | com.sentipods.app | ~/sentipods | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| workin On | com.workinon.app | ~/workinon | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| 100 Burfords | com.billdonner.burfords | ~/100Burfords | 1.0 READY_FOR_SALE; 1.1 draft |
+| Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Famster | com.famster.app | ~/famster-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Nagz | com.nagz.app | ~/nagz-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Qross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
+| Flasherz Kids | com.billdonner.obo | ~/obo-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| KinFlash | com.billdonner.kinflash | ~/kinflash | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
+| Cardz Studio | com.billdonner.cardz-studio | ~/cardz-studio-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 
-| ASC app | Bundle ID | ASC app ID | Repo | Local version/build | ASC state |
-|---|---|---:|---|---|---|
-| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/pickledballs` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) |
-| Qross | `com.qross.app` | `6759799988` | `~/qross` | `0.2 (313)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)` | `IOS 1.0 READY_FOR_SALE` |
-| Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | `1.1 (47)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | `1.4.0 (359)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| KinFlash | `com.billdonner.kinflash` | `6762008872` | `~/kinflash` | `1.0.0 (62)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| workin On | `com.workinon.app` | `6762529338` | `~/workinon` | `0.9.1 (67)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 67 uploaded and processing 2026-08-09) |
-| Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | `1.0.0 (3)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | `0.1.0 (4)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` |
-| 123 Words | `com.123words.app` | `6766975041` | `~/123words` | `1.11 (40)` | `IOS 1.11 READY_FOR_SALE; 1.12 draft` |
-| SentiPods | `com.sentipods.app` | not surfaced in local scan | `~/sentipods` | `1.0 (15)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 14 uploaded) |
-| Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | `1.0 (14)` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` (TestFlight build 13 on both platforms) |
+Unmatched or intentionally retained:
 
-### Confirmed gaps
+- MastPex IOS and MastPex Mac are placeholders with no app repository.
+- GigStand is retired, removed from all 175 territories, and permanently retained by ASC because it was previously sold.
 
-- 3 ASC apps do not map to any repository (2026-08-13 live query): `MastPex IOS`, `MastPex Mac`, `GigStand`. The MastPex pair are placeholders per the owner; `GigStand` (app ID 428849240) predates this index and is at 1.020 READY_FOR_SALE.
-- **Phantom macOS records — resolved 2026-08-13.** `Oenora` and `SharedSpaceLab` held `MAC_OS 1.0` records against iOS-only projects. Both now set `SUPPORTS_MACCATALYST: YES` with `DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER: NO`, verified building via `xcodebuild -destination 'platform=macOS,variant=Mac Catalyst'`. Their existing ASC records can now receive builds under the same bundle ID.
-- **Age rating still unset on three records**, each pending an owner judgment call that should not be guessed, since the declaration is a representation to Apple:
-  - `Oenora` — a wine app, so `alcoholTobaccoOrDrugUseOrReferences` is core subject matter rather than incidental; an honest answer may force a 17+ rating.
-  - `SharedSpaceLab` — ships real peer-to-peer nearby chat and household broadcasts, so `messagingAndChat` is almost certainly true.
-  - `SentiPods` — surfaces unfiltered third-party podcast and news content, putting `profanityOrCrudeHumor` and `matureOrSuggestiveThemes` genuinely in play.
-- **SentiPods desktop screenshots — uploaded 2026-08-13.** Three at 2880×1800 (`01-brief`, `02-library`, `03-newsroom`), `assetDeliveryState` COMPLETE. `layout-verification.png` and `permission-check.png` were skipped as dev artifacts; the latter is also 5120×2880, which Apple rejects.
-- **Distribution signing is unavailable on this machine.** The account holds a valid `DISTRIBUTION` certificate (expires 2027-05-31), but its private key is not in this Mac's keychain — `security find-identity -v -p codesigning` returns only `Apple Development: William Donner (S4D2FRNLHV)`. App Store archives cannot be produced here. Export the identity as `.p12` from the other machine and import it, or archive there. **This is what blocks the outstanding `Mallinbook` macOS build.**
-- `SentiPods` `README.md` claims the Mac bundle is `com.sentipods.mac`, but `project.yml` sets the `SentipodsMac` target to `com.sentipods.app` — one universal-purchase record, not two apps. The README is stale.
-- `SentiPods` desktop screenshots existed locally (`AppStoreScreenshots/mac/`) but had never been uploaded to ASC, which is why the record showed zero. Committed 2026-08-13.
-- `grubber-ios` is active locally but did not match a current ASC app.
-- Retained repo paths `~/123words`, `~/bookmaker`, and `~/mallinbook` did not resolve locally during the August 11 reboot-readiness audit; keep their prior facts, but verify or restore the directories before doing local work against them. `~/mallinbook` was cloned to a scratch path on 2026-08-13 for the collateral pass and is still absent from the home directory.
-- `picklefortunes` repo remains active locally but its ASC listing was deleted (2026-08 cleanup).
+## Services
 
-## Shared Services
+| Service | Source | State | Consumers |
+|---|---|---|---|
+| bd-nagzerver.fly.dev | ~/nagzerver | live | Nagz, workin On, PickledBalls |
+| bd-cardzerver.fly.dev | ~/card-engine | live | Qross, Flasherz Kids, Cardz Studio, card-studio |
+| bd-grubber.fly.dev | ~/grubber | live | SentiPods, grubber clients |
+| bd-server-monitor.fly.dev | ~/server-monitor | live | operations, Zerver Monitor |
+| bd-pfolio.fly.dev | github:billdonner/pfolio | live | Pfoliolio |
+| api.famster.app | unidentified | live | Famster |
+| bd-clubsync.fly.dev | ~/clubsync | deferred | PickledBalls v2 only |
 
-- `bd-nagzerver.fly.dev` from `~/nagzerver` (Nagz/workin On/LtWatcher now; future PickledBalls service work)
-- `bd-clubsync.fly.dev` from `~/clubsync` (LtWatcher now; future PickledBalls IAP package)
-- `bd-cardzerver.fly.dev` from `~/card-server`
-- `bd-grubber.fly.dev` from `~/grubber`
-- `bd-server-monitor.fly.dev` from `~/server-monitor`
-- `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
+Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca`, `bd-oenora-recognition`, and `bd-podcast-brands`.
 
-## Changes Observed In This Refresh
+## Website Publication
 
-- `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
-- `Pfoliolio` is now cloned locally at `~/pfolio-app`; it was previously recorded only as `github:billdonner/pfolio-app`.
-- `PickledBalls` does not depend on `nagzerver` or `clubsync` in the current core release; both are future service connections, with `clubsync` tied to a future IAP package.
-- `PickledBalls` now links a local `PeerLink` package for local-network live game transport, expected at `~/peerlink`; that sibling package is missing on this machine, so local project regeneration/build verification is blocked until it is restored.
-- `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
-- `~/sentipods` completed a live smoke test and is now at local version `0.1.0 (8)`; its ASC mapping remains unverified in this refresh.
-- `~/sentipods` received a UI and resilience pass and is now at local version `0.1.0 (12)` following its TestFlight upload. During its live smoke test, `grubber`'s `/shows` endpoint responded while `/status` hung; the client safely loads the former first and treats status metadata as best effort.
-- `~/sentipods` is now at local version `1.0 (15)`, aligned with its ASC 1.0 PREPARE_FOR_SUBMISSION record. TestFlight build `14`, including its new icon, is uploaded.
-- `~/grubber` completed M2 of its pods-versus-news analysis pipeline: idempotent embeddings, topic clustering, daily rollups, and two new read endpoints for trending topics and topic detail.
-- `~/grubber` completed M3: LLM topic labeling, podcast-versus-news claim comparison, and daily digest generation. The producer-side LLM work has a `$5` soft and `$10` hard spending cap per UTC day; digest reads are available as markdown or JSON.
-- `~/grubber` completed M4 and its fast live-update lane: APNs device registration/dispatch, `/api/v1/updates/recent`, `/api/v1/topics/{topic_id}/compare`, and the public live producer view at `https://bd-grubber.fly.dev/progress` are deployed. The fast and full analysis lanes serialize SQLite writes with a shared lock.
-- Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
-- `~/workinon` is now at local version `0.9.1 (67)`. TestFlight build `67` was uploaded on 2026-08-09 and entered App Store Connect processing. The build includes the bundled MasterIndex operational board, inline detail reveal in both the MasterIndex and Focus tabs, and shorter recent-change titles.
-- `~/masterindex` regenerated the `workin On` feed so recent-change cards keep concise titles such as `Qross changed` while the body records the latest git commit subject when available, falling back to the last-modified date when the repo is unavailable.
+- `tools/generate_billdonner_apps.py` generates the active catalog from canonical JSON.
+- `publish/billdonner.com/apps/index.html` lists 19 active ASC-mapped apps and omits retired LtWatcher.
+- `publish/billdonner.com/apps/pfoliolio/index.html` supplies the marketing and support route expected by ASC.
+- `publish/billdonner.com/apps/oliopfolio/index.html` redirects the obsolete name to Pfoliolio.
+- The live IONOS site remains unchanged because no usable SFTP credential exists in the keychain, repository configuration, or available browser session.
 
-## Public Links
+## Remaining Gaps
 
-- PickledBalls website from local docs: `https://pickledballs.billdonner.com`
-- Famster backend domain from local docs: `https://api.famster.app`
-- grubber service: `https://bd-grubber.fly.dev`
-- nagzerver: `https://bd-nagzerver.fly.dev`
-- clubsync: `https://bd-clubsync.fly.dev`
-- card-server: `https://bd-cardzerver.fly.dev`
-- server-monitor: `https://bd-server-monitor.fly.dev`
-- Mallinbook repo (public GitHub): `https://github.com/billdonner/mallinbook`
-- Verified App Store page found during the August 2, 2026 link pass:
-  - 100 Burfords: `https://apps.apple.com/ca/app/100-burfords/id6766107636`
-  - 100 Burfords site (GitHub Pages, privacy policy): `https://billdonner.github.io/100Burfords/`
+- The IONOS SFTP password is required to publish the prepared `billdonner.com` fix.
+- Mallinbook's ASC privacy URL still points to a removed GitHub Pages route and returns 404.
+- SentiPods still has no ASC privacyPolicyUrl.
+- Age ratings remain unset for Oenora, SharedSpaceLab, and SentiPods pending owner decisions.
+- `~/peerlink` is missing and no matching GitHub repository was found, so PickledBalls project generation remains blocked on this machine.
+- `1041soft.com` still points at Namecheap forwarding/parking rather than its GitHub Pages source; HTTPS is unusable.
 
-For the other mapped ASC apps, no clearly public App Store page was verified in the web pass. That is consistent with most of them still being in `PREPARE_FOR_SUBMISSION`.
+## Operational Rule
 
-Rule going forward: if any entity has a verified external public link, it should be included in the shared index.
-
-## Main Ambiguities
-
-- `card-engine` and `card-server` overlap conceptually.
-- `PickledBalls` is still the live ASC name even though docs describe a rebrand path toward PickleNagz.
-- `PickledBalls` expects `~/peerlink` for its PeerLink local package, but this machine does not have that sibling repo and obvious GitHub names for it were not found.
-- `Flasherz Kids` docs and `project.yml` disagree on some build text; `project.yml` was treated as more current.
-- App Store Connect was not re-queried during this refresh; the inventory remains from the August 2 live query. SentiPods is mapped to `~/sentipods`, but its ASC app ID remains unsurfaced in the local scan.
-- The server-side cause of the observed `grubber /status` hang is not yet confirmed.
+Use `current/index.json` as source of truth, `tasks/index.json` for recurring routing, and `current/handoffs/index.json` for next-cycle directives. Public websites and `site/` are presentation surfaces and must be checked against JSON, ASC, repository settings, and live deployments.
