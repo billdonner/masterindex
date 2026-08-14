@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:23:29-05:00",
+  "generatedAt": "2026-08-14T13:16:00-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -238,6 +238,27 @@
     "picklefamilia-asc-app": [],
     "screenker-asc-app": [],
     "zerver-monitor-asc-app": [],
+    "app-feedback-inbox": [
+      {
+        "taskId": "app-feedback-operational-check",
+        "name": "App Feedback operational check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Verify the local dashboard, two-hour collector, deduplication ledger, screenshot preservation, and collection error count without exporting tester data.",
+        "expectedInputs": [
+          "current/index.json",
+          "~/Library/Application Support/AppFeedback/items.json",
+          "~/Library/Logs/app-feedback-collect.log",
+          "~/Library/Logs/app-feedback-server.log"
+        ],
+        "expectedOutputs": [
+          "Updated App Feedback operational facts or a recorded gap"
+        ]
+      }
+    ],
     "local-model-lab": [],
     "adspill-sim": [],
     "mastpex-ios-asc-app": [],
