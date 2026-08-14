@@ -1403,10 +1403,10 @@
       "kind": "app",
       "cluster": "Oenora",
       "status": "asc-mapped",
-      "lastModified": "2026-08-12",
+      "lastModified": "2026-08-13",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
-      "release": "ASC app 6799520155; iOS 1.0 build 1 is VALID and approved for external TestFlight distribution as of 2026-08-12, with a public join link. Working name remains pending formal trademark and domain clearance.",
+      "release": "ASC app 6799520155; iOS 1.0 build 3 submitted to external TestFlight (WAITING_FOR_REVIEW) with a public join link. Working name remains pending formal trademark and domain clearance.",
       "description": "Personal wine knowledge system for collectors: a working iPhone photo-to-cellar spike plus a longer-term Mac workspace and collection-aware AI roadmap.",
       "dependencies": [
         "oenora-recognition-service"
@@ -1432,7 +1432,9 @@
         "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge.",
         "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed.",
         "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB).",
-        "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW."
+        "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW.",
+        "2026-08-13: CloudKit sync shipped and verified on two physical iPads (ADR-006: CKSyncEngine beside local JSON, single Cellar zone in the private database, confirmed-cellar records only, last-writer-wins). Gated off by default via OENORA_CLOUDKIT_SYNC_ENABLED; Jon's beta build unaffected.",
+        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target."
       ]
     },
     {
