@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T15:08:27-05:00",
+  "generatedAt": "2026-08-14T15:27:32-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -92,12 +92,12 @@
       {
         "taskId": "nagz-release-check",
         "name": "Nagz release check",
-        "status": "active",
+        "status": "paused",
         "cadence": {
           "kind": "rrule",
           "value": "FREQ=DAILY;INTERVAL=1"
         },
-        "purpose": "Track ASC release-state changes and discover any public app page for Nagz.",
+        "purpose": "Retain the legacy release record without advancing Nagz independently of the SharedSpaceLab successor decision.",
         "expectedInputs": [
           "current/index.json"
         ],
@@ -147,12 +147,12 @@
       {
         "taskId": "famster-link-check",
         "name": "Famster link check",
-        "status": "active",
+        "status": "paused",
         "cadence": {
           "kind": "rrule",
           "value": "FREQ=WEEKLY;INTERVAL=1"
         },
-        "purpose": "Validate the backend domain and discover any public app or marketing links for Famster.",
+        "purpose": "Retain the concept-shell record without treating api.famster.app as an independent backend or advancing Famster in parallel with SharedSpaceLab.",
         "expectedInputs": [
           "current/index.json"
         ],
@@ -193,12 +193,16 @@
           "kind": "rrule",
           "value": "FREQ=HOURLY;INTERVAL=6"
         },
-        "purpose": "Confirm the shared backend remains reachable and linked correctly in the index.",
+        "purpose": "Confirm the mixed shared backend remains reachable, preserve consumer-route coverage, and track reconciliation of the deployed-source recovery branch with Git main.",
         "expectedInputs": [
-          "current/index.json"
+          "current/index.json",
+          "~/nagzerver",
+          "recovery/deployed-2026-06-30"
         ],
         "expectedOutputs": [
-          "Updated backend status if it changes"
+          "Updated backend status if it changes",
+          "Recorded route or source-parity drift",
+          "No retirement while active non-Nagz consumers remain"
         ]
       }
     ],
@@ -223,7 +227,29 @@
         ]
       }
     ],
-    "sharedspace-lab": [],
+    "sharedspace-lab": [
+      {
+        "taskId": "sharedspace-household-successor-check",
+        "name": "SharedSpace household successor check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=WEEKLY;INTERVAL=1"
+        },
+        "purpose": "Track SharedSpaceLab as the active household-communications successor without silently coupling it to Nagzerver or expanding Famster in parallel.",
+        "expectedInputs": [
+          "current/index.json",
+          "~/Documents/Codex/Experiments/SharedSpaceLab",
+          "~/Documents/Codex/Experiments/ConversationLab",
+          "~/Documents/Codex/Experiments/CoordinationLab"
+        ],
+        "expectedOutputs": [
+          "Updated successor capability and test facts",
+          "Explicit record of any proposed Nagz capability migration",
+          "No backend dependency added without a demonstrated household use case"
+        ]
+      }
+    ],
     "conversationlab-package": [],
     "coordinationlab-package": [],
     "amenbeats-app": [],
