@@ -191,6 +191,45 @@ redeployment; until then, main is not a reproducible source for production.
 - The generated files were published to IONOS on 2026-08-14 and match the live HTTPS responses by SHA-1.
 - The previous catalog and LtWatcher directory were retained under `/_archive`; the public LtWatcher route now returns 404.
 
+### URL Standardization (2026-08-14)
+
+`1041soft.com` is the canonical support, marketing, and privacy host. ASC URLs for
+**12 apps** were standardized onto it and each verified 200: Qross, Nagz, workin On,
+Flasherz Kids, Zerver Monitor, Mallinbook, SentiPods, Pfoliolio, Screenker, Oenora,
+SharedSpaceLab, PickleFamilia.
+
+**Do not regenerate ASC support routes back to `billdonner.com/apps/...`.**
+`tools/generate_billdonner_apps.py` builds the billdonner.com catalog from this index
+and previously supplied the ASC support route for several apps. That catalog remains a
+portfolio index; it is no longer the ASC support surface.
+
+Deliberately not standardized: 100 Burfords and 123 Words (public repos, resolve);
+PickledBalls (`pickledballs.billdonner.com`, its own domain); Famster, KinFlash,
+LtWatcher, amenbeats (billdonner.com routes resolve, but none has a privacy URL);
+Cardz Studio and the MastPex pair (nothing set); GigStand (`gigstand.net` is dead, and
+the app is retired).
+
+### Pages sweep (2026-08-14)
+
+Every private repository was swept for enabled GitHub Pages. Disabled on qross, nagz,
+nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook, pfolio-app, and
+picklefamilia-ios.
+
+Three remain enabled **deliberately**:
+
+- `nagzerver` publishes **nagz.online** from `gh-pages`. Built output only — internal
+  docs on `main` are not exposed (`ARCHITECTURE.md`, `POLICY_MATRIX.md`,
+  `API_SURFACE.md` all verified 404). Do not disable.
+- `pickledballs` publishes **pickledballs.billdonner.com** from `gh-pages` and serves
+  the live PickledBalls ASC URLs. Do not disable.
+- `alities-mobile` publishes `main/docs` and exposes `appstore-copy.md` (verified 200).
+  Minor; migrate or disable when convenient.
+
+The rule is narrower than "no Pages on private repos": never publish a private repo's
+`docs/` directory, because that is where internal material lives. Publishing built
+output from a `gh-pages` branch is safe for exposure, though it still bills Actions
+minutes.
+
 ### Company Website — `1041soft.com` (live 2026-08-14)
 
 Canonical app-website home. Public repo `billdonner/1041soft-site`, served by GitHub
