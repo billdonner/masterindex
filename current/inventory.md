@@ -15,11 +15,14 @@ As of Friday, August 14, 2026.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
-- The registry tracks 56 repositories, of which 52 remain active after the feedback replacement and prior retirements.
+- The registry tracks 56 repositories, of which 51 remain active after the feedback replacement, prior retirements, and the `grubber-ios` obsolete decision.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
 - The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment.
+- Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
+- Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
+- `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 
 ## Product Lines
 
@@ -38,6 +41,25 @@ and an MCP or automation surface when that fits the product.
 The remaining apps are not yet classified. Presentation drift remains open until that is done:
 the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
 `/workinon/` even though workin On belongs exclusively to BillDonner.com.
+
+## Household Communications Lineage
+
+| Component | Honest role | Current direction |
+|---|---|---|
+| SharedSpaceLab | Active successor prototype | Continue the friendly, local-first shared household surface on iPhone and wall-mounted iPad; Mac Catalyst, local MCP, and nearby peer communication already exist |
+| ConversationLab | Reusable conversation kernel candidate | Preserve and harden behind SharedSpaceLab use cases |
+| CoordinationLab | Reusable coordination kernel candidate | Preserve and harden behind SharedSpaceLab use cases |
+| Nagz | Working legacy reference | Mine its implemented family, connection, reminder, remote messaging, and APNs behavior; do not add product features by default |
+| Famster | Concept-only shell | Stop treating it as an independent product; its visible feature areas are placeholders and 1041Kit initialization is commented out |
+| 1041Kit | Capable generic package, currently unwired in Famster | Reuse only if the successor later needs its auth, API, GRDB, sync, or WebSocket layers |
+| Nagzerver | Shared production infrastructure | Keep operating independently of the product-line decision; separate or retire routes consumer by consumer |
+
+SharedSpaceLab intentionally has no Nagz, Famster, account, or remote-backend runtime dependency
+today. That is the correct experimental boundary, not evidence that the projects are unrelated.
+Prove the local household interaction model first. Then migrate only the Nagz server capabilities
+that the product demonstrates it needs, such as remote identity, off-LAN communication, or APNs.
+The eventual public name, BillDonner.com versus 1041soft.com assignment, business model, and
+native-Mac requirement remain open.
 
 ## Feedback Recovery
 
@@ -98,15 +120,15 @@ No current consumer was found to require Card Server, so these do not block reti
 | Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | amenbeats | com.billdonner.drumbeats | github:billdonner/drumbeats | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | Active successor prototype; iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SentiPods | com.sentipods.app | ~/sentipods | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | workin On | com.workinon.app | ~/workinon | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | 100 Burfords | com.billdonner.burfords | ~/100Burfords | 1.0 READY_FOR_SALE; 1.1 draft |
 | Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
-| Famster | com.famster.app | ~/famster-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
-| Nagz | com.nagz.app | ~/nagz-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Famster | com.famster.app | ~/famster-ios | Concept-only shell; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
+| Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | Qross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
@@ -125,16 +147,29 @@ Unmatched or intentionally retained:
 
 | Service | Source | State | Consumers |
 |---|---|---|---|
-| bd-nagzerver.fly.dev | ~/nagzerver | live | Nagz, workin On, PickledBalls |
+| bd-nagzerver.fly.dev | ~/nagzerver | live | Nagz, workin On, PickledBalls, legacy PickleFamilia |
 | bd-cardzerver.fly.dev | ~/card-engine | live | Qross, Flasherz Kids, Cardz Studio, card-studio |
 | bd-grubber.fly.dev | ~/grubber | live | SentiPods, grubber clients |
 | bd-server-monitor.fly.dev | ~/server-monitor | live | operations, Zerver Monitor |
 | bd-pfolio.fly.dev | github:billdonner/pfolio | live | Pfoliolio |
-| api.famster.app | unidentified | live | Famster |
+| api.famster.app | ~/nagzerver | alias | Famster concept shell; same deployment and API as Nagzerver |
 | bd-oenora-recognition.fly.dev | ~/oenora | live | Oenora |
 | bd-clubsync.fly.dev | ~/clubsync | deferred | PickledBalls v2 only |
 
 Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca` and `bd-podcast-brands`.
+
+### Nagzerver source recovery
+
+The live Fly release exposes 37 current `/api/v1/pb/*` PickledBalls routes, 14 legacy
+`/api/v1/pickle/*` routes, seven workin On routes, four residual clubwatch routes, and the Nagz
+family API. The PickledBalls and PickleFamilia implementation was absent from every inspected
+Git `main` ref. The exact non-secret source from Fly release v100 was preserved at commit
+`a57211b` on private branch `recovery/deployed-2026-06-30` without changing production or main.
+
+That recovered tree generates all 163 live API paths. Its full suite passes 1,113 of 1,114 tests.
+The remaining failure, `tests/test_pickleball_sessions.py::test_player_schedule`, shows a confirmed
+occurrence omitted from `/api/v1/pb/schedule`. Review and repair that branch before any merge or
+redeployment; until then, main is not a reproducible source for production.
 
 ## Feedback Triage
 
@@ -191,6 +226,8 @@ assigned workin On exclusively to the permanently free BillDonner.com line, maki
 - `~/peerlink` is missing and no matching GitHub repository was found, so PickledBalls project generation remains blocked on this machine.
 - ~~`1041soft.com` still points at Namecheap forwarding/parking; HTTPS is unusable.~~ **Resolved 2026-08-14** — see Company Website below. Apex now serves from GitHub Pages over enforced HTTPS.
 - Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
+- Nagzerver Git `main` does not reproduce the deployed PickledBalls and PickleFamilia API. The exact deployed source is preserved on `recovery/deployed-2026-06-30`, but its one failing schedule test must be resolved before review and merge.
+- SharedSpaceLab's public product name, product-line assignment, business model, and eventual server boundary remain undecided. Famster must not be expanded as a parallel implementation while those decisions are open.
 
 ## Operational Rule
 

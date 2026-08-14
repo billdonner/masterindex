@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T15:08:27-05:00",
+  "generatedAt": "2026-08-14T15:27:32-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -28,16 +28,19 @@
       "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026.",
       "August 14: consolidated all app websites onto 1041soft.com (public repo billdonner/1041soft-site, GitHub Pages, Let's Encrypt cert valid to 2026-11-12). Disabled GitHub Pages on seven private repos, which closed an unintended public exposure of internal documents.",
       "August 14: replaced the repeating zkraper email/watermark workflow with a local App Feedback dashboard that collects TestFlight comments, screenshots, crashes, and App Store reviews across all active ASC apps. The working store remains local; client-encrypted, versioned recovery snapshots are written to iCloud Drive.",
-      "August 14 owner policy: BillDonner.com is the permanently free personal/children's/utility product line; 1041soft.com is the commercial-grade product line. workin On and both MasterIndex Explorer binaries are explicitly assigned to BillDonner.com."
+      "August 14 owner policy: BillDonner.com is the permanently free personal/children's/utility product line; 1041soft.com is the commercial-grade product line. workin On and both MasterIndex Explorer binaries are explicitly assigned to BillDonner.com.",
+      "August 14 household-communications audit: SharedSpaceLab is the active successor experiment, Nagz is the working legacy reference, and Famster is a thin concept shell rather than an implemented product. Nagzerver remains shared production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On; SharedSpaceLab has no runtime dependency on it.",
+      "August 14 deployment recovery: the exact non-secret source from Fly release v100 of bd-nagzerver was preserved on private branch recovery/deployed-2026-06-30 because production PickledBalls and PickleFamilia routes were absent from Git main. The recovered source matches all 163 live API paths; 1,113 tests pass and one PickledBalls schedule test fails.",
+      "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history."
     ]
   },
   "summary": {
     "ascApps": 23,
     "mappedAscApps": 20,
     "unmatchedAscApps": 3,
-    "activeRepos": 52,
-    "clusters": 16,
-    "liveServices": 7,
+    "activeRepos": 51,
+    "clusters": 14,
+    "liveServices": 6,
     "collaborators": 3,
     "unreachableServices": 0,
     "ascMacOsRecords": 8,
@@ -62,6 +65,27 @@
       "domain": "https://1041soft.com/",
       "pricingPolicy": "commercial",
       "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model."
+    }
+  ],
+  "programs": [
+    {
+      "id": "household-communications",
+      "name": "Household Communications",
+      "status": "active-reframing",
+      "activeDirection": "SharedSpaceLab",
+      "legacyReference": "Nagz",
+      "conceptShell": "Famster",
+      "reusableKernels": [
+        "ConversationLab",
+        "CoordinationLab"
+      ],
+      "infrastructureBoundary": "Nagzerver is shared legacy production infrastructure, not the assumed backend for SharedSpaceLab.",
+      "targetContext": "A friendly family-oriented shared voice-and-screen surface, tested on wall-mounted iPads as a proxy for anticipated touchscreen home devices.",
+      "openDecisions": [
+        "Choose the eventual public product name and product line.",
+        "Choose whether any server-backed identity, remote messaging, or APNs behavior should be migrated from Nagz after the local household model is proven.",
+        "Do not expand Famster independently while SharedSpaceLab is the active successor experiment."
+      ]
     }
   ],
   "flyOperations": {
@@ -373,19 +397,22 @@
       ]
     },
     {
-      "name": "Nagz",
-      "maturity": "multi-repo product platform",
-      "summary": "Main family-oriented app platform with mobile client, backend, AI package, web client, and tooling.",
+      "name": "Household Communications",
+      "maturity": "active successor prototype with working legacy reference",
+      "summary": "One product lineage: SharedSpaceLab is the active family-oriented successor experiment, Nagz is the working legacy reference, and Famster is a concept shell. ConversationLab and CoordinationLab are the reusable local kernels.",
       "highlights": [
-        "Nagz",
-        "nagzerver",
-        "nagz-web",
-        "nagz-ai",
-        "workin On",
-        "workinon-mcp"
+        "SharedSpaceLab",
+        "ConversationLab",
+        "CoordinationLab",
+        "Nagz (legacy reference)",
+        "Famster (concept shell)",
+        "1041Kit"
       ],
       "watchpoints": [
-        "Shared backend carries many responsibilities"
+        "The eventual public name, product line, and business model remain undecided",
+        "SharedSpaceLab is deliberately local-first and has no Nagzerver runtime dependency",
+        "Nagzerver cannot be retired with Nagz because PickledBalls, PickleFamilia, and workin On use it",
+        "Famster has an ASC record and TestFlight link but its current source is not a functional product"
       ]
     },
     {
@@ -400,18 +427,6 @@
       ],
       "watchpoints": [
         "Card Engine is the sole live backend; Card Server is archived as historical implementation"
-      ]
-    },
-    {
-      "name": "Famster",
-      "maturity": "early app with backend URL in place",
-      "summary": "Smaller ecosystem anchored by the Famster app and the 1041Kit package.",
-      "highlights": [
-        "Famster",
-        "1041Kit"
-      ],
-      "watchpoints": [
-        "Backend repo not identified"
       ]
     },
     {
@@ -449,34 +464,17 @@
       ]
     },
     {
-      "name": "Codex Experiments",
-      "maturity": "prototype packages plus ASC-mapped app",
-      "summary": "Conversation and coordination experiments now stored on GitHub; SharedSpaceLab is an ASC-mapped iOS and Mac Catalyst app, not a local-only lab.",
-      "highlights": [
-        "ConversationLab",
-        "CoordinationLab",
-        "SharedSpaceLab"
-      ],
-      "watchpoints": [
-        "None of the three repositories is cloned on this machine",
-        "SharedSpaceLab has no uploaded ASC build yet",
-        "No commits yet",
-        "No ASC or deployed service path"
-      ]
-    },
-    {
       "name": "Grubber",
-      "maturity": "active service plus new client app",
-      "summary": "Transcript-oriented service with a live HTTP and MCP surface plus a newly started client.",
+      "maturity": "active service and SentiPods client; obsolete prototype retained",
+      "summary": "Transcript-oriented service with live HTTP and MCP surfaces and SentiPods as the current client; grubber-ios is obsolete.",
       "highlights": [
         "grubber",
         "grubber-ios",
         "Sentipods"
       ],
       "watchpoints": [
-        "grubber-ios remains unmatched in ASC; SentiPods is mapped as app 6797132650",
-        "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed",
-        "Two local clients are not yet matched in the recorded ASC inventory"
+        "grubber-ios is obsolete by owner decision; SentiPods is the current mapped client",
+        "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed"
       ]
     },
     {
@@ -497,10 +495,12 @@
       "maturity": "live internal tooling",
       "summary": "Portfolio-wide monitoring and ops tooling, not tied to any single product cluster.",
       "highlights": [
-        "server-monitor"
+        "server-monitor",
+        "nagzerver"
       ],
       "watchpoints": [
-        "Monitors nagzerver, clubsync, and card-server across clusters"
+        "Nagzerver is a mixed production backend whose deployed source recovery branch must be reconciled with main",
+        "Server Monitor omits deferred Clubsync and retired Card Server"
       ]
     },
     {
@@ -663,13 +663,15 @@
       "id": "nagz-app",
       "name": "Nagz",
       "kind": "app",
-      "cluster": "Nagz",
-      "status": "asc-mapped",
-      "lastModified": "2026-04-12",
+      "cluster": "Household Communications",
+      "program": "household-communications",
+      "programRole": "working-legacy-reference",
+      "status": "legacy-reference",
+      "lastModified": "2026-08-14",
       "repo": "~/nagz-ios",
       "bundleId": "com.nagz.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
-      "description": "Family-oriented AI-mediated reminder app with split on-device and server-side AI architecture.",
+      "release": "Working legacy implementation; ASC iOS 1.0 PREPARE_FOR_SUBMISSION remains retained",
+      "description": "Substantial family reminder and group-communication implementation retained as the working legacy reference for the SharedSpaceLab successor effort.",
       "dependencies": [
         "nagzerver",
         "nagz-web",
@@ -681,7 +683,9 @@
         "appStore": null
       },
       "notes": [
-        "Shares API versioning with nagzerver and nagz-web."
+        "Shares API versioning with nagzerver and nagz-web.",
+        "The source contains real family, connection, and reminder flows with more than 215 tests; substantive product work last occurred in April 2026.",
+        "Do not add a new Nagz feature by default. First decide whether it belongs in SharedSpaceLab or in a narrowly retained Nagzerver compatibility surface."
       ]
     },
     {
@@ -736,7 +740,7 @@
       "id": "workinon-app",
       "name": "workin On",
       "kind": "app",
-      "cluster": "Nagz",
+      "cluster": "Standalone",
       "status": "asc-mapped",
       "lastModified": "2026-08-09",
       "repo": "~/workinon",
@@ -768,13 +772,15 @@
       "id": "famster-app",
       "name": "Famster",
       "kind": "app",
-      "cluster": "Famster",
-      "status": "asc-mapped",
-      "lastModified": "2026-04-30",
+      "cluster": "Household Communications",
+      "program": "household-communications",
+      "programRole": "concept-shell",
+      "status": "concept-only",
+      "lastModified": "2026-08-14",
       "repo": "~/famster-ios",
       "bundleId": "com.famster.app",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
-      "description": "Family coordination app using 1041Kit and an external backend at api.famster.app.",
+      "release": "Concept shell only; ASC iOS 1.0 PREPARE_FOR_SUBMISSION and TestFlight record remain retained",
+      "description": "Thin family-product concept shell created during the Nagz family split; it is not an independently implemented product and should not compete with SharedSpaceLab.",
       "dependencies": [
         "1041Kit",
         "api.famster.app"
@@ -787,7 +793,9 @@
         "appStore": null
       },
       "notes": [
-        "Backend repo was not identified in this scan."
+        "Home, Family, and Calendar are Coming Soon placeholders; the app has only seven Swift source files.",
+        "1041Kit initialization is commented out, so the current app does not use its nominal auth, API, database, sync, or WebSocket package.",
+        "api.famster.app is a custom-domain alias of the Nagzerver deployment, not a separate Famster backend; the app warms the wrong /version path and receives the static Nagz web fallback."
       ]
     },
     {
@@ -904,7 +912,7 @@
       "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, and the public live progress view are deployed",
       "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
       "dependencies": [
-        "grubber-ios"
+        "SentiPods"
       ],
       "links": {
         "website": "https://bd-grubber.fly.dev",
@@ -926,12 +934,12 @@
       "name": "grubber-ios",
       "kind": "app",
       "cluster": "Grubber",
-      "status": "gap",
-      "lastModified": "2026-07-31",
+      "status": "obsolete",
+      "lastModified": "2026-08-14",
       "repo": "~/grubber-ios",
       "bundleId": "com.billdonner.grubber",
-      "release": "Local active client app, no matching ASC app found",
-      "description": "New iOS or macOS client app paired with the grubber service.",
+      "release": "Obsolete by owner decision on 2026-08-14; superseded by SentiPods",
+      "description": "Historical prototype client for the grubber service, retained only as source history.",
       "dependencies": [
         "grubber"
       ],
@@ -940,7 +948,8 @@
         "appStore": null
       },
       "notes": [
-        "Active locally but not matched in ASC."
+        "No further release or ASC work is expected.",
+        "SentiPods is the current iOS and macOS client."
       ]
     },
     {
@@ -976,25 +985,28 @@
       "id": "nagzerver-backend",
       "name": "nagzerver",
       "kind": "backend",
-      "cluster": "Nagz",
+      "cluster": "Infrastructure",
       "status": "live",
-      "lastModified": "2026-08-01",
+      "lastModified": "2026-08-14",
       "repo": "~/nagzerver",
       "bundleId": null,
       "release": "Live on Fly at bd-nagzerver.fly.dev",
-      "description": "Multi-product backend serving Nagz, workinOn routes, clubwatch APNs transport, and future PickledBalls service work.",
+      "description": "Mixed shared production backend serving Nagz, current PickledBalls and legacy PickleFamilia APIs, workin On sync and APNs, plus residual clubwatch transport routes.",
       "dependencies": [
         "Nagz",
         "workin On",
-        "LtWatcher",
-        "PickledBalls"
+        "PickledBalls",
+        "PickleFamilia"
       ],
       "links": {
         "website": "https://bd-nagzerver.fly.dev",
         "websiteSource": "local docs"
       },
       "notes": [
-        "One of the clearest shared backbones across the portfolio."
+        "Do not retire this service as part of any Nagz or Famster decision; active non-Nagz consumers depend on it.",
+        "Production exposes 37 /api/v1/pb paths, 14 /api/v1/pickle paths, seven /api/v1/workinon paths, and four residual clubwatch/LtWatcher paths in addition to the Nagz family API.",
+        "Fly release v100 source was missing from Git main and was recovered exactly to private branch recovery/deployed-2026-06-30 at commit a57211b.",
+        "Recovered source generates all 163 live API paths. Its suite passes 1,113 of 1,114 tests; tests/test_pickleball_sessions.py::test_player_schedule fails because a confirmed occurrence is omitted from /api/v1/pb/schedule."
       ]
     },
     {
@@ -1099,13 +1111,15 @@
       "id": "sharedspace-lab",
       "name": "SharedSpaceLab",
       "kind": "app",
-      "cluster": "Codex Experiments",
-      "status": "asc-mapped",
-      "lastModified": "2026-08-13",
+      "cluster": "Household Communications",
+      "program": "household-communications",
+      "programRole": "active-successor-prototype",
+      "status": "active-prototype",
+      "lastModified": "2026-08-14",
       "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
       "bundleId": "com.1041soft.experiments.sharedspacelab",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; GitHub project 0.1 (2) supports Mac Catalyst; no uploaded ASC builds",
-      "description": "Shared household voice-and-screen iPad experiment built from ConversationLab and CoordinationLab.",
+      "description": "Active local-first successor experiment that reworks the useful Nagz and Famster communication concepts into a friendly shared household voice-and-screen surface.",
       "dependencies": [
         "ConversationLab",
         "CoordinationLab"
@@ -1116,21 +1130,24 @@
         "github": "https://github.com/billdonner/sharedspacelab"
       },
       "notes": [
-        "Explicitly does not connect to PickledBalls, Nagz, or any backend.",
-        "Local clone verified at ~/Documents/Codex/Experiments/SharedSpaceLab on 2026-08-14."
+        "The current runtime is deliberately independent of Nagz, Famster, PickledBalls, accounts, and remote backends; that is a technical boundary, not a denial of product lineage.",
+        "Provides adaptive iPhone/iPad household UI, nearby peer chat through Multipeer Connectivity, family broadcasts, commitments, roles, schedules, two-person lifecycles, and multi-person rehearsals.",
+        "The repository reports 52 tests, includes a local MCP server and harness, and supports Mac Catalyst rather than a native Mac target.",
+        "Wall-mounted iPads are the present test proxy for anticipated touchscreen home devices.",
+        "Its public product name, product line, server strategy, and commercial posture remain undecided."
       ]
     },
     {
       "id": "conversationlab-package",
       "name": "ConversationLab",
       "kind": "package",
-      "cluster": "Codex Experiments",
+      "cluster": "Household Communications",
       "status": "lab",
       "lastModified": "2026-08-05",
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "bundleId": null,
       "release": "Local clone verified at ~/Documents/Codex/Experiments/ConversationLab",
-      "description": "Package providing ConversationCore and AppleConversation.",
+      "description": "Reusable conversation kernel candidate providing ConversationCore and AppleConversation for the household-communications successor.",
       "dependencies": [
         "SharedSpaceLab"
       ],
@@ -1139,20 +1156,20 @@
         "github": "https://github.com/billdonner/conversationlab"
       },
       "notes": [
-        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
+        "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product."
       ]
     },
     {
       "id": "coordinationlab-package",
       "name": "CoordinationLab",
       "kind": "package",
-      "cluster": "Codex Experiments",
+      "cluster": "Household Communications",
       "status": "lab",
       "lastModified": "2026-08-05",
       "repo": "~/Documents/Codex/Experiments/CoordinationLab",
       "bundleId": null,
       "release": "Local clone verified at ~/Documents/Codex/Experiments/CoordinationLab",
-      "description": "Pure Swift coordination model package used in SharedSpaceLab.",
+      "description": "Reusable pure-Swift coordination kernel candidate used by the household-communications successor.",
       "dependencies": [
         "SharedSpaceLab"
       ],
@@ -1161,7 +1178,7 @@
         "github": "https://github.com/billdonner/coordinationlab"
       },
       "notes": [
-        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
+        "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product."
       ]
     },
     {
@@ -1671,9 +1688,10 @@
         "Nagz",
         "PickledBalls",
         "workin On",
-        "LtWatcher transport"
+        "PickleFamilia (legacy)",
+        "LtWatcher transport (residual routes only)"
       ],
-      "note": "Most shared utility backend in the inventory.",
+      "note": "Mixed shared production backend. Fly release v100 source is preserved at private branch recovery/deployed-2026-06-30 because its PickledBalls and PickleFamilia implementation was absent from Git main; do not retire it with Nagz.",
       "status": "live"
     },
     {
@@ -1701,7 +1719,7 @@
       "name": "bd-grubber.fly.dev",
       "repo": "~/grubber",
       "consumers": [
-        "grubber clients"
+        "SentiPods"
       ],
       "note": "Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive.",
       "status": "live"
@@ -1717,12 +1735,12 @@
     },
     {
       "name": "api.famster.app",
-      "repo": "unidentified",
+      "repo": "~/nagzerver",
       "consumers": [
-        "Famster"
+        "Famster concept shell"
       ],
-      "note": "The /version endpoint returned 200; backend repo remains unidentified.",
-      "status": "live"
+      "note": "Custom-domain alias to the same Nagzerver deployment, not a separate Famster service. /api/v1/version returns the Nagz API version; /version returns the static Nagz web fallback that the Famster shell currently warms.",
+      "status": "alias"
     },
     {
       "name": "bd-pfolio.fly.dev",
@@ -1778,7 +1796,7 @@
       "branch": "main",
       "last2026Commit": "2026-04-24",
       "kind": "shared package",
-      "role": "Famster dependency"
+      "role": "Generic auth, API, GRDB, sync, and WebSocket package with 87 tests; nominal Famster dependency, but current Famster initialization is commented out"
     },
     {
       "repo": "~/CourtScheduler",
@@ -1868,8 +1886,8 @@
       "repo": "~/famster-ios",
       "branch": "main",
       "last2026Commit": "2026-04-30",
-      "kind": "app",
-      "role": "ASC-mapped Famster app"
+      "kind": "concept app",
+      "role": "ASC-mapped seven-file Famster concept shell; not an independently functional product"
     },
     {
       "repo": "~/grubber",
@@ -1882,8 +1900,8 @@
       "repo": "~/grubber-ios",
       "branch": "main",
       "last2026Commit": "2026-07-31",
-      "kind": "app",
-      "role": "Local app, no ASC match found"
+      "kind": "obsolete app",
+      "role": "Obsolete prototype client retained as history; superseded by SentiPods"
     },
     {
       "repo": "~/kinflash",
@@ -1924,8 +1942,8 @@
       "repo": "~/nagz-ios",
       "branch": "main",
       "last2026Commit": "2026-08-01",
-      "kind": "app",
-      "role": "ASC-mapped Nagz app"
+      "kind": "legacy app",
+      "role": "Working legacy family-communications reference for the SharedSpaceLab successor effort"
     },
     {
       "repo": "~/nagz-web",
@@ -1939,7 +1957,7 @@
       "branch": "main",
       "last2026Commit": "2026-08-01",
       "kind": "backend",
-      "role": "Live Nagz, workin On, clubwatch, and PickledBalls backend"
+      "role": "Mixed live Nagz, PickledBalls, PickleFamilia, workin On, and residual clubwatch backend; deployed source recovery preserved on recovery/deployed-2026-06-30"
     },
     {
       "repo": "~/obo",
@@ -2112,23 +2130,23 @@
     {
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "branch": "main",
-      "last2026Commit": "no commits yet",
+      "last2026Commit": "2026-08-05",
       "kind": "shared package",
-      "role": "New local experiment"
+      "role": "Reusable conversation kernel candidate for SharedSpaceLab"
     },
     {
       "repo": "~/Documents/Codex/Experiments/CoordinationLab",
       "branch": "main",
-      "last2026Commit": "no commits yet",
+      "last2026Commit": "2026-08-05",
       "kind": "shared package",
-      "role": "New local experiment"
+      "role": "Reusable coordination kernel candidate for SharedSpaceLab"
     },
     {
       "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
       "branch": "main",
-      "last2026Commit": "no commits yet",
+      "last2026Commit": "2026-08-14",
       "kind": "app experiment",
-      "role": "New local-only iPad experiment"
+      "role": "Active local-first household-communications successor prototype for iPhone, wall-mounted iPad, and Mac Catalyst"
     },
     {
       "repo": "github:billdonner/adspill",
@@ -2193,6 +2211,21 @@
       "kind": "deployment-source-inconsistency-resolved",
       "observedAt": "2026-08-14",
       "summary": "Resolved. Card Engine is the sole verified source for bd-cardzerver.fly.dev; Card Server's Fly descriptor was removed and its repository archived."
+    },
+    {
+      "kind": "deployment-source-recovery",
+      "observedAt": "2026-08-14",
+      "summary": "OPEN. Fly release v100 of bd-nagzerver contains the active PickledBalls and legacy PickleFamilia implementations, but those files are absent from every Git main ref inspected. The exact non-secret deployed source is preserved on private branch recovery/deployed-2026-06-30 at a57211b and generates all 163 live API paths. Review it before merging: 1,113 of 1,114 tests pass, while tests/test_pickleball_sessions.py::test_player_schedule exposes a confirmed-occurrence schedule defect. Until reconciled, Git main cannot reproduce production."
+    },
+    {
+      "kind": "product-lineage-reframed",
+      "observedAt": "2026-08-14",
+      "summary": "Nagz, Famster, and SharedSpaceLab are one household-communications lineage rather than three independent products. SharedSpaceLab is the active successor prototype, Nagz the working legacy reference, and Famster a concept-only shell. ConversationLab and CoordinationLab are reusable kernel candidates. Product naming, product-line assignment, and any future server migration remain open decisions."
+    },
+    {
+      "kind": "obsolete-client-resolved",
+      "observedAt": "2026-08-14",
+      "summary": "Resolved by owner decision: grubber-ios is obsolete and superseded by SentiPods. Retain its repository as history; do not pursue ASC mapping or release work."
     },
     {
       "kind": "service-deferred",
