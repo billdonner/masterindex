@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T15:27:32-05:00",
+  "generatedAt": "2026-08-14T15:34:54-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -31,7 +31,8 @@
       "August 14 owner policy: BillDonner.com is the permanently free personal/children's/utility product line; 1041soft.com is the commercial-grade product line. workin On and both MasterIndex Explorer binaries are explicitly assigned to BillDonner.com.",
       "August 14 household-communications audit: SharedSpaceLab is the active successor experiment, Nagz is the working legacy reference, and Famster is a thin concept shell rather than an implemented product. Nagzerver remains shared production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On; SharedSpaceLab has no runtime dependency on it.",
       "August 14 deployment recovery: the exact non-secret source from Fly release v100 of bd-nagzerver was preserved on private branch recovery/deployed-2026-06-30 because production PickledBalls and PickleFamilia routes were absent from Git main. The recovered source matches all 163 live API paths; 1,113 tests pass and one PickledBalls schedule test fails.",
-      "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history."
+      "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history.",
+      "August 14: doubleqross.app was registered at IONOS. DNS, HTTPS, and forwarding are not configured yet; the intended initial use is an HTTPS HTTP redirect to the maintained DoubleQross page at 1041soft.com/qross/."
     ]
   },
   "summary": {
@@ -263,7 +264,7 @@
         "localVersion": "1.4.0 (359)"
       },
       {
-        "name": "Qross",
+        "name": "DoubleQross",
         "bundleId": "com.qross.app",
         "appId": "6759799988",
         "ascStates": [
@@ -648,15 +649,24 @@
         "card-studio"
       ],
       "links": {
-        "website": "https://billdonner.com/apps/qross/",
-        "productSite": "https://billdonner.github.io/qross/",
+        "website": "https://1041soft.com/qross/",
+        "portfolioPage": "https://billdonner.com/apps/qross/",
         "testFlight": "https://testflight.apple.com/join/W6VjPWV6",
         "appStore": null
+      },
+      "domain": {
+        "name": "doubleqross.app",
+        "registrar": "IONOS",
+        "status": "registered-unconfigured",
+        "observedAt": "2026-08-14",
+        "intendedDestination": "https://1041soft.com/qross/"
       },
       "notes": [
         "Stores a large local question cache with GRDB.",
         "The live backend is the Python card-engine deployment at bd-cardzerver.fly.dev.",
-        "The retired card-server repository corrected its historical Qross App Store ID before archival; Card Engine remains the only live backend."
+        "The retired card-server repository corrected its historical Qross App Store ID before archival; Card Engine remains the only live backend.",
+        "The old billdonner.github.io/qross product URL returns 404 because Pages was deliberately disabled on the private app repository; 1041soft.com/qross is the maintained product page.",
+        "doubleqross.app currently has no A, AAAA, CNAME, or delegated DNS response. Configure an HTTPS HTTP redirect, including www, before using it in App Store Connect."
       ]
     },
     {
@@ -2243,6 +2253,11 @@
       "summary": "Resolved on 2026-08-14. 1041soft.com and www now use GitHub Pages DNS, HTTPS is enforced, and the Let's Encrypt certificate is valid through 2026-11-12."
     },
     {
+      "kind": "registered-domain-unconfigured",
+      "observedAt": "2026-08-14",
+      "summary": "OPEN. doubleqross.app is registered at IONOS but has no resolvable DNS or HTTPS service yet. Configure IONOS HTTP forwarding for the apex and www to https://1041soft.com/qross/, verify the .app HTTPS path and redirect, then promote the branded domain to DoubleQross's marketing URL. Do not use frame forwarding."
+    },
+    {
       "kind": "asc-public-link-inconsistency",
       "observedAt": "2026-08-14",
       "summary": "Pfoliolio's billdonner.com marketing/support route and the legacy Oliopfolio redirect are now live. Mallinbook's ASC privacy URL remains 404 and SentiPods still has no ASC privacyPolicyUrl."
@@ -2322,6 +2337,15 @@
       "mallinbook": "/mallinbook/",
       "sentipods": "/sentipods/",
       "pfolio": "/pfolio/"
+    },
+    "brandedDomains": {
+      "doubleqross.app": {
+        "registrar": "IONOS",
+        "status": "registered-unconfigured",
+        "intendedDestination": "https://1041soft.com/qross/",
+        "redirectType": "HTTPS HTTP redirect, not frame forwarding",
+        "includeWww": true
+      }
     },
     "notStored": "Only web assets were migrated. Internal markdown, business plans, ADRs, architecture notes, code reviews, and contributor guides were deliberately left in their private repos."
   }

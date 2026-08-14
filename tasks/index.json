@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T15:27:32-05:00",
+  "generatedAt": "2026-08-14T15:34:54-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -79,12 +79,16 @@
           "kind": "rrule",
           "value": "FREQ=DAILY;INTERVAL=1"
         },
-        "purpose": "Track release-state changes and any new public links for Qross.",
+        "purpose": "Track DoubleQross release state and activate the registered doubleqross.app domain without duplicating the maintained 1041soft.com/qross site.",
         "expectedInputs": [
-          "current/index.json"
+          "current/index.json",
+          "DNS and HTTPS state for doubleqross.app and www.doubleqross.app",
+          "https://1041soft.com/qross/"
         ],
         "expectedOutputs": [
-          "Updated Qross app entry"
+          "Updated DoubleQross app entry",
+          "Verified HTTPS HTTP redirects for apex and www",
+          "ASC marketing URL updated only after redirect verification"
         ]
       }
     ],
