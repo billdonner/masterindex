@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:23:42-05:00",
+  "generatedAt": "2026-08-14T01:29:38-05:00",
   "namespace": "masterindex",
   "items": [
     {
@@ -33,11 +33,11 @@
       "priority": "medium"
     },
     {
-      "id": "recent-pfoliolio-app",
+      "id": "recent-pfolio-app",
       "title": "Pfoliolio changed",
-      "statusKey": "masterindex.recent.pfoliolio-app",
-      "url": "workinon://post?key=masterindex.recent.pfoliolio-app&text=Pfoliolio+changed+-+Latest+commit%3A+chore%3A+align+source+with+ASC+build+35.+Last+modified+2026-08-14.",
-      "entityId": "pfoliolio-app",
+      "statusKey": "masterindex.recent.pfolio-app",
+      "url": "workinon://post?key=masterindex.recent.pfolio-app&text=Pfoliolio+changed+-+Latest+commit%3A+chore%3A+align+source+with+ASC+build+35.+Last+modified+2026-08-14.",
+      "entityId": "pfolio-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
@@ -133,11 +133,11 @@
       "priority": "medium"
     },
     {
-      "id": "recent-screenker-app",
+      "id": "recent-screenker-asc-app",
       "title": "Screenker changed",
-      "statusKey": "masterindex.recent.screenker-app",
-      "url": "workinon://post?key=masterindex.recent.screenker-app&text=Screenker+changed+-+Last+modified+2026-08-13.",
-      "entityId": "screenker-app",
+      "statusKey": "masterindex.recent.screenker-asc-app",
+      "url": "workinon://post?key=masterindex.recent.screenker-asc-app&text=Screenker+changed+-+Last+modified+2026-08-13.",
+      "entityId": "screenker-asc-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
@@ -146,7 +146,7 @@
       "id": "recent-sharedspace-lab",
       "title": "SharedSpaceLab changed",
       "statusKey": "masterindex.recent.sharedspace-lab",
-      "url": "workinon://post?key=masterindex.recent.sharedspace-lab&text=SharedSpaceLab+changed+-+Last+modified+2026-08-13.",
+      "url": "workinon://post?key=masterindex.recent.sharedspace-lab&text=SharedSpaceLab+changed+-+Latest+commit%3A+Add+Mac+Catalyst+support.+Last+modified+2026-08-13.",
       "entityId": "sharedspace-lab",
       "taskId": null,
       "type": "recent-change",
@@ -173,11 +173,31 @@
       "priority": "medium"
     },
     {
-      "id": "recent-zerver-monitor-app",
+      "id": "recent-zerver-monitor-asc-app",
       "title": "Zerver Monitor changed",
-      "statusKey": "masterindex.recent.zerver-monitor-app",
-      "url": "workinon://post?key=masterindex.recent.zerver-monitor-app&text=Zerver+Monitor+changed+-+Latest+commit%3A+chore%3A+prepare+TestFlight+build+5.+Last+modified+2026-08-11.",
-      "entityId": "zerver-monitor-app",
+      "statusKey": "masterindex.recent.zerver-monitor-asc-app",
+      "url": "workinon://post?key=masterindex.recent.zerver-monitor-asc-app&text=Zerver+Monitor+changed+-+Latest+commit%3A+chore%3A+prepare+TestFlight+build+5.+Last+modified+2026-08-11.",
+      "entityId": "zerver-monitor-asc-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "low"
+    },
+    {
+      "id": "recent-oenora-recognition-service",
+      "title": "Oenora Recognition API changed",
+      "statusKey": "masterindex.recent.oenora-recognition-service",
+      "url": "workinon://post?key=masterindex.recent.oenora-recognition-service&text=Oenora+Recognition+API+changed+-+Latest+commit%3A+Fix+CloudKit+sync%3A+retain+delegate%2C+single+Cellar+zone%2C+explicit+fetch%2Fsend.+Last+modified+2026-08-09.",
+      "entityId": "oenora-recognition-service",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "low"
+    },
+    {
+      "id": "recent-local-model-lab",
+      "title": "local-model-lab (mlxsrv) changed",
+      "statusKey": "masterindex.recent.local-model-lab",
+      "url": "workinon://post?key=masterindex.recent.local-model-lab&text=local-model-lab+%28mlxsrv%29+changed+-+Last+modified+2026-08-09.",
+      "entityId": "local-model-lab",
       "taskId": null,
       "type": "recent-change",
       "priority": "low"
@@ -363,6 +383,26 @@
       "priority": "low"
     },
     {
+      "id": "attention-mastpex-ios-asc-app-no-public-links",
+      "title": "MastPex IOS missing public links",
+      "statusKey": "masterindex.attention.mastpex-ios-asc-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.mastpex-ios-asc-app.no-public-links&text=MastPex+IOS+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "mastpex-ios-asc-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-mastpex-macos-asc-app-no-public-links",
+      "title": "MastPex Mac missing public links",
+      "statusKey": "masterindex.attention.mastpex-macos-asc-app.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.mastpex-macos-asc-app.no-public-links&text=MastPex+Mac+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "mastpex-macos-asc-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
       "id": "attention-nagz-app-missing-appstore-link",
       "title": "Nagz missing public App Store page",
       "statusKey": "masterindex.attention.nagz-app.missing-appstore",
@@ -383,21 +423,21 @@
       "priority": "low"
     },
     {
-      "id": "attention-pfoliolio-app-missing-appstore-link",
+      "id": "attention-pfolio-app-missing-appstore-link",
       "title": "Pfoliolio missing public App Store page",
-      "statusKey": "masterindex.attention.pfoliolio-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.pfoliolio-app.missing-appstore&text=Pfoliolio+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "pfoliolio-app",
+      "statusKey": "masterindex.attention.pfolio-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.pfolio-app.missing-appstore&text=Pfoliolio+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "pfolio-app",
       "taskId": null,
       "type": "attention",
       "priority": "low"
     },
     {
-      "id": "attention-picklefamilia-app-missing-appstore-link",
+      "id": "attention-picklefamilia-asc-app-missing-appstore-link",
       "title": "PickleFamilia missing public App Store page",
-      "statusKey": "masterindex.attention.picklefamilia-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.picklefamilia-app.missing-appstore&text=PickleFamilia+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "picklefamilia-app",
+      "statusKey": "masterindex.attention.picklefamilia-asc-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.picklefamilia-asc-app.missing-appstore&text=PickleFamilia+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "picklefamilia-asc-app",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -423,11 +463,11 @@
       "priority": "low"
     },
     {
-      "id": "attention-screenker-app-missing-appstore-link",
+      "id": "attention-screenker-asc-app-missing-appstore-link",
       "title": "Screenker missing public App Store page",
-      "statusKey": "masterindex.attention.screenker-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.screenker-app.missing-appstore&text=Screenker+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "screenker-app",
+      "statusKey": "masterindex.attention.screenker-asc-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.screenker-asc-app.missing-appstore&text=Screenker+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "screenker-asc-app",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -453,11 +493,21 @@
       "priority": "low"
     },
     {
-      "id": "attention-zerver-monitor-app-missing-appstore-link",
+      "id": "attention-zerver-monitor-asc-app-missing-appstore-link",
       "title": "Zerver Monitor missing public App Store page",
-      "statusKey": "masterindex.attention.zerver-monitor-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.zerver-monitor-app.missing-appstore&text=Zerver+Monitor+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "zerver-monitor-app",
+      "statusKey": "masterindex.attention.zerver-monitor-asc-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.zerver-monitor-asc-app.missing-appstore&text=Zerver+Monitor+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "zerver-monitor-asc-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-adspill-sim-no-public-links",
+      "title": "adspill missing public links",
+      "statusKey": "masterindex.attention.adspill-sim.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.adspill-sim.no-public-links&text=adspill+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "adspill-sim",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -503,6 +553,16 @@
       "priority": "low"
     },
     {
+      "id": "attention-local-model-lab-no-public-links",
+      "title": "local-model-lab (mlxsrv) missing public links",
+      "statusKey": "masterindex.attention.local-model-lab.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.local-model-lab.no-public-links&text=local-model-lab+%28mlxsrv%29+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "local-model-lab",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
       "id": "attention-picklefortunes-app-no-public-links",
       "title": "picklefortunes missing public links",
       "statusKey": "masterindex.attention.picklefortunes-app.no-public-links",
@@ -536,7 +596,7 @@
       "id": "summary-public-link-gaps",
       "title": "Public link gaps",
       "statusKey": "masterindex.summary.public-link-gaps",
-      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+24+entries+still+need+verified+public+links+or+App+Store+pages.",
+      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+28+entries+still+need+verified+public+links+or+App+Store+pages.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -546,7 +606,7 @@
       "id": "summary-recent-changes",
       "title": "Recent changes",
       "statusKey": "masterindex.summary.recent-changes",
-      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+19+entries+were+modified+in+the+last+7+days.",
+      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+21+entries+were+modified+in+the+last+7+days.",
       "entityId": null,
       "taskId": null,
       "type": "summary",

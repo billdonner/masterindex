@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:23:42-05:00",
+  "generatedAt": "2026-08-14T01:29:38-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,7 +11,7 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 56,
+  "itemCount": 62,
   "items": [
     {
       "id": "recent-burfords-app",
@@ -65,9 +65,9 @@
       "statusKey": "masterindex.recent.clubwatch-app"
     },
     {
-      "id": "recent-pfoliolio-app",
+      "id": "recent-pfolio-app",
       "type": "recent-change",
-      "entityId": "pfoliolio-app",
+      "entityId": "pfolio-app",
       "title": "Pfoliolio changed",
       "body": "Latest commit: chore: align source with ASC build 35. Last modified 2026-08-14.",
       "priority": "medium",
@@ -78,8 +78,8 @@
         "app",
         "standalone"
       ],
-      "deepLink": "site/index.html#pfoliolio-app",
-      "statusKey": "masterindex.recent.pfoliolio-app"
+      "deepLink": "site/index.html#pfolio-app",
+      "statusKey": "masterindex.recent.pfolio-app"
     },
     {
       "id": "recent-qross-app",
@@ -235,9 +235,9 @@
       "statusKey": "masterindex.recent.oenora-app"
     },
     {
-      "id": "recent-screenker-app",
+      "id": "recent-screenker-asc-app",
       "type": "recent-change",
-      "entityId": "screenker-app",
+      "entityId": "screenker-asc-app",
       "title": "Screenker changed",
       "body": "Last modified 2026-08-13.",
       "priority": "medium",
@@ -248,15 +248,15 @@
         "app",
         "standalone"
       ],
-      "deepLink": "site/index.html#screenker-app",
-      "statusKey": "masterindex.recent.screenker-app"
+      "deepLink": "site/index.html#screenker-asc-app",
+      "statusKey": "masterindex.recent.screenker-asc-app"
     },
     {
       "id": "recent-sharedspace-lab",
       "type": "recent-change",
       "entityId": "sharedspace-lab",
       "title": "SharedSpaceLab changed",
-      "body": "Last modified 2026-08-13.",
+      "body": "Latest commit: Add Mac Catalyst support. Last modified 2026-08-13.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-08-13",
@@ -303,9 +303,9 @@
       "statusKey": "masterindex.recent.pfolio-backend"
     },
     {
-      "id": "recent-zerver-monitor-app",
+      "id": "recent-zerver-monitor-asc-app",
       "type": "recent-change",
-      "entityId": "zerver-monitor-app",
+      "entityId": "zerver-monitor-asc-app",
       "title": "Zerver Monitor changed",
       "body": "Latest commit: chore: prepare TestFlight build 5. Last modified 2026-08-11.",
       "priority": "low",
@@ -316,8 +316,42 @@
         "app",
         "pickledballs"
       ],
-      "deepLink": "site/index.html#zerver-monitor-app",
-      "statusKey": "masterindex.recent.zerver-monitor-app"
+      "deepLink": "site/index.html#zerver-monitor-asc-app",
+      "statusKey": "masterindex.recent.zerver-monitor-asc-app"
+    },
+    {
+      "id": "recent-oenora-recognition-service",
+      "type": "recent-change",
+      "entityId": "oenora-recognition-service",
+      "title": "Oenora Recognition API changed",
+      "body": "Latest commit: Fix CloudKit sync: retain delegate, single Cellar zone, explicit fetch/send. Last modified 2026-08-09.",
+      "priority": "low",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-09",
+      "tags": [
+        "recent",
+        "service",
+        "oenora"
+      ],
+      "deepLink": "site/index.html#oenora-recognition-service",
+      "statusKey": "masterindex.recent.oenora-recognition-service"
+    },
+    {
+      "id": "recent-local-model-lab",
+      "type": "recent-change",
+      "entityId": "local-model-lab",
+      "title": "local-model-lab (mlxsrv) changed",
+      "body": "Last modified 2026-08-09.",
+      "priority": "low",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-09",
+      "tags": [
+        "recent",
+        "service",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#local-model-lab",
+      "statusKey": "masterindex.recent.local-model-lab"
     },
     {
       "id": "recent-workinon-app",
@@ -618,6 +652,38 @@
       "statusKey": "masterindex.attention.mallinbook-app.missing-appstore"
     },
     {
+      "id": "attention-mastpex-ios-asc-app-no-public-links",
+      "type": "attention",
+      "entityId": "mastpex-ios-asc-app",
+      "title": "MastPex IOS missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "infrastructure"
+      ],
+      "deepLink": "site/index.html#mastpex-ios-asc-app",
+      "statusKey": "masterindex.attention.mastpex-ios-asc-app.no-public-links"
+    },
+    {
+      "id": "attention-mastpex-macos-asc-app-no-public-links",
+      "type": "attention",
+      "entityId": "mastpex-macos-asc-app",
+      "title": "MastPex Mac missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "infrastructure"
+      ],
+      "deepLink": "site/index.html#mastpex-macos-asc-app",
+      "statusKey": "masterindex.attention.mastpex-macos-asc-app.no-public-links"
+    },
+    {
       "id": "attention-nagz-app-missing-appstore-link",
       "type": "attention",
       "entityId": "nagz-app",
@@ -650,9 +716,9 @@
       "statusKey": "masterindex.attention.oenora-app.no-public-links"
     },
     {
-      "id": "attention-pfoliolio-app-missing-appstore-link",
+      "id": "attention-pfolio-app-missing-appstore-link",
       "type": "attention",
-      "entityId": "pfoliolio-app",
+      "entityId": "pfolio-app",
       "title": "Pfoliolio missing public App Store page",
       "body": "A website is recorded, but no verified public App Store page is in the index yet.",
       "priority": "low",
@@ -662,13 +728,13 @@
         "app-store",
         "standalone"
       ],
-      "deepLink": "site/index.html#pfoliolio-app",
-      "statusKey": "masterindex.attention.pfoliolio-app.missing-appstore"
+      "deepLink": "site/index.html#pfolio-app",
+      "statusKey": "masterindex.attention.pfolio-app.missing-appstore"
     },
     {
-      "id": "attention-picklefamilia-app-missing-appstore-link",
+      "id": "attention-picklefamilia-asc-app-missing-appstore-link",
       "type": "attention",
-      "entityId": "picklefamilia-app",
+      "entityId": "picklefamilia-asc-app",
       "title": "PickleFamilia missing public App Store page",
       "body": "A website is recorded, but no verified public App Store page is in the index yet.",
       "priority": "low",
@@ -678,8 +744,8 @@
         "app-store",
         "pickledballs"
       ],
-      "deepLink": "site/index.html#picklefamilia-app",
-      "statusKey": "masterindex.attention.picklefamilia-app.missing-appstore"
+      "deepLink": "site/index.html#picklefamilia-asc-app",
+      "statusKey": "masterindex.attention.picklefamilia-asc-app.missing-appstore"
     },
     {
       "id": "attention-pickledballs-app-missing-appstore-link",
@@ -714,9 +780,9 @@
       "statusKey": "masterindex.attention.qross-app.missing-appstore"
     },
     {
-      "id": "attention-screenker-app-missing-appstore-link",
+      "id": "attention-screenker-asc-app-missing-appstore-link",
       "type": "attention",
-      "entityId": "screenker-app",
+      "entityId": "screenker-asc-app",
       "title": "Screenker missing public App Store page",
       "body": "A website is recorded, but no verified public App Store page is in the index yet.",
       "priority": "low",
@@ -726,8 +792,8 @@
         "app-store",
         "standalone"
       ],
-      "deepLink": "site/index.html#screenker-app",
-      "statusKey": "masterindex.attention.screenker-app.missing-appstore"
+      "deepLink": "site/index.html#screenker-asc-app",
+      "statusKey": "masterindex.attention.screenker-asc-app.missing-appstore"
     },
     {
       "id": "attention-sentipods-app-missing-appstore-link",
@@ -762,9 +828,9 @@
       "statusKey": "masterindex.attention.sharedspace-lab.no-public-links"
     },
     {
-      "id": "attention-zerver-monitor-app-missing-appstore-link",
+      "id": "attention-zerver-monitor-asc-app-missing-appstore-link",
       "type": "attention",
-      "entityId": "zerver-monitor-app",
+      "entityId": "zerver-monitor-asc-app",
       "title": "Zerver Monitor missing public App Store page",
       "body": "A website is recorded, but no verified public App Store page is in the index yet.",
       "priority": "low",
@@ -774,8 +840,24 @@
         "app-store",
         "pickledballs"
       ],
-      "deepLink": "site/index.html#zerver-monitor-app",
-      "statusKey": "masterindex.attention.zerver-monitor-app.missing-appstore"
+      "deepLink": "site/index.html#zerver-monitor-asc-app",
+      "statusKey": "masterindex.attention.zerver-monitor-asc-app.missing-appstore"
+    },
+    {
+      "id": "attention-adspill-sim-no-public-links",
+      "type": "attention",
+      "entityId": "adspill-sim",
+      "title": "adspill missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "adspill"
+      ],
+      "deepLink": "site/index.html#adspill-sim",
+      "statusKey": "masterindex.attention.adspill-sim.no-public-links"
     },
     {
       "id": "attention-amenbeats-app-missing-appstore-link",
@@ -842,6 +924,22 @@
       "statusKey": "masterindex.attention.grubber-ios-app.no-public-links"
     },
     {
+      "id": "attention-local-model-lab-no-public-links",
+      "type": "attention",
+      "entityId": "local-model-lab",
+      "title": "local-model-lab (mlxsrv) missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#local-model-lab",
+      "statusKey": "masterindex.attention.local-model-lab.no-public-links"
+    },
+    {
       "id": "attention-picklefortunes-app-no-public-links",
       "type": "attention",
       "entityId": "picklefortunes-app",
@@ -890,7 +988,7 @@
       "id": "summary-public-link-gaps",
       "type": "summary",
       "title": "Public link gaps",
-      "body": "24 entries still need verified public links or App Store pages.",
+      "body": "28 entries still need verified public links or App Store pages.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -903,7 +1001,7 @@
       "id": "summary-recent-changes",
       "type": "summary",
       "title": "Recent changes",
-      "body": "19 entries were modified in the last 7 days.",
+      "body": "21 entries were modified in the last 7 days.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

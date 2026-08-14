@@ -22,16 +22,19 @@
       "Clubsync is deferred until PickledBalls v2; its database remains deployed, but it is not an active monitored application dependency.",
       "Server Monitor production probes were corrected and verified live with seven targets, no Clubsync target, and successful Nagzerver and Card Engine HTTP checks.",
       "App Store Connect validation reconciled Pfoliolio iOS/macOS 35, Qross 392, and SentiPods macOS 21; 123 Words 59 was uploaded, and source metadata was aligned for amenbeats 8 and 100 Burfords 1.1 (9).",
-      "A generated billdonner.com apps catalog and Pfoliolio route now live under publish/billdonner.com; IONOS publication remains blocked on an unavailable SFTP credential."
+      "A generated billdonner.com apps catalog and Pfoliolio route now live under publish/billdonner.com; IONOS publication remains blocked on an unavailable SFTP credential.",
+      "Reviewed local git repositories with 2026 activity.",
+      "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026."
     ]
   },
   "summary": {
     "ascApps": 23,
     "mappedAscApps": 20,
     "unmatchedAscApps": 3,
-    "activeRepos": 49,
-    "clusters": 11,
-    "liveServices": 6,
+    "activeRepos": 51,
+    "clusters": 16,
+    "liveServices": 7,
+    "collaborators": 3,
     "unreachableServices": 0,
     "ascMacOsRecords": 8,
     "ascMacOsWithMacTarget": 6
@@ -40,6 +43,57 @@
     "taskRegistry": "tasks/index.json",
     "handoffRegistry": "current/handoffs/index.json",
     "policy": "Every entity inherits a six-hour verification check and a daily inventory refresh from the task registry. Targeted handoffs may alter the next applicable cycle without changing this inventory schema."
+  },
+  "flyOperations": {
+    "observedAt": "2026-08-06T00:00:00-05:00",
+    "costCurrency": "USD",
+    "costStatus": "unavailable",
+    "costNote": "The authenticated Fly CLI exposes deployment state on this machine, but no billing or usage amount was observed. Do not infer costs from deployment status.",
+    "services": [
+      {
+        "app": "bd-cardzerver",
+        "entityId": "card-server-backend",
+        "status": "deployed",
+        "latestDeploy": "2026-07-06T01:01:00-05:00",
+        "cost": null
+      },
+      {
+        "app": "bd-nagzerver",
+        "entityId": "nagzerver-backend",
+        "status": "deployed",
+        "latestDeploy": "2026-06-30T21:01:00-05:00",
+        "cost": null
+      },
+      {
+        "app": "bd-grubber",
+        "entityId": "grubber-service",
+        "status": "deployed",
+        "latestDeploy": "observed 2026-08-06; Fly reported 12h26m ago",
+        "cost": null
+      },
+      {
+        "app": "bd-server-monitor",
+        "entityId": "server-monitor-service",
+        "status": "deployed",
+        "latestDeploy": "2026-06-16T16:01:00-05:00",
+        "cost": null
+      },
+      {
+        "app": "bd-pfolio",
+        "entityId": "pfolio-backend",
+        "status": "deployed",
+        "latestDeploy": "2026-07-22T18:08:00-05:00",
+        "cost": null
+      },
+      {
+        "app": "bd-clubsync",
+        "entityId": "clubsync-backend",
+        "status": "not-found-in-personal-app-list",
+        "latestDeploy": null,
+        "cost": null,
+        "note": "The inventory records a live clubsync service, but the authenticated personal Fly app list showed bd-clubsync-db rather than bd-clubsync. Resolve ownership/app-name mapping."
+      }
+    ]
   },
   "ascApps": {
     "mapped": [
@@ -87,7 +141,7 @@
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "github:billdonner/sharedspacelab",
-        "repoEvidence": "GitHub repo and PRODUCT_BUNDLE_IDENTIFIER in project.yml verified 2026-08-13; not cloned on this machine"
+        "repoEvidence": "Local clone at ~/Documents/Codex/Experiments/SharedSpaceLab and PRODUCT_BUNDLE_IDENTIFIER in project.yml verified 2026-08-14"
       },
       {
         "name": "SentiPods",
@@ -385,7 +439,9 @@
       ],
       "watchpoints": [
         "None of the three repositories is cloned on this machine",
-        "SharedSpaceLab has no uploaded ASC build yet"
+        "SharedSpaceLab has no uploaded ASC build yet",
+        "No commits yet",
+        "No ASC or deployed service path"
       ]
     },
     {
@@ -399,7 +455,8 @@
       ],
       "watchpoints": [
         "grubber-ios remains unmatched in ASC; SentiPods is mapped as app 6797132650",
-        "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed"
+        "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed",
+        "Two local clients are not yet matched in the recorded ASC inventory"
       ]
     },
     {
@@ -413,6 +470,77 @@
       "watchpoints": [
         "Repo renamed 2026-08-01 (bookmaker-app -> mallinbook); older notes may cite stale paths",
         "No legacy .bookmaker document support by owner decision"
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "maturity": "live internal tooling",
+      "summary": "Portfolio-wide monitoring and ops tooling, not tied to any single product cluster.",
+      "highlights": [
+        "server-monitor"
+      ],
+      "watchpoints": [
+        "Monitors nagzerver, clubsync, and card-server across clusters"
+      ]
+    },
+    {
+      "name": "adspill",
+      "maturity": "research and lab; strategic scoping",
+      "summary": "Bill + Jim exploration of selling excess advertising capacity, split into an auction/exchange modeling sandbox (Project 1, Bill) and a self-serve create-and-sell layer for long-tail local video ads (Project 2, Jim).",
+      "highlights": [
+        "adspill sim + monitor (Project 1)",
+        "FloSports/NWL diligence",
+        "two-project direction split"
+      ],
+      "watchpoints": [
+        "Gated on the NWL in-stream ad-rights question after Flo's exclusive deal",
+        "Project 2 still at framing stage, no build",
+        "Exchange layer largely exists in the wild - sandbox, not product"
+      ]
+    },
+    {
+      "name": "pfolio",
+      "maturity": "active pre-launch product",
+      "summary": "Multi-account investment tracker for HNW investors and seniors: Plaid holdings in, allocation analytics and Claude Q&A out. Mac-first client with iOS companion; Steve Gould is end-user and finance-side collaborator.",
+      "highlights": [
+        "pfolio backend",
+        "Oliopfolio app",
+        "demo seeder",
+        "TestFlight builds uploaded"
+      ],
+      "watchpoints": [
+        "Plaid Investments production access pending (gates real brokerage data at launch)",
+        "Single shared backend user until multi-user lands",
+        "Stacked PRs from rachelelise awaiting review in both repos"
+      ]
+    },
+    {
+      "name": "Oenora",
+      "maturity": "private external TestFlight beta",
+      "summary": "Personal wine knowledge system for collectors with a working offline iPhone capture-to-cellar loop, cloud recognition, encrypted backup, and a broader Mac/advisor roadmap.",
+      "highlights": [
+        "Oenora product and technical specifications",
+        "iPhone bottle photography",
+        "Mac cellar management",
+        "collection-aware AI advisor"
+      ],
+      "watchpoints": [
+        "Working name still requires formal trademark and domain clearance",
+        "TestFlight is invitation-only with no public link",
+        "Sign in with Apple is deliberately deferred until the first founder field-test cycle is complete"
+      ]
+    },
+    {
+      "name": "Unmapped ASC",
+      "maturity": "inventory gap",
+      "summary": "App Store Connect records with no verified local source repository or public product record in the current portfolio scan.",
+      "highlights": [
+        "PickleFamilia",
+        "Screenker"
+      ],
+      "watchpoints": [
+        "Local source repositories are still unverified.",
+        "Verified public product pages exist, but no standalone source repository was found in the latest scan."
       ]
     }
   ],
@@ -431,9 +559,9 @@
       "dependencies": [],
       "links": {
         "website": "https://billdonner.com/apps/mallinbook/",
-        "support": "https://billdonner.com/apps/mallinbook/#support",
         "appStore": null,
-        "github": "https://github.com/billdonner/mallinbook"
+        "github": "https://github.com/billdonner/mallinbook",
+        "support": "https://billdonner.com/apps/mallinbook/#support"
       },
       "notes": [
         "Renamed 2026-08-01 from bookmaker-app: repo/target/module and the document extension (.bookmaker -> .mallinbook); ASC identity unchanged (app id 6785245339), so earlier scans missed the repo.",
@@ -441,7 +569,10 @@
         "The ASC privacy URL still points to https://billdonner.github.io/bookmaker-app/privacy-policy.html, which returns 404.",
         "github:billdonner/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
         "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
-        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code."
+        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
+        "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
+        "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
+        "PARKED 2026-08-03 by owner: resume near the iOS 27 release, when App Store submission can go through the release iOS-27 toolchain. State at park: build 18 live on TestFlight (both platforms); feature-complete for v1 (custom pages, filler pool, recto section starts with PD art dividers, menu parity, -exportPDF); 67 app + 27 MCP tests green; mallinbook-mcp installed at ~/bin and registered with Claude Code; 44-page Maplecrest print PDF ready for the bindery. Resume checklist: confirm xcode-select is the release Xcode, archive via scripts/preflight-testflight.sh flow, then App Store metadata/review."
       ]
     },
     {
@@ -526,6 +657,7 @@
       ],
       "links": {
         "website": "https://billdonner.github.io/nagz/",
+        "testFlight": "https://testflight.apple.com/join/Xfcvv9w5",
         "appStore": null
       },
       "notes": [
@@ -545,12 +677,13 @@
       "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by the live card-engine service at bd-cardzerver.fly.dev.",
       "dependencies": [
         "card-engine",
-        "obo"
+        "obo",
+        "card-server"
       ],
       "links": {
         "website": "https://billdonner.github.io/obo-ios/",
-        "portfolioPage": "https://billdonner.com/apps/flasherz-kids/",
-        "appStore": null
+        "appStore": null,
+        "portfolioPage": "https://billdonner.com/apps/flasherz-kids/"
       },
       "notes": [
         "Falls back to bundled sample decks when the server is unavailable."
@@ -568,7 +701,8 @@
       "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
       "description": "Admin and editor client for decks, family endpoints, ingestion controls, and search against the card backend.",
       "dependencies": [
-        "card-engine"
+        "card-engine",
+        "card-server"
       ],
       "links": {
         "website": null,
@@ -595,16 +729,17 @@
       ],
       "links": {
         "website": "https://billdonner.github.io/workinon/",
+        "testFlight": "https://testflight.apple.com/join/FbsJBmc7",
+        "appStore": null,
         "privacyPolicy": "https://billdonner.github.io/workinon/privacy.html",
         "support": "https://billdonner.github.io/workinon/support.html",
-        "testFlight": "https://testflight.apple.com/join/FbsJBmc7",
-        "portfolioPage": "https://billdonner.com/apps/workinon/",
-        "appStore": null
+        "portfolioPage": "https://billdonner.com/apps/workinon/"
       },
       "notes": [
         "Silent APNs pushes update the list without opening the app.",
         "MasterIndex board now loads from a bundled operational feed, groups cards by lane, and supports inline row detail reveal in both the MasterIndex and Focus tabs.",
-        "Recent-change MasterIndex cards use concise titles such as 'Qross changed' and now include latest git commit subjects in the body when the entity repo is available; missing repos fall back to last-modified dates."
+        "Recent-change MasterIndex cards use concise titles such as 'Qross changed' and now include latest git commit subjects in the body when the entity repo is available; missing repos fall back to last-modified dates.",
+        "2026-08-10: added MasterIndex operational-feed surfaces, feed tests, shortcuts updates, and bundled board-feed data; no new ASC release was observed."
       ]
     },
     {
@@ -624,6 +759,8 @@
       ],
       "links": {
         "website": "https://api.famster.app",
+        "service": "https://api.famster.app",
+        "testFlight": "https://testflight.apple.com/join/aQG4apn7",
         "websiteSource": "local docs",
         "appStore": null
       },
@@ -667,11 +804,19 @@
       "links": {
         "website": "https://billdonner.com/apps/kinflash/",
         "testFlight": "https://testflight.apple.com/join/WkcUxvt3",
-        "github": "https://github.com/billdonner/kinflash",
-        "appStore": null
+        "appStore": null,
+        "github": "https://github.com/billdonner/kinflash"
       },
       "notes": [
-        "Bundle identity comes from xcconfig."
+        "Bundle identity comes from xcconfig.",
+        "Targets iOS 26 and uses the on-device Foundation Models API.",
+        "No verified public website or App Store product page is available yet.",
+        "2026-08-05: Mac MCP tooling added voice-capture, transcription, feedback, and run-log interfaces plus a smoke-test script; this is local development work, not a new ASC release.",
+        "2026-08-07: replaced the Mallinbook family fixture with safe lineages and added a rendered constellation export; no new ASC release was observed.",
+        "2026-08-08: separated roster data from the fictional-pedigree fixture and refreshed its rendered export; no new ASC release was observed.",
+        "2026-08-09: added static pedigree and flashcard documentation to the repository. The probable GitHub Pages URL returned HTTP 404, so those pages are not recorded as public.",
+        "2026-08-09: added native Mac GEDCOM import/export actions and bundled fictional examples. Import is intentionally limited to empty documents until a merge-conflict workflow exists.",
+        "2026-08-10: Mac flashcard review now persists in one deck; no new ASC release was observed."
       ]
     },
     {
@@ -696,7 +841,9 @@
       "notes": [
         "Its shared kit is reused by PickledBalls.",
         "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
-        "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2."
+        "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
+        "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product.",
+        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds — no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone — clear it manually in the TestFlight app (Remove App)."
       ]
     },
     {
@@ -747,7 +894,9 @@
         "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
         "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
         "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
-        "The Mac producer runs text, audio, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures."
+        "The Mac producer runs text, audio, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
+        "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
+        "2026-08-09: centralized the database lock across analysis, news pull, and export writers; test coverage confirms all producer database writers serialize safely."
       ]
     },
     {
@@ -815,7 +964,8 @@
       "dependencies": [
         "Nagz",
         "workin On",
-        "LtWatcher"
+        "LtWatcher",
+        "PickledBalls"
       ],
       "links": {
         "website": "https://bd-nagzerver.fly.dev",
@@ -893,7 +1043,8 @@
       },
       "notes": [
         "Live /openapi.json identifies the service as card-engine version 0.1.0.",
-        "The 256 MB Fly machine was OOM-killed and restarted on 2026-08-13; direct /health is currently 200."
+        "The 256 MB Fly machine was OOM-killed and restarted on 2026-08-13; direct /health is currently 200.",
+        "One of the main architecture ambiguities in the inventory."
       ]
     },
     {
@@ -929,7 +1080,7 @@
       "cluster": "Codex Experiments",
       "status": "asc-mapped",
       "lastModified": "2026-08-13",
-      "repo": "github:billdonner/sharedspacelab",
+      "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
       "bundleId": "com.1041soft.experiments.sharedspacelab",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; GitHub project 0.1 (2) supports Mac Catalyst; no uploaded ASC builds",
       "description": "Shared household voice-and-screen iPad experiment built from ConversationLab and CoordinationLab.",
@@ -944,7 +1095,7 @@
       },
       "notes": [
         "Explicitly does not connect to PickledBalls, Nagz, or any backend.",
-        "Repository is not cloned on this machine; the old ~/Documents/Codex/Experiments/SharedSpaceLab path is stale."
+        "Local clone verified at ~/Documents/Codex/Experiments/SharedSpaceLab on 2026-08-14."
       ]
     },
     {
@@ -954,9 +1105,9 @@
       "cluster": "Codex Experiments",
       "status": "lab",
       "lastModified": "2026-08-05",
-      "repo": "github:billdonner/conversationlab",
+      "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "bundleId": null,
-      "release": "GitHub package; not cloned on this machine",
+      "release": "Local clone verified at ~/Documents/Codex/Experiments/ConversationLab",
       "description": "Package providing ConversationCore and AppleConversation.",
       "dependencies": [
         "SharedSpaceLab"
@@ -966,7 +1117,8 @@
         "github": "https://github.com/billdonner/conversationlab"
       },
       "notes": [
-        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
+        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff.",
+        "Created July 31, 2026."
       ]
     },
     {
@@ -976,9 +1128,9 @@
       "cluster": "Codex Experiments",
       "status": "lab",
       "lastModified": "2026-08-05",
-      "repo": "github:billdonner/coordinationlab",
+      "repo": "~/Documents/Codex/Experiments/CoordinationLab",
       "bundleId": null,
-      "release": "GitHub package; not cloned on this machine",
+      "release": "Local clone verified at ~/Documents/Codex/Experiments/CoordinationLab",
       "description": "Pure Swift coordination model package used in SharedSpaceLab.",
       "dependencies": [
         "SharedSpaceLab"
@@ -988,7 +1140,8 @@
         "github": "https://github.com/billdonner/coordinationlab"
       },
       "notes": [
-        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff."
+        "Created July 31, 2026; latest remote commit is the August 5 MasterIndex handoff.",
+        "Created July 31, 2026."
       ]
     },
     {
@@ -1014,7 +1167,7 @@
       ]
     },
     {
-      "id": "pfoliolio-app",
+      "id": "pfolio-app",
       "name": "Pfoliolio",
       "kind": "app",
       "cluster": "Standalone",
@@ -1052,15 +1205,23 @@
       "release": "Fly app bd-pfolio deployed with machine version 6 and a passing health check",
       "description": "PostgreSQL-backed portfolio service used by Pfoliolio, with Plaid production integration and chat support.",
       "dependencies": [
-        "Pfoliolio"
+        "Pfoliolio",
+        "Oliopfolio"
       ],
       "links": {
         "website": "https://bd-pfolio.fly.dev",
-        "health": "https://bd-pfolio.fly.dev/health",
-        "github": "https://github.com/billdonner/pfolio"
+        "github": "https://github.com/billdonner/pfolio",
+        "health": "https://bd-pfolio.fly.dev/health"
       },
       "notes": [
-        "The backend is live but is not cloned on this machine."
+        "The backend is live but is not cloned on this machine.",
+        "Local dev on port 9840 (range 9840-9849).",
+        "Multi-user shipped: Sign in with Apple + per-user sessions. The legacy shared PF_API_TOKEN still authenticates and resolves to PF_DEFAULT_USER_ID, so pre-multi-user installs keep working; POST /auth/apple/claim upgrades one in place with no data loss and no Plaid re-linking.",
+        "Fund look-through: GET /portfolio/exposure/{ticker} returns direct + indirect exposure with its own coverage figure. On the demo portfolio NVIDIA went from $85,000 direct to $130,454 true (+53%); Broadcom from $0 to $17,326.",
+        "CUSIP->ticker resolution via openFIGI is load-bearing, not a fallback: real N-PORT filings carried a ticker on 122 of 35,556 constituent rows. PF_OPENFIGI_API_KEY (free) cuts a full 22k-CUSIP pass from ~90 min to ~3 min.",
+        "pfolio-mcp: 16-tool stdio MCP server, registered in Claude Code. Deliberately an HTTP client over the API, never a second DB client.",
+        "Open: paid-app entitlement table exists (migration 018) but nothing reads it; Plaid Investments production access still pending Plaid review.",
+        "All work merged to main 2026-08-09; every PR closed in both repos. Steve's four PRs were closed as superseded on 2026-08-08 with comments tracing where the work landed, and his classification backlog moved to issue #7 so it did not close with PR #3."
       ]
     },
     {
@@ -1074,14 +1235,33 @@
       "bundleId": "com.billdonner.oenora",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 3 VALID; Mac Catalyst supported",
       "description": "Personal wine knowledge system for iPhone and Mac with CloudKit-backed cellar synchronization.",
-      "dependencies": [],
+      "dependencies": [
+        "oenora-recognition-service"
+      ],
       "links": {
         "website": null,
-        "github": "https://github.com/billdonner/oenora",
-        "appStore": null
+        "appStore": null,
+        "publicTestFlight": "https://testflight.apple.com/join/M6vwHjHB",
+        "github": "https://github.com/billdonner/oenora"
       },
       "notes": [
-        "Age rating remains unset because alcohol references are core subject matter."
+        "Age rating remains unset because alcohol references are core subject matter.",
+        "Initial commit f634ccf (2026-08-08) contains the offline capture spike, shared domain package, tests, decision records, and product specification.",
+        "Working spike supports camera or photo-library import, on-device Vision OCR, restart-safe local persistence, candidate review/correction, and confirmed Wine, Vintage, and Bottle records.",
+        "Capture and Apple Vision OCR work offline. When connectivity returns, saved label images and OCR evidence are sent to the token-protected Oenora recognition service; structured suggestions remain untrusted until human confirmation.",
+        "Product is being developed with Jon Packer; preserve the provisional-name status until clearance is complete.",
+        "2026-08-08: added a local App Store Connect app-registration script and documentation; this is setup tooling, not evidence that the app has been registered or released.",
+        "2026-08-08: added app-icon assets, App Store copy, website copy, and local ASC inspection/metadata-update scripts. These are launch-preparation materials, not evidence of an ASC record or public website.",
+        "2026-08-09: corrected confirmed identity autofill to use label evidence; local test coverage was added.",
+        "2026-08-09: added a network-aware queue that retains scans offline and sends up to three photos plus OCR evidence to the deployed recognition API when configured.",
+        "2026-08-09: completed guided offline capture recovery and encrypted founder-beta backup, including a stable recovery code and corruption-rejection coverage.",
+        "2026-08-10: added an independent simulator walkthrough with screenshot evidence for capture, offline guidance, recognition review, cellar, and history flows.",
+        "2026-08-10: added four-screen high-school-level onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
+        "2026-08-10: ASC app 6799520155 and VALID build 1 were observed. Build 1 is attached to the private Founders Beta group and is waiting for Beta App Review; Jon Packer is the named invite-only tester, automatic notification is enabled, and no public TestFlight link exists.",
+        "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge.",
+        "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed.",
+        "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB).",
+        "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW."
       ]
     },
     {
@@ -1107,7 +1287,7 @@
       ]
     },
     {
-      "id": "screenker-app",
+      "id": "screenker-asc-app",
       "name": "Screenker",
       "kind": "app",
       "cluster": "Standalone",
@@ -1132,7 +1312,7 @@
       ]
     },
     {
-      "id": "zerver-monitor-app",
+      "id": "zerver-monitor-asc-app",
       "name": "Zerver Monitor",
       "kind": "app",
       "cluster": "PickledBalls",
@@ -1155,7 +1335,7 @@
       ]
     },
     {
-      "id": "picklefamilia-app",
+      "id": "picklefamilia-asc-app",
       "name": "PickleFamilia",
       "kind": "app",
       "cluster": "PickledBalls",
@@ -1218,20 +1398,225 @@
         "It still calls Pfoliolio Oliopfolio and serves only the old /apps/oliopfolio route.",
         "The source repository or publishing workflow was not identified; billdonner.github.io does not contain the /apps tree."
       ]
+    },
+    {
+      "id": "local-model-lab",
+      "name": "local-model-lab (mlxsrv)",
+      "kind": "service",
+      "cluster": "Standalone",
+      "status": "parked",
+      "lastModified": "2026-08-09",
+      "repo": "github:billdonner/local-model-lab",
+      "bundleId": null,
+      "release": "local tooling only — no ASC presence",
+      "description": "Local MLX model evaluation lab: runs quantized models (Qwen3-4B etc.) on-device via an OpenAI-compatible local server and benchmarks them against the full 177,501-question Qross corpus (no_hint and on_request_hint modes), with an OpenAI GPT-5 runner for paid-API comparison. Produces per-run answer logs, wrong-answer exports, and a leaderboard.",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": null,
+        "github": "https://github.com/billdonner/local-model-lab"
+      },
+      "notes": [
+        "Historical working path was ~/mlxsrv/local-model-lab; it is not present on this machine, so the GitHub repository is the current locator.",
+        "Standalone lab — not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
+        "Full-corpus leaderboard (2026-08-04): local baseline 85.90% no-hint / 88.72% hinted; qwen3-4b-instruct 84.12% no-hint; OpenAI gpt-5 98.34% on a 10k subset (~$0.94).",
+        "Raw answers.jsonl files over 100MB are gitignored (GitHub limit) and kept local-only; summaries and wrong-answer exports are pushed.",
+        "Hinted qwen3-4b full-corpus run completed 2026-08-04: 84.84% (vs 84.12% no-hint; hints give qwen3-4b only +0.73 lift).",
+        "2026-08-05: SwiftChat became the common interface — four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB → 7.7GB (kept qwen3-4b + baseline; others re-downloadable).",
+        "PARKED 2026-08-09 by owner. State at park: inline_hint full run complete on the old 177,501 corpus (86.41% — best qwen3-4b result; vs 84.12% no-hint / 84.84% on-request); hint-quality pilots (new hints 87.36% vs old 85.33% on 5k) and hard-subset runs done through Aug 8. Fresh 190,921-question corpus exported to ~/qross-fullaudit/corpus-2026-08-06.jsonl but not yet fully run. All services stopped, results committed+pushed. Resume pointers in STATE.yaml next_action."
+      ]
+    },
+    {
+      "id": "adspill-sim",
+      "name": "adspill",
+      "kind": "package",
+      "cluster": "adspill",
+      "status": "lab",
+      "lastModified": "2026-07-29",
+      "repo": "github:billdonner/adspill",
+      "bundleId": null,
+      "release": null,
+      "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": null,
+        "github": "https://github.com/billdonner/adspill"
+      },
+      "notes": [
+        "Symmetric full-admin access for @billdonner and @jrforster; coordination via git + GitHub issues/PRs, human nudges via send-jim / send-bill CLIs (Gmail/iCloud SMTP, no drafts).",
+        "Project 1 (Bill): /sim - pure clear() auction core (8 unit tests green), scale harness (~20k avails in ~12s), monitor.html live board. stdlib-only, no store/network; storage + wire protocols deliberately deferred. Bill now treats this as a personal sandbox on v0 defaults.",
+        "Project 2 (Jim): self-serve create-and-sell for long-tail local video ads; framing only, no build yet.",
+        "FloSports/NWL diligence (docs/flosports-diligence.md) reframed the effort: empty ad slots are a demand + rights + sales-cost problem, not a plumbing/exchange one (Flo is already fully programmatic). Pivotal gating question, answerable only by a team: do Northwoods League teams retain in-stream ad rights after Flo's exclusive global deal?",
+        "Bill has stepped back to an observer role on Project 2, tracking progress for his own edification."
+      ]
+    },
+    {
+      "id": "mastpex-ios-asc-app",
+      "name": "MastPex IOS",
+      "kind": "app",
+      "cluster": "Infrastructure",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-05",
+      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
+      "bundleId": "com.billdonner.mastpex",
+      "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
+      "description": "Native iPhone and iPad explorer for a compatible MasterIndex: browse a read-only software portfolio map with search, relationships, drill-down, links, and explicit gaps.",
+      "dependencies": [
+        "MasterIndex"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact iOS ASC bundle ID com.billdonner.mastpex.",
+        "No verified public website or App Store product page was found in the current link pass."
+      ]
+    },
+    {
+      "id": "mastpex-macos-asc-app",
+      "name": "MastPex Mac",
+      "kind": "app",
+      "cluster": "Infrastructure",
+      "status": "asc-mapped",
+      "lastModified": "2026-08-05",
+      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
+      "bundleId": "com.billdonner.mastpex.mac",
+      "release": "Development: macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
+      "description": "Native Mac explorer for a compatible MasterIndex: a read-only desktop map of apps, repositories, services, links, relationships, and known gaps.",
+      "dependencies": [
+        "MasterIndex"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact macOS ASC bundle ID com.billdonner.mastpex.mac.",
+        "No verified public website or App Store product page was found in the current link pass."
+      ]
+    },
+    {
+      "id": "oenora-recognition-service",
+      "name": "Oenora Recognition API",
+      "kind": "service",
+      "cluster": "Oenora",
+      "status": "live",
+      "lastModified": "2026-08-09",
+      "repo": "~/oenora",
+      "bundleId": null,
+      "release": "Fly health endpoint is live at bd-oenora-recognition.fly.dev; the August 9 device test plan records cloud recognition as live.",
+      "description": "Token-protected API that accepts one to three label images and OCR evidence, requests up to three structured wine candidates from OpenAI, and returns them for explicit user review.",
+      "dependencies": [
+        "Oenora"
+      ],
+      "links": {
+        "website": "https://bd-oenora-recognition.fly.dev/health",
+        "websiteSource": "verified HTTP 200 on 2026-08-10",
+        "appStore": null
+      },
+      "notes": [
+        "The iOS app sends no images while offline; queued scans survive restart and retry when connectivity returns.",
+        "The August 9 device test plan records recognition as live; temporary failures remain retryable and preserve the original images."
+      ]
+    }
+  ],
+  "collaborators": [
+    {
+      "id": "jim",
+      "name": "Jim Forster",
+      "role": "dev collaborator",
+      "github": "jrforster",
+      "email": "jrforster@mac.com",
+      "sendTool": "send-jim",
+      "cluster": "adspill",
+      "repos": [
+        "billdonner/adspill",
+        "billdonner/drumbeats"
+      ],
+      "lastActivity": {
+        "checkedAt": "2026-08-05",
+        "lastCommit": {
+          "sha": "e846ca0",
+          "date": "2026-07-30",
+          "by": "jrforster",
+          "summary": "Merge pull request #4 (project-direction split)"
+        },
+        "openPRs": 0,
+        "openIssues": 2,
+        "awaitingYourAction": false,
+        "note": "adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): shared build, PRs #1-#3 (features) + #6 (UI pass + screenshot pipeline) merged to main; 53 tests green. v1.1 restyle/iPad tracked (issue #5)."
+      }
+    },
+    {
+      "id": "carol",
+      "name": "Carol",
+      "role": "dev collaborator",
+      "github": "cuchif",
+      "email": "carcartalk@gmail.com",
+      "sendTool": "send-carol",
+      "cluster": "Qross",
+      "repos": [
+        "billdonner/qross"
+      ],
+      "lastActivity": {
+        "checkedAt": "2026-08-04",
+        "lastCommit": {
+          "sha": "0b20cdc",
+          "date": "2026-08-03",
+          "by": "billdonner",
+          "summary": "Marketing: swap a Screenker original, update project.json"
+        },
+        "openPRs": 4,
+        "collaboratorOpenPRs": 3,
+        "openIssues": 18,
+        "awaitingYourAction": true,
+        "note": "3 open PRs from @cuchif awaiting Bill's review: #172, #173, #174 (opened 07-25/26). PR #175 is Bill's own."
+      }
+    },
+    {
+      "id": "steve",
+      "name": "Steve Gould",
+      "role": "pfolio end-user / stakeholder (not the repo's code collaborator)",
+      "github": null,
+      "email": "stephen.gould@comcast.net",
+      "sendTool": "send-steve",
+      "cluster": "pfolio",
+      "repos": [
+        "billdonner/pfolio",
+        "billdonner/pfolio-app"
+      ],
+      "lastActivity": {
+        "checkedAt": "2026-08-04",
+        "lastCommit": {
+          "sha": "b407e24",
+          "date": "2026-07-24",
+          "by": "billdonner",
+          "summary": "Merge pull request #2 (soften sandbox guardrail)"
+        },
+        "openPRs": 2,
+        "collaboratorOpenPRs": 2,
+        "openIssues": 1,
+        "awaitingYourAction": true,
+        "note": "Steve is the pfolio end-user; dev work on his product is done by @rachelelise. Open PRs as of 2026-08-04: pfolio #3/#4 (taxonomy, classification, tax treatment, demo seeder), pfolio-app #1/#2 (allocation matrix, classify UI). App repo renamed pfolio-ios -> pfolio-app; Oliopfolio builds uploaded to TestFlight (iOS + macOS)."
+      },
+      "lastReviewed": "2026-08-08",
+      "status": "All four of his PRs closed as superseded 2026-08-08; his work is in the Mac line and his review of PR #5 is addressed. Nothing of his is awaiting Bill. Open on Bill's side: rename the ASC record to Oliofolio, publish the privacy page, merge the branch stack to main."
     }
   ],
   "services": [
     {
       "name": "bd-nagzerver.fly.dev",
       "repo": "~/nagzerver",
-      "status": "live",
       "consumers": [
         "Nagz",
         "PickledBalls",
         "workin On",
         "LtWatcher transport"
       ],
-      "note": "Most shared utility backend in the inventory."
+      "note": "Most shared utility backend in the inventory.",
+      "status": "live"
     },
     {
       "name": "bd-clubsync.fly.dev",
@@ -1257,11 +1642,11 @@
     {
       "name": "bd-grubber.fly.dev",
       "repo": "~/grubber",
-      "status": "live",
       "consumers": [
         "grubber clients"
       ],
-      "note": "Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive."
+      "note": "Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive.",
+      "status": "live"
     },
     {
       "name": "bd-server-monitor.fly.dev",
@@ -1275,20 +1660,30 @@
     {
       "name": "api.famster.app",
       "repo": "unidentified",
-      "status": "live",
       "consumers": [
         "Famster"
       ],
-      "note": "The /version endpoint returned 200; backend repo remains unidentified."
+      "note": "The /version endpoint returned 200; backend repo remains unidentified.",
+      "status": "live"
     },
     {
       "name": "bd-pfolio.fly.dev",
       "repo": "github:billdonner/pfolio",
+      "consumers": [
+        "Pfoliolio",
+        "Oliopfolio (Mac + iOS)"
+      ],
+      "note": "Fly machine version 6 is started with a passing health check; /health reports database, Plaid production, and chat healthy.",
+      "status": "live"
+    },
+    {
+      "name": "bd-oenora-recognition.fly.dev",
+      "repo": "~/oenora",
       "status": "live",
       "consumers": [
-        "Pfoliolio"
+        "Oenora"
       ],
-      "note": "Fly machine version 6 is started with a passing health check; /health reports database, Plaid production, and chat healthy."
+      "note": "Deployed on Fly and verified HTTP 200 at /health on 2026-08-14; token-protected recognition API used by Oenora."
     }
   ],
   "repos": [
@@ -1538,27 +1933,6 @@
       "role": "workin On companion server"
     },
     {
-      "repo": "github:billdonner/conversationlab",
-      "branch": "main",
-      "last2026Commit": "2026-08-05",
-      "kind": "shared package",
-      "role": "Conversation experiment package; not cloned locally"
-    },
-    {
-      "repo": "github:billdonner/coordinationlab",
-      "branch": "main",
-      "last2026Commit": "2026-08-05",
-      "kind": "shared package",
-      "role": "Coordination experiment package; not cloned locally"
-    },
-    {
-      "repo": "github:billdonner/sharedspacelab",
-      "branch": "main",
-      "last2026Commit": "2026-08-13",
-      "kind": "app experiment",
-      "role": "ASC-mapped iOS and Mac Catalyst experiment; not cloned locally"
-    },
-    {
       "repo": "github:billdonner/123words",
       "branch": "main",
       "last2026Commit": "2026-08-10",
@@ -1648,6 +2022,41 @@
       "last2026Commit": "2026-08-09",
       "kind": "lab",
       "role": "Local-model experiment explicitly on hold; not cloned locally"
+    },
+    {
+      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
+      "branch": "main",
+      "last2026Commit": "2026-08-05",
+      "kind": "multiplatform app",
+      "role": "ASC-mapped MastPex iOS + macOS read-only explorer for a compatible MasterIndex"
+    },
+    {
+      "repo": "~/Documents/Codex/Experiments/ConversationLab",
+      "branch": "main",
+      "last2026Commit": "no commits yet",
+      "kind": "shared package",
+      "role": "New local experiment"
+    },
+    {
+      "repo": "~/Documents/Codex/Experiments/CoordinationLab",
+      "branch": "main",
+      "last2026Commit": "no commits yet",
+      "kind": "shared package",
+      "role": "New local experiment"
+    },
+    {
+      "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
+      "branch": "main",
+      "last2026Commit": "no commits yet",
+      "kind": "app experiment",
+      "role": "New local-only iPad experiment"
+    },
+    {
+      "repo": "github:billdonner/adspill",
+      "branch": "main",
+      "last2026Commit": "2026-07-29",
+      "kind": "package",
+      "role": "Bill and Jim advertising-capacity research sandbox; not cloned on this machine"
     }
   ],
   "gaps": [

@@ -15,7 +15,8 @@ As of Friday, August 14, 2026.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
-- The registry tracks 51 repositories, of which 49 remain active after the two retirements.
+- The registry tracks 53 repositories, of which 51 remain active after the two retirements.
+- Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - A canonical `billdonner.com/apps` publication bundle is now generated from `current/index.json`; the live IONOS site cannot be updated until its SFTP password is supplied.
 
 ## Completed Reconciliation
@@ -64,7 +65,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | amenbeats | com.billdonner.drumbeats | github:billdonner/drumbeats | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| SharedSpaceLab | com.1041soft.experiments.sharedspacelab | github:billdonner/sharedspacelab | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SentiPods | com.sentipods.app | ~/sentipods | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
@@ -97,9 +98,10 @@ Unmatched or intentionally retained:
 | bd-server-monitor.fly.dev | ~/server-monitor | live | operations, Zerver Monitor |
 | bd-pfolio.fly.dev | github:billdonner/pfolio | live | Pfoliolio |
 | api.famster.app | unidentified | live | Famster |
+| bd-oenora-recognition.fly.dev | ~/oenora | live | Oenora |
 | bd-clubsync.fly.dev | ~/clubsync | deferred | PickledBalls v2 only |
 
-Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca`, `bd-oenora-recognition`, and `bd-podcast-brands`.
+Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca` and `bd-podcast-brands`.
 
 ## Website Publication
 
@@ -108,6 +110,13 @@ Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, p
 - `publish/billdonner.com/apps/pfoliolio/index.html` supplies the marketing and support route expected by ASC.
 - `publish/billdonner.com/apps/oliopfolio/index.html` redirects the obsolete name to Pfoliolio.
 - The live IONOS site remains unchanged because no usable SFTP credential exists in the keychain, repository configuration, or available browser session.
+
+## Preserved Main-Only Facts
+
+- `local-model-lab` is parked, with its historical MLX/Qross corpus benchmark results retained.
+- `adspill` remains a two-person advertising-capacity research sandbox.
+- The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
+- Oenora's public TestFlight invite and external-beta history are retained alongside the newer build 3 ASC observation.
 
 ## Remaining Gaps
 

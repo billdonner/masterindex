@@ -15,7 +15,7 @@ const surfaces = [
 const statuses = [
   { key: "all", label: "All statuses" }, { key: "asc-mapped", label: "ASC mapped" },
   { key: "ready-for-sale", label: "Ready for sale" }, { key: "live", label: "Live services" },
-  { key: "deferred", label: "Deferred" }, { key: "retired", label: "Retired" },
+  { key: "asc-unmapped", label: "ASC only / unlinked" }, { key: "deferred", label: "Deferred" }, { key: "retired", label: "Retired" }, { key: "parked", label: "Parked" },
   { key: "unreachable", label: "Unreachable" }, { key: "misconfigured", label: "Misconfigured" },
   { key: "stale", label: "Stale" }, { key: "gap", label: "Coverage gaps" }, { key: "lab", label: "Labs" }
 ];
@@ -33,7 +33,7 @@ function sortByMostRecent(items, getter) {
   return [...items].sort((a, b) => parseDateValue(getter(b)) - parseDateValue(getter(a)) || String(a.name || a.repo).localeCompare(String(b.name || b.repo)));
 }
 function kindLabel(kind) { return ({ app: "Application", backend: "Backend", service: "Service", package: "Shared package", website: "Website" })[kind] || kind; }
-function statusText(entity) { return ({ "ready-for-sale": "Ready for sale", "asc-mapped": "ASC mapped", live: "Live", "live-degraded-probes": "Live, probes degraded", deferred: "Deferred", retired: "Retired", unreachable: "Unreachable", misconfigured: "Misconfigured", stale: "Stale", "active-alternate": "Active alternate", gap: "Gap", lab: "Lab", "local-only": "Local only", active: "Active" })[entity.status] || entity.status; }
+function statusText(entity) { return ({ "ready-for-sale": "Ready for sale", "asc-mapped": "ASC mapped", live: "Live", "live-degraded-probes": "Live, probes degraded", "asc-unmapped": "ASC only / unlinked", deferred: "Deferred", retired: "Retired", parked: "Parked", unreachable: "Unreachable", misconfigured: "Misconfigured", stale: "Stale", "active-alternate": "Active alternate", gap: "Gap", lab: "Lab", "local-only": "Local only", active: "Active" })[entity.status] || entity.status; }
 function stat(label, value) { return `<div class="stat"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`; }
 function entityTasks(entityId) { return (state.tasks?.entryTasks?.[entityId] || []).filter(task => task.status === "active"); }
 function hasPublicLink(entity) { return Object.values(entity.links || {}).some(value => typeof value === "string" && /^https?:\/\//.test(value)); }

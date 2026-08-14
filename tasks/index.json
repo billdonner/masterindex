@@ -50,7 +50,6 @@
     }
   ],
   "entryTasks": {
-    "mallinbook-app": [],
     "pickledballs-app": [
       {
         "taskId": "pickledballs-link-and-release-check",
@@ -227,16 +226,22 @@
     "sharedspace-lab": [],
     "conversationlab-package": [],
     "coordinationlab-package": [],
+    "amenbeats-app": [],
+    "mallinbook-app": [],
     "sentipods-app": [],
     "words123-app": [],
-    "pfoliolio-app": [],
     "pfolio-backend": [],
     "oenora-app": [],
-    "amenbeats-app": [],
-    "screenker-app": [],
-    "zerver-monitor-app": [],
-    "picklefamilia-app": [],
     "company-site-1041soft": [],
-    "portfolio-app-directory": []
+    "portfolio-app-directory": [],
+    "pfolio-app": [],
+    "picklefamilia-asc-app": [],
+    "screenker-asc-app": [],
+    "zerver-monitor-asc-app": [],
+    "local-model-lab": [],
+    "adspill-sim": [],
+    "mastpex-ios-asc-app": [],
+    "mastpex-macos-asc-app": [],
+    "oenora-recognition-service": []
   }
 }

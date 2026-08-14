@@ -27,12 +27,12 @@ PUBLIC_DESCRIPTIONS = {
     "mallinbook-app": "Turn one living resident roster into a polished, print-ready community directory.",
     "nagz-app": "Family reminders shaped with AI and delivered at the right moment.",
     "oenora-app": "A personal wine knowledge system for your cellar, notes, and discoveries.",
-    "pfoliolio-app": "See every brokerage account and your real asset allocation in one place.",
-    "picklefamilia-app": "Build the week's games, share one link, and let players claim their slots.",
-    "screenker-app": "A Mac studio for producing polished App Store screenshots efficiently.",
+    "pfolio-app": "See every brokerage account and your real asset allocation in one place.",
+    "picklefamilia-asc-app": "Build the week's games, share one link, and let players claim their slots.",
+    "screenker-asc-app": "A Mac studio for producing polished App Store screenshots efficiently.",
     "sentipods-app": "Search and read clean, speaker-labeled podcast transcripts on Mac, iPhone, and iPad.",
     "sharedspace-lab": "An experiment in nearby, peer-to-peer shared spaces across Apple devices.",
-    "zerver-monitor-app": "A pocket status board for the services behind these apps.",
+    "zerver-monitor-asc-app": "A pocket status board for the services behind these apps.",
 }
 
 
@@ -62,7 +62,7 @@ def section(title: str, intro: str, apps: list[dict], label: str, class_name: st
         product_url = links.get("productSite") or links.get("website")
         if product_url and not product_url.startswith("https://billdonner.com/apps/"):
             external.append(link("Product site", product_url))
-        if app["id"] == "pfoliolio-app":
+        if app["id"] == "pfolio-app":
             external.insert(0, link("What it does", "/apps/pfoliolio/"))
         description = PUBLIC_DESCRIPTIONS.get(app["id"], trim_description(app.get("description", "")))
         entries.append(
@@ -131,7 +131,7 @@ def generate_catalog(data: dict) -> str:
 
 
 def generate_pfoliolio(data: dict) -> str:
-    app = next(entity for entity in data["entities"] if entity["id"] == "pfoliolio-app")
+    app = next(entity for entity in data["entities"] if entity["id"] == "pfolio-app")
     links = app["links"]
     body = f'''  <header class="hero wrap">
     <p class="kicker">Portfolio clarity</p><h1>Pfoliolio</h1>
