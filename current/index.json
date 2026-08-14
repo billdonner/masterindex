@@ -441,7 +441,8 @@
       "description": "Pickleball, tennis, and ping pong session-management app by 1041Soft, shipping in organizer-focus mode (free Organizer tier; Organizer Pro planned) with a documented path toward PickleNagz.",
       "dependencies": [
         "CourtScheduler",
-        "PickleFortunesKit"
+        "PickleFortunesKit",
+        "PeerLink"
       ],
       "links": {
         "website": "https://pickledballs.billdonner.com",
@@ -452,6 +453,8 @@
       },
       "notes": [
         "Uses JSON plus GRDB SQLite locally.",
+        "Current project.yml links local packages CourtScheduler, vendored PickleFortunesKit, and PeerLink.",
+        "PeerLink is expected at ../peerlink for local builds; that sibling package was missing on this machine during the 2026-08-13 cleanup.",
         "Current core release does not depend on nagzerver or Clubsync.",
         "nagzerver and Clubsync are future PickledBalls service connections; Clubsync is tied to a future IAP package.",
         "SharedAI unlinked from v1.0 (2026-07-23) \u2014 re-add when the Instructor tier ships.",
@@ -1066,7 +1069,14 @@
       "branch": "main",
       "last2026Commit": "2026-06-16",
       "kind": "shared package",
-      "role": "PickledBalls AI dependency"
+      "role": "Future PickledBalls Instructor-tier AI dependency; unlinked from current v1.0"
+    },
+    {
+      "repo": "~/peerlink",
+      "branch": "unknown",
+      "last2026Commit": "not available locally",
+      "kind": "shared package",
+      "role": "PickledBalls local-network PeerLink dependency; expected by project.yml but missing on this machine"
     },
     {
       "repo": "~/ado-data",
@@ -1345,6 +1355,11 @@
       "kind": "signing-key-unavailable",
       "observedAt": "2026-08-13",
       "summary": "This machine cannot produce App Store archives. The Apple Developer account holds a valid DISTRIBUTION certificate (expires 2027-05-31), but its private key is absent from this Mac's keychain - 'security find-identity -v -p codesigning' returns only 'Apple Development: William Donner (S4D2FRNLHV)'. Distribution signing therefore fails here. The key is presumed to be on the other machine referenced by the 2026-08 machine-switch commits. Resolve by exporting the identity as .p12 from that Mac and importing it, or archive there."
+    },
+    {
+      "kind": "local-path-missing",
+      "observedAt": "2026-08-13",
+      "summary": "PickledBalls project.yml now links a local PeerLink package at ../peerlink for local-network live game transport. The sibling ~/peerlink directory is missing on this machine, and obvious GitHub repo names billdonner/peerlink, billdonner/pickledpeerlink, and billdonner/picklepeerlink were not found. Local PickledBalls builds cannot be regenerated or verified here until PeerLink is restored or its source repo is identified."
     }
   ],
   "taskRegistry": {

@@ -23,7 +23,7 @@ As of Thursday, August 13, 2026.
 - Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
 - Default browsing order should normally be most recently modified first.
 - Strongest active clusters:
-  - `PickledBalls` + `CourtScheduler` + `server-monitor` (nagzerver and Clubsync are future service connections; Clubsync is tied to a future IAP package; SharedAI unlinked from v1.0, returns with the Instructor tier)
+  - `PickledBalls` + `CourtScheduler` + `PeerLink` + `server-monitor` (nagzerver and Clubsync are future service connections; Clubsync is tied to a future IAP package; SharedAI unlinked from v1.0, returns with the Instructor tier)
   - `Qross` + `card-server` + `qross-data` + `card-studio`
   - `Nagz` + `nagzerver` + `nagz-web` + `nagz-ai` + `workinon` + `workinon-mcp`
   - `Flasherz Kids` + `card-server`
@@ -86,6 +86,7 @@ As of Thursday, August 13, 2026.
 - `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
 - `Pfoliolio` is now cloned locally at `~/pfolio-app`; it was previously recorded only as `github:billdonner/pfolio-app`.
 - `PickledBalls` does not depend on `nagzerver` or `clubsync` in the current core release; both are future service connections, with `clubsync` tied to a future IAP package.
+- `PickledBalls` now links a local `PeerLink` package for local-network live game transport, expected at `~/peerlink`; that sibling package is missing on this machine, so local project regeneration/build verification is blocked until it is restored.
 - `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
 - `~/sentipods` completed a live smoke test and is now at local version `0.1.0 (8)`; its ASC mapping remains unverified in this refresh.
 - `~/sentipods` received a UI and resilience pass and is now at local version `0.1.0 (12)` following its TestFlight upload. During its live smoke test, `grubber`'s `/shows` endpoint responded while `/status` hung; the client safely loads the former first and treats status metadata as best effort.
@@ -119,6 +120,7 @@ Rule going forward: if any entity has a verified external public link, it should
 
 - `card-engine` and `card-server` overlap conceptually.
 - `PickledBalls` is still the live ASC name even though docs describe a rebrand path toward PickleNagz.
+- `PickledBalls` expects `~/peerlink` for its PeerLink local package, but this machine does not have that sibling repo and obvious GitHub names for it were not found.
 - `Flasherz Kids` docs and `project.yml` disagree on some build text; `project.yml` was treated as more current.
 - App Store Connect was not re-queried during this refresh; the inventory remains from the August 2 live query. SentiPods is mapped to `~/sentipods`, but its ASC app ID remains unsurfaced in the local scan.
 - The server-side cause of the observed `grubber /status` hang is not yet confirmed.
