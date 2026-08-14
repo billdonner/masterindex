@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-13T17:20:00-05:00",
+  "generatedAt": "2026-08-13T18:05:00-05:00",
   "scope": {
     "dateLabel": "Thursday, August 13, 2026",
     "defaultSort": "most-recently-modified",
@@ -14,7 +14,8 @@
       "Ignored older inactive repos unless directly connected to a 2026-active project.",
       "August 11 reboot-readiness audit verified canonical JSON shape, task coverage, and local path availability without changing retained ASC states.",
       "App Store Connect was queried live on August 13, 2026 via the ASC API (key MN6H2P6385). All ascApps entries reflect that query, replacing the retained August 2 snapshot.",
-      "August 13 write pass: set primary category on 5 macOS records, copyright on all 6, and completed the age-rating questionnaire for Mallinbook and Pfoliolio via the ASC API. Oenora, SharedSpaceLab, and SentiPods age ratings were deliberately left unset - each raises a content question the owner must answer."
+      "August 13 write pass: set primary category on 5 macOS records, copyright on all 6, and completed the age-rating questionnaire for Mallinbook and Pfoliolio via the ASC API. Oenora, SharedSpaceLab, and SentiPods age ratings were deliberately left unset - each raises a content question the owner must answer.",
+      "August 13 second write pass: uploaded SentiPods macOS screenshots, and removed GigStand from sale in all 175 territories."
     ]
   },
   "summary": {
@@ -1316,11 +1317,6 @@
       "summary": "SentiPods is mapped to ~/sentipods and retained as ASC 1.0 PREPARE_FOR_SUBMISSION, but its ASC app ID was not surfaced in the local scan."
     },
     {
-      "kind": "asc-unmatched",
-      "observedAt": "2026-08-13",
-      "summary": "MastPex IOS and MastPex Mac have no corresponding local or GitHub repository; owner describes both as placeholders. GigStand (com.billdonner.gigstand, app ID 428849240) is a long-lived record at 1.020 READY_FOR_SALE with no repo mapped in this index."
-    },
-    {
       "kind": "metadata-inconsistency",
       "observedAt": "2026-08-13",
       "summary": "sentipods README.md states the Mac bundle is com.sentipods.mac, but project.yml sets the SentipodsMac target to com.sentipods.app - one universal-purchase record, not two apps. README is stale."
@@ -1331,9 +1327,24 @@
       "summary": "Resolved. Oenora and SharedSpaceLab now build for Mac Catalyst (SUPPORTS_MACCATALYST=YES, DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER=NO), so their existing macOS ASC records can receive builds under the same bundle ID. Both verified with 'xcodebuild -destination platform=macOS,variant=Mac Catalyst'. Catalyst was chosen over native AppKit because both view layers are UIKit-coupled."
     },
     {
+      "kind": "asc-unmatched",
+      "observedAt": "2026-08-13",
+      "summary": "MastPex IOS and MastPex Mac have no corresponding repository; owner describes both as placeholders."
+    },
+    {
+      "kind": "asc-retired-app",
+      "observedAt": "2026-08-13",
+      "summary": "GigStand (com.billdonner.gigstand, app ID 428849240) shipped 2011-05-04 and was dead for ~15 years. Apple does not permit deleting an app that has ever been on sale, which is why it could not be removed through the ASC UI. Removed from sale instead: all 175 territoryAvailabilities set available=false on 2026-08-13. The record and its version history remain in ASC permanently and will still appear in any full app listing - this is expected, not a gap to re-investigate. Two residuals: the abandoned 1.10 draft from 2011-08-10 cannot be deleted ('Only the first version of any platform can be deleted'), and appAvailabilities does not allow UPDATE, so availableInNewTerritories remains true - if Apple adds a brand-new territory, GigStand could auto-list there and would need removing again."
+    },
+    {
       "kind": "asc-submission-blockers",
       "observedAt": "2026-08-13",
-      "summary": "After the August 13 write pass: all 6 real macOS records have a primary category and copyright. Age rating is set for Mallinbook, Pfoliolio (FOUR_PLUS via API) and Screenker (pre-existing). Still UNSET for Oenora, SharedSpaceLab, and SentiPods - each needs an owner judgment call: Oenora is a wine app so alcoholTobaccoOrDrugUseOrReferences is core subject matter and may force 17+; SharedSpaceLab has real peer-to-peer chat so messagingAndChat is likely true; SentiPods surfaces unfiltered third-party podcast and news content. Remaining non-metadata gaps: Mallinbook has no build attached to its macOS record, and SentiPods desktop screenshots exist at sentipods/AppStoreScreenshots/mac but have not been uploaded."
+      "summary": "All 6 real macOS records have primary category and copyright. Age rating set for Mallinbook, Pfoliolio, Screenker; still UNSET for Oenora, SharedSpaceLab, SentiPods pending owner judgment (wine subject matter, peer-to-peer chat, and unfiltered third-party content respectively). SentiPods desktop screenshots uploaded 2026-08-13 (3 at 2880x1800, assetDeliveryState COMPLETE). Mallinbook still has no build on its macOS record."
+    },
+    {
+      "kind": "signing-key-unavailable",
+      "observedAt": "2026-08-13",
+      "summary": "This machine cannot produce App Store archives. The Apple Developer account holds a valid DISTRIBUTION certificate (expires 2027-05-31), but its private key is absent from this Mac's keychain - 'security find-identity -v -p codesigning' returns only 'Apple Development: William Donner (S4D2FRNLHV)'. Distribution signing therefore fails here. The key is presumed to be on the other machine referenced by the 2026-08 machine-switch commits. Resolve by exporting the identity as .p12 from that Mac and importing it, or archive there."
     }
   ],
   "taskRegistry": {

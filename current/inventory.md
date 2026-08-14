@@ -13,7 +13,8 @@ As of Thursday, August 13, 2026.
 ## Executive Summary
 
 - App Store Connect shows 23 apps as of the 2026-08-13 live query, up from 19 on 2026-08-03. (PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings were removed from ASC in the 2026-08 cleanup and remain absent.)
-- 20 ASC apps map to a local or GitHub repository. 3 do not: `MastPex IOS` and `MastPex Mac` (owner describes both as placeholders) and `GigStand` (app ID 428849240, a long-lived record at 1.020 READY_FOR_SALE).
+- 20 ASC apps map to a local or GitHub repository. 2 do not: `MastPex IOS` and `MastPex Mac`, both placeholders per the owner.
+- `GigStand` (app ID 428849240) shipped 2011-05-04 and had been dead ~15 years. Apple never permits deleting an app that has been on sale, so it was **removed from sale** on 2026-08-13 instead — all 175 territories set unavailable. The record stays in ASC permanently; do not re-flag it as an unmatched app.
 - Three apps previously listed as unmatched were resolved on 2026-08-13 by reading `PRODUCT_BUNDLE_IDENTIFIER` out of each `project.yml`: `Zerver Monitor` → `~/server-monitor-ios`, `Oenora` → `~/oenora`, `SharedSpaceLab` → `~/SharedSpaceLab`. `SharedSpaceLab` is therefore no longer local-only; it does have an ASC record.
 - 8 ASC records carry a macOS version; **6 are real apps**: Mallinbook, Pfoliolio, Screenker, SentiPods, and — as of 2026-08-13 — Oenora and SharedSpaceLab, which gained Mac Catalyst support that day. `MastPex Mac` is a placeholder and `PickleFamilia` is on hold.
 - Oenora and SharedSpaceLab were `platform: iOS` only until 2026-08-13, making their macOS records phantoms. Both now build for Mac Catalyst with their bundle identifiers preserved, so those records can receive builds. Catalyst was chosen over native AppKit because both view layers are UIKit-coupled.
@@ -63,7 +64,8 @@ As of Thursday, August 13, 2026.
   - `Oenora` — a wine app, so `alcoholTobaccoOrDrugUseOrReferences` is core subject matter rather than incidental; an honest answer may force a 17+ rating.
   - `SharedSpaceLab` — ships real peer-to-peer nearby chat and household broadcasts, so `messagingAndChat` is almost certainly true.
   - `SentiPods` — surfaces unfiltered third-party podcast and news content, putting `profanityOrCrudeHumor` and `matureOrSuggestiveThemes` genuinely in play.
-- **Remaining non-metadata macOS gaps.** `Mallinbook` has no build attached to its macOS record. `SentiPods` desktop screenshots exist at `sentipods/AppStoreScreenshots/mac/` but have not been uploaded to ASC.
+- **SentiPods desktop screenshots — uploaded 2026-08-13.** Three at 2880×1800 (`01-brief`, `02-library`, `03-newsroom`), `assetDeliveryState` COMPLETE. `layout-verification.png` and `permission-check.png` were skipped as dev artifacts; the latter is also 5120×2880, which Apple rejects.
+- **Distribution signing is unavailable on this machine.** The account holds a valid `DISTRIBUTION` certificate (expires 2027-05-31), but its private key is not in this Mac's keychain — `security find-identity -v -p codesigning` returns only `Apple Development: William Donner (S4D2FRNLHV)`. App Store archives cannot be produced here. Export the identity as `.p12` from the other machine and import it, or archive there. **This is what blocks the outstanding `Mallinbook` macOS build.**
 - `SentiPods` `README.md` claims the Mac bundle is `com.sentipods.mac`, but `project.yml` sets the `SentipodsMac` target to `com.sentipods.app` — one universal-purchase record, not two apps. The README is stale.
 - `SentiPods` desktop screenshots existed locally (`AppStoreScreenshots/mac/`) but had never been uploaded to ASC, which is why the record showed zero. Committed 2026-08-13.
 - `grubber-ios` is active locally but did not match a current ASC app.
