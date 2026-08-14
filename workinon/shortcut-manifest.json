@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T08:06:00-05:00",
+  "generatedAt": "2026-08-14T08:21:00-05:00",
   "namespace": "masterindex",
   "items": [
     {
@@ -13,11 +13,31 @@
       "priority": "medium"
     },
     {
+      "id": "recent-company-site-1041soft",
+      "title": "1041soft.com changed",
+      "statusKey": "masterindex.recent.company-site-1041soft",
+      "url": "workinon://post?key=masterindex.recent.company-site-1041soft&text=1041soft.com+changed+-+Last+modified+2026-08-14.",
+      "entityId": "company-site-1041soft",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
       "id": "recent-words123-app",
       "title": "123 Words changed",
       "statusKey": "masterindex.recent.words123-app",
       "url": "workinon://post?key=masterindex.recent.words123-app&text=123+Words+changed+-+Last+modified+2026-08-14.",
       "entityId": "words123-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-portfolio-app-directory",
+      "title": "Bill Donner Apps changed",
+      "statusKey": "masterindex.recent.portfolio-app-directory",
+      "url": "workinon://post?key=masterindex.recent.portfolio-app-directory&text=Bill+Donner+Apps+changed+-+Latest+commit%3A+Record+1041soft.com+consolidation+and+closed+Pages+exposure.+Last+modified+2026-08-14.",
+      "entityId": "portfolio-app-directory",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
@@ -108,16 +128,6 @@
       "statusKey": "masterindex.recent.server-monitor-service",
       "url": "workinon://post?key=masterindex.recent.server-monitor-service&text=server-monitor+changed+-+Latest+commit%3A+chore%3A+exclude+local+environment+from+deploys.+Last+modified+2026-08-14.",
       "entityId": "server-monitor-service",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-company-site-1041soft",
-      "title": "1041soft.com changed",
-      "statusKey": "masterindex.recent.company-site-1041soft",
-      "url": "workinon://post?key=masterindex.recent.company-site-1041soft&text=1041soft.com+changed+-+Last+modified+2026-08-13.",
-      "entityId": "company-site-1041soft",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
@@ -606,7 +616,7 @@
       "id": "summary-recent-changes",
       "title": "Recent changes",
       "statusKey": "masterindex.summary.recent-changes",
-      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+21+entries+were+modified+in+the+last+7+days.",
+      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+22+entries+were+modified+in+the+last+7+days.",
       "entityId": null,
       "taskId": null,
       "type": "summary",

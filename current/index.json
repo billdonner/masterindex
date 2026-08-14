@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T08:05:07-05:00",
+  "generatedAt": "2026-08-14T08:20:44-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -23,9 +23,10 @@
       "Server Monitor production probes were corrected and verified live with seven targets, no Clubsync target, and successful Nagzerver and Card Engine HTTP checks.",
       "App Store Connect validation reconciled Pfoliolio iOS/macOS 35, Qross 392, SentiPods macOS 21, and 123 Words 1.12 (59); source metadata was aligned for amenbeats 8 and 100 Burfords 1.1 (9).",
       "Oenora iOS build 6 was approved for the external Founders Beta after a three-device CloudKit soak; its recognition configuration was repaired and its native Developer ID Mac app was notarized and delivered.",
-      "A generated billdonner.com apps catalog and Pfoliolio route now live under publish/billdonner.com; IONOS publication remains blocked on an unavailable SFTP credential.",
+      "The generated billdonner.com apps catalog was published to IONOS on August 14 with 19 active entries, a live Pfoliolio route, an Oliopfolio redirect, and LtWatcher removed from the public apps tree.",
       "Reviewed local git repositories with 2026 activity.",
-      "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026."
+      "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026.",
+      "August 14: consolidated all app websites onto 1041soft.com (public repo billdonner/1041soft-site, GitHub Pages, Let's Encrypt cert valid to 2026-11-12). Disabled GitHub Pages on seven private repos, which closed an unintended public exposure of internal documents."
     ]
   },
   "summary": {
@@ -570,8 +571,8 @@
         "The ASC privacy URL still points to https://billdonner.github.io/bookmaker-app/privacy-policy.html, which returns 404.",
         "github:billdonner/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
         "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
-        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
-        "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
+        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core \u2014 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
+        "Local version 1.0 (14) is one build ahead of TestFlight (13) \u2014 committed, not yet uploaded.",
         "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
         "PARKED 2026-08-03 by owner: resume near the iOS 27 release, when App Store submission can go through the release iOS-27 toolchain. State at park: build 18 live on TestFlight (both platforms); feature-complete for v1 (custom pages, filler pool, recto section starts with PD art dividers, menu parity, -exportPDF); 67 app + 27 MCP tests green; mallinbook-mcp installed at ~/bin and registered with Claude Code; 44-page Maplecrest print PDF ready for the bindery. Resume checklist: confirm xcode-select is the release Xcode, archive via scripts/preflight-testflight.sh flow, then App Store metadata/review."
       ]
@@ -606,9 +607,9 @@
         "Uses JSON plus GRDB SQLite locally.",
         "Current project.yml links local packages CourtScheduler, vendored PickleFortunesKit, and PeerLink.",
         "PeerLink is expected at ../peerlink for local builds; that sibling package was missing on this machine during the 2026-08-13 cleanup.",
-        "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
+        "SharedAI unlinked from v1.0 (2026-07-23) \u2014 re-add when the Instructor tier ships.",
         "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
-        "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
+        "Site fully deployed 2026-08-02 \u2014 support.html and privacy.html both verified live (200).",
         "HarvestSync and Clubsync are deferred until PickledBalls v2; they are not part of the current useful product path."
       ]
     },
@@ -841,10 +842,10 @@
       },
       "notes": [
         "Its shared kit is reused by PickledBalls.",
-        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
+        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement \u2014 PickledBalls consumed it via a local SPM path.",
         "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
         "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product.",
-        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds — no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone — clear it manually in the TestFlight app (Remove App)."
+        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds \u2014 no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone \u2014 clear it manually in the TestFlight app (Remove App)."
       ]
     },
     {
@@ -868,7 +869,7 @@
       "notes": [
         "Strong signal of finished packaging relative to the rest of the portfolio.",
         "Live ASC version is 1.0 and ASC has valid build 9 for the 1.1 draft, but the clean local repo's project.yml and generated Xcode project currently declare 1.0 (7). Regenerating or uploading from this checkout would regress the version/build.",
-        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots — not yet published to ASC."
+        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots \u2014 not yet published to ASC."
       ]
     },
     {
@@ -1153,7 +1154,7 @@
       "repo": "github:billdonner/123words",
       "bundleId": "com.123words.app",
       "release": "iOS 1.11 READY_FOR_SALE and 1.12 PREPARE_FOR_SUBMISSION; source and ASC 1.12 build 59 VALID on 2026-08-14",
-      "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+      "description": "Kids 2\u20137 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
       "dependencies": [],
       "links": {
         "website": "https://billdonner.github.io/123words/",
@@ -1188,8 +1189,8 @@
         "support": "https://billdonner.com/apps/pfoliolio/#support"
       },
       "notes": [
-        "The generated billdonner.com publication bundle adds the canonical /apps/pfoliolio route and redirects the old /apps/oliopfolio route.",
-        "Publication to IONOS is pending the SFTP credential."
+        "Published to IONOS on 2026-08-14: /apps/pfoliolio is live and /apps/oliopfolio serves a canonical redirect to it.",
+        "The published files match the generated MasterIndex artifacts by SHA-1."
       ]
     },
     {
@@ -1255,14 +1256,14 @@
         "2026-08-09: added a network-aware queue that retains scans offline and sends up to three photos plus OCR evidence to the deployed recognition API when configured.",
         "2026-08-09: completed guided offline capture recovery and encrypted founder-beta backup, including a stable recovery code and corruption-rejection coverage.",
         "2026-08-10: added an independent simulator walkthrough with screenshot evidence for capture, offline guidance, recognition review, cellar, and history flows.",
-        "2026-08-10: added four-screen high-school-level onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
+        "2026-08-10: added four-screen high-school-level onboarding and six verified 1206\u00d72622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
         "2026-08-10: ASC app 6799520155 and VALID build 1 were observed. Build 1 is attached to the private Founders Beta group and is waiting for Beta App Review; Jon Packer is the named invite-only tester, automatic notification is enabled, and no public TestFlight link exists.",
         "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge.",
         "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed.",
         "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB).",
         "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW.",
         "2026-08-13: CloudKit sync shipped and verified on two physical iPads (ADR-006: CKSyncEngine beside local JSON, single Cellar zone in the private database, confirmed-cellar records only, last-writer-wins). Gated off by default via OENORA_CLOUDKIT_SYNC_ENABLED; Jon's beta build unaffected.",
-        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
+        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) \u2014 NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
         "2026-08-14 overnight: automated soak (Mac driver plus two physical iPads, 98 Mac cycles and 48 verification cycles) caught and fixed CloudKit insert-versus-update conflicts, stale-device bootstrap overwrite, and a CKSyncEngine scheduler fetch freeze. Final state reached three-way agreement at 98 bottles with zero duplicates.",
         "2026-08-14: recognition token was rotated and verified live, CloudKit schema was deployed to Production, and TestFlight build 6 was approved for the external Founders Beta with Jon auto-notified. The native Mac app was notarized for Developer ID distribution, delivered as a stapled zip, and verified syncing with iOS build 6 through Production CloudKit."
       ]
@@ -1364,21 +1365,21 @@
       "name": "1041soft.com",
       "kind": "website",
       "cluster": "Standalone",
-      "status": "misconfigured",
-      "lastModified": "2026-08-13",
+      "status": "live",
+      "lastModified": "2026-08-14",
       "repo": "github:billdonner/1041soft-site",
       "bundleId": null,
-      "release": "GitHub Pages reports built, but custom-domain DNS points to Namecheap forwarding and HTTPS is unavailable",
+      "release": "Public GitHub Pages site with apex and www DNS on GitHub Pages, HTTPS enforced, and a Let's Encrypt certificate valid through 2026-11-12",
       "description": "Company landing page and shared support/privacy source for Screenker, Mallinbook, SentiPods, and Pfoliolio.",
       "dependencies": [],
       "links": {
-        "website": "http://1041soft.com/",
+        "website": "https://1041soft.com/",
         "github": "https://github.com/billdonner/1041soft-site"
       },
       "notes": [
-        "1041soft.com A resolves to 192.64.119.126 (Namecheap forwarding), not GitHub Pages; www points at Namecheap parking.",
-        "GitHub Pages has https_enforced=false and the HTTPS endpoint times out or fails TLS.",
-        "The repository contains the expected support/privacy paths, but several privacy pages still contain TODO disclosures."
+        "The apex resolves to GitHub Pages addresses and www is a CNAME to billdonner.github.io.",
+        "Canonical app web assets were consolidated here; private app-repository Pages sites were disabled to stop exposing their docs directories.",
+        "Only public web assets were migrated; internal plans, ADRs, reviews, and contributor documentation remain in private repositories."
       ]
     },
     {
@@ -1386,20 +1387,20 @@
       "name": "Bill Donner Apps",
       "kind": "website",
       "cluster": "Standalone",
-      "status": "stale",
-      "lastModified": "2026-08-06",
-      "repo": "unidentified",
+      "status": "live",
+      "lastModified": "2026-08-14",
+      "repo": "~/masterindex",
       "bundleId": null,
-      "release": "Public at billdonner.com/apps; page says generated from ASC on 2026-08-06",
+      "release": "Published to IONOS on 2026-08-14 from the MasterIndex generator with 19 active entries",
       "description": "Public directory of App Store, TestFlight, and in-development apps.",
       "dependencies": [],
       "links": {
         "website": "https://billdonner.com/apps/"
       },
       "notes": [
-        "The page claims every app and 14 total, while live ASC contains 23 records.",
-        "It still calls Pfoliolio Oliopfolio and serves only the old /apps/oliopfolio route.",
-        "The source repository or publishing workflow was not identified; billdonner.github.io does not contain the /apps tree."
+        "The live catalog lists 19 active entries and omits retired LtWatcher.",
+        "Pfoliolio has a live marketing and support route; the obsolete Oliopfolio path redirects to it.",
+        "The previous IONOS catalog was retained under /_archive before publication, and the old LtWatcher directory was moved there."
       ]
     },
     {
@@ -1411,7 +1412,7 @@
       "lastModified": "2026-08-09",
       "repo": "github:billdonner/local-model-lab",
       "bundleId": null,
-      "release": "local tooling only — no ASC presence",
+      "release": "local tooling only \u2014 no ASC presence",
       "description": "Local MLX model evaluation lab: runs quantized models (Qwen3-4B etc.) on-device via an OpenAI-compatible local server and benchmarks them against the full 177,501-question Qross corpus (no_hint and on_request_hint modes), with an OpenAI GPT-5 runner for paid-API comparison. Produces per-run answer logs, wrong-answer exports, and a leaderboard.",
       "dependencies": [],
       "links": {
@@ -1421,12 +1422,12 @@
       },
       "notes": [
         "Historical working path was ~/mlxsrv/local-model-lab; it is not present on this machine, so the GitHub repository is the current locator.",
-        "Standalone lab — not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
+        "Standalone lab \u2014 not part of the Qross cluster and has no dependency on the Qross app/repos; it only consumes an exported corpus snapshot (~/qross-fullaudit/corpus.jsonl) as benchmark data.",
         "Full-corpus leaderboard (2026-08-04): local baseline 85.90% no-hint / 88.72% hinted; qwen3-4b-instruct 84.12% no-hint; OpenAI gpt-5 98.34% on a 10k subset (~$0.94).",
         "Raw answers.jsonl files over 100MB are gitignored (GitHub limit) and kept local-only; summaries and wrong-answer exports are pushed.",
         "Hinted qwen3-4b full-corpus run completed 2026-08-04: 84.84% (vs 84.12% no-hint; hints give qwen3-4b only +0.73 lift).",
-        "2026-08-05: SwiftChat became the common interface — four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB → 7.7GB (kept qwen3-4b + baseline; others re-downloadable).",
-        "PARKED 2026-08-09 by owner. State at park: inline_hint full run complete on the old 177,501 corpus (86.41% — best qwen3-4b result; vs 84.12% no-hint / 84.84% on-request); hint-quality pilots (new hints 87.36% vs old 85.33% on 5k) and hard-subset runs done through Aug 8. Fresh 190,921-question corpus exported to ~/qross-fullaudit/corpus-2026-08-06.jsonl but not yet fully run. All services stopped, results committed+pushed. Resume pointers in STATE.yaml next_action."
+        "2026-08-05: SwiftChat became the common interface \u2014 four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Bridge benchmark declared designed; model caches pruned 53GB \u2192 7.7GB (kept qwen3-4b + baseline; others re-downloadable).",
+        "PARKED 2026-08-09 by owner. State at park: inline_hint full run complete on the old 177,501 corpus (86.41% \u2014 best qwen3-4b result; vs 84.12% no-hint / 84.84% on-request); hint-quality pilots (new hints 87.36% vs old 85.33% on 5k) and hard-subset runs done through Aug 8. Fresh 190,921-question corpus exported to ~/qross-fullaudit/corpus-2026-08-06.jsonl but not yet fully run. All services stopped, results committed+pushed. Resume pointers in STATE.yaml next_action."
       ]
     },
     {
@@ -1439,7 +1440,7 @@
       "repo": "github:billdonner/adspill",
       "bundleId": null,
       "release": null,
-      "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
+      "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 \u2014 an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) \u2014 and Project 2 \u2014 a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
       "dependencies": [],
       "links": {
         "website": null,
@@ -1744,7 +1745,7 @@
       "branch": "main",
       "last2026Commit": "2026-07-20",
       "kind": "reference engine",
-      "role": "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
+      "role": "Python FastAPI/WeasyPrint directory-book engine \u2014 read-only reference for Mallinbook; one-time lossless photo extraction"
     },
     {
       "repo": "~/card-engine",
@@ -2129,19 +2130,19 @@
       "summary": "Resolved in server-monitor commits 7216455 and 6972c20. Production now omits Clubsync, probes public Nagzerver/Card Engine health endpoints, and uses canonical entity IDs; live verification returned HTTP 200 for both endpoints."
     },
     {
-      "kind": "website-dns-and-tls",
-      "observedAt": "2026-08-13",
-      "summary": "1041soft-site is built on GitHub Pages, but 1041soft.com points to Namecheap forwarding (192.64.119.126), www points to parking, HTTPS enforcement is disabled, and HTTPS requests time out or fail TLS. Repo collateral for SentiPods, Screenker, and Mallinbook points at this unusable HTTPS domain."
+      "kind": "website-dns-and-tls-resolved",
+      "observedAt": "2026-08-14",
+      "summary": "Resolved on 2026-08-14. 1041soft.com and www now use GitHub Pages DNS, HTTPS is enforced, and the Let's Encrypt certificate is valid through 2026-11-12."
     },
     {
       "kind": "asc-public-link-inconsistency",
       "observedAt": "2026-08-14",
-      "summary": "The prepared billdonner.com bundle fixes the Pfoliolio marketing/support route and legacy Oliopfolio redirect, but is not live pending IONOS credentials. Mallinbook's ASC privacy URL remains 404 and SentiPods still has no ASC privacyPolicyUrl."
+      "summary": "Pfoliolio's billdonner.com marketing/support route and the legacy Oliopfolio redirect are now live. Mallinbook's ASC privacy URL remains 404 and SentiPods still has no ASC privacyPolicyUrl."
     },
     {
-      "kind": "portfolio-website-stale",
+      "kind": "portfolio-website-stale-resolved",
       "observedAt": "2026-08-14",
-      "summary": "A canonical generated replacement now exists at publish/billdonner.com/apps with 19 active ASC-mapped apps, no LtWatcher, and corrected Pfoliolio routes. The live IONOS site remains stale because the SFTP password is unavailable on this machine."
+      "summary": "Resolved. The generated 19-entry billdonner.com catalog is live on IONOS, retired LtWatcher returns 404, Pfoliolio returns 200, and Oliopfolio serves the canonical redirect. Live files match the generated artifacts."
     },
     {
       "kind": "version-build-drift-resolved",
@@ -2157,6 +2158,16 @@
       "kind": "retired-card-server-contract-differences",
       "observedAt": "2026-08-14",
       "summary": "Before Card Server archival, its legacy production-contract tests found two Card Engine response differences: nonexistent bulk delete returns 422 instead of expected 200, and invalid daily-score dates return 404 instead of expected 400. No current consumer was found to require Card Server, but these differences matter to any legacy Card Studio migration."
+    },
+    {
+      "kind": "exposure-closed",
+      "observedAt": "2026-08-14",
+      "summary": "RESOLVED. GitHub Pages serves a repo's docs/ directory publicly regardless of repo visibility. Seven private repos (qross, nagz, nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook) were publishing docs/ to the open web. Verified world-readable and returning 200: qross business/qross-18-month-product-plan.md, business/risk-register-and-success-criteria.md, architecture/cardzerver-operational-roadmap.md, decisions/ADR-009-secret-management.md, decisions/ADR-004-multiplayer-iap-v1-scope.md, carol-claude-code-instructions.md; and nagz DEPLOYMENT_PLAN.md, CODE_REVIEW_FINDINGS.md, CONTRIBUTOR_GUIDE.md, APP_REVIEW_GUIDE.md. Scanned for live credential patterns (sk-, ghp_, AIza, xox*) and found none - business and architecture material only. Pages disabled on all seven on 2026-08-14; every path re-verified as 404. Root cause is a GitHub behaviour, not a misconfiguration: never enable Pages on a private repo."
+    },
+    {
+      "kind": "universal-links-never-worked",
+      "observedAt": "2026-08-14",
+      "summary": "nagz/docs/.well-known/apple-app-site-association existed but was never served - Jekyll ignores dot-directories by default, so the URL returned 404 for as long as the site was up. Universal links from that domain have therefore never functioned; this is not a regression from the 1041soft.com migration. Making them work needs a .nojekyll file, the AASA served with the correct content type, and the app's associated-domains entitlement pointed at 1041soft.com."
     }
   ],
   "taskRegistry": {
@@ -2166,5 +2177,34 @@
       "Recurring agent work is intentionally stored outside the main inventory file.",
       "Use tasks/index.json to attach periodic work to specific entries."
     ]
+  },
+  "web": {
+    "canonicalDomain": "1041soft.com",
+    "repo": "billdonner/1041soft-site",
+    "visibility": "public",
+    "why": "GitHub Pages builds free for public repos. Pages on a private repo consumes Actions minutes AND publishes its docs/ directory to the open web. Do not enable Pages on any private app repo - add a subpath here instead.",
+    "tls": "Let's Encrypt, covers 1041soft.com and www.1041soft.com, expires 2026-11-12, HTTPS enforced, HTTP 301s to HTTPS",
+    "dns": {
+      "registrar": "Namecheap",
+      "apex": [
+        "185.199.108.153",
+        "185.199.109.153",
+        "185.199.110.153",
+        "185.199.111.153"
+      ],
+      "www": "CNAME billdonner.github.io."
+    },
+    "paths": {
+      "qross": "/qross/",
+      "nagz": "/nagz/",
+      "workinon": "/workinon/",
+      "flasherz": "/flasherz/",
+      "zervermonitor": "/zervermonitor/",
+      "screenker": "/screenker/",
+      "mallinbook": "/mallinbook/",
+      "sentipods": "/sentipods/",
+      "pfolio": "/pfolio/"
+    },
+    "notStored": "Only web assets were migrated. Internal markdown, business plans, ADRs, architecture notes, code reviews, and contributor guides were deliberately left in their private repos."
   }
 }
