@@ -615,7 +615,7 @@
     },
     {
       "id": "qross-app",
-      "name": "Qross",
+      "name": "DoubleQross",
       "kind": "app",
       "cluster": "Qross",
       "status": "asc-mapped",
