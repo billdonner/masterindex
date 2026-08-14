@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-05T14:00:00-05:00",
+  "generatedAt": "2026-08-14T01:23:29-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -12,36 +12,23 @@
     ]
   },
   "entityCoveragePolicy": {
-    "appliesTo": "Every current/index.json entities[].id, including entities without an entry-specific task.",
-    "verificationCadence": { "kind": "rrule", "value": "FREQ=HOURLY;INTERVAL=6" },
-    "refreshCadence": { "kind": "rrule", "value": "FREQ=DAILY;INTERVAL=1" },
+    "appliesTo": "Every current/index.json entities[].id, including entities with an empty entryTasks array.",
+    "verificationCadence": {
+      "kind": "rrule",
+      "value": "FREQ=HOURLY;INTERVAL=6"
+    },
+    "refreshCadence": {
+      "kind": "rrule",
+      "value": "FREQ=DAILY;INTERVAL=1"
+    },
     "requiredBehavior": [
-      "Verify each entity every six hours and record gaps or ambiguities explicitly.",
-      "Refresh observed facts daily in current/index.json first, then current/inventory.md when affected.",
-      "Read current/handoffs/index.json and apply active directives addressed to the entity or all-entities."
+      "On each six-hour cycle, verify the entity's local repository or service and record a gap or ambiguity when it cannot be checked.",
+      "On each daily cycle, refresh observed entity facts in current/index.json first, then current/inventory.md when its narrative is affected.",
+      "Before acting, read current/handoffs/index.json and apply active directives targeted to the entity or to all entities.",
+      "Do not create or alter an entry-specific task merely because the coverage policy ran."
     ]
   },
   "globalTasks": [
-    {
-      "taskId": "fly-operations-check",
-      "name": "Fly.io operations check",
-      "status": "active",
-      "cadence": { "kind": "rrule", "value": "FREQ=HOURLY;INTERVAL=6" },
-      "purpose": "Refresh Fly deployment state for every indexed Fly service and explicitly record service or ownership mismatches.",
-      "expectedInputs": ["current/index.json", "fly apps list", "fly status -a <app>"],
-      "expectedOutputs": ["Refreshed flyOperations.services deployment facts"],
-      "owner": "this Codex task"
-    },
-    {
-      "taskId": "fly-cost-projection-refresh",
-      "name": "Fly.io cost projection refresh",
-      "status": "active",
-      "cadence": { "kind": "rrule", "value": "FREQ=DAILY;INTERVAL=1" },
-      "purpose": "Record observed Fly billing or usage, derive a clearly labeled month-end projection when source data is available, and otherwise retain costStatus=unavailable.",
-      "expectedInputs": ["current/index.json", "authenticated Fly billing or usage source"],
-      "expectedOutputs": ["Refreshed flyOperations cost fields and projection provenance"],
-      "owner": "this Codex task"
-    },
     {
       "taskId": "masterindex-refresh",
       "name": "MasterIndex refresh",
@@ -60,35 +47,6 @@
         "Refreshed current/inventory.md"
       ],
       "owner": "this Codex task"
-    },
-    {
-      "taskId": "collaborator-activity-watch",
-      "name": "Collaborator activity watch",
-      "status": "active",
-      "cadence": {
-        "kind": "rrule",
-        "value": "FREQ=HOURLY;INTERVAL=6"
-      },
-      "purpose": "Keep a unified snapshot of collaborator (Jim / Carol / Steve) repo activity so Bill can see, from the dashboard, where each stands and what awaits his action — without opening a session per collaborator.",
-      "procedure": [
-        "For each entry in current/index.json `collaborators[]`, for each repo in `.repos`:",
-        "  gh api repos/{repo}/commits?per_page=1  -> lastCommit {sha,date,by,summary}",
-        "  gh pr list --repo {repo} --state open   -> openPRs; count those NOT authored by billdonner as collaboratorOpenPRs",
-        "  gh issue list --repo {repo} --state open -> openIssues",
-        "Set awaitingYourAction = true when the newest open PR (or newest issue/comment) on the repo is authored by someone other than billdonner.",
-        "Write results back into collaborators[].lastActivity and set checkedAt to the run date. GitHub only (no email scan)."
-      ],
-      "expectedInputs": [
-        "current/index.json (collaborators[])"
-      ],
-      "expectedOutputs": [
-        "Refreshed collaborators[].lastActivity in current/index.json"
-      ],
-      "owner": "this Codex task",
-      "notes": [
-        "Declared per Bill's request 2026-08-04; runs on the same executor as masterindex-refresh (option b).",
-        "Steve maps to pfolio as end-user; the repo's code collaborator is @rachelelise — reconcile if Steve should have his own GitHub identity tracked."
-      ]
     }
   ],
   "entryTasks": {
@@ -110,24 +68,6 @@
           "Updated link fields",
           "Updated release notes in the inventory"
         ]
-      },
-      {
-        "taskId": "pickledballs-submit-after-1041soft-transfer",
-        "name": "Submit PickledBalls 1.0 for review after 1041Soft ownership transfer",
-        "status": "blocked",
-        "cadence": {
-          "kind": "one-shot",
-          "value": "on-unblock"
-        },
-        "purpose": "PickledBalls 1.0 (354) is fully submission-ready (metadata, price, availability, screenshots, URLs). Hold submission until ASC app ownership is transferred to 1041Soft, then complete the App Privacy questionnaire check and submit for review.",
-        "blockedOn": "ASC ownership transfer to 1041Soft (human step)",
-        "expectedInputs": [
-          "ASC app 6762310890 under 1041Soft"
-        ],
-        "expectedOutputs": [
-          "reviewSubmission created for iOS 1.0 (354)"
-        ],
-        "owner": "Bill + Claude (qross sessions)"
       }
     ],
     "qross-app": [
@@ -262,42 +202,8 @@
         ]
       }
     ],
-    "clubsync-backend": [
-      {
-        "taskId": "clubsync-health-check",
-        "name": "clubsync health check",
-        "status": "active",
-        "cadence": {
-          "kind": "rrule",
-          "value": "FREQ=HOURLY;INTERVAL=6"
-        },
-        "purpose": "Confirm the clubsync service remains reachable and linked correctly in the index.",
-        "expectedInputs": [
-          "current/index.json"
-        ],
-        "expectedOutputs": [
-          "Updated clubsync status if it changes"
-        ]
-      }
-    ],
-    "card-server-backend": [
-      {
-        "taskId": "card-server-health-check",
-        "name": "card-server health check",
-        "status": "active",
-        "cadence": {
-          "kind": "rrule",
-          "value": "FREQ=HOURLY;INTERVAL=6"
-        },
-        "purpose": "Confirm the card-server service remains reachable and linked correctly in the index.",
-        "expectedInputs": [
-          "current/index.json"
-        ],
-        "expectedOutputs": [
-          "Updated card-server status if it changes"
-        ]
-      }
-    ],
+    "clubsync-backend": [],
+    "card-server-backend": [],
     "card-engine-backend": [],
     "server-monitor-service": [
       {
@@ -320,25 +226,22 @@
     "sharedspace-lab": [],
     "conversationlab-package": [],
     "coordinationlab-package": [],
-    "amenbeats-app": [
-      {
-        "taskId": "amenbeats-link-and-release-check",
-        "name": "AmenBeats link and release check",
-        "status": "active",
-        "cadence": {
-          "kind": "rrule",
-          "value": "FREQ=DAILY;INTERVAL=1"
-        },
-        "purpose": "Watch release posture (local build vs TestFlight vs ASC 1.0 draft) and public links for the AmenBeats / drumbeats app. Repo is private; feature work is landing on main ahead of the next TestFlight build (App Store copy held until a build ships).",
-        "expectedInputs": [
-          "current/index.json",
-          "current/inventory.md"
-        ],
-        "expectedOutputs": [
-          "Updated release notes in the inventory",
-          "Updated link fields if any go public"
-        ]
-      }
-    ]
+    "amenbeats-app": [],
+    "mallinbook-app": [],
+    "sentipods-app": [],
+    "words123-app": [],
+    "pfolio-backend": [],
+    "oenora-app": [],
+    "company-site-1041soft": [],
+    "portfolio-app-directory": [],
+    "pfolio-app": [],
+    "picklefamilia-asc-app": [],
+    "screenker-asc-app": [],
+    "zerver-monitor-asc-app": [],
+    "local-model-lab": [],
+    "adspill-sim": [],
+    "mastpex-ios-asc-app": [],
+    "mastpex-macos-asc-app": [],
+    "oenora-recognition-service": []
   }
 }

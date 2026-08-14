@@ -1,7 +1,15 @@
 {
   "generatedAt": "2026-08-05T00:00:00-05:00",
   "schemaVersion": "1.0",
-  "description": "Canonical targeted behavior changes for the next MasterIndex maintenance cycle.",
-  "targeting": { "allEntitiesKey": "all-entities", "entityKeySource": "current/index.json entities[].id" },
+  "description": "Canonical, targeted behavior changes for the next MasterIndex maintenance cycle. This registry is intentionally separate from facts in current/index.json and schedules in tasks/index.json.",
+  "readOrder": [
+    "current/index.json",
+    "tasks/index.json",
+    "current/handoffs/index.json"
+  ],
+  "targeting": {
+    "allEntitiesKey": "all-entities",
+    "entityKeySource": "current/index.json entities[].id"
+  },
   "directives": []
 }

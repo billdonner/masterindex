@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IndexMaker Browser</title>
+  <title>MasterIndex</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <div class="shell">
     <aside class="sidebar panel">
       <div class="brand">
-        <span class="eyebrow">IndexMaker</span>
+        <span class="eyebrow">MasterIndex</span>
         <h1>System Browser</h1>
         <p>GitHub-first portfolio map for agents and humans.</p>
       </div>
@@ -28,6 +28,11 @@
       <div class="filter-block">
         <h3>Status</h3>
         <div id="statusChips" class="chips"></div>
+      </div>
+
+      <div class="filter-block">
+        <h3>Review</h3>
+        <div id="reviewChips" class="chips"></div>
       </div>
 
       <div class="filter-block">
@@ -52,12 +57,21 @@
         </div>
       </section>
 
+      <section class="attention panel" aria-labelledby="attentionTitle">
+        <div>
+          <span class="section-kicker">Operational review</span>
+          <h3 id="attentionTitle">What needs a closer look</h3>
+          <p>These are recorded gaps and incomplete public-link coverage, not live alerts.</p>
+        </div>
+        <div id="attentionList" class="attention-list"></div>
+      </section>
+
       <section class="lane">
         <div class="section panel">
           <div class="section-head">
             <div>
               <span class="section-kicker">Inventory Cards</span>
-              <h3>Apps, repos, services, and packages</h3>
+              <h3>Apps, websites, repos, services, and packages</h3>
             </div>
             <p id="resultCount"></p>
           </div>
@@ -83,9 +97,9 @@
           <div class="section-head">
             <div>
               <span class="section-kicker">Shared Backbone</span>
-              <h3>Live services and data patterns</h3>
+              <h3>Services and consumers</h3>
             </div>
-            <p>What gets reused across products.</p>
+            <p>Observed service relationships in the current index.</p>
           </div>
           <div id="serviceList" class="mini-list"></div>
         </div>
@@ -114,7 +128,7 @@
             <span class="section-kicker">2026 Repository Sweep</span>
             <h3>Active repository inventory</h3>
           </div>
-          <p>Read-only scan across `~/` plus current Codex experiments.</p>
+          <p>Read-only scan across local repositories and the current GitHub inventory.</p>
         </div>
         <div class="table-wrap">
           <table>

@@ -6,7 +6,7 @@ If you are an agent consuming or updating this index:
 
 1. Read `current/index.json`
 2. Read `tasks/index.json` if you need to discover periodic work assigned to entries
-3. Read `current/handoffs/index.json` before periodic or operational work; apply active directives for the entity or `all-entities`
+3. Read `current/handoffs/index.json` before running a periodic or operational task; apply active directives addressed to the target entity or `all-entities`
 4. Use `current/inventory.md` only for narrative context
 5. Treat `site/` as presentation, not source of truth
 

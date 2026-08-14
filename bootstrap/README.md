@@ -5,7 +5,9 @@ This folder contains the exact reusable text for injecting MasterIndex behavior 
 ## Files
 
 - `MASTERINDEX_UNIVERSAL_INJECTION.md` — preferred single file for injecting MasterIndex everywhere except `workin On`
-- `MASTERINDEX_MANAGED_BLOCK.md` — delimited agent-neutral block for `AGENTS.md` and `CLAUDE.md`
+- `MASTERINDEX_MANAGED_BLOCK.md` — delimited agent-neutral block for both `AGENTS.md` and `CLAUDE.md`
+- `install-agent-handoff.sh` — idempotently installs the managed block in tracked local repositories
+- `OTHER_MACHINE_SETUP.md` — concise setup and scheduling guidance for a second Mac
 - `MASTERINDEX_DRIFT_LAUNCHAGENT.md` — install, test, and unload notes for the safe six-hour drift checker
 - `install-masterindex-drift-launchagent.sh` — installs the safe read-only drift LaunchAgent
 - `AGENTS_SNIPPET.md` — drop-in text for `AGENTS.md`

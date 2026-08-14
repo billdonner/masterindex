@@ -1,165 +1,134 @@
 # MasterIndex Inventory
 
-As of Sunday, August 10, 2026.
+As of Friday, August 14, 2026.
 
 ## Scope
 
-- Reviewed all local git repositories with 2026 commit activity under `/Users/billdonner/*` plus current 2026 experiment repos under `Documents/Codex/Experiments`.
-- Treated all repositories as read-only.
-- Retained the full 20-app App Store Connect baseline from August 6, 2026 and added Oenora from a live August 10 observation, bringing the recorded portfolio to 21 apps.
-- Ignored older inactive repos unless directly tied to a 2026-active app, service, or shared package.
+- Reconciled App Store Connect, active GitHub sources, local repositories, Fly deployments, and public product URLs.
+- Applied no handoff directives because `current/handoffs/index.json` has none.
+- Performed the requested retirements and operational fixes; observed facts and unresolved publication access are kept distinct below.
 
 ## Executive Summary
 
-- App Store Connect currently records 21 apps: the August 6 portfolio baseline plus Oenora, observed live on August 10. PickleBrains, picklefortunes, Alities, Quackman, and the stray screenkr2 listings remain removed from ASC.
-- 19 ASC apps map cleanly to currently active local repositories.
-- 2 ASC apps are visible in ASC but do not have a clearly corresponding 2026-active local repository in this scan.
-- Mallinbook was resolved on 2026-08-02: its repo is `~/mallinbook` (renamed 2026-08-01 from `bookmaker-app`, which hid it from the original scan). Multiplatform macOS + iOS; the `~/bookmaker` Python engine remains as read-only reference.
-- AmenBeats was resolved on 2026-08-04: its repo is `~/drumbeats` (App Store name ≠ repo name hid it from earlier scans). A Bill + Jim SwiftUI drum-machine app; Jim (`@jrforster`) added as full admin, now a shared build.
-- MastPex was resolved on 2026-08-07: its iOS and macOS ASC records map to `~/Documents/Codex/2026-08-02/masterindex-explorer`, the native read-only explorer for compatible MasterIndex files.
-- Default browsing order should normally be most recently modified first.
-- Strongest active clusters:
-  - `PickledBalls` + `nagzerver` + `clubsync` + `CourtScheduler` (SharedAI unlinked from v1.0, returns with the Instructor tier; server-monitor moved to the Infrastructure cluster)
-  - `Qross` + `card-server` + `qross-data` + `card-studio`
-  - `Nagz` + `nagzerver` + `nagz-web` + `nagz-ai` + `workinon` + `workinon-mcp`
-  - `Flasherz Kids` + `card-server`
-  - `LtWatcher` + `clubsync` + `nagzerver`
-- Current Codex experiments are local-only:
-  - `ConversationLab`
-  - `CoordinationLab`
-  - `SharedSpaceLab`
-- `adspill` (new cluster): a Bill + Jim (`@jrforster`) private research collaboration on selling excess advertising capacity, split into Project 1 (auction/exchange modeling sandbox, Bill's track) and Project 2 (self-serve create-and-sell for long-tail local video ads, Jim's track). Lab/scoping stage.
-- `local-model-lab` (standalone, added 2026-08-04): MLX local-model evaluation lab at `~/mlxsrv/local-model-lab`, benchmarking on-device quantized models (and OpenAI GPT-5 for comparison) against an exported 177k-question Qross corpus snapshot. No dependency on the Qross app/repos — the corpus is just benchmark data.
-- `Oenora` is now an invitation-only external TestFlight beta at `~/oenora`. Offline camera/photo-library capture, on-device OCR, restart-safe persistence, cloud recognition after connectivity returns, candidate review/correction, cellar history, and client-encrypted backup are implemented. ASC app `6799520155` has VALID iOS build 1 waiting for Beta App Review; the private Founders Beta group has no public link. Sign in with Apple is deferred until the first founder field-test cycle is complete.
+- ASC contains 23 app records: 20 map to repositories, two MastPex records are placeholders, and GigStand is the intentionally retained retired record.
+- LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
+- Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
+- Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
+- Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
+- The registry tracks 53 repositories, of which 51 remain active after the two retirements.
+- Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
+- A canonical `billdonner.com/apps` publication bundle is now generated from `current/index.json`; the live IONOS site cannot be updated until its SFTP password is supplied.
+
+## Completed Reconciliation
+
+### Product lifecycle
+
+- LtWatcher was retired because its Clubsync dependency is absent and that capability has no useful path before PickledBalls v2.
+- Clubsync was removed from current PickledBalls dependencies and from recurring health checks. The source and database remain available for the v2 decision.
+- Card Server was checked against current consumers and the live service before retirement. All observed current consumers use Card Engine.
+- Card Server's historical Qross App Store ID was corrected before archival, and its deployment descriptor was removed to prevent accidental replacement of Card Engine.
+
+### Server Monitor
+
+- Production uses public `/healthz` and `/health` endpoints for Nagzerver and Card Engine.
+- Cardzerver records now use canonical entity id `card-engine-backend`.
+- Clubsync is no longer a monitored production target.
+- Live `/api/status` reported seven configured targets and successful HTTP 200 probes for Nagzerver and Cardzerver.
+- Remaining yellow/red display values are database thresholds such as cache rate and historical failed deliveries, not failed endpoint checks.
+
+### Version and build drift
+
+| App | Source | App Store Connect | Result |
+|---|---:|---:|---|
+| Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
+| amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
+| 100 Burfords | 1.1 (9) | 1.1 (9) draft | Aligned in GitHub commit `48192f3` |
+| Qross | 392 | 392 VALID | Aligned; clean worktree used without touching the active feature branch |
+| 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
+| SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
+| Oenora iOS | 1.0 (6) | 6 VALID, external beta approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
+
+Pfoliolio export used App Store-managed numbering, so Apple accepted both platforms as build 35. Source was aligned and pushed in commit `2d73c97`.
+
+## Card Server Compatibility Finding
+
+The retirement check exposed two response-contract differences when the legacy Card Server suite was pointed at production Card Engine:
+
+- Bulk deletion of a nonexistent item returns 422; the legacy suite expected 200.
+- An invalid daily-score date returns 404; the legacy suite expected 400.
+
+No current consumer was found to require Card Server, so these do not block retirement. They remain recorded for any Card Studio or legacy-client migration work.
 
 ## Current ASC Apps
 
-### ASC apps mapped to active local repos
+| App | Bundle ID | Repository | State |
+|---|---|---|---|
+| Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| amenbeats | com.billdonner.drumbeats | github:billdonner/drumbeats | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
+| SentiPods | com.sentipods.app | ~/sentipods | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| workin On | com.workinon.app | ~/workinon | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| 100 Burfords | com.billdonner.burfords | ~/100Burfords | 1.0 READY_FOR_SALE; 1.1 draft |
+| Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Famster | com.famster.app | ~/famster-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Nagz | com.nagz.app | ~/nagz-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Qross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
+| Flasherz Kids | com.billdonner.obo | ~/obo-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| KinFlash | com.billdonner.kinflash | ~/kinflash | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
+| Cardz Studio | com.billdonner.cardz-studio | ~/cardz-studio-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 
-| ASC app | Bundle ID | ASC app ID | Repo | Local version/build | ASC state | Public link |
-|---|---|---:|---|---|---|---|
-| Oenora | `com.billdonner.oenora` | `6799520155` | `~/oenora` | `1.0 (1)` VALID, uploaded 2026-08-10 | Private external TestFlight, `WAITING_FOR_BETA_REVIEW` | None; invitation-only by design |
-| PickledBalls | `com.pickledballs.app` | `6762310890` | `~/PickledBalls` | `1.0 (354)` on TestFlight | `IOS 1.0 PREPARE_FOR_SUBMISSION` (metadata complete; only App Privacy questionnaire remains) | `https://pickledballs.billdonner.com` |
-| Qross | `com.qross.app` | `6759799988` | `~/qross` | build `389` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/qross/` |
-| 100 Burfords | `com.billdonner.burfords` | `6766107636` | `~/100Burfords` | `1.1 (9)`, observed 2026-08-06 | `IOS 1.0 READY_FOR_SALE` | Verified website and App Store link in `index.json` |
-| Flasherz Kids | `com.billdonner.obo` | `6759509933` | `~/obo-ios` | build `47` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/obo-ios/` |
-| Nagz | `com.nagz.app` | `6759530926` | `~/nagz-ios` | build `359` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/nagz/` |
-| Cardz Studio | `com.billdonner.cardz-studio` | `6759624116` | `~/cardz-studio-ios` | `1.0 (10)` | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
-| KinFlash | `com.billdonner.kinflash` | `6762008872` | `~/kinflash` | build `65` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/kinflash/` |
-| workin On | `com.workinon.app` | `6762529338` | `~/workinon` | build `65` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/workinon/` |
-| Famster | `com.famster.app` | `6763581385` | `~/famster-ios` | build `3` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/famster/` |
-| LtWatcher | `com.ltwatch.app` | `6764622141` | `~/clubwatch` | build `2` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/ltwatcher/` |
-| 123 Words | `com.123words.app` | `6766975041` | `~/123words` | build `41` uploaded | versions `1.0`, `1.1`, and `1.11` ready for distribution; `1.12` in preparation | `https://billdonner.github.io/123words/` |
-| AmenBeats | `com.billdonner.drumbeats` | `6778510642` | `~/drumbeats` | build `7` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/amenbeats/` |
-| MastPex IOS | `com.billdonner.mastpex` | `6797321392` | `~/Documents/Codex/2026-08-02/masterindex-explorer` | build `1` uploaded | `IOS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
-| MastPex Mac | `com.billdonner.mastpex.mac` | `6797321653` | `~/Documents/Codex/2026-08-02/masterindex-explorer` | build `1` uploaded | `MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | No verified public link |
-| SentiPods | `com.sentipods.app` | `6797132650` | `~/sentipods` | build `15` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/sentipods/` |
-| Zerver Monitor | `com.billdonner.ZerverMonitor` | `6759637400` | `~/server-monitor-ios` | build `4` expired | `IOS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.github.io/server-monitor-ios/` |
-| Mallinbook | `com.mallinbook.app` | `6785245339` | `~/mallinbook` | build `18` uploaded | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/mallinbook/` |
-| Pfoliolio* | `com.pfolio.app` | `6797993806` | `~/pfolio-app` | macOS `28` VALID; iOS `6` | `IOS + MAC_OS 1.0 PREPARE_FOR_SUBMISSION` | `https://billdonner.com/apps/oliopfolio/` |
+Unmatched or intentionally retained:
 
-### Confirmed gaps
+- MastPex IOS and MastPex Mac are placeholders with no app repository.
+- GigStand is retired, removed from all 175 territories, and permanently retained by ASC because it was previously sold.
 
-- The two ASC records without a matched active local repository remain browseable entities: PickleFamilia and Screenker. The August 6 ASC pull supplied their real bundle IDs, platform status, and build metadata. MastPex was resolved on 2026-08-07 to `~/Documents/Codex/2026-08-02/masterindex-explorer`.
-- PickleFamilia has a verified public product page at `https://billdonner.github.io/picklefamilia-ios/`; its source repository is still unverified.
-- Screenker is wired to Qross, 123 Words, and 100 Burfords as their observed shared App Store screenshot-composition workflow. It also has a verified public product page at `https://billdonner.github.io/screenker/`, but its standalone local source repository remains unverified.
-- Zerver Monitor is now resolved to `~/server-monitor-ios`: its `project.yml` declares the exact ASC bundle ID, and it contains the iOS, watchOS, widget, and web-support sources. Its public GitHub Pages site is `https://billdonner.github.io/server-monitor-ios/`.
-- MasterIndex policy: every ASC app has an entity. A verified public website or App Store page is stored in `links`; when neither is verified, the entity's `release` field explicitly records its known release or development status.
-- `grubber-ios` is active locally but did not match a current ASC app.
-- `SentiPods` is mapped to `~/sentipods` (`com.sentipods.app`), based on the local project's alignment to its ASC 1.0 record. Its ASC app ID was not surfaced in the local scan.
-- `picklefortunes` is retired: its ASC listing was deleted in the 2026-08 cleanup, its repository is archived, and its reusable kit is retained in PickledBalls.
-- `SharedSpaceLab` is local-only and not in ASC.
+## Services
 
-## Shared Services
+| Service | Source | State | Consumers |
+|---|---|---|---|
+| bd-nagzerver.fly.dev | ~/nagzerver | live | Nagz, workin On, PickledBalls |
+| bd-cardzerver.fly.dev | ~/card-engine | live | Qross, Flasherz Kids, Cardz Studio, card-studio |
+| bd-grubber.fly.dev | ~/grubber | live | SentiPods, grubber clients |
+| bd-server-monitor.fly.dev | ~/server-monitor | live | operations, Zerver Monitor |
+| bd-pfolio.fly.dev | github:billdonner/pfolio | live | Pfoliolio |
+| api.famster.app | unidentified | live | Famster |
+| bd-oenora-recognition.fly.dev | ~/oenora | live | Oenora |
+| bd-clubsync.fly.dev | ~/clubsync | deferred | PickledBalls v2 only |
 
-- `bd-nagzerver.fly.dev` from `~/nagzerver`
-- `bd-clubsync.fly.dev` from `~/clubsync`
-- `bd-cardzerver.fly.dev` from `~/card-server`
-- `bd-grubber.fly.dev` from `~/grubber`
-- `bd-server-monitor.fly.dev` from `~/server-monitor`
-\* Name settled **Pfoliolio** on 2026-08-09. Steve was given the choice with a
-6pm ET deadline and did not reply, so Bill's stated default applied. Verified taken
-by other accounts: Oliofolio, Olio Folio, Foliolio. Privacy policy is live at
-https://billdonner.github.io/pfolio-app/privacy.html and attached to the ASC record.
+Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca` and `bd-podcast-brands`.
 
-- `bd-pfolio.fly.dev` from `~/pfolio` (portfolio tracker API; shares bd-postgres)
-- `bd-oenora-recognition.fly.dev` from `~/oenora` (token-protected cloud recognition; end-to-end recognition verified in the August 10 simulator walkthrough)
-- `api.famster.app` as a confirmed backend domain without a corresponding repo found in this scan
+## Website Publication
 
-## Fly.io Operations and Cost Reporting
+- `tools/generate_billdonner_apps.py` generates the active catalog from canonical JSON.
+- `publish/billdonner.com/apps/index.html` lists 19 active ASC-mapped apps and omits retired LtWatcher.
+- `publish/billdonner.com/apps/pfoliolio/index.html` supplies the marketing and support route expected by ASC.
+- `publish/billdonner.com/apps/oliopfolio/index.html` redirects the obsolete name to Pfoliolio.
+- The live IONOS site remains unchanged because no usable SFTP credential exists in the keychain, repository configuration, or available browser session.
 
-MasterIndex now records Fly deployment status under `flyOperations` in `current/index.json`. The August 6 authenticated CLI check observed deployed cardzerver, nagzerver, grubber, server-monitor, and pfolio apps. `bd-clubsync` did not appear in the personal app list (while `bd-clubsync-db` did), so that ownership/app-name mapping remains a recorded gap. No billing or usage amount was available from the observed CLI surface; cost status is explicitly `unavailable` and no projection is fabricated.
+## Preserved Main-Only Facts
 
-## Collaborators
+- `local-model-lab` is parked, with its historical MLX/Qross corpus benchmark results retained.
+- `adspill` remains a two-person advertising-capacity research sandbox.
+- The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
+- Oenora's public TestFlight invite, externally approved iOS build 6, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
 
-Unified watch over the people Bill co-works with, refreshed every 6h by the
-`collaborator-activity-watch` task (`tasks/index.json`). Canonical data lives in
-`current/index.json` under `collaborators[]`; this table is presentation only.
+## Remaining Gaps
 
-| Collaborator | Role | Repo | Last activity | Awaiting Bill |
-|---|---|---|---|---|
-| Jim Forster (`@jrforster`) | dev collaborator | `billdonner/adspill`, `billdonner/drumbeats` | adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): joined as admin 2026-08-04, feature work starting | No |
-| Carol (`@cuchif`) | dev collaborator | `billdonner/qross` | 3 open PRs from Carol (#172/#173/#174, 07-25/26) | **Yes — 3 PRs need review** |
-| Steve Gould | pfolio end-user / stakeholder | `billdonner/pfolio`, `billdonner/pfolio-app` | His UX work is merged (pfolio-app #5, reviewed hands-on and approved 2026-08-07) and all four of his PRs were closed as superseded on 2026-08-08, each with a comment tracing where the work landed. His classification backlog moved to pfolio issue #7. | **No — nothing of his is waiting on Bill** |
+- The IONOS SFTP password is required to publish the prepared `billdonner.com` fix.
+- Mallinbook's ASC privacy URL still points to a removed GitHub Pages route and returns 404.
+- SentiPods still has no ASC privacyPolicyUrl.
+- Age ratings remain unset for Oenora, SharedSpaceLab, and SentiPods pending owner decisions.
+- `~/peerlink` is missing and no matching GitHub repository was found, so PickledBalls project generation remains blocked on this machine.
+- `1041soft.com` still points at Namecheap forwarding/parking rather than its GitHub Pages source; HTTPS is unusable.
+- Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 
-- **Reconcile:** Steve is mapped to `pfolio` as its end-user; the repo's code
-  collaborator is `@rachelelise`, not a Steve GitHub identity. Decide whether
-  Steve should be tracked as a stakeholder only (current) or given his own
-  GitHub handle.
-- Scope is GitHub only (commits, PRs, issues); no email inbox is scanned.
+## Operational Rule
 
-## Changes Observed In This Refresh
-
-- `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
-- `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
-- `~/sentipods` completed a live smoke test and is now at local version `0.1.0 (8)`; its ASC mapping remains unverified in this refresh.
-- `~/sentipods` received a UI and resilience pass and is now at local version `0.1.0 (12)` following its TestFlight upload. During its live smoke test, `grubber`'s `/shows` endpoint responded while `/status` hung; the client safely loads the former first and treats status metadata as best effort.
-- `~/sentipods` is now at local version `1.0 (15)`, aligned with its ASC 1.0 PREPARE_FOR_SUBMISSION record. TestFlight build `14`, including its new icon, is uploaded.
-- `~/grubber` completed M2 of its pods-versus-news analysis pipeline: idempotent embeddings, topic clustering, daily rollups, and two new read endpoints for trending topics and topic detail.
-- `~/grubber` completed M3: LLM topic labeling, podcast-versus-news claim comparison, and daily digest generation. The producer-side LLM work has a `$5` soft and `$10` hard spending cap per UTC day; digest reads are available as markdown or JSON.
-- `~/grubber` completed M4 and its fast live-update lane: APNs device registration/dispatch, `/api/v1/updates/recent`, `/api/v1/topics/{topic_id}/compare`, and the public live producer view at `https://bd-grubber.fly.dev/progress` are deployed. The Mac producer has text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes serialize SQLite writes with a shared lock.
-- `~/grubber` centralized the shared database lock across analysis, news pull, and export writers, with test coverage. This is a producer reliability fix; no new public API release was observed.
-- `~/kinflash` expanded the native Mac MCP surface for voice testing: capture, transcription, feedback, run logs, settings, and a smoke-test script. This is active local development; no new ASC release was observed.
-- `~/kinflash` separated its roster data from a fictional-pedigree fixture and refreshed the rendered export. This is internal development work; no new ASC release was observed.
-- `~/oenora` added local App Store Connect app-registration documentation and tooling. It does not establish an ASC record, deployment, or public release; the provisional product name still requires clearance.
-- `~/oenora` added an app icon, App Store and website copy, plus local ASC inspection and metadata-update scripts. These are launch-preparation assets, not evidence of an ASC record or public website.
-- `~/oenora` corrected confirmed identity autofill to use label evidence and added local test coverage. This remains on-device development work.
-- `~/kinflash` added repository documentation for its fictional pedigree and flashcard direction. The likely GitHub Pages address returned HTTP 404 during this refresh, so the pages are not recorded as public.
-- `~/oenora` added a network-aware cloud-recognition queue and a Fly deployment configuration. `https://bd-oenora-recognition.fly.dev/health` returned HTTP 200; the later August 9 device test plan records recognition as live, with temporary failures safely retryable.
-- `~/oenora` completed guided capture recovery and encrypted founder-beta backup. The current test plan records recognition and backup as live; temporary failures remain retryable, and backup requires a stable recovery code.
-- `~/kinflash` added native Mac GEDCOM import/export actions and bundled fictional examples. Import intentionally requires an empty document until a merge-conflict workflow exists.
-- `~/kinflash` now keeps Mac flashcard review in a single persistent deck. This is active local development; no new ASC release was observed.
-- `~/kinflash` added package-scoped Mac attachments. This is active local development; no new ASC release was observed.
-- `~/workinon` added bundled MasterIndex operational-feed surfaces, feed tests, shortcut updates, and board-feed data. This is active local development; no new ASC release was observed.
-- `~/oenora` added an independent simulator walkthrough with evidence for capture, offline guidance, recognition review, cellar, and history flows. This is test documentation, not a public release.
-- `~/oenora` added plain-language four-screen onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, human-reviewed recognition, cellar, history, and an empty-state reference.
-- `~/oenora` improved the Mac label-photo workflow. This is local beta development; no new ASC release was observed.
-- Oenora ASC app `6799520155` and VALID iOS build 1 were observed live on August 10. Build 1 is waiting for Beta App Review in the private, invitation-only Founders Beta group; no public TestFlight link exists. Sign in with Apple is intentionally deferred until after the first founder field test.
-- Several existing repositories received MasterIndex agent-entry-point documentation updates. These confirm their ongoing connection to the shared index, but do not by themselves establish a product release or deployment change.
-- `~/adspill` was added to the index: a two-person (Bill + Jim) ad-capacity experiment. Project 1 is a working Python auction sim plus a real-time monitor UI (8 unit tests green, stdlib-only, no store/network yet); Project 2 is framing-stage only. A FloSports/Northwoods diligence memo reframed the effort as a demand + rights + sales-cost problem rather than an exchange build, gated on whether Northwoods League teams retain in-stream ad rights after FloSports' exclusive global deal. Repo is private, so no public link is recorded.
-
-## Public Links
-
-- PickledBalls website from local docs: `https://pickledballs.billdonner.com`
-- Famster backend domain from local docs: `https://api.famster.app`
-- grubber service: `https://bd-grubber.fly.dev`
-- nagzerver: `https://bd-nagzerver.fly.dev`
-- clubsync: `https://bd-clubsync.fly.dev`
-- card-server: `https://bd-cardzerver.fly.dev`
-- server-monitor: `https://bd-server-monitor.fly.dev`
-- Mallinbook repo (public GitHub): `https://github.com/billdonner/mallinbook`
-- Verified App Store page found during the August 2, 2026 link pass:
-  - 100 Burfords: `https://apps.apple.com/ca/app/100-burfords/id6766107636`
-  - 100 Burfords site (GitHub Pages, privacy policy): `https://billdonner.github.io/100Burfords/`
-
-For the other mapped ASC apps, no clearly public App Store page was verified in the web pass. That is consistent with most of them still being in `PREPARE_FOR_SUBMISSION`.
-
-Rule going forward: if any entity has a verified external public link, it should be included in the shared index.
-
-## Main Ambiguities
-
-- `card-engine` and `card-server` overlap conceptually.
-- `PickledBalls` is still the live ASC name even though docs describe a rebrand path toward PickleNagz.
-- `Flasherz Kids` docs and `project.yml` disagree on some build text; `project.yml` was treated as more current.
-- App Store Connect was not re-queried during this refresh; the inventory remains from the August 2 live query, so Sentipods remains an unverified ASC mapping gap.
-- The server-side cause of the observed `grubber /status` hang is not yet confirmed.
+Use `current/index.json` as source of truth, `tasks/index.json` for recurring routing, and `current/handoffs/index.json` for next-cycle directives. Public websites and `site/` are presentation surfaces and must be checked against JSON, ASC, repository settings, and live deployments.

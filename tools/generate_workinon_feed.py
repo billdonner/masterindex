@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import math
+import subprocess
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -19,6 +20,15 @@ def parse_date_value(value: str | None) -> float:
         return datetime.fromisoformat(value).timestamp()
     except ValueError:
         return float("-inf")
+
+
+def parse_datetime(value: str | None) -> datetime | None:
+    if not value or value == "no commits yet":
+        return None
+    try:
+        return datetime.fromisoformat(value)
+    except ValueError:
+        return None
 
 
 def days_since(value: str | None, now_dt: datetime) -> int | None:
@@ -40,6 +50,37 @@ def deep_link(entity_id: str) -> str:
     return f"site/index.html#{entity_id}"
 
 
+def latest_commit_subject(repo_path: str | None) -> str | None:
+    if not repo_path:
+        return None
+
+    path = Path(repo_path).expanduser()
+    if not path.exists():
+        return None
+
+    try:
+        result = subprocess.run(
+            ["git", "-C", str(path), "log", "-1", "--pretty=format:%s"],
+            check=True,
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+    except (subprocess.SubprocessError, OSError):
+        return None
+
+    subject = result.stdout.strip()
+    return subject or None
+
+
+def recent_change_body(entity: dict) -> str:
+    modified = entity.get("lastModified")
+    commit_subject = latest_commit_subject(entity.get("repo"))
+    if commit_subject:
+        return f"Latest commit: {commit_subject}. Last modified {modified}."
+    return f"Last modified {modified}."
+
+
 def build_attention_items(index_data: dict) -> list[dict]:
     items = []
     for entity in index_data["entities"]:
@@ -55,7 +96,8 @@ def build_attention_items(index_data: dict) -> list[dict]:
                     "entityId": entity["id"],
                     "title": f"{entity['name']} missing public links",
                     "body": "No verified website or public App Store page is recorded yet.",
-                    "priority": "medium" if is_app else "low",
+                    "priority": "low",
+                    "lane": "Needs Attention",
                     "tags": ["links", "public", entity["cluster"].lower()],
                     "deepLink": deep_link(entity["id"]),
                     "statusKey": board_key("attention", f"{entity['id']}.no-public-links"),
@@ -76,7 +118,8 @@ def build_attention_items(index_data: dict) -> list[dict]:
                     "entityId": entity["id"],
                     "title": f"{entity['name']} missing public App Store page",
                     "body": body,
-                    "priority": "medium",
+                    "priority": "low",
+                    "lane": "Needs Attention",
                     "tags": ["links", "app-store", entity["cluster"].lower()],
                     "deepLink": deep_link(entity["id"]),
                     "statusKey": board_key("attention", f"{entity['id']}.missing-appstore"),
@@ -117,6 +160,7 @@ def build_due_task_items(index_data: dict, task_data: dict) -> list[dict]:
                     "title": f"{task['name']} due",
                     "body": cadence_summary(task.get("cadence")),
                     "priority": "high" if "INTERVAL=6" in cadence_value else "medium",
+                    "lane": "Due Soon",
                     "tags": ["task", entity["kind"], entity["cluster"].lower()],
                     "deepLink": deep_link(entity_id),
                     "statusKey": board_key("due", task["taskId"]),
@@ -136,9 +180,11 @@ def build_recent_change_items(index_data: dict, now_dt: datetime) -> list[dict]:
                 "id": f"recent-{entity['id']}",
                 "type": "recent-change",
                 "entityId": entity["id"],
-                "title": f"{entity['name']} changed recently",
-                "body": f"Last modified {entity['lastModified']}.",
+                "title": f"{entity['name']} changed",
+                "body": recent_change_body(entity),
                 "priority": "medium" if age_days <= 2 else "low",
+                "lane": "Recent Activity",
+                "sortDate": entity["lastModified"],
                 "tags": ["recent", entity["kind"], entity["cluster"].lower()],
                 "deepLink": deep_link(entity["id"]),
                 "statusKey": board_key("recent", entity["id"]),
@@ -158,6 +204,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "Public link gaps",
             "body": f"{missing_links_count} entries still need verified public links or App Store pages.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "links"],
             "statusKey": board_key("summary", "public-link-gaps"),
         },
@@ -167,6 +214,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "Tasks due soon",
             "body": f"{due_task_count} recurring entry tasks are currently in the operational queue.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "tasks"],
             "statusKey": board_key("summary", "due-tasks"),
         },
@@ -176,6 +224,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "Recent changes",
             "body": f"{recent_count} entries were modified in the last 7 days.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "recent"],
             "statusKey": board_key("summary", "recent-changes"),
         },
@@ -185,6 +234,7 @@ def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
             "title": "ASC coverage gaps",
             "body": f"{index_data['summary']['unmatchedAscApps']} App Store Connect apps still do not map cleanly to an active local repository.",
             "priority": "low",
+            "lane": "Summaries",
             "tags": ["summary", "asc"],
             "statusKey": board_key("summary", "asc-gaps"),
         },
@@ -196,13 +246,24 @@ def priority_score(priority: str) -> int:
 
 
 def type_score(item_type: str) -> int:
-    return {"attention": 0, "due-task": 1, "recent-change": 2}.get(item_type, 3)
+    return {"recent-change": 0, "due-task": 1, "attention": 2, "summary": 3}.get(item_type, 4)
 
 
 def sort_items(items: list[dict]) -> list[dict]:
+    def recency_score(item: dict) -> float:
+        if item["type"] != "recent-change":
+            return float("inf")
+        dt = parse_datetime(item.get("sortDate"))
+        return -dt.timestamp() if dt else float("inf")
+
     return sorted(
         items,
-        key=lambda item: (priority_score(item["priority"]), type_score(item["type"]), item["title"]),
+        key=lambda item: (
+            type_score(item["type"]),
+            recency_score(item),
+            priority_score(item["priority"]),
+            item["title"],
+        ),
     )
 
 
