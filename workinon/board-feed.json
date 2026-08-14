@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T08:06:00-05:00",
+  "generatedAt": "2026-08-14T08:21:00-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,7 +11,7 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 62,
+  "itemCount": 63,
   "items": [
     {
       "id": "recent-burfords-app",
@@ -31,6 +31,23 @@
       "statusKey": "masterindex.recent.burfords-app"
     },
     {
+      "id": "recent-company-site-1041soft",
+      "type": "recent-change",
+      "entityId": "company-site-1041soft",
+      "title": "1041soft.com changed",
+      "body": "Last modified 2026-08-14.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-14",
+      "tags": [
+        "recent",
+        "website",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#company-site-1041soft",
+      "statusKey": "masterindex.recent.company-site-1041soft"
+    },
+    {
       "id": "recent-words123-app",
       "type": "recent-change",
       "entityId": "words123-app",
@@ -46,6 +63,23 @@
       ],
       "deepLink": "site/index.html#words123-app",
       "statusKey": "masterindex.recent.words123-app"
+    },
+    {
+      "id": "recent-portfolio-app-directory",
+      "type": "recent-change",
+      "entityId": "portfolio-app-directory",
+      "title": "Bill Donner Apps changed",
+      "body": "Latest commit: Record 1041soft.com consolidation and closed Pages exposure. Last modified 2026-08-14.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-14",
+      "tags": [
+        "recent",
+        "website",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#portfolio-app-directory",
+      "statusKey": "masterindex.recent.portfolio-app-directory"
     },
     {
       "id": "recent-clubwatch-app",
@@ -199,23 +233,6 @@
       ],
       "deepLink": "site/index.html#server-monitor-service",
       "statusKey": "masterindex.recent.server-monitor-service"
-    },
-    {
-      "id": "recent-company-site-1041soft",
-      "type": "recent-change",
-      "entityId": "company-site-1041soft",
-      "title": "1041soft.com changed",
-      "body": "Last modified 2026-08-13.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-13",
-      "tags": [
-        "recent",
-        "website",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#company-site-1041soft",
-      "statusKey": "masterindex.recent.company-site-1041soft"
     },
     {
       "id": "recent-mallinbook-app",
@@ -1001,7 +1018,7 @@
       "id": "summary-recent-changes",
       "type": "summary",
       "title": "Recent changes",
-      "body": "21 entries were modified in the last 7 days.",
+      "body": "22 entries were modified in the last 7 days.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

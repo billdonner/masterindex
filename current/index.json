@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T13:30:00-05:00",
+  "generatedAt": "2026-08-14T08:20:44-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -2131,7 +2131,7 @@
     },
     {
       "kind": "website-dns-and-tls-resolved",
-      "observedAt": "2026-08-13",
+      "observedAt": "2026-08-14",
       "summary": "Resolved on 2026-08-14. 1041soft.com and www now use GitHub Pages DNS, HTTPS is enforced, and the Let's Encrypt certificate is valid through 2026-11-12."
     },
     {
@@ -2182,7 +2182,7 @@
     "canonicalDomain": "1041soft.com",
     "repo": "billdonner/1041soft-site",
     "visibility": "public",
-    "why": "GitHub Pages builds free for public repos. Pages on a private repo bills Actions minutes AND publishes its docs/ directory to the open web. Do not enable Pages on any private app repo - add a subpath here instead.",
+    "why": "GitHub Pages builds free for public repos. Pages on a private repo consumes Actions minutes AND publishes its docs/ directory to the open web. Do not enable Pages on any private app repo - add a subpath here instead.",
     "tls": "Let's Encrypt, covers 1041soft.com and www.1041soft.com, expires 2026-11-12, HTTPS enforced, HTTP 301s to HTTPS",
     "dns": {
       "registrar": "Namecheap",

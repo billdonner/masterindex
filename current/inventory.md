@@ -6,7 +6,7 @@ As of Friday, August 14, 2026.
 
 - Reconciled App Store Connect, active GitHub sources, local repositories, Fly deployments, and public product URLs.
 - Applied no handoff directives because `current/handoffs/index.json` has none.
-- Performed the requested retirements and operational fixes; observed facts and unresolved publication access are kept distinct below.
+- Performed the requested retirements, operational fixes, and website publications; observed facts and remaining product gaps are kept distinct below.
 
 ## Executive Summary
 
@@ -17,7 +17,7 @@ As of Friday, August 14, 2026.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
 - The registry tracks 53 repositories, of which 51 remain active after the two retirements.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
-- A canonical `billdonner.com/apps` publication bundle is now generated from `current/index.json`; the live IONOS site cannot be updated until its SFTP password is supplied.
+- The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
 
 ## Completed Reconciliation
 
@@ -110,7 +110,8 @@ Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, p
 - `publish/billdonner.com/apps/index.html` lists 19 active ASC-mapped apps and omits retired LtWatcher.
 - `publish/billdonner.com/apps/pfoliolio/index.html` supplies the marketing and support route expected by ASC.
 - `publish/billdonner.com/apps/oliopfolio/index.html` redirects the obsolete name to Pfoliolio.
-- The live IONOS site remains unchanged because no usable SFTP credential exists in the keychain, repository configuration, or available browser session.
+- The generated files were published to IONOS on 2026-08-14 and match the live HTTPS responses by SHA-1.
+- The previous catalog and LtWatcher directory were retained under `/_archive`; the public LtWatcher route now returns 404.
 
 ### Company Website — `1041soft.com` (live 2026-08-14)
 
@@ -127,10 +128,9 @@ privacy pages. All 24 routes verified 200 over HTTPS.
 open web regardless of repo visibility, and bills Actions minutes on private repos.
 Add a subpath here instead.
 
-This site coexists with the `billdonner.com/apps` publication bundle above; that one
-remains blocked on the IONOS SFTP credential. Qross and workinOn keep their existing
-`billdonner.com/apps/...` support URLs, which resolve and were deliberately left
-unchanged.
+This site coexists with the now-live `billdonner.com/apps` portfolio catalog. Qross
+and workinOn keep their existing `billdonner.com/apps/...` support URLs, which
+resolve and were deliberately left unchanged.
 
 ## Preserved Main-Only Facts
 
@@ -141,7 +141,6 @@ unchanged.
 
 ## Remaining Gaps
 
-- The IONOS SFTP password is required to publish the prepared `billdonner.com` fix.
 - Mallinbook's ASC privacy URL still points to a removed GitHub Pages route and returns 404. A working replacement now exists at `https://1041soft.com/mallinbook/privacy`; the ASC field still needs setting.
 - SentiPods still has no ASC privacyPolicyUrl. A working page exists at `https://1041soft.com/sentipods/privacy`; the ASC field still needs setting.
 - **Closed 2026-08-14 — unintended public exposure.** Seven private repos (qross, nagz, nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook) were publishing `docs/` to the open web through GitHub Pages. Verified world-readable at the time: qross business plans, risk register, `architecture/cardzerver-operational-roadmap.md`, `decisions/ADR-009-secret-management.md`, `carol-claude-code-instructions.md`; and nagz `DEPLOYMENT_PLAN.md`, `CODE_REVIEW_FINDINGS.md`, `CONTRIBUTOR_GUIDE.md`. Scanned for live credential patterns and found none. Pages disabled on all seven; every path re-verified 404.
