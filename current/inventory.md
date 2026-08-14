@@ -82,6 +82,7 @@ As of Thursday, August 13, 2026.
 ## Changes Observed In This Refresh
 
 - `~/qross` is actively developed on branch `palette-tournament`; its latest observed commit updates tournament palettes and the Coastal Dusk brand color.
+- `Pfoliolio` is now cloned locally at `~/pfolio-app`; it was previously recorded only as `github:billdonner/pfolio-app`.
 - `PickledBalls` does not depend on `nagzerver` or `clubsync` in the current core release; both are future service connections, with `clubsync` tied to a future IAP package.
 - `~/sentipods` is a new Grubber-cluster client that connects to `https://bd-grubber.fly.dev/api/v1` and provides podcast, episode, transcript, and search surfaces.
 - `~/sentipods` completed a live smoke test and is now at local version `0.1.0 (8)`; its ASC mapping remains unverified in this refresh.

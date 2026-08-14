@@ -42,8 +42,8 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION",
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
-        "repo": "github:billdonner/pfolio-app",
-        "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13"
+        "repo": "~/pfolio-app",
+        "repoEvidence": "GitHub repo billdonner/pfolio-app cloned locally on 2026-08-13"
       },
       {
         "name": "amenbeats",
