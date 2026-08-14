@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T01:23:29-05:00",
+  "generatedAt": "2026-08-14T01:32:01-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -21,7 +21,7 @@
       "August 14 reconciliation archived LtWatcher and card-server after checking their consumers and replacement paths; their ASC records remain retained.",
       "Clubsync is deferred until PickledBalls v2; its database remains deployed, but it is not an active monitored application dependency.",
       "Server Monitor production probes were corrected and verified live with seven targets, no Clubsync target, and successful Nagzerver and Card Engine HTTP checks.",
-      "App Store Connect validation reconciled Pfoliolio iOS/macOS 35, Qross 392, and SentiPods macOS 21; 123 Words 59 was uploaded, and source metadata was aligned for amenbeats 8 and 100 Burfords 1.1 (9).",
+      "App Store Connect validation reconciled Pfoliolio iOS/macOS 35, Qross 392, SentiPods macOS 21, and 123 Words 1.12 (59); source metadata was aligned for amenbeats 8 and 100 Burfords 1.1 (9).",
       "A generated billdonner.com apps catalog and Pfoliolio route now live under publish/billdonner.com; IONOS publication remains blocked on an unavailable SFTP credential.",
       "Reviewed local git repositories with 2026 activity.",
       "The portfolio-wide App Store Connect baseline is from August 6, 2026; Oenora's app, build, and private external-beta state were observed live on August 10, 2026."
@@ -302,7 +302,7 @@
           "IOS 1.12 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "github:billdonner/123words",
-        "localVersion": "1.12 (59); ASC upload succeeded and is processing"
+        "localVersion": "1.12 (59); ASC build 59 VALID"
       },
       {
         "name": "Cardz Studio",
@@ -1153,7 +1153,7 @@
       "lastModified": "2026-08-14",
       "repo": "github:billdonner/123words",
       "bundleId": "com.123words.app",
-      "release": "iOS 1.11 READY_FOR_SALE and 1.12 PREPARE_FOR_SUBMISSION; source 1.12 build 59 upload succeeded on 2026-08-14 and is processing",
+      "release": "iOS 1.11 READY_FOR_SALE and 1.12 PREPARE_FOR_SUBMISSION; source and ASC 1.12 build 59 VALID on 2026-08-14",
       "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
       "dependencies": [],
       "links": {
@@ -2143,7 +2143,7 @@
     {
       "kind": "version-build-drift-resolved",
       "observedAt": "2026-08-14",
-      "summary": "Resolved for every identified drift: Pfoliolio 35, Qross 392, and SentiPods macOS 21 are VALID in ASC; 123 Words 59 was uploaded; amenbeats source is 8; 100 Burfords source is 1.1 (9)."
+      "summary": "Resolved for every identified drift: Pfoliolio 35, Qross 392, SentiPods macOS 21, and 123 Words 1.12 (59) are VALID in ASC; amenbeats source is 8; 100 Burfords source is 1.1 (9)."
     },
     {
       "kind": "repository-coverage",

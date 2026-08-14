@@ -44,7 +44,7 @@ As of Friday, August 14, 2026.
 | amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
 | 100 Burfords | 1.1 (9) | 1.1 (9) draft | Aligned in GitHub commit `48192f3` |
 | Qross | 392 | 392 VALID | Aligned; clean worktree used without touching the active feature branch |
-| 123 Words | 1.12 (59) | 59 upload processing | Aligned to the open 1.12 train in commit `3f89587` |
+| 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
 
 Pfoliolio export used App Store-managed numbering, so Apple accepted both platforms as build 35. Source was aligned and pushed in commit `2d73c97`.
