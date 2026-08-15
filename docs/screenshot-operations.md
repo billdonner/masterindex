@@ -18,7 +18,7 @@ device and web previews, sandboxed agent critique, and built-in Claude/OpenAI ga
 | Pfoliolio | iPhone and Mac projects; capture hooks; ASC publication | Mac 93, Aug 5 | Current iPhone set bypassed Screenker; matching Mac recapture is pending |
 | amenbeats | iPhone project; scripted capture; critique; corrected re-shoot and republish | 93, Aug 5 | Stale after Kid/Pro and real Kid mode landed |
 | Mallinbook | iPhone, iPad, and two Mac projects; capture briefs; ASC publication | Mac 89, Aug 2 | Mac is scored; iPhone and iPad have no recorded critique |
-| workin On | iPhone project; staged demo data; critique; ASC publication | 93, Aug 2 | Current; verify rather than rebuild |
+| workin On | iPhone project; staged demo data; critique; ASC publication | 93, Aug 2 | Current historical/internal set; no public release work planned |
 | Screenker | Six-slot Mac project; repeated critique; ASC publication | 86, Aug 10 | Current; above the general gate, below the commercial target |
 
 No Screenker provenance was found for the current SentiPods, Oenora, Zerver Monitor,
@@ -37,17 +37,17 @@ The August 14 read-only ASC audit found these current en-US sets:
 | SharedSpaceLab 1.0 | 0 | 0 | 0 | Defer until a release candidate exists |
 | SentiPods 1.0 | 3 | 3 | 3 | Device coverage complete; no critique provenance |
 | Screenker 1.0 | 6 | 0 | 0 | Current at 86 |
-| workin On 1.0 | 0 | 4 | 0 | Current at 93 |
+| workin On 1.0 | 0 | 4 | 0 | Internal/TestFlight-only; current at 93, no public marketing work |
 | 100 Burfords 1.1 | 0 | 7 | 6 | Current at 88/90 |
 | Zerver Monitor 1.0 | 0 | 0 | 0 | Missing |
 | DoubleQross 1.0 | 0 | 9 | 3 | Published but stale |
-| Flasherz Kids 1.0 | 0 | 2 (6.5-inch) | 0 | Minimal legacy set; lifecycle decision first |
+| Flasherz Kids 1.0 | 0 | 2 (6.5-inch) | 0 | Obsolete; preserve only |
 | PickleFamilia 1.0 | 0 | 0 | 0 | Defer pending product decision |
 | Mallinbook 1.0 | 6 | 4 | 2 | Complete, but iOS sets are unscored |
-| KinFlash 1.0 | 0 | 0 | 0 | Lifecycle and release decision first |
+| KinFlash 1.0 | 0 | 0 | 0 | Near-term 1041soft.com release; commercial gallery is now highest-priority missing work |
 | PickledBalls 1.0 | 0 | 10 | 10 | Published; re-critique current composition |
 | 123 Words 1.12 | 0 | 7 | 6 | Published but stale |
-| Cardz Studio 1.0 | 0 | 0 | 0 | Lifecycle decision first |
+| Cardz Studio 1.0 | 0 | 0 | 0 | Internal/TestFlight-only; no public marketing gallery |
 
 Apple's current upload procedure and device rules remain external requirements:
 [upload screenshots](https://developer.apple.com/help/app-store-connect/manage-app-information/upload-app-previews-and-screenshots/)
@@ -65,16 +65,20 @@ day is a work slot, not a promise to publish an app whose product or release dec
 | Aug 17 | amenbeats and PickledBalls: capture/relink the post-change product; include an iPad decision for universal amenbeats | New critiques apply to the exact projects intended for ASC |
 | Aug 18 | Pfoliolio: import the current four iPhone captures into Screenker; capture the matching Mac build and critique both | iPhone and Mac share current naming, data, positioning, and approved scores |
 | Aug 19 | Mallinbook: critique iPhone and iPad; review the Mac 89 against its product-line threshold | Three platform galleries have current reports; improve Mac if the target is 90 |
-| Aug 20 | SentiPods: import the three existing device sets, run truth/privacy review, then critique; re-capture only failures | Existing ASC coverage gains reproducible Screenker projects and reports |
-| Aug 21 | Screenker: improve the current 86 gallery to 90 if it is confirmed for 1041soft.com | Approved six-slot project and matching ASC set |
-| Aug 22 | Oenora: after Founders Beta UI freeze, compose/critique the six local iPhone captures and publish; do not populate the unused ASC Mac record | iOS ASC set matches the beta product; native Developer ID Mac remains a separate channel |
-| Aug 23 | Verify-only pass for workin On and 100 Burfords; compare Screenker export hashes/order with ASC | No rebuild unless parity or visible-product drift fails |
-| Aug 24 | Zerver Monitor: decide whether build 5 is a real release candidate; if yes, create capture brief, capture, critique, and publish | Either an approved current set exists or release work is explicitly deferred |
+| Aug 20 | KinFlash: confirm the iOS and native-Mac release channels, write capture briefs, and capture the near-term 1041soft.com release candidate | Current deterministic captures cover every promised platform and use documented fictional family data |
+| Aug 21 | KinFlash: compose, critique, and iterate its galleries to the commercial 90-point target | Approved candidate exports exist for every public release channel; ASC remains unchanged pending human approval |
+| Aug 22 | SentiPods: import the three existing device sets, run truth/privacy review, then critique; re-capture only failures | Existing ASC coverage gains reproducible Screenker projects and reports |
+| Aug 23 | Screenker: improve the current 86 gallery to 90 if it is confirmed for 1041soft.com | Approved six-slot project and matching ASC set |
+| Aug 24 | Oenora: after Founders Beta UI freeze, compose/critique the six local iPhone captures and publish; do not populate the unused ASC Mac record | iOS ASC set matches the beta product; native Developer ID Mac remains a separate channel |
+| Aug 25 | Verify-only pass for 100 Burfords; compare Screenker export hashes/order with ASC | No rebuild unless parity or visible-product drift fails |
+| Aug 26 | Zerver Monitor: decide whether build 5 is a real release candidate; if yes, create capture brief, capture, critique, and publish | Either an approved current set exists or release work is explicitly deferred |
 
-SharedSpaceLab, PickleFamilia, KinFlash, Flasherz Kids, Cardz Studio, and both MastPex records
-stay out of the production queue until each has a real release target and product-line decision.
-LtWatcher and grubber-ios are retired/obsolete; Famster is concept-only; Nagz is legacy. Do not
-spend screenshot time on those records.
+SharedSpaceLab and PickleFamilia stay out of the production queue until each has a real release
+target and product-line decision. Cardz Studio, workin On, and both MastPex records are
+internal/TestFlight-only: keep functional testing evidence and TestFlight availability, but do
+not build public marketing galleries. Flasherz Kids, LtWatcher, and grubber-ios are
+obsolete/retired; Famster is concept-only; Nagz is legacy. Do not spend screenshot time on
+those records.
 
 ## Release-Relative Schedule
 

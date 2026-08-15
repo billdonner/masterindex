@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T22:00:59-05:00",
+  "generatedAt": "2026-08-14T22:43:41-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -33,7 +33,8 @@
       "August 14 deployment recovery: the exact non-secret source from Fly release v100 of bd-nagzerver was preserved on private branch recovery/deployed-2026-06-30 because production PickledBalls and PickleFamilia routes were absent from Git main. The recovered source matches all 163 live API paths; 1,113 tests pass and one PickledBalls schedule test fails.",
       "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history.",
       "August 14 correction and completion: the registered IONOS domain is doubleqross.com, not doubleqross.app. Apex and www resolve, present the included Sectigo wildcard certificate through 2027-02-10, and redirect over HTTP and HTTPS to the maintained DoubleQross page at 1041soft.com/qross/. ASC 1.0 en-US now uses https://doubleqross.com/ as its marketing URL while retaining the maintained 1041soft.com support URL.",
-      "August 14 screenshot audit: queried every mapped ASC version and inspected repository history for Screenker projects, critique scores, later visible product changes, and publish evidence. Nine apps have verified Screenker history; publication, critique, freshness, and ASC parity are now tracked as separate facts in the screenshot program."
+      "August 14 screenshot audit: queried every mapped ASC version and inspected repository history for Screenker projects, critique scores, later visible product changes, and publish evidence. Nine apps have verified Screenker history; publication, critique, freshness, and ASC parity are now tracked as separate facts in the screenshot program.",
+      "August 14 owner distribution decision: KinFlash is a near-term 1041soft.com public release; Flasherz Kids is obsolete; Cardz Studio, MastPex iOS, MastPex Mac, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release."
     ]
   },
   "summary": {
@@ -810,11 +811,12 @@
       "name": "Flasherz Kids",
       "kind": "app",
       "cluster": "Flasherz",
-      "status": "asc-mapped",
-      "lastModified": "2026-04-13",
+      "status": "obsolete",
+      "lastModified": "2026-08-14",
       "repo": "~/obo-ios",
       "bundleId": "com.billdonner.obo",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "release": "Obsolete by owner decision on 2026-08-14; ASC iOS 1.0 PREPARE_FOR_SUBMISSION record retained",
+      "distribution": "none-obsolete",
       "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by the live card-engine service at bd-cardzerver.fly.dev.",
       "dependencies": [
         "card-engine",
@@ -827,7 +829,8 @@
         "portfolioPage": "https://billdonner.com/apps/flasherz-kids/"
       },
       "notes": [
-        "Falls back to bundled sample decks when the server is unavailable."
+        "Falls back to bundled sample decks when the server is unavailable.",
+        "Do not perform new release, screenshot, or public-listing work; preserve the repository and ASC record as history unless the owner later requests archival."
       ]
     },
     {
@@ -835,11 +838,12 @@
       "name": "Cardz Studio",
       "kind": "app",
       "cluster": "Flasherz",
-      "status": "asc-mapped",
-      "lastModified": "2026-03-04",
+      "status": "internal-only",
+      "lastModified": "2026-08-14",
       "repo": "~/cardz-studio-ios",
       "bundleId": "com.billdonner.cardz-studio",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "release": "Internal-use app; ASC iOS 1.0 PREPARE_FOR_SUBMISSION retained for likely perpetual TestFlight distribution",
+      "distribution": "internal-testflight-planned",
       "description": "Admin and editor client for decks, family endpoints, ingestion controls, and search against the card backend.",
       "dependencies": [
         "card-engine",
@@ -850,7 +854,8 @@
         "appStore": null
       },
       "notes": [
-        "Operator-facing companion surface."
+        "Operator-facing companion surface.",
+        "No public App Store release or marketing gallery is planned; maintain functional TestFlight availability and internal testing evidence."
       ]
     },
     {
@@ -858,13 +863,14 @@
       "name": "workin On",
       "kind": "app",
       "cluster": "Standalone",
-      "status": "asc-mapped",
-      "lastModified": "2026-08-09",
+      "status": "internal-only",
+      "lastModified": "2026-08-14",
       "repo": "~/workinon",
       "bundleId": "com.workinon.app",
       "productLine": "billdonner-free",
       "pricingPolicy": "always-free",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION; workinOn 0.9.1 (67) uploaded to TestFlight on 2026-08-09 and entered App Store Connect processing.",
+      "release": "Internal-use app expected to remain on TestFlight; workinOn 0.9.1 (67) was uploaded on 2026-08-09; no public App Store release is planned",
+      "distribution": "internal-testflight-planned",
       "description": "AI-powered focus list app with widget, share extension, URL scheme, nagzerver-backed sync, and a bundled MasterIndex operational board.",
       "dependencies": [
         "nagzerver",
@@ -882,7 +888,8 @@
         "Silent APNs pushes update the list without opening the app.",
         "MasterIndex board now loads from a bundled operational feed, groups cards by lane, and supports inline row detail reveal in both the MasterIndex and Focus tabs.",
         "Recent-change MasterIndex cards use concise titles such as 'Qross changed' and now include latest git commit subjects in the body when the entity repo is available; missing repos fall back to last-modified dates.",
-        "2026-08-10: added MasterIndex operational-feed surfaces, feed tests, shortcuts updates, and bundled board-feed data; no new ASC release was observed."
+        "2026-08-10: added MasterIndex operational-feed surfaces, feed tests, shortcuts updates, and bundled board-feed data; no new ASC release was observed.",
+        "The existing 93-point Screenker gallery remains useful as TestFlight and internal documentation, but no public ASC marketing-gallery work is scheduled."
       ]
     },
     {
@@ -941,11 +948,14 @@
       "name": "KinFlash",
       "kind": "app",
       "cluster": "KinFlash",
-      "status": "asc-mapped",
-      "lastModified": "2026-07-31",
+      "status": "release-planned",
+      "lastModified": "2026-08-14",
       "repo": "~/kinflash",
       "bundleId": "com.billdonner.kinflash",
-      "release": "ASC mapped, iOS 1.0 PREPARE_FOR_SUBMISSION",
+      "productLine": "1041soft-commercial",
+      "pricingPolicy": "commercial",
+      "release": "Near-term public release planned from 1041soft.com; ASC iOS 1.0 PREPARE_FOR_SUBMISSION; screenshot gallery currently missing",
+      "distribution": "public-release-planned",
       "description": "Multi-platform app with local package and document architecture.",
       "dependencies": [],
       "links": {
@@ -963,7 +973,8 @@
         "2026-08-08: separated roster data from the fictional-pedigree fixture and refreshed its rendered export; no new ASC release was observed.",
         "2026-08-09: added static pedigree and flashcard documentation to the repository. The probable GitHub Pages URL returned HTTP 404, so those pages are not recorded as public.",
         "2026-08-09: added native Mac GEDCOM import/export actions and bundled fictional examples. Import is intentionally limited to empty documents until a merge-conflict workflow exists.",
-        "2026-08-10: Mac flashcard review now persists in one deck; no new ASC release was observed."
+        "2026-08-10: Mac flashcard review now persists in one deck; no new ASC release was observed.",
+        "Owner assigned KinFlash to 1041soft.com for near-term release on 2026-08-14. It therefore uses the 90-point commercial screenshot target and requires an explicit iOS/Mac release-channel decision before capture."
       ]
     },
     {
@@ -1645,13 +1656,14 @@
       "name": "MastPex IOS",
       "kind": "app",
       "cluster": "Infrastructure",
-      "status": "asc-mapped",
-      "lastModified": "2026-08-05",
+      "status": "internal-only",
+      "lastModified": "2026-08-14",
       "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
       "bundleId": "com.billdonner.mastpex",
       "productLine": "billdonner-free",
       "pricingPolicy": "always-free",
-      "release": "Development: iOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
+      "release": "Internal-use iOS app expected to remain on TestFlight; ASC 1.0 PREPARE_FOR_SUBMISSION and build 1 retained; no public App Store release planned",
+      "distribution": "internal-testflight-planned",
       "description": "Native iPhone and iPad explorer for a compatible MasterIndex: browse a read-only software portfolio map with search, relationships, drill-down, links, and explicit gaps.",
       "dependencies": [
         "MasterIndex"
@@ -1662,7 +1674,8 @@
       },
       "notes": [
         "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact iOS ASC bundle ID com.billdonner.mastpex.",
-        "No verified public website or App Store product page was found in the current link pass."
+        "No verified public website or App Store product page was found in the current link pass.",
+        "Maintain TestFlight continuity and functional capture evidence; do not build a public marketing gallery."
       ]
     },
     {
@@ -1670,13 +1683,14 @@
       "name": "MastPex Mac",
       "kind": "app",
       "cluster": "Infrastructure",
-      "status": "asc-mapped",
-      "lastModified": "2026-08-05",
+      "status": "internal-only",
+      "lastModified": "2026-08-14",
       "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
       "bundleId": "com.billdonner.mastpex.mac",
       "productLine": "billdonner-free",
       "pricingPolicy": "always-free",
-      "release": "Development: macOS 1.0 PREPARE_FOR_SUBMISSION in App Store Connect; build 1 uploaded 2026-08-02.",
+      "release": "Internal-use macOS app expected to remain on TestFlight; ASC 1.0 PREPARE_FOR_SUBMISSION and build 1 retained; no public App Store release planned",
+      "distribution": "internal-testflight-planned",
       "description": "Native Mac explorer for a compatible MasterIndex: a read-only desktop map of apps, repositories, services, links, relationships, and known gaps.",
       "dependencies": [
         "MasterIndex"
@@ -1687,7 +1701,8 @@
       },
       "notes": [
         "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact macOS ASC bundle ID com.billdonner.mastpex.mac.",
-        "No verified public website or App Store product page was found in the current link pass."
+        "No verified public website or App Store product page was found in the current link pass.",
+        "Maintain TestFlight continuity and functional capture evidence; do not build a public marketing gallery."
       ]
     },
     {
@@ -2486,7 +2501,7 @@
       "123 Words": "billdonner.github.io; public repo, resolves, left alone",
       "PickledBalls": "pickledballs.billdonner.com; own custom domain served from the pickledballs gh-pages branch, resolves, left alone",
       "Famster / KinFlash / LtWatcher / amenbeats": "billdonner.com support routes resolve; no privacy URL set on any of them",
-      "Cardz Studio / MastPex IOS / MastPex Mac": "no URLs set at all; Cardz Studio is obsolete and the MastPex pair are placeholders",
+      "Cardz Studio / MastPex IOS / MastPex Mac": "no URLs set; all three are internal-use apps expected to remain on TestFlight, so public marketing and App Store URLs are not required",
       "GigStand": "support URL is gigstand.net, dead. Retired and delisted 2026-08-13; not worth fixing"
     },
     "pagesStillEnabledDeliberately": {
