@@ -10,7 +10,7 @@ As of Friday, August 14, 2026.
 
 ## Executive Summary
 
-- ASC contains 23 app records: 20 map to repositories, two MastPex records are placeholders, and GigStand is the intentionally retained retired record.
+- ASC contains 23 app records: 20 map in the primary ASC inventory, two MastPex records are internal-use/TestFlight apps, and GigStand is the intentionally retained retired record.
 - LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
@@ -25,24 +25,27 @@ As of Friday, August 14, 2026.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
+- KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
 
 ## Product Lines
 
 ### BillDonner.com — always free
 
 Personal utilities, experiments, and children-oriented apps. Users are never charged; a Mac
-version and MCP surface are optional. Confirmed assignments are `workin On`, `MastPex IOS`,
-and `MastPex Mac` (the two MasterIndex Explorer binaries).
+version and MCP surface are optional. `workin On`, `MastPex IOS`, and `MastPex Mac` remain in
+this product family but are internal-use/TestFlight-only rather than public releases.
 
 ### 1041soft.com — commercial
 
 Products intended for sale or another explicit revenue model. These carry a higher quality,
 testing, documentation, privacy, and support bar; they should normally have a real Mac version
-and an MCP or automation surface when that fits the product.
+and an MCP or automation surface when that fits the product. KinFlash is the newest confirmed
+assignment and is planned for near-term release.
 
 The remaining apps are not yet classified. Presentation drift remains open until that is done:
 the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
-`/workinon/` even though workin On belongs exclusively to BillDonner.com.
+`/workinon/` even though workin On is internal-only. The public catalog also needs to stop
+presenting Flasherz Kids as active and to present KinFlash under 1041soft.com.
 
 ## Screenshot Program
 
@@ -53,20 +56,24 @@ high score.
 
 | State | Apps |
 |---|---|
-| Current, scored, and published | 100 Burfords (iPhone 88/iPad 90), workin On (93) |
+| Current, scored, and published | 100 Burfords (iPhone 88/iPad 90) |
+| Current internal/TestFlight evidence; no public gallery work | workin On (93) |
 | Current and published, below the commercial target | Screenker (86) |
 | Published but score or captures are stale | DoubleQross, PickledBalls, 123 Words, amenbeats, Pfoliolio |
 | Screenker projects exist but critique coverage is incomplete | Mallinbook (Mac 89; iPhone/iPad unscored) |
 | ASC device coverage exists without Screenker critique | SentiPods |
 | Local captures exist but ASC is empty | Oenora iOS |
 | Active ASC release record is empty | Zerver Monitor |
-| Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia, KinFlash, Flasherz Kids, Cardz Studio, MastPex |
-| No new screenshot work | LtWatcher, grubber-ios, Famster, Nagz |
+| Highest-priority missing commercial gallery | KinFlash, near-term 1041soft.com release |
+| Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia |
+| Internal functional evidence only | Cardz Studio, workin On, MastPex iOS, MastPex Mac |
+| No new screenshot work | Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
 
-The cleanup queue runs August 15-24: DoubleQross and 123 Words first; amenbeats and
-PickledBalls next; then Pfoliolio, Mallinbook, SentiPods, Screenker, Oenora, verification-only
-checks for workin On and 100 Burfords, and finally Zerver Monitor if its build remains a release
-candidate. The detailed daily exit conditions are in `docs/screenshot-operations.md`.
+The cleanup queue runs August 15-26: DoubleQross and 123 Words first; amenbeats and
+PickledBalls next; then Pfoliolio and Mallinbook. KinFlash now takes the next two slots for
+commercial capture and critique, followed by SentiPods, Screenker, Oenora, a verification-only
+check for 100 Burfords, and Zerver Monitor if its build remains a release candidate. The
+detailed daily exit conditions are in `docs/screenshot-operations.md`.
 
 Future releases use a T-7 capture brief, T-5 deterministic capture, T-4 critique, T-3 re-shoot,
 T-2 human approval and ASC publication, T-1 drift check, and T+1 storefront verification.
@@ -157,23 +164,23 @@ No current consumer was found to require Card Server, so these do not block reti
 | Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SentiPods | com.sentipods.app | ~/sentipods | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| workin On | com.workinon.app | ~/workinon | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| workin On | com.workinon.app | ~/workinon | Internal/TestFlight-only; iOS 1.0 retained |
 | 100 Burfords | com.billdonner.burfords | ~/100Burfords | 1.0 READY_FOR_SALE; 1.1 draft |
 | Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | Famster | com.famster.app | ~/famster-ios | Concept-only shell; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
-| Flasherz Kids | com.billdonner.obo | ~/obo-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record retained |
 | PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| KinFlash | com.billdonner.kinflash | ~/kinflash | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term 1041soft.com release; iOS 1.0 PREPARE_FOR_SUBMISSION |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
-| Cardz Studio | com.billdonner.cardz-studio | ~/cardz-studio-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| Cardz Studio | com.billdonner.cardz-studio | ~/cardz-studio-ios | Internal/TestFlight-only; iOS 1.0 retained |
 
 Unmatched or intentionally retained:
 
-- MastPex IOS and MastPex Mac are placeholders with no app repository.
+- MastPex IOS and MastPex Mac are internal/TestFlight-only apps in the shared MasterIndex Explorer repository; they are not public-release placeholders.
 - GigStand is retired, removed from all 175 territories, and permanently retained by ASC because it was previously sold.
 
 ## Services

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T22:00:59-05:00",
+  "generatedAt": "2026-08-14T22:43:41-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -137,40 +137,44 @@
         ]
       }
     ],
-    "obo-ios-app": [
+    "obo-ios-app": [],
+    "cardz-studio-ios-app": [
       {
-        "taskId": "flasherz-release-check",
-        "name": "Flasherz Kids release check",
+        "taskId": "cardz-studio-testflight-continuity",
+        "name": "Cardz Studio TestFlight continuity",
         "status": "active",
         "cadence": {
           "kind": "rrule",
-          "value": "FREQ=WEEKLY;INTERVAL=1"
+          "value": "FREQ=MONTHLY;INTERVAL=1"
         },
-        "purpose": "Watch for App Store publication and link availability for Flasherz Kids.",
+        "purpose": "Keep the internal Cardz Studio build usable through TestFlight without advancing it toward public App Store release.",
         "expectedInputs": [
-          "current/index.json"
+          "current/index.json",
+          "App Store Connect build and TestFlight state"
         ],
         "expectedOutputs": [
-          "Updated Flasherz Kids links or release notes"
+          "Recorded current build expiration and tester availability",
+          "A build-refresh gap when continuity cannot reach the next monthly check"
         ]
       }
     ],
-    "cardz-studio-ios-app": [],
     "workinon-app": [
       {
-        "taskId": "workinon-release-check",
-        "name": "workin On release check",
+        "taskId": "workinon-testflight-continuity",
+        "name": "workin On TestFlight continuity",
         "status": "active",
         "cadence": {
           "kind": "rrule",
-          "value": "FREQ=WEEKLY;INTERVAL=1"
+          "value": "FREQ=MONTHLY;INTERVAL=1"
         },
-        "purpose": "Check whether a public App Store page becomes available for workin On.",
+        "purpose": "Keep workin On available for internal use through TestFlight without advancing it toward public App Store release.",
         "expectedInputs": [
-          "current/index.json"
+          "current/index.json",
+          "App Store Connect build and TestFlight state"
         ],
         "expectedOutputs": [
-          "Updated workin On links"
+          "Recorded current build expiration and tester availability",
+          "A build-refresh gap when continuity cannot reach the next monthly check"
         ]
       }
     ],
@@ -193,7 +197,29 @@
       }
     ],
     "clubwatch-app": [],
-    "kinflash-app": [],
+    "kinflash-app": [
+      {
+        "taskId": "kinflash-release-readiness",
+        "name": "KinFlash release readiness",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Drive the near-term 1041soft.com KinFlash release to an explicit iOS/Mac channel decision, current commercial-grade screenshots, and submission readiness.",
+        "expectedInputs": [
+          "current/index.json",
+          "docs/screenshot-operations.md",
+          "~/kinflash",
+          "read-only App Store Connect state"
+        ],
+        "expectedOutputs": [
+          "Current release-channel and build facts",
+          "Screenshot readiness at the 90-point commercial target",
+          "Recorded blockers or submission readiness"
+        ]
+      }
+    ],
     "picklefortunes-app": [],
     "burfords-app": [
       {
@@ -320,8 +346,46 @@
     ],
     "local-model-lab": [],
     "adspill-sim": [],
-    "mastpex-ios-asc-app": [],
-    "mastpex-macos-asc-app": [],
+    "mastpex-ios-asc-app": [
+      {
+        "taskId": "mastpex-ios-testflight-continuity",
+        "name": "MastPex iOS TestFlight continuity",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=MONTHLY;INTERVAL=1"
+        },
+        "purpose": "Keep the internal MastPex iOS build usable through TestFlight without creating a public release train.",
+        "expectedInputs": [
+          "current/index.json",
+          "App Store Connect build and TestFlight state"
+        ],
+        "expectedOutputs": [
+          "Recorded current build expiration and tester availability",
+          "A build-refresh gap when continuity cannot reach the next monthly check"
+        ]
+      }
+    ],
+    "mastpex-macos-asc-app": [
+      {
+        "taskId": "mastpex-mac-testflight-continuity",
+        "name": "MastPex Mac TestFlight continuity",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=MONTHLY;INTERVAL=1"
+        },
+        "purpose": "Keep the internal MastPex Mac build usable through TestFlight without creating a public release train.",
+        "expectedInputs": [
+          "current/index.json",
+          "App Store Connect build and TestFlight state"
+        ],
+        "expectedOutputs": [
+          "Recorded current build expiration and tester availability",
+          "A build-refresh gap when continuity cannot reach the next monthly check"
+        ]
+      }
+    ],
     "oenora-recognition-service": []
   }
 }
