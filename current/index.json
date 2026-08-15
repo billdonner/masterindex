@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T18:14:34-05:00",
+  "generatedAt": "2026-08-14T22:00:59-05:00",
   "scope": {
     "dateLabel": "Friday, August 14, 2026",
     "defaultSort": "most-recently-modified",
@@ -32,7 +32,8 @@
       "August 14 household-communications audit: SharedSpaceLab is the active successor experiment, Nagz is the working legacy reference, and Famster is a thin concept shell rather than an implemented product. Nagzerver remains shared production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On; SharedSpaceLab has no runtime dependency on it.",
       "August 14 deployment recovery: the exact non-secret source from Fly release v100 of bd-nagzerver was preserved on private branch recovery/deployed-2026-06-30 because production PickledBalls and PickleFamilia routes were absent from Git main. The recovered source matches all 163 live API paths; 1,113 tests pass and one PickledBalls schedule test fails.",
       "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history.",
-      "August 14 correction and completion: the registered IONOS domain is doubleqross.com, not doubleqross.app. Apex and www resolve, present the included Sectigo wildcard certificate through 2027-02-10, and redirect over HTTP and HTTPS to the maintained DoubleQross page at 1041soft.com/qross/. ASC 1.0 en-US now uses https://doubleqross.com/ as its marketing URL while retaining the maintained 1041soft.com support URL."
+      "August 14 correction and completion: the registered IONOS domain is doubleqross.com, not doubleqross.app. Apex and www resolve, present the included Sectigo wildcard certificate through 2027-02-10, and redirect over HTTP and HTTPS to the maintained DoubleQross page at 1041soft.com/qross/. ASC 1.0 en-US now uses https://doubleqross.com/ as its marketing URL while retaining the maintained 1041soft.com support URL.",
+      "August 14 screenshot audit: queried every mapped ASC version and inspected repository history for Screenker projects, critique scores, later visible product changes, and publish evidence. Nine apps have verified Screenker history; publication, critique, freshness, and ASC parity are now tracked as separate facts in the screenshot program."
     ]
   },
   "summary": {
@@ -68,6 +69,109 @@
       "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model."
     }
   ],
+  "screenshotOperations": {
+    "observedAt": "2026-08-14T22:00:59-05:00",
+    "runbook": "docs/screenshot-operations.md",
+    "appleReference": "https://developer.apple.com/help/app-store-connect/manage-app-information/upload-app-previews-and-screenshots/",
+    "policy": {
+      "unitOfWork": "app version + platform + locale + display type",
+      "minimumCritiqueScore": 85,
+      "commercialTargetScore": 90,
+      "freshnessRule": "A score is stale after a source screenshot, Screenker composition, visible captured flow, product positioning, or supported-device promise changes.",
+      "publishRule": "Publishing is a separate, verified step: compare the live ASC screenshot counts and ordering with the approved Screenker export after upload.",
+      "safetyRule": "Critique and automated changes run on a Screenker sandbox copy; publishing requires explicit human approval."
+    },
+    "verifiedScreenkerHistory": [
+      {
+        "entityId": "qross-app",
+        "latestScore": "iPhone 90 on 2026-07-28",
+        "ascSnapshot": "iPhone 9; iPad 3",
+        "state": "stale",
+        "reason": "The project original changed on 2026-08-03 and the app received major palette and visible UI work after the scored capture."
+      },
+      {
+        "entityId": "pickledballs-app",
+        "latestScore": "iPhone 88 and iPad 86 on 2026-07-29",
+        "ascSnapshot": "iPhone 10; iPad 10",
+        "state": "stale-score",
+        "reason": "Identity, layout, and the join slide changed after the scores; the revised galleries were republished on 2026-08-06 without a recorded re-critique."
+      },
+      {
+        "entityId": "burfords-app",
+        "latestScore": "iPhone 88 and iPad 90 on 2026-08-01",
+        "ascSnapshot": "1.1 draft: iPhone 7; iPad 6",
+        "state": "current",
+        "reason": "Both scored galleries were published to the 1.1 ASC draft on 2026-08-06 and no later captured-flow drift was observed."
+      },
+      {
+        "entityId": "words123-app",
+        "latestScore": "combined gallery 90 on 2026-08-01",
+        "ascSnapshot": "1.12 draft: iPhone 7; iPad 6",
+        "state": "stale",
+        "reason": "Substantial child human-factors, phonics, hub, sizing, and iPad layout work landed on 2026-08-09 and 2026-08-10."
+      },
+      {
+        "entityId": "pfolio-app",
+        "latestScore": "Mac 93 on 2026-08-05; no recorded score for the current iPhone set",
+        "ascSnapshot": "Mac 6; iPhone 4",
+        "state": "mixed-stale",
+        "reason": "Build-34 iPhone captures were uploaded directly on 2026-08-13 after the earlier Screenker set; the matching Mac recapture was explicitly left pending."
+      },
+      {
+        "entityId": "amenbeats-app",
+        "latestScore": "iPhone 93 on 2026-08-05",
+        "ascSnapshot": "iPhone 5",
+        "state": "stale",
+        "reason": "The scored set was corrected and republished on 2026-08-07, then the Kid/Pro chooser and real Kid mode changed the product on 2026-08-09."
+      },
+      {
+        "entityId": "mallinbook-app",
+        "latestScore": "Mac 89 on 2026-08-02; no recorded iPhone or iPad score",
+        "ascSnapshot": "Mac 6; iPhone 4; iPad 2",
+        "state": "mixed",
+        "reason": "All three Screenker projects and live ASC sets exist; only the Mac gallery has a recorded final critique."
+      },
+      {
+        "entityId": "workinon-app",
+        "latestScore": "iPhone 93 on 2026-08-02",
+        "ascSnapshot": "iPhone 4",
+        "state": "current",
+        "reason": "The gallery was published with its score and no later captured-flow drift was observed."
+      },
+      {
+        "entityId": "screenker-asc-app",
+        "latestScore": "Mac 86 on 2026-08-10",
+        "ascSnapshot": "Mac 6",
+        "state": "current-below-commercial-target",
+        "reason": "The re-shot gallery was republished after critique and remains above the general gate but below the commercial target."
+      }
+    ],
+    "uncritiquedPublishedSets": [
+      {
+        "entityId": "sentipods-app",
+        "ascSnapshot": "Mac 3; iPhone 3; iPad 3",
+        "note": "Direct screenshots are complete in ASC, but no Screenker project or critique evidence was found."
+      },
+      {
+        "entityId": "obo-ios-app",
+        "ascSnapshot": "iPhone 6.5-inch 2",
+        "note": "A minimal legacy-size set exists without Screenker provenance."
+      },
+      {
+        "entityId": "nagz-app",
+        "ascSnapshot": "iPhone 5",
+        "note": "A live set exists, but Nagz is a legacy reference and receives no new screenshot work by default."
+      }
+    ],
+    "missingAscSets": [
+      "oenora-app iOS",
+      "zerver-monitor-asc-app iOS",
+      "sharedspace-lab iOS and macOS",
+      "picklefamilia-asc-app iOS and macOS",
+      "kinflash-app iOS",
+      "cardz-studio-ios-app iOS"
+    ]
+  },
   "programs": [
     {
       "id": "household-communications",
@@ -910,7 +1014,7 @@
       "notes": [
         "Strong signal of finished packaging relative to the rest of the portfolio.",
         "Live ASC version is 1.0 and ASC has valid build 9 for the 1.1 draft, but the clean local repo's project.yml and generated Xcode project currently declare 1.0 (7). Regenerating or uploading from this checkout would regress the version/build.",
-        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots \u2014 not yet published to ASC."
+        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots and published to the ASC 1.1 draft on 2026-08-06 (iPhone 7 slots, iPad 6 slots)."
       ]
     },
     {
@@ -1347,7 +1451,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-13",
+      "lastModified": "2026-08-14",
       "repo": "github:billdonner/screenker",
       "bundleId": "com.screenker.app",
       "release": "ASC macOS 1.0 PREPARE_FOR_SUBMISSION; build 44 VALID",
@@ -1363,7 +1467,8 @@
       },
       "notes": [
         "Current ASC links all return 200.",
-        "The newest repo collateral points at 1041soft.com, whose HTTPS endpoint is unavailable; ASC has not been changed to those broken URLs."
+        "The repository's newest collateral points at the now-live 1041soft.com site, while ASC still uses the verified billdonner.github.io pages; align the public URLs only after Screenker's product-line assignment is explicit.",
+        "Screenker's own six-slot Mac gallery was re-shot, critiqued at 86/100, and republished on 2026-08-10. It clears the general 85 gate but not the 90 commercial target."
       ]
     },
     {
