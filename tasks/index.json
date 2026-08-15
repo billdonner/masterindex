@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T18:14:34-05:00",
+  "generatedAt": "2026-08-14T22:00:59-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -47,6 +47,33 @@
         "Refreshed current/inventory.md"
       ],
       "owner": "this Codex task"
+    },
+    {
+      "taskId": "screenshot-readiness-audit",
+      "name": "Screenshot readiness audit",
+      "status": "active",
+      "cadence": {
+        "kind": "rrule",
+        "value": "FREQ=WEEKLY;BYDAY=MO"
+      },
+      "purpose": "Detect drift among candidate builds, Screenker projects, critique evidence, and live App Store Connect screenshot sets without publishing changes.",
+      "expectedInputs": [
+        "current/index.json screenshotOperations",
+        "docs/screenshot-operations.md",
+        "active release-candidate repositories",
+        "read-only App Store Connect screenshot state"
+      ],
+      "expectedOutputs": [
+        "Updated screenshot freshness and ASC parity facts in current/index.json",
+        "Updated current/inventory.md when readiness changes",
+        "Recorded gaps for stale, uncritiqued, missing, or unverifiable galleries"
+      ],
+      "owner": "portfolio housekeeping agent",
+      "guardrails": [
+        "Do not publish, delete, reorder, or replace App Store Connect assets during the audit.",
+        "Do not treat an old critique score as current after an invalidation trigger.",
+        "Read current/handoffs/index.json before acting."
+      ]
     }
   ],
   "entryTasks": {

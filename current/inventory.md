@@ -24,6 +24,7 @@ As of Friday, August 14, 2026.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
+- The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 
 ## Product Lines
 
@@ -42,6 +43,37 @@ and an MCP or automation surface when that fits the product.
 The remaining apps are not yet classified. Presentation drift remains open until that is done:
 the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
 `/workinon/` even though workin On belongs exclusively to BillDonner.com.
+
+## Screenshot Program
+
+The August 14 read-only App Store Connect audit inspected every mapped version, locale, and
+screenshot display type, then correlated those live sets with repository history and Screenker
+projects. A gallery is not called current merely because it is present in ASC or once received a
+high score.
+
+| State | Apps |
+|---|---|
+| Current, scored, and published | 100 Burfords (iPhone 88/iPad 90), workin On (93) |
+| Current and published, below the commercial target | Screenker (86) |
+| Published but score or captures are stale | DoubleQross, PickledBalls, 123 Words, amenbeats, Pfoliolio |
+| Screenker projects exist but critique coverage is incomplete | Mallinbook (Mac 89; iPhone/iPad unscored) |
+| ASC device coverage exists without Screenker critique | SentiPods |
+| Local captures exist but ASC is empty | Oenora iOS |
+| Active ASC release record is empty | Zerver Monitor |
+| Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia, KinFlash, Flasherz Kids, Cardz Studio, MastPex |
+| No new screenshot work | LtWatcher, grubber-ios, Famster, Nagz |
+
+The cleanup queue runs August 15-24: DoubleQross and 123 Words first; amenbeats and
+PickledBalls next; then Pfoliolio, Mallinbook, SentiPods, Screenker, Oenora, verification-only
+checks for workin On and 100 Burfords, and finally Zerver Monitor if its build remains a release
+candidate. The detailed daily exit conditions are in `docs/screenshot-operations.md`.
+
+Future releases use a T-7 capture brief, T-5 deterministic capture, T-4 critique, T-3 re-shoot,
+T-2 human approval and ASC publication, T-1 drift check, and T+1 storefront verification.
+Hard gates cover truth, privacy, provenance, technical export, device coverage, accessibility,
+localization, ASC parity, and human approval. Screenker's weighted score remains hook 30,
+thumbnail legibility 20, narrative 20, consistency 20, and finish 10. The general release gate
+is 85; a confirmed 1041soft.com product targets 90.
 
 ## Household Communications Lineage
 
