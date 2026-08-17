@@ -280,7 +280,7 @@
         ],
         "repo": "~/oenora",
         "repoEvidence": "Origin main project.yml verified 2026-08-14: iOS bundle com.billdonner.oenora and native Developer ID macOS bundle com.billdonner.oenora.mac",
-        "localVersion": "iOS 1.0 (7), ASC build 7 VALID and submitted to external Founders Beta (adds sealed-case tracking; build 6 remains approved); native macOS is notarized for Developer ID delivery outside the existing ASC bundle"
+        "localVersion": "iOS 1.0 (7) beta-APPROVED for external Founders Beta (sealed-case tracking); macOS 1.0 (2) uploaded to the shared ASC record via Mac App Store signing and submitted to TestFlight for Mac (universal purchase, supersedes the Developer ID channel per amended ADR-007)"
       },
       {
         "name": "SharedSpaceLab",
