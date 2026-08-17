@@ -1,12 +1,13 @@
 # MasterIndex Inventory
 
-As of Friday, August 14, 2026.
+As of Sunday, August 16, 2026.
 
 ## Scope
 
 - Reconciled App Store Connect, active GitHub sources, local repositories, Fly deployments, and public product URLs.
 - Applied no handoff directives because `current/handoffs/index.json` has none.
 - Performed the requested retirements, operational fixes, website publications, and feedback-workflow replacement; observed facts and remaining product gaps are kept distinct below.
+- Added explicit `masterIndexStatus` classifications to every entity and tracked repository, and removed the temporary `mixed-citizen` holding tier so every current record is now either `good-citizen` or `not-good-citizen`.
 
 ## Executive Summary
 
@@ -24,8 +25,72 @@ As of Friday, August 14, 2026.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
+- DoubleQross 1.0 (392) now has refreshed Garland-era iPhone and iPad captures, updated Screenker projects, and exact approval exports scored provisionally at 94 and 93. ASC is unchanged pending human approval.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 - KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
+
+## MasterIndex Citizenship
+
+The canonical JSON now makes this explicit instead of leaving it inferred.
+
+- Entities: 26 `good-citizen`, 14 `not-good-citizen`.
+- Repositories: 42 `good-citizen`, 15 `not-good-citizen`.
+- Every `not-good-citizen` entity and repository now carries a machine-readable `masterIndexStatusReason` in `current/index.json`.
+
+### Good citizens
+
+These have a clear lifecycle, a mapped source of truth, and no material open trust gap in the inventory.
+
+- Apps and services: DoubleQross, PickledBalls, Pfoliolio, 100 Burfords, Screenker, grubber, card-engine, server-monitor, pfolio, Oenora Recognition API.
+- Portfolio surfaces and tooling: 1041soft.com, Bill Donner Apps, App Feedback.
+- Repositories: `~/qross`, `~/pickledballs`, `~/pfolio-app`, `github:billdonner/pfolio`, `~/100Burfords`, `github:billdonner/screenker`, `~/grubber`, `~/card-engine`, `~/server-monitor`, `~/app-feedback`, `~/Flyz`, `~/masterindex`, `~/collective-engine` (Collective Engine architecture proposal and normative Codex handoff; private `github:billdonner/collective-engine`; `~/familia` is a legacy symlink to it, not a separate repository).
+
+### Not good citizens
+
+These are intentionally retained, but they are retired, obsolete, placeholder, missing, or otherwise weak records rather than clean active portfolio assets.
+
+- Apps and services: Mallinbook, KinFlash, PickleFamilia, Nagz, Flasherz Kids, Cardz Studio, Famster, LtWatcher, picklefortunes, grubber-ios, clubsync, card-server, MastPex IOS, MastPex Mac.
+- Repositories: `github:billdonner/zkraper`, `github:billdonner/asc-feedback`, `~/peerlink`, `~/card-server`, `~/cardz-studio-ios`, `~/clubsync`, `~/clubwatch`, `~/famster-ios`, `~/grubber-ios`, `~/nagz-ios`, `~/obo`, `~/obo-ios`, `~/picklefortunes`, `github:billdonner/picklefamilia-ios` (archived), and `~/Documents/Codex/2026-08-02/masterindex-explorer`.
+
+### Review of Non-Good Records
+
+- True lifecycle decisions: Nagz, Flasherz Kids, Cardz Studio, Famster, LtWatcher, picklefortunes, grubber-ios, clubsync, card-server, zkraper, asc-feedback, and the MastPex pair are non-good because the owner has already decided they are legacy, obsolete, internal-only, deferred, retired, or placeholder assets.
+- Active but blocked by real product debt: KinFlash and Mallinbook are non-good because each still has an unresolved public-release, metadata, or platform-posture problem rather than merely stale wording in the index. KinFlash is now narrowed to owner-side hosting, ASC, and release-decision work rather than repo execution debt; Mallinbook is now narrowed to the live privacy-page placeholder and follow-on ASC actions rather than repo execution debt.
+- Local-environment or routing problems: `~/peerlink` is missing locally and blocks reproducible PickledBalls builds here; `~/obo` remains a historical docs hub around an obsolete line; `github:billdonner/picklefamilia-ios` is archived, remote-only, and outside the current active workstream.
+- The highest-value repairs outside MasterIndex are now choosing KinFlash public hosting plus release-channel and ASC submission answers, and replacing Mallinbook's live privacy-page placeholder before completing its ASC follow-through.
+
+### KinFlash Follow-up
+
+`~/kinflash` is no longer non-good. On Saturday, August 15, 2026, the repo-side release work was verified: iOS Debug and Release builds succeeded, 249 unit tests passed with 31 legitimate skips, privacy manifests were confirmed in the built app, and the screenshot rig was proven end-to-end for all 7 iPhone and 7 iPad slots at brief-conformant geometry.
+
+KinFlash the app remains non-good because the remaining blockers are owner-facing rather than repo-facing:
+
+- No publicly reachable hosting exists yet for support and privacy URLs because the private repo has Pages disabled and `homepageUrl` is empty.
+- The Mac release channel remains undecided.
+- Local build 66 has not been uploaded; ASC build 65 is VALID but is not the intended release candidate.
+- ASC App Privacy answers, final screenshot selection/captions, and final slot-1 composition remain open.
+
+### Nagzerver Follow-up
+
+`~/nagzerver` is no longer non-good. On Saturday, August 15, 2026, the source-of-truth problem was resolved: `recovery/deployed-2026-06-30` was confirmed as a strict fast-forward superset of `main`, merged cleanly, and local `main` was verified against the live 163-path API surface with zero API drift. Two security fixes landed in Git: the SPA catch-all no longer allows arbitrary file reads, and production test-helper endpoints are now fail-closed behind `NAGZ_ENABLE_TEST_HELPERS=1`.
+
+Production still needs operational follow-through:
+
+- Fly release v100 has not yet been redeployed with those fixes.
+- Secrets should be rotated because `/proc/self/environ` was reachable before the code fix.
+- `fly.toml` still has no `release_command`, so migrations remain a manual post-deploy step.
+
+### Oenora Follow-up
+
+`~/oenora` is no longer non-good. On Saturday, August 15, 2026, the Mac distribution posture was resolved and documented: Oenora for Mac is a notarized Developer ID direct download under `com.billdonner.oenora.mac`, governed by `docs/decisions/ADR-007-mac-distribution-channel.md`, with a reproducible release path in `scripts/notarize-mac.sh`. The iOS side is aligned: `project.yml` build 7 matches ASC build 7, and the public Founders Beta TestFlight link is enabled.
+
+The remaining Oenora gaps are now explicit external follow-through, not repo ambiguity:
+
+- The empty ASC `MAC_OS` version under `com.billdonner.oenora` is a leftover app-creation artifact and should be deleted by owner action.
+- The Developer ID Application private key is missing from the current build machine keychain, so no new notarized Mac build can be produced there until the key is restored.
+- `1041soft.com/oenora/` support and privacy pages still do not exist.
+- No public download host has been chosen yet for the notarized Mac artifact.
+- The iOS age rating remains unset.
 
 ## Product Lines
 
@@ -49,17 +114,20 @@ presenting Flasherz Kids as active and to present KinFlash under 1041soft.com.
 
 ## Screenshot Program
 
-The August 14 read-only App Store Connect audit inspected every mapped version, locale, and
-screenshot display type, then correlated those live sets with repository history and Screenker
-projects. A gallery is not called current merely because it is present in ASC or once received a
-high score.
+The canonical screenshot program now lives in `current/index.json` under
+`screenshotOperations`, with machine-readable lane and board-state tracking. The August 14
+read-only App Store Connect audit established the baseline by inspecting every mapped version,
+locale, and screenshot display type, then correlating those live sets with repository history
+and Screenker projects. A gallery is not called current merely because it is present in ASC or
+once received a high score.
 
 | State | Apps |
 |---|---|
 | Current, scored, and published | 100 Burfords (iPhone 88/iPad 90) |
 | Current internal/TestFlight evidence; no public gallery work | workin On (93) |
 | Current and published, below the commercial target | Screenker (86) |
-| Published but score or captures are stale | DoubleQross, PickledBalls, 123 Words, amenbeats, Pfoliolio |
+| Current local candidate awaiting human approval; ASC unchanged | DoubleQross (provisional iPhone 94/iPad 93) |
+| Published but score or captures are stale | PickledBalls, 123 Words, amenbeats, Pfoliolio |
 | Screenker projects exist but critique coverage is incomplete | Mallinbook (Mac 89; iPhone/iPad unscored) |
 | ASC device coverage exists without Screenker critique | SentiPods |
 | Local captures exist but ASC is empty | Oenora iOS |
@@ -69,11 +137,12 @@ high score.
 | Internal functional evidence only | Cardz Studio, workin On, MastPex iOS, MastPex Mac |
 | No new screenshot work | Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
 
-The cleanup queue runs August 15-26: DoubleQross and 123 Words first; amenbeats and
-PickledBalls next; then Pfoliolio and Mallinbook. KinFlash now takes the next two slots for
-commercial capture and critique, followed by SentiPods, Screenker, Oenora, a verification-only
-check for 100 Burfords, and Zerver Monitor if its build remains a release candidate. The
-detailed daily exit conditions are in `docs/screenshot-operations.md`.
+The current board priority is: 123 Words first; then PickledBalls; then amenbeats and
+Pfoliolio; then Mallinbook and SentiPods; then KinFlash, Oenora, Zerver Monitor, Screenker,
+and a verify-only pass for 100 Burfords. DoubleQross is approved-local but deferred by owner for
+now, so it is held out of the active queue. Internal-only and archived lines are tracked
+separately so they do not pollute the public-release queue. The detailed lane model and per-app
+execution steps are in `docs/screenshot-operations.md`.
 
 Future releases use a T-7 capture brief, T-5 deterministic capture, T-4 critique, T-3 re-shoot,
 T-2 human approval and ASC publication, T-1 drift check, and T+1 storefront verification.
@@ -172,7 +241,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record retained |
-| PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| PickleFamilia | com.picklefamilia.app | archived github:billdonner/picklefamilia-ios | Archived historical line; ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term 1041soft.com release; iOS 1.0 PREPARE_FOR_SUBMISSION |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
@@ -252,7 +321,7 @@ the app is retired).
 
 Every private repository was swept for enabled GitHub Pages. Disabled on qross, nagz,
 nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook, pfolio-app, and
-picklefamilia-ios.
+picklefamilia-ios (archived historical line).
 
 Three remain enabled **deliberately**:
 
@@ -297,15 +366,15 @@ assigned workin On exclusively to the permanently free BillDonner.com line, maki
 
 ## Preserved Main-Only Facts
 
-- `local-model-lab` is parked, with its historical MLX/Qross corpus benchmark results retained.
+- `local-model-lab` is active again as a lab. The live checkout is `~/mlxsrv/local-model-lab`, the canonical old-corpus leaderboard has been repaired, and Apple 4+ content-screening is now running against the 190,941-question corpus.
 - `adspill` remains a two-person advertising-capacity research sandbox.
 - The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
 - Oenora's public TestFlight invite, approved build 6, submitted build 7 with sealed-case tracking, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
 
 ## Remaining Gaps
 
-- Mallinbook's ASC privacy URL still points to a removed GitHub Pages route and returns 404. A working replacement now exists at `https://1041soft.com/mallinbook/privacy`; the ASC field still needs setting.
-- SentiPods still has no ASC privacyPolicyUrl. A working page exists at `https://1041soft.com/sentipods/privacy`; the ASC field still needs setting.
+- Mallinbook's replacement privacy URL now resolves at `https://1041soft.com/mallinbook/privacy`, but the published page still contains literal placeholder text. The corrected policy text is in the repo, but 1041soft-site must be updated and redeployed before the ASC field can be pointed at a truthful page.
+- SentiPods public-link drift is closed. ASC privacy, support, and marketing URLs now resolve to the verified `https://1041soft.com/sentipods/` surfaces; the remaining blockers are ASC-console-only metadata fields and age rating choices.
 - **Closed 2026-08-14 — unintended public exposure.** Seven private repos (qross, nagz, nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook) were publishing `docs/` to the open web through GitHub Pages. Verified world-readable at the time: qross business plans, risk register, `architecture/cardzerver-operational-roadmap.md`, `decisions/ADR-009-secret-management.md`, `carol-claude-code-instructions.md`; and nagz `DEPLOYMENT_PLAN.md`, `CODE_REVIEW_FINDINGS.md`, `CONTRIBUTOR_GUIDE.md`. Scanned for live credential patterns and found none. Pages disabled on all seven; every path re-verified 404.
 - `nagz/docs/.well-known/apple-app-site-association` never actually served — Jekyll ignores dot-directories — so universal links have never worked from that domain. Not a regression from the migration.
 - Age ratings remain unset for Oenora, SharedSpaceLab, and SentiPods pending owner decisions.
