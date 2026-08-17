@@ -53,32 +53,113 @@ Apple's current upload procedure and device rules remain external requirements:
 [upload screenshots](https://developer.apple.com/help/app-store-connect/manage-app-information/upload-app-previews-and-screenshots/)
 and [screenshot specifications](https://developer.apple.com/help/app-store-connect/reference/screenshot-specifications/).
 
-## Cleanup Schedule
+## Execution Model
 
-This order favors release-ready apps with known stale galleries, then fills verified gaps. A
-day is a work slot, not a promise to publish an app whose product or release decision is open.
+Run every app through one of four lanes. Do not give dead, internal-only, and public-release
+apps the same workflow.
 
-| Date | Work | Exit condition |
+| Lane | Meaning | Required output |
 |---|---|---|
-| Aug 15 | DoubleQross and 123 Words: freeze the intended release UI; regenerate iPhone/iPad raw captures from current builds | Capture manifests identify build, device, locale, scenario, and data source |
-| Aug 16 | Compose and critique DoubleQross and 123 Words; re-shoot only failed or misleading slots | Every hard gate passes; each gallery is at least 85, or 90 if assigned commercial |
-| Aug 17 | amenbeats and PickledBalls: capture/relink the post-change product; include an iPad decision for universal amenbeats | New critiques apply to the exact projects intended for ASC |
-| Aug 18 | Pfoliolio: import the current four iPhone captures into Screenker; capture the matching Mac build and critique both | iPhone and Mac share current naming, data, positioning, and approved scores |
-| Aug 19 | Mallinbook: critique iPhone and iPad; review the Mac 89 against its product-line threshold | Three platform galleries have current reports; improve Mac if the target is 90 |
-| Aug 20 | KinFlash: confirm the iOS and native-Mac release channels, write capture briefs, and capture the near-term 1041soft.com release candidate | Current deterministic captures cover every promised platform and use documented fictional family data |
-| Aug 21 | KinFlash: compose, critique, and iterate its galleries to the commercial 90-point target | Approved candidate exports exist for every public release channel; ASC remains unchanged pending human approval |
-| Aug 22 | SentiPods: import the three existing device sets, run truth/privacy review, then critique; re-capture only failures | Existing ASC coverage gains reproducible Screenker projects and reports |
-| Aug 23 | Screenker: improve the current 86 gallery to 90 if it is confirmed for 1041soft.com | Approved six-slot project and matching ASC set |
-| Aug 24 | Oenora: after Founders Beta UI freeze, compose/critique the six local iPhone captures and publish; do not populate the unused ASC Mac record | iOS ASC set matches the beta product; native Developer ID Mac remains a separate channel |
-| Aug 25 | Verify-only pass for 100 Burfords; compare Screenker export hashes/order with ASC | No rebuild unless parity or visible-product drift fails |
-| Aug 26 | Zerver Monitor: decide whether build 5 is a real release candidate; if yes, create capture brief, capture, critique, and publish | Either an approved current set exists or release work is explicitly deferred |
+| Publish-now | Active public or near-public release candidate | Approved Screenker export plus ASC parity verification |
+| Verify-only | Already current or nearly current; reopen only on visible drift | Read-only parity report, or a documented reason to re-enter critique |
+| Internal-evidence | Internal/TestFlight-only app still worth evaluating | Approved local archive and critique report; no ASC marketing publication required |
+| Archive/no-work | Historical, obsolete, or intentionally parked line | Explicit note that no new screenshot work should be done |
 
-SharedSpaceLab and PickleFamilia stay out of the production queue until each has a real release
-target and product-line decision. Cardz Studio, workin On, and both MastPex records are
-internal/TestFlight-only: keep functional testing evidence and TestFlight availability, but do
-not build public marketing galleries. Flasherz Kids, LtWatcher, and grubber-ios are
-obsolete/retired; Famster is concept-only; Nagz is legacy. Do not spend screenshot time on
-those records.
+### Current lane assignment
+
+| Lane | Apps |
+|---|---|
+| Publish-now | DoubleQross, PickledBalls, 123 Words, amenbeats, Pfoliolio, Mallinbook, KinFlash, SentiPods, Oenora, Zerver Monitor, Screenker |
+| Verify-only | 100 Burfords |
+| Internal-evidence | workin On, Cardz Studio, MastPex iOS, MastPex Mac |
+| Archive/no-work | PickleFamilia, Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
+
+SharedSpaceLab is intentionally outside the production screenshot queue until it has a real
+release candidate and product-line decision.
+
+## Execution Board
+
+Track each app version and platform through these states:
+
+| State | Meaning |
+|---|---|
+| no-project | No Screenker project, manifest, or approved source set exists yet |
+| capture-needed | Product scope is frozen enough to capture, but source screenshots are missing or stale |
+| captured | Deterministic source captures and manifest exist |
+| in-critique | Screenker sandbox iteration is underway |
+| re-capture-needed | Critique found a product-truth, state, data, or layout issue that decoration cannot solve |
+| approved-local | The exact export is approved locally; not yet published to ASC |
+| published-asc | Upload completed; ASC now has the intended assets |
+| verified-parity | Live ASC slot count, order, locale, and display type match the approved export |
+| deferred | Work paused because product, release, or owner decisions are unresolved |
+| archived-no-work | Historical line; preserve evidence only |
+
+Use the `unitOfWork` already defined in `current/index.json`: app version + platform + locale +
+display type.
+
+## Pipeline Steps
+
+Execute the same sequence for every `publish-now` unit of work:
+
+1. Freeze the candidate.
+   Lock version, build, locale, device families, positioning, and the exact flows the gallery
+   must prove. If these are still moving, do not start capture.
+2. Write the capture brief.
+   Record the product claim, target device/display types, source of demo data, privacy/truth
+   constraints, and the expected slot narrative.
+3. Capture deterministically.
+   Generate or collect raw screenshots from the candidate build. Record commit, build number,
+   OS, simulator/device, locale, date, and scenario in a manifest.
+4. Compose in a Screenker sandbox copy.
+   Never mutate the approved project directly during critique loops.
+5. Run hard gates first.
+   Truth, privacy, freshness, technical export, coverage, accessibility/localization, ASC parity,
+   and human-approval readiness all pass or fail before any score matters.
+6. Score and prioritize.
+   Record the weighted Screenker score and a short fix list ordered by impact.
+7. Iterate narrowly.
+   Apply one high-impact change per loop. Re-capture whenever the weakness is in-product rather
+   than compositional.
+8. Stop intentionally.
+   Stop after six loops, after two gains below three points, or once the required threshold is
+   met: 85 general, 90 confirmed 1041soft.com commercial.
+9. Approve the exact export.
+   Move approved changes back to the canonical project, export, and require explicit human
+   approval before publication.
+10. Publish and verify.
+   Upload to ASC, read ASC back, and compare live slot count, order, locale, display type, and
+   asset completion against the approved export.
+11. Archive evidence.
+   Preserve the canonical `.screenker` project, source captures, export files, manifest, critique
+   report, approval date, and ASC parity result.
+
+For `verify-only`, run steps 1, 5, 10, and 11 only unless a freshness trigger reopens capture.
+
+For `internal-evidence`, run steps 1 through 9 and 11, but skip ASC publication. The goal is a
+truthful, reproducible local gallery record, not public storefront polish.
+
+For `archive/no-work`, do not create a new project. Preserve any existing evidence and add an
+explicit note that the line is historical.
+
+## Work Queue
+
+Use this execution order unless an app's release reality changes:
+
+1. DoubleQross: finish the already-captured iPhone and iPad candidate by getting human approval,
+   then publish and verify parity.
+2. 123 Words and PickledBalls: both are published but stale, so re-capture and re-critique the
+   current product rather than polishing old compositions.
+3. amenbeats and Pfoliolio: bring them back onto exact current product state, including the iPad
+   decision for amenbeats and matched iPhone/Mac provenance for Pfoliolio.
+4. Mallinbook and SentiPods: close critique-provenance gaps on already-populated ASC sets.
+5. KinFlash: run the full commercial cycle to a 90-point target, but block publication until its
+   hosting, release-channel, and ASC-product decisions are resolved.
+6. Oenora and Zerver Monitor: create current release-facing galleries only if the current build is
+   a real candidate.
+7. Screenker: improve its own Mac gallery from 86 toward the 90 commercial bar if its product-line
+   assignment remains 1041soft.com.
+8. 100 Burfords: verify-only pass; rebuild only if parity or visible drift fails.
+9. Internal-only lane: workin On, Cardz Studio, MastPex iOS, MastPex Mac.
 
 ## Release-Relative Schedule
 
