@@ -11,6 +11,12 @@ set -u
 #
 # The check is read-only against every target repo: it does not fetch, pull,
 # commit, or edit anything outside current/heartbeat.json.
+#
+# macOS TCC caveat: when this runs under launchd, repos beneath ~/Documents,
+# ~/Desktop, and ~/Downloads are unreadable unless the executing binary
+# (/bin/zsh) has Full Disk Access. Without it those repos report as
+# unreachable "HEAD unreadable" from the scheduled run while reading fine
+# interactively -- a permissions artifact, not repo damage.
 
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
@@ -44,16 +50,21 @@ Options:
   --no-remote  Skip gh API lookups for repos with no local clone. Those rows
                are recorded as unreachable(no-local-clone) instead.
   --stdout     Print the JSON to stdout instead of writing heartbeat.json.
+  --report     Do not re-check anything. Read the existing heartbeat.json and
+               print only the rows that need attention. Exits 1 when any row is
+               unreachable, so it can gate a scheduled check.
 EOF
 }
 
 no_remote=0
 to_stdout=0
+report_only=0
 while [[ ${1:-} == --* ]]; do
   case "$1" in
     --help|-h) usage; exit 0 ;;
     --no-remote) no_remote=1; shift ;;
     --stdout) to_stdout=1; shift ;;
+    --report) report_only=1; shift ;;
     *) print -u2 "unknown option: $1"; usage; exit 2 ;;
   esac
 done
@@ -69,6 +80,33 @@ fi
 if [[ ! -f "$index" ]]; then
   print -u2 "heartbeat: no index at $index"
   exit 2
+fi
+
+# --report reads the last run rather than performing a new one, so it is safe to
+# call often and never rewrites the record.
+if (( report_only )); then
+  if [[ ! -f "$out" ]]; then
+    print -u2 "heartbeat: no heartbeat.json yet; run without --report first"
+    exit 2
+  fi
+  "$JQ" -r '
+    "heartbeat from \(.checkedOn)  |  \(.summary.repos) repos  ok \(.summary.ok)  drift \(.summary.drift)  unreachable \(.summary.unreachable)",
+    "",
+    (([.repos[] | select(.verificationStatus == "unreachable")]) as $u |
+      if ($u | length) > 0 then
+        "UNREACHABLE", ($u[] | "  \(.repo)  --  \(.note // "no detail")"), ""
+      else empty end),
+    (([.repos[] | select(.verificationStatus == "drift")]) as $d |
+      if ($d | length) > 0 then
+        "DRIFT",
+        ($d[] | "  \(.repo)  --  \(.dirtyFiles) dirty, \(.unpushedCommits) unpushed  (\(.branch // "?"))"),
+        ""
+      else empty end)
+  ' "$out"
+  if [[ $("$JQ" -r '.summary.unreachable' "$out") != "0" ]]; then
+    exit 1
+  fi
+  exit 0
 fi
 
 today=$("$DATE" +%Y-%m-%d)

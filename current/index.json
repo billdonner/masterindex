@@ -57,7 +57,8 @@
   "automation": {
     "taskRegistry": "tasks/index.json",
     "handoffRegistry": "current/handoffs/index.json",
-    "policy": "Every entity inherits a six-hour verification check and a daily inventory refresh from the task registry. Targeted handoffs may alter the next applicable cycle without changing this inventory schema."
+    "heartbeatRegistry": "current/heartbeat.json",
+    "policy": "Repo-level liveness is verified daily by tools/masterindex-heartbeat.sh, scheduled locally via the launchd agent com.billdonner.masterindex-heartbeat at 03:15. It stamps every repo in .repos[] on every run, including repos with no activity, and writes current/heartbeat.json. Read lastVerified as when the checker looked and lastChanged as when the repo actually moved: a stale lastChanged with a fresh lastVerified means quiet and confirmed, while a stale lastVerified means nobody looked. Entity-level curation in this file remains manual and is not driven by the heartbeat. Targeted handoffs may alter the next applicable cycle without changing this inventory schema."
   },
   "productLines": [
     {
@@ -874,7 +875,7 @@
         "The old ASC privacy URL still points to the removed GitHub Pages route. A replacement URL exists and returns HTTP 200, but its published content still contains a literal TODO placeholder, so it is not yet submittable.",
         "github:billdonner/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
         "First proving case: Mallinckrodt Condominium resident directory; bundled sample is the synthetic Maplecrest Towers book (80 fictional households).",
-        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core \u2014 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
+        "mallinbook-mcp (2026-08-03): MCP stdio server target compiling the app's core — 20 tools (roster/pages/PDF export/editions); installed at ~/bin/mallinbook-mcp, registered with Claude Code.",
         "2026-08-15: no networking code exists anywhere in the app; the macOS network.client entitlement is WKWebView-only, which is what makes the privacy claim defensible.",
         "2026-08-15: all 13 screenshot candidate and final MD5s matched the checkpoint exactly.",
         "2026-08-15: public pages are served from billdonner/1041soft-site, not this repo. GitHub Pages is deliberately disabled here, and billdonner.github.io/mallinbook is expected to 404. docs/ remains the authoritative text source only.",
@@ -915,9 +916,9 @@
         "Uses JSON plus GRDB SQLite locally.",
         "Current project.yml links local packages CourtScheduler, vendored PickleFortunesKit, and PeerLink.",
         "PeerLink is expected at ../peerlink for local builds; that sibling package was missing on this machine during the 2026-08-13 cleanup.",
-        "SharedAI unlinked from v1.0 (2026-07-23) \u2014 re-add when the Instructor tier ships.",
+        "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
         "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
-        "Site fully deployed 2026-08-02 \u2014 support.html and privacy.html both verified live (200).",
+        "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
         "HarvestSync and Clubsync are deferred until PickledBalls v2; they are not part of the current useful product path."
       ]
     },
@@ -959,8 +960,8 @@
         "The old billdonner.github.io/qross product URL returns 404 because Pages was deliberately disabled on the private app repository; 1041soft.com/qross is the maintained product page.",
         "doubleqross.com and www.doubleqross.com resolve through IONOS and return HTTP/2 302 over HTTPS to https://1041soft.com/qross/.",
         "The included Sectigo certificate covers both *.doubleqross.com and doubleqross.com and is valid through 2027-02-10.",
-      "ASC iOS 1.0 en-US marketingUrl was updated to https://doubleqross.com/ on 2026-08-14; supportUrl remains https://1041soft.com/qross/support.html.",
-      "Current 1.0 (392) iPhone and iPad screenshot candidates were captured, composed, and scored provisionally at 94 and 93 on 2026-08-14; exact exports are staged in marketing/approval/2026-08-15 and ASC publication is awaiting human approval."
+        "ASC iOS 1.0 en-US marketingUrl was updated to https://doubleqross.com/ on 2026-08-14; supportUrl remains https://1041soft.com/qross/support.html.",
+        "Current 1.0 (392) iPhone and iPad screenshot candidates were captured, composed, and scored provisionally at 94 and 93 on 2026-08-14; exact exports are staged in marketing/approval/2026-08-15 and ASC publication is awaiting human approval."
       ]
     },
     {
@@ -1204,10 +1205,10 @@
       },
       "notes": [
         "Its shared kit is reused by PickledBalls.",
-        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement \u2014 PickledBalls consumed it via a local SPM path.",
+        "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
         "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
         "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product.",
-        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds \u2014 no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone \u2014 clear it manually in the TestFlight app (Remove App)."
+        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds — no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone — clear it manually in the TestFlight app (Remove App)."
       ]
     },
     {
@@ -1546,7 +1547,7 @@
       "repo": "github:billdonner/123words",
       "bundleId": "com.123words.app",
       "release": "iOS 1.11 READY_FOR_SALE and 1.12 PREPARE_FOR_SUBMISSION; source and ASC 1.12 build 59 VALID on 2026-08-14",
-      "description": "Kids 2\u20137 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
+      "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
       "dependencies": [],
       "links": {
         "website": "https://billdonner.github.io/123words/",
@@ -1656,14 +1657,14 @@
         "2026-08-09: added a network-aware queue that retains scans offline and sends up to three photos plus OCR evidence to the deployed recognition API when configured.",
         "2026-08-09: completed guided offline capture recovery and encrypted founder-beta backup, including a stable recovery code and corruption-rejection coverage.",
         "2026-08-10: added an independent simulator walkthrough with screenshot evidence for capture, offline guidance, recognition review, cellar, and history flows.",
-        "2026-08-10: added four-screen high-school-level onboarding and six verified 1206\u00d72622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
+        "2026-08-10: added four-screen high-school-level onboarding and six verified 1206×2622 iPhone screenshots covering capture, offline rear-label guidance, recognition review, confirmed cellar, detailed history, and an empty-state reference.",
         "2026-08-10: ASC app 6799520155 and VALID build 1 were observed. Build 1 is attached to the Founders Beta group; later review confirmed a public TestFlight link is enabled.",
         "Sign in with Apple is deferred until after the first founder field test; the current beta uses a client-encrypted recovery-code backup as the bridge.",
         "2026-08-10: improved the Mac label-photo workflow; no new ASC release was observed.",
         "2026-08-12: build 1 approved for external TestFlight distribution; public join link is now live (https://testflight.apple.com/join/M6vwHjHB).",
         "2026-08-12: added cellar rack/row/column bottle-location tracking (BottleLocation on Bottle) with a rack-grid map view in My Cellar; uploaded as build 3 and submitted to the external Founders Beta group for Jon Packer, WAITING_FOR_REVIEW.",
         "2026-08-13: CloudKit sync shipped and verified on two physical iPads (ADR-006: CKSyncEngine beside local JSON, single Cellar zone in the private database, confirmed-cellar records only, last-writer-wins). Gated off by default via OENORA_CLOUDKIT_SYNC_ENABLED; Jon's beta build unaffected.",
-        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) \u2014 NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
+        "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
         "2026-08-14 overnight: automated soak (Mac driver plus two physical iPads, 98 Mac cycles and 48 verification cycles) caught and fixed CloudKit insert-versus-update conflicts, stale-device bootstrap overwrite, and a CKSyncEngine scheduler fetch freeze. Final state reached three-way agreement at 98 bottles with zero duplicates.",
         "2026-08-14: recognition token was rotated and verified live, CloudKit schema was deployed to Production, and TestFlight build 6 was approved for the external Founders Beta with Jon auto-notified. The native Mac app was notarized for Developer ID distribution, delivered as a stapled zip, and verified syncing with iOS build 6 through Production CloudKit.",
         "2026-08-14: added sealed-case tracking (SealedCase: exterior-readable identity, 3/6/12 case size, bottle format, shelf location; Cases view in the Cellar tab) for Jon's ~140 shelves of unopened wooden cases. Cross-device sync verified iPad-to-iPad in Development; SealedCase record type deployed to Production. Uploaded as build 7 and submitted to the external Founders Beta. Case deletion does not yet propagate between devices (no tombstones)."
@@ -1891,7 +1892,7 @@
       },
       "notes": [
         "Verified live checkout path on 2026-08-15: ~/mlxsrv/local-model-lab, branch main, remote github.com/billdonner/local-model-lab.",
-        "Standalone lab \u2014 not part of the Qross cluster and has no dependency on the Qross app/repos; it consumes exported Qross corpus snapshots as benchmark data.",
+        "Standalone lab — not part of the Qross cluster and has no dependency on the Qross app/repos; it consumes exported Qross corpus snapshots as benchmark data.",
         "Canonical old-corpus leaderboard is restored: local baseline 85.90% no-hint / 88.72% on-request hint on 177,501 questions; qwen3-4b no-hint 84.12%; qwen3-4b on-request hint 84.84%; qwen3-4b inline-hint 86.41%; OpenAI gpt-5 98.34% no-hint on a 10k subset (~$0.94).",
         "Raw answers.jsonl files over 100MB are gitignored (GitHub limit) and kept local-only; summaries and wrong-answer exports are pushed.",
         "2026-08-15: repaired a leaderboard integrity hazard where a 10-question smoke run had overwritten the canonical baseline no-hint row; the generator now preserves the intended full-size canonical row and retains the smoke run separately in runs.jsonl.",
@@ -1899,7 +1900,7 @@
         "2026-08-15 active experiment: Apple 4+ age-rating content screening over the full 190,941-question corpus on local qwen3-4b. At report time 17,688 questions were screened, 785 flagged (~4.4%), throughput was ~1.2 q/s, ETA was ~2026-08-17, and outputs were under results/content_screen/full-20260815/.",
         "Completed experiment families preserved in-repo: repository-analysis model qualification, trivia-generation bake-off, full-corpus Qross answer evaluations on the old corpus across three hint modes with local-vs-OpenAI comparison, hint-quality pilots, and hard-subset runs.",
         "Parked or incomplete experiment families: inline-hint baseline run on the fresh 190,941-question corpus (48.7% complete, resumable) and the bridge benchmark (designed with pilot runs, but no parameter sweeps completed).",
-        "2026-08-05: SwiftChat became the common interface \u2014 four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Those surfaces remain present and reusable, but were not relaunched in the 2026-08-15 state audit.",
+        "2026-08-05: SwiftChat became the common interface — four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Those surfaces remain present and reusable, but were not relaunched in the 2026-08-15 state audit.",
         "Open gaps after the 2026-08-15 state report: SwiftChat, bridge lab, and qross monitor remain unverified since 2026-08-05; bridge benchmark sweeps were never run; qross_eval.py and content_screen.py still lack direct automated tests; raw >100MB answers.jsonl files remain local-only by policy; and an owner decision is still pending on how borderline content flags should be triaged."
       ]
     },
@@ -1914,7 +1915,7 @@
       "repo": "github:billdonner/adspill",
       "bundleId": null,
       "release": null,
-      "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 \u2014 an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) \u2014 and Project 2 \u2014 a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
+      "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
       "dependencies": [],
       "links": {
         "website": null,
@@ -2268,7 +2269,7 @@
       "last2026Commit": "2026-07-20",
       "kind": "reference engine",
       "masterIndexStatus": "good-citizen",
-      "role": "Python FastAPI/WeasyPrint directory-book engine \u2014 read-only reference for Mallinbook; one-time lossless photo extraction"
+      "role": "Python FastAPI/WeasyPrint directory-book engine — read-only reference for Mallinbook; one-time lossless photo extraction"
     },
     {
       "repo": "~/card-engine",

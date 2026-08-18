@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "description": "Daily pull-based repo heartbeat. Every repo is stamped every run, including repos with no activity. lastVerified means the checker looked; lastChanged means the repo actually moved.",
-  "generatedAt": "2026-08-18T00:00:44Z",
+  "generatedAt": "2026-08-18T00:09:06Z",
   "checkedOn": "2026-08-17",
   "summary": {
     "repos": 57,
-    "ok": 43,
-    "drift": 13,
+    "ok": 42,
+    "drift": 14,
     "unreachable": 1,
     "quiet30d": 2
   },
@@ -418,12 +418,12 @@
       "repo": "~/familia",
       "localPath": "/Users/billdonner/familia",
       "source": "local",
-      "verificationStatus": "ok",
+      "verificationStatus": "drift",
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-17",
       "branch": "main",
       "headSha": "feb3b4e",
-      "dirtyFiles": 0,
+      "dirtyFiles": 5,
       "unpushedCommits": 0,
       "note": null
     },
@@ -487,9 +487,9 @@
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-17",
       "branch": "fix/doubleqross-com",
-      "headSha": "371ac03",
-      "dirtyFiles": 2,
-      "unpushedCommits": 14,
+      "headSha": "8937e47",
+      "dirtyFiles": 3,
+      "unpushedCommits": 15,
       "note": null
     },
     {
