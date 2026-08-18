@@ -66,14 +66,18 @@
       "name": "BillDonner.com",
       "domain": "https://billdonner.com/",
       "pricingPolicy": "always-free",
-      "commitment": "Personal utilities, experiments, and children-oriented apps; users are never charged and Mac or MCP surfaces are optional."
+      "audience": "children and personal utility",
+      "commitment": "Kid-oriented apps, personal utilities, and experiments. Users are never charged. Assignment is decided by AUDIENCE, not by capability: a free app here may still ship a real Mac version and an MCP surface, as KinFlash does. Screenshot galleries are held to the general 85-point gate.",
+      "note": "Revised 2026-08-18. The lines previously split on commercial bar and capability, which made KinFlash ambiguous once it became a kid app with a capable Mac sibling. Audience is now the primary axis."
     },
     {
       "id": "1041soft-commercial",
       "name": "1041soft.com",
       "domain": "https://1041soft.com/",
       "pricingPolicy": "commercial",
-      "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model."
+      "audience": "adult and professional",
+      "commitment": "Commercial-grade products for adult or professional users, with a higher release and support bar and an explicit revenue model. Normally a real Mac version and an MCP or automation surface, though those no longer distinguish the line. Screenshot galleries are held to the 90-point commercial target.",
+      "note": "Revised 2026-08-18 to split on audience rather than capability."
     }
   ],
   "screenshotOperations": {
@@ -86,7 +90,8 @@
       "commercialTargetScore": 90,
       "freshnessRule": "A score is stale after a source screenshot, Screenker composition, visible captured flow, product positioning, or supported-device promise changes.",
       "publishRule": "Publishing is a separate, verified step: compare the live ASC screenshot counts and ordering with the approved Screenker export after upload.",
-      "safetyRule": "Critique and automated changes run on a Screenker sandbox copy; publishing requires explicit human approval."
+      "safetyRule": "Critique and automated changes run on a Screenker sandbox copy; publishing requires explicit human approval.",
+      "galleryRule": "GALLERY RULE, owner decision 2026-08-18: every app with a live or pending public App Store listing gets a public page AND a Screenker-produced gallery rendered into that page. No exceptions among public apps. Apps with no public listing (internal-only, archived, or never-listed) are out of scope, and any claimed exemption must be justified by the entity status recorded here, which must be true and verifiable against ASC. This rule is deliberately keyed to status rather than to a hand-maintained exception list, because five status errors were found and corrected on 2026-08-18 alone by checking live sources. Screenker exports pixel-exact PNGs at ASC dimensions and has no HTML renderer today; the decided approach is to render the gallery page around those exported PNGs so the website shows the same pixels the store shows, rather than building a second HTML renderer that could drift from the ASC set."
     },
     "executionModel": {
       "lanes": {
@@ -913,7 +918,7 @@
       "cluster": "Qross",
       "status": "asc-mapped",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-18",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
       "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; source and ASC build 392 VALID on 2026-08-14",
@@ -945,7 +950,8 @@
         "doubleqross.com and www.doubleqross.com resolve through IONOS and return HTTP/2 302 over HTTPS to https://1041soft.com/qross/.",
         "The included Sectigo certificate covers both *.doubleqross.com and doubleqross.com and is valid through 2027-02-10.",
         "ASC iOS 1.0 en-US marketingUrl was updated to https://doubleqross.com/ on 2026-08-14; supportUrl remains https://1041soft.com/qross/support.html.",
-        "Current 1.0 (392) iPhone and iPad screenshot candidates were captured, composed, and scored provisionally at 94 and 93 on 2026-08-14; exact exports are staged in marketing/approval/2026-08-15 and ASC publication is awaiting human approval."
+        "Current 1.0 (392) iPhone and iPad screenshot candidates were captured, composed, and scored provisionally at 94 and 93 on 2026-08-14; exact exports are staged in marketing/approval/2026-08-15 and ASC publication is awaiting human approval.",
+        "2026-08-18: owner reports DoubleQross is going for App Store final review soonish. Live ASC check the same day shows iOS 1.0 still PREPARE_FOR_SUBMISSION, i.e. not yet submitted, which is consistent. Product-line assignment remains OPEN: it is the one active app not clearly kid-oriented or clearly commercial."
       ]
     },
     {
@@ -984,10 +990,10 @@
       "name": "Flasherz Kids",
       "kind": "app",
       "cluster": "Flasherz",
-      "status": "obsolete",
+      "status": "retired",
       "masterIndexStatus": "not-good-citizen",
       "masterIndexStatusReason": "Owner marked it obsolete; retain only the historical source and ASC record.",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-18",
       "repo": "~/obo-ios",
       "bundleId": "com.billdonner.obo",
       "release": "Obsolete by owner decision on 2026-08-14; ASC iOS 1.0 PREPARE_FOR_SUBMISSION record retained",
@@ -1005,7 +1011,8 @@
       },
       "notes": [
         "Falls back to bundled sample decks when the server is unavailable.",
-        "Do not perform new release, screenshot, or public-listing work; preserve the repository and ASC record as history unless the owner later requests archival."
+        "Do not perform new release, screenshot, or public-listing work; preserve the repository and ASC record as history unless the owner later requests archival.",
+        "2026-08-18 owner decision: killed, not revived. Considered and rejected as a second kid flashcard app alongside KinFlash. The two only share the flashcard mechanic: Flasherz served a card-engine server catalog, while KinFlash generates cards from the child's own family data with no backend. Folding kid decks into KinFlash was rejected separately because it would give KinFlash a network dependency and third-party content review burden, undoing the property that makes it clean for the Kids Category. Its ASC record is 1.0 PREPARE_FOR_SUBMISSION and never shipped, so it is still deletable."
       ]
     },
     {
@@ -1133,11 +1140,11 @@
       "status": "release-planned",
       "masterIndexStatus": "not-good-citizen",
       "masterIndexStatusReason": "Repo-side launch work is verified, but the public release still has no reachable public site, so App Store support and privacy URLs cannot yet be supplied. The remaining blocker is an owner hosting and release decision, not repo debt.",
-      "lastModified": "2026-08-15",
+      "lastModified": "2026-08-18",
       "repo": "~/kinflash",
       "bundleId": "com.billdonner.kinflash",
-      "productLine": "1041soft-commercial",
-      "pricingPolicy": "commercial",
+      "productLine": "billdonner-free",
+      "pricingPolicy": "always-free",
       "release": "Near-term public release planned from 1041soft.com; local iOS candidate is 1.0.0 (66) in project.yml and was deliberately not uploaded; ASC build 65 is VALID but is not the intended release candidate. Screenshot capture is now reproducible, but no public site is reachable yet and the Mac channel remains undecided.",
       "distribution": "public-release-planned",
       "description": "Multi-platform app with local package and document architecture.",
@@ -1163,7 +1170,11 @@
         "2026-08-09: added native Mac GEDCOM import/export actions and bundled fictional examples. Import is intentionally limited to empty documents until a merge-conflict workflow exists.",
         "2026-08-10: Mac flashcard review now persists in one deck; no new ASC release was observed.",
         "Owner assigned KinFlash to 1041soft.com for near-term release on 2026-08-14. It therefore uses the 90-point commercial screenshot target.",
-        "Open owner decisions after the 2026-08-15 repo pass: choose a public hosting path for support/privacy URLs, choose the Mac release channel, approve upload of build 66 or replace it, answer ASC App Privacy, and finalize screenshot selection, captions, and slot-1 composition."
+        "Open owner decisions after the 2026-08-15 repo pass: choose a public hosting path for support/privacy URLs, choose the Mac release channel, approve upload of build 66 or replace it, answer ASC App Privacy, and finalize screenshot selection, captions, and slot-1 composition.",
+        "2026-08-18 owner decision: KinFlash becomes a kid-oriented app on the BillDonner.com free line, superseding the 2026-08-14 assignment to 1041soft.com. Its screenshot target drops from the 90-point commercial bar to 85, and its public hosting path resolves to billdonner.com.",
+        "2026-08-18: the Mac sibling ships through App Store Connect on the SAME app record as iOS via universal purchase, not as a separate record and not as a notarized Developer ID download. Both platforms are free, so a second record buys nothing, and ASC category is per-platform, so iOS can sit in the Kids Category while macOS does not.",
+        "2026-08-18: Mac MCP tooling ships inside the store app as an in-process localhost MCP server, following Screenker, which has done exactly this since 2026-07-06 (NWListener in Support/MCPServer.swift on 127.0.0.1:9880, enabled in Settings > Automation). The separate stdio binary installed to ~/bin, as mallinbook-mcp does, is a developer convenience and is NOT required for distribution. Screenker's one real sandbox casualty was deferring export_all over the write-destination question; that is the scale of the constraint.",
+        "2026-08-18: AI posture for the free kid app is the on-device Foundation Models API, which the app already targets and which carries no per-request cost and sends nothing off-device. The Anthropic and OpenAI tiers stay available on the Mac sibling, where an adult can supply a key. This keeps the app viable while free and avoids sending a child's family data to a third-party provider."
       ]
     },
     {
@@ -1171,10 +1182,10 @@
       "name": "picklefortunes",
       "kind": "app",
       "cluster": "picklefortunes",
-      "status": "local-only",
+      "status": "archived",
       "masterIndexStatus": "not-good-citizen",
       "masterIndexStatusReason": "Its ASC record was removed and the repo remains only as local historical source and kit material.",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-18",
       "repo": "~/picklefortunes",
       "bundleId": "com.picklefortunes.app",
       "release": "Removed from ASC (2026-08-03 refresh); repo remains active locally.",
@@ -1192,7 +1203,8 @@
         "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
         "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
         "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product.",
-        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds — no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone — clear it manually in the TestFlight app (Remove App)."
+        "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds — no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone — clear it manually in the TestFlight app (Remove App).",
+        "2026-08-18: corrected from local-only to archived, matching the owner's understanding. Verified against ASC: no app exists for com.picklefortunes.app, consistent with the 2026-08-03 cleanup that removed it. The local repository is retained as history; no App Store listing exists, so it is outside the public-gallery rule."
       ]
     },
     {
@@ -1200,9 +1212,9 @@
       "name": "100 Burfords",
       "kind": "app",
       "cluster": "Oenora",
-      "status": "ready-for-sale",
+      "status": "live",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-18",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
       "release": "iOS 1.0 READY_FOR_SALE; 1.1 PREPARE_FOR_SUBMISSION; source and ASC draft aligned at build 9",
@@ -1217,7 +1229,8 @@
       "notes": [
         "Strong signal of finished packaging relative to the rest of the portfolio.",
         "Live ASC version is 1.0 and ASC has valid build 9 for the 1.1 draft, but the clean local repo's project.yml and generated Xcode project currently declare 1.0 (7). Regenerating or uploading from this checkout would regress the version/build.",
-        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots and published to the ASC 1.1 draft on 2026-08-06 (iPhone 7 slots, iPad 6 slots)."
+        "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots and published to the ASC 1.1 draft on 2026-08-06 (iPhone 7 slots, iPad 6 slots).",
+        "2026-08-18: corrected from ready-for-sale to live. Verified against ASC app 6766107636: iOS 1.0 is READY_FOR_SALE, i.e. already released and on sale, with 1.1 in PREPARE_FOR_SUBMISSION as the next version."
       ]
     },
     {
@@ -1610,7 +1623,7 @@
       "cluster": "Standalone",
       "status": "asc-mapped",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-15",
+      "lastModified": "2026-08-18",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
       "release": "ASC iOS 1.0 builds 1, 3, 4, 5, 6, and 7 are VALID and unexpired; project.yml CURRENT_PROJECT_VERSION 7 matches ASC build 7 and the public Founders Beta TestFlight link is enabled. Native OenoraMac ships as a notarized Developer ID direct download under com.billdonner.oenora.mac, now at 1.0 (2); the ASC MAC_OS record under com.billdonner.oenora remains an empty leftover pending owner deletion.",
@@ -1651,7 +1664,8 @@
         "2026-08-13: added native macOS app (OenoraMac target, bundle com.billdonner.oenora.mac) — NavigationSplitView cellar table, rack-grid Cellar Map, History, location editing; viewer/manager only, no capture. Verified live: an iPad-confirmed bottle appeared in the Mac cellar with its rack location via CloudKit. A Mac Catalyst approach was tried by another session and reverted in favor of this native target.",
         "2026-08-14 overnight: automated soak (Mac driver plus two physical iPads, 98 Mac cycles and 48 verification cycles) caught and fixed CloudKit insert-versus-update conflicts, stale-device bootstrap overwrite, and a CKSyncEngine scheduler fetch freeze. Final state reached three-way agreement at 98 bottles with zero duplicates.",
         "2026-08-14: recognition token was rotated and verified live, CloudKit schema was deployed to Production, and TestFlight build 6 was approved for the external Founders Beta with Jon auto-notified. The native Mac app was notarized for Developer ID distribution, delivered as a stapled zip, and verified syncing with iOS build 6 through Production CloudKit.",
-        "2026-08-14: added sealed-case tracking (SealedCase: exterior-readable identity, 3/6/12 case size, bottle format, shelf location; Cases view in the Cellar tab) for Jon's ~140 shelves of unopened wooden cases. Cross-device sync verified iPad-to-iPad in Development; SealedCase record type deployed to Production. Uploaded as build 7 and submitted to the external Founders Beta. Case deletion does not yet propagate between devices (no tombstones)."
+        "2026-08-14: added sealed-case tracking (SealedCase: exterior-readable identity, 3/6/12 case size, bottle format, shelf location; Cases view in the Cellar tab) for Jon's ~140 shelves of unopened wooden cases. Cross-device sync verified iPad-to-iPad in Development; SealedCase record type deployed to Production. Uploaded as build 7 and submitted to the external Founders Beta. Case deletion does not yet propagate between devices (no tombstones).",
+        "2026-08-18 CORRECTION: OenoraMac ships via TestFlight under UNIVERSAL PURCHASE on the same app record as iOS. It was re-bundled to com.billdonner.oenora (first MAS build 1.0 (2)); no app exists for com.billdonner.oenora.mac, whose App ID is retained only so the 2026-08-14 notarized Developer ID installs keep running. That Developer ID channel is retired. Live ASC on 2026-08-18 shows app 6799520155 with TestFlight preReleaseVersions for both IOS and MAC_OS. This index was stale relative to the oenora repo, which had already recorded the change on 2026-08-17 in ADR-007; the earlier note here about an empty leftover MAC_OS record pending deletion referred to an appStoreVersion that was legitimately deleted on 2026-08-15 and is unrelated to the live TestFlight channel."
       ]
     },
     {
@@ -1661,7 +1675,7 @@
       "cluster": "Standalone",
       "status": "asc-mapped",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-18",
       "repo": "github:billdonner/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
       "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 8 VALID; public TestFlight invite resolves",
@@ -1674,8 +1688,11 @@
         "appStore": null
       },
       "notes": [
-        "GitHub source and ASC are aligned at build 8."
-      ]
+        "GitHub source and ASC are aligned at build 8.",
+        "2026-08-18 owner decision: kid-oriented, so it belongs to the BillDonner.com free line and uses the 85-point screenshot gate rather than the 90-point commercial target."
+      ],
+      "productLine": "billdonner-free",
+      "pricingPolicy": "always-free"
     },
     {
       "id": "screenker-asc-app",
@@ -2608,7 +2625,7 @@
     {
       "kind": "asc-macos-record-drift",
       "observedAt": "2026-08-15",
-      "summary": "SharedSpaceLab remains aligned through Mac Catalyst. For Oenora, the Mac posture is now settled: OenoraMac is a notarized Developer ID direct download under com.billdonner.oenora.mac, documented in ADR-007. The existing ASC MAC_OS 1.0 record under com.billdonner.oenora has zero builds and is a leftover app-creation artifact pending owner deletion."
+      "summary": "SharedSpaceLab remains aligned through Mac Catalyst. For Oenora, the Mac posture is now settled: OenoraMac is a notarized Developer ID direct download under com.billdonner.oenora.mac, documented in ADR-007. The existing ASC MAC_OS 1.0 record under com.billdonner.oenora has zero builds and is a leftover app-creation artifact pending owner deletion. CORRECTED 2026-08-18: Oenora Mac now ships via TestFlight under universal purchase on the shared com.billdonner.oenora record, per the repo ADR-007 supersede note of 2026-08-17. The Developer ID channel is retired and the empty MAC_OS appStoreVersion was legitimately deleted 2026-08-15."
     },
     {
       "kind": "asc-unmatched",
@@ -2749,6 +2766,16 @@
       "kind": "mastpex-removal-owner-decision",
       "observedAt": "2026-08-18",
       "summary": "Owner decision 2026-08-18: get rid of MastPex. Both entities and their screenshot-board rows are removed from this index. MANUAL STEP REMAINING: the two ASC records must be deleted in the App Store Connect web UI, because the ASC API has no app-delete endpoint. MastPex IOS is app 6797321392 (com.billdonner.mastpex, SKU mastios01) and MastPex Mac is app 6797321653 (com.billdonner.mastpex.mac, SKU mpxmac01). Both are 1.0 PREPARE_FOR_SUBMISSION and have never been on sale, so deletion is permitted; an app that has ever been on sale cannot be deleted, which is what stranded GigStand permanently. Delete first versions before the records accumulate history."
+    },
+    {
+      "kind": "asc-records-to-delete",
+      "observedAt": "2026-08-18",
+      "summary": "OPEN, manual web-UI work only: the ASC API has no app-delete endpoint. Delete MastPex IOS (6797321392) and MastPex Mac (6797321653) per the 2026-08-18 removal decision. Consider also deleting the Flasherz Kids record now that the app is killed. All three are 1.0 PREPARE_FOR_SUBMISSION and have never been on sale, so deletion is still permitted; once an app has been on sale it can never be deleted, which is what stranded GigStand in the listing permanently."
+    },
+    {
+      "kind": "product-line-classification-incomplete",
+      "observedAt": "2026-08-18",
+      "summary": "OPEN. The 2026-08-18 audience-based split assigned KinFlash and amenbeats to billdonner-free and killed Flasherz Kids, but most active apps remain UNASSIGNED, and DoubleQross is explicitly undecided: it is heading for App Store final review and is neither clearly kid-oriented nor clearly commercial. Assignment is now load-bearing rather than cosmetic, because it selects the screenshot gate (85 vs 90) and the canonical support/marketing/privacy host. Standing policy makes 1041soft.com canonical for all apps and 12 apps' ASC URLs were standardized onto it on 2026-08-14, so every app assigned to billdonner-free needs its ASC URLs re-pointed, and both site generators must filter by productLine before either site regenerates."
     }
   ],
   "taskRegistry": {
