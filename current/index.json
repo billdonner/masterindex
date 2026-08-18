@@ -1774,7 +1774,7 @@
       "name": "Collective Engine",
       "kind": "architecture-proposal",
       "cluster": "PickledBalls",
-      "status": "in-development",
+      "status": "active-prototype",
       "masterIndexStatus": "good-citizen",
       "lastModified": "2026-08-18",
       "repo": "~/collective-engine",
@@ -1795,10 +1795,11 @@
         "Proposal revised 2026-08-17: the official Swift MCP SDK is no longer required, a first-party Swift JSON-RPC transport route is authorized, and MCP Gate 0 no longer blocks Release 1.",
         "Proposal revised 2026-08-17: gender balancing restored to Release 1 as a generic self-described balancing-attribute facility per new section 9a, replacing the prior blanket exclusion.",
         "No Fly service, database, or product runtime is claimed to exist yet; this is a planning record only. Architecture freeze is not yet approved and no build is authorized.",
-        "2026-08-18: supersedes the earlier planning-record-only posture. The repository now contains a building Swift 6 package (CollectiveContracts/Domain/Auction/Application/Postgres/HTTP/Server) with test targets; commit 9b497aa added CollectiveSimulation multi-week season tests that already surfaced a real starvation defect.",
-        "2026-08-18: ADR-001 (shared APNs delivery) supersedes the section 20 APNs deferral and adds an authenticated per-app POST /push/v1/send surface. It is the last piece required to retire bd-nagzerver: once PickledBalls moves to Collective Engine, workin On is the only remaining working consumer and needs a push relay only.",
-        "2026-08-18: ADR-002 (metered AI reflector) proposes server-side provider key custody and ports Grubber budget wrapper (compute_cost_cents, soft/hard caps, cache-aware pricing) rather than reimplementing it. KinFlash currently holds provider keys in end-user Keychains and logs call counts only. Metering is decided; charging is left open because iOS monetization requires IAP.",
-        "2026-08-18: decisions live in docs/decisions/ per the qross and oenora convention. Concurrent sessions work in this repository; commit 9b497aa swept unrelated files in via git add -A."
+        "2026-08-18: supersedes the earlier planning-record-only posture. The repository now contains a building Swift 6 package with 393 passing tests, including CollectiveSimulation multi-week season tests that surfaced a real starvation defect. Nothing is deployed: no Fly app, no production database, and the architecture freeze is still unapproved.",
+        "2026-08-18: ADR-003 (Accepted, decided by the owner) sets a Release 1 boundary of no cross-service dependencies in either direction. Collective Engine calls no other first-party service and hosts no surface whose purpose is to serve an app outside its product line. Explicitly revisitable once the Collective is running.",
+        "2026-08-18: ADR-001 (shared APNs delivery) is partly superseded by ADR-003. An APNsChannel delivering to Collective members is permitted, with Release 1 inclusion still an open section 20 scope question. The shared POST /push/v1/send relay for workin On is rejected.",
+        "2026-08-18: ADR-002 (metered AI reflector) is rejected as scoped by ADR-003. Its key-custody finding stands and is unaffected: KinFlash holds provider keys in end-user Keychains. Section 4 encryption is now implemented here as SecretCipher with a versioned key ring, rotation without downtime, and loud failure on a retired key; it secures this service only and is a reference implementation, not an offer to hold other apps credentials.",
+        "2026-08-18: decisions live in docs/decisions/ per the qross and oenora convention. Concurrent sessions work in this repository; ADR numbering is claimed through 003."
       ],
       "release": "Release 1 bounded monolith under active construction: Hummingbird HTTP surface, PostgreSQL repositories, outbox dispatcher, Resend email channel with signed webhooks, durable jobs, and multi-week season simulation tests. No Fly deployment claimed."
     },
@@ -2814,9 +2815,9 @@
       "summary": "Swept every private repository for enabled GitHub Pages. Disabled on qross, nagz, nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook, pfolio-app, and picklefamilia-ios. Three remain deliberately: nagzerver (nagz.online) and pickledballs (pickledballs.billdonner.com) publish built output from gh-pages branches and serve live domains; alities-mobile publishes main/docs and exposes appstore-copy.md, a minor leak left for later."
     },
     {
-      "kind": "nagzerver-retirement-path-defined",
+      "kind": "nagzerver-exposure-open-and-retirement-undecided",
       "observedAt": "2026-08-18",
-      "summary": "OPEN. bd-nagzerver still runs unpatched Fly release v100. Its retirement is now specified in collective-engine ADR-001: PickledBalls is on ice until Collective Engine works and will then connect to it, leaving workin On as the only working consumer. workin On has no URLSession and no nagzerver host string; it only receives silent APNs pushes (operational feed, workinon_url command, legacy items list-sync) into a local encrypted store. Both remaining consumers are TestFlight-only, so parking the Fly app closes the exposure without affecting any public user. Do not delete branch recovery/deployed-2026-06-30, the only source for the v100 PickledBalls/PickleFamilia implementation. Blocker found in workin On: it posts its APNs device token to a didReceiveDeviceToken notification that nothing observes and performs no network call, so token registration is currently manual or broken."
+      "summary": "OPEN, and the two halves are independent. SECURITY: bd-nagzerver still runs unpatched Fly release v100 with the 2026-08-15 arbitrary file-read traversal and unauthenticated test-helper exposure. Both remaining consumers (PickledBalls, workin On) are TestFlight-only, so parking or redeploying the Fly app closes this TODAY without waiting on any other build; rotate its secrets on the assumption they are already exposed. This must not be sequenced behind Collective Engine. RETIREMENT: separately, where workin On gets push is now an open product question. collective-engine ADR-003 (Accepted 2026-08-18) rejects the shared push relay proposed in ADR-001, so nothing in Collective Engine will retire Nagzerver. PickledBalls is on ice and will connect to Collective Engine when it works, leaving workin On as the last working consumer; it has no URLSession and no nagzerver host string and only receives silent APNs pushes into a local encrypted store. Blocker in workin On regardless of host: it posts its APNs device token to a didReceiveDeviceToken notification that nothing observes and makes no network call, so token registration is currently manual or broken. Do not delete branch recovery/deployed-2026-06-30, the only source for the v100 PickledBalls/PickleFamilia implementation."
     }
   ],
   "taskRegistry": {
