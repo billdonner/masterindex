@@ -1,13 +1,16 @@
 {
   "schemaVersion": 1,
   "description": "Daily pull-based repo heartbeat. Every repo is stamped every run, including repos with no activity. lastVerified means the checker looked; lastChanged means the repo actually moved.",
-  "generatedAt": "2026-08-18T00:09:06Z",
+  "generatedAt": "2026-08-18T01:16:27Z",
   "checkedOn": "2026-08-17",
+  "refsFetched": false,
+  "countsCaveat": "behind/ahead counts come from local refs and may understate divergence; re-run with --fetch to refresh",
   "summary": {
     "repos": 57,
-    "ok": 42,
-    "drift": 14,
+    "ok": 44,
+    "drift": 12,
     "unreachable": 1,
+    "diverged": 5,
     "quiet30d": 2
   },
   "repos": [
@@ -22,19 +25,25 @@
       "headSha": "0e99d91",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/1041soft-site",
       "note": "no local clone; reported from GitHub API"
     },
     {
       "repo": "github:billdonner/123words",
       "localPath": "/Users/billdonner/123words",
       "source": "local",
-      "verificationStatus": "drift",
+      "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-14",
       "branch": "main",
       "headSha": "91bdecb",
       "dirtyFiles": 0,
-      "unpushedCommits": 9,
+      "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/123words",
       "note": null
     },
     {
@@ -48,6 +57,9 @@
       "headSha": "e846ca0",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/adspill",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -61,6 +73,9 @@
       "headSha": "c0a962b",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/asc-feedback",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -74,6 +89,9 @@
       "headSha": "65bdc15",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/billdonner.github.io",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -87,6 +105,9 @@
       "headSha": "3eed8c4",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/bookmaker",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -95,11 +116,14 @@
       "source": "remote",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
-      "lastChanged": "2026-08-17",
+      "lastChanged": "2026-08-18",
       "branch": "main",
-      "headSha": "8d95dd0",
+      "headSha": "848c39a",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/drumbeats",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -108,11 +132,14 @@
       "source": "remote",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
-      "lastChanged": "2026-08-17",
+      "lastChanged": "2026-08-18",
       "branch": "main",
-      "headSha": "145678c",
+      "headSha": "eeed8ea",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/local-model-lab",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -126,6 +153,9 @@
       "headSha": "33300c9",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/mallinbook",
       "note": null
     },
     {
@@ -139,6 +169,9 @@
       "headSha": "9d36017",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/pfolio",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -152,6 +185,9 @@
       "headSha": "d09953d",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/picklefamilia-ios",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -165,6 +201,9 @@
       "headSha": "476a2f5",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/screenker",
       "note": null
     },
     {
@@ -178,6 +217,9 @@
       "headSha": "56f1d57",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/zkraper",
       "note": "no local clone; reported from GitHub API"
     },
     {
@@ -191,6 +233,9 @@
       "headSha": "48192f3",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/100Burfords",
       "note": null
     },
     {
@@ -204,6 +249,9 @@
       "headSha": "ef3f39e",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/1041Kit",
       "note": null
     },
     {
@@ -212,11 +260,14 @@
       "source": "local",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
-      "lastChanged": "2026-08-13",
+      "lastChanged": "2026-08-17",
       "branch": "main",
-      "headSha": "bacb0e6",
+      "headSha": "fba7eb1",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/1041soft",
       "note": null
     },
     {
@@ -230,51 +281,63 @@
       "headSha": "1c44fab",
       "dirtyFiles": 0,
       "unpushedCommits": 1,
+      "behindCommits": 3,
+      "diverged": true,
+      "remoteSlug": "billdonner/pickledcourtscheduler",
       "note": null
     },
     {
       "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
       "localPath": "/Users/billdonner/Documents/Codex/2026-08-02/masterindex-explorer",
-      "source": "local",
-      "verificationStatus": "drift",
+      "source": "remote-fallback",
+      "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-05",
       "branch": "main",
       "headSha": "2d2fabd",
-      "dirtyFiles": 4,
+      "dirtyFiles": 0,
       "unpushedCommits": 0,
-      "note": null
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/miex",
+      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
     },
     {
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "localPath": "/Users/billdonner/Documents/Codex/Experiments/ConversationLab",
-      "source": "local",
+      "source": "remote-fallback",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
-      "lastChanged": "2026-08-05",
+      "lastChanged": "2026-08-06",
       "branch": "main",
       "headSha": "76f30c9",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
-      "note": null
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/conversationlab",
+      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
     },
     {
       "repo": "~/Documents/Codex/Experiments/CoordinationLab",
       "localPath": "/Users/billdonner/Documents/Codex/Experiments/CoordinationLab",
-      "source": "local",
+      "source": "remote-fallback",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
-      "lastChanged": "2026-08-05",
+      "lastChanged": "2026-08-06",
       "branch": "main",
       "headSha": "03f41a8",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
-      "note": null
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/coordinationlab",
+      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
     },
     {
       "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
       "localPath": "/Users/billdonner/Documents/Codex/Experiments/SharedSpaceLab",
-      "source": "local",
+      "source": "remote-fallback",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-14",
@@ -282,7 +345,10 @@
       "headSha": "f3878b3",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
-      "note": null
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/sharedspacelab",
+      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
     },
     {
       "repo": "~/Flyz",
@@ -295,6 +361,9 @@
       "headSha": "c90c022",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/Flyz",
       "note": null
     },
     {
@@ -308,6 +377,9 @@
       "headSha": "ffc7958",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/pickledsharedai",
       "note": null
     },
     {
@@ -321,6 +393,9 @@
       "headSha": "3e86f81",
       "dirtyFiles": 2,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/adology-pulse",
       "note": null
     },
     {
@@ -334,6 +409,9 @@
       "headSha": "670a4a3",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/app-feedback",
       "note": null
     },
     {
@@ -347,6 +425,9 @@
       "headSha": "2af7b87",
       "dirtyFiles": 3,
       "unpushedCommits": 1,
+      "behindCommits": 27,
+      "diverged": true,
+      "remoteSlug": "billdonner/card-engine",
       "note": null
     },
     {
@@ -360,6 +441,9 @@
       "headSha": "7dee33f",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/card-server",
       "note": null
     },
     {
@@ -373,6 +457,9 @@
       "headSha": "6835695",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/card-studio",
       "note": null
     },
     {
@@ -386,6 +473,9 @@
       "headSha": "88396e7",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/cardz-studio-ios",
       "note": null
     },
     {
@@ -399,6 +489,9 @@
       "headSha": "6ca0d87",
       "dirtyFiles": 0,
       "unpushedCommits": 1,
+      "behindCommits": 1,
+      "diverged": true,
+      "remoteSlug": "billdonner/clubsync",
       "note": null
     },
     {
@@ -412,19 +505,25 @@
       "headSha": "1294a16",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/clubwatch",
       "note": null
     },
     {
       "repo": "~/familia",
       "localPath": "/Users/billdonner/familia",
       "source": "local",
-      "verificationStatus": "drift",
+      "verificationStatus": "ok",
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-17",
       "branch": "main",
-      "headSha": "feb3b4e",
-      "dirtyFiles": 5,
+      "headSha": "d2da293",
+      "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/collective-engine",
       "note": null
     },
     {
@@ -438,6 +537,9 @@
       "headSha": "b232fb3",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/famster-ios",
       "note": null
     },
     {
@@ -451,6 +553,9 @@
       "headSha": "c705c93",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/grubber",
       "note": null
     },
     {
@@ -464,6 +569,9 @@
       "headSha": "0fbf9e3",
       "dirtyFiles": 3,
       "unpushedCommits": 1,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/grubber-ios",
       "note": null
     },
     {
@@ -472,11 +580,14 @@
       "source": "local",
       "verificationStatus": "drift",
       "lastVerified": "2026-08-17",
-      "lastChanged": "2026-08-15",
+      "lastChanged": "2026-08-17",
       "branch": "main",
-      "headSha": "9ec3dcb",
+      "headSha": "25509a7",
       "dirtyFiles": 0,
-      "unpushedCommits": 13,
+      "unpushedCommits": 1,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/kinflash",
       "note": null
     },
     {
@@ -487,9 +598,12 @@
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-17",
       "branch": "fix/doubleqross-com",
-      "headSha": "8937e47",
-      "dirtyFiles": 3,
-      "unpushedCommits": 15,
+      "headSha": "53406d3",
+      "dirtyFiles": 2,
+      "unpushedCommits": 16,
+      "behindCommits": 23,
+      "diverged": true,
+      "remoteSlug": "billdonner/masterindex",
       "note": null
     },
     {
@@ -503,6 +617,9 @@
       "headSha": "5d8ea2d",
       "dirtyFiles": 2,
       "unpushedCommits": 1,
+      "behindCommits": 156,
+      "diverged": true,
+      "remoteSlug": "billdonner/nagz",
       "note": null
     },
     {
@@ -516,6 +633,9 @@
       "headSha": "92d4904",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/nagz",
       "note": null
     },
     {
@@ -529,6 +649,9 @@
       "headSha": "60f7ed9",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/nagz-ai",
       "note": null
     },
     {
@@ -542,6 +665,9 @@
       "headSha": "60bb0bb",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/nagz-ios",
       "note": null
     },
     {
@@ -555,6 +681,9 @@
       "headSha": "e88ad69",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/nagz-web",
       "note": null
     },
     {
@@ -568,6 +697,9 @@
       "headSha": "e4219d9",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/nagzerver",
       "note": null
     },
     {
@@ -581,6 +713,9 @@
       "headSha": "e63dc90",
       "dirtyFiles": 2,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/obo",
       "note": null
     },
     {
@@ -594,19 +729,25 @@
       "headSha": "66c7d23",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/obo-ios",
       "note": null
     },
     {
       "repo": "~/oenora",
       "localPath": "/Users/billdonner/oenora",
       "source": "local",
-      "verificationStatus": "ok",
+      "verificationStatus": "drift",
       "lastVerified": "2026-08-17",
       "lastChanged": "2026-08-15",
       "branch": "main",
       "headSha": "0273cf5",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 9,
+      "diverged": false,
+      "remoteSlug": "billdonner/oenora",
       "note": null
     },
     {
@@ -620,6 +761,9 @@
       "headSha": null,
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": null,
       "note": "path does not exist or is not a git repo"
     },
     {
@@ -633,6 +777,9 @@
       "headSha": "47250e9",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/pfolio-app",
       "note": "no upstream tracking branch"
     },
     {
@@ -646,6 +793,9 @@
       "headSha": "5e80785",
       "dirtyFiles": 36,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/pickledballs",
       "note": null
     },
     {
@@ -659,6 +809,9 @@
       "headSha": "d69b5ca",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/picklefortunes",
       "note": null
     },
     {
@@ -672,6 +825,9 @@
       "headSha": "69d936a",
       "dirtyFiles": 38,
       "unpushedCommits": 0,
+      "behindCommits": 3,
+      "diverged": false,
+      "remoteSlug": "billdonner/qross",
       "note": null
     },
     {
@@ -685,6 +841,9 @@
       "headSha": "5403a68",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/qross-pulse",
       "note": null
     },
     {
@@ -698,6 +857,9 @@
       "headSha": "42c517b",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/sentipods",
       "note": null
     },
     {
@@ -711,6 +873,9 @@
       "headSha": "6972c20",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/server-monitor",
       "note": null
     },
     {
@@ -724,6 +889,9 @@
       "headSha": "e5a6321",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/server-monitor-ios",
       "note": null
     },
     {
@@ -737,6 +905,9 @@
       "headSha": "248e3cf",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/workinon",
       "note": null
     },
     {
@@ -750,6 +921,9 @@
       "headSha": "f7de2db",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
+      "behindCommits": 0,
+      "diverged": false,
+      "remoteSlug": "billdonner/workinon-mcp",
       "note": null
     }
   ]
