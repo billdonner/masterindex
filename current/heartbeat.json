@@ -1,14 +1,163 @@
 {
   "schemaVersion": 1,
   "description": "Daily pull-based repo heartbeat. Every repo is stamped every run, including repos with no activity. lastVerified means the checker looked; lastChanged means the repo actually moved.",
-  "generatedAt": "2026-08-18T08:15:05Z",
+  "generatedAt": "2026-08-18T20:04:03Z",
   "checkedOn": "2026-08-18",
   "refsFetched": false,
+  "collaboration": {
+    "openPRs": 16,
+    "openIssues": 100,
+    "awaitingYou": [
+      {
+        "repo": "billdonner/qross",
+        "number": 172,
+        "title": "Appearance: quit dialog restyle, topic-scroll hint, results-screen polish",
+        "author": "cuchif",
+        "createdAt": "2026-07-25T21:28:26Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/qross",
+        "number": 173,
+        "title": "Fix: draw samples across the whole topic so a board spans more subtopics",
+        "author": "cuchif",
+        "createdAt": "2026-07-25T21:28:28Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/qross",
+        "number": 174,
+        "title": "Settings: option to hide the best-move suggestion",
+        "author": "cuchif",
+        "createdAt": "2026-07-26T23:37:04Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/qross",
+        "number": 177,
+        "title": "Marketing: web landing pages for the Garland and Sunroom palettes",
+        "author": "cuchif",
+        "createdAt": "2026-08-04T19:53:03Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/qross",
+        "number": 191,
+        "title": "Gelato and Garland to sixteen colours",
+        "author": "cuchif",
+        "createdAt": "2026-08-08T01:42:14Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/qross",
+        "number": 192,
+        "title": "Fix topic names vanishing when Wabi-Sabi is first selected",
+        "author": "cuchif",
+        "createdAt": "2026-08-08T02:06:12Z",
+        "draft": false
+      }
+    ],
+    "yourOpenPRs": [
+      {
+        "repo": "billdonner/workinon",
+        "number": 1,
+        "title": "feat: optional purpose-built tabs — GitHub source-backed tab",
+        "author": "billdonner",
+        "createdAt": "2026-05-17T20:45:06Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/nagzerver",
+        "number": 1,
+        "title": "feat(workinon): GitHub source-backed tab poller + register endpoints",
+        "author": "billdonner",
+        "createdAt": "2026-05-17T20:45:18Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/grubber",
+        "number": 2,
+        "title": "feat(api): in-process scheduler — cadence-driven pulls",
+        "author": "billdonner",
+        "createdAt": "2026-06-07T15:46:11Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/grubber",
+        "number": 4,
+        "title": "feat(api): public interface — INTERFACE.md + openapi.json + MCP server (slice 3)",
+        "author": "billdonner",
+        "createdAt": "2026-06-07T17:44:00Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/grubber",
+        "number": 5,
+        "title": "feat(api): type /search response — closed, codegen-able contract",
+        "author": "billdonner",
+        "createdAt": "2026-06-08T05:04:50Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/qross",
+        "number": 178,
+        "title": "qclean enrich: subtopic concept cards (search keywords) + subtopic_meta catalog table",
+        "author": "billdonner",
+        "createdAt": "2026-08-04T21:35:45Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/qross",
+        "number": 179,
+        "title": "Subtopic search: enriched keyword matching (consumes qclean enrich subtopic_meta)",
+        "author": "billdonner",
+        "createdAt": "2026-08-05T02:17:41Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/drumbeats",
+        "number": 10,
+        "title": "Dynamic Type: the instrument stops truncating its own controls",
+        "author": "billdonner",
+        "createdAt": "2026-08-07T19:11:38Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/pickledballs",
+        "number": 4,
+        "title": "UI audit: fix what the app was hiding at large text, and what nobody could read outdoors",
+        "author": "billdonner",
+        "createdAt": "2026-08-09T09:58:55Z",
+        "draft": false
+      },
+      {
+        "repo": "billdonner/drumbeats",
+        "number": 14,
+        "title": "Add App Store copy for AmenBeats",
+        "author": "billdonner",
+        "createdAt": "2026-08-14T23:13:57Z",
+        "draft": false
+      }
+    ],
+    "issuesByAuthor": {
+      "billdonner": 90,
+      "cuchif": 9,
+      "jrforster": 1
+    },
+    "prsByRepo": {
+      "billdonner/drumbeats": 2,
+      "billdonner/grubber": 3,
+      "billdonner/nagzerver": 1,
+      "billdonner/pickledballs": 1,
+      "billdonner/qross": 8,
+      "billdonner/workinon": 1
+    }
+  },
   "countsCaveat": "behind/ahead counts come from local refs and may understate divergence; re-run with --fetch to refresh",
   "summary": {
     "repos": 57,
-    "ok": 44,
-    "drift": 12,
+    "ok": 43,
+    "drift": 13,
     "unreachable": 1,
     "diverged": 5,
     "quiet30d": 2
@@ -134,7 +283,7 @@
       "lastVerified": "2026-08-18",
       "lastChanged": "2026-08-18",
       "branch": "main",
-      "headSha": "f90da4e",
+      "headSha": "9d7e011",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
       "behindCommits": 0,
@@ -289,26 +438,26 @@
     {
       "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
       "localPath": "/Users/billdonner/Documents/Codex/2026-08-02/masterindex-explorer",
-      "source": "remote-fallback",
-      "verificationStatus": "ok",
+      "source": "local",
+      "verificationStatus": "drift",
       "lastVerified": "2026-08-18",
       "lastChanged": "2026-08-05",
       "branch": "main",
       "headSha": "2d2fabd",
-      "dirtyFiles": 0,
+      "dirtyFiles": 4,
       "unpushedCommits": 0,
       "behindCommits": 0,
       "diverged": false,
       "remoteSlug": "billdonner/miex",
-      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
+      "note": null
     },
     {
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "localPath": "/Users/billdonner/Documents/Codex/Experiments/ConversationLab",
-      "source": "remote-fallback",
+      "source": "local",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-18",
-      "lastChanged": "2026-08-06",
+      "lastChanged": "2026-08-05",
       "branch": "main",
       "headSha": "76f30c9",
       "dirtyFiles": 0,
@@ -316,15 +465,15 @@
       "behindCommits": 0,
       "diverged": false,
       "remoteSlug": "billdonner/conversationlab",
-      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
+      "note": null
     },
     {
       "repo": "~/Documents/Codex/Experiments/CoordinationLab",
       "localPath": "/Users/billdonner/Documents/Codex/Experiments/CoordinationLab",
-      "source": "remote-fallback",
+      "source": "local",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-18",
-      "lastChanged": "2026-08-06",
+      "lastChanged": "2026-08-05",
       "branch": "main",
       "headSha": "03f41a8",
       "dirtyFiles": 0,
@@ -332,12 +481,12 @@
       "behindCommits": 0,
       "diverged": false,
       "remoteSlug": "billdonner/coordinationlab",
-      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
+      "note": null
     },
     {
       "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
       "localPath": "/Users/billdonner/Documents/Codex/Experiments/SharedSpaceLab",
-      "source": "remote-fallback",
+      "source": "local",
       "verificationStatus": "ok",
       "lastVerified": "2026-08-18",
       "lastChanged": "2026-08-14",
@@ -348,7 +497,7 @@
       "behindCommits": 0,
       "diverged": false,
       "remoteSlug": "billdonner/sharedspacelab",
-      "note": "local read failed (likely launchd/TCC); reported from GitHub API"
+      "note": null
     },
     {
       "repo": "~/Flyz",
@@ -514,12 +663,12 @@
       "repo": "~/familia",
       "localPath": "/Users/billdonner/familia",
       "source": "local",
-      "verificationStatus": "ok",
+      "verificationStatus": "drift",
       "lastVerified": "2026-08-18",
-      "lastChanged": "2026-08-17",
+      "lastChanged": "2026-08-18",
       "branch": "main",
-      "headSha": "b39a30a",
-      "dirtyFiles": 0,
+      "headSha": "56ecaaa",
+      "dirtyFiles": 18,
       "unpushedCommits": 0,
       "behindCommits": 0,
       "diverged": false,
@@ -580,11 +729,11 @@
       "source": "local",
       "verificationStatus": "drift",
       "lastVerified": "2026-08-18",
-      "lastChanged": "2026-08-17",
+      "lastChanged": "2026-08-18",
       "branch": "main",
-      "headSha": "5f1537c",
+      "headSha": "e4d6338",
       "dirtyFiles": 0,
-      "unpushedCommits": 4,
+      "unpushedCommits": 1,
       "behindCommits": 0,
       "diverged": false,
       "remoteSlug": "billdonner/kinflash",
@@ -596,11 +745,11 @@
       "source": "local",
       "verificationStatus": "drift",
       "lastVerified": "2026-08-18",
-      "lastChanged": "2026-08-17",
+      "lastChanged": "2026-08-18",
       "branch": "fix/doubleqross-com",
-      "headSha": "c2eef6e",
-      "dirtyFiles": 0,
-      "unpushedCommits": 17,
+      "headSha": "cd91904",
+      "dirtyFiles": 33,
+      "unpushedCommits": 22,
       "behindCommits": 23,
       "diverged": true,
       "remoteSlug": "billdonner/masterindex",
@@ -738,14 +887,14 @@
       "repo": "~/oenora",
       "localPath": "/Users/billdonner/oenora",
       "source": "local",
-      "verificationStatus": "drift",
+      "verificationStatus": "ok",
       "lastVerified": "2026-08-18",
-      "lastChanged": "2026-08-15",
+      "lastChanged": "2026-08-18",
       "branch": "main",
-      "headSha": "0273cf5",
+      "headSha": "c68fbd4",
       "dirtyFiles": 0,
       "unpushedCommits": 0,
-      "behindCommits": 9,
+      "behindCommits": 0,
       "diverged": false,
       "remoteSlug": "billdonner/oenora",
       "note": null

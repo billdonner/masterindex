@@ -58,7 +58,8 @@
     "taskRegistry": "tasks/index.json",
     "handoffRegistry": "current/handoffs/index.json",
     "heartbeatRegistry": "current/heartbeat.json",
-    "policy": "Repo-level liveness is verified daily by tools/masterindex-heartbeat.sh, scheduled locally via the launchd agent com.billdonner.masterindex-heartbeat at 03:15. It stamps every repo in .repos[] on every run, including repos with no activity, and writes current/heartbeat.json. Read lastVerified as when the checker looked and lastChanged as when the repo actually moved: a stale lastChanged with a fresh lastVerified means quiet and confirmed, while a stale lastVerified means nobody looked. Entity-level curation in this file remains manual and is not driven by the heartbeat. Targeted handoffs may alter the next applicable cycle without changing this inventory schema."
+    "policy": "Repo-level liveness is verified daily by tools/masterindex-heartbeat.sh, scheduled locally via the launchd agent com.billdonner.masterindex-heartbeat at 03:15. It stamps every repo in .repos[] on every run, including repos with no activity, and writes current/heartbeat.json. Read lastVerified as when the checker looked and lastChanged as when the repo actually moved: a stale lastChanged with a fresh lastVerified means quiet and confirmed, while a stale lastVerified means nobody looked. Entity-level curation in this file remains manual and is not driven by the heartbeat. Targeted handoffs may alter the next applicable cycle without changing this inventory schema.",
+    "collaborationRegistry": "current/heartbeat.json .collaboration"
   },
   "productLines": [
     {
@@ -1987,7 +1988,8 @@
         "openPRs": 0,
         "openIssues": 2,
         "awaitingYourAction": false,
-        "note": "adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): shared build, PRs #1-#3 (features) + #6 (UI pass + screenshot pipeline) merged to main; 53 tests green. v1.1 restyle/iPad tracked (issue #5)."
+        "note": "adspill: ball in Jim's court (issue #2). drumbeats (AmenBeats): shared build, PRs #1-#3 (features) + #6 (UI pass + screenshot pipeline) merged to main; 53 tests green. v1.1 restyle/iPad tracked (issue #5).",
+        "supersededBy": "current/heartbeat.json collaboration block, polled daily from 2026-08-18; these hand-maintained counts are no longer authoritative"
       }
     },
     {
@@ -2013,7 +2015,8 @@
         "collaboratorOpenPRs": 3,
         "openIssues": 18,
         "awaitingYourAction": true,
-        "note": "3 open PRs from @cuchif awaiting Bill's review: #172, #173, #174 (opened 07-25/26). PR #175 is Bill's own."
+        "note": "3 open PRs from @cuchif awaiting Bill's review: #172, #173, #174 (opened 07-25/26). PR #175 is Bill's own.",
+        "supersededBy": "current/heartbeat.json collaboration block, polled daily from 2026-08-18; these hand-maintained counts are no longer authoritative"
       }
     },
     {

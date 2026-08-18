@@ -113,6 +113,15 @@ if (( report_only )); then
         ($d[] | "  \(.repo)  --  \(.dirtyFiles) dirty, \(.unpushedCommits) unpushed, \(.behindCommits) behind  (\(.branch // "?"))"),
         ""
       else empty end),
+    (( .collaboration.awaitingYou // [] ) as $a |
+      if ($a | length) > 0 then
+        "AWAITING YOUR REVIEW (open PRs you did not author)",
+        ($a[] | "  \(.repo)#\(.number)  \(.author)  \(.createdAt[0:10])  \(.title[0:64])"),
+        ""
+      else empty end),
+    (if (.collaboration | type) == "object" and (.collaboration.openPRs != null) then
+      "github: \(.collaboration.openPRs) open PRs, \(.collaboration.openIssues) open issues"
+     else empty end),
     (if .refsFetched then empty else "note: \(.countsCaveat)" end)
   ' "$out"
   if [[ $("$JQ" -r '.summary.unreachable' "$out") != "0" ]]; then
@@ -288,17 +297,56 @@ for token in ${(f)"$("$JQ" -r '.repos[].repo' "$index")"}; do
     }')")
 done
 
+
+# GitHub collaboration state. Two searches cover the whole portfolio, which is
+# why this does not iterate repos: 57 per-repo calls would be slower and would
+# hit rate limits for the same answer.
+#
+# "awaiting you" means an open PR someone else authored. Those are the ones that
+# rot silently -- the hand-maintained collaborators block in current/index.json
+# had Carol's PRs waiting three weeks before this existed.
+collab='{}'
+if [[ -n "$GH" && $no_remote -eq 0 ]]; then
+  owner=$("$JQ" -r '.collaborators[0].github // "billdonner"' "$index" >/dev/null 2>&1 && print "billdonner")
+  prs=$("$GH" search prs --owner "$owner" --state open --limit 100 \
+        --json repository,number,title,author,createdAt,isDraft 2>/dev/null)
+  issues=$("$GH" search issues --owner "$owner" --state open --limit 100 \
+        --json repository,number,title,author,createdAt 2>/dev/null)
+  [[ -n "$prs" ]] || prs='[]'
+  [[ -n "$issues" ]] || issues='[]'
+  collab=$("$JQ" -n --argjson prs "$prs" --argjson issues "$issues" --arg me "$owner" '
+    def norm: map({
+      repo: .repository.nameWithOwner,
+      number: .number,
+      title: .title,
+      author: (.author.login // "unknown"),
+      createdAt: (.createdAt // null),
+      draft: (.isDraft // false)
+    });
+    ($prs | norm) as $p | ($issues | norm) as $i |
+    {
+      openPRs: ($p | length),
+      openIssues: ($i | length),
+      awaitingYou: ($p | map(select(.author != $me)) | sort_by(.createdAt)),
+      yourOpenPRs: ($p | map(select(.author == $me)) | sort_by(.createdAt)),
+      issuesByAuthor: ($i | group_by(.author) | map({(.[0].author): length}) | add // {}),
+      prsByRepo: ($p | group_by(.repo) | map({(.[0].repo): length}) | add // {})
+    }')
+fi
+
 payload=$(printf '%s\n' "${rows[@]}" | "$JQ" -s \
   --arg generated "$stamp" \
   --arg today "$today" \
   --arg cutoff "$quiet_cutoff" \
   --argjson fetched "$do_fetch" \
+  --argjson collab "$collab" \
   '{
     schemaVersion: 1,
     description: "Daily pull-based repo heartbeat. Every repo is stamped every run, including repos with no activity. lastVerified means the checker looked; lastChanged means the repo actually moved.",
     generatedAt: $generated,
     checkedOn: $today,
     refsFetched: ($fetched == 1),
+    collaboration: $collab,
     countsCaveat: (if $fetched == 1 then "behind/ahead counts were refreshed against origin this run" else "behind/ahead counts come from local refs and may understate divergence; re-run with --fetch to refresh" end),
     summary: {
       repos: length,
