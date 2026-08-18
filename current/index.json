@@ -212,20 +212,6 @@
         "nextAction": "If the app still matters internally, create a lightweight truthful gallery record and local critique archive; skip ASC marketing publication."
       },
       {
-        "entityId": "mastpex-ios-asc-app",
-        "lane": "internal-evidence",
-        "boardState": "no-project",
-        "priority": 14,
-        "nextAction": "Treat as internal-only evidence if revisited; no public gallery work."
-      },
-      {
-        "entityId": "mastpex-macos-asc-app",
-        "lane": "internal-evidence",
-        "boardState": "no-project",
-        "priority": 15,
-        "nextAction": "Treat as internal-only evidence if revisited; no public gallery work."
-      },
-      {
         "entityId": "picklefamilia-asc-app",
         "lane": "archive-no-work",
         "boardState": "archived-no-work",
@@ -644,8 +630,6 @@
       }
     ],
     "unmatched": [
-      "MastPex Mac",
-      "MastPex IOS",
       "GigStand"
     ]
   },
@@ -1937,64 +1921,6 @@
       ]
     },
     {
-      "id": "mastpex-ios-asc-app",
-      "name": "MastPex IOS",
-      "kind": "app",
-      "cluster": "Infrastructure",
-      "status": "internal-only",
-      "masterIndexStatus": "not-good-citizen",
-      "masterIndexStatusReason": "Internal-only MasterIndex Explorer binary with no public release surface and an owner-described placeholder posture.",
-      "lastModified": "2026-08-14",
-      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
-      "bundleId": "com.billdonner.mastpex",
-      "productLine": "billdonner-free",
-      "pricingPolicy": "always-free",
-      "release": "Internal-use iOS app expected to remain on TestFlight; ASC 1.0 PREPARE_FOR_SUBMISSION and build 1 retained; no public App Store release planned",
-      "distribution": "internal-testflight-planned",
-      "description": "Native iPhone and iPad explorer for a compatible MasterIndex: browse a read-only software portfolio map with search, relationships, drill-down, links, and explicit gaps.",
-      "dependencies": [
-        "MasterIndex"
-      ],
-      "links": {
-        "website": null,
-        "appStore": null
-      },
-      "notes": [
-        "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact iOS ASC bundle ID com.billdonner.mastpex.",
-        "No verified public website or App Store product page was found in the current link pass.",
-        "Maintain TestFlight continuity and functional capture evidence; do not build a public marketing gallery."
-      ]
-    },
-    {
-      "id": "mastpex-macos-asc-app",
-      "name": "MastPex Mac",
-      "kind": "app",
-      "cluster": "Infrastructure",
-      "status": "internal-only",
-      "masterIndexStatus": "not-good-citizen",
-      "masterIndexStatusReason": "Internal-only MasterIndex Explorer binary with no public release surface and an owner-described placeholder posture.",
-      "lastModified": "2026-08-14",
-      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
-      "bundleId": "com.billdonner.mastpex.mac",
-      "productLine": "billdonner-free",
-      "pricingPolicy": "always-free",
-      "release": "Internal-use macOS app expected to remain on TestFlight; ASC 1.0 PREPARE_FOR_SUBMISSION and build 1 retained; no public App Store release planned",
-      "distribution": "internal-testflight-planned",
-      "description": "Native Mac explorer for a compatible MasterIndex: a read-only desktop map of apps, repositories, services, links, relationships, and known gaps.",
-      "dependencies": [
-        "MasterIndex"
-      ],
-      "links": {
-        "website": null,
-        "appStore": null
-      },
-      "notes": [
-        "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact macOS ASC bundle ID com.billdonner.mastpex.mac.",
-        "No verified public website or App Store product page was found in the current link pass.",
-        "Maintain TestFlight continuity and functional capture evidence; do not build a public marketing gallery."
-      ]
-    },
-    {
       "id": "oenora-recognition-service",
       "name": "Oenora Recognition API",
       "kind": "service",
@@ -2623,7 +2549,7 @@
       "kind": "multiplatform app",
       "masterIndexStatus": "not-good-citizen",
       "masterIndexStatusReason": "Internal-only TestFlight surface with placeholder posture and no public release path.",
-      "role": "ASC-mapped MastPex iOS + macOS read-only explorer for a compatible MasterIndex"
+      "role": "Read-only MasterIndex explorer for iOS and macOS, formerly published as the MastPex ASC records; those records were removed on 2026-08-18 and the app remains a BillDonner.com product with no App Store listing"
     },
     {
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
@@ -2687,7 +2613,7 @@
     {
       "kind": "asc-unmatched",
       "observedAt": "2026-08-13",
-      "summary": "MastPex IOS and MastPex Mac have no corresponding repository; owner describes both as placeholders."
+      "summary": "MastPex IOS and MastPex Mac have no corresponding repository; owner describes both as placeholders. SUPERSEDED 2026-08-18: the source repository was in fact ~/Documents/Codex/2026-08-02/masterindex-explorer, not absent, and both ASC records are being removed by owner decision."
     },
     {
       "kind": "asc-retired-app",
@@ -2818,6 +2744,11 @@
       "kind": "nagzerver-shutdown-in-progress",
       "observedAt": "2026-08-18",
       "summary": "Owner is turning bd-nagzerver off (stated 2026-08-18); no agent action required. This closes the unpatched v100 exposure (2026-08-15 arbitrary file-read traversal and unauthenticated test-helper exposure) at source. Both consumers were TestFlight-only: PickledBalls is on ice pending Collective Engine, and workin On is being reworked conceptually by the owner. Side effects to expect: the api.famster.app custom-domain alias resolves to this same deployment and goes down with it, and workin On silent pushes stop. Preserve branch recovery/deployed-2026-06-30, the only source for the v100 PickledBalls/PickleFamilia implementation. Rotate the Fly secrets on the assumption they were already exposed."
+    },
+    {
+      "kind": "mastpex-removal-owner-decision",
+      "observedAt": "2026-08-18",
+      "summary": "Owner decision 2026-08-18: get rid of MastPex. Both entities and their screenshot-board rows are removed from this index. MANUAL STEP REMAINING: the two ASC records must be deleted in the App Store Connect web UI, because the ASC API has no app-delete endpoint. MastPex IOS is app 6797321392 (com.billdonner.mastpex, SKU mastios01) and MastPex Mac is app 6797321653 (com.billdonner.mastpex.mac, SKU mpxmac01). Both are 1.0 PREPARE_FOR_SUBMISSION and have never been on sale, so deletion is permitted; an app that has ever been on sale cannot be deleted, which is what stranded GigStand permanently. Delete first versions before the records accumulate history."
     }
   ],
   "taskRegistry": {
@@ -2885,8 +2816,8 @@
       "123 Words": "billdonner.github.io; public repo, resolves, left alone",
       "PickledBalls": "pickledballs.billdonner.com; own custom domain served from the pickledballs gh-pages branch, resolves, left alone",
       "Famster / KinFlash / LtWatcher / amenbeats": "billdonner.com support routes resolve; no privacy URL set on any of them",
-      "Cardz Studio / MastPex IOS / MastPex Mac": "no URLs set; all three are internal-use apps expected to remain on TestFlight, so public marketing and App Store URLs are not required",
-      "GigStand": "support URL is gigstand.net, dead. Retired and delisted 2026-08-13; not worth fixing"
+      "GigStand": "support URL is gigstand.net, dead. Retired and delisted 2026-08-13; not worth fixing",
+      "Cardz Studio": "no URLs set; internal-use app expected to remain on TestFlight, so public marketing and App Store URLs are not required"
     },
     "pagesStillEnabledDeliberately": {
       "nagzerver": "publishes nagz.online from the gh-pages branch. Live custom domain. gh-pages carries built output only - internal docs on main are NOT exposed (ARCHITECTURE.md, POLICY_MATRIX.md, API_SURFACE.md all verified 404). Do not disable.",
