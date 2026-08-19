@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-16T00:05:00-05:00",
+  "generatedAt": "2026-08-19T00:00:00-05:00",
   "scope": {
     "dateLabel": "Sunday, August 16, 2026",
     "defaultSort": "most-recently-modified",
@@ -43,15 +43,15 @@
     ]
   },
   "summary": {
-    "ascApps": 23,
+    "ascApps": 21,
     "mappedAscApps": 20,
-    "unmatchedAscApps": 3,
+    "unmatchedAscApps": 1,
     "activeRepos": 51,
     "clusters": 14,
     "liveServices": 6,
     "collaborators": 3,
     "unreachableServices": 0,
-    "ascMacOsRecords": 8,
+    "ascMacOsRecords": 7,
     "ascMacOsWithMacTarget": 6
   },
   "automation": {
@@ -2633,7 +2633,7 @@
     {
       "kind": "asc-unmatched",
       "observedAt": "2026-08-13",
-      "summary": "MastPex IOS and MastPex Mac have no corresponding repository; owner describes both as placeholders. SUPERSEDED 2026-08-18: the source repository was in fact ~/Documents/Codex/2026-08-02/masterindex-explorer, not absent, and both ASC records are being removed by owner decision."
+      "summary": "MastPex IOS and MastPex Mac have no corresponding repository; owner describes both as placeholders. SUPERSEDED 2026-08-18: the source repository was in fact ~/Documents/Codex/2026-08-02/masterindex-explorer, not absent, and both ASC records were removed by owner decision. CLOSED 2026-08-19: both ASC records are deleted; GigStand is now the only unmatched ASC record."
     },
     {
       "kind": "asc-retired-app",
@@ -2768,12 +2768,12 @@
     {
       "kind": "mastpex-removal-owner-decision",
       "observedAt": "2026-08-18",
-      "summary": "Owner decision 2026-08-18: get rid of MastPex. Both entities and their screenshot-board rows are removed from this index. MANUAL STEP REMAINING: the two ASC records must be deleted in the App Store Connect web UI, because the ASC API has no app-delete endpoint. MastPex IOS is app 6797321392 (com.billdonner.mastpex, SKU mastios01) and MastPex Mac is app 6797321653 (com.billdonner.mastpex.mac, SKU mpxmac01). Both are 1.0 PREPARE_FOR_SUBMISSION and have never been on sale, so deletion is permitted; an app that has ever been on sale cannot be deleted, which is what stranded GigStand permanently. Delete first versions before the records accumulate history."
+      "summary": "Owner decision 2026-08-18: get rid of MastPex. Both entities and their screenshot-board rows were removed from this index. CLOSED 2026-08-19: the owner deleted both ASC records in the App Store Connect web UI (MastPex IOS 6797321392 / com.billdonner.mastpex, MastPex Mac 6797321653 / com.billdonner.mastpex.mac). Deletion was permitted because neither had ever been on sale. The MasterIndex Explorer source repository at ~/Documents/Codex/2026-08-02/masterindex-explorer is unaffected and the app remains a BillDonner.com product with no App Store listing."
     },
     {
       "kind": "asc-records-to-delete",
       "observedAt": "2026-08-18",
-      "summary": "OPEN, manual web-UI work only: the ASC API has no app-delete endpoint. Delete MastPex IOS (6797321392) and MastPex Mac (6797321653) per the 2026-08-18 removal decision. Consider also deleting the Flasherz Kids record now that the app is killed. All three are 1.0 PREPARE_FOR_SUBMISSION and have never been on sale, so deletion is still permitted; once an app has been on sale it can never be deleted, which is what stranded GigStand in the listing permanently."
+      "summary": "PARTIALLY CLOSED 2026-08-19: the owner deleted MastPex IOS (6797321392) and MastPex Mac (6797321653) through the ASC web UI, so ASC now holds 21 app records (20 mapped plus the retired GigStand). STILL OPEN: consider deleting the Flasherz Kids record now that the app is killed. It is 1.0 PREPARE_FOR_SUBMISSION and has never been on sale, so deletion is still permitted; once an app has been on sale it can never be deleted, which is what stranded GigStand in the listing permanently. The ASC API has no app-delete endpoint, so this remains manual web-UI work."
     },
     {
       "kind": "product-line-classification-incomplete",

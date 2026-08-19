@@ -350,7 +350,7 @@
       {
         "taskId": "mastpex-ios-testflight-continuity",
         "name": "MastPex iOS TestFlight continuity",
-        "status": "active",
+        "status": "retired",
         "cadence": {
           "kind": "rrule",
           "value": "FREQ=MONTHLY;INTERVAL=1"
@@ -363,14 +363,16 @@
         "expectedOutputs": [
           "Recorded current build expiration and tester availability",
           "A build-refresh gap when continuity cannot reach the next monthly check"
-        ]
+        ],
+        "retiredAt": "2026-08-19",
+        "retirementReason": "Entity removed by owner decision 2026-08-18; both ASC records deleted in the App Store Connect web UI on 2026-08-19. No TestFlight train remains to keep alive."
       }
     ],
     "mastpex-macos-asc-app": [
       {
         "taskId": "mastpex-mac-testflight-continuity",
         "name": "MastPex Mac TestFlight continuity",
-        "status": "active",
+        "status": "retired",
         "cadence": {
           "kind": "rrule",
           "value": "FREQ=MONTHLY;INTERVAL=1"
@@ -383,7 +385,9 @@
         "expectedOutputs": [
           "Recorded current build expiration and tester availability",
           "A build-refresh gap when continuity cannot reach the next monthly check"
-        ]
+        ],
+        "retiredAt": "2026-08-19",
+        "retirementReason": "Entity removed by owner decision 2026-08-18; both ASC records deleted in the App Store Connect web UI on 2026-08-19. No TestFlight train remains to keep alive."
       }
     ],
     "oenora-recognition-service": []

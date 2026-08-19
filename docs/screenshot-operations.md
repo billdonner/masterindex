@@ -22,7 +22,7 @@ device and web previews, sandboxed agent critique, and built-in Claude/OpenAI ga
 | Screenker | Six-slot Mac project; repeated critique; ASC publication | 86, Aug 10 | Current; above the general gate, below the commercial target |
 
 No Screenker provenance was found for the current SentiPods, Oenora, Zerver Monitor,
-SharedSpaceLab, PickleFamilia, KinFlash, Flasherz Kids, Cardz Studio, or MastPex sets.
+SharedSpaceLab, PickleFamilia, KinFlash, Flasherz Kids, or Cardz Studio sets.
 Nagz has an ASC gallery but is a legacy reference and should not receive new gallery work.
 
 ## Live ASC Baseline
@@ -71,7 +71,7 @@ apps the same workflow.
 |---|---|
 | Publish-now | DoubleQross, PickledBalls, 123 Words, amenbeats, Pfoliolio, Mallinbook, KinFlash, SentiPods, Oenora, Zerver Monitor, Screenker |
 | Verify-only | 100 Burfords |
-| Internal-evidence | workin On, Cardz Studio, MastPex iOS, MastPex Mac |
+| Internal-evidence | workin On, Cardz Studio |
 | Archive/no-work | PickleFamilia, Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
 
 SharedSpaceLab is intentionally outside the production screenshot queue until it has a real
@@ -159,7 +159,7 @@ Use this execution order unless an app's release reality changes:
 7. Screenker: improve its own Mac gallery from 86 toward the 90 commercial bar if its product-line
    assignment remains 1041soft.com.
 8. 100 Burfords: verify-only pass; rebuild only if parity or visible drift fails.
-9. Internal-only lane: workin On, Cardz Studio, MastPex iOS, MastPex Mac.
+9. Internal-only lane: workin On, Cardz Studio.
 
 ## Release-Relative Schedule
 

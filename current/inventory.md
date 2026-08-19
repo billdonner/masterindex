@@ -11,7 +11,7 @@ As of Sunday, August 16, 2026.
 
 ## Executive Summary
 
-- ASC contains 23 app records: 20 map in the primary ASC inventory, two MastPex records are internal-use/TestFlight apps, and GigStand is the intentionally retained retired record.
+- ASC contains 21 app records: 20 map in the primary ASC inventory and GigStand is the intentionally retained retired record. The two MastPex records were deleted from ASC by the owner on 2026-08-19.
 - LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
@@ -27,7 +27,7 @@ As of Sunday, August 16, 2026.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - DoubleQross 1.0 (392) now has refreshed Garland-era iPhone and iPad captures, updated Screenker projects, and exact approval exports scored provisionally at 94 and 93. ASC is unchanged pending human approval.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
-- KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
+- KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release. MastPex was retired outright and its ASC records were deleted on 2026-08-19.
 
 ## MasterIndex Citizenship
 
@@ -49,12 +49,12 @@ These have a clear lifecycle, a mapped source of truth, and no material open tru
 
 These are intentionally retained, but they are retired, obsolete, placeholder, missing, or otherwise weak records rather than clean active portfolio assets.
 
-- Apps and services: Mallinbook, KinFlash, PickleFamilia, Nagz, Flasherz Kids, Cardz Studio, Famster, LtWatcher, picklefortunes, grubber-ios, clubsync, card-server, MastPex IOS, MastPex Mac.
+- Apps and services: Mallinbook, KinFlash, PickleFamilia, Nagz, Flasherz Kids, Cardz Studio, Famster, LtWatcher, picklefortunes, grubber-ios, clubsync, card-server.
 - Repositories: `github:billdonner/zkraper`, `github:billdonner/asc-feedback`, `~/peerlink`, `~/card-server`, `~/cardz-studio-ios`, `~/clubsync`, `~/clubwatch`, `~/famster-ios`, `~/grubber-ios`, `~/nagz-ios`, `~/obo`, `~/obo-ios`, `~/picklefortunes`, `github:billdonner/picklefamilia-ios` (archived), and `~/Documents/Codex/2026-08-02/masterindex-explorer`.
 
 ### Review of Non-Good Records
 
-- True lifecycle decisions: Nagz, Flasherz Kids, Cardz Studio, Famster, LtWatcher, picklefortunes, grubber-ios, clubsync, card-server, zkraper, asc-feedback, and the MastPex pair are non-good because the owner has already decided they are legacy, obsolete, internal-only, deferred, retired, or placeholder assets.
+- True lifecycle decisions: Nagz, Flasherz Kids, Cardz Studio, Famster, LtWatcher, picklefortunes, grubber-ios, clubsync, card-server, zkraper, and asc-feedback are non-good because the owner has already decided they are legacy, obsolete, internal-only, deferred, retired, or placeholder assets.
 - Active but blocked by real product debt: KinFlash and Mallinbook are non-good because each still has an unresolved public-release, metadata, or platform-posture problem rather than merely stale wording in the index. KinFlash is now narrowed to owner-side hosting, ASC, and release-decision work rather than repo execution debt; Mallinbook is now narrowed to the live privacy-page placeholder and follow-on ASC actions rather than repo execution debt.
 - Local-environment or routing problems: `~/peerlink` is missing locally and blocks reproducible PickledBalls builds here; `~/obo` remains a historical docs hub around an obsolete line; `github:billdonner/picklefamilia-ios` is archived, remote-only, and outside the current active workstream.
 - The highest-value repairs outside MasterIndex are now choosing KinFlash public hosting plus release-channel and ASC submission answers, and replacing Mallinbook's live privacy-page placeholder before completing its ASC follow-through.
@@ -97,8 +97,8 @@ The remaining Oenora gaps are now explicit external follow-through, not repo amb
 ### BillDonner.com — always free
 
 Personal utilities, experiments, and children-oriented apps. Users are never charged; a Mac
-version and MCP surface are optional. `workin On`, `MastPex IOS`, and `MastPex Mac` remain in
-this product family but are internal-use/TestFlight-only rather than public releases.
+version and MCP surface are optional. `workin On` remains in this product family but is
+internal-use/TestFlight-only rather than a public release.
 
 ### 1041soft.com — commercial
 
@@ -134,7 +134,7 @@ once received a high score.
 | Active ASC release record is empty | Zerver Monitor |
 | Highest-priority missing commercial gallery | KinFlash, near-term 1041soft.com release |
 | Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia |
-| Internal functional evidence only | Cardz Studio, workin On, MastPex iOS, MastPex Mac |
+| Internal functional evidence only | Cardz Studio, workin On |
 | No new screenshot work | Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
 
 The current board priority is: 123 Words first; then PickledBalls; then amenbeats and
@@ -249,7 +249,6 @@ No current consumer was found to require Card Server, so these do not block reti
 
 Unmatched or intentionally retained:
 
-- MastPex IOS and MastPex Mac are internal/TestFlight-only apps in the shared MasterIndex Explorer repository; they are not public-release placeholders.
 - GigStand is retired, removed from all 175 territories, and permanently retained by ASC because it was previously sold.
 
 ## Services
@@ -314,7 +313,7 @@ portfolio index; it is no longer the ASC support surface.
 Deliberately not standardized: 100 Burfords and 123 Words (public repos, resolve);
 PickledBalls (`pickledballs.billdonner.com`, its own domain); Famster, KinFlash,
 LtWatcher, amenbeats (billdonner.com routes resolve, but none has a privacy URL);
-Cardz Studio and the MastPex pair (nothing set); GigStand (`gigstand.net` is dead, and
+Cardz Studio (nothing set); GigStand (`gigstand.net` is dead, and
 the app is retired).
 
 ### Pages sweep (2026-08-14)
