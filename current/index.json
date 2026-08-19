@@ -834,7 +834,7 @@
       "name": "Mallinbook",
       "kind": "app",
       "cluster": "Mallinbook",
-      "status": "archived",
+      "status": "asc-mapped",
       "masterIndexStatus": "not-good-citizen",
       "masterIndexStatusReason": "Repo-side release posture is now clean, documented, and verified, but the live replacement privacy page still publishes placeholder text. The entity clears once 1041soft-site ships the corrected policy and ASC points at that real content.",
       "lastModified": "2026-08-15",
@@ -870,7 +870,7 @@
       "name": "PickledBalls",
       "kind": "app",
       "cluster": "PickledBalls",
-      "status": "archived",
+      "status": "asc-mapped",
       "masterIndexStatus": "good-citizen",
       "lastModified": "2026-07-31",
       "repo": "~/pickledballs",
@@ -2764,6 +2764,11 @@
       "kind": "asc-records-to-delete",
       "observedAt": "2026-08-18",
       "summary": "CLOSED 2026-08-19: the owner deleted MastPex IOS (6797321392), MastPex Mac (6797321653), and Flasherz Kids (6759509933, com.billdonner.obo) through the ASC web UI. All three were 1.0 PREPARE_FOR_SUBMISSION and had never been on sale, so deletion was permitted; once an app has been on sale it can never be deleted, which is what stranded GigStand in the listing permanently. ASC now holds 20 app records: 19 mapped plus the retired GigStand. No further ASC deletions are pending. The ASC API has no app-delete endpoint, so any future deletion is manual web-UI work."
+    },
+    {
+      "kind": "entity-status-miscoded",
+      "observedAt": "2026-08-19",
+      "summary": "CORRECTED 2026-08-19: mallinbook-app and pickledballs-app both carried status \"archived\", which is reserved for dead products. Neither is dead - Mallinbook is parked by choice at 1.0 build 18 pending the iOS 27 toolchain, and PickledBalls has a live TestFlight 1.0 (354) and is a good citizen. The miscoding was load-bearing: tools/generate_billdonner_apps.py filters out archived and retired entities, so regenerating the billdonner.com catalog would have silently dropped both apps from the public site. Both are now status \"asc-mapped\"; their real posture stays in the release and notes fields. Check status against the RETIRED_STATUSES filter before marking any ASC-mapped app archived."
     },
     {
       "kind": "product-line-classification-incomplete",

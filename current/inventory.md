@@ -109,8 +109,16 @@ assignment and is planned for near-term release.
 
 The remaining apps are not yet classified. Presentation drift remains open until that is done:
 the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
-`/workinon/` even though workin On is internal-only. The public catalog also needs to stop
-presenting Flasherz Kids as active and to present KinFlash under 1041soft.com.
+`/workinon/` even though workin On is internal-only. The public catalog still needs to present
+KinFlash under 1041soft.com. Flasherz Kids is resolved: its ASC record was deleted on
+2026-08-19, so it left `ascApps.mapped` and the regenerated catalog no longer lists it.
+
+Regenerating the catalog also surfaced a filter hazard worth remembering.
+`tools/generate_billdonner_apps.py` drops any entity whose status is `archived` or `retired`,
+and Mallinbook and PickledBalls were both miscoded `archived` while still being live products.
+Both were corrected to `asc-mapped` on 2026-08-19 before the catalog was regenerated. The
+generator now takes its "reconciled on" date from the index `generatedAt` instead of a
+hardcoded string.
 
 ## Screenshot Program
 
