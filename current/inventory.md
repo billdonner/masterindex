@@ -11,7 +11,7 @@ As of Sunday, August 16, 2026.
 
 ## Executive Summary
 
-- ASC contains 21 app records: 20 map in the primary ASC inventory and GigStand is the intentionally retained retired record. The two MastPex records were deleted from ASC by the owner on 2026-08-19.
+- ASC contains 20 app records: 19 map in the primary ASC inventory and GigStand is the intentionally retained retired record. The two MastPex records and Flasherz Kids were deleted from ASC by the owner on 2026-08-19; no further deletions are pending.
 - LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
@@ -27,7 +27,7 @@ As of Sunday, August 16, 2026.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - DoubleQross 1.0 (392) now has refreshed Garland-era iPhone and iPad captures, updated Screenker projects, and exact approval exports scored provisionally at 94 and 93. ASC is unchanged pending human approval.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
-- KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release. MastPex was retired outright and its ASC records were deleted on 2026-08-19.
+- KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete and its ASC record was deleted on 2026-08-19. Cardz Studio and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release. MastPex was retired outright and its ASC records were deleted on 2026-08-19.
 
 ## MasterIndex Citizenship
 
@@ -135,7 +135,7 @@ once received a high score.
 | Highest-priority missing commercial gallery | KinFlash, near-term 1041soft.com release |
 | Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia |
 | Internal functional evidence only | Cardz Studio, workin On |
-| No new screenshot work | Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
+| No new screenshot work | LtWatcher, grubber-ios, Famster, Nagz |
 
 The current board priority is: 123 Words first; then PickledBalls; then amenbeats and
 Pfoliolio; then Mallinbook and SentiPods; then KinFlash, Oenora, Zerver Monitor, Screenker,
@@ -240,7 +240,6 @@ No current consumer was found to require Card Server, so these do not block reti
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
-| Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record retained |
 | PickleFamilia | com.picklefamilia.app | archived github:billdonner/picklefamilia-ios | Archived historical line; ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term 1041soft.com release; iOS 1.0 PREPARE_FOR_SUBMISSION |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
@@ -303,7 +302,8 @@ redeployment; until then, main is not a reproducible source for production.
 `1041soft.com` is the canonical support, marketing, and privacy host. ASC URLs for
 **12 apps** were standardized onto it and each verified 200: Qross, Nagz, workin On,
 Flasherz Kids, Zerver Monitor, Mallinbook, SentiPods, Pfoliolio, Screenker, Oenora,
-SharedSpaceLab, PickleFamilia.
+SharedSpaceLab, PickleFamilia. Flasherz Kids has since dropped out of that set: its ASC
+record was deleted on 2026-08-19.
 
 **Do not regenerate ASC support routes back to `billdonner.com/apps/...`.**
 `tools/generate_billdonner_apps.py` builds the billdonner.com catalog from this index

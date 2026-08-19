@@ -22,7 +22,7 @@ device and web previews, sandboxed agent critique, and built-in Claude/OpenAI ga
 | Screenker | Six-slot Mac project; repeated critique; ASC publication | 86, Aug 10 | Current; above the general gate, below the commercial target |
 
 No Screenker provenance was found for the current SentiPods, Oenora, Zerver Monitor,
-SharedSpaceLab, PickleFamilia, KinFlash, Flasherz Kids, or Cardz Studio sets.
+SharedSpaceLab, PickleFamilia, KinFlash, or Cardz Studio sets.
 Nagz has an ASC gallery but is a legacy reference and should not receive new gallery work.
 
 ## Live ASC Baseline
@@ -41,7 +41,6 @@ The August 14 read-only ASC audit found these current en-US sets:
 | 100 Burfords 1.1 | 0 | 7 | 6 | Current at 88/90 |
 | Zerver Monitor 1.0 | 0 | 0 | 0 | Missing |
 | DoubleQross 1.0 | 0 | 9 | 3 | Published but stale |
-| Flasherz Kids 1.0 | 0 | 2 (6.5-inch) | 0 | Obsolete; preserve only |
 | PickleFamilia 1.0 | 0 | 0 | 0 | Defer pending product decision |
 | Mallinbook 1.0 | 6 | 4 | 2 | Complete, but iOS sets are unscored |
 | KinFlash 1.0 | 0 | 0 | 0 | Near-term 1041soft.com release; commercial gallery is now highest-priority missing work |
@@ -72,7 +71,7 @@ apps the same workflow.
 | Publish-now | DoubleQross, PickledBalls, 123 Words, amenbeats, Pfoliolio, Mallinbook, KinFlash, SentiPods, Oenora, Zerver Monitor, Screenker |
 | Verify-only | 100 Burfords |
 | Internal-evidence | workin On, Cardz Studio |
-| Archive/no-work | PickleFamilia, Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
+| Archive/no-work | PickleFamilia, LtWatcher, grubber-ios, Famster, Nagz |
 
 SharedSpaceLab is intentionally outside the production screenshot queue until it has a real
 release candidate and product-line decision.

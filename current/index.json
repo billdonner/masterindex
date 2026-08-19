@@ -43,8 +43,8 @@
     ]
   },
   "summary": {
-    "ascApps": 21,
-    "mappedAscApps": 20,
+    "ascApps": 20,
+    "mappedAscApps": 19,
     "unmatchedAscApps": 1,
     "activeRepos": 51,
     "clusters": 14,
@@ -559,16 +559,6 @@
         "localVersion": "retired at 0.1.0 (4); GitHub repository archived 2026-08-14"
       },
       {
-        "name": "Flasherz Kids",
-        "bundleId": "com.billdonner.obo",
-        "appId": "6759509933",
-        "ascStates": [
-          "IOS 1.0 PREPARE_FOR_SUBMISSION"
-        ],
-        "repo": "~/obo-ios",
-        "localVersion": "1.1 (47)"
-      },
-      {
         "name": "PickleFamilia",
         "bundleId": "com.picklefamilia.app",
         "appId": "6786064830",
@@ -993,11 +983,11 @@
       "cluster": "Flasherz",
       "status": "retired",
       "masterIndexStatus": "not-good-citizen",
-      "masterIndexStatusReason": "Owner marked it obsolete; retain only the historical source and ASC record.",
+      "masterIndexStatusReason": "Owner marked it obsolete; the ASC record was deleted 2026-08-19, so only the historical source remains.",
       "lastModified": "2026-08-18",
       "repo": "~/obo-ios",
       "bundleId": "com.billdonner.obo",
-      "release": "Obsolete by owner decision on 2026-08-14; ASC iOS 1.0 PREPARE_FOR_SUBMISSION record retained",
+      "release": "Obsolete by owner decision on 2026-08-14; the ASC iOS 1.0 PREPARE_FOR_SUBMISSION record was deleted by the owner on 2026-08-19 and the app has no ASC presence",
       "distribution": "none-obsolete",
       "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by the live card-engine service at bd-cardzerver.fly.dev.",
       "dependencies": [
@@ -1012,8 +1002,8 @@
       },
       "notes": [
         "Falls back to bundled sample decks when the server is unavailable.",
-        "Do not perform new release, screenshot, or public-listing work; preserve the repository and ASC record as history unless the owner later requests archival.",
-        "2026-08-18 owner decision: killed, not revived. Considered and rejected as a second kid flashcard app alongside KinFlash. The two only share the flashcard mechanic: Flasherz served a card-engine server catalog, while KinFlash generates cards from the child's own family data with no backend. Folding kid decks into KinFlash was rejected separately because it would give KinFlash a network dependency and third-party content review burden, undoing the property that makes it clean for the Kids Category. Its ASC record is 1.0 PREPARE_FOR_SUBMISSION and never shipped, so it is still deletable."
+        "Do not perform new release, screenshot, or public-listing work; preserve the repository as history unless the owner later requests archival. The ASC record no longer exists.",
+        "2026-08-18 owner decision: killed, not revived. Considered and rejected as a second kid flashcard app alongside KinFlash. The two only share the flashcard mechanic: Flasherz served a card-engine server catalog, while KinFlash generates cards from the child's own family data with no backend. Folding kid decks into KinFlash was rejected separately because it would give KinFlash a network dependency and third-party content review burden, undoing the property that makes it clean for the Kids Category. Its ASC record was 1.0 PREPARE_FOR_SUBMISSION and never shipped, so deletion was permitted; the owner deleted it on 2026-08-19."
       ]
     },
     {
@@ -2382,7 +2372,7 @@
       "kind": "app",
       "masterIndexStatus": "not-good-citizen",
       "masterIndexStatusReason": "Obsolete app retained as history only.",
-      "role": "ASC-mapped Flasherz Kids app"
+      "role": "Source for Flasherz Kids, whose ASC record was deleted 2026-08-19; history only"
     },
     {
       "repo": "~/pickledballs",
@@ -2773,7 +2763,7 @@
     {
       "kind": "asc-records-to-delete",
       "observedAt": "2026-08-18",
-      "summary": "PARTIALLY CLOSED 2026-08-19: the owner deleted MastPex IOS (6797321392) and MastPex Mac (6797321653) through the ASC web UI, so ASC now holds 21 app records (20 mapped plus the retired GigStand). STILL OPEN: consider deleting the Flasherz Kids record now that the app is killed. It is 1.0 PREPARE_FOR_SUBMISSION and has never been on sale, so deletion is still permitted; once an app has been on sale it can never be deleted, which is what stranded GigStand in the listing permanently. The ASC API has no app-delete endpoint, so this remains manual web-UI work."
+      "summary": "CLOSED 2026-08-19: the owner deleted MastPex IOS (6797321392), MastPex Mac (6797321653), and Flasherz Kids (6759509933, com.billdonner.obo) through the ASC web UI. All three were 1.0 PREPARE_FOR_SUBMISSION and had never been on sale, so deletion was permitted; once an app has been on sale it can never be deleted, which is what stranded GigStand in the listing permanently. ASC now holds 20 app records: 19 mapped plus the retired GigStand. No further ASC deletions are pending. The ASC API has no app-delete endpoint, so any future deletion is manual web-UI work."
     },
     {
       "kind": "product-line-classification-incomplete",
