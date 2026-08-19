@@ -2424,8 +2424,8 @@
     },
     {
       "kind": "feedback-workflow-redesign-resolved",
-      "observedAt": "2026-08-14",
-      "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived."
+      "observedAt": "2026-08-19",
+      "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived. Follow-up 2026-08-19: the retirement was only complete on the Mac where it was performed. The second machine (Mac.attlocal.net) was still running the loop from a user crontab, not a launch agent: '30 */2 * * * ~/bin/zkraper-notify' (the email) and '15 */2 * * * ~/bin/zkraper-qross-issues' (the qross issue filer). The notifier looked stale because the qross job — the only thing that advances the watermark — was failing on an expired GH_TOKEN, so the same unprocessed counts were re-sent every two hours. Both crontab lines were removed (backup at ~/.crontab.backup-20260819); ~/zkraper and ~/bin/zkraper* were left in place because .watermark.json and .qross-issues-filed.json still hold unprocessed state. app-feedback was deliberately NOT installed on this second machine — its store is per-machine, so a second collector would double-count."
     }
   ],
   "taskRegistry": {
