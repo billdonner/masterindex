@@ -2748,7 +2748,7 @@
     {
       "kind": "feedback-workflow-redesign-resolved",
       "observedAt": "2026-08-14",
-      "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived."
+      "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived. INCOMPLETE UNTIL 2026-08-19: the 2026-08-14 retirement covered only the primary Mac. A second machine kept running the old zkraper loop, mailing billdonner@gmail.com -> bill@getadology.com every two hours with the stale instruction to run zkraper harvest/mark. It was stale as well as noisy: each thread repeated identical counts because nothing ever ran zkraper mark, so the same four items from 2026-08-13 were re-sent indefinitely. The owner stopped it on the second machine on 2026-08-19. LESSON: retiring a workflow means retiring every scheduled trigger on every machine, not just archiving the repository; an archived GitHub repo does not stop a local launch agent or cron entry."
     },
     {
       "kind": "asc-url-standardization",
@@ -2779,6 +2779,11 @@
       "kind": "product-line-classification-incomplete",
       "observedAt": "2026-08-18",
       "summary": "OPEN. The 2026-08-18 audience-based split assigned KinFlash and amenbeats to billdonner-free and killed Flasherz Kids, but most active apps remain UNASSIGNED, and DoubleQross is explicitly undecided: it is heading for App Store final review and is neither clearly kid-oriented nor clearly commercial. Assignment is now load-bearing rather than cosmetic, because it selects the screenshot gate (85 vs 90) and the canonical support/marketing/privacy host. Standing policy makes 1041soft.com canonical for all apps and 12 apps' ASC URLs were standardized onto it on 2026-08-14, so every app assigned to billdonner-free needs its ASC URLs re-pointed, and both site generators must filter by productLine before either site regenerates."
+    },
+    {
+      "kind": "feedback-collection-machine-scope",
+      "observedAt": "2026-08-19",
+      "summary": "OPEN, low priority: it is not decided whether App Feedback collection should run on the second Mac as well as the primary. Two machines both collecting would double-count. The specific trigger that kept mailing from the second machine was not reported back, so it is not recorded here."
     }
   ],
   "taskRegistry": {
