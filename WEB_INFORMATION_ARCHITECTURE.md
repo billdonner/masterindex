@@ -85,14 +85,18 @@ Add later:
 
 ### Attention strip
 
-Add a compact row near the top:
+Implemented. The strip renders `current/attention.json` directly — the same
+artifact `workin On` consumes — so the two surfaces cannot disagree about what
+needs attention. See `ATTENTION_BOARD.md`.
 
-- missing public links
-- backend failures
-- release-state changes
-- tasks due soon
+Each card shows priority, lane, a short headline, clamped context, and the
+concrete next action. Cards concerning an entity select that entity in the
+detail panel and update the URL to `?entity=<id>`.
 
-This should be the operational entry point.
+The strip deliberately shows only open gaps, overdue tasks, and unreviewed
+changes. Conditions that are correct by design are suppressed, and the
+suppressed count is displayed so an empty strip reads as trustworthy rather
+than broken.
 
 ### Main entity browser
 
@@ -216,13 +220,18 @@ Agents should be able to safely link users to:
 
 Without reconstructing the whole page.
 
-## Future enhancement order
+## Enhancement status
 
-1. Add active task visibility to entity detail
-2. Add top-level attention strip
-3. Add missing-links filter
-4. Add due-tasks filter
-5. Add recent-changes filter
-6. Add direct entity URLs
+Done:
 
-That order gives the best operational payoff.
+1. Active task visibility in entity detail
+2. Top-level attention strip, driven by the shared attention board
+3. Missing-links filter
+4. Direct entity URLs (`?entity=<id>`, with cluster and filter parameters)
+
+Still open:
+
+5. Due-tasks filter — blocked until task runs are recorded in
+   `current/attention-state.json`; until then no task has a real due state
+6. Recent-changes filter — most useful once the review watermark is in routine
+   use, so the filter can mean "since I last looked" rather than "last 7 days"

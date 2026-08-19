@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Operator state for the attention board. Authoritative and hand/tool-editable; never regenerated from the inventory.",
+  "lastReviewedAt": null,
+  "lastReviewedNote": "Set by: python3 tools/generate_attention.py --mark-reviewed",
+  "taskRuns": {},
+  "dismissed": {}
+}

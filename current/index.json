@@ -2293,137 +2293,363 @@
   ],
   "gaps": [
     {
+      "id": "asc-cleanup-2026-08-removals",
       "kind": "asc-removed",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "Five app records removed from ASC in the 2026-08 cleanup",
+      "entityIds": [
+        "picklefortunes-app",
+        "screenker-asc-app"
+      ],
       "observedAt": "2026-08-03",
       "summary": "PickleBrains, picklefortunes, Alities, Quackman, and screenkr2/com.screenkr.app were removed from ASC during the 2026-08 cleanup. The picklefortunes local repo remains active locally."
     },
     {
+      "id": "local-paths-123words-bookmaker-mallinbook",
       "kind": "local-path-missing",
+      "disposition": "open",
+      "priority": "medium",
+      "title": "Three recorded repo paths do not resolve on this machine",
+      "entityIds": [
+        "words123-app",
+        "mallinbook-app"
+      ],
+      "nextAction": "Clone or relocate the three repos on this machine, or record them as github:-only so the paths stop reading as missing.",
       "observedAt": "2026-08-11",
       "summary": "Recorded repo paths ~/123words, ~/bookmaker, and ~/mallinbook did not resolve as local directories on this machine during the reboot-readiness audit; retained entity facts are preserved from prior observed scans."
     },
     {
+      "id": "sentipods-asc-identity",
       "kind": "ambiguity-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "SentiPods ASC identity confirmed",
+      "entityIds": [
+        "sentipods-app"
+      ],
       "observedAt": "2026-08-13",
       "summary": "Resolved: live ASC query confirms SentiPods app ID 6797132650, bundle com.sentipods.app, with iOS and macOS 1.0 PREPARE_FOR_SUBMISSION records."
     },
     {
+      "id": "sentipods-readme-mac-bundle-stale",
       "kind": "metadata-inconsistency",
+      "disposition": "open",
+      "priority": "low",
+      "title": "SentiPods README states a Mac bundle id that project.yml contradicts",
+      "entityIds": [
+        "sentipods-app"
+      ],
+      "nextAction": "Update sentipods README.md to state com.sentipods.app, matching project.yml.",
       "observedAt": "2026-08-13",
       "summary": "sentipods README.md states the Mac bundle is com.sentipods.mac, but project.yml sets the SentipodsMac target to com.sentipods.app - one universal-purchase record, not two apps. README is stale."
     },
     {
+      "id": "oenora-unused-asc-macos-version",
       "kind": "asc-macos-record-drift",
+      "disposition": "open",
+      "priority": "medium",
+      "title": "Oenora has an unused ASC macOS version with no builds",
+      "entityIds": [
+        "oenora-app",
+        "sharedspace-lab"
+      ],
+      "nextAction": "Decide: remove the unused ASC macOS version, or add an App Store-compatible Mac target alongside the Developer ID one.",
       "observedAt": "2026-08-14",
       "summary": "SharedSpaceLab remains aligned through Mac Catalyst. Oenora deliberately reverted Catalyst and added a native Developer ID target with bundle com.billdonner.oenora.mac; its existing ASC MAC_OS 1.0 record belongs to com.billdonner.oenora and has no builds. Preserve the intentional direct-distribution target, but decide whether to remove the unused ASC macOS version or add a separate App Store-compatible target."
     },
     {
+      "id": "mastpex-placeholder-records",
       "kind": "asc-unmatched",
+      "disposition": "accepted",
+      "priority": "low",
+      "title": "Both MastPex ASC records are placeholders with no repository",
+      "entityIds": [
+        "mastpex-ios-asc-app",
+        "mastpex-macos-asc-app"
+      ],
       "observedAt": "2026-08-13",
       "summary": "MastPex IOS and MastPex Mac have no corresponding repository; owner describes both as placeholders."
     },
     {
+      "id": "gigstand-retired-record",
       "kind": "asc-retired-app",
+      "disposition": "accepted",
+      "priority": "low",
+      "title": "GigStand is removed from sale but permanently retained in ASC",
+      "entityIds": [],
       "observedAt": "2026-08-13",
       "summary": "GigStand (com.billdonner.gigstand, app ID 428849240) shipped 2011-05-04 and was dead for ~15 years. Apple does not permit deleting an app that has ever been on sale, which is why it could not be removed through the ASC UI. Removed from sale instead: all 175 territoryAvailabilities set available=false on 2026-08-13. The record and its version history remain in ASC permanently and will still appear in any full app listing - this is expected, not a gap to re-investigate. Two residuals: the abandoned 1.10 draft from 2011-08-10 cannot be deleted ('Only the first version of any platform can be deleted'), and appAvailabilities does not allow UPDATE, so availableInNewTerritories remains true - if Apple adds a brand-new territory, GigStand could auto-list there and would need removing again."
     },
     {
+      "id": "macos-age-rating-unset",
       "kind": "asc-submission-blockers",
+      "disposition": "open",
+      "priority": "high",
+      "title": "Age rating is unset for Oenora, SharedSpaceLab, and SentiPods",
+      "entityIds": [
+        "oenora-app",
+        "sharedspace-lab",
+        "sentipods-app"
+      ],
+      "nextAction": "Set the ASC age rating for Oenora, SharedSpaceLab, and SentiPods. Each needs an owner judgement call on its subject matter.",
       "observedAt": "2026-08-13",
       "summary": "All 6 real macOS records have primary category and copyright. Age rating set for Mallinbook, Pfoliolio, Screenker; still UNSET for Oenora, SharedSpaceLab, SentiPods pending owner judgment (wine subject matter, peer-to-peer chat, and unfiltered third-party content respectively). SentiPods desktop screenshots uploaded 2026-08-13 (3 at 2880x1800, assetDeliveryState COMPLETE). Mallinbook now has valid build 18 on both platforms; the earlier no-build statement was stale."
     },
     {
+      "id": "cloud-managed-signing",
       "kind": "signing-capability-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "Cloud-managed distribution signing verified",
+      "entityIds": [
+        "pfolio-app",
+        "qross-app",
+        "sentipods-app",
+        "words123-app"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Resolved. Xcode cloud-managed distribution signing successfully archived and uploaded Pfoliolio, Qross, SentiPods, and 123 Words from this machine using the ASC API key."
     },
     {
+      "id": "peerlink-source-missing",
       "kind": "local-path-missing",
+      "disposition": "open",
+      "priority": "high",
+      "title": "PeerLink source is missing, so PickledBalls cannot be built here",
+      "entityIds": [
+        "pickledballs-app"
+      ],
+      "nextAction": "Locate or recreate the PeerLink package and restore it at ~/peerlink, or repoint PickledBalls project.yml at a resolvable source.",
       "observedAt": "2026-08-13",
       "summary": "PickledBalls project.yml now links a local PeerLink package at ../peerlink for local-network live game transport. The sibling ~/peerlink directory is missing on this machine, and obvious GitHub repo names billdonner/peerlink, billdonner/pickledpeerlink, and billdonner/picklepeerlink were not found. Local PickledBalls builds cannot be regenerated or verified here until PeerLink is restored or its source repo is identified."
     },
     {
+      "id": "cardzerver-source-of-truth",
       "kind": "deployment-source-inconsistency-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "Card Engine confirmed as the sole source for bd-cardzerver",
+      "entityIds": [
+        "card-engine-backend",
+        "card-server-backend"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Resolved. Card Engine is the sole verified source for bd-cardzerver.fly.dev; Card Server's Fly descriptor was removed and its repository archived."
     },
     {
+      "id": "nagzerver-main-cannot-reproduce-prod",
       "kind": "deployment-source-recovery",
+      "disposition": "open",
+      "priority": "high",
+      "title": "Nagzerver production cannot be reproduced from Git main",
+      "entityIds": [
+        "nagzerver-backend",
+        "pickledballs-app",
+        "picklefamilia-asc-app"
+      ],
+      "nextAction": "Review private branch recovery/deployed-2026-06-30 at a57211b, fix the test_player_schedule defect, and merge it so main reproduces production.",
       "observedAt": "2026-08-14",
       "summary": "OPEN. Fly release v100 of bd-nagzerver contains the active PickledBalls and legacy PickleFamilia implementations, but those files are absent from every Git main ref inspected. The exact non-secret deployed source is preserved on private branch recovery/deployed-2026-06-30 at a57211b and generates all 163 live API paths. Review it before merging: 1,113 of 1,114 tests pass, while tests/test_pickleball_sessions.py::test_player_schedule exposes a confirmed-occurrence schedule defect. Until reconciled, Git main cannot reproduce production."
     },
     {
+      "id": "household-lineage-open-decisions",
       "kind": "product-lineage-reframed",
+      "disposition": "open",
+      "priority": "low",
+      "title": "Household-communications lineage has open naming and migration decisions",
+      "entityIds": [
+        "nagz-app",
+        "famster-app",
+        "sharedspace-lab"
+      ],
+      "nextAction": "Decide product naming, product-line assignment, and whether SharedSpaceLab migrates off Nagzerver.",
       "observedAt": "2026-08-14",
       "summary": "Nagz, Famster, and SharedSpaceLab are one household-communications lineage rather than three independent products. SharedSpaceLab is the active successor prototype, Nagz the working legacy reference, and Famster a concept-only shell. ConversationLab and CoordinationLab are reusable kernel candidates. Product naming, product-line assignment, and any future server migration remain open decisions."
     },
     {
+      "id": "grubber-ios-obsolete",
       "kind": "obsolete-client-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "grubber-ios retired in favour of SentiPods",
+      "entityIds": [
+        "grubber-ios-app",
+        "sentipods-app"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Resolved by owner decision: grubber-ios is obsolete and superseded by SentiPods. Retain its repository as history; do not pursue ASC mapping or release work."
     },
     {
+      "id": "clubsync-deferred-to-pickledballs-v2",
       "kind": "service-deferred",
+      "disposition": "accepted",
+      "priority": "low",
+      "title": "Clubsync deferred until PickledBalls v2",
+      "entityIds": [
+        "clubsync-backend",
+        "pickledballs-app"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Clubsync is intentionally deferred until PickledBalls v2. Its application tier remains absent and bd-clubsync-db is retained; LtWatcher is retired and current PickledBalls no longer records Clubsync as an active dependency."
     },
     {
+      "id": "server-monitor-config",
       "kind": "monitor-configuration-drift-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "Server Monitor configuration drift repaired",
+      "entityIds": [
+        "server-monitor-service"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Resolved in server-monitor commits 7216455 and 6972c20. Production now omits Clubsync, probes public Nagzerver/Card Engine health endpoints, and uses canonical entity IDs; live verification returned HTTP 200 for both endpoints."
     },
     {
+      "id": "1041soft-dns-tls",
       "kind": "website-dns-and-tls-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "1041soft.com DNS and TLS verified",
+      "entityIds": [
+        "company-site-1041soft"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Resolved on 2026-08-14. 1041soft.com and www now use GitHub Pages DNS, HTTPS is enforced, and the Let's Encrypt certificate is valid through 2026-11-12."
     },
     {
+      "id": "doubleqross-domain",
       "kind": "registered-domain-activated-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "doubleqross.com activated and redirecting",
+      "entityIds": [
+        "qross-app"
+      ],
       "observedAt": "2026-08-14",
       "summary": "RESOLVED. doubleqross.com and www.doubleqross.com resolve through IONOS, present the included Sectigo wildcard certificate valid through 2027-02-10, and return HTTP/2 302 over HTTPS to https://1041soft.com/qross/, which returns 200. The branded domain is ready for DoubleQross marketing and ASC use."
     },
     {
+      "id": "asc-privacy-urls-missing",
       "kind": "asc-public-link-inconsistency",
+      "disposition": "open",
+      "priority": "high",
+      "title": "Mallinbook's ASC privacy URL 404s and SentiPods has none",
+      "entityIds": [
+        "mallinbook-app",
+        "sentipods-app"
+      ],
+      "nextAction": "Publish a working privacy URL for Mallinbook and add a privacyPolicyUrl to the SentiPods ASC record.",
       "observedAt": "2026-08-14",
       "summary": "Pfoliolio's billdonner.com marketing/support route and the legacy Oliopfolio redirect are now live. Mallinbook's ASC privacy URL remains 404 and SentiPods still has no ASC privacyPolicyUrl."
     },
     {
+      "id": "billdonner-catalog-refresh",
       "kind": "portfolio-website-stale-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "billdonner.com catalog regenerated and verified live",
+      "entityIds": [
+        "portfolio-app-directory",
+        "pfolio-app"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Resolved. The generated 19-entry billdonner.com catalog is live on IONOS, retired LtWatcher returns 404, Pfoliolio returns 200, and Oliopfolio serves the canonical redirect. Live files match the generated artifacts."
     },
     {
+      "id": "version-build-drift",
       "kind": "version-build-drift-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "Version and build drift reconciled across ASC",
+      "entityIds": [
+        "pfolio-app",
+        "qross-app",
+        "sentipods-app",
+        "words123-app",
+        "amenbeats-app",
+        "burfords-app"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Resolved for every identified drift: Pfoliolio 35, Qross 392, SentiPods macOS 21, and 123 Words 1.12 (59) are VALID in ASC; amenbeats source is 8; 100 Burfords source is 1.1 (9)."
     },
     {
+      "id": "entities-coverage-backfill",
       "kind": "repository-coverage",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "Missing entities backfilled into the inventory",
+      "entityIds": [],
       "observedAt": "2026-08-13",
       "summary": "The prior entities list omitted Pfoliolio, amenbeats, Oenora, Screenker, Zerver Monitor, PickleFamilia, the pfolio backend, and both active portfolio websites. Those entries are now represented; remote-only repositories are explicitly labeled github: rather than as missing local paths."
     },
     {
+      "id": "card-engine-contract-deltas",
       "kind": "retired-card-server-contract-differences",
+      "disposition": "accepted",
+      "priority": "low",
+      "title": "Two Card Engine responses differ from the retired Card Server contract",
+      "entityIds": [
+        "card-engine-backend",
+        "card-server-backend"
+      ],
       "observedAt": "2026-08-14",
       "summary": "Before Card Server archival, its legacy production-contract tests found two Card Engine response differences: nonexistent bulk delete returns 422 instead of expected 200, and invalid daily-score dates return 404 instead of expected 400. No current consumer was found to require Card Server, but these differences matter to any legacy Card Studio migration."
     },
     {
+      "id": "private-repo-pages-exposure",
       "kind": "exposure-closed",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "Private-repo docs/ exposure closed on seven repositories",
+      "entityIds": [
+        "qross-app",
+        "nagz-app",
+        "workinon-app",
+        "obo-ios-app",
+        "mallinbook-app"
+      ],
       "observedAt": "2026-08-14",
       "summary": "RESOLVED. GitHub Pages serves a repo's docs/ directory publicly regardless of repo visibility. Seven private repos (qross, nagz, nagz-ios, workinon, obo-ios, server-monitor-ios, mallinbook) were publishing docs/ to the open web. Verified world-readable and returning 200: qross business/qross-18-month-product-plan.md, business/risk-register-and-success-criteria.md, architecture/cardzerver-operational-roadmap.md, decisions/ADR-009-secret-management.md, decisions/ADR-004-multiplayer-iap-v1-scope.md, carol-claude-code-instructions.md; and nagz DEPLOYMENT_PLAN.md, CODE_REVIEW_FINDINGS.md, CONTRIBUTOR_GUIDE.md, APP_REVIEW_GUIDE.md. Scanned for live credential patterns (sk-, ghp_, AIza, xox*) and found none - business and architecture material only. Pages disabled on all seven on 2026-08-14; every path re-verified as 404. Root cause is a GitHub behaviour, not a misconfiguration: never enable Pages on a private repo."
     },
     {
+      "id": "universal-links-never-served",
       "kind": "universal-links-never-worked",
+      "disposition": "open",
+      "priority": "medium",
+      "title": "Universal links have never worked; AASA was never served",
+      "entityIds": [
+        "nagz-app"
+      ],
+      "nextAction": "If universal links are still wanted: add .nojekyll, serve the AASA with the right content type, and point the entitlement at 1041soft.com.",
       "observedAt": "2026-08-14",
       "summary": "nagz/docs/.well-known/apple-app-site-association existed but was never served - Jekyll ignores dot-directories by default, so the URL returned 404 for as long as the site was up. Universal links from that domain have therefore never functioned; this is not a regression from the 1041soft.com migration. Making them work needs a .nojekyll file, the AASA served with the correct content type, and the app's associated-domains entitlement pointed at 1041soft.com."
     },
     {
+      "id": "product-line-split-not-enforced",
       "kind": "product-line-presentation-drift",
+      "disposition": "open",
+      "priority": "medium",
+      "title": "Neither website enforces the free vs commercial product-line split",
+      "entityIds": [
+        "portfolio-app-directory",
+        "company-site-1041soft",
+        "workinon-app"
+      ],
+      "nextAction": "Classify every app by productLine, then filter both publication pipelines so billdonner.com and 1041soft.com stop cross-listing.",
       "observedAt": "2026-08-14",
       "summary": "Owner established two product lines: BillDonner.com apps are permanently free, while 1041soft.com is commercial-grade. workin On and the two MasterIndex Explorer binaries are confirmed BillDonner.com products. The current presentations do not yet enforce the split: billdonner.com/apps lists every active app and 1041soft.com still serves /workinon/. Keep this gap open until all apps are classified and both publication pipelines filter by productLine."
     },
     {
+      "id": "feedback-workflow-replacement",
       "kind": "feedback-workflow-redesign-resolved",
+      "disposition": "resolved",
+      "priority": "low",
+      "title": "TestFlight email loop replaced by the App Feedback dashboard",
+      "entityIds": [
+        "app-feedback-inbox",
+        "qross-app"
+      ],
       "observedAt": "2026-08-19",
       "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived. Follow-up 2026-08-19: the retirement was only complete on the Mac where it was performed. The second machine (Mac.attlocal.net) was still running the loop from a user crontab, not a launch agent: '30 */2 * * * ~/bin/zkraper-notify' (the email) and '15 */2 * * * ~/bin/zkraper-qross-issues' (the qross issue filer). The notifier looked stale because the qross job — the only thing that advances the watermark — was failing on an expired GH_TOKEN, so the same unprocessed counts were re-sent every two hours. Both crontab lines were removed (backup at ~/.crontab.backup-20260819); ~/zkraper and ~/bin/zkraper* were left in place because .watermark.json and .qross-issues-filed.json still hold unprocessed state. app-feedback was deliberately NOT installed on this second machine — its store is per-machine, so a second collector would double-count."
     }

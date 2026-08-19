@@ -20,6 +20,7 @@ As of Friday, August 14, 2026.
 - The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
 - The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment.
+- Recorded gaps are now explicitly dispositioned open, resolved, or accepted, which drives a generated attention board shared by the web browser and the `workin On` tab.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
@@ -262,6 +263,20 @@ assigned workin On exclusively to the permanently free BillDonner.com line, maki
 - `adspill` remains a two-person advertising-capacity research sandbox.
 - The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
 - Oenora's public TestFlight invite, approved build 6, submitted build 7 with sealed-case tracking, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
+
+## Attention Board
+
+Every `gaps[]` entry in `current/index.json` now carries an explicit
+`disposition` — `open`, `resolved`, or `accepted` — plus a stable `id`, a short
+`title`, the `entityIds` it concerns, and, for open gaps, a concrete
+`nextAction`. Of the 27 recorded gaps, 10 are open, 13 are resolved history,
+and 4 are accepted decisions.
+
+That field is what lets `current/attention.json` be generated: a derived board
+of only the items that need a decision or an action. The web browser and the
+`workin On` tab both render it, so they cannot disagree. The narrative list
+below is the human-readable companion to the open half. See
+`ATTENTION_BOARD.md`.
 
 ## Remaining Gaps
 

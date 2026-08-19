@@ -7,6 +7,7 @@ on:
       - current/**
       - tasks/**
       - site/**
+      - tools/generate_attention.py
       - index.html
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -28,6 +29,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Refresh the attention board
+        # Deterministic and reads only committed files, so the published board
+        # can never lag behind the inventory it is derived from.
+        run: python3 tools/generate_attention.py
       - name: Assemble static site
         run: |
           mkdir _site
