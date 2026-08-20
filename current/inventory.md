@@ -27,7 +27,7 @@ As of Sunday, August 16, 2026.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - DoubleQross 1.0 (392) now has refreshed Garland-era iPhone and iPad captures, updated Screenker projects, and exact approval exports scored provisionally at 94 and 93. ASC is unchanged pending human approval.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
-- KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete and its ASC record was deleted on 2026-08-19. Cardz Studio and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release. MastPex was retired outright and its ASC records were deleted on 2026-08-19.
+- KinFlash is assigned to billdonner.com for near-term public release as a kids app on the free line, superseding the 2026-08-14 assignment to 1041soft.com and reconfirmed by the owner on 2026-08-20. Flasherz Kids is obsolete and its ASC record was deleted on 2026-08-19. Cardz Studio and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release. MastPex was retired outright and its ASC records were deleted on 2026-08-19.
 
 ## MasterIndex Citizenship
 
@@ -97,20 +97,24 @@ The remaining Oenora gaps are now explicit external follow-through, not repo amb
 ### BillDonner.com — always free
 
 Personal utilities, experiments, and children-oriented apps. Users are never charged; a Mac
-version and MCP surface are optional. `workin On` remains in this product family but is
+version and MCP surface are optional. Assignment is decided by audience, not capability.
+KinFlash belongs here and is planned for near-term public release from billdonner.com: it is a
+kids app, so it sits on the free line even though it ships a capable Mac sibling and an MCP
+surface. amenbeats is also assigned here. `workin On` remains in this product family but is
 internal-use/TestFlight-only rather than a public release.
 
 ### 1041soft.com — commercial
 
 Products intended for sale or another explicit revenue model. These carry a higher quality,
 testing, documentation, privacy, and support bar; they should normally have a real Mac version
-and an MCP or automation surface when that fits the product. KinFlash is the newest confirmed
-assignment and is planned for near-term release.
+and an MCP or automation surface when that fits the product. No new app has been assigned here
+since the 2026-08-18 audience-based split; KinFlash was briefly assigned on 2026-08-14 and moved
+to the free line.
 
 The remaining apps are not yet classified. Presentation drift remains open until that is done:
 the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
-`/workinon/` even though workin On is internal-only. The public catalog still needs to present
-KinFlash under 1041soft.com. Flasherz Kids is resolved: its ASC record was deleted on
+`/workinon/` even though workin On is internal-only. KinFlash is settled on billdonner.com and needs no move.
+Flasherz Kids is resolved: its ASC record was deleted on
 2026-08-19, so it left `ascApps.mapped` and the regenerated catalog no longer lists it.
 
 Regenerating the catalog also surfaced a filter hazard worth remembering.
@@ -140,7 +144,7 @@ once received a high score.
 | ASC device coverage exists without Screenker critique | SentiPods |
 | Local captures exist but ASC is empty | Oenora iOS |
 | Active ASC release record is empty | Zerver Monitor |
-| Highest-priority missing commercial gallery | KinFlash, near-term 1041soft.com release |
+| Highest-priority missing gallery | KinFlash, near-term billdonner.com release, 85-point gate |
 | Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia |
 | Internal functional evidence only | Cardz Studio, workin On |
 | No new screenshot work | LtWatcher, grubber-ios, Famster, Nagz |
@@ -249,7 +253,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | PickleFamilia | com.picklefamilia.app | archived github:billdonner/picklefamilia-ios | Archived historical line; ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION retained |
-| KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term 1041soft.com release; iOS 1.0 PREPARE_FOR_SUBMISSION |
+| KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term billdonner.com release; iOS 1.0 PREPARE_FOR_SUBMISSION |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
 | Cardz Studio | com.billdonner.cardz-studio | ~/cardz-studio-ios | Internal/TestFlight-only; iOS 1.0 retained |

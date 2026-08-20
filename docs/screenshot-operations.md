@@ -43,7 +43,7 @@ The August 14 read-only ASC audit found these current en-US sets:
 | DoubleQross 1.0 | 0 | 9 | 3 | Published but stale |
 | PickleFamilia 1.0 | 0 | 0 | 0 | Defer pending product decision |
 | Mallinbook 1.0 | 6 | 4 | 2 | Complete, but iOS sets are unscored |
-| KinFlash 1.0 | 0 | 0 | 0 | Near-term 1041soft.com release; commercial gallery is now highest-priority missing work |
+| KinFlash 1.0 | 0 | 0 | 0 | Near-term billdonner.com release; gallery is highest-priority missing work at the 85-point gate |
 | PickledBalls 1.0 | 0 | 10 | 10 | Published; re-critique current composition |
 | 123 Words 1.12 | 0 | 7 | 6 | Published but stale |
 | Cardz Studio 1.0 | 0 | 0 | 0 | Internal/TestFlight-only; no public marketing gallery |
@@ -151,8 +151,9 @@ Use this execution order unless an app's release reality changes:
 3. amenbeats and Pfoliolio: bring them back onto exact current product state, including the iPad
    decision for amenbeats and matched iPhone/Mac provenance for Pfoliolio.
 4. Mallinbook and SentiPods: close critique-provenance gaps on already-populated ASC sets.
-5. KinFlash: run the full commercial cycle to a 90-point target, but block publication until its
-   hosting, release-channel, and ASC-product decisions are resolved.
+5. KinFlash: run the full cycle to the 85-point free-line target, not the 90-point commercial bar
+   (it is a kids app on billdonner.com), and block publication until its hosting, release-channel,
+   and ASC-product decisions are resolved.
 6. Oenora and Zerver Monitor: create current release-facing galleries only if the current build is
    a real candidate.
 7. Screenker: improve its own Mac gallery from 86 toward the 90 commercial bar if its product-line
