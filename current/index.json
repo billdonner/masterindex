@@ -1749,7 +1749,7 @@
    "notes": [
     "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog).",
     "shop/ state is committed to the repo as the audit trail; decisions.json is the agent-judgement input, consumed once per tick.",
-    "V1 plan: scheduled session ticks a simulated week per real day and republishes shop/catalog.md."
+    "Perpetual loop LIVE 2026-08-20: launchd agent com.billdonner.oenora-merchant runs scripts/merchant-day.sh daily 06:30 — headless claude -p writes decisions.json, engine ticks a simulated week, commits+pushes. Local-only (OenoraCore needs Apple frameworks)."
    ]
   }
  ],
