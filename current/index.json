@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-19T00:00:00-05:00",
+  "generatedAt": "2026-08-21T00:00:00-05:00",
   "scope": {
-    "dateLabel": "Sunday, August 16, 2026",
+    "dateLabel": "Friday, August 21, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
@@ -39,7 +39,8 @@
       "August 15 nagzerver reconciliation: recovery/deployed-2026-06-30 was confirmed as a strict fast-forward superset of main and merged cleanly. Git main now reproduces the live API surface exactly, but production Fly release v100 still needs redeployment to pick up two security fixes and any exposed secrets should be rotated.",
       "August 15 Oenora distribution review: the Mac channel is now explicitly settled and documented as notarized Developer ID direct download via ADR-007, with a reproducible notarization script. The empty ASC macOS record is confirmed leftover metadata rather than an active Mac App Store plan.",
       "August 15 KinFlash release-readiness review: repo-side launch blockers are now closed and verified by Debug and Release iOS builds, 249 passing unit tests, privacy manifests in the built app, and a reproducible screenshot rig covering all 7 iPhone and 7 iPad slots. The remaining blocker is owner-facing: no publicly reachable site exists yet because the private repo has Pages disabled and homepageUrl remains empty.",
-      "August 15 Mallinbook release-readiness review: repo-side release posture is now clean, documented, and verified, but the live privacy page still serves placeholder text. The repo is no longer the problem; promotion of the app remains blocked on pushing corrected privacy text to 1041soft-site and then updating ASC."
+      "August 15 Mallinbook release-readiness review: repo-side release posture is now clean, documented, and verified, but the live privacy page still serves placeholder text. The repo is no longer the problem; promotion of the app remains blocked on pushing corrected privacy text to 1041soft-site and then updating ASC.",
+      "August 21 non-app evaluation pass: every entity with kind != app was verified live against flyctl, HTTP health probes, GitHub repository state, and local checkouts. The pass corrected the Collective Engine deployment posture, the Nagzerver service status, the local-model-lab checkout path, and the stale flyOperations block, and it gave entity records to nineteen non-app repositories that previously existed only in repos[] and were therefore outside entityCoveragePolicy."
     ]
   },
   "summary": {
@@ -52,7 +53,9 @@
     "collaborators": 3,
     "unreachableServices": 0,
     "ascMacOsRecords": 7,
-    "ascMacOsWithMacTarget": 6
+    "ascMacOsWithMacTarget": 6,
+    "suspendedServices": 1,
+    "unmappedFlyApps": 2
   },
   "automation": {
     "taskRegistry": "tasks/index.json",
@@ -365,53 +368,112 @@
     }
   ],
   "flyOperations": {
-    "observedAt": "2026-08-06T00:00:00-05:00",
+    "observedAt": "2026-08-21T00:00:00-05:00",
     "costCurrency": "USD",
     "costStatus": "unavailable",
     "costNote": "The authenticated Fly CLI exposes deployment state on this machine, but no billing or usage amount was observed. Do not infer costs from deployment status.",
+    "source": "flyctl apps list plus per-app flyctl status, run 2026-08-21",
     "services": [
       {
         "app": "bd-cardzerver",
-        "entityId": "card-server-backend",
+        "entityId": "card-engine-backend",
         "status": "deployed",
-        "latestDeploy": "2026-07-06T01:01:00-05:00",
-        "cost": null
+        "latestDeploy": "2026-08-10",
+        "cost": null,
+        "note": "Corrects the prior mapping to the retired card-server-backend."
       },
       {
-        "app": "bd-nagzerver",
-        "entityId": "nagzerver-backend",
+        "app": "bd-collective-engine",
+        "entityId": "collective-engine-backend",
         "status": "deployed",
-        "latestDeploy": "2026-06-30T21:01:00-05:00",
-        "cost": null
+        "latestDeploy": "2026-08-19",
+        "cost": null,
+        "note": "Two machines in dfw: one started, one stopped."
+      },
+      {
+        "app": "bd-collective-db",
+        "entityId": "collective-engine-backend",
+        "status": "deployed",
+        "latestDeploy": "2026-08-19",
+        "cost": null,
+        "note": "flyio/postgres-flex 18.1, 3/3 checks passing."
       },
       {
         "app": "bd-grubber",
         "entityId": "grubber-service",
         "status": "deployed",
-        "latestDeploy": "observed 2026-08-06; Fly reported 12h26m ago",
+        "latestDeploy": "2026-08-06",
+        "cost": null
+      },
+      {
+        "app": "bd-oenora-recognition",
+        "entityId": "oenora-recognition-service",
+        "status": "deployed",
+        "latestDeploy": "2026-08-18",
+        "cost": null,
+        "note": "Previously absent from this block despite being a live first-party service. Runs scale-to-zero: its single ord machine sits stopped and wakes on request, so 'flyctl apps list' can report the app as suspended while /health still returns 200 after a ~2s cold start. Do not read that listing as a shutdown."
+      },
+      {
+        "app": "bd-pfolio",
+        "entityId": "pfolio-backend",
+        "status": "deployed",
+        "latestDeploy": "2026-08-18",
         "cost": null
       },
       {
         "app": "bd-server-monitor",
         "entityId": "server-monitor-service",
         "status": "deployed",
-        "latestDeploy": "2026-06-16T16:01:00-05:00",
+        "latestDeploy": "2026-08-14",
         "cost": null
       },
       {
-        "app": "bd-pfolio",
-        "entityId": "pfolio-backend",
-        "status": "deployed",
-        "latestDeploy": "2026-07-22T18:08:00-05:00",
-        "cost": null
-      },
-      {
-        "app": "bd-clubsync",
-        "entityId": "clubsync-backend",
-        "status": "not-found-in-personal-app-list",
+        "app": "bd-nagzerver",
+        "entityId": "nagzerver-backend",
+        "status": "suspended",
         "latestDeploy": null,
         "cost": null,
-        "note": "The inventory records a live clubsync service, but the authenticated personal Fly app list showed bd-clubsync-db rather than bd-clubsync. Resolve ownership/app-name mapping."
+        "note": "Owner shutdown complete and confirmed by machine count, not just app status: 'flyctl machines list -a bd-nagzerver' reports no machines available, and /healthz still times out at 30s. This is a real shutdown, not scale-to-zero. Secrets still need rotation."
+      },
+      {
+        "app": "bd-postgres",
+        "entityId": "nagzerver-backend",
+        "status": "deployed",
+        "latestDeploy": "2026-02-20",
+        "cost": null,
+        "note": "Shared Postgres host serving the nagz and card_engine databases; retained through the Nagzerver shutdown."
+      },
+      {
+        "app": "bd-clubsync-db",
+        "entityId": "clubsync-backend",
+        "status": "deployed",
+        "latestDeploy": null,
+        "cost": null,
+        "note": "flyio/postgres-flex 17.2 with 17.7 available; deferred application tier."
+      },
+      {
+        "app": "bd-arca",
+        "entityId": null,
+        "status": "suspended",
+        "latestDeploy": "2026-06-08",
+        "cost": null,
+        "note": "UNMAPPED. No MasterIndex entity, repository, or owner decision is recorded for this app."
+      },
+      {
+        "app": "bd-podcast-brands",
+        "entityId": null,
+        "status": "suspended",
+        "latestDeploy": "2026-06-11",
+        "cost": null,
+        "note": "UNMAPPED. No MasterIndex entity, repository, or owner decision is recorded for this app. Possibly related to the Grubber/SentiPods podcast work, but unverified."
+      },
+      {
+        "app": "bd-oenora-merchant",
+        "entityId": null,
+        "status": "suspended",
+        "latestDeploy": null,
+        "cost": null,
+        "note": "Appeared in the Fly app list between the 2026-08-20 and 2026-08-21 listings. It belongs to the oenora-merchant entity that exists on origin/main but not on this branch - see the masterindex-branch-fork gap. Not mapped here to avoid duplicating the other session's record."
       }
     ]
   },
@@ -1231,7 +1293,7 @@
       "cluster": "Grubber",
       "status": "live",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-21",
       "repo": "~/grubber",
       "bundleId": null,
       "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, and the public live progress view are deployed",
@@ -1251,7 +1313,8 @@
         "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
         "The Mac producer runs text, audio, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
         "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
-        "2026-08-09: centralized the database lock across analysis, news pull, and export writers; test coverage confirms all producer database writers serialize safely."
+        "2026-08-09: centralized the database lock across analysis, news pull, and export writers; test coverage confirms all producer database writers serialize safely.",
+        "2026-08-21: endpoint correction. The health endpoint is /healthz (200). Paths cited in earlier notes do not resolve on the deployed service: /, /status, and /shows all return 404. /progress returns 200 and /api/v1/updates/recent returns 401 because it requires authentication. The earlier report of /status hanging is superseded - that path no longer exists."
       ]
     },
     {
@@ -1317,12 +1380,12 @@
       "name": "nagzerver",
       "kind": "backend",
       "cluster": "Infrastructure",
-      "status": "live",
-      "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-15",
+      "status": "suspended",
+      "masterIndexStatus": "not-good-citizen",
+      "lastModified": "2026-08-21",
       "repo": "~/nagzerver",
       "bundleId": null,
-      "release": "Live on Fly at bd-nagzerver.fly.dev; Git main was reconciled on 2026-08-15 and matches the live 163-path API surface, but Fly production still needs a security-fix redeploy",
+      "release": "Fly app bd-nagzerver is SUSPENDED as of the 2026-08-21 verification; the owner's 2026-08-18 shutdown is complete. Git main was reconciled on 2026-08-15 and matches the last live 163-path API surface, but the security fixes from that date were never deployed - the app was turned off instead.",
       "description": "Mixed shared production backend serving Nagz, current PickledBalls and legacy PickleFamilia APIs, workin On sync and APNs, plus residual clubwatch transport routes.",
       "dependencies": [
         "Nagz",
@@ -1340,8 +1403,12 @@
         "2026-08-15: recovery/deployed-2026-06-30 was confirmed as one commit ahead of and zero behind main, then fast-forwarded into main without conflict (b8ed584 -> a57211b).",
         "2026-08-15: local main generated 163 API paths with zero local-only and zero live-only API-path drift against bd-nagzerver.fly.dev, excluding the frontend catch-all routes / and /{full_path}.",
         "2026-08-15: fixed two verified security issues in Git: arbitrary file-read traversal in the SPA catch-all and unauthenticated production test-helper access. New tests cover static traversal and helper gating; suite result improved to 1,132 passed, 0 failed.",
-        "Production Fly release v100 still needs redeployment to pick up those fixes, and secrets should be rotated because /proc/self/environ was reachable through traversal before the code fix."
-      ]
+        "Production Fly release v100 still needs redeployment to pick up those fixes, and secrets should be rotated because /proc/self/environ was reachable through traversal before the code fix.",
+        "2026-08-21: verified suspended. flyctl apps list reports STATUS=suspended with no latest deploy; https://bd-nagzerver.fly.dev/healthz times out. The owner's stated 2026-08-18 shutdown is therefore complete, and the prior status 'live' was stale.",
+        "2026-08-21: the shutdown closed the unpatched v100 traversal exposure at source, but Fly secret rotation is still outstanding and should be treated as unfinished work, not as resolved by the shutdown.",
+        "2026-08-21: the bd-nagzerver Redis and Postgres backing stores are still deployed and answering server-monitor probes, so data is retained even though the application tier is off."
+      ],
+      "masterIndexStatusReason": "Deliberately suspended by the owner, but two trust gaps remain open: the Fly secrets were never rotated after the pre-shutdown traversal exposure, and downstream consumers (server-monitor probes, workinon-mcp push, api.famster.app) still reference it as if live."
     },
     {
       "id": "clubsync-backend",
@@ -1351,7 +1418,7 @@
       "status": "deferred",
       "masterIndexStatus": "not-good-citizen",
       "masterIndexStatusReason": "Intentionally deferred and undeployed until PickledBalls v2.",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-21",
       "repo": "~/clubsync",
       "bundleId": null,
       "release": "Application tier intentionally deferred until PickledBalls v2; bd-clubsync-db remains deployed",
@@ -1364,7 +1431,8 @@
       },
       "notes": [
         "Not an active production dependency or monitored service.",
-        "The database is retained to preserve data until the PickledBalls v2 decision."
+        "The database is retained to preserve data until the PickledBalls v2 decision.",
+        "2026-08-21: bd-clubsync-db is still running (machine 908037e1fe7768, primary, ord, 3/3 checks passing). It is on flyio/postgres-flex 17.2 with 17.7 available, so the deferred database is accruing both cost and patch debt while the application tier stays undeployed. Either take the image update or make an explicit decision to snapshot and destroy it."
       ]
     },
     {
@@ -1397,8 +1465,8 @@
       "kind": "backend",
       "cluster": "Flasherz",
       "status": "live",
-      "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-13",
+      "masterIndexStatus": "not-good-citizen",
+      "lastModified": "2026-08-21",
       "repo": "~/card-engine",
       "bundleId": null,
       "release": "Live on Fly at bd-cardzerver.fly.dev; machine version 134 started with passing health check",
@@ -1417,8 +1485,11 @@
       "notes": [
         "Live /openapi.json identifies the service as card-engine version 0.1.0.",
         "The 256 MB Fly machine was OOM-killed and restarted on 2026-08-13; direct /health is currently 200.",
-        "One of the main architecture ambiguities in the inventory."
-      ]
+        "One of the main architecture ambiguities in the inventory.",
+        "2026-08-21: /health returned 200; the service itself is healthy.",
+        "2026-08-21: source-of-truth hazard. ~/card-engine main is 27 behind and 1 ahead of origin/main, with modified scripts/bulk_generate.py and server/providers/categories.py plus an untracked scripts/migrate_categories.py. The unpushed local commit is 2af7b87 'Add MasterIndex agent handoff'. origin/main has since gained work including 8c040d8 'Cache /metrics behind a 20s TTL to stop DB pileup'. Reconcile before editing the live backend from this machine."
+      ],
+      "masterIndexStatusReason": "The service is healthy, but the local checkout recorded as its source is 27 commits behind origin/main with one unpushed commit and three uncommitted files, so ~/card-engine is not a trustworthy source of truth for the live deployment."
     },
     {
       "id": "server-monitor-service",
@@ -1427,10 +1498,10 @@
       "cluster": "PickledBalls",
       "status": "live",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-21",
       "repo": "~/server-monitor",
       "bundleId": null,
-      "release": "Fly production deployment verified 2026-08-14 with seven configured targets and current probes",
+      "release": "Fly production deployment verified live 2026-08-21 with seven configured targets. Six probe healthy; the Nagzerver HTTP target fails permanently because that service was intentionally suspended, so the dashboard reports a standing error state.",
       "description": "Monitoring dashboard for multiple backends across the product landscape.",
       "dependencies": [
         "nagzerver",
@@ -1444,7 +1515,8 @@
       },
       "notes": [
         "Production config omits deferred Clubsync, uses public Nagzerver and Card Engine health endpoints, and identifies Card Engine with the canonical card-engine-backend id.",
-        "Live /api/status showed successful HTTP 200 probes for Nagzerver and Cardzerver after deployment; remaining warning colors are database metric thresholds, not endpoint failures."
+        "Live /api/status showed successful HTTP 200 probes for Nagzerver and Cardzerver after deployment; remaining warning colors are database metric thresholds, not endpoint failures.",
+        "2026-08-21: configuration drift. The production config still probes https://bd-nagzerver.fly.dev/healthz, which has accumulated 7,755 consecutive failures since the deliberate shutdown. The dashboard therefore shows a permanent 1-errored-of-7 state that no longer signals anything actionable. Remove or explicitly retire the Nagzerver HTTP target; the Redis and Postgres targets still probe successfully and can stay."
       ]
     },
     {
@@ -1485,7 +1557,7 @@
       "cluster": "Household Communications",
       "status": "lab",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-05",
+      "lastModified": "2026-08-21",
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "bundleId": null,
       "release": "Local clone verified at ~/Documents/Codex/Experiments/ConversationLab",
@@ -1498,7 +1570,8 @@
         "github": "https://github.com/billdonner/conversationlab"
       },
       "notes": [
-        "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product."
+        "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product.",
+        "2026-08-21: dormant since 2026-08-05 on both the local checkout and GitHub. This is expected, not neglect - the kernel cannot be finalized until the household-communications naming and product-line decision resolves what consumes the conversation kernel."
       ]
     },
     {
@@ -1508,7 +1581,7 @@
       "cluster": "Household Communications",
       "status": "lab",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-05",
+      "lastModified": "2026-08-21",
       "repo": "~/Documents/Codex/Experiments/CoordinationLab",
       "bundleId": null,
       "release": "Local clone verified at ~/Documents/Codex/Experiments/CoordinationLab",
@@ -1521,7 +1594,8 @@
         "github": "https://github.com/billdonner/coordinationlab"
       },
       "notes": [
-        "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product."
+        "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product.",
+        "2026-08-21: dormant since 2026-08-05 on both the local checkout and GitHub. This is expected, not neglect - the kernel cannot be finalized until the household-communications naming and product-line decision resolves what consumes the coordination kernel."
       ]
     },
     {
@@ -1764,11 +1838,11 @@
     {
       "id": "collective-engine-backend",
       "name": "Collective Engine",
-      "kind": "architecture-proposal",
+      "kind": "backend",
       "cluster": "PickledBalls",
       "status": "active-prototype",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-18",
+      "lastModified": "2026-08-21",
       "repo": "~/collective-engine",
       "description": "Release 1 architecture proposal for a separately deployable Swift 6 Collective Engine backend supporting the PickleFamilia/PickledBalls product line.",
       "dependencies": [
@@ -1777,7 +1851,9 @@
         "Resend"
       ],
       "links": {
-        "github": "https://github.com/billdonner/collective-engine"
+        "github": "https://github.com/billdonner/collective-engine",
+        "website": "https://bd-collective-engine.fly.dev",
+        "health": "https://bd-collective-engine.fly.dev/health"
       },
       "notes": [
         "Local repository initialized and architecture proposal committed at 278b440 on 2026-08-17.",
@@ -1791,9 +1867,12 @@
         "2026-08-18: ADR-003 (Accepted, decided by the owner) sets a Release 1 boundary of no cross-service dependencies in either direction. Collective Engine calls no other first-party service and hosts no surface whose purpose is to serve an app outside its product line. Explicitly revisitable once the Collective is running.",
         "2026-08-18: ADR-001 (shared APNs delivery) is partly superseded by ADR-003. An APNsChannel delivering to Collective members is permitted, with Release 1 inclusion still an open section 20 scope question. The shared POST /push/v1/send relay for workin On is rejected.",
         "2026-08-18: ADR-002 (metered AI reflector) is rejected as scoped by ADR-003. Its key-custody finding stands and is unaffected: KinFlash holds provider keys in end-user Keychains. Section 4 encryption is now implemented here as SecretCipher with a versioned key ring, rotation without downtime, and loud failure on a retired key; it secures this service only and is a reference implementation, not an offer to hold other apps credentials.",
-        "2026-08-18: decisions live in docs/decisions/ per the qross and oenora convention. Concurrent sessions work in this repository; ADR numbering is claimed through 003."
+        "2026-08-18: decisions live in docs/decisions/ per the qross and oenora convention. Concurrent sessions work in this repository; ADR numbering is claimed through 003.",
+        "2026-08-21: CORRECTS the prior 'nothing is deployed' posture, which was already stale when the August 19 index was generated. flyctl reports bd-collective-engine deployed on 2026-08-19 (two machines in dfw, one started and one stopped) and bd-collective-db running flyio/postgres-flex 18.1, created 2026-08-19T02:57Z. Live probes returned HTTP 200 on / and /health; /healthz and /api/v1/health are 404.",
+        "2026-08-21: the entity kind was changed from architecture-proposal to backend. The record is no longer a planning artifact - it describes a running service with its own database.",
+        "2026-08-21: open governance question, not a defect - the service is deployed while ADR-level architecture freeze is still unapproved and no Release 1 build was authorized. Deployment happened ahead of the approval gate the proposal defines."
       ],
-      "release": "Release 1 bounded monolith under active construction: Hummingbird HTTP surface, PostgreSQL repositories, outbox dispatcher, Resend email channel with signed webhooks, durable jobs, and multi-week season simulation tests. No Fly deployment claimed."
+      "release": "Release 1 bounded monolith deployed to Fly as bd-collective-engine (machine version 16, deployed 2026-08-19) with a dedicated bd-collective-db Postgres 18.1 cluster created the same day. Hummingbird HTTP surface, PostgreSQL repositories, outbox dispatcher, Resend email channel with signed webhooks, durable jobs, and multi-week season simulation tests. The architecture freeze remains unapproved and no product traffic is served."
     },
     {
       "id": "company-site-1041soft",
@@ -1825,12 +1904,12 @@
       "kind": "website",
       "cluster": "Standalone",
       "status": "live",
-      "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-14",
+      "masterIndexStatus": "not-good-citizen",
+      "lastModified": "2026-08-21",
       "repo": "~/masterindex",
       "bundleId": null,
       "productLine": "billdonner-free",
-      "release": "Published to IONOS on 2026-08-14 from the MasterIndex generator with 19 active entries",
+      "release": "Published to IONOS on 2026-08-14 with 19 entries. As of 2026-08-21 the live page is stale - regenerating from the current index yields 18 entries because Flasherz Kids was removed.",
       "description": "Public directory of App Store, TestFlight, and in-development apps.",
       "dependencies": [],
       "links": {
@@ -1839,8 +1918,10 @@
       "notes": [
         "The live catalog lists 19 active entries and omits retired LtWatcher.",
         "Pfoliolio has a live marketing and support route; the obsolete Oliopfolio path redirects to it.",
-        "The previous IONOS catalog was retained under /_archive before publication, and the old LtWatcher directory was moved there."
-      ]
+        "The previous IONOS catalog was retained under /_archive before publication, and the old LtWatcher directory was moved there.",
+        "2026-08-21: verified live. https://billdonner.com/apps/ returns 200 but still reads '19 active apps' and still lists Flasherz Kids. tools/generate_billdonner_apps.py now produces 18 entries from the current index. The site needs a regenerate-and-publish pass to drop the dead entry."
+      ],
+      "masterIndexStatusReason": "The live public catalog is stale: it advertises 19 active apps and still lists Flasherz Kids, whose ASC record was deleted on 2026-08-19."
     },
     {
       "id": "app-feedback-inbox",
@@ -1876,9 +1957,9 @@
       "kind": "service",
       "cluster": "Standalone",
       "status": "lab",
-      "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-15",
-      "repo": "~/mlxsrv/local-model-lab",
+      "masterIndexStatus": "not-good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "github:billdonner/local-model-lab",
       "bundleId": null,
       "release": "Local MLX model lab (Qwen3-4B/9B on-device via mlx-lm, zero API cost). Completed: full-corpus Qross evals on the old 177,501-question corpus (best local qwen3-4b inline-hint 86.41%; OpenAI gpt-5 comparison 98.34% on a 10k subset for about $0.94). Active since 2026-08-15: Apple 4+ age-rating content screening on the full 190,941-question corpus, tracked in qross issue #196.",
       "description": "Local MLX model evaluation lab: runs quantized local models (including Qwen3-4B) through an OpenAI-compatible server, preserves full-corpus Qross benchmarking artifacts, and now runs Apple 4+ age-rating content screening over the fresh 190,941-question corpus.",
@@ -1899,8 +1980,12 @@
         "Completed experiment families preserved in-repo: repository-analysis model qualification, trivia-generation bake-off, full-corpus Qross answer evaluations on the old corpus across three hint modes with local-vs-OpenAI comparison, hint-quality pilots, and hard-subset runs.",
         "Parked or incomplete experiment families: inline-hint baseline run on the fresh 190,941-question corpus (48.7% complete, resumable) and the bridge benchmark (designed with pilot runs, but no parameter sweeps completed).",
         "2026-08-05: SwiftChat became the common interface — four modes (Chat, Trivia Batch, Bridge, Qross Eval) embedding the bridge lab (:8766) and Qross monitor (:8767). Those surfaces remain present and reusable, but were not relaunched in the 2026-08-15 state audit.",
-        "Open gaps after the 2026-08-15 state report: SwiftChat, bridge lab, and qross monitor remain unverified since 2026-08-05; bridge benchmark sweeps were never run; qross_eval.py and content_screen.py still lack direct automated tests; raw >100MB answers.jsonl files remain local-only by policy; and an owner decision is still pending on how borderline content flags should be triaged."
-      ]
+        "Open gaps after the 2026-08-15 state report: SwiftChat, bridge lab, and qross monitor remain unverified since 2026-08-05; bridge benchmark sweeps were never run; qross_eval.py and content_screen.py still lack direct automated tests; raw >100MB answers.jsonl files remain local-only by policy; and an owner decision is still pending on how borderline content flags should be triaged.",
+        "2026-08-21: CORRECTS the 2026-08-15 claim of a verified checkout at ~/mlxsrv/local-model-lab. Neither that path nor ~/mlxsrv exists on this machine. The repo field was changed to the remote form per the index convention for repositories that are not cloned here.",
+        "2026-08-21: github:billdonner/local-model-lab was pushed 2026-08-20, so the lab is active - it simply runs on the owner's second Mac. Any state audit of this entity must be performed there.",
+        "2026-08-21: consequence - the Apple 4+ content-screening run whose ETA was 2026-08-17 has no recorded outcome, and cannot be confirmed from this machine."
+      ],
+      "masterIndexStatusReason": "The index claimed a verified local checkout on this machine that does not exist; the working checkout lives on the owner's second Mac, so no agent on this machine can verify its state."
     },
     {
       "id": "adspill-sim",
@@ -1909,7 +1994,7 @@
       "cluster": "adspill",
       "status": "lab",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-07-29",
+      "lastModified": "2026-08-21",
       "repo": "github:billdonner/adspill",
       "bundleId": null,
       "release": null,
@@ -1925,7 +2010,8 @@
         "Project 1 (Bill): /sim - pure clear() auction core (8 unit tests green), scale harness (~20k avails in ~12s), monitor.html live board. stdlib-only, no store/network; storage + wire protocols deliberately deferred. Bill now treats this as a personal sandbox on v0 defaults.",
         "Project 2 (Jim): self-serve create-and-sell for long-tail local video ads; framing only, no build yet.",
         "FloSports/NWL diligence (docs/flosports-diligence.md) reframed the effort: empty ad slots are a demand + rights + sales-cost problem, not a plumbing/exchange one (Flo is already fully programmatic). Pivotal gating question, answerable only by a team: do Northwoods League teams retain in-stream ad rights after Flo's exclusive global deal?",
-        "Bill has stepped back to an observer role on Project 2, tracking progress for his own edification."
+        "Bill has stepped back to an observer role on Project 2, tracking progress for his own edification.",
+        "2026-08-21: parked, stated explicitly rather than left to be inferred from the date. No pushes to github:billdonner/adspill since 2026-07-29. Bill is in an observer role on Project 2 and treats Project 1 as a personal sandbox, so no activity is expected until the Northwoods League in-stream ad-rights question is answered by someone who can answer it."
       ]
     },
     {
@@ -1935,7 +2021,7 @@
       "cluster": "Oenora",
       "status": "live",
       "masterIndexStatus": "good-citizen",
-      "lastModified": "2026-08-09",
+      "lastModified": "2026-08-21",
       "repo": "~/oenora",
       "bundleId": null,
       "release": "Fly health endpoint is live at bd-oenora-recognition.fly.dev; the recognition token was rotated and live-verified on 2026-08-14 after correcting the client configuration.",
@@ -1950,7 +2036,410 @@
       },
       "notes": [
         "The iOS app sends no images while offline; queued scans survive restart and retry when connectivity returns.",
-        "The August 9 device test plan records recognition as live; temporary failures remain retryable and preserve the original images."
+        "The August 9 device test plan records recognition as live; temporary failures remain retryable and preserve the original images.",
+        "2026-08-21: /health returned 200 after a roughly 2.5-second cold start, consistent with a scale-to-zero machine. The local ~/oenora checkout is 2 commits behind origin/main."
+      ]
+    },
+    {
+      "id": "card-studio-admin",
+      "name": "card-studio",
+      "kind": "app",
+      "cluster": "Qross",
+      "status": "internal-only",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/card-studio",
+      "bundleId": null,
+      "release": "Internal macOS admin app; no App Store Connect record and no public release path.",
+      "description": "macOS admin app for managing the Qross trivia question catalog against card-engine.",
+      "dependencies": [
+        "card-engine"
+      ],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity. It was previously present only in repos[] and therefore outside entityCoveragePolicy, despite being listed as an active project in the owner's global CLAUDE.md.",
+        "Has no bundleId, so the billdonner.com apps generator cannot surface it publicly regardless of kind or status.",
+        "Last content commit 2026-08-01; the 2026-08-05 commit is the MasterIndex bootstrap injection, not product work."
+      ]
+    },
+    {
+      "id": "kit1041-package",
+      "name": "1041Kit",
+      "kind": "package",
+      "cluster": "Household Communications",
+      "status": "dormant",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/1041Kit",
+      "bundleId": null,
+      "release": "Local Swift package; 87 tests. No consumer currently links it.",
+      "description": "Generic auth, API, GRDB, sync, and WebSocket Swift package built as a shared foundation.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Nominal Famster dependency, but Famster's initialization of it is commented out, so the package has no live consumer.",
+        "Last content commit 2026-04-24; the 2026-08-05 commit is the MasterIndex bootstrap injection."
+      ]
+    },
+    {
+      "id": "courtscheduler-package",
+      "name": "CourtScheduler",
+      "kind": "package",
+      "cluster": "PickledBalls",
+      "status": "dormant",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/CourtScheduler",
+      "bundleId": null,
+      "release": "Local pure-Swift SPM package with benchmarks; consumed by PickledBalls.",
+      "description": "Pure-Swift package generating fair round-robin racquet-sport schedules offline and deterministically from a seed.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "A live PickledBalls scheduling dependency, so it should not be treated as an abandoned experiment despite the quiet commit history.",
+        "Last content commit 2026-05-01; the 2026-08-05 commit is the MasterIndex bootstrap injection."
+      ]
+    },
+    {
+      "id": "sharedai-package",
+      "name": "SharedAI",
+      "kind": "package",
+      "cluster": "PickledBalls",
+      "status": "dormant",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/SharedAI",
+      "bundleId": null,
+      "release": "Local Swift package; deliberately unlinked from PickledBalls v1.0 on 2026-07-23.",
+      "description": "Shared AI Swift package reserved for the future PickledBalls Instructor tier.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Unlinked from v1.0 by choice - re-add when the Instructor tier ships.",
+        "Last content commit 2026-06-16; the 2026-08-05 commit is the MasterIndex bootstrap injection."
+      ]
+    },
+    {
+      "id": "peerlink-package",
+      "name": "PeerLink",
+      "kind": "package",
+      "cluster": "PickledBalls",
+      "status": "missing",
+      "masterIndexStatus": "not-good-citizen",
+      "masterIndexStatusReason": "Required by PickledBalls project.yml as a local sibling package, absent from this machine, and with no identified source repository - it blocks reproducible local PickledBalls builds here.",
+      "lastModified": "2026-08-21",
+      "repo": "~/peerlink",
+      "bundleId": null,
+      "release": null,
+      "description": "Local-network live game transport package that PickledBalls links from ../peerlink.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity so the missing dependency has a stable target key rather than living only as a gap and a repos[] row.",
+        "2026-08-21: re-verified absent - ~/peerlink does not exist on this machine.",
+        "The candidate GitHub names billdonner/peerlink, billdonner/pickledpeerlink, and billdonner/picklepeerlink were all searched previously and not found. Until the source is identified or the directory restored, PickledBalls cannot be regenerated or verified on this machine."
+      ]
+    },
+    {
+      "id": "nagz-ai-package",
+      "name": "nagz-ai",
+      "kind": "package",
+      "cluster": "Household Communications",
+      "status": "legacy-reference",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/nagz-ai",
+      "bundleId": null,
+      "release": "Local Swift package with SPEC.md and tests; consumed by the legacy nagz-ios client.",
+      "description": "On-device AI capabilities package for the legacy Nagz iOS client.",
+      "dependencies": [
+        "Nagz"
+      ],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Shares the fate of the Nagz legacy line - retained as reference while SharedSpaceLab is the active successor.",
+        "Last content commit 2026-08-01; the 2026-08-05 commit is the MasterIndex bootstrap injection."
+      ]
+    },
+    {
+      "id": "nagz-web-client",
+      "name": "nagz-web",
+      "kind": "website",
+      "cluster": "Household Communications",
+      "status": "legacy-reference",
+      "masterIndexStatus": "not-good-citizen",
+      "masterIndexStatusReason": "React client for an API tier that no longer runs - bd-nagzerver is suspended, so this client cannot function against production.",
+      "lastModified": "2026-08-21",
+      "repo": "~/nagz-web",
+      "bundleId": null,
+      "release": "React/TypeScript client generated against the Nagz OpenAPI schema; deployed with nagzerver, which is now suspended.",
+      "description": "Web client for the legacy Nagz family reminder app.",
+      "dependencies": [
+        "nagzerver"
+      ],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "2026-08-21: functionally offline. Its backend bd-nagzerver is suspended, so the client has no production API to talk to.",
+        "Last content commit 2026-08-01; the 2026-08-05 commit is the MasterIndex bootstrap injection."
+      ]
+    },
+    {
+      "id": "workinon-mcp-tool",
+      "name": "workinOn MCP Server",
+      "kind": "tool",
+      "cluster": "Standalone",
+      "status": "degraded",
+      "masterIndexStatus": "not-good-citizen",
+      "masterIndexStatusReason": "Its push path depends on bd-nagzerver, which is suspended, so the widget-update feature it exists to provide cannot currently work.",
+      "lastModified": "2026-08-21",
+      "repo": "~/workinon-mcp",
+      "bundleId": null,
+      "release": "Python MCP stdio server (server.py) registered for Claude browser, desktop, and code.",
+      "description": "MCP server that lets Claude manage the workin On list and pushes changes to the iPhone widget by silent APNs.",
+      "dependencies": [
+        "workin On",
+        "nagzerver"
+      ],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "2026-08-21: collateral damage from the Nagzerver shutdown. The silent-APNs widget push routes through bd-nagzerver, which is suspended, so list edits made through this MCP server no longer reach the iPhone widget. List management itself may still function depending on how it reads state.",
+        "Last content commit 2026-04-24; the 2026-08-05 commit is the MasterIndex bootstrap injection."
+      ]
+    },
+    {
+      "id": "flyz-deploy-tooling",
+      "name": "Flyz",
+      "kind": "tool",
+      "cluster": "Infrastructure",
+      "status": "active",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/Flyz",
+      "bundleId": null,
+      "release": "Local deployment support repository with apps/ and scripts/ directories; last commit 2026-08-11.",
+      "description": "Fly.io deployment support and configuration repository for the portfolio's hosted services.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only despite already being listed as a good-citizen repository in the inventory narrative.",
+        "Natural home for any decision recorded about the unmapped bd-arca and bd-podcast-brands Fly apps."
+      ]
+    },
+    {
+      "id": "qross-data-pulse",
+      "name": "qross-pulse",
+      "kind": "tool",
+      "cluster": "Qross",
+      "status": "dormant",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/qross-data",
+      "bundleId": null,
+      "release": "Local pulse repository with cache/, daily/, and prompts/; last content commit 2026-06-10.",
+      "description": "Daily delta briefs and candidate fixes for billdonner/qross, built on the shared pulse engine.",
+      "dependencies": [
+        "DoubleQross"
+      ],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Shares the generalized pulse engine with adology-pulse; the directory name qross-data does not match its internal identity of qross-pulse.",
+        "No daily briefs since 2026-06-10, so the pulse loop is not currently running."
+      ]
+    },
+    {
+      "id": "adology-pulse-tool",
+      "name": "adology-pulse",
+      "kind": "tool",
+      "cluster": "Standalone",
+      "status": "dormant",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/adology-pulse",
+      "bundleId": null,
+      "release": "Local pulse repository; last content commit 2026-06-10. ~/ado-data is a filesystem alias to it.",
+      "description": "Daily delta briefs and candidate fixes for the third-party adologyai/adology-backend repository.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Points at an external organization's repository (adologyai/adology-backend), not a first-party product - keep it out of any portfolio or product-line rollup.",
+        "Home of the generalized pulse engine that qross-data reuses."
+      ]
+    },
+    {
+      "id": "nagz-docs-hub",
+      "name": "nagz (docs hub)",
+      "kind": "docs",
+      "cluster": "Household Communications",
+      "status": "legacy-reference",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/nagz",
+      "bundleId": null,
+      "release": "Local cross-product documentation hub; last content commit 2026-04-20.",
+      "description": "Umbrella specification and documentation hub for the Nagz ecosystem.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Its GitHub Pages site was disabled on 2026-08-14 during the private-repo Pages sweep; the apple-app-site-association it published was never actually served because Jekyll ignores dot-directories.",
+        "Retained as the written record of the legacy line that SharedSpaceLab succeeds."
+      ]
+    },
+    {
+      "id": "obo-docs-hub",
+      "name": "obo (docs hub)",
+      "kind": "docs",
+      "cluster": "Flasherz",
+      "status": "retired",
+      "masterIndexStatus": "not-good-citizen",
+      "masterIndexStatusReason": "Historical docs hub for a product line whose app and ASC record are both gone.",
+      "lastModified": "2026-08-21",
+      "repo": "~/obo",
+      "bundleId": null,
+      "release": "Local docs hub; last content commit 2026-03-15.",
+      "description": "Documentation hub for the retired OBO / Flasherz Kids flashcard ecosystem.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Flasherz Kids' ASC record was deleted 2026-08-19 and obo-ios is history-only, so this hub documents a closed line. Retain for history; no work is expected."
+      ]
+    },
+    {
+      "id": "nagging-systems-requirements-docs",
+      "name": "nagging-systems-requirements",
+      "kind": "docs",
+      "cluster": "Household Communications",
+      "status": "legacy-reference",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/nagging-systems-requirements",
+      "bundleId": null,
+      "release": "Local requirements repository; last content commit 2026-02-15.",
+      "description": "Requirements and design documentation predating the current household-communications work.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Oldest repository in the household-communications lineage; useful as original intent when the SharedSpaceLab naming and scope decision is made."
+      ]
+    },
+    {
+      "id": "company-admin-1041soft",
+      "name": "1041Soft (business)",
+      "kind": "docs",
+      "cluster": "Standalone",
+      "status": "active",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "~/1041soft",
+      "bundleId": null,
+      "productLine": "1041soft-commercial",
+      "release": "Local business repository with docs/ and formation/; last commit 2026-08-18.",
+      "description": "1041Soft company formation, business planning, and product-planning repository.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Distinct from github:billdonner/1041soft-site, which is the public website. This repository holds formation and planning material and must stay private.",
+        "The natural place to record the still-open product-line classification decision that governs which apps are billdonner-free and which are 1041soft-commercial."
+      ]
+    },
+    {
+      "id": "bookmaker-reference-engine",
+      "name": "bookmaker",
+      "kind": "package",
+      "cluster": "Mallinbook",
+      "status": "reference-only",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "github:billdonner/bookmaker",
+      "bundleId": null,
+      "release": "Remote-only; not cloned on this machine. Last commit 2026-07-20.",
+      "description": "Python FastAPI/WeasyPrint directory-book engine kept as the read-only reference implementation behind Mallinbook.",
+      "dependencies": [
+        "Mallinbook"
+      ],
+      "links": {
+        "github": "https://github.com/billdonner/bookmaker"
+      },
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Served as the one-time lossless photo-extraction pipeline for Mallinbook. Read-only reference - do not resume development here."
+      ]
+    },
+    {
+      "id": "billdonner-github-pages",
+      "name": "billdonner.github.io",
+      "kind": "website",
+      "cluster": "Standalone",
+      "status": "live",
+      "masterIndexStatus": "good-citizen",
+      "lastModified": "2026-08-21",
+      "repo": "github:billdonner/billdonner.github.io",
+      "bundleId": null,
+      "release": "Public GitHub Pages source on branch master; last commit 2026-07-28.",
+      "description": "Personal GitHub Pages source, separate from the billdonner.com apps directory published to IONOS.",
+      "dependencies": [],
+      "links": {
+        "github": "https://github.com/billdonner/billdonner.github.io"
+      },
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Does not contain the billdonner.com/apps catalog - that is generated by tools/generate_billdonner_apps.py in MasterIndex and published to IONOS. Editing this repository will not change the apps directory.",
+        "www.1041soft.com is a CNAME to billdonner.github.io, so this repository shares Pages infrastructure with the company site."
+      ]
+    },
+    {
+      "id": "zkraper-tool",
+      "name": "zkraper",
+      "kind": "tool",
+      "cluster": "Standalone",
+      "status": "archived",
+      "masterIndexStatus": "not-good-citizen",
+      "masterIndexStatusReason": "Archived and superseded by App Feedback; its scheduled triggers caused a real incident after retirement.",
+      "lastModified": "2026-08-21",
+      "repo": "github:billdonner/zkraper",
+      "bundleId": null,
+      "release": "GitHub repository archived 2026-08-14.",
+      "description": "Retired repeating TestFlight email and manual watermark collector, superseded by the App Feedback dashboard.",
+      "dependencies": [],
+      "links": {
+        "github": "https://github.com/billdonner/zkraper"
+      },
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Its retirement is the source of the standing lesson in the inventory: archiving a repository does not stop a launch agent. A second Mac kept mailing stale zkraper digests every two hours until 2026-08-19."
+      ]
+    },
+    {
+      "id": "asc-feedback-tool",
+      "name": "asc-feedback",
+      "kind": "tool",
+      "cluster": "Standalone",
+      "status": "archived",
+      "masterIndexStatus": "not-good-citizen",
+      "masterIndexStatusReason": "Archived and superseded by App Feedback.",
+      "lastModified": "2026-08-21",
+      "repo": "github:billdonner/asc-feedback",
+      "bundleId": null,
+      "release": "GitHub repository archived 2026-08-14.",
+      "description": "Retired App Store Connect CLI built on obsolete TestFlight feedback assumptions.",
+      "dependencies": [],
+      "links": {
+        "github": "https://github.com/billdonner/asc-feedback"
+      },
+      "notes": [
+        "2026-08-21: added as an entity; previously repos[]-only.",
+        "Retain as history - its live ASC queries were the evidence for the 2026-08-11 finding that deleted ASC records linger in the on-device TestFlight client."
       ]
     }
   ],
@@ -2050,8 +2539,8 @@
         "PickleFamilia (legacy)",
         "LtWatcher transport (residual routes only)"
       ],
-      "note": "Mixed shared production backend. Fly release v100 source is preserved at private branch recovery/deployed-2026-06-30 because its PickledBalls and PickleFamilia implementation was absent from Git main; do not retire it with Nagz.",
-      "status": "live"
+      "note": "SUSPENDED, verified 2026-08-21. The owner completed the shutdown announced 2026-08-18; flyctl reports the app suspended and /healthz times out. Preserve branch recovery/deployed-2026-06-30, the only source for the v100 PickledBalls/PickleFamilia implementation. Fly secrets still need rotation. Redis and Postgres backing stores remain deployed and healthy.",
+      "status": "suspended"
     },
     {
       "name": "bd-clubsync.fly.dev",
@@ -2060,7 +2549,7 @@
       "consumers": [
         "PickledBalls v2 (future)"
       ],
-      "note": "Application tier intentionally deferred until PickledBalls v2; bd-clubsync-db is retained."
+      "note": "Application tier intentionally deferred until PickledBalls v2. bd-clubsync-db is retained and verified running 2026-08-21 on flyio/postgres-flex 17.2, with 17.7 available."
     },
     {
       "name": "bd-cardzerver.fly.dev",
@@ -2080,7 +2569,7 @@
       "consumers": [
         "SentiPods"
       ],
-      "note": "Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive.",
+      "note": "Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. Health endpoint is /healthz (verified 200 on 2026-08-21); /, /status, and /shows return 404.",
       "status": "live"
     },
     {
@@ -2098,8 +2587,8 @@
       "consumers": [
         "Famster concept shell"
       ],
-      "note": "Custom-domain alias to the same Nagzerver deployment, not a separate Famster service. /api/v1/version returns the Nagz API version; /version returns the static Nagz web fallback that the Famster shell currently warms.",
-      "status": "alias"
+      "note": "Custom-domain alias to the suspended bd-nagzerver deployment, not a separate service. Verified unreachable 2026-08-21, exactly as the shutdown gap predicted.",
+      "status": "down"
     },
     {
       "name": "bd-pfolio.fly.dev",
@@ -2119,6 +2608,13 @@
       ],
       "note": "Deployed on Fly and verified HTTP 200 at /health on 2026-08-14; token-protected recognition API used by Oenora.",
       "status": "live"
+    },
+    {
+      "name": "bd-collective-engine.fly.dev",
+      "repo": "~/collective-engine",
+      "status": "live",
+      "consumers": [],
+      "note": "Deployed 2026-08-19 with a dedicated bd-collective-db Postgres 18.1 cluster; / and /health verified 200 on 2026-08-21. No product consumer yet and the architecture freeze is still unapproved - it is a deployed prototype, not a production dependency."
     }
   ],
   "repos": [
@@ -2218,8 +2714,9 @@
       "branch": "main",
       "last2026Commit": "2026-08-05",
       "kind": "backend",
-      "masterIndexStatus": "good-citizen",
-      "role": "Live Python/FastAPI source for bd-cardzerver.fly.dev"
+      "masterIndexStatus": "not-good-citizen",
+      "role": "Source for bd-cardzerver.fly.dev, but the local checkout diverged from origin/main as of 2026-08-21 and must be reconciled before use",
+      "masterIndexStatusReason": "Local checkout is 27 behind and 1 ahead of origin/main with a dirty working tree, so it is not a reliable source of truth for the live bd-cardzerver deployment."
     },
     {
       "repo": "~/card-server",
@@ -2354,7 +2851,7 @@
       "last2026Commit": "2026-08-15",
       "kind": "backend",
       "masterIndexStatus": "good-citizen",
-      "role": "Mixed live Nagz, PickledBalls, PickleFamilia, workin On, and residual clubwatch backend; source-of-truth reconciliation completed on 2026-08-15 and production redeploy is pending security fixes"
+      "role": "Source for the now-suspended bd-nagzerver deployment; Git main was reconciled 2026-08-15 and the 2026-08-15 security fixes were never deployed because the app was turned off instead"
     },
     {
       "repo": "~/obo",
@@ -2473,8 +2970,8 @@
     },
     {
       "repo": "~/masterindex",
-      "branch": "wip/workinon-2026-08-03",
-      "last2026Commit": "2026-08-13",
+      "branch": "fix/doubleqross-com",
+      "last2026Commit": "2026-08-20",
       "kind": "inventory",
       "masterIndexStatus": "good-citizen",
       "role": "Canonical portfolio inventory and presentation site"
@@ -2547,10 +3044,11 @@
     {
       "repo": "github:billdonner/local-model-lab",
       "branch": "main",
-      "last2026Commit": "2026-08-15",
+      "last2026Commit": "2026-08-20",
       "kind": "lab",
-      "masterIndexStatus": "good-citizen",
-      "role": "Live local-model lab with preserved benchmark artifacts and active Apple 4+ content-screen tooling; verified against the real checkout at ~/mlxsrv/local-model-lab"
+      "masterIndexStatus": "not-good-citizen",
+      "role": "Live local-model lab with preserved benchmark artifacts and active Apple 4+ content-screen tooling; NOT cloned on this machine - the 2026-08-15 claim of a checkout at ~/mlxsrv/local-model-lab was wrong and ~/mlxsrv does not exist here",
+      "masterIndexStatusReason": "The recorded local checkout path does not exist on this machine; the working copy is on the owner's second Mac."
     },
     {
       "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
@@ -2753,7 +3251,7 @@
     {
       "kind": "nagzerver-shutdown-in-progress",
       "observedAt": "2026-08-18",
-      "summary": "Owner is turning bd-nagzerver off (stated 2026-08-18); no agent action required. This closes the unpatched v100 exposure (2026-08-15 arbitrary file-read traversal and unauthenticated test-helper exposure) at source. Both consumers were TestFlight-only: PickledBalls is on ice pending Collective Engine, and workin On is being reworked conceptually by the owner. Side effects to expect: the api.famster.app custom-domain alias resolves to this same deployment and goes down with it, and workin On silent pushes stop. Preserve branch recovery/deployed-2026-06-30, the only source for the v100 PickledBalls/PickleFamilia implementation. Rotate the Fly secrets on the assumption they were already exposed."
+      "summary": "CLOSED 2026-08-21: bd-nagzerver is confirmed suspended in Fly and /healthz times out; the shutdown the owner stated on 2026-08-18 is complete. Follow-on work is tracked in the separate nagzerver-shutdown-residue gap. This closes the unpatched v100 exposure (2026-08-15 arbitrary file-read traversal and unauthenticated test-helper exposure) at source. Both consumers were TestFlight-only: PickledBalls is on ice pending Collective Engine, and workin On is being reworked conceptually by the owner. Side effects to expect: the api.famster.app custom-domain alias resolves to this same deployment and goes down with it, and workin On silent pushes stop. Preserve branch recovery/deployed-2026-06-30, the only source for the v100 PickledBalls/PickleFamilia implementation. Rotate the Fly secrets on the assumption they were already exposed."
     },
     {
       "kind": "mastpex-removal-owner-decision",
@@ -2779,6 +3277,56 @@
       "kind": "feedback-collection-machine-scope",
       "observedAt": "2026-08-19",
       "summary": "OPEN, low priority: it is not decided whether App Feedback collection should run on the second Mac as well as the primary. Two machines both collecting would double-count. The specific trigger that kept mailing from the second machine was not reported back, so it is not recorded here."
+    },
+    {
+      "kind": "collective-engine-deployment-drift",
+      "observedAt": "2026-08-21",
+      "summary": "CORRECTED 2026-08-21. The index asserted that Collective Engine had no Fly service, no production database, and no runtime. flyctl shows bd-collective-engine deployed 2026-08-19 and bd-collective-db (Postgres 18.1) created the same day, and live probes return 200 on / and /health. The entity kind was changed from architecture-proposal to backend, its links and release text were corrected, and the service was added to services[] and flyOperations. The record was wrong on the day it was generated, which means the drift arrived faster than the daily refresh caught it. Remaining governance question for the owner: the service is deployed while the architecture freeze the proposal defines is still unapproved and no Release 1 build was authorized."
+    },
+    {
+      "kind": "nagzerver-shutdown-residue",
+      "observedAt": "2026-08-21",
+      "summary": "OPEN. The Nagzerver shutdown is complete, but three dependents were never updated. (1) server-monitor production still probes bd-nagzerver/healthz and has logged 7,755 consecutive failures, so its dashboard sits in a permanent error state. (2) workinon-mcp pushes widget updates through bd-nagzerver by silent APNs and can no longer deliver them. (3) nagz-web has no reachable API tier. Separately, the Fly secrets still need rotation on the assumption they were exposed before the app was turned off, and the bd-nagzerver Redis and Postgres stores remain deployed."
+    },
+    {
+      "kind": "card-engine-local-checkout-drift",
+      "observedAt": "2026-08-21",
+      "summary": "OPEN. ~/card-engine, recorded as the source for the live bd-cardzerver deployment, is 27 commits behind origin/main and 1 ahead, with two modified files and one untracked file in the working tree. The unpushed local commit is 2af7b87 'Add MasterIndex agent handoff'; origin has since gained work including a /metrics caching fix. Reconcile before any change is made to the live backend from this machine. card-engine-backend was moved to not-good-citizen for this reason."
+    },
+    {
+      "kind": "local-model-lab-checkout-location",
+      "observedAt": "2026-08-21",
+      "summary": "CORRECTED 2026-08-21. The index claimed a checkout verified at ~/mlxsrv/local-model-lab on 2026-08-15; neither that path nor ~/mlxsrv exists on this machine. The repository was pushed 2026-08-20, so the lab is active on the owner's second Mac. The repo field is now the remote form and the entity is not-good-citizen because no agent here can verify it. Consequence: the Apple 4+ content-screening run with a 2026-08-17 ETA still has no recorded outcome. Any state audit of this entity must run on the second Mac."
+    },
+    {
+      "kind": "unmapped-fly-apps",
+      "observedAt": "2026-08-21",
+      "summary": "OPEN. Two Fly apps in the personal organization are mentioned only in passing in current/inventory.md and have no MasterIndex entity, repository, or recorded owner decision: bd-arca (suspended, last deploy 2026-06-08) and bd-podcast-brands (suspended, last deploy 2026-06-11). Both have been suspended for over two months. Decide whether to map them to entities or destroy them; a suspended Fly app still holds its name and any attached volumes."
+    },
+    {
+      "kind": "clubsync-db-patch-debt",
+      "observedAt": "2026-08-21",
+      "summary": "OPEN, low urgency. bd-clubsync-db is running and healthy on flyio/postgres-flex 17.2 with 17.7 available, while its application tier stays deliberately undeployed pending the PickledBalls v2 decision. A deferred database still accrues cost and patch debt: either apply flyctl image update or snapshot and destroy it as an explicit decision."
+    },
+    {
+      "kind": "non-app-entity-coverage",
+      "observedAt": "2026-08-21",
+      "summary": "RESOLVED 2026-08-21 for the non-app case. Nineteen repositories existed only in repos[] and therefore fell outside entityCoveragePolicy, which is keyed on entities[].id - among them card-studio, which the owner's global CLAUDE.md lists as an active project, and peerlink, whose absence blocks local PickledBalls builds. Entity records were added for all of them and empty entryTasks keys were created so the coverage policy applies. Standing rule: a repository that matters enough to appear in repos[] needs an entity id, or nothing recurring will ever check it."
+    },
+    {
+      "kind": "grubber-endpoint-notes-stale",
+      "observedAt": "2026-08-21",
+      "summary": "CORRECTED 2026-08-21. Entity notes cited /status and /shows as grubber surfaces; both return 404, as does /. The health endpoint is /healthz (200), /progress returns 200, and /api/v1/updates/recent returns 401 pending authentication. The older report of /status hanging is superseded - that path no longer exists."
+    },
+    {
+      "kind": "public-catalog-stale",
+      "observedAt": "2026-08-21",
+      "summary": "OPEN. https://billdonner.com/apps/ still advertises 19 active apps and still lists Flasherz Kids, whose ASC record the owner deleted on 2026-08-19 and whose app is retired. Regenerating with tools/generate_billdonner_apps.py from the current index yields 18 entries and omits it. The generator output was verified byte-identical to the previous run apart from the entry count and the generated-on date, so republishing is safe. This pass did not publish to IONOS. Pattern to watch: deleting an ASC record does not update the public catalog - the catalog is a generated artifact and must be regenerated and pushed."
+    },
+    {
+      "kind": "masterindex-branch-fork",
+      "observedAt": "2026-08-21",
+      "summary": "OPEN AND HIGH PRIORITY. current/index.json has forked into two actively maintained lineages. This branch (fix/doubleqross-com) carries generatedAt 2026-08-19 with 38 entities before this pass. origin/main carries generatedAt 2026-08-14 but 32 newer commits through 2026-08-21, and its entity set differs: it still holds the two MastPex records the owner deleted, and it adds three entities absent here - oenora-merchant (Fly app bd-oenora-merchant, appeared in the Fly listing between 2026-08-20 and 2026-08-21), collective-comms, and collective-engine. CRITICAL COLLISION: origin/main records the Collective Engine as entity id 'collective-engine' (kind service, cluster 'Pickleball Collective') while this branch records the same system as 'collective-engine-backend' (kind backend, cluster PickledBalls). AGENTS.md requires entities[].id to remain stable, so one id must win and the other must be retired deliberately. Consumers read main - server-monitor resolves masterindex_url against raw.githubusercontent.com/billdonner/masterindex/main - so main is the lineage that is actually published. Do not merge or force-push either direction without an owner decision. A concurrent agent session was active during this pass."
     }
   ],
   "taskRegistry": {

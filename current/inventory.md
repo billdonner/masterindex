@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Sunday, August 16, 2026.
+As of Friday, August 21, 2026.
 
 ## Scope
 
@@ -8,6 +8,7 @@ As of Sunday, August 16, 2026.
 - Applied no handoff directives because `current/handoffs/index.json` has none.
 - Performed the requested retirements, operational fixes, website publications, and feedback-workflow replacement; observed facts and remaining product gaps are kept distinct below.
 - Added explicit `masterIndexStatus` classifications to every entity and tracked repository, and removed the temporary `mixed-citizen` holding tier so every current record is now either `good-citizen` or `not-good-citizen`.
+- **August 21 non-app evaluation pass.** Every entity with `kind != "app"` was verified live against `flyctl`, HTTP health probes, GitHub repository state, and local checkouts. The pass corrected four wrong records, rebuilt the stale `flyOperations` block, and gave entity records to nineteen non-app repositories that previously existed only in `repos[]` and were therefore outside `entityCoveragePolicy`.
 
 ## Executive Summary
 
@@ -15,14 +16,16 @@ As of Sunday, August 16, 2026.
 - LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
-- Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
-- The registry tracks 56 repositories, of which 51 remain active after the feedback replacement, prior retirements, and the `grubber-ios` obsolete decision.
-- Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
-- The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
+- Server Monitor is deployed and its own probes work, but its production config still targets the deliberately suspended Nagzerver and has logged 7,755 consecutive failures there, so the dashboard sits in a permanent error state that no longer signals anything.
+- **Nagzerver is suspended.** The shutdown the owner announced on 2026-08-18 is complete: `flyctl` reports the app suspended and `/healthz` times out. Three dependents were never updated — Server Monitor, `workinon-mcp` widget push, and `nagz-web` — and the Fly secrets still need rotation.
+- **Collective Engine is deployed.** `bd-collective-engine` has been running on Fly since 2026-08-19 with its own `bd-collective-db` Postgres 18.1 cluster, contradicting the previous record that claimed no runtime existed. Its entity kind moved from `architecture-proposal` to `backend`. The architecture freeze the proposal defines is still unapproved.
+- The registry tracks 57 repositories and 57 entities, 34 of which are non-app.
+- Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved. The local-model-lab checkout path was corrected — it is not on this machine.
+- The `billdonner.com/apps` catalog is **stale on IONOS**: the live page still advertises 19 active apps and still lists Flasherz Kids, whose ASC record was deleted 2026-08-19. Regenerating from the current index yields 18 entries and omits it.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
 - The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
-- Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
+- Nagzerver was mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On until its 2026-08-21-verified suspension. Its exact deployed source remains preserved on private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production at the time.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - DoubleQross 1.0 (392) now has refreshed Garland-era iPhone and iPad captures, updated Screenker projects, and exact approval exports scored provisionally at 94 and 93. ASC is unchanged pending human approval.
@@ -33,9 +36,10 @@ As of Sunday, August 16, 2026.
 
 The canonical JSON now makes this explicit instead of leaving it inferred.
 
-- Entities: 26 `good-citizen`, 14 `not-good-citizen`.
-- Repositories: 42 `good-citizen`, 15 `not-good-citizen`.
+- Entities: 35 `good-citizen`, 22 `not-good-citizen`, across 57 records.
+- Repositories: 40 `good-citizen`, 17 `not-good-citizen`.
 - Every `not-good-citizen` entity and repository now carries a machine-readable `masterIndexStatusReason` in `current/index.json`.
+- The August 21 pass moved three previously good entities to `not-good-citizen` on verified evidence: `card-engine-backend` (local checkout diverged from the deployed source), `nagzerver-backend` (suspended with unrotated secrets and stale dependents), and `local-model-lab` (recorded checkout path does not exist here). `portfolio-app-directory` joined them because the live catalog lists a deleted product.
 
 ### Good citizens
 
@@ -210,6 +214,7 @@ byte. Source, restore commands, and recovery-key instructions are in `~/app-feed
 - Clubsync is no longer a monitored production target.
 - Live `/api/status` reported seven configured targets and successful HTTP 200 probes for Nagzerver and Cardzerver.
 - Remaining yellow/red display values are database thresholds such as cache rate and historical failed deliveries, not failed endpoint checks.
+- **Superseded 2026-08-21.** The Nagzerver HTTP target now fails permanently because the service was intentionally suspended — 7,755 consecutive failures at last check — so the dashboard reports a standing 1-errored-of-7 state. Remove or explicitly retire that target; the Nagzerver Redis and Postgres targets still probe successfully and can stay.
 
 ### Version and build drift
 
@@ -264,18 +269,23 @@ Unmatched or intentionally retained:
 
 ## Services
 
+All states below were verified live on 2026-08-21.
+
 | Service | Source | State | Consumers |
 |---|---|---|---|
-| bd-nagzerver.fly.dev | ~/nagzerver | live | Nagz, workin On, PickledBalls, legacy PickleFamilia |
-| bd-cardzerver.fly.dev | ~/card-engine | live | Qross, Flasherz Kids, Cardz Studio, card-studio |
+| bd-cardzerver.fly.dev | ~/card-engine | live | Qross, Cardz Studio, card-studio |
 | bd-grubber.fly.dev | ~/grubber | live | SentiPods, grubber clients |
 | bd-server-monitor.fly.dev | ~/server-monitor | live | operations, Zerver Monitor |
 | bd-pfolio.fly.dev | github:billdonner/pfolio | live | Pfoliolio |
-| api.famster.app | ~/nagzerver | alias | Famster concept shell; same deployment and API as Nagzerver |
 | bd-oenora-recognition.fly.dev | ~/oenora | live | Oenora |
+| bd-collective-engine.fly.dev | ~/collective-engine | live | none yet — deployed prototype, not a production dependency |
+| bd-nagzerver.fly.dev | ~/nagzerver | **suspended** | shutdown complete; former consumers now stranded |
+| api.famster.app | ~/nagzerver | **down** | alias to the suspended Nagzerver deployment |
 | bd-clubsync.fly.dev | ~/clubsync | deferred | PickledBalls v2 only |
 
-Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca` and `bd-podcast-brands`.
+Health endpoints differ per service and are not interchangeable: Grubber and Nagzerver use `/healthz`; Card Engine, pfolio, Oenora Recognition, and Collective Engine use `/health`. On Grubber, `/`, `/status`, and `/shows` all return 404 — earlier notes citing them were wrong.
+
+Fly also contains deployed infrastructure apps `bd-postgres`, `bd-clubsync-db`, and `bd-collective-db`, plus suspended `bd-arca` and `bd-podcast-brands`. `bd-arca` and `bd-podcast-brands` have no entity, no repository, and no recorded owner decision — only this narrative mention. `bd-clubsync-db` is on `flyio/postgres-flex` 17.2 with 17.7 available, so the deferred database carries patch debt as well as cost.
 
 ### Nagzerver source recovery
 
@@ -377,8 +387,8 @@ assigned workin On exclusively to the permanently free BillDonner.com line, maki
 
 ## Preserved Main-Only Facts
 
-- `local-model-lab` is active again as a lab. The live checkout is `~/mlxsrv/local-model-lab`, the canonical old-corpus leaderboard has been repaired, and Apple 4+ content-screening is now running against the 190,941-question corpus.
-- `adspill` remains a two-person advertising-capacity research sandbox.
+- `local-model-lab` is active as a lab and the canonical old-corpus leaderboard has been repaired. **Corrected 2026-08-21:** the checkout is *not* on this machine — neither `~/mlxsrv/local-model-lab` nor `~/mlxsrv` exists here. The repository was pushed 2026-08-20, so the lab runs on the owner's second Mac and must be audited there. The Apple 4+ content-screening run with a 2026-08-17 ETA therefore has no recorded outcome.
+- `adspill` remains a two-person advertising-capacity research sandbox, and is now explicitly parked: no pushes since 2026-07-29, Bill in an observer role, and no activity expected until the Northwoods League in-stream ad-rights question is answered.
 - The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
 - Oenora's public TestFlight invite, approved build 6, submitted build 7 with sealed-case tracking, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
 
@@ -394,6 +404,18 @@ assigned workin On exclusively to the permanently free BillDonner.com line, maki
 - Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 - Nagzerver Git `main` does not reproduce the deployed PickledBalls and PickleFamilia API. The exact deployed source is preserved on `recovery/deployed-2026-06-30`, but its one failing schedule test must be resolved before review and merge.
 - SharedSpaceLab's public product name, product-line assignment, business model, and eventual server boundary remain undecided. Famster must not be expanded as a parallel implementation while those decisions are open.
+
+### Opened by the August 21 non-app pass
+
+- **The index has forked — resolve before anything else.** `current/index.json` exists in two actively maintained lineages. This branch (`fix/doubleqross-com`) has the newer `generatedAt` (2026-08-19); `origin/main` has the newer commits (32 of them, through 2026-08-21) and three entities absent here — `oenora-merchant`, `collective-comms`, and `collective-engine` — while still carrying the two MastPex records the owner deleted. The same system is recorded under two different ids: `collective-engine` on main, `collective-engine-backend` here. Consumers read main, so main is the published lineage. Do not merge or force-push either direction without an owner decision.
+- **Fly app status is not a liveness signal.** `bd-oenora-recognition` reads `suspended` in `flyctl apps list` because it is scale-to-zero, yet `/health` returns 200 after a ~2s cold start. Nagzerver's shutdown was confirmed the reliable way instead — `flyctl machines list` reports no machines at all, and `/healthz` times out at 30s.
+- **Nagzerver shutdown residue.** Server Monitor still probes the dead endpoint, `workinon-mcp` can no longer deliver silent-APNs widget updates, `nagz-web` has no reachable API tier, and the Fly secrets are still unrotated on the assumption they were exposed before the app was turned off.
+- **Card Engine local checkout drift.** `~/card-engine` is 27 commits behind and 1 ahead of `origin/main` with a dirty working tree, so the recorded source for the live `bd-cardzerver` deployment is not trustworthy. Reconcile before editing the backend from this machine.
+- **Collective Engine governance.** The service is deployed with a production database while the architecture freeze its own proposal defines is still unapproved and no Release 1 build was authorized. The record is now accurate; the decision is the owner's.
+- **Unmapped Fly apps.** `bd-arca` and `bd-podcast-brands` have been suspended for over two months with no entity, repository, or decision. Map or destroy them — a suspended app still holds its name and any attached volumes.
+- **Public catalog stale.** `billdonner.com/apps` advertises 19 apps and lists deleted Flasherz Kids. The generator now produces 18 and its output is otherwise byte-identical, so republishing is safe; this pass did not publish to IONOS.
+- **Clubsync database patch debt.** `bd-clubsync-db` runs healthy on Postgres-flex 17.2 with 17.7 available while its application tier stays undeployed. Either update the image or snapshot and destroy it as an explicit decision.
+- **Entity coverage rule.** Nineteen repositories — including `card-studio`, listed as an active project in the owner's global `CLAUDE.md`, and `peerlink`, whose absence blocks local PickledBalls builds — existed only in `repos[]` and so were never touched by `entityCoveragePolicy`, which is keyed on `entities[].id`. They now have entity records and empty `entryTasks` keys. Standing rule: a repository that matters enough to appear in `repos[]` needs an entity id, or nothing recurring will ever check it.
 
 ## Operational Rule
 
