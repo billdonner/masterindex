@@ -27,6 +27,7 @@ As of Thursday, August 21, 2026.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 - KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
 - Pickleball Collective now has two active local sources: Collective Engine is the deployed multi-tenant scheduler, and Collective Comms is the approval-gated dedicated-Mac messaging utility. Neither is an App Store product.
+- Collective Engine now emits file-based, RFC 8785-canonical handoff payloads with verification tooling. Collective Comms now defaults one-to-one delivery to SMS, supports explicit overrides, and surfaces invalid Messages targets rather than silently dropping sends.
 
 ## Product Lines
 
