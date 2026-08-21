@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Friday, August 14, 2026.
+As of Thursday, August 21, 2026.
 
 ## Scope
 
@@ -26,6 +26,7 @@ As of Friday, August 14, 2026.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 - KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
+- Pickleball Collective now has two active local sources: Collective Engine is the deployed multi-tenant scheduler, and Collective Comms is the approval-gated dedicated-Mac messaging utility. Neither is an App Store product.
 
 ## Product Lines
 
