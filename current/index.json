@@ -1747,9 +1747,9 @@
     "github": "https://github.com/billdonner/oenora-merchant"
    },
    "notes": [
-    "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog).",
-    "shop/ state is committed to the repo as the audit trail; decisions.json is the agent-judgement input, consumed once per tick.",
-    "Perpetual loop LIVE 2026-08-20: launchd agent com.billdonner.oenora-merchant runs scripts/merchant-day.sh daily 06:30 — headless claude -p writes decisions.json, engine ticks a simulated week, commits+pushes. Local-only (OenoraCore needs Apple frameworks)."
+    "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog); shop/ state committed to the repo as the audit trail.",
+    "Perpetual loop runs on Fly: app bd-oenora-merchant, hourly scheduled machine 'merchant-tick' (ord) trades one sim day per run and pushes shop/ via a repo deploy key; judgement via Claude API (claude-opus-5) every 7th sim day. Deploy engine changes with scripts/fly-deploy.sh.",
+    "OenoraCore made Linux-portable for this (CloudKit canImport-gated, swift-crypto on Linux). Local launchd loop removed 2026-08-20; merchant-day.sh kept as offline fallback only."
    ]
   }
  ],
