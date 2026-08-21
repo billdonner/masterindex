@@ -1786,7 +1786,8 @@
    "notes": [
     "Release 1 uses PostgreSQL tenancy and row-level security; unconfigured auth, email, push, or secret settings disable their related routes rather than accepting unverified input.",
     "Trial auctions are non-mutating and notify nobody; publishing requires a reviewed code.",
-    "2026-08-21: fixed the downstream handoff payload capacity invariant and made its digest RFC 8785 canonical; handoff payloads can now be verified and written to a file."
+    "2026-08-21: fixed the downstream handoff payload capacity invariant and made its digest RFC 8785 canonical; handoff payloads can now be verified and written to a file.",
+    "2026-08-21: recorded a Tuesday court split required by the handoff format; it is explicitly non-authoritative and does not alter auction policy."
    ]
   },
   {
@@ -1809,7 +1810,8 @@
    "notes": [
     "Publication is blocked by unresolved or ambiguous players and requires typed approval; every send is recorded in a fsynced append-only ledger to prevent duplicate delivery after crashes.",
     "Group messages are sent only to an existing Messages conversation with exactly the intended participants; the utility never creates or broadens a group thread.",
-    "2026-08-21: explicit carrier configuration defaults one-to-one sends to SMS, supports per-recipient overrides, and resolves chats before sending so a bad identifier is reported rather than silently dropped."
+    "2026-08-21: explicit carrier configuration defaults one-to-one sends to SMS, supports per-recipient overrides, and resolves chats before sending so a bad identifier is reported rather than silently dropped.",
+    "2026-08-21: confirmed the original iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three."
    ]
   }
  ],
