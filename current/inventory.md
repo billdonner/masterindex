@@ -15,7 +15,7 @@ As of Thursday, August 21, 2026.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
-- The registry tracks 56 repositories, of which 51 remain active after the feedback replacement, prior retirements, and the `grubber-ios` obsolete decision.
+- The registry tracks 57 repositories, of which 52 remain active after the feedback replacement, prior retirements, and the `grubber-ios` obsolete decision.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
@@ -32,6 +32,7 @@ As of Thursday, August 21, 2026.
 - Collective Engine now exposes court-seat capacity and attendance limit separately, preventing a rotational opening from being shown to a player as a full day.
 - Collective Engine now labels rotations clearly for bookers. Collective Comms can append an iMessage-only weekly calendar attachment after the text send; SMS is intentionally excluded and attachment failure cannot affect the text-delivery record.
 - Collective Engine's Fly deployment has a healthy `/health` endpoint, but its intended `collective.1041soft.com` host is still NXDOMAIN; publish that DNS record and the corresponding exact-match Auth0 URLs before calling it publicly reachable. Collective Comms now verifies the producer's canonical handoff digest and blocks publication on a mismatch.
+- Review Authority is an active local, read-only review controller. Its Milestone 1 vertical slice can inspect a registered build source, redact and content-address evidence, request a bounded cloud critique, and retain an audit record; it has no public release, UI, correction loop, or configured Git remote.
 
 ## Product Lines
 

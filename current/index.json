@@ -41,7 +41,7 @@
   "ascApps": 23,
   "mappedAscApps": 20,
   "unmatchedAscApps": 3,
-  "activeRepos": 53,
+  "activeRepos": 54,
   "clusters": 15,
   "liveServices": 7,
   "collaborators": 3,
@@ -1617,6 +1617,31 @@
    ]
   },
   {
+   "id": "review-authority",
+   "name": "Review Authority",
+   "kind": "tool",
+   "cluster": "Standalone",
+   "status": "active",
+   "lastModified": "2026-08-22",
+   "repo": "~/review-authority",
+   "bundleId": null,
+   "release": "Milestone 1 local read-only vertical slice is complete; no App Store, public website, correction loop, consensus flow, or UI observed.",
+   "description": "Deterministic review controller that brokers bounded, redacted build evidence from a Product Authority source to replaceable cloud critics and records an append-only audit trail.",
+   "dependencies": [
+    "oenora"
+   ],
+   "links": {
+    "website": null,
+    "appStore": null
+   },
+   "notes": [
+    "The completed M1 slice supports a local Git-inspection source and a private-network M3 source through the same boundary; it was exercised end to end against ~/oenora with one Claude Opus 5 critic.",
+    "Read-only behavior is enforced in code: Git inspection is allowlisted, M3 requests refuse non-private hosts and write-class operations, named decisions remain advisory-only, and evidence containing key material is refused egress rather than redacted.",
+    "Evidence is deterministically redacted and content-addressed. Critic claims that cite evidence not supplied to that critic are discarded; provider, model, rubric, evidence IDs, tokens, and cost are retained in the append-only audit trail.",
+    "Observed 2026-08-22: repository has no configured remote, so ~/review-authority is the only verified locator."
+   ]
+  },
+  {
    "id": "local-model-lab",
    "name": "local-model-lab (mlxsrv)",
    "kind": "service",
@@ -2403,6 +2428,13 @@
    "last2026Commit": "2026-08-22",
    "kind": "local operations tool",
    "role": "Dedicated-Mac, approval-gated Apple Messages communications utility with explicit carrier configuration and visible send failures"
+  },
+  {
+   "repo": "~/review-authority",
+   "branch": "main",
+   "last2026Commit": "2026-08-22",
+   "kind": "local review infrastructure",
+   "role": "Active deterministic, read-only build-review controller with bounded evidence, cloud critic adapters, and append-only audit records"
   }
  ],
  "gaps": [
