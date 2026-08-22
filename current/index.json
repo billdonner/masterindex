@@ -1612,7 +1612,8 @@
     "Each successful collection creates an AES-256 encrypted snapshot under iCloud Drive/AppFeedback Backups, verifies its checksum, fully decrypts it, validates items.json, and retains recent copies for 14 days, daily copies for 90 days, and monthly copies for two years.",
     "The backup key is stored in the login Keychain as com.billdonner.app-feedback.backup (fingerprint d929fd31f130433b). The first 2026-08-14 snapshot was independently restored and matched the 41-item live store byte-for-byte.",
     "The private zkraper and asc-feedback repositories carry replacement notices and were archived after this dashboard passed end-to-end verification.",
-    "Observed 2026-08-22: unchanged collections skip duplicate snapshot publication using a substantive-content digest; a forced snapshot at least every seven days prevents the recovery chain from going stale."
+    "Observed 2026-08-22: unchanged collections skip duplicate snapshot publication using a substantive-content digest; a forced snapshot at least every seven days prevents the recovery chain from going stale.",
+    "Observed 2026-08-22: retention now uses a local ledger of published archives because the launchd context cannot enumerate iCloud Drive; skipped collection cycles also advance retention, and the existing seven archives were seeded into the ledger."
    ]
   },
   {
@@ -1772,10 +1773,10 @@
    "kind": "service",
    "cluster": "Pickleball Collective",
    "status": "live",
-   "lastModified": "2026-08-21",
+   "lastModified": "2026-08-22",
    "repo": "~/collective-engine",
    "bundleId": null,
-   "release": "Release 1 is deployed at bd-collective-engine.fly.dev; automation channels remain unconfigured by default.",
+   "release": "Release 1 is deployed with a healthy Fly service at bd-collective-engine.fly.dev; automation channels remain unconfigured by default. Its intended public host, collective.1041soft.com, is not yet published.",
    "description": "Multi-tenant pickleball scheduling service with preference capture, court reservations, a deterministic balancing auction, review and publication workflows, and an authorized MCP surface.",
    "dependencies": [
     "collective-comms"
@@ -1790,7 +1791,8 @@
     "2026-08-21: fixed the downstream handoff payload capacity invariant and made its digest RFC 8785 canonical; handoff payloads can now be verified and written to a file.",
     "2026-08-21: recorded a Tuesday court split required by the handoff format; it is explicitly non-authoritative and does not alter auction policy.",
     "2026-08-22: corrected player-facing availability to distinguish court-seat capacity from the attendance limit, so a rotational opening is not incorrectly reported as full.",
-    "2026-08-22: booker views now name a rotation rather than presenting it as an impossible seat count."
+    "2026-08-22: booker views now name a rotation rather than presenting it as an impossible seat count.",
+    "Observed 2026-08-22: Fly reports one started machine, a healthy PostgreSQL cluster, and HTTP 200 at /health. collective.1041soft.com remains NXDOMAIN, so the deployed service is not reachable at its intended Release 1 host; adding the DNS record also requires exact-match Auth0 URL updates."
    ]
   },
   {
@@ -1799,7 +1801,7 @@
    "kind": "tool",
    "cluster": "Pickleball Collective",
    "status": "active",
-   "lastModified": "2026-08-21",
+   "lastModified": "2026-08-22",
    "repo": "~/collective-comms",
    "bundleId": null,
    "release": "Local dedicated-Mac operations tool; no App Store or public web release observed.",
@@ -1815,7 +1817,8 @@
     "Group messages are sent only to an existing Messages conversation with exactly the intended participants; the utility never creates or broadens a group thread.",
     "2026-08-21: explicit carrier configuration defaults one-to-one sends to SMS, supports per-recipient overrides, and resolves chats before sending so a bad identifier is reported rather than silently dropped.",
     "2026-08-21: confirmed the original iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three.",
-    "2026-08-22: iMessage recipients may receive an optional per-week calendar attachment after the text send. SMS is excluded because carriers may strip attachments; attachment failure cannot change the primary message outcome or duplicate fingerprint."
+    "2026-08-22: iMessage recipients may receive an optional per-week calendar attachment after the text send. SMS is excluded because carriers may strip attachments; attachment failure cannot change the primary message outcome or duplicate fingerprint.",
+    "Observed 2026-08-22: the importer recomputes and verifies the producer's SHA-256 digest over the RFC 8785-canonical groups payload; a mismatch blocks publication and cannot be bypassed by tentative-allocation approval."
    ]
   }
  ],
@@ -1990,7 +1993,7 @@
     "Collective Comms",
     "OO Pickleball Collective operations"
    ],
-   "note": "Deployed multi-tenant scheduling service; notification channels are intentionally disabled until explicitly configured.",
+   "note": "Deployed multi-tenant scheduling service; notification channels are intentionally disabled until explicitly configured. The Fly health endpoint is live, but collective.1041soft.com is not yet published.",
    "status": "live"
   }
  ],
@@ -2390,14 +2393,14 @@
   {
    "repo": "~/collective-engine",
    "branch": "main",
-   "last2026Commit": "2026-08-21",
+   "last2026Commit": "2026-08-22",
    "kind": "backend/service",
    "role": "Deployed multi-tenant pickleball scheduling engine with auction, review, MCP operations, and canonical verified handoff payloads"
   },
   {
    "repo": "~/collective-comms",
    "branch": "main",
-   "last2026Commit": "2026-08-21",
+   "last2026Commit": "2026-08-22",
    "kind": "local operations tool",
    "role": "Dedicated-Mac, approval-gated Apple Messages communications utility with explicit carrier configuration and visible send failures"
   }
