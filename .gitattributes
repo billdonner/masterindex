@@ -1,0 +1,12 @@
+# current/index.json must never be merged line by line.
+#
+# On 2026-08-22 a textual merge of the two lineages resolved exactly one line by
+# itself, produced structurally invalid JSON, and silently emitted a duplicate
+# entity id, recorded one system as two entities under different ids, and
+# resurrected records the owner had deleted. None of it appeared as a conflict.
+#
+# merge=binary makes git stop and hand over both sides intact instead of
+# inventing a plausible-looking corrupt file. Resolve by construction, then run
+# tools/validate-index.py before committing.
+current/index.json merge=binary
+tasks/index.json  merge=binary

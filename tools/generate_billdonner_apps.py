@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import html
 import json
+from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlparse
 
@@ -105,6 +106,12 @@ def shell(title: str, description: str, body: str) -> str:
 '''
 
 
+def index_date(data: dict) -> str:
+    """Render the index's generatedAt as a human date, so the catalog never claims a stale one."""
+    stamp = datetime.fromisoformat(data["generatedAt"])
+    return f"{stamp.strftime('%B')} {stamp.day}, {stamp.year}"
+
+
 def generate_catalog(data: dict) -> str:
     mapped_bundles = {item["bundleId"] for item in data["ascApps"]["mapped"]}
     apps = [
@@ -117,15 +124,16 @@ def generate_catalog(data: dict) -> str:
     store = [app for app in apps if (app.get("links") or {}).get("appStore")]
     beta = [app for app in apps if not (app.get("links") or {}).get("appStore") and (app.get("links") or {}).get("testFlight")]
     development = [app for app in apps if app not in store and app not in beta]
+    generated = index_date(data)
     body = f'''  <header class="hero wrap">
     <p class="kicker">Everything I'm building</p><h1>Apps</h1>
-    <p class="lead">{len(apps)} active apps, reconciled against App Store Connect and their source repositories on August 14, 2026.</p>
+    <p class="lead">{len(apps)} active apps, reconciled against App Store Connect and their source repositories on {esc(generated)}.</p>
   </header>
   <main class="wrap">
 {section('On the App Store', 'Published and downloadable right now.', store, 'App Store', 'live')}
 {section('Open TestFlight betas', 'Public betas available through Apple TestFlight.', beta, 'TestFlight', 'beta')}
 {section('In development', 'Mapped in App Store Connect and still in active development.', development, 'In development', '')}
-    <section><h2>Colophon</h2><p style="color:var(--ink-soft)">Generated from the MasterIndex canonical inventory on August 14, 2026. Archived products are omitted.</p></section>
+    <section><h2>Colophon</h2><p style="color:var(--ink-soft)">Generated from the MasterIndex canonical inventory on {esc(generated)}. Archived products are omitted.</p></section>
   </main>'''
     return shell("Apps - Bill Donner", "Bill Donner's active App Store, TestFlight, and in-development apps.", body)
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T22:43:41-05:00",
+  "generatedAt": "2026-08-22T10:00:00-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -77,6 +77,7 @@
     }
   ],
   "entryTasks": {
+    "mallinbook-app": [],
     "pickledballs-app": [
       {
         "taskId": "pickledballs-link-and-release-check",
@@ -241,6 +242,7 @@
     ],
     "grubber-service": [],
     "grubber-ios-app": [],
+    "sentipods-app": [],
     "nagzerver-backend": [
       {
         "taskId": "nagzerver-health-check",
@@ -309,18 +311,17 @@
     ],
     "conversationlab-package": [],
     "coordinationlab-package": [],
-    "amenbeats-app": [],
-    "mallinbook-app": [],
-    "sentipods-app": [],
     "words123-app": [],
+    "pfolio-app": [],
     "pfolio-backend": [],
     "oenora-app": [],
-    "company-site-1041soft": [],
-    "portfolio-app-directory": [],
-    "pfolio-app": [],
-    "picklefamilia-asc-app": [],
+    "amenbeats-app": [],
     "screenker-asc-app": [],
     "zerver-monitor-asc-app": [],
+    "picklefamilia-asc-app": [],
+    "collective-engine-backend": [],
+    "company-site-1041soft": [],
+    "portfolio-app-directory": [],
     "app-feedback-inbox": [
       {
         "taskId": "app-feedback-operational-check",
@@ -346,46 +347,27 @@
     ],
     "local-model-lab": [],
     "adspill-sim": [],
-    "mastpex-ios-asc-app": [
-      {
-        "taskId": "mastpex-ios-testflight-continuity",
-        "name": "MastPex iOS TestFlight continuity",
-        "status": "active",
-        "cadence": {
-          "kind": "rrule",
-          "value": "FREQ=MONTHLY;INTERVAL=1"
-        },
-        "purpose": "Keep the internal MastPex iOS build usable through TestFlight without creating a public release train.",
-        "expectedInputs": [
-          "current/index.json",
-          "App Store Connect build and TestFlight state"
-        ],
-        "expectedOutputs": [
-          "Recorded current build expiration and tester availability",
-          "A build-refresh gap when continuity cannot reach the next monthly check"
-        ]
-      }
-    ],
-    "mastpex-macos-asc-app": [
-      {
-        "taskId": "mastpex-mac-testflight-continuity",
-        "name": "MastPex Mac TestFlight continuity",
-        "status": "active",
-        "cadence": {
-          "kind": "rrule",
-          "value": "FREQ=MONTHLY;INTERVAL=1"
-        },
-        "purpose": "Keep the internal MastPex Mac build usable through TestFlight without creating a public release train.",
-        "expectedInputs": [
-          "current/index.json",
-          "App Store Connect build and TestFlight state"
-        ],
-        "expectedOutputs": [
-          "Recorded current build expiration and tester availability",
-          "A build-refresh gap when continuity cannot reach the next monthly check"
-        ]
-      }
-    ],
-    "oenora-recognition-service": []
+    "oenora-recognition-service": [],
+    "card-studio-admin": [],
+    "kit1041-package": [],
+    "courtscheduler-package": [],
+    "sharedai-package": [],
+    "peerlink-package": [],
+    "nagz-ai-package": [],
+    "nagz-web-client": [],
+    "workinon-mcp-tool": [],
+    "flyz-deploy-tooling": [],
+    "qross-data-pulse": [],
+    "adology-pulse-tool": [],
+    "nagz-docs-hub": [],
+    "obo-docs-hub": [],
+    "nagging-systems-requirements-docs": [],
+    "company-admin-1041soft": [],
+    "bookmaker-reference-engine": [],
+    "billdonner-github-pages": [],
+    "zkraper-tool": [],
+    "asc-feedback-tool": [],
+    "collective-comms": [],
+    "oenora-merchant": []
   }
 }
