@@ -30,6 +30,7 @@ As of Thursday, August 21, 2026.
 - Collective Engine now emits file-based, RFC 8785-canonical handoff payloads with verification tooling. Collective Comms now defaults one-to-one delivery to SMS, supports explicit overrides, and surfaces invalid Messages targets rather than silently dropping sends.
 - Operational evidence on August 21 confirmed that an iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three. The scheduler also records its handoff-only Tuesday court split as non-authoritative.
 - Collective Engine now exposes court-seat capacity and attendance limit separately, preventing a rotational opening from being shown to a player as a full day.
+- Collective Engine now labels rotations clearly for bookers. Collective Comms can append an iMessage-only weekly calendar attachment after the text send; SMS is intentionally excluded and attachment failure cannot affect the text-delivery record.
 
 ## Product Lines
 
