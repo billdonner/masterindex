@@ -1787,7 +1787,8 @@
     "Release 1 uses PostgreSQL tenancy and row-level security; unconfigured auth, email, push, or secret settings disable their related routes rather than accepting unverified input.",
     "Trial auctions are non-mutating and notify nobody; publishing requires a reviewed code.",
     "2026-08-21: fixed the downstream handoff payload capacity invariant and made its digest RFC 8785 canonical; handoff payloads can now be verified and written to a file.",
-    "2026-08-21: recorded a Tuesday court split required by the handoff format; it is explicitly non-authoritative and does not alter auction policy."
+    "2026-08-21: recorded a Tuesday court split required by the handoff format; it is explicitly non-authoritative and does not alter auction policy.",
+    "2026-08-22: corrected player-facing availability to distinguish court-seat capacity from the attendance limit, so a rotational opening is not incorrectly reported as full."
    ]
   },
   {
