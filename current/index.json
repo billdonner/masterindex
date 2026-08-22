@@ -1408,7 +1408,7 @@
    "kind": "app",
    "cluster": "Standalone",
    "status": "asc-mapped",
-   "lastModified": "2026-08-17",
+   "lastModified": "2026-08-22",
    "repo": "~/oenora",
    "bundleId": "com.billdonner.oenora",
    "release": "ASC iOS 1.0 build 7 VALID, submitted to the external Founders Beta (adds sealed-case tracking; build 6 remains approved and available); public TestFlight exists. Native OenoraMac uses Developer ID bundle com.billdonner.oenora.mac and has been notarized and delivered; the existing ASC MAC_OS record under com.billdonner.oenora has no builds.",
@@ -1446,7 +1446,8 @@
     "2026-08-14: recognition token was rotated and verified live, CloudKit schema was deployed to Production, and TestFlight build 6 was approved for the external Founders Beta with Jon auto-notified. The native Mac app was notarized for Developer ID distribution, delivered as a stapled zip, and verified syncing with iOS build 6 through Production CloudKit.",
     "2026-08-14: added sealed-case tracking (SealedCase: exterior-readable identity, 3/6/12 case size, bottle format, shelf location; Cases view in the Cellar tab) for Jon's ~140 shelves of unopened wooden cases. Cross-device sync verified iPad-to-iPad in Development; SealedCase record type deployed to Production. Uploaded as build 7 and submitted to the external Founders Beta. Case deletion does not yet propagate between devices (no tombstones).",
     "2026-08-17: Mac app moved to TestFlight via universal purchase (shared bundle, macOS builds 2-6); renamed product to Oenora; added Guide window, ⌘, Settings, and the Research section — AI cellar queries routed through /v1/research on the recognition proxy (provider-advertised choice, strict schema, synced ResearchNotes, drinking windows applied to Vintage only via explicit Apply per ADR-008). Jon invited as internal ASC tester for instant builds. Oenora marketing page added to billdonner.com/apps (pending SFTP upload).",
-    "2026-08-17 evening: iPad promoted to full desk role after Jon's Mac failed — hard idiom fork at the app root gives iPhone and iPad entirely separate view trees (only OenoraCore and non-visual services shared; research client and suggestion filtering moved into core). iPad gains sidebar shell, card cellar, finger-scaled rack map, case grid, full Research with GPT/Claude choice, iPad-designed capture-and-confirm, Safety, Guide. Shipped as iOS build 9: internal group immediately, external WAITING_FOR_REVIEW."
+    "2026-08-17 evening: iPad promoted to full desk role after Jon's Mac failed — hard idiom fork at the app root gives iPhone and iPad entirely separate view trees (only OenoraCore and non-visual services shared; research client and suggestion filtering moved into core). iPad gains sidebar shell, card cellar, finger-scaled rack map, case grid, full Research with GPT/Claude choice, iPad-designed capture-and-confirm, Safety, Guide. Shipped as iOS build 9: internal group immediately, external WAITING_FOR_REVIEW.",
+    "2026-08-22: ADR-009 — Offering (asking price) + IndicationOfInterest (buyer contact) shipped: domain model, CloudKit sync, and phone UI (list/manage from Cellar menu). No commerce mechanism — a sale is still ordinary removeBottle. Not yet in a TestFlight build (project.yml unbumped); website/privacy/App Store copy updated to describe it."
    ]
   },
   {
@@ -1777,7 +1778,7 @@
    "kind": "tool",
    "cluster": "Oenora",
    "status": "active",
-   "lastModified": "2026-08-20",
+   "lastModified": "2026-08-22",
    "repo": "~/oenora-merchant",
    "description": "Perpetual simulated wine merchant: deterministic Swift market engine that builds and vends a synthetic inventory as a real Oenora CellarSnapshot. Replaces oenora's generate-synthetic-cellar.py; serves as living test harness and demo-cellar factory.",
    "dependencies": [
@@ -1787,9 +1788,10 @@
     "github": "https://github.com/billdonner/oenora-merchant"
    },
    "notes": [
-    "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog); shop/ state committed to the repo as the audit trail.",
     "Perpetual loop runs on Fly: app bd-oenora-merchant, hourly scheduled machine 'merchant-tick' (ord) trades one sim day per run and pushes shop/ via a repo deploy key; judgement via Claude API (claude-opus-5) every 7th sim day. Deploy engine changes with scripts/fly-deploy.sh.",
-    "OenoraCore made Linux-portable for this (CloudKit canImport-gated, swift-crypto on Linux). Local launchd loop removed 2026-08-20; merchant-day.sh kept as offline fallback only."
+    "OenoraCore made Linux-portable for this (CloudKit canImport-gated, swift-crypto on Linux). Local launchd loop removed 2026-08-20; merchant-day.sh kept as offline fallback only.",
+    "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog); shop/ state committed to the repo as the audit trail.",
+    "2026-08-22: wired to real Offering/IndicationOfInterest records (matching oenora's ADR-009) instead of an internal-only pricebook — every racked bottle gets a listing at intake, selling records a buyer IndicationOfInterest and withdraws it, the published catalog reads Offering records directly. Backfilled the live shop's pre-existing ~130 bottles. Fly image bumped to swift:6.1 (swift-asn1 needs tools 6.1)."
    ]
   },
   {
