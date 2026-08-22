@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T00:00:00-05:00",
+  "generatedAt": "2026-08-22T10:00:00-05:00",
   "scope": {
     "dateLabel": "Friday, August 21, 2026",
     "defaultSort": "most-recently-modified",
@@ -242,7 +242,7 @@
         "nextAction": "Keep the legacy reference gallery as historical evidence only."
       },
       {
-        "entityId": "famster-ios-app",
+        "entityId": "famster-app",
         "lane": "archive-no-work",
         "boardState": "archived-no-work",
         "priority": 19,
@@ -887,6 +887,19 @@
       "watchpoints": [
         "Local source repositories are still unverified.",
         "Verified public product pages exist, but no standalone source repository was found in the latest scan."
+      ]
+    },
+    {
+      "name": "Pickleball Collective",
+      "maturity": "active scheduling engine and local operations tooling",
+      "summary": "Multi-tenant pickleball scheduling engine paired with a dedicated-Mac communications utility for the OO Pickleball Collective.",
+      "highlights": [
+        "collective-engine",
+        "collective-comms"
+      ],
+      "watchpoints": [
+        "The engine is deployed, but notification channels require explicit provider configuration.",
+        "Collective Comms sends only after a typed approval and requires pre-existing exact Messages group threads."
       ]
     }
   ],
@@ -1868,11 +1881,11 @@
         "2026-08-18: ADR-001 (shared APNs delivery) is partly superseded by ADR-003. An APNsChannel delivering to Collective members is permitted, with Release 1 inclusion still an open section 20 scope question. The shared POST /push/v1/send relay for workin On is rejected.",
         "2026-08-18: ADR-002 (metered AI reflector) is rejected as scoped by ADR-003. Its key-custody finding stands and is unaffected: KinFlash holds provider keys in end-user Keychains. Section 4 encryption is now implemented here as SecretCipher with a versioned key ring, rotation without downtime, and loud failure on a retired key; it secures this service only and is a reference implementation, not an offer to hold other apps credentials.",
         "2026-08-18: decisions live in docs/decisions/ per the qross and oenora convention. Concurrent sessions work in this repository; ADR numbering is claimed through 003.",
-        "2026-08-21: CORRECTS the prior 'nothing is deployed' posture, which was already stale when the August 19 index was generated. flyctl reports bd-collective-engine deployed on 2026-08-19 (two machines in dfw, one started and one stopped) and bd-collective-db running flyio/postgres-flex 18.1, created 2026-08-19T02:57Z. Live probes returned HTTP 200 on / and /health; /healthz and /api/v1/health are 404.",
+        "2026-08-21: CORRECTS the prior 'nothing is deployed' posture, which was already stale when the August 19 index was generated. flyctl reports bd-collective-engine deployed (two machines in dfw, one started and one stopped). CORRECTED 2026-08-22 from the session holding ~/collective-engine: machine version is 20, not 16, and the latest deploy is 2026-08-21T01:41Z, not 2026-08-19 -- the 08-19 date is the database cluster's creation date and the engine has been deployed twice since. That session also settled status: the architecture proposal designates https://collective.1041soft.com as the Release 1 canonical URL and calls the fly.dev hostname an infrastructure alias, not user-facing; collective.1041soft.com does not serve (curl returns 000), so no member can reach the system at the address Release 1 defines and 'live' would be wrong on the index's own terms. Status stays active-prototype. Do not source status from ~/collective-engine/README.md line 6, which still says 'Not deployed. No production database exists.' and is known false. and bd-collective-db running flyio/postgres-flex 18.1, created 2026-08-19T02:57Z. Live probes returned HTTP 200 on / and /health; /healthz and /api/v1/health are 404.",
         "2026-08-21: the entity kind was changed from architecture-proposal to backend. The record is no longer a planning artifact - it describes a running service with its own database.",
         "2026-08-21: open governance question, not a defect - the service is deployed while ADR-level architecture freeze is still unapproved and no Release 1 build was authorized. Deployment happened ahead of the approval gate the proposal defines."
       ],
-      "release": "Release 1 bounded monolith deployed to Fly as bd-collective-engine (machine version 16, deployed 2026-08-19) with a dedicated bd-collective-db Postgres 18.1 cluster created the same day. Hummingbird HTTP surface, PostgreSQL repositories, outbox dispatcher, Resend email channel with signed webhooks, durable jobs, and multi-week season simulation tests. The architecture freeze remains unapproved and no product traffic is served."
+      "release": "Release 1 bounded monolith deployed to Fly as bd-collective-engine (machine version 20, latest deploy 2026-08-21T01:41Z) with a dedicated bd-collective-db Postgres 18.1 cluster created 2026-08-19T02:57Z. Hummingbird HTTP surface, PostgreSQL repositories, outbox dispatcher, Resend email channel with signed webhooks, durable jobs, and multi-week season simulation tests. The architecture freeze remains unapproved and no product traffic is served."
     },
     {
       "id": "company-site-1041soft",
@@ -2440,6 +2453,52 @@
       "notes": [
         "2026-08-21: added as an entity; previously repos[]-only.",
         "Retain as history - its live ASC queries were the evidence for the 2026-08-11 finding that deleted ASC records linger in the on-device TestFlight client."
+      ]
+    },
+    {
+      "id": "collective-comms",
+      "name": "Collective Comms",
+      "kind": "tool",
+      "cluster": "Pickleball Collective",
+      "status": "active",
+      "lastModified": "2026-08-21",
+      "repo": "~/collective-comms",
+      "bundleId": null,
+      "release": "Local dedicated-Mac operations tool; no App Store or public web release observed.",
+      "description": "Swift command-line messaging utility that turns an approved weekly allocation into individual player messages and next-day group reminders through Apple Contacts and Messages.",
+      "dependencies": [
+        "collective-engine"
+      ],
+      "links": {
+        "github": "https://github.com/billdonner/collective-comms"
+      },
+      "notes": [
+        "Publication is blocked by unresolved or ambiguous players and requires typed approval; every send is recorded in a fsynced append-only ledger to prevent duplicate delivery after crashes.",
+        "Group messages are sent only to an existing Messages conversation with exactly the intended participants; the utility never creates or broadens a group thread.",
+        "2026-08-21: explicit carrier configuration defaults one-to-one sends to SMS, supports per-recipient overrides, and resolves chats before sending so a bad identifier is reported rather than silently dropped.",
+        "2026-08-21: confirmed the original iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three.",
+        "2026-08-22: iMessage recipients may receive an optional per-week calendar attachment after the text send. SMS is excluded because carriers may strip attachments; attachment failure cannot change the primary message outcome or duplicate fingerprint."
+      ]
+    },
+    {
+      "id": "oenora-merchant",
+      "name": "oenora-merchant",
+      "kind": "tool",
+      "cluster": "Oenora",
+      "status": "active",
+      "lastModified": "2026-08-20",
+      "repo": "~/oenora-merchant",
+      "description": "Perpetual simulated wine merchant: deterministic Swift market engine that builds and vends a synthetic inventory as a real Oenora CellarSnapshot. Replaces oenora's generate-synthetic-cellar.py; serves as living test harness and demo-cellar factory.",
+      "dependencies": [
+        "oenora"
+      ],
+      "links": {
+        "github": "https://github.com/billdonner/oenora-merchant"
+      },
+      "notes": [
+        "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog); shop/ state committed to the repo as the audit trail.",
+        "Perpetual loop runs on Fly: app bd-oenora-merchant, hourly scheduled machine 'merchant-tick' (ord) trades one sim day per run and pushes shop/ via a repo deploy key; judgement via Claude API (claude-opus-5) every 7th sim day. Deploy engine changes with scripts/fly-deploy.sh.",
+        "OenoraCore made Linux-portable for this (CloudKit canImport-gated, swift-crypto on Linux). Local launchd loop removed 2026-08-20; merchant-day.sh kept as offline fallback only."
       ]
     }
   ],
@@ -3327,6 +3386,11 @@
       "kind": "masterindex-branch-fork",
       "observedAt": "2026-08-21",
       "summary": "OPEN AND HIGH PRIORITY. current/index.json has forked into two actively maintained lineages. This branch (fix/doubleqross-com) carries generatedAt 2026-08-19 with 38 entities before this pass. origin/main carries generatedAt 2026-08-14 but 32 newer commits through 2026-08-21, and its entity set differs: it still holds the two MastPex records the owner deleted, and it adds three entities absent here - oenora-merchant (Fly app bd-oenora-merchant, appeared in the Fly listing between 2026-08-20 and 2026-08-21), collective-comms, and collective-engine. CRITICAL COLLISION: origin/main records the Collective Engine as entity id 'collective-engine' (kind service, cluster 'Pickleball Collective') while this branch records the same system as 'collective-engine-backend' (kind backend, cluster PickledBalls). AGENTS.md requires entities[].id to remain stable, so one id must win and the other must be retired deliberately. Consumers read main - server-monitor resolves masterindex_url against raw.githubusercontent.com/billdonner/masterindex/main - so main is the lineage that is actually published. Do not merge or force-push either direction without an owner decision. A concurrent agent session was active during this pass."
+    },
+    {
+      "kind": "deployment-source-recovery",
+      "observedAt": "2026-08-14",
+      "summary": "OPEN. Fly release v100 of bd-nagzerver contains the active PickledBalls and legacy PickleFamilia implementations, but those files are absent from every Git main ref inspected. The exact non-secret deployed source is preserved on private branch recovery/deployed-2026-06-30 at a57211b and generates all 163 live API paths. Review it before merging: 1,113 of 1,114 tests pass, while tests/test_pickleball_sessions.py::test_player_schedule exposes a confirmed-occurrence schedule defect. Until reconciled, Git main cannot reproduce production."
     }
   ],
   "taskRegistry": {
