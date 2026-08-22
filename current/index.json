@@ -1593,10 +1593,10 @@
    "kind": "tool",
    "cluster": "Standalone",
    "status": "live",
-   "lastModified": "2026-08-14",
+   "lastModified": "2026-08-22",
    "repo": "~/app-feedback",
    "bundleId": null,
-   "release": "Local dashboard live at 127.0.0.1:4317; silent launchd collection runs at login and every two hours, followed by an encrypted and verified iCloud Drive snapshot",
+   "release": "Local dashboard live at 127.0.0.1:4317; silent launchd collection runs at login and every two hours, with content-addressed encrypted and verified iCloud Drive snapshots",
    "description": "Account-wide local triage inbox for TestFlight comments, screenshots, crash feedback, and App Store reviews across active apps.",
    "dependencies": [],
    "links": {
@@ -1611,7 +1611,8 @@
     "com.billdonner.app-feedback-server keeps the dashboard available; com.billdonner.app-feedback-collect runs at login and every 7200 seconds. Logs are under ~/Library/Logs.",
     "Each successful collection creates an AES-256 encrypted snapshot under iCloud Drive/AppFeedback Backups, verifies its checksum, fully decrypts it, validates items.json, and retains recent copies for 14 days, daily copies for 90 days, and monthly copies for two years.",
     "The backup key is stored in the login Keychain as com.billdonner.app-feedback.backup (fingerprint d929fd31f130433b). The first 2026-08-14 snapshot was independently restored and matched the 41-item live store byte-for-byte.",
-    "The private zkraper and asc-feedback repositories carry replacement notices and were archived after this dashboard passed end-to-end verification."
+    "The private zkraper and asc-feedback repositories carry replacement notices and were archived after this dashboard passed end-to-end verification.",
+    "Observed 2026-08-22: unchanged collections skip duplicate snapshot publication using a substantive-content digest; a forced snapshot at least every seven days prevents the recovery chain from going stale."
    ]
   },
   {
@@ -1997,7 +1998,7 @@
   {
    "repo": "~/app-feedback",
    "branch": "main",
-   "last2026Commit": "2026-08-14",
+   "last2026Commit": "2026-08-22",
    "kind": "local operations tool",
    "role": "Active local all-app feedback collector and triage dashboard with client-encrypted iCloud Drive recovery snapshots; source mirrored in private github:billdonner/app-feedback"
   },
@@ -2060,7 +2061,7 @@
   {
    "repo": "~/adology-pulse",
    "branch": "main",
-   "last2026Commit": "2026-06-10",
+   "last2026Commit": "2026-08-22",
    "kind": "app/data/support",
    "role": "Active, not mapped to an ASC app in this scan; ~/ado-data is a filesystem alias to this repository"
   },
@@ -2228,7 +2229,7 @@
   {
    "repo": "~/qross-data",
    "branch": "main",
-   "last2026Commit": "2026-06-10",
+   "last2026Commit": "2026-08-22",
    "kind": "data/support",
    "role": "Qross pulse and data repo"
   },

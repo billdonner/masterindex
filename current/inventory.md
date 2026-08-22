@@ -223,7 +223,7 @@ redeployment; until then, main is not a reproducible source for production.
 - The initial collection scanned 21 active ASC apps and retained 41 items: 36 screenshot submissions, five crash reports, and 36 downloaded screenshots, with zero API errors.
 - A second launchd collection recognized all 41 source ids, queued nothing, produced no duplicates, and exited 0.
 - New, Triaged, and Done states, priority, notes, screenshots, search, and app/type/status filters are stored under `~/Library/Application Support/AppFeedback` and are never uploaded.
-- `com.billdonner.app-feedback-collect` runs at login and every two hours; `com.billdonner.app-feedback-server` keeps the dashboard available.
+- `com.billdonner.app-feedback-collect` runs at login and every two hours; `com.billdonner.app-feedback-server` keeps the dashboard available. Since 2026-08-22, unchanged collections skip duplicate snapshot publication by digest while a seven-day maximum age preserves recovery freshness.
 - The retired `zkraper` and `asc-feedback` private repositories contain replacement notices and are archived. Their email, manual watermark, and Qross-only flows must not be scheduled.
 
 ## Website Publication
