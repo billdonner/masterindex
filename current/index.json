@@ -258,7 +258,7 @@
         ],
         "repo": "~/pfolio-app",
         "repoEvidence": "GitHub repo billdonner/pfolio-app cloned locally on 2026-08-13",
-        "localVersion": "1.0.0 (35); ASC iOS and macOS build 35 VALID"
+        "localVersion": "1.0.0 (39); ASC has builds through 40 VALID both platforms, 39 attached to the 1.0 versions"
       },
       {
         "name": "amenbeats",
@@ -1358,7 +1358,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-20",
       "repo": "~/pfolio-app",
       "bundleId": "com.pfolio.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; source and both VALID ASC builds aligned at 35",
@@ -1385,7 +1385,7 @@
       "kind": "backend",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-08-13",
+      "lastModified": "2026-08-23",
       "repo": "github:billdonner/pfolio",
       "bundleId": null,
       "release": "Fly app bd-pfolio deployed with machine version 6 and a passing health check",
@@ -2351,14 +2351,14 @@
     {
       "repo": "~/pfolio-app",
       "branch": "main",
-      "last2026Commit": "2026-08-13",
+      "last2026Commit": "2026-08-20",
       "kind": "app",
       "role": "ASC-mapped native iOS and macOS Pfoliolio client"
     },
     {
       "repo": "github:billdonner/pfolio",
       "branch": "main",
-      "last2026Commit": "2026-08-13",
+      "last2026Commit": "2026-08-23",
       "kind": "backend",
       "role": "Live Pfoliolio backend; not cloned locally"
     },
