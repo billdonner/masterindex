@@ -1657,6 +1657,34 @@
       ]
     },
     {
+      "id": "product-authority",
+      "name": "Product Authority",
+      "kind": "service",
+      "cluster": "Standalone",
+      "status": "active",
+      "lastModified": "2026-08-23",
+      "repo": "~/ProductAuthority",
+      "bundleId": null,
+      "release": "Read-only M3 review interface serving the Review Authority on the private LAN; four endpoints live under launchd, no public surface.",
+      "description": "Read-only HTTP interface on the Product Authority machine (M3) exposing build identity, git history and recently-touched source files to the Review Authority (M1) under a bounded collection plan.",
+      "dependencies": [
+        "oenora-app",
+        "qross-app",
+        "pfolio-app"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "Serves http://192.168.1.104:9820 under launchd com.billdonner.product-authority; counterpart to review-authority on the M1 at 192.168.1.220.",
+        "Read-only by construction: every git call passes an allowlist (rev-parse, log, show, status, diff, ls-files, describe, config, branch, cat-file) and runs with --no-optional-locks. Verified that HEAD, branch, status, index mtime, reflog and stash are unchanged across a maximal evidence sweep.",
+        "Access is gated by an explicit peer allowlist (PA_ALLOW=192.168.1.220) checked before bearer-token authentication, so a leaked token alone is insufficient. Shared secret lives in the login Keychain, never on disk in a repo.",
+        "Exposes apps by MasterIndex entities[].id; docs/M3_CONTRACT.md on the M1 was moved to match (commit e7e9d7d) so local and LAN review runs key one history per app.",
+        "Reports per-target build identity; oenora-app currently diverges (iOS build 10 vs macOS build 7 on one bundle id)."
+      ]
+    },
+    {
       "id": "local-model-lab",
       "name": "local-model-lab (mlxsrv)",
       "kind": "service",
