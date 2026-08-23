@@ -25,7 +25,7 @@ As of Thursday, August 21, 2026.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
-- KinFlash is assigned to 1041soft.com for near-term public release. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
+- KinFlash is a 1041soft commercial product with a near-term public release, published at `billdonner.com/apps/kinflash/`. Its release channels were settled 2026-08-19: iPhone, iPad, and Mac ship together on one version, Mac through the Mac App Store rather than Developer ID, price free with no in-app purchase, TestFlight the beta channel for both platforms. Mac App Store screenshots are therefore in scope. Two risks are recorded: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
 - Pickleball Collective now has two active local sources: Collective Engine is the deployed multi-tenant scheduler, and Collective Comms is the approval-gated dedicated-Mac messaging utility. Neither is an App Store product.
 - Collective Engine now emits file-based, RFC 8785-canonical handoff payloads with verification tooling. Collective Comms now defaults one-to-one delivery to SMS, supports explicit overrides, and surfaces invalid Messages targets rather than silently dropping sends.
 - Operational evidence on August 21 confirmed that an iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three. The scheduler also records its handoff-only Tuesday court split as non-authoritative.
@@ -52,7 +52,10 @@ assignment and is planned for near-term release.
 The remaining apps are not yet classified. Presentation drift remains open until that is done:
 the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
 `/workinon/` even though workin On is internal-only. The public catalog also needs to stop
-presenting Flasherz Kids as active and to present KinFlash under 1041soft.com.
+presenting Flasherz Kids as active. KinFlash's public page was decided on
+2026-08-19: it lives at `billdonner.com/apps/kinflash/`, not on 1041soft.com and
+not on GitHub Pages, following the existing one-page-per-app pattern under
+`/apps/<name>/`.
 
 ## Screenshot Program
 
@@ -71,7 +74,7 @@ high score.
 | ASC device coverage exists without Screenker critique | SentiPods |
 | Local captures exist but ASC is empty | Oenora iOS |
 | Active ASC release record is empty | Zerver Monitor |
-| Highest-priority missing commercial gallery | KinFlash, near-term 1041soft.com release |
+| Highest-priority missing commercial gallery | KinFlash — iPhone, iPad, and now Mac App Store; ASC is empty for every slot |
 | Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia |
 | Internal functional evidence only | Cardz Studio, workin On, MastPex iOS, MastPex Mac |
 | No new screenshot work | Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
@@ -180,7 +183,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record retained |
 | PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term 1041soft.com release; iOS 1.0 PREPARE_FOR_SUBMISSION |
+| KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term release at billdonner.com/apps/kinflash/; iOS 1.0 PREPARE_FOR_SUBMISSION; no macOS platform version yet |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
 | Cardz Studio | com.billdonner.cardz-studio | ~/cardz-studio-ios | Internal/TestFlight-only; iOS 1.0 retained |
