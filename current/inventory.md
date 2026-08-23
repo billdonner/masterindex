@@ -19,7 +19,7 @@ As of Thursday, August 21, 2026.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
-- The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment.
+- The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment. Owner confirmed on 2026-08-23 that amenbeats belongs on BillDonner.com.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
@@ -260,8 +260,9 @@ open web regardless of repo visibility, and bills Actions minutes on private rep
 Add a subpath here instead.
 
 This site coexists with the now-live `billdonner.com/apps` portfolio catalog. The owner has now
-assigned workin On exclusively to the permanently free BillDonner.com line, making the live
-1041soft.com `/workinon/` path a presentation drift rather than a canonical product home.
+assigned workin On and amenbeats exclusively to the permanently free BillDonner.com line, making
+any 1041soft.com homepage promotion for those apps a presentation drift rather than a canonical
+product home.
 
 ## Preserved Main-Only Facts
 

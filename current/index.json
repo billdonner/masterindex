@@ -29,6 +29,7 @@
    "August 14: consolidated all app websites onto 1041soft.com (public repo billdonner/1041soft-site, GitHub Pages, Let's Encrypt cert valid to 2026-11-12). Disabled GitHub Pages on seven private repos, which closed an unintended public exposure of internal documents.",
    "August 14: replaced the repeating zkraper email/watermark workflow with a local App Feedback dashboard that collects TestFlight comments, screenshots, crashes, and App Store reviews across all active ASC apps. The working store remains local; client-encrypted, versioned recovery snapshots are written to iCloud Drive.",
    "August 14 owner policy: BillDonner.com is the permanently free personal/children's/utility product line; 1041soft.com is the commercial-grade product line. workin On and both MasterIndex Explorer binaries are explicitly assigned to BillDonner.com.",
+   "August 23 owner correction: amenbeats belongs on BillDonner.com, not 1041soft.com; keep its existing billdonner.com/apps/amenbeats website and public TestFlight invite there.",
    "August 14 household-communications audit: SharedSpaceLab is the active successor experiment, Nagz is the working legacy reference, and Famster is a thin concept shell rather than an implemented product. Nagzerver remains shared production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On; SharedSpaceLab has no runtime dependency on it.",
    "August 14 deployment recovery: the exact non-secret source from Fly release v100 of bd-nagzerver was preserved on private branch recovery/deployed-2026-06-30 because production PickledBalls and PickleFamilia routes were absent from Git main. The recovered source matches all 163 live API paths; 1,113 tests pass and one PickledBalls schedule test fails.",
    "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history.",
@@ -1459,6 +1460,7 @@
    "lastModified": "2026-08-14",
    "repo": "github:billdonner/drumbeats",
    "bundleId": "com.billdonner.drumbeats",
+   "productLine": "billdonner-free",
    "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 8 VALID; public TestFlight invite resolves",
    "description": "Pocket 16-step sequencer for studying and remixing well-known drum breaks.",
    "dependencies": [],
@@ -1469,7 +1471,8 @@
     "appStore": null
    },
    "notes": [
-    "GitHub source and ASC are aligned at build 8."
+    "GitHub source and ASC are aligned at build 8.",
+    "Owner confirmed on 2026-08-23 that amenbeats belongs on BillDonner.com rather than 1041soft.com."
    ]
   },
   {
