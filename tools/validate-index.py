@@ -58,6 +58,70 @@ def main() -> int:
     for ref in sorted(set(dangling)):
         errors.append(f"entityId {ref!r} does not resolve to any entity")
 
+    # Dependencies are the graph, and until 2026-08-23 they were prose: 59
+    # references resolved to no entity at all, including collective-comms still
+    # naming the retired `collective-engine`. An index whose edges cannot be
+    # walked can list what exists and not say how any of it connects, which is
+    # most of what it is for.
+    declared = set((index.get("externalDependencies") or {}).get("names", {}))
+    for entity in entities:
+        for dep in entity.get("dependencies") or []:
+            if dep not in known:
+                errors.append(
+                    f"{entity['id']!r} depends on {dep!r}, which is not an entity id."
+                    " Resolve it, or declare it under externalDependencies"
+                )
+        for dep in entity.get("externalDependencies") or []:
+            if dep in known:
+                errors.append(
+                    f"{entity['id']!r} lists {dep!r} as external, but it is an entity"
+                )
+            elif dep not in declared:
+                errors.append(
+                    f"{entity['id']!r} lists {dep!r} as external and it is undeclared"
+                )
+
+    # A contract is the only thing that says two entities are one pipeline.
+    for contract in index.get("contracts") or []:
+        for role in ("producer", "consumer", "ownedBy"):
+            ref = contract.get(role)
+            if ref is not None and ref not in known:
+                errors.append(
+                    f"contract {contract.get('id')!r} names {ref!r} as {role},"
+                    " which is not an entity"
+                )
+
+    # A cluster an entity claims membership of has to exist, and a cluster that
+    # highlights something has to highlight it by id: 'collective-engine' sat in
+    # the Pickleball Collective highlights while the entity itself was filed
+    # under PickledBalls, so the cluster and the entity disagreed in silence.
+    cluster_names = {c.get("name") for c in index.get("clusters") or []}
+    for entity in entities:
+        if entity.get("cluster") and entity["cluster"] not in cluster_names:
+            errors.append(
+                f"{entity['id']!r} is in cluster {entity['cluster']!r}, which is"
+                " not defined in clusters[]"
+            )
+    # highlights[] is deliberately not checked against entity ids. It is prose --
+    # "TestFlight builds uploaded", "iPhone bottle photography" -- and checking it
+    # produced 41 warnings on its first run, almost all of them correct prose. A
+    # check that noisy is one people learn to skip, which costs more than it finds.
+
+    # Where a thing runs, for the entities that cannot simply run elsewhere.
+    machines = {m.get("id") for m in (index.get("hosts") or {}).get("machines", [])}
+    for entity in entities:
+        if entity.get("host") and entity["host"] not in machines:
+            errors.append(
+                f"{entity['id']!r} names host {entity['host']!r}, which is not"
+                " a machine in hosts"
+            )
+    for machine in (index.get("hosts") or {}).get("machines", []):
+        for ran in machine.get("runs") or []:
+            if ran not in known:
+                errors.append(
+                    f"host {machine.get('id')!r} runs {ran!r}, which is not an entity"
+                )
+
     # One system recorded as two entities is the shape the fork took, and a
     # dangling-reference check alone will not see it.
     repos = Counter(

@@ -894,12 +894,22 @@
       "maturity": "active scheduling engine and local operations tooling",
       "summary": "Multi-tenant pickleball scheduling engine paired with a dedicated-Mac communications utility for the OO Pickleball Collective.",
       "highlights": [
-        "collective-engine",
-        "collective-comms"
+        "Collective Engine",
+        "Collective Comms"
       ],
       "watchpoints": [
         "The engine is deployed, but notification channels require explicit provider configuration.",
-        "Collective Comms sends only after a typed approval and requires pre-existing exact Messages group threads."
+        "Collective Comms sends only after a typed approval and requires pre-existing exact Messages group threads.",
+        "Schedule generation needs no database and runs anywhere the record is; sending is bound to the dedicated Mac by macOS permissions."
+      ]
+    },
+    {
+      "name": "Standalone",
+      "maturity": "mixed",
+      "summary": "Entities that belong to no product line. A cluster of convenience, not a system: nothing here is claimed to relate to anything else here.",
+      "highlights": [],
+      "watchpoints": [
+        "Membership means 'unclustered', so growth here is not growth of a product."
       ]
     }
   ],
@@ -953,10 +963,9 @@
       "release": "TestFlight 1.0 (354) live; ASC iOS 1.0 PREPARE_FOR_SUBMISSION with metadata complete (Sports category, Free in 175 territories, copyright, privacy/support URLs). Remaining before submit: App Privacy questionnaire (ASC web UI). Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
       "description": "Pickleball, tennis, and ping pong session-management app by 1041Soft, shipping in organizer-focus mode (free Organizer tier; Organizer Pro planned) with a documented path toward PickleNagz.",
       "dependencies": [
-        "CourtScheduler",
-        "PickleFortunesKit",
-        "PeerLink",
-        "nagzerver"
+        "courtscheduler-package",
+        "nagzerver-backend",
+        "peerlink-package"
       ],
       "links": {
         "website": "https://pickledballs.billdonner.com",
@@ -975,6 +984,9 @@
         "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
         "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
         "HarvestSync and Clubsync are deferred until PickledBalls v2; they are not part of the current useful product path."
+      ],
+      "externalDependencies": [
+        "PickleFortunesKit"
       ]
     },
     {
@@ -990,9 +1002,9 @@
       "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; source and ASC build 392 VALID on 2026-08-14",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
-        "card-engine",
-        "qross-data",
-        "card-studio"
+        "card-engine-backend",
+        "card-studio-admin",
+        "qross-data-pulse"
       ],
       "links": {
         "website": "https://doubleqross.com/",
@@ -1036,9 +1048,9 @@
       "release": "Working legacy implementation; ASC iOS 1.0 PREPARE_FOR_SUBMISSION remains retained",
       "description": "Substantial family reminder and group-communication implementation retained as the working legacy reference for the SharedSpaceLab successor effort.",
       "dependencies": [
-        "nagzerver",
-        "nagz-web",
-        "nagz-ai"
+        "nagz-ai-package",
+        "nagz-web-client",
+        "nagzerver-backend"
       ],
       "links": {
         "website": "https://billdonner.github.io/nagz/",
@@ -1066,9 +1078,9 @@
       "distribution": "none-obsolete",
       "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by the live card-engine service at bd-cardzerver.fly.dev.",
       "dependencies": [
-        "card-engine",
-        "obo",
-        "card-server"
+        "card-engine-backend",
+        "card-server-backend",
+        "obo-docs-hub"
       ],
       "links": {
         "website": "https://billdonner.github.io/obo-ios/",
@@ -1096,8 +1108,8 @@
       "distribution": "internal-testflight-planned",
       "description": "Admin and editor client for decks, family endpoints, ingestion controls, and search against the card backend.",
       "dependencies": [
-        "card-engine",
-        "card-server"
+        "card-engine-backend",
+        "card-server-backend"
       ],
       "links": {
         "website": null,
@@ -1124,8 +1136,8 @@
       "distribution": "internal-testflight-planned",
       "description": "AI-powered focus list app with widget, share extension, URL scheme, nagzerver-backed sync, and a bundled MasterIndex operational board.",
       "dependencies": [
-        "nagzerver",
-        "workinon-mcp"
+        "nagzerver-backend",
+        "workinon-mcp-tool"
       ],
       "links": {
         "website": "https://billdonner.github.io/workinon/",
@@ -1159,8 +1171,7 @@
       "release": "Concept shell only; ASC iOS 1.0 PREPARE_FOR_SUBMISSION and TestFlight record remain retained",
       "description": "Thin family-product concept shell created during the Nagz family split; it is not an independently implemented product and should not compete with SharedSpaceLab.",
       "dependencies": [
-        "1041Kit",
-        "api.famster.app"
+        "kit1041-package"
       ],
       "links": {
         "website": "https://api.famster.app",
@@ -1173,6 +1184,9 @@
         "Home, Family, and Calendar are Coming Soon placeholders; the app has only seven Swift source files.",
         "1041Kit initialization is commented out, so the current app does not use its nominal auth, API, database, sync, or WebSocket package.",
         "api.famster.app is a custom-domain alias of the Nagzerver deployment, not a separate Famster backend; the app warms the wrong /version path and receives the static Nagz web fallback."
+      ],
+      "externalDependencies": [
+        "api.famster.app"
       ]
     },
     {
@@ -1257,8 +1271,7 @@
       "release": "Removed from ASC (2026-08-03 refresh); repo remains active locally.",
       "description": "Standalone app plus reusable kit, with offline core behavior and optional backend paths.",
       "dependencies": [
-        "PickleFortunesKit",
-        "PickledBalls"
+        "pickledballs-app"
       ],
       "links": {
         "website": null,
@@ -1271,6 +1284,9 @@
         "Repository bundle retained at ~/archive/bundles/picklefortunes-20260802.bundle; it is not an active standalone product.",
         "2026-08-11: confirmed still lingering in the owner's on-device TestFlight app despite the ASC record being deleted (verified via live asc-feedback apps/builds — no server-side record exists for com.picklefortunes.app or com.screenkr.app/screenkr2). This is expected TestFlight client-side caching, not a data error; no API remedy exists once the app record is gone — clear it manually in the TestFlight app (Remove App).",
         "2026-08-18: corrected from local-only to archived, matching the owner's understanding. Verified against ASC: no app exists for com.picklefortunes.app, consistent with the 2026-08-03 cleanup that removed it. The local repository is retained as history; no App Store listing exists, so it is outside the public-gallery rule."
+      ],
+      "externalDependencies": [
+        "PickleFortunesKit"
       ]
     },
     {
@@ -1312,7 +1328,7 @@
       "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, and the public live progress view are deployed",
       "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
       "dependencies": [
-        "SentiPods"
+        "sentipods-app"
       ],
       "links": {
         "website": "https://bd-grubber.fly.dev",
@@ -1344,7 +1360,7 @@
       "release": "Obsolete by owner decision on 2026-08-14; superseded by SentiPods",
       "description": "Historical prototype client for the grubber service, retained only as source history.",
       "dependencies": [
-        "grubber"
+        "grubber-service"
       ],
       "links": {
         "website": null,
@@ -1368,7 +1384,7 @@
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; iOS build 20 and macOS build 21 VALID; public privacy, support, and marketing URLs verified live on 2026-08-15",
       "description": "Native iOS and macOS client for the grubber podcast-transcription service, with episode search and transcript navigation.",
       "dependencies": [
-        "grubber"
+        "grubber-service"
       ],
       "links": {
         "website": "https://1041soft.com/sentipods/",
@@ -1401,10 +1417,10 @@
       "release": "Fly app bd-nagzerver is SUSPENDED as of the 2026-08-21 verification; the owner's 2026-08-18 shutdown is complete. Git main was reconciled on 2026-08-15 and matches the last live 163-path API surface, but the security fixes from that date were never deployed - the app was turned off instead.",
       "description": "Mixed shared production backend serving Nagz, current PickledBalls and legacy PickleFamilia APIs, workin On sync and APNs, plus residual clubwatch transport routes.",
       "dependencies": [
-        "Nagz",
-        "workin On",
-        "PickledBalls",
-        "PickleFamilia"
+        "nagz-app",
+        "pickledballs-app",
+        "picklefamilia-asc-app",
+        "workinon-app"
       ],
       "links": {
         "website": "https://bd-nagzerver.fly.dev",
@@ -1436,9 +1452,7 @@
       "bundleId": null,
       "release": "Application tier intentionally deferred until PickledBalls v2; bd-clubsync-db remains deployed",
       "description": "Deferred sports-facility synchronization backend retained for possible PickledBalls v2 work.",
-      "dependencies": [
-        "PickledBalls v2"
-      ],
+      "dependencies": [],
       "links": {
         "github": "https://github.com/billdonner/clubsync"
       },
@@ -1446,6 +1460,9 @@
         "Not an active production dependency or monitored service.",
         "The database is retained to preserve data until the PickledBalls v2 decision.",
         "2026-08-21: bd-clubsync-db is still running (machine 908037e1fe7768, primary, ord, 3/3 checks passing). It is on flyio/postgres-flex 17.2 with 17.7 available, so the deferred database is accruing both cost and patch debt while the application tier stays undeployed. Either take the image update or make an explicit decision to snapshot and destroy it."
+      ],
+      "externalDependencies": [
+        "PickledBalls v2"
       ]
     },
     {
@@ -1461,15 +1478,16 @@
       "bundleId": null,
       "release": "Retired 2026-08-14; GitHub repository archived and Fly deployment descriptor removed",
       "description": "Swift/Hummingbird card and trivia backend that targets the same Fly app name as card-engine.",
-      "dependencies": [
-        "card-engine (successor)"
-      ],
+      "dependencies": [],
       "links": {
         "github": "https://github.com/billdonner/card-server"
       },
       "notes": [
         "Card Engine is the verified deployed source for bd-cardzerver.fly.dev and all observed current consumers.",
         "Legacy tests exposed two contract differences against Card Engine: nonexistent bulk delete returns 422 rather than 200, and an invalid daily-score date returns 404 rather than 400."
+      ],
+      "externalDependencies": [
+        "card-engine (successor)"
       ]
     },
     {
@@ -1485,11 +1503,9 @@
       "release": "Live on Fly at bd-cardzerver.fly.dev; machine version 134 started with passing health check",
       "description": "Deployed Python/FastAPI unified content backend for flashcards and trivia.",
       "dependencies": [
-        "Qross",
-        "Flasherz Kids",
-        "Cardz Studio",
-        "card-studio",
-        "Alities"
+        "card-studio-admin",
+        "cardz-studio-ios-app",
+        "obo-ios-app"
       ],
       "links": {
         "website": "https://bd-cardzerver.fly.dev",
@@ -1502,7 +1518,11 @@
         "2026-08-21: /health returned 200; the service itself is healthy.",
         "2026-08-21: source-of-truth hazard. ~/card-engine main is 27 behind and 1 ahead of origin/main, with modified scripts/bulk_generate.py and server/providers/categories.py plus an untracked scripts/migrate_categories.py. The unpushed local commit is 2af7b87 'Add MasterIndex agent handoff'. origin/main has since gained work including 8c040d8 'Cache /metrics behind a 20s TTL to stop DB pileup'. Reconcile before editing the live backend from this machine."
       ],
-      "masterIndexStatusReason": "The service is healthy, but the local checkout recorded as its source is 27 commits behind origin/main with one unpushed commit and three uncommitted files, so ~/card-engine is not a trustworthy source of truth for the live deployment."
+      "masterIndexStatusReason": "The service is healthy, but the local checkout recorded as its source is 27 commits behind origin/main with one unpushed commit and three uncommitted files, so ~/card-engine is not a trustworthy source of truth for the live deployment.",
+      "externalDependencies": [
+        "Alities",
+        "Qross"
+      ]
     },
     {
       "id": "server-monitor-service",
@@ -1517,9 +1537,9 @@
       "release": "Fly production deployment verified live 2026-08-21 with seven configured targets. Six probe healthy; the Nagzerver HTTP target fails permanently because that service was intentionally suspended, so the dashboard reports a standing error state.",
       "description": "Monitoring dashboard for multiple backends across the product landscape.",
       "dependencies": [
-        "nagzerver",
-        "card-engine",
-        "grubber"
+        "card-engine-backend",
+        "grubber-service",
+        "nagzerver-backend"
       ],
       "links": {
         "website": "https://bd-server-monitor.fly.dev",
@@ -1547,8 +1567,8 @@
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; GitHub project 0.1 (2) supports Mac Catalyst; no uploaded ASC builds",
       "description": "Active local-first successor experiment that reworks the useful Nagz and Famster communication concepts into a friendly shared household voice-and-screen surface.",
       "dependencies": [
-        "ConversationLab",
-        "CoordinationLab"
+        "conversationlab-package",
+        "coordinationlab-package"
       ],
       "links": {
         "website": null,
@@ -1576,7 +1596,7 @@
       "release": "Local clone verified at ~/Documents/Codex/Experiments/ConversationLab",
       "description": "Reusable conversation kernel candidate providing ConversationCore and AppleConversation for the household-communications successor.",
       "dependencies": [
-        "SharedSpaceLab"
+        "sharedspace-lab"
       ],
       "links": {
         "website": null,
@@ -1600,7 +1620,7 @@
       "release": "Local clone verified at ~/Documents/Codex/Experiments/CoordinationLab",
       "description": "Reusable pure-Swift coordination kernel candidate used by the household-communications successor.",
       "dependencies": [
-        "SharedSpaceLab"
+        "sharedspace-lab"
       ],
       "links": {
         "website": null,
@@ -1647,7 +1667,7 @@
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; source and both VALID ASC builds aligned at 35",
       "description": "Native iOS and macOS multi-account portfolio client backed by pfolio, with Plaid connections, manual holdings, allocation analysis, reminders, and an AI question-and-answer surface.",
       "dependencies": [
-        "pfolio"
+        "pfolio-backend"
       ],
       "links": {
         "website": "https://billdonner.com/apps/pfoliolio/",
@@ -1675,8 +1695,7 @@
       "release": "Fly app bd-pfolio deployed with machine version 6 and a passing health check",
       "description": "PostgreSQL-backed portfolio service used by Pfoliolio, with Plaid production integration and chat support.",
       "dependencies": [
-        "Pfoliolio",
-        "Oliopfolio"
+        "pfolio-app"
       ],
       "links": {
         "website": "https://bd-pfolio.fly.dev",
@@ -1692,6 +1711,9 @@
         "pfolio-mcp: 16-tool stdio MCP server, registered in Claude Code. Deliberately an HTTP client over the API, never a second DB client.",
         "Open: paid-app entitlement table exists (migration 018) but nothing reads it; Plaid Investments production access still pending Plaid review.",
         "All work merged to main 2026-08-09; every PR closed in both repos. Steve's four PRs were closed as superseded on 2026-08-08 with comments tracing where the work landed, and his classification backlog moved to issue #7 so it did not close with PR #3."
+      ],
+      "externalDependencies": [
+        "Oliopfolio"
       ]
     },
     {
@@ -1812,7 +1834,7 @@
       "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 5 VALID",
       "description": "iPhone, widget, and watch companion for the server-monitor service.",
       "dependencies": [
-        "server-monitor"
+        "server-monitor-service"
       ],
       "links": {
         "website": "https://bd-server-monitor.fly.dev",
@@ -1852,17 +1874,13 @@
       "id": "collective-engine-backend",
       "name": "Collective Engine",
       "kind": "backend",
-      "cluster": "PickledBalls",
+      "cluster": "Pickleball Collective",
       "status": "active-prototype",
       "masterIndexStatus": "good-citizen",
       "lastModified": "2026-08-21",
       "repo": "~/collective-engine",
       "description": "Release 1 architecture proposal for a separately deployable Swift 6 Collective Engine backend supporting the PickleFamilia/PickledBalls product line.",
-      "dependencies": [
-        "bd-postgres",
-        "Auth0",
-        "Resend"
-      ],
+      "dependencies": [],
       "links": {
         "github": "https://github.com/billdonner/collective-engine",
         "website": "https://bd-collective-engine.fly.dev",
@@ -1883,9 +1901,15 @@
         "2026-08-18: decisions live in docs/decisions/ per the qross and oenora convention. Concurrent sessions work in this repository; ADR numbering is claimed through 003.",
         "2026-08-21: CORRECTS the prior 'nothing is deployed' posture, which was already stale when the August 19 index was generated. flyctl reports bd-collective-engine deployed (two machines in dfw, one started and one stopped). CORRECTED 2026-08-22 from the session holding ~/collective-engine: machine version is 20, not 16, and the latest deploy is 2026-08-21T01:41Z, not 2026-08-19 -- the 08-19 date is the database cluster's creation date and the engine has been deployed twice since. That session also settled status: the architecture proposal designates https://collective.1041soft.com as the Release 1 canonical URL and calls the fly.dev hostname an infrastructure alias, not user-facing; collective.1041soft.com is NXDOMAIN -- the DNS record was never created, while the apex 1041soft.com resolves normally to GitHub Pages, so this is a subdomain that does not exist rather than a host that is down. An absent DNS record is a fact about what was never set up, where a failed probe could be transient, so no member can reach the system at the address Release 1 defines and 'live' would be wrong on the index's own terms. Status stays active-prototype. Do not source status from ~/collective-engine/README.md line 6, which still says 'Not deployed. No production database exists.' and is known false. and bd-collective-db running flyio/postgres-flex 18.1, created 2026-08-19T02:57Z. Live probes returned HTTP 200 on / and /health; /healthz and /api/v1/health are 404.",
         "2026-08-21: the entity kind was changed from architecture-proposal to backend. The record is no longer a planning artifact - it describes a running service with its own database.",
-        "2026-08-21: open governance question, not a defect - the service is deployed while ADR-level architecture freeze is still unapproved and no Release 1 build was authorized. Deployment happened ahead of the approval gate the proposal defines."
+        "2026-08-21: open governance question, not a defect - the service is deployed while ADR-level architecture freeze is still unapproved and no Release 1 build was authorized. Deployment happened ahead of the approval gate the proposal defines.",
+        "2026-08-23: schedule generation is host-independent. `trial` reads the record in docs/SCHEDULE-LOG.md and runs the real solver with no database and no network, so a week can be built anywhere the file is. The database is a projection of that record and `import` runs one way into it."
       ],
-      "release": "Release 1 bounded monolith deployed to Fly as bd-collective-engine (machine version 20, latest deploy 2026-08-21T01:41Z) with a dedicated bd-collective-db Postgres 18.1 cluster created 2026-08-19T02:57Z. Hummingbird HTTP surface, PostgreSQL repositories, outbox dispatcher, Resend email channel with signed webhooks, durable jobs, and multi-week season simulation tests. The architecture freeze remains unapproved and no product traffic is served."
+      "release": "Release 1 bounded monolith deployed to Fly as bd-collective-engine (machine version 20, latest deploy 2026-08-21T01:41Z) with a dedicated bd-collective-db Postgres 18.1 cluster created 2026-08-19T02:57Z. Hummingbird HTTP surface, PostgreSQL repositories, outbox dispatcher, Resend email channel with signed webhooks, durable jobs, and multi-week season simulation tests. The architecture freeze remains unapproved and no product traffic is served.",
+      "externalDependencies": [
+        "Auth0",
+        "Resend",
+        "bd-postgres"
+      ]
     },
     {
       "id": "company-site-1041soft",
@@ -2040,7 +2064,7 @@
       "release": "Fly health endpoint is live at bd-oenora-recognition.fly.dev; the recognition token was rotated and live-verified on 2026-08-14 after correcting the client configuration.",
       "description": "Token-protected API that accepts one to three label images and OCR evidence, requests up to three structured wine candidates from OpenAI, and returns them for explicit user review.",
       "dependencies": [
-        "Oenora"
+        "oenora-app"
       ],
       "links": {
         "website": "https://bd-oenora-recognition.fly.dev/health",
@@ -2066,7 +2090,7 @@
       "release": "Internal macOS admin app; no App Store Connect record and no public release path.",
       "description": "macOS admin app for managing the Qross trivia question catalog against card-engine.",
       "dependencies": [
-        "card-engine"
+        "card-engine-backend"
       ],
       "links": {},
       "notes": [
@@ -2169,7 +2193,7 @@
       "release": "Local Swift package with SPEC.md and tests; consumed by the legacy nagz-ios client.",
       "description": "On-device AI capabilities package for the legacy Nagz iOS client.",
       "dependencies": [
-        "Nagz"
+        "nagz-app"
       ],
       "links": {},
       "notes": [
@@ -2192,7 +2216,7 @@
       "release": "React/TypeScript client generated against the Nagz OpenAPI schema; deployed with nagzerver, which is now suspended.",
       "description": "Web client for the legacy Nagz family reminder app.",
       "dependencies": [
-        "nagzerver"
+        "nagzerver-backend"
       ],
       "links": {},
       "notes": [
@@ -2215,8 +2239,8 @@
       "release": "Python MCP stdio server (server.py) registered for Claude browser, desktop, and code.",
       "description": "MCP server that lets Claude manage the workin On list and pushes changes to the iPhone widget by silent APNs.",
       "dependencies": [
-        "workin On",
-        "nagzerver"
+        "nagzerver-backend",
+        "workinon-app"
       ],
       "links": {},
       "notes": [
@@ -2257,7 +2281,7 @@
       "release": "Local pulse repository with cache/, daily/, and prompts/; last content commit 2026-06-10.",
       "description": "Daily delta briefs and candidate fixes for billdonner/qross, built on the shared pulse engine.",
       "dependencies": [
-        "DoubleQross"
+        "qross-app"
       ],
       "links": {},
       "notes": [
@@ -2379,7 +2403,7 @@
       "release": "Remote-only; not cloned on this machine. Last commit 2026-07-20.",
       "description": "Python FastAPI/WeasyPrint directory-book engine kept as the read-only reference implementation behind Mallinbook.",
       "dependencies": [
-        "Mallinbook"
+        "mallinbook-app"
       ],
       "links": {
         "github": "https://github.com/billdonner/bookmaker"
@@ -2467,7 +2491,7 @@
       "release": "Local dedicated-Mac operations tool; no App Store or public web release observed.",
       "description": "Swift command-line messaging utility that turns an approved weekly allocation into individual player messages and next-day group reminders through Apple Contacts and Messages.",
       "dependencies": [
-        "collective-engine"
+        "collective-engine-backend"
       ],
       "links": {
         "github": "https://github.com/billdonner/collective-comms"
@@ -2477,8 +2501,11 @@
         "Group messages are sent only to an existing Messages conversation with exactly the intended participants; the utility never creates or broadens a group thread.",
         "2026-08-21: explicit carrier configuration defaults one-to-one sends to SMS, supports per-recipient overrides, and resolves chats before sending so a bad identifier is reported rather than silently dropped.",
         "2026-08-21: confirmed the original iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three.",
-        "2026-08-22: iMessage recipients may receive an optional per-week calendar attachment after the text send. SMS is excluded because carriers may strip attachments; attachment failure cannot change the primary message outcome or duplicate fingerprint."
-      ]
+        "2026-08-22: iMessage recipients may receive an optional per-week calendar attachment after the text send. SMS is excluded because carriers may strip attachments; attachment failure cannot change the primary message outcome or duplicate fingerprint.",
+        "2026-08-23: recorded as running on m1-residence. Both launch agents are installed and loaded there. A takeover Mac must be granted Contacts and Automation in person before it is needed, and only one machine should hold the nightly job: the send ledger and run lock are per-machine, so two would double-send or silently split."
+      ],
+      "host": "m1-residence",
+      "hostBinding": "Bound to the machine, not merely installed on it. Sending goes through Messages.app and Contacts by AppleScript, and macOS records Contacts and Automation permission against the binary's code identity. Granting them requires a person at the machine with the screen unlocked, so a second Mac cannot be pressed into service remotely after this one fails -- it has to be prepared beforehand. `collective-comms drafts` is the fallback that needs no permission: it builds the exact messages and has no transport at all."
     },
     {
       "id": "oenora-merchant",
@@ -2490,7 +2517,7 @@
       "repo": "~/oenora-merchant",
       "description": "Perpetual simulated wine merchant: deterministic Swift market engine that builds and vends a synthetic inventory as a real Oenora CellarSnapshot. Replaces oenora's generate-synthetic-cellar.py; serves as living test harness and demo-cellar factory.",
       "dependencies": [
-        "oenora"
+        "oenora-app"
       ],
       "links": {
         "github": "https://github.com/billdonner/oenora-merchant"
@@ -3467,5 +3494,104 @@
       "alities-mobile": "publishes main/docs and exposes appstore-copy.md (verified 200). Minor marketing-copy exposure; migrate or disable when convenient."
     },
     "rule": "Never publish a private repo's docs/ directory through Pages - that is what exposed internal material. Publishing built output from a gh-pages branch is safe for exposure, though it still bills Actions minutes on a private repo."
+  },
+  "externalDependencies": {
+    "why": "Names that appear in entities[].dependencies and are deliberately not entities. Declared here so the validator can tell a third-party service from a stale id. 'unmapped' means the dependency is real and the thing it names has no record: those are index gaps, not external systems.",
+    "names": {
+      "Alities": {
+        "kind": "unmapped",
+        "note": "Named as a dependency of card-engine-backend and matches nothing in the index."
+      },
+      "Auth0": {
+        "kind": "third-party",
+        "note": "Identity provider. OAuth authorization server and identity broker for collective-engine."
+      },
+      "Oliopfolio": {
+        "kind": "unmapped",
+        "note": "Named as a dependency of pfolio-backend and matches nothing in the index."
+      },
+      "PickleFortunesKit": {
+        "kind": "unmapped",
+        "note": "Shared kit depended on by pickledballs-app and picklefortunes-app; no entity exists for it."
+      },
+      "PickledBalls v2": {
+        "kind": "unmapped",
+        "note": "A future release rather than a thing that exists. clubsync-backend is deferred until it."
+      },
+      "Qross": {
+        "kind": "unmapped",
+        "note": "Ambiguous: matches both qross-app and qross-data-pulse. card-engine-backend names it and which is meant was never written down."
+      },
+      "Resend": {
+        "kind": "third-party",
+        "note": "Transactional email provider, used over its HTTPS API with signed webhooks."
+      },
+      "api.famster.app": {
+        "kind": "infrastructure",
+        "note": "Service endpoint. Tracked under services[], not modelled as an entity."
+      },
+      "bd-postgres": {
+        "kind": "infrastructure",
+        "note": "Fly PostgreSQL app. Tracked under flyOperations, not modelled as an entity."
+      },
+      "card-engine (successor)": {
+        "kind": "unmapped",
+        "note": "A label for whatever replaces card-engine, not a record of anything built."
+      }
+    }
+  },
+  "contracts": [
+    {
+      "id": "oo-collective-handoff",
+      "name": "OO Collective handoff",
+      "version": 1,
+      "producer": "collective-engine-backend",
+      "consumer": "collective-comms",
+      "format": "JSON, RFC 8785 canonical over the groups array, with a SHA-256 digest",
+      "why": "How a settled week leaves the scheduling engine and reaches the thing that messages the players. Without it the two records sit adjacent in this index and nothing says they are one pipeline.",
+      "ownedBy": "collective-engine-backend",
+      "spec": [
+        "~/collective-engine/docs/HANDOFF-FORMAT.md",
+        "~/collective-engine/docs/decisions/ADR-004-handoff-contract-ownership.md"
+      ],
+      "produceWith": "collective-engine trial --json --out FILE",
+      "verifyWith": "collective-engine handoff --verify FILE",
+      "notes": [
+        "ADR-004 (2026-08-22) moved ownership to the producer and pinned the format with a shared real payload, after the two sides had each described it separately and drifted: the digest was carried unverified by the consumer and the status vocabulary disagreed.",
+        "Not to be confused with automation.handoffRegistry, which is MasterIndex's own maintenance directives and unrelated."
+      ]
+    }
+  ],
+  "hosts": {
+    "why": "Which machine a thing runs on, for the cases where it is not a free choice. Most entities here are portable and need no entry. Two are not, and the index could not previously say so: it recorded Collective Comms as a 'dedicated-Mac operations tool' without saying which Mac, or why it cannot simply be another one.",
+    "machines": [
+      {
+        "id": "m1-residence",
+        "kind": "Mac, Apple M1 Pro",
+        "location": "owner's residence",
+        "posture": "always on",
+        "observedAt": "2026-08-23",
+        "verified": "Directly: both launch agents present and loaded (com.oopickleball.collective-comms.nightly, .booking), ~/bin/collective-comms installed, ~/collective-comms checked out.",
+        "runs": [
+          "collective-comms"
+        ],
+        "notes": [
+          "Holds the collective_engine_dev PostgreSQL database. No collective-engine server process runs here; the deployed engine is bd-collective-engine on Fly."
+        ]
+      },
+      {
+        "id": "m3-travel",
+        "kind": "Mac laptop",
+        "location": "travels with the owner",
+        "posture": "intermittent",
+        "observedAt": "2026-08-23",
+        "verified": "No. Described by the owner; this index has not observed the machine.",
+        "runs": [],
+        "notes": [
+          "Intended for generating a week away from the residence. collective-engine trial reads docs/SCHEDULE-LOG.md and runs the solver with no database and no network, so generation has no host requirement at all.",
+          "Cannot take over sending without being prepared in advance: see the binding on collective-comms."
+        ]
+      }
+    ]
   }
 }
