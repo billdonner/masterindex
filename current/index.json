@@ -1421,7 +1421,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-23",
+      "lastModified": "2026-08-24",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
       "release": "ASC app 6799520155: iOS builds 1,3-10 and macOS builds 2-7 all VALID (verified 2026-08-23). Both platforms share bundle com.billdonner.oenora as a universal purchase (ADR-007, superseded 2026-08-17 from the earlier Developer ID posture) and are on TestFlight; the Developer ID .mac bundle and notarize-mac.sh now service only pre-2026-08-17 legacy installs. External Founders Beta public link live.",
@@ -1461,7 +1461,8 @@
         "2026-08-17: Mac app moved to TestFlight via universal purchase (shared bundle, macOS builds 2-6); renamed product to Oenora; added Guide window, \u2318, Settings, and the Research section \u2014 AI cellar queries routed through /v1/research on the recognition proxy (provider-advertised choice, strict schema, synced ResearchNotes, drinking windows applied to Vintage only via explicit Apply per ADR-008). Jon invited as internal ASC tester for instant builds. Oenora marketing page added to billdonner.com/apps (pending SFTP upload).",
         "2026-08-17 evening: iPad promoted to full desk role after Jon's Mac failed \u2014 hard idiom fork at the app root gives iPhone and iPad entirely separate view trees (only OenoraCore and non-visual services shared; research client and suggestion filtering moved into core). iPad gains sidebar shell, card cellar, finger-scaled rack map, case grid, full Research with GPT/Claude choice, iPad-designed capture-and-confirm, Safety, Guide. Shipped as iOS build 9: internal group immediately, external WAITING_FOR_REVIEW.",
         "2026-08-22: ADR-009 \u2014 Offering (asking price) + IndicationOfInterest (buyer contact) shipped: domain model, CloudKit sync, and phone UI (list/manage from Cellar menu). No commerce mechanism \u2014 a sale is still ordinary removeBottle. Not yet in a TestFlight build (project.yml unbumped); website/privacy/App Store copy updated to describe it.",
-        "2026-08-23: masterindex drift fixed \u2014 the release summary and links.website field were stale (still described the pre-ADR-007 Developer ID Mac posture; website field pointed at billdonner.com/apps/oenora/, which 404s). Corrected against a fresh ASC API check; support/privacy live at 1041soft.com/oenora/."
+        "2026-08-23: masterindex drift fixed \u2014 the release summary and links.website field were stale (still described the pre-ADR-007 Developer ID Mac posture; website field pointed at billdonner.com/apps/oenora/, which 404s). Corrected against a fresh ASC API check; support/privacy live at 1041soft.com/oenora/.",
+        "2026-08-23: full code review of ADR-009 (Offering/IndicationOfInterest) via Codex. 5 findings fixed: bootstrap sync never uploaded existing offerings/interests (bumped bootstrap generation 2->3); two offline devices could each create an active Offering for the same bottle (fixed with a deterministic canonicalActiveOffering picker, earliest createdAt + UUID tiebreak, so every device converges without a write-back race); sold/departed bottles could still render in the For Sale list (now requires bottle.isActive too); pasting a very large price could trap on Double-to-Int conversion (added finite + bounds checks); the offering sheet cleared fields or dismissed even when the underlying store call failed (create/withdraw/recordInterest now return Bool). 2 findings documented as accepted risk in ADR-009 rather than fixed: interest can sync in against an already-withdrawn offering (harmless, matches the no-revalidation design of every other applyRemote* path); bare-UUID CloudKit record names collide across all record types, not just these two (pre-existing, whole-sync-layer scope). Verified: iOS and Mac targets both build clean, all 48 OenoraCore tests pass. Not yet tested on a physical device and not yet in a TestFlight build - project.yml is still at iOS 10 / Mac 7 (unbumped). Next step: install on-device via Xcode, run through TEST_PLAN.md section 12, then bump build numbers before any TestFlight upload."
       ]
     },
     {
@@ -1826,7 +1827,7 @@
       "kind": "tool",
       "cluster": "Oenora",
       "status": "active",
-      "lastModified": "2026-08-22",
+      "lastModified": "2026-08-24",
       "repo": "~/oenora-merchant",
       "description": "Perpetual simulated wine merchant: deterministic Swift market engine that builds and vends a synthetic inventory as a real Oenora CellarSnapshot. Replaces oenora's generate-synthetic-cellar.py; serves as living test harness and demo-cellar factory.",
       "dependencies": [
@@ -1839,8 +1840,10 @@
         "Perpetual loop runs on Fly: app bd-oenora-merchant, hourly scheduled machine 'merchant-tick' (ord) trades one sim day per run and pushes shop/ via a repo deploy key; judgement via Claude API (claude-opus-5) every 7th sim day. Deploy engine changes with scripts/fly-deploy.sh.",
         "OenoraCore made Linux-portable for this (CloudKit canImport-gated, swift-crypto on Linux). Local launchd loop removed 2026-08-20; merchant-day.sh kept as offline fallback only.",
         "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog); shop/ state committed to the repo as the audit trail.",
-        "2026-08-22: wired to real Offering/IndicationOfInterest records (matching oenora's ADR-009) instead of an internal-only pricebook \u2014 every racked bottle gets a listing at intake, selling records a buyer IndicationOfInterest and withdraws it, the published catalog reads Offering records directly. Backfilled the live shop's pre-existing ~130 bottles. Fly image bumped to swift:6.1 (swift-asn1 needs tools 6.1)."
-      ]
+        "2026-08-22: wired to real Offering/IndicationOfInterest records (matching oenora's ADR-009) instead of an internal-only pricebook \u2014 every racked bottle gets a listing at intake, selling records a buyer IndicationOfInterest and withdraws it, the published catalog reads Offering records directly. Backfilled the live shop's pre-existing ~130 bottles. Fly image bumped to swift:6.1 (swift-asn1 needs tools 6.1).",
+        "2026-08-24: confirmed live and trading autonomously - 31 hourly runs since the Offering wiring shipped (sim day 89 -> 120), cash grew from $96.5k to $105.3k, no failed runs."
+      ],
+      "release": "Fly app bd-oenora-merchant, scheduled machine 'merchant-tick' (ord), fires hourly, one sim day per run. Verified healthy 2026-08-24: sim day 120, cash $105,314.51, cloud judgement (Claude API, claude-opus-5) firing every 7th sim day with sound reasoning (e.g. holding markup after high-ticket wines cleared at full freight). No manual intervention since the Fly migration on 2026-08-20."
     },
     {
       "id": "collective-engine",
