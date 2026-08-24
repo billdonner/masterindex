@@ -3,6 +3,19 @@
 # type/lifecycle/standardization start UNKNOWN/UNASSESSED; fill in only as an
 # actual agent-ops run (see PROCESS.md) inspects that repository directly.
 repositories:
+  xpensexpunger:
+    repository: "xpensexpunger"
+    path: "~/xpensexpunger"
+    type: "app/local operations tool"
+    lifecycle: active
+    standardization: UNASSESSED
+    last_reviewed: "2026-08-24"
+    authoritative_project_instructions: null
+    notes:
+      - "New 1041soft-commercial Mac-first, local-first expense evidence scanner."
+      - "Separate from pfolio; ~/1041soft is output-only for finance/scan-results schema-v1 JSON."
+      - "Security boundary: no raw bank logs, Gmail/Plaid tokens, card/account identifiers, SSNs, OAuth secrets, Plaid access tokens, or session cookies in git."
+      - "ASC record and TestFlight build not yet verified; owner plans TestFlight work on 2026-08-24."
   1041soft:
     repository: "1041soft"
     path: "~/1041soft"
@@ -17,6 +30,7 @@ repositories:
       - "PRIMARY_REVIEW complete: fresh-context same-system review (commit 1d0d6e6) — no PROBLEM-level findings"
       - "CROSS_AGENT_REVIEW complete: Codex review (commit 03aa1a0) — no PROBLEM-level findings; independently re-confirmed EIN letter gitignored/untracked and repo private"
       - "ADJUDICATION + CORRECTIONS + FINAL_VERIFICATION complete (commit 879a8b3): both reviews converged on one MINOR NIT (AGENTS.md duplicated the LLC File Number/EIN as literals); accepted and fixed — AGENTS.md now points to the source documents instead"
+      - "2026-08-24 finance/ is now also a bookkeeping-safe scan-results output area: normalized JSON and aggregate Markdown only; raw financial exports, credentials, tokens, card/account identifiers, and SSNs stay out of git"
       - "Not an application/service/library — no build, test, or CI"
   100Burfords:
     repository: "100Burfords"

@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Thursday, August 21, 2026.
+As of Monday, August 24, 2026.
 
 ## Scope
 
@@ -23,6 +23,7 @@ As of Thursday, August 21, 2026.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
+- Grubber is also the active home for the paid tech newsletter digest and the Fly-side global brand-universe supplement. Newsletter/Gmail-derived content is personal-only; brand metadata and derived brand mentions live in shared Fly Postgres for server-side podcast/news advertising-trend analysis, not in the public `/db` export or raw brand API routes.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 - KinFlash is now **two products**, decided 2026-08-23. The Mac app authors family trees, flashcards, and games; its price is undecided. The iOS app is free and only plays what the Mac produced. They shared one bundle id — one App Store record, one price — so the ids were split before submission: `com.billdonner.kinflash` (Mac) and `com.billdonner.kinflashplay` (iOS, shown as "KinFlash Play"). This supersedes the 2026-08-19 decision that all three platforms would ship as one universal app at one price; Mac App Store distribution and TestFlight for both still hold. Public page: `billdonner.com/apps/kinflash/`. Two risks stand: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Games do not exist yet, and the iOS app still ships the full editor — both wait on a definition of what a game is.
@@ -33,6 +34,7 @@ As of Thursday, August 21, 2026.
 - Collective Engine now labels rotations clearly for bookers. Collective Comms can append an iMessage-only weekly calendar attachment after the text send; SMS is intentionally excluded and attachment failure cannot affect the text-delivery record.
 - Collective Engine's Fly deployment has a healthy `/health` endpoint, but its intended `collective.1041soft.com` host is still NXDOMAIN; publish that DNS record and the corresponding exact-match Auth0 URLs before calling it publicly reachable. Collective Comms now verifies the producer's canonical handoff digest and blocks publication on a mismatch.
 - Review Authority is an active local, read-only review controller. Its Milestone 1 vertical slice can inspect a registered build source, redact and content-address evidence, request a bounded cloud critique, and retain an audit record; it has no public release, UI, correction loop, or configured Git remote.
+- XpenseXpunger is a new 1041soft-commercial project at `~/xpensexpunger`. It is a separate Mac-first, local-first expense evidence scanner for Gmail receipts, local files, screenshots, PDFs, CSVs, and later Plaid Transactions. It must not be merged into `pfolio`, and `~/1041soft` is output-only for compatible `finance/scan-results/*.json` exports.
 
 ## Product Lines
 
@@ -56,6 +58,33 @@ presenting Flasherz Kids as active. KinFlash's public page was decided on
 2026-08-19: it lives at `billdonner.com/apps/kinflash/`, not on 1041soft.com and
 not on GitHub Pages, following the existing one-page-per-app pattern under
 `/apps/<name>/`.
+
+## Expense Evidence / XpenseXpunger
+
+XpenseXpunger is the active implementation track for bookkeeping evidence scanning. It exists in
+`~/xpensexpunger`, not under `~/1041soft`, and targets the 1041soft commercial product line. The
+first build is a SwiftPM CLI/Mac-first core with local SQLite storage, safe metadata-only raw
+document tracking, vendor matching, schema-v1 JSON export, and compatibility verification through
+`~/1041soft/finance/scripts/aggregate_bookkeeping.py`.
+
+Security boundary: raw bank logs, Gmail/Plaid tokens, card or account identifiers, SSNs, OAuth
+secrets, Plaid access tokens, and session cookies must never be written to repo files. Raw evidence
+stays where the user selected it; the app stores references and redacted extracted fields.
+
+Release status: no App Store Connect record, bundle id, TestFlight build, support URL, privacy URL,
+or live marketing page has been verified yet. Owner plans TestFlight work on the morning of
+2026-08-24; ASC copy and a product website are being prepared in the repository.
+
+Bookkeeping baseline: `~/1041soft/finance/scan-results/` now contains normalized schema-v1
+results from Gmail receipt scans, Apple subscription screenshots, and Apple Card CSV transaction
+history. The aggregate output is `~/1041soft/finance/bookkeeping-aggregate-2026-08-23.md`, generated
+by the existing `aggregate_bookkeeping.py` workflow. Raw Gmail/card/Plaid exports stay out of git;
+Apple hardware was explicitly checked in the Apple Card CSV and no clear Apple Store hardware
+purchase was found.
+
+Open accounting work: business, personal, mixed-use, deductible classification, and
+product-specific Apple purchase-history attribution for Apple-billed subscriptions still require
+owner/accountant decisions.
 
 ## Screenshot Program
 

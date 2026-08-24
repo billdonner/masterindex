@@ -1898,6 +1898,38 @@
         "2026-08-22: iMessage recipients may receive an optional per-week calendar attachment after the text send. SMS is excluded because carriers may strip attachments; attachment failure cannot change the primary message outcome or duplicate fingerprint.",
         "Observed 2026-08-22: the importer recomputes and verifies the producer's SHA-256 digest over the RFC 8785-canonical groups payload; a mismatch blocks publication and cannot be bypassed by tentative-allocation approval."
       ]
+    },
+    {
+      "id": "xpensexpunger-app",
+      "name": "XpenseXpunger",
+      "kind": "app",
+      "cluster": "Expense Evidence",
+      "status": "implementation-in-progress",
+      "lastModified": "2026-08-24",
+      "repo": "~/xpensexpunger",
+      "productLine": "1041soft-commercial",
+      "release": "New local SwiftPM CLI/Mac-first MVP in progress. No App Store Connect record, TestFlight build, or bundle id has been verified yet.",
+      "description": "Personal Mac-first, local-first expense evidence scanner for Gmail receipts, local files, screenshots, PDFs, CSVs, and later Plaid Transactions. It normalizes expense candidates with evidence provenance and exports bookkeeping-safe schema-v1 JSON into ~/1041soft/finance/scan-results.",
+      "dependencies": [
+        "1041soft finance scan-results",
+        "SQLite",
+        "Apple Vision OCR",
+        "PDFKit"
+      ],
+      "links": {
+        "website": null,
+        "appStore": null,
+        "testFlight": null,
+        "support": null
+      },
+      "securityBoundary": "Raw files stay in user-approved source locations; app stores references and safe extracted fields only. Full card numbers, CVVs, account numbers, SSNs, OAuth secrets, Plaid tokens, and session cookies must never be written to repo files.",
+      "notes": [
+        "Created as a separate repository at ~/xpensexpunger; do not merge into pfolio.",
+        "~/1041soft is output-only for finance/scan-results/*.json compatibility with aggregate_bookkeeping.py.",
+        "Plaid is future scope via Transactions and /transactions/sync, not the existing pfolio investment flow.",
+        "Owner plans TestFlight work on the morning of 2026-08-24; ASC metadata copy and website are being prepared in this implementation pass.",
+        "2026-08-24 bookkeeping baseline lives in ~/1041soft/finance/scan-results and ~/1041soft/finance/bookkeeping-aggregate-2026-08-23.md. Sources covered Gmail receipts, Apple subscription screenshots, and Apple Card CSV transaction history; raw financial exports remain outside git."
+      ]
     }
   ],
   "collaborators": [

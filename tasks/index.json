@@ -239,7 +239,37 @@
         ]
       }
     ],
-    "grubber-service": [],
+    "grubber-service": [
+      {
+        "taskId": "grubber-brand-news-analysis-check",
+        "name": "Grubber brand/news analysis check",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=DAILY;INTERVAL=1"
+        },
+        "purpose": "Verify the Grubber Fly-side brand universe, scheduled brand tick, paid-newsletter privacy boundary, and podcast/news brand analysis posture.",
+        "expectedInputs": [
+          "current/index.json",
+          "~/grubber",
+          "bd-grubber Fly app",
+          "bd-grubber-db Fly Postgres",
+          "grubber tick --tier brands",
+          "/api/v1/brands/stats"
+        ],
+        "expectedOutputs": [
+          "Updated Grubber service entry when deployment, schedule, or privacy facts change",
+          "Verified brand_universe count, tier mix, and source provenance",
+          "Recorded gaps for raw brand egress, /db exclusion, report generation, or schedule failures"
+        ],
+        "guardrails": [
+          "Do not expose raw brand tables through /api/v1, MCP, or the public /db export.",
+          "Do not move brand metadata or brand mention tables into public grubber.db.",
+          "Treat newsletter/Gmail-derived content as personal-only.",
+          "Do not depend on Adology brand data for this Grubber universe."
+        ]
+      }
+    ],
     "grubber-ios-app": [],
     "nagzerver-backend": [
       {
