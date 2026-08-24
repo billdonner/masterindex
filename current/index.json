@@ -963,12 +963,12 @@
       "kind": "app",
       "cluster": "KinFlash",
       "status": "release-planned",
-      "lastModified": "2026-08-22",
+      "lastModified": "2026-08-23",
       "repo": "~/kinflash",
       "bundleId": "com.billdonner.kinflash",
       "productLine": "1041soft-commercial",
       "pricingPolicy": "commercial",
-      "release": "Near-term public release planned from billdonner.com/apps/kinflash/. Release channels decided 2026-08-19: iPhone, iPad, and Mac ship together on the same version; Mac goes through the Mac App Store, not Developer ID; price is free with no IAP; TestFlight is the beta channel for both platforms. ASC iOS 1.0 PREPARE_FOR_SUBMISSION with no macOS platform version created yet; the ASC screenshot gallery is still empty for every slot.",
+      "release": "Two products, not one. The Mac app (com.billdonner.kinflash) authors family trees, flashcards, and games; price undecided. The iOS app (com.billdonner.kinflashplay, shown as \"KinFlash Play\") is free and plays what the Mac produced. This supersedes the 2026-08-19 decision that iPhone, iPad, and Mac would ship together on one version at one price. ASC: the existing iOS 1.0 record is PREPARE_FOR_SUBMISSION under the OLD bundle id and no longer matches the shipping iOS identity; no macOS platform version exists; the screenshot gallery is empty for every slot and now needs two sets, not one.",
       "distribution": "public-release-planned",
       "description": "Multi-platform app with local package and document architecture.",
       "dependencies": [],
@@ -995,7 +995,13 @@
         "2026-08-20: added a deterministic Mac App Store screenshot capture rig (Scripts/capture-mac-screenshots.sh, 1440x900 points -> 2880x1800) and made the Mac tree canvas fit its content on open. iPhone and iPad capture already existed; ASC still shows no uploaded screenshots for any platform.",
         "2026-08-22: the Mac editor reached feature parity with iOS — the AI interview landed on the Mac, on interview intake logic (KinFlash/Services/InterviewIntake.swift) now shared by both platforms rather than living in the iOS view. The Mac's AI provider choice is a machine-wide UserDefaults preference, not a document property.",
         "2026-08-22: the Mac MCP automation server moved from port 9880 to 9870. 9880 belongs to Screenker in the local port registry, so with Screenker running KinFlash's server never bound and the MCP smoke test failed before its first assertion. Any existing `claude mcp add` entry pointing at 9880 must be updated.",
-        "2026-08-23 verified: 279 iOS unit tests (31 skipped), 9 iOS UI tests, 65 Mac unit tests, and the full MCP contract smoke all pass. Build 67."
+        "2026-08-23 verified: 279 iOS unit tests (31 skipped), 9 iOS UI tests, 65 Mac unit tests, and the full MCP contract smoke all pass. Build 67.",
+        "2026-08-23: product shape changed. Mac authors, iOS plays. The two apps shared one bundle id — one App Store record carries one price — so free-on-iOS with a possibly-paid Mac was not expressible. Bundle ids split before submission, when it is still cheap: com.billdonner.kinflash (Mac) and com.billdonner.kinflashplay (iOS). Splitting after submission would mean a new record and a lost review history.",
+        "2026-08-23 SUPERSEDES the 2026-08-19 channel decision: iPhone, iPad, and Mac no longer ship as one universal app at one version and price. Mac App Store and TestFlight-for-both still hold.",
+        "2026-08-23 OPEN: \"games\" do not exist. There is no game code in either target — only the flashcard generator (single-answer question/answer cards) and study mode. Both the game feature and making the iOS app player-only are blocked on a definition of what a game is.",
+        "2026-08-23 OPEN: the iOS app still ships the full editor. Its read-only companion mode already exists and is covered by 5 UI tests (it engages when the app opens a .kinflash package), so the player pivot is mostly a matter of forcing that mode rather than new code.",
+        "2026-08-23 ACTION: the live ASC record 6762008872 is under com.billdonner.kinflash but that id is now the Mac app's. Decide whether that record becomes the Mac listing or the iOS player listing before any screenshot work — the answer changes which gallery is captured first.",
+        "2026-08-23: transport between the two apps is the .kinflash package via Files / iCloud Drive. There is still no sync of any kind; the iOS app declares the document UTI as a viewer. The UTI stays identical on both sides deliberately."
       ]
     },
     {

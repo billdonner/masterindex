@@ -25,7 +25,7 @@ As of Thursday, August 21, 2026.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 - `doubleqross.com` is live at IONOS. Apex and `www` resolve, present the included Sectigo certificate through February 10, 2027, and redirect over HTTPS to the maintained `1041soft.com/qross/` page. The stale private-repo Pages link was removed.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
-- KinFlash is a 1041soft commercial product with a near-term public release, published at `billdonner.com/apps/kinflash/`. Its release channels were settled 2026-08-19: iPhone, iPad, and Mac ship together on one version, Mac through the Mac App Store rather than Developer ID, price free with no in-app purchase, TestFlight the beta channel for both platforms. Mac App Store screenshots are therefore in scope. Two risks are recorded: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Flasherz Kids is obsolete. Cardz Studio, both MastPex apps, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.
+- KinFlash is now **two products**, decided 2026-08-23. The Mac app authors family trees, flashcards, and games; its price is undecided. The iOS app is free and only plays what the Mac produced. They shared one bundle id — one App Store record, one price — so the ids were split before submission: `com.billdonner.kinflash` (Mac) and `com.billdonner.kinflashplay` (iOS, shown as "KinFlash Play"). This supersedes the 2026-08-19 decision that all three platforms would ship as one universal app at one price; Mac App Store distribution and TestFlight for both still hold. Public page: `billdonner.com/apps/kinflash/`. Two risks stand: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Games do not exist yet, and the iOS app still ships the full editor — both wait on a definition of what a game is.
 - Pickleball Collective now has two active local sources: Collective Engine is the deployed multi-tenant scheduler, and Collective Comms is the approval-gated dedicated-Mac messaging utility. Neither is an App Store product.
 - Collective Engine now emits file-based, RFC 8785-canonical handoff payloads with verification tooling. Collective Comms now defaults one-to-one delivery to SMS, supports explicit overrides, and surfaces invalid Messages targets rather than silently dropping sends.
 - Operational evidence on August 21 confirmed that an iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three. The scheduler also records its handoff-only Tuesday court split as non-authoritative.
@@ -74,7 +74,7 @@ high score.
 | ASC device coverage exists without Screenker critique | SentiPods |
 | Local captures exist but ASC is empty | Oenora iOS |
 | Active ASC release record is empty | Zerver Monitor |
-| Highest-priority missing commercial gallery | KinFlash — iPhone, iPad, and now Mac App Store; ASC is empty for every slot |
+| Highest-priority missing commercial gallery | KinFlash — now two galleries (paid-TBD Mac authoring app, free iOS player); ASC empty for every slot |
 | Defer until lifecycle or release decision | SharedSpaceLab, PickleFamilia |
 | Internal functional evidence only | Cardz Studio, workin On, MastPex iOS, MastPex Mac |
 | No new screenshot work | Flasherz Kids, LtWatcher, grubber-ios, Famster, Nagz |
@@ -183,7 +183,8 @@ No current consumer was found to require Card Server, so these do not block reti
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record retained |
 | PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| KinFlash | com.billdonner.kinflash | ~/kinflash | Near-term release at billdonner.com/apps/kinflash/; iOS 1.0 PREPARE_FOR_SUBMISSION; no macOS platform version yet |
+| KinFlash (Mac, authoring) | com.billdonner.kinflash | ~/kinflash | Price TBD; no macOS platform version in ASC yet |
+| KinFlash Play (iOS, player) | com.billdonner.kinflashplay | ~/kinflash | Free; ASC record 6762008872 still carries the OLD bundle id and needs reconciling |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
 | Cardz Studio | com.billdonner.cardz-studio | ~/cardz-studio-ios | Internal/TestFlight-only; iOS 1.0 retained |
