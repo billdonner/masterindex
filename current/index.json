@@ -962,7 +962,7 @@
       "kind": "app",
       "cluster": "KinFlash",
       "status": "release-planned",
-      "lastModified": "2026-08-23",
+      "lastModified": "2026-08-24",
       "repo": "~/kinflash",
       "bundleId": "com.billdonner.kinflash",
       "productLine": "1041soft-commercial",
@@ -1000,7 +1000,13 @@
         "2026-08-23 OPEN: \"games\" do not exist. There is no game code in either target \u2014 only the flashcard generator (single-answer question/answer cards) and study mode. Both the game feature and making the iOS app player-only are blocked on a definition of what a game is.",
         "2026-08-23 OPEN: the iOS app still ships the full editor. Its read-only companion mode already exists and is covered by 5 UI tests (it engages when the app opens a .kinflash package), so the player pivot is mostly a matter of forcing that mode rather than new code.",
         "2026-08-23 ACTION: the live ASC record 6762008872 is under com.billdonner.kinflash but that id is now the Mac app's. Decide whether that record becomes the Mac listing or the iOS player listing before any screenshot work \u2014 the answer changes which gallery is captured first.",
-        "2026-08-23: transport between the two apps is the .kinflash package via Files / iCloud Drive. There is still no sync of any kind; the iOS app declares the document UTI as a viewer. The UTI stays identical on both sides deliberately."
+        "2026-08-23: transport between the two apps is the .kinflash package via Files / iCloud Drive. There is still no sync of any kind; the iOS app declares the document UTI as a viewer. The UTI stays identical on both sides deliberately.",
+        "2026-08-24: ten game designs proposed in the repo at GAMES_DESIGN.md. Design only \u2014 still no game code in either target.",
+        "2026-08-24 ARCHITECTURE: because the Mac authors and the iOS player is free, the player cannot contain the generator, so a game must be a generated artifact \u2014 the Mac compiles questions, answers, distractors and images into a self-contained payload the player renders and scores without traversing the tree. Side effect worth keeping: a game is a file, so it can be given to a grandchild without giving away the family database.",
+        "2026-08-24: recommended first game is \"How Are We Related?\" \u2014 needs no photos, dates or places, works on the smallest tree, reuses the existing resolver and single-answer machinery, and is the cheapest way to prove the payload format the other nine inherit.",
+        "2026-08-24 OPEN, blocking: whether games may use LIVING people. A game about a living relative's birth year is a game that discloses it. This is a privacy decision, not a technical one, and it must be settled before the first generator is written.",
+        "2026-08-24 OPEN, blocking: is a game stored in the .kinflash package or as its own exportable document? This decides whether the free player opens a tree or opens a game, and it is the first fork in the work.",
+        "2026-08-24 OPEN: who the player is. A grandchild at a reunion and an elder rehearsing names need different difficulty, type sizes and failure behaviour; the app today is designed for the elder."
       ]
     },
     {
