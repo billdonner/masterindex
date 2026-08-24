@@ -760,7 +760,7 @@
       "lastModified": "2026-08-24",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
-      "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; source and ASC build 393 VALID on 2026-08-23 (uploaded 2026-08-20)",
+      "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 394 VALID on ASC 2026-08-23 (393 and 392 also VALID); store name DoubleQross; age rating 12+ declared 2026-08-19",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
         "card-engine",
@@ -769,7 +769,6 @@
       ],
       "links": {
         "website": "https://doubleqross.com/",
-        "redirectTarget": "https://1041soft.com/qross/",
         "portfolioPage": "https://billdonner.com/apps/qross/",
         "testFlight": "https://testflight.apple.com/join/W6VjPWV6",
         "appStore": null
@@ -787,7 +786,8 @@
         "The retired card-server repository corrected its historical Qross App Store ID before archival; Card Engine remains the only live backend.",
         "The included Sectigo certificate covers both *.doubleqross.com and doubleqross.com and is valid through 2027-02-10.",
         "ASC iOS 1.0 en-US marketingUrl was updated to https://doubleqross.com/ on 2026-08-14; supportUrl remains https://1041soft.com/qross/support.html.",
-        "RESOLVED 2026-08-24: doubleqross.com is the canonical product page \u2014 connected to IONOS webspace /qross via the panel's Connect-to-webspace flow, serving the repo's corrected docs/ pages (uploaded via SFTP). billdonner.github.io/qross remains live as a mirror of the same content; 1041soft.com/qross is legacy. Site deploys = sftp put of docs/*.html into /qross (keychain credential, see qross scripts/export-catalog.sh pattern)."
+        "RESOLVED 2026-08-24: doubleqross.com is the canonical product page \u2014 connected to IONOS webspace /qross via the panel's Connect-to-webspace flow, serving the repo's corrected docs/ pages (uploaded via SFTP). billdonner.github.io/qross remains live as a mirror of the same content; 1041soft.com/qross is legacy. Site deploys = sftp put of docs/*.html into /qross (keychain credential, see qross scripts/export-catalog.sh pattern).",
+        "Recent activity (through 2026-08-24): two external Codex reviews fixed 11 verified defects (soft-locks, daily-exploit, Leg-2 empty-goal, DC scoring floor 2n-1); Double Cross Leg 2 reworked to walked-choice (#198); efficiency % scoring shipped (#197); Carol's full PR stack merged (palettes to 16, Tahiti, onboarding); subtopic search upgraded (#178/#179, enrich pass pending); issue board triaged 29\u21928; test suite 891/0. Open: PR #172 and decisions #193 (both Carol), qclean-enrich catalog republish, MLX-lab hint-judge queue."
       ]
     },
     {
