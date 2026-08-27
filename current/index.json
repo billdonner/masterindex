@@ -1074,7 +1074,7 @@
       "kind": "app",
       "cluster": "Oenora",
       "status": "ready-for-sale",
-      "lastModified": "2026-08-26",
+      "lastModified": "2026-08-06",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
       "release": "iOS 1.0 READY_FOR_SALE; 1.1 PREPARE_FOR_SUBMISSION; source and ASC draft aligned at build 9",
@@ -1088,7 +1088,7 @@
       },
       "notes": [
         "Strong signal of finished packaging relative to the rest of the portfolio.",
-        "Live ASC version is 1.0 and ASC has valid build 9 for the 1.1 draft, but the clean local repo's project.yml and generated Xcode project currently declare 1.0 (7). Regenerating or uploading from this checkout would regress the version/build.",
+        "Live ASC version is 1.0 and ASC has valid build 9 for the 1.1 draft; the clean local repo's project.yml and generated Xcode project currently declare 1.1 (9).",
         "Screenker marketing galleries built 2026-08-01 (iPhone 88/100, all-landscape iPad 90/100) in ~/100Burfords/marketing/screenshots and published to the ASC 1.1 draft on 2026-08-06 (iPhone 7 slots, iPad 6 slots)."
       ]
     },
