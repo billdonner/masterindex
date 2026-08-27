@@ -42,8 +42,8 @@
     "ascApps": 23,
     "mappedAscApps": 20,
     "unmatchedAscApps": 3,
-    "activeRepos": 54,
-    "clusters": 15,
+    "activeRepos": 55,
+    "clusters": 16,
     "liveServices": 7,
     "collaborators": 3,
     "unreachableServices": 0,
@@ -582,6 +582,22 @@
       "watchpoints": [
         "grubber-ios is obsolete by owner decision; SentiPods is the current mapped client",
         "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed"
+      ]
+    },
+    {
+      "name": "Expense Evidence",
+      "maturity": "new commercial-track local-first app",
+      "summary": "XpenseXpunger is the Mac-first scanner for expense receipts, subscriptions, and bookkeeping evidence, separated from pfolio and from the 1041soft finance output repository.",
+      "highlights": [
+        "XpenseXpunger",
+        "1041soft finance scan-results schema-v1 export",
+        "Local SQLite evidence store",
+        "Private product/support/privacy site"
+      ],
+      "watchpoints": [
+        "ASC record, bundle id, and TestFlight build are not yet verified",
+        "Gmail and Plaid credentials must remain Keychain-only or app-private secure storage",
+        "Do not build app code in ~/1041soft; use it only as an export target"
       ]
     },
     {
@@ -1921,10 +1937,10 @@
       "kind": "app",
       "cluster": "Expense Evidence",
       "status": "implementation-in-progress",
-      "lastModified": "2026-08-24",
+      "lastModified": "2026-08-26",
       "repo": "~/xpensexpunger",
       "productLine": "1041soft-commercial",
-      "release": "New local SwiftPM CLI/Mac-first MVP in progress. No App Store Connect record, TestFlight build, or bundle id has been verified yet.",
+      "release": "Initial SwiftPM CLI/Mac-first MVP committed at ~/xpensexpunger on 2026-08-24, private product site deployed on 2026-08-25, and 1041soft.com expense-maintenance utility plan committed on 2026-08-26. No App Store Connect record, TestFlight build, or bundle id has been verified yet.",
       "description": "Personal Mac-first, local-first expense evidence scanner for Gmail receipts, local files, screenshots, PDFs, CSVs, and later Plaid Transactions. It normalizes expense candidates with evidence provenance and exports bookkeeping-safe schema-v1 JSON into ~/1041soft/finance/scan-results.",
       "dependencies": [
         "1041soft finance scan-results",
@@ -1933,10 +1949,11 @@
         "PDFKit"
       ],
       "links": {
-        "website": null,
+        "website": "https://xpensexpunger.poobah52.chatgpt.site",
         "appStore": null,
         "testFlight": null,
-        "support": null
+        "support": "https://xpensexpunger.poobah52.chatgpt.site/#support",
+        "privacyPolicy": "https://xpensexpunger.poobah52.chatgpt.site/#privacy"
       },
       "securityBoundary": "Raw files stay in user-approved source locations; app stores references and safe extracted fields only. Full card numbers, CVVs, account numbers, SSNs, OAuth secrets, Plaid tokens, and session cookies must never be written to repo files.",
       "notes": [
@@ -1944,7 +1961,9 @@
         "~/1041soft is output-only for finance/scan-results/*.json compatibility with aggregate_bookkeeping.py.",
         "Plaid is future scope via Transactions and /transactions/sync, not the existing pfolio investment flow.",
         "Owner plans TestFlight work on the morning of 2026-08-24; ASC metadata copy and website are being prepared in this implementation pass.",
-        "2026-08-24 bookkeeping baseline lives in ~/1041soft/finance/scan-results and ~/1041soft/finance/bookkeeping-aggregate-2026-08-23.md. Sources covered Gmail receipts, Apple subscription screenshots, and Apple Card CSV transaction history; raw financial exports remain outside git."
+        "2026-08-24 bookkeeping baseline lives in ~/1041soft/finance/scan-results and ~/1041soft/finance/bookkeeping-aggregate-2026-08-23.md. Sources covered Gmail receipts, Apple subscription screenshots, and Apple Card CSV transaction history; raw financial exports remain outside git.",
+        "2026-08-25: private Sites URL deployed at https://xpensexpunger.poobah52.chatgpt.site with support and privacy sections suitable for ASC draft metadata.",
+        "2026-08-26: ~/xpensexpunger/docs/1041SOFT_EXPENSE_MAINTENANCE_PLAN.md defines the local monthly utility workflow for 1041soft.com expenses: import private local evidence, normalize in SQLite, export safe schema-v1 JSON to ~/1041soft/finance/scan-results, then run the 1041soft aggregator."
       ]
     }
   ],
@@ -2124,6 +2143,13 @@
     }
   ],
   "repos": [
+    {
+      "repo": "~/xpensexpunger",
+      "branch": "main",
+      "last2026Commit": "2026-08-26",
+      "kind": "app/local operations tool",
+      "role": "New 1041soft-commercial Mac-first expense evidence scanner and 1041soft.com expense-maintenance utility with SwiftPM CLI MVP, local SQLite store, safe import/export boundary, ASC draft copy, deployed private product site, and committed monthly workflow plan"
+    },
     {
       "repo": "~/app-feedback",
       "branch": "main",
@@ -2673,6 +2699,11 @@
       "kind": "feedback-workflow-redesign-resolved",
       "observedAt": "2026-08-19",
       "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived. Follow-up 2026-08-19: the retirement was only complete on the Mac where it was performed. The second machine (Mac.attlocal.net) was still running the loop from a user crontab, not a launch agent: '30 */2 * * * ~/bin/zkraper-notify' (the email) and '15 */2 * * * ~/bin/zkraper-qross-issues' (the qross issue filer). The notifier looked stale because the qross job \u2014 the only thing that advances the watermark \u2014 was failing on an expired GH_TOKEN, so the same unprocessed counts were re-sent every two hours. Both crontab lines were removed (backup at ~/.crontab.backup-20260819); ~/zkraper and ~/bin/zkraper* were left in place because .watermark.json and .qross-issues-filed.json still hold unprocessed state. app-feedback was deliberately NOT installed on this second machine \u2014 its store is per-machine, so a second collector would double-count."
+    },
+    {
+      "kind": "xpensexpunger-release-readiness",
+      "observedAt": "2026-08-26",
+      "summary": "XpenseXpunger initial CLI MVP, private product/support/privacy site, and 1041soft.com expense-maintenance utility plan are in place. App Store Connect record, bundle id, signed app archive, TestFlight build, and storefront screenshots remain unverified; keep this separate from pfolio and keep ~/1041soft output-only."
     }
   ],
   "taskRegistry": {

@@ -71,9 +71,16 @@ Security boundary: raw bank logs, Gmail/Plaid tokens, card or account identifier
 secrets, Plaid access tokens, and session cookies must never be written to repo files. Raw evidence
 stays where the user selected it; the app stores references and redacted extracted fields.
 
-Release status: no App Store Connect record, bundle id, TestFlight build, support URL, privacy URL,
-or live marketing page has been verified yet. Owner plans TestFlight work on the morning of
-2026-08-24; ASC copy and a product website are being prepared in the repository.
+Release status: initial SwiftPM CLI MVP is committed in `~/xpensexpunger`, and a private product
+site is deployed at `https://xpensexpunger.poobah52.chatgpt.site` with support and privacy sections
+for ASC draft metadata. No App Store Connect record, bundle id, signed archive, TestFlight build,
+or storefront screenshots have been verified yet.
+
+Maintenance utility direction: as of 2026-08-26, XpenseXpunger should be the local monthly utility
+for maintaining 1041soft.com expense evidence. The committed plan is
+`~/xpensexpunger/docs/1041SOFT_EXPENSE_MAINTENANCE_PLAN.md`: import private local evidence outside
+git, normalize into SQLite, export schema-v1 JSON into `~/1041soft/finance/scan-results/`, and run
+the existing 1041soft aggregator after export.
 
 Bookkeeping baseline: `~/1041soft/finance/scan-results/` now contains normalized schema-v1
 results from Gmail receipt scans, Apple subscription screenshots, and Apple Card CSV transaction

@@ -9,13 +9,15 @@ repositories:
     type: "app/local operations tool"
     lifecycle: active
     standardization: UNASSESSED
-    last_reviewed: "2026-08-24"
+    last_reviewed: "2026-08-26"
     authoritative_project_instructions: null
     notes:
       - "New 1041soft-commercial Mac-first, local-first expense evidence scanner."
       - "Separate from pfolio; ~/1041soft is output-only for finance/scan-results schema-v1 JSON."
       - "Security boundary: no raw bank logs, Gmail/Plaid tokens, card/account identifiers, SSNs, OAuth secrets, Plaid access tokens, or session cookies in git."
-      - "ASC record and TestFlight build not yet verified; owner plans TestFlight work on 2026-08-24."
+      - "Private product/support/privacy site deployed at https://xpensexpunger.poobah52.chatgpt.site on 2026-08-25."
+      - "1041soft.com expense-maintenance utility plan committed at ~/xpensexpunger/docs/1041SOFT_EXPENSE_MAINTENANCE_PLAN.md on 2026-08-26."
+      - "ASC record, bundle id, signed archive, and TestFlight build not yet verified."
   1041soft:
     repository: "1041soft"
     path: "~/1041soft"
