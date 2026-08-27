@@ -984,7 +984,7 @@
       "kind": "app",
       "cluster": "KinFlash",
       "status": "release-planned",
-      "lastModified": "2026-08-24",
+      "lastModified": "2026-08-27",
       "repo": "~/kinflash",
       "bundleId": "com.billdonner.kinflash",
       "productLine": "1041soft-commercial",
@@ -1038,7 +1038,13 @@
         "2026-08-24 OPEN: child-facing relationship vocabulary. The resolver says \"Your grandparent's sibling\" where a child would say \"your grandma's brother\", and falls back to \"Your parent's sibling\" when a gender is unknown. That vocabulary is shared with the elder's flashcards and the MCP tool surface, so softening it for children is not a local change and has not been made.",
         "2026-08-24 CLOSED (was open): child-facing relationship vocabulary. Games now translate on the way out — \"grandmother\" to \"grandma\", \"parent's sibling\" to \"aunt or uncle\", \"grandparent's sibling\" to \"great-aunt or great-uncle\". The resolver is unchanged, so the elder's flashcards and the MCP tool surface keep correct genealogy; only games are rephrased.",
         "2026-08-24: the child vocabulary table must be injective, and a test enforces it. A child would call both a first cousin and a first cousin once removed \"your cousin\", but a game is scored — two relatives answering to one name means a question with two right answers and a correct tap marked wrong. Ambiguous cases say what a child would actually say (\"your mom or dad's cousin\") rather than collapsing.",
-        "2026-08-24: build 73. 337 iOS unit tests, 9 UI, 73 Mac, MCP contract smoke — all passing. Remaining open game questions are scoring/replay and whether the free player ever generates anything; neither blocks work."
+        "2026-08-24: build 73. 337 iOS unit tests, 9 UI, 73 Mac, MCP contract smoke — all passing. Remaining open game questions are scoring/replay and whether the free player ever generates anything; neither blocks work.",
+        "2026-08-27 PRICING DECIDED (design, not built; see SEATS_AND_PRICING.md in the repo): both apps free, money per SEAT \u2014 one person's place in one family, bought once, with everything sent afterwards free. Granny buys seats for grandchildren; adults buy their own. This replaces the earlier assumption that the Mac app would be the paid product.",
+        "2026-08-27: a seat is two separable things \u2014 authorisation (granted free by the tree's owner) and entitlement (paid by whoever). Either can come first, so inviting costs nothing and the owner is never asked which grandchildren are worth paying for.",
+        "2026-08-27: the player's interface band is DERIVED from the player's age in the tree, not set by anyone \u2014 under 6 pictures and matching, 6-12 eight questions in child words, 13+ thirty questions with real scoring and adult vocabulary. Nobody can set it wrong and it self-corrects as a child grows. Consequence: a seat requires a birth year.",
+        "2026-08-27: any server is a COURIER, not a host \u2014 games encrypted per seat, service stores unreadable blobs, entitlement baked in at generation time and never checked at play time so a delivered game survives the service going away. AirDrop remains the fallback. Rationale: payloads carry living relatives' names and birth years and the readers include children.",
+        "2026-08-27: heirloom books are a feature, not a business (selling books was considered and rejected). TreeNarrativeMarkdown and PDFExporter already exist. Open fork recorded: a book needs the whole tree, so generating one on the phone would mean the seat carries the family archive rather than a few questions \u2014 proposed instead that the phone requests a book and the Mac sends the finished PDF.",
+        "2026-08-27 OPEN: seat price; where the age bands fall; whether the tree's owner needs a seat; whether anything beyond games can be pushed; whether delivered content can be revoked; and what happens to seats when the tree's owner dies."
       ]
     },
     {
