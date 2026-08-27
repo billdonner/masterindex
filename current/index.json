@@ -608,11 +608,11 @@
       "maturity": "pre-submission product, print pipeline proven",
       "summary": "Directory-book maker: native macOS+iOS app generating print-ready booklet PDFs from one roster source of truth, with the retained Python engine as reference.",
       "highlights": [
-        "Mallinbook",
+        "HOABooklet",
         "bookmaker (Python reference engine)"
       ],
       "watchpoints": [
-        "Repo renamed 2026-08-01 (bookmaker-app -> mallinbook); older notes may cite stale paths",
+        "Repo renamed 2026-08-01 (bookmaker-app -> mallinbook), then 2026-08-27 (mallinbook -> hoabooklet); older notes may cite stale paths",
         "No legacy .bookmaker document support by owner decision"
       ]
     },
