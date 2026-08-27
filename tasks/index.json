@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T22:43:41-05:00",
+  "generatedAt": "2026-08-26T14:45:20-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -255,18 +255,22 @@
           "bd-grubber Fly app",
           "bd-grubber-db Fly Postgres",
           "grubber tick --tier brands",
-          "/api/v1/brands/stats"
+          "/api/v1/brands/stats",
+          "/monitor",
+          "/monitor/data"
         ],
         "expectedOutputs": [
           "Updated Grubber service entry when deployment, schedule, or privacy facts change",
           "Verified brand_universe count, tier mix, and source provenance",
-          "Recorded gaps for raw brand egress, /db exclusion, report generation, or schedule failures"
+          "Recorded gaps for raw brand egress, /db exclusion, report generation, or schedule failures",
+          "Verified aggregate-only artifact monitor counts and OpenAPI exclusion"
         ],
         "guardrails": [
           "Do not expose raw brand tables through /api/v1, MCP, or the public /db export.",
           "Do not move brand metadata or brand mention tables into public grubber.db.",
           "Treat newsletter/Gmail-derived content as personal-only.",
-          "Do not depend on Adology brand data for this Grubber universe."
+          "Do not depend on Adology brand data for this Grubber universe.",
+          "Keep /monitor and /monitor/data aggregate-only; do not return raw brand rows, raw mention rows, transcripts, article bodies, Gmail/newsletter content, or private source links."
         ]
       }
     ],
