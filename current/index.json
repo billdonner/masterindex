@@ -1039,11 +1039,11 @@
         "2026-08-24 CLOSED (was open): child-facing relationship vocabulary. Games now translate on the way out — \"grandmother\" to \"grandma\", \"parent's sibling\" to \"aunt or uncle\", \"grandparent's sibling\" to \"great-aunt or great-uncle\". The resolver is unchanged, so the elder's flashcards and the MCP tool surface keep correct genealogy; only games are rephrased.",
         "2026-08-24: the child vocabulary table must be injective, and a test enforces it. A child would call both a first cousin and a first cousin once removed \"your cousin\", but a game is scored — two relatives answering to one name means a question with two right answers and a correct tap marked wrong. Ambiguous cases say what a child would actually say (\"your mom or dad's cousin\") rather than collapsing.",
         "2026-08-24: build 73. 337 iOS unit tests, 9 UI, 73 Mac, MCP contract smoke — all passing. Remaining open game questions are scoring/replay and whether the free player ever generates anything; neither blocks work.",
-        "2026-08-27 PRICING DECIDED (design, not built; see SEATS_AND_PRICING.md in the repo): both apps free, money per SEAT \u2014 one person's place in one family, bought once, with everything sent afterwards free. Granny buys seats for grandchildren; adults buy their own. This replaces the earlier assumption that the Mac app would be the paid product.",
-        "2026-08-27: a seat is two separable things \u2014 authorisation (granted free by the tree's owner) and entitlement (paid by whoever). Either can come first, so inviting costs nothing and the owner is never asked which grandchildren are worth paying for.",
-        "2026-08-27: the player's interface band is DERIVED from the player's age in the tree, not set by anyone \u2014 under 6 pictures and matching, 6-12 eight questions in child words, 13+ thirty questions with real scoring and adult vocabulary. Nobody can set it wrong and it self-corrects as a child grows. Consequence: a seat requires a birth year.",
-        "2026-08-27: any server is a COURIER, not a host \u2014 games encrypted per seat, service stores unreadable blobs, entitlement baked in at generation time and never checked at play time so a delivered game survives the service going away. AirDrop remains the fallback. Rationale: payloads carry living relatives' names and birth years and the readers include children.",
-        "2026-08-27: heirloom books are a feature, not a business (selling books was considered and rejected). TreeNarrativeMarkdown and PDFExporter already exist. Open fork recorded: a book needs the whole tree, so generating one on the phone would mean the seat carries the family archive rather than a few questions \u2014 proposed instead that the phone requests a book and the Mac sends the finished PDF.",
+        "2026-08-27 PRICING DECIDED (design, not built; see SEATS_AND_PRICING.md in the repo): both apps free, money per SEAT — one person's place in one family, bought once, with everything sent afterwards free. Granny buys seats for grandchildren; adults buy their own. This replaces the earlier assumption that the Mac app would be the paid product.",
+        "2026-08-27: a seat is two separable things — authorisation (granted free by the tree's owner) and entitlement (paid by whoever). Either can come first, so inviting costs nothing and the owner is never asked which grandchildren are worth paying for.",
+        "2026-08-27: the player's interface band is DERIVED from the player's age in the tree, not set by anyone — under 6 pictures and matching, 6-12 eight questions in child words, 13+ thirty questions with real scoring and adult vocabulary. Nobody can set it wrong and it self-corrects as a child grows. Consequence: a seat requires a birth year.",
+        "2026-08-27: any server is a COURIER, not a host — games encrypted per seat, service stores unreadable blobs, entitlement baked in at generation time and never checked at play time so a delivered game survives the service going away. AirDrop remains the fallback. Rationale: payloads carry living relatives' names and birth years and the readers include children.",
+        "2026-08-27: heirloom books are a feature, not a business (selling books was considered and rejected). TreeNarrativeMarkdown and PDFExporter already exist. Open fork recorded: a book needs the whole tree, so generating one on the phone would mean the seat carries the family archive rather than a few questions — proposed instead that the phone requests a book and the Mac sends the finished PDF.",
         "2026-08-27 OPEN: seat price; where the age bands fall; whether the tree's owner needs a seat; whether anything beyond games can be pushed; whether delivered content can be revoked; and what happens to seats when the tree's owner dies."
       ]
     },
@@ -1522,8 +1522,8 @@
       "name": "amenbeats",
       "kind": "app",
       "cluster": "Standalone",
-      "status": "asc-mapped",
-      "lastModified": "2026-08-22",
+      "status": "submitted-for-review",
+      "lastModified": "2026-08-27",
       "repo": "github:billdonner/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
       "productLine": "billdonner-free",
@@ -1539,8 +1539,8 @@
         "support": "https://billdonner.com/apps/amenbeats/"
       },
       "notes": [
-        "GitHub source and ASC are aligned at build 11 (1.0 PREPARE_FOR_SUBMISSION, build 11 attached).",
-        "2026-08-23: Kid mode shipped — parent-configurable profiles (curated beats, tempo range, volume ceiling, optional mute/solo), always-on event tape with save/replay shows, landscape-locked on all devices. Gallery is all-landscape (iPhone Kid-only, iPad Kid + one studio slide). Remaining before submit: age rating questionnaire and App Privacy, both ASC web-UI only.",
+        "2026-08-27: iOS 1.0 (build 14) SUBMITTED and Waiting for Review (submission id 1a964916-b3e9-4e8b-b1b2-beccaad36747, submitted by bill donner). Free, no IAP, no data collection; age rating 4+ with parentalControls=true; contentRightsDeclaration=DOES_NOT_USE_THIRD_PARTY_CONTENT.",
+        "Build 14 contents: parent-configurable Kid mode (curated beats, tempo range, volume ceiling, optional mute/solo), always-on event tape with save/replay shows, Kid mode landscape on all devices with a full-width grid and 4/8/12/16 sizes, welcome screen on every Pro launch. 106 unit + 9 UI tests green.",
         "Owner confirmed on 2026-08-23 that amenbeats belongs on BillDonner.com rather than 1041soft.com."
       ]
     },
