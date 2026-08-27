@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Monday, August 24, 2026.
+As of Wednesday, August 26, 2026.
 
 ## Scope
 
@@ -23,7 +23,7 @@ As of Monday, August 24, 2026.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
-- Grubber is also the active home for the paid tech newsletter digest and the Fly-side global brand-universe supplement. Newsletter/Gmail-derived content is personal-only; brand metadata and derived brand mentions live in shared Fly Postgres for server-side podcast/news advertising-trend analysis, not in the public `/db` export or raw brand API routes.
+- Grubber is also the active home for the paid tech newsletter digest, the Fly-side global brand-universe supplement, and an aggregate artifact monitor at `https://bd-grubber.fly.dev/monitor`. Newsletter/Gmail-derived content is personal-only; brand metadata and derived brand mentions live in shared Fly Postgres for server-side podcast/news advertising-trend analysis, not in the public `/db` export or raw brand API routes. As of 2026-08-26, the live monitor reports 69 shows, 1,335 episodes, 1,309 public news articles, 169 active topics, 6,745 active brands, 3,795 derived brand mention rows, 15 daily digests, and one private brand report; `/monitor` is aggregate-only and excluded from OpenAPI.
 - `doubleqross.com` is live at IONOS and now serves the DoubleQross product site directly (apex and `www`, Sectigo certificate through February 10, 2027): the domain is connected to the webspace `/qross` directory, which also hosts the app's catalog downloads. Pages are sourced from the qross repo's `docs/` and deployed by SFTP; `1041soft.com/qross/` is legacy and `billdonner.github.io/qross` mirrors the same content.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 - KinFlash is now **two products**, decided 2026-08-23. The Mac app authors family trees, flashcards, and games; its price is undecided. The iOS app is free and only plays what the Mac produced. They shared one bundle id — one App Store record, one price — so the ids were split before submission: `com.billdonner.kinflash` (Mac) and `com.billdonner.kinflashplay` (iOS, shown as "KinFlash Play"). This supersedes the 2026-08-19 decision that all three platforms would ship as one universal app at one price; Mac App Store distribution and TestFlight for both still hold. Public page: `billdonner.com/apps/kinflash/`. Two risks stand: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Ten game designs are proposed in the repo (`GAMES_DESIGN.md`), and the first — "How Are We Related?" — is built end to end as of 2026-08-24 (build 71). Two decisions were settled: living relatives may appear **per game**, chosen at generation and recorded in the file, with a game that excludes them naming none of them anywhere, not even as a wrong answer; and a game is its own small exportable document (`.kinflashgame`) rather than something inside the tree package, so it arrives in Messages, opens with one tap, and gives the recipient the game rather than the family database. Nine games remain unbuilt.
@@ -35,14 +35,17 @@ As of Monday, August 24, 2026.
 - Collective Engine's Fly deployment has a healthy `/health` endpoint, but its intended `collective.1041soft.com` host is still NXDOMAIN; publish that DNS record and the corresponding exact-match Auth0 URLs before calling it publicly reachable. Collective Comms now verifies the producer's canonical handoff digest and blocks publication on a mismatch.
 - Review Authority is an active local, read-only review controller. Its Milestone 1 vertical slice can inspect a registered build source, redact and content-address evidence, request a bounded cloud critique, and retain an audit record; it has no public release, UI, correction loop, or configured Git remote.
 - XpenseXpunger is a new 1041soft-commercial project at `~/xpensexpunger`. It is a separate Mac-first, local-first expense evidence scanner for Gmail receipts, local files, screenshots, PDFs, CSVs, and later Plaid Transactions. It must not be merged into `pfolio`, and `~/1041soft` is output-only for compatible `finance/scan-results/*.json` exports.
+- 1041Soft LLC's Apple Developer Program conversion request was submitted on 2026-08-24 to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID: `20000146677819`. Approval and seller-name/account conversion are still pending.
 
 ## Product Lines
 
 ### BillDonner.com — always free
 
 Personal utilities, experiments, and children-oriented apps. Users are never charged; a Mac
-version and MCP surface are optional. `workin On`, `MastPex IOS`, and `MastPex Mac` remain in
-this product family but are internal-use/TestFlight-only rather than public releases.
+version and MCP surface are optional. `SharedSpaceLab`, `Nagz`, `workin On`, `AmenBeats`,
+`SentiPods`, `Flasherz Kids`, and `Zerver Monitor` belong to this product family. `workin On`
+and `Flasherz Kids` are internal-use/obsolete rather than public releases; `MastPex IOS` and
+`MastPex Mac` remain internal-use/TestFlight-only.
 
 ### 1041soft.com — commercial
 
@@ -51,10 +54,9 @@ testing, documentation, privacy, and support bar; they should normally have a re
 and an MCP or automation surface when that fits the product. KinFlash is the newest confirmed
 assignment and is planned for near-term release.
 
-The remaining apps are not yet classified. Presentation drift remains open until that is done:
-the BillDonner.com generator currently includes every active app, and 1041soft.com still serves
-`/workinon/` even though workin On is internal-only. The public catalog also needs to stop
-presenting Flasherz Kids as active. KinFlash's public page was decided on
+The 1041Soft release-track page now lists only DoubleQross, Oenora, Screenker, Mallinbook,
+Pfoliolio, and PickleFamilia; none is currently approved for App Store release. The seven
+BillDonner.com assignments above are excluded from that page. KinFlash's public page was decided on
 2026-08-19: it lives at `billdonner.com/apps/kinflash/`, not on 1041soft.com and
 not on GitHub Pages, following the existing one-page-per-app pattern under
 `/apps/<name>/`.
@@ -323,6 +325,7 @@ product home.
 - Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 - Nagzerver Git `main` does not reproduce the deployed PickledBalls and PickleFamilia API. The exact deployed source is preserved on `recovery/deployed-2026-06-30`, but its one failing schedule test must be resolved before review and merge.
 - SharedSpaceLab's public product name, product-line assignment, business model, and eventual server boundary remain undecided. Famster must not be expanded as a parallel implementation while those decisions are open.
+- 1041Soft LLC's Apple Developer organization conversion is pending Apple review under case ID `20000146677819`. No approval, seller-name change, or converted organization membership has been verified yet.
 
 ## Operational Rule
 

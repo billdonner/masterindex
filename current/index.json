@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-14T22:43:41-05:00",
+  "generatedAt": "2026-08-26T14:45:20-05:00",
   "scope": {
-    "dateLabel": "Friday, August 14, 2026",
+    "dateLabel": "Wednesday, August 26, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
@@ -16,6 +16,8 @@
       "App Store Connect was queried live on August 13, 2026 via the ASC API (key MN6H2P6385). All ascApps entries reflect that query, replacing the retained August 2 snapshot.",
       "August 13 write pass: set primary category on 5 macOS records, copyright on all 6, and completed the age-rating questionnaire for Mallinbook and Pfoliolio via the ASC API. Oenora, SharedSpaceLab, and SentiPods age ratings were deliberately left unset - each raises a content question the owner must answer.",
       "August 13 second write pass: uploaded SentiPods macOS screenshots, and removed GigStand from sale in all 175 territories.",
+      "August 24 Grubber update: bd-grubber now owns the paid tech newsletter digest plan and a Fly-side global brand universe for podcast/news advertising-trend analysis. Brand metadata and derived mentions live in shared Fly Postgres brand_universe.* tables, with no raw brand API or public /db export.",
+      "August 26 Grubber monitor update: bd-grubber now serves /monitor and /monitor/data as aggregate-only operational surfaces. Live verification showed 69 shows, 1,335 episodes, 1,309 public news articles, 169 active topics, 6,745 brands, 3,795 derived brand mention rows, 15 daily digests, and one private brand report; /monitor remains excluded from OpenAPI and raw data export.",
       "August 13 correlation pass queried App Store Connect read-only, inspected current GitHub repositories, checked Fly.io app state, and verified first-party public URLs over HTTP and HTTPS.",
       "The public portfolio page at billdonner.com/apps and the 1041soft.com GitHub Pages configuration were treated as presentation surfaces, not as authoritative replacements for ASC or repository settings.",
       "August 14 reconciliation archived LtWatcher and card-server after checking their consumers and replacement paths; their ASC records remain retained.",
@@ -35,7 +37,8 @@
       "August 14 owner decision: grubber-ios is obsolete and superseded by SentiPods; its source remains retained for history.",
       "August 14 correction and completion: the registered IONOS domain is doubleqross.com, not doubleqross.app. Apex and www resolve, present the included Sectigo wildcard certificate through 2027-02-10, and redirect over HTTP and HTTPS to the maintained DoubleQross page at 1041soft.com/qross/. ASC 1.0 en-US now uses https://doubleqross.com/ as its marketing URL while retaining the maintained 1041soft.com support URL.",
       "August 14 screenshot audit: queried every mapped ASC version and inspected repository history for Screenker projects, critique scores, later visible product changes, and publish evidence. Nine apps have verified Screenker history; publication, critique, freshness, and ASC parity are now tracked as separate facts in the screenshot program.",
-      "August 14 owner distribution decision: KinFlash is a near-term 1041soft.com public release; Flasherz Kids is obsolete; Cardz Studio, MastPex iOS, MastPex Mac, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release."
+      "August 14 owner distribution decision: KinFlash is a near-term 1041soft.com public release; Flasherz Kids is obsolete; Cardz Studio, MastPex iOS, MastPex Mac, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.",
+      "August 24: 1041Soft LLC's Apple Developer Program conversion request was submitted to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. Apple acknowledged the request; organization approval and seller-name/account conversion are not yet verified."
     ]
   },
   "summary": {
@@ -196,7 +199,7 @@
     }
   ],
   "flyOperations": {
-    "observedAt": "2026-08-06T00:00:00-05:00",
+    "observedAt": "2026-08-26T14:45:20-05:00",
     "costCurrency": "USD",
     "costStatus": "unavailable",
     "costNote": "The authenticated Fly CLI exposes deployment state on this machine, but no billing or usage amount was observed. Do not infer costs from deployment status.",
@@ -219,7 +222,7 @@
         "app": "bd-grubber",
         "entityId": "grubber-service",
         "status": "deployed",
-        "latestDeploy": "observed 2026-08-06; Fly reported 12h26m ago",
+        "latestDeploy": "2026-08-26T19:37:47Z; image bd-grubber:deployment-01M0ZS79JJ29TK5ZQVCFQE04TE",
         "cost": null
       },
       {
@@ -814,6 +817,7 @@
       "program": "household-communications",
       "programRole": "working-legacy-reference",
       "status": "legacy-reference",
+      "productLine": "billdonner-free",
       "lastModified": "2026-08-14",
       "repo": "~/nagz-ios",
       "bundleId": "com.nagz.app",
@@ -841,6 +845,7 @@
       "kind": "app",
       "cluster": "Flasherz",
       "status": "obsolete",
+      "productLine": "billdonner-free",
       "lastModified": "2026-08-14",
       "repo": "~/obo-ios",
       "bundleId": "com.billdonner.obo",
@@ -1041,7 +1046,7 @@
       "kind": "app",
       "cluster": "picklefortunes",
       "status": "local-only",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-24",
       "repo": "~/picklefortunes",
       "bundleId": "com.picklefortunes.app",
       "release": "Removed from ASC (2026-08-03 refresh); repo remains active locally.",
@@ -1068,7 +1073,7 @@
       "kind": "app",
       "cluster": "Oenora",
       "status": "ready-for-sale",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-26",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
       "release": "iOS 1.0 READY_FOR_SALE; 1.1 PREPARE_FOR_SUBMISSION; source and ASC draft aligned at build 9",
@@ -1095,8 +1100,8 @@
       "lastModified": "2026-08-06",
       "repo": "~/grubber",
       "bundleId": null,
-      "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, and the public live progress view are deployed",
-      "description": "Transcript-oriented read service exposing HTTP, MCP, and a staged podcast-versus-news analysis pipeline.",
+      "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, public live progress, an aggregate artifact monitor, and Fly-side brand/news analysis are deployed",
+      "description": "Transcript-oriented read service exposing HTTP, MCP, a staged podcast-versus-news analysis pipeline, and a private Fly Postgres brand universe for advertising-trend research.",
       "dependencies": [
         "SentiPods"
       ],
@@ -1112,7 +1117,13 @@
         "M4 adds APNs device registration and producer-side dispatch; current live reads include /api/v1/updates/recent, /api/v1/topics/{topic_id}/compare, and /progress.",
         "The Mac producer runs text, audio, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
         "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
-        "2026-08-09: centralized the database lock across analysis, news pull, and export writers; test coverage confirms all producer database writers serialize safely."
+        "2026-08-09: centralized the database lock across analysis, news pull, and export writers; test coverage confirms all producer database writers serialize safely.",
+        "2026-08-24: brand_universe in bd-grubber-db contains 6,745 active brands: 188 curated core brands plus 6,557 Wikidata-expanded candidate brands with tier, confidence, external_ids, aliases, and provenance.",
+        "2026-08-24: scheduled Fly Machine grubber-brands-tick runs grubber tick --tier brands and is pinned to bd-grubber:deployment-01M0ZS79JJ29TK5ZQVCFQE04TE.",
+        "2026-08-24: latest private brand report brand-news-30d-latest covers 839 public news articles, 438 public podcast episodes, 4,814 scanned brands, and 3,795 derived mention rows.",
+        "2026-08-26: /monitor and /monitor/data are deployed as unauthenticated aggregate-only operational surfaces; live monitor data shows 69 shows, 1,335 episodes, 1,309 public news articles, 169 active topics, 6,745 brands, 3,795 derived brand mention rows, and 16 report/digest artifacts with no warnings.",
+        "2026-08-26: grubber.db bootstrap validates the cached SQLite file with PRAGMA quick_check and redownloads via streamed object-store get_object before atomic replace when the local cache is missing or malformed.",
+        "No raw brand tables, mention rows, paid newsletter content, Gmail-derived content, or Adology-derived data should be exposed through /api/v1, MCP, or the public /db export; /api/v1/brands/stats is the only public brand endpoint."
       ]
     },
     {
@@ -1144,6 +1155,7 @@
       "kind": "app",
       "cluster": "Grubber",
       "status": "asc-mapped",
+      "productLine": "billdonner-free",
       "lastModified": "2026-08-14",
       "repo": "~/sentipods",
       "bundleId": "com.sentipods.app",
@@ -1301,6 +1313,7 @@
       "program": "household-communications",
       "programRole": "active-successor-prototype",
       "status": "active-prototype",
+      "productLine": "billdonner-free",
       "lastModified": "2026-08-14",
       "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
       "bundleId": "com.1041soft.experiments.sharedspacelab",
@@ -1556,6 +1569,7 @@
       "kind": "app",
       "cluster": "PickledBalls",
       "status": "asc-mapped",
+      "productLine": "billdonner-free",
       "lastModified": "2026-08-11",
       "repo": "~/server-monitor-ios",
       "bundleId": "com.billdonner.ZerverMonitor",
@@ -2693,12 +2707,22 @@
     {
       "kind": "product-line-presentation-drift",
       "observedAt": "2026-08-14",
-      "summary": "Owner established two product lines: BillDonner.com apps are permanently free, while 1041soft.com is commercial-grade. workin On and the two MasterIndex Explorer binaries are confirmed BillDonner.com products. The current presentations do not yet enforce the split: billdonner.com/apps lists every active app and 1041soft.com still serves /workinon/. Keep this gap open until all apps are classified and both publication pipelines filter by productLine."
+      "summary": "Owner established two product lines: BillDonner.com apps are permanently free, while 1041soft.com is commercial-grade. The 1041soft.com page now filters to the six current release-track products and excludes the seven BillDonner.com assignments recorded on 2026-08-27. The separate BillDonner.com catalog still needs its corresponding presentation refresh."
+    },
+    {
+      "kind": "1041soft-release-track-filtered",
+      "observedAt": "2026-08-27",
+      "summary": "Owner assigned SharedSpaceLab, Nagz, workin On, AmenBeats, SentiPods, Flasherz Kids, and Zerver Monitor to the BillDonner.com always-free product line. Removed them from the 1041soft.com page. The 1041soft.com page now lists DoubleQross, Oenora, Screenker, Mallinbook, Pfoliolio, and PickleFamilia as release-track projects; no 1041Soft app is currently approved for App Store release. Flasherz Kids remains an obsolete ASC record, not an active product."
     },
     {
       "kind": "feedback-workflow-redesign-resolved",
       "observedAt": "2026-08-19",
       "summary": "Resolved. The manual zkraper harvest/mark watermark and repeating two-hour email loop were replaced by a local App Feedback dashboard. The first run scanned 21 active apps and collected 41 items with 36 screenshots and zero errors; a second run produced no duplicates. The live store remains local, each successful collection now creates and decrypt-verifies a client-encrypted iCloud Drive snapshot, both launch agents are healthy, and the legacy zkraper and asc-feedback repositories are archived. Follow-up 2026-08-19: the retirement was only complete on the Mac where it was performed. The second machine (Mac.attlocal.net) was still running the loop from a user crontab, not a launch agent: '30 */2 * * * ~/bin/zkraper-notify' (the email) and '15 */2 * * * ~/bin/zkraper-qross-issues' (the qross issue filer). The notifier looked stale because the qross job \u2014 the only thing that advances the watermark \u2014 was failing on an expired GH_TOKEN, so the same unprocessed counts were re-sent every two hours. Both crontab lines were removed (backup at ~/.crontab.backup-20260819); ~/zkraper and ~/bin/zkraper* were left in place because .watermark.json and .qross-issues-filed.json still hold unprocessed state. app-feedback was deliberately NOT installed on this second machine \u2014 its store is per-machine, so a second collector would double-count."
+    },
+    {
+      "kind": "1041soft-apple-developer-organization-conversion",
+      "observedAt": "2026-08-24",
+      "summary": "Pending Apple review. 1041Soft LLC submitted the Apple Developer Program request to convert the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. No approval, seller-name change, or converted organization membership has been verified yet."
     },
     {
       "kind": "xpensexpunger-release-readiness",
