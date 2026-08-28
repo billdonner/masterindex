@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Wednesday, August 26, 2026.
+As of Friday, August 28, 2026.
 
 ## Scope
 
@@ -17,7 +17,7 @@ As of Wednesday, August 26, 2026.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
 - The registry tracks 57 repositories, of which 52 remain active after the feedback replacement, prior retirements, and the `grubber-ios` obsolete decision.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
-- The generated 19-entry `billdonner.com/apps` catalog is live on IONOS, with Pfoliolio corrected, Oliopfolio redirected, and LtWatcher archived outside the public apps tree.
+- The generated `billdonner.com/apps` catalog is live on IONOS with six active entries: AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is independently listed from PickleFamilia. LT Watch and Flasherz Kids are nonviable and removed from the public apps tree; Screenker, Mallinbook, Pfoliolio, and PickleFamilia belong to the 1041Soft release track.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
 - The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment. Owner confirmed on 2026-08-23 that amenbeats belongs on BillDonner.com.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
@@ -54,9 +54,8 @@ testing, documentation, privacy, and support bar; they should normally have a re
 and an MCP or automation surface when that fits the product. KinFlash is the newest confirmed
 assignment and is planned for near-term release.
 
-The 1041Soft release-track page now lists only DoubleQross, Oenora, Screenker, Mallinbook,
-Pfoliolio, and PickleFamilia; none is currently approved for App Store release. The seven
-BillDonner.com assignments above are excluded from that page. KinFlash's public page was decided on
+The 1041Soft release-track page now lists DoubleQross, Oenora, Screenker, Mallinbook,
+Pfoliolio, PickleFamilia, and other current release-track entries; none is currently approved for App Store release. The BillDonner.com assignments above are excluded from that page. The 1041Soft homepage now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenora is the next planned MCP-enabled app. KinFlash's public page was decided on
 2026-08-19: it lives at `billdonner.com/apps/kinflash/`, not on 1041soft.com and
 not on GitHub Pages, following the existing one-page-per-app pattern under
 `/apps/<name>/`.
@@ -273,13 +272,13 @@ redeployment; until then, main is not a reproducible source for production.
 ## Website Publication
 
 - `tools/generate_billdonner_apps.py` generates the active catalog from canonical JSON.
-- `publish/billdonner.com/apps/index.html` lists 19 active ASC-mapped apps and omits retired LtWatcher.
+- `publish/billdonner.com/apps/index.html` is the historical MasterIndex publication path; the current six-entry catalog is maintained in `~/website` and includes PickledBalls independently from PickleFamilia.
 - `publish/billdonner.com/apps/pfoliolio/index.html` supplies the marketing and support route expected by ASC.
 - `publish/billdonner.com/apps/oliopfolio/index.html` redirects the obsolete name to Pfoliolio.
-- The generated files were published to IONOS on 2026-08-14 and match the live HTTPS responses by SHA-1.
+- The current generated files were published to IONOS on 2026-08-28; live verification passed for the homepage, `/apps/`, `/apps/pickledballs/`, and retained support routes.
 - The previous catalog and LtWatcher directory were retained under `/_archive`; the public LtWatcher route now returns 404.
 
-### Company Website — `1041soft.com` (live 2026-08-14)
+### Company Website — `1041soft.com` (live 2026-08-28)
 
 Canonical app-website home. Public repo `billdonner/1041soft-site`, served by GitHub
 Pages, Let's Encrypt certificate covering apex and `www`, valid to 2026-11-12, HTTPS

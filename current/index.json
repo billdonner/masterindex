@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-26T14:45:20-05:00",
+  "generatedAt": "2026-08-28T23:00:00-05:00",
   "scope": {
-    "dateLabel": "Wednesday, August 26, 2026",
+    "dateLabel": "Friday, August 28, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
@@ -39,6 +39,8 @@
       "August 14 screenshot audit: queried every mapped ASC version and inspected repository history for Screenker projects, critique scores, later visible product changes, and publish evidence. Nine apps have verified Screenker history; publication, critique, freshness, and ASC parity are now tracked as separate facts in the screenshot program.",
       "August 14 owner distribution decision: KinFlash is a near-term 1041soft.com public release; Flasherz Kids is obsolete; Cardz Studio, MastPex iOS, MastPex Mac, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.",
       "August 24: 1041Soft LLC's Apple Developer Program conversion request was submitted to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. Apple acknowledged the request; organization approval and seller-name/account conversion are not yet verified."
+      ,"August 28 website reconciliation: billdonner.com/apps now lists six public-line entries — AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is explicitly independent of PickleFamilia; LT Watch and Flasherz Kids are removed as nonviable; Screenker, Mallinbook, Pfoliolio, and PickleFamilia remain on the 1041Soft release track and are excluded from the Bill Donner catalog."
+      ,"August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenora is identified as the next MCP-enabled app. Published site commit e1d0caf."
     ]
   },
   "summary": {
@@ -819,7 +821,7 @@
       "programRole": "working-legacy-reference",
       "status": "legacy-reference",
       "productLine": "billdonner-free",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-28",
       "repo": "~/nagz-ios",
       "bundleId": "com.nagz.app",
       "release": "Working legacy implementation; ASC iOS 1.0 PREPARE_FOR_SUBMISSION remains retained",
@@ -1626,7 +1628,7 @@
       "repo": "github:billdonner/1041soft-site",
       "bundleId": null,
       "productLine": "1041soft-commercial",
-      "release": "Public GitHub Pages site with apex and www DNS on GitHub Pages, HTTPS enforced, and a Let's Encrypt certificate valid through 2026-11-12",
+      "release": "Public GitHub Pages site with apex and www DNS on GitHub Pages, HTTPS enforced, and a Let's Encrypt certificate valid through 2026-11-12; homepage MCP/voice positioning updated 2026-08-28",
       "description": "Company landing page and shared support/privacy source for Screenker, Mallinbook, SentiPods, and Pfoliolio.",
       "dependencies": [],
       "links": {
@@ -1636,7 +1638,8 @@
       "notes": [
         "The apex resolves to GitHub Pages addresses and www is a CNAME to billdonner.github.io.",
         "Canonical app web assets were consolidated here; private app-repository Pages sites were disabled to stop exposing their docs directories.",
-        "Only public web assets were migrated; internal plans, ADRs, reviews, and contributor documentation remain in private repositories."
+        "Only public web assets were migrated; internal plans, ADRs, reviews, and contributor documentation remain in private repositories.",
+        "Homepage commit e1d0caf emphasizes MCP control from Claude and ChatGPT, including voice workflows, and identifies Oenora as next."
       ]
     },
     {
@@ -1645,18 +1648,20 @@
       "kind": "website",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-28",
       "repo": "~/masterindex",
       "bundleId": null,
       "productLine": "billdonner-free",
-      "release": "Published to IONOS on 2026-08-14 from the MasterIndex generator with 19 active entries",
+      "release": "Published to IONOS on 2026-08-28 from the billdonner.com website source with 6 active entries",
       "description": "Public directory of App Store, TestFlight, and in-development apps.",
       "dependencies": [],
       "links": {
         "website": "https://billdonner.com/apps/"
       },
       "notes": [
-        "The live catalog lists 19 active entries and omits retired LtWatcher.",
+        "The live catalog lists 6 active entries: AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods.",
+        "PickledBalls is a separate public free app from PickleFamilia and has its own catalog/support route.",
+        "LT Watch and Flasherz Kids are nonviable and removed from the public apps tree; Screenker, Mallinbook, Pfoliolio, and PickleFamilia belong to the 1041Soft release track.",
         "Pfoliolio has a live marketing and support route; the obsolete Oliopfolio path redirects to it.",
         "The previous IONOS catalog was retained under /_archive before publication, and the old LtWatcher directory was moved there."
       ]
