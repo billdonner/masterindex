@@ -732,7 +732,7 @@
         "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
         "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
         "PARKED 2026-08-03 by owner: resume near the iOS 27 release, when App Store submission can go through the release iOS-27 toolchain. State at park: build 18 live on TestFlight (both platforms); feature-complete for v1 (custom pages, filler pool, recto section starts with PD art dividers, menu parity, -exportPDF); 67 app + 27 MCP tests green; mallinbook-mcp installed at ~/bin and registered with Claude Code; 44-page Maplecrest print PDF ready for the bindery. Resume checklist: confirm xcode-select is the release Xcode, archive via scripts/preflight-testflight.sh flow, then App Store metadata/review.",
-        "Renamed from Mallinbook 2026-08-27 (app, bundle ID, iCloud container, .hoabooklet extension, repo, hoabooklet-mcp). Old ASC record 6785245339 (com.mallinbook.app) to be replaced by a new HOABooklet record — owner action pending."
+        "Renamed from Mallinbook 2026-08-27 (app, bundle ID, iCloud container, .hoabooklet extension, repo, hoabooklet-mcp). ASC rename complete 2026-08-27: new record HOABooklet 6806080022 (com.hoabooklet.app, SKU hoa001) with support/privacy URLs set; old record 6785245339 deleted (its builds/screenshots gone — fresh upload needed)."
       ]
     },
     {
