@@ -1173,7 +1173,7 @@
       "kind": "app",
       "cluster": "Grubber",
       "status": "asc-mapped",
-      "productLine": "billdonner-free",
+      "productLine": "1041soft",
       "lastModified": "2026-08-29",
       "repo": "~/grubber-app",
       "bundleId": "com.sentipods.app",
@@ -1183,11 +1183,12 @@
         "grubber"
       ],
       "links": {
-        "website": "https://billdonner.com/apps/sentipods/",
-        "support": "https://billdonner.com/apps/sentipods/#support",
+        "website": "https://1041soft.com/grubber/",
+        "support": "https://1041soft.com/grubber/support.html",
         "backend": "https://bd-grubber.fly.dev",
-        "websiteSource": "ASC metadata and verified HTTP 200 on 2026-08-13",
-        "appStore": null
+        "websiteSource": "1041soft-site repo commit 713b958; HTTP 200 verified 2026-08-29",
+        "appStore": null,
+        "privacy": "https://1041soft.com/grubber/privacy/"
       },
       "notes": [
         "Uses grubber's /api/v1 surface with an X-Client-Key.",
@@ -1198,7 +1199,8 @@
         "2026-08-28 owner direction: rename/product positioning should converge on Grubber for the iOS/Mac app as well as the backend; current ASC app ID 6797132650 and bundle com.sentipods.app still remain SentiPods until changed.",
         "2026-08-29: GitHub repo renamed billdonner/sentipods -> billdonner/grubber-app (redirects in place); masterindex entity id renamed sentipods-app -> grubber-app. Bundle id com.sentipods.app and ASC app ID 6797132650 are deliberately kept; ASC display name change to Grubber is still pending. A native macOS target (real menus, replacing Mac Catalyst) is planned.",
         "2026-08-29: ASC store name changed SentiPods -> Grubber Desk via API (plain Grubber and Grubster were taken storewide). Device icon label is Grubber via CFBundleDisplayName. Repo renamed app sources to Grubber targets (GrubberMac native menus: Go menu cmd-1..5, Settings scene); iOS build 21 / macOS build 22 committed.",
-        "2026-08-29: GrubberMac hosts an in-app MCP automation server on 127.0.0.1:9900 (new 9900-9909 port-registry block; off by default, Settings > Automation, keychain bearer token, sandbox gained network.server). Tools health_check/app_status/goto_section/open_episode/search_transcripts drive the app UI; corpus data remains on the server-side /mcp. Live-verified round trip; iOS build 22, macOS build 23."
+        "2026-08-29: GrubberMac hosts an in-app MCP automation server on 127.0.0.1:9900 (new 9900-9909 port-registry block; off by default, Settings > Automation, keychain bearer token, sandbox gained network.server). Tools health_check/app_status/goto_section/open_episode/search_transcripts drive the app UI; corpus data remains on the server-side /mcp. Live-verified round trip; iOS build 22, macOS build 23.",
+        "2026-08-29 owner policy: Grubber is on the 1041soft.com commercial line, presented as a platform (app + API + MCP + newsletter) at 1041soft.com/grubber/. Distribution is PERMANENT TESTFLIGHT, INVITE-ONLY by design — do not submit to the App Store; TestFlight group 'sentients' (internal, no public link). Old /sentipods/ pages redirect to /grubber/. Builds uploaded 2026-08-29: iOS 23, macOS 24 (project bumped to 24/25). ASC privacy/support/marketing URL updates pending (scratchpad asc_urls.py)."
       ]
     },
     {
