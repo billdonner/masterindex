@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-26T14:45:20-05:00",
+  "generatedAt": "2026-08-28T19:30:53-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -248,7 +248,7 @@
           "kind": "rrule",
           "value": "FREQ=DAILY;INTERVAL=1"
         },
-        "purpose": "Verify the Grubber Fly-side brand universe, scheduled brand tick, paid-newsletter privacy boundary, and podcast/news brand analysis posture.",
+        "purpose": "Verify the Grubber Fly-side brand universe, artifact monitor snapshots, scheduled brand tick, paid-newsletter privacy boundary, and podcast/news brand analysis posture.",
         "expectedInputs": [
           "current/index.json",
           "~/grubber",
@@ -257,20 +257,26 @@
           "grubber tick --tier brands",
           "/api/v1/brands/stats",
           "/monitor",
-          "/monitor/data"
+          "/monitor/data",
+          "brand_universe.artifact_snapshots",
+          "Fly release/worker image parity"
         ],
         "expectedOutputs": [
           "Updated Grubber service entry when deployment, schedule, or privacy facts change",
           "Verified brand_universe count, tier mix, and source provenance",
           "Recorded gaps for raw brand egress, /db exclusion, report generation, or schedule failures",
-          "Verified aggregate-only artifact monitor counts and OpenAPI exclusion"
+          "Verified aggregate-only artifact monitor counts and OpenAPI exclusion",
+          "Verified artifact_postgres fallback counts for /monitor",
+          "Verified /db fails closed when the validated SQLite cache/object is unavailable"
         ],
         "guardrails": [
           "Do not expose raw brand tables through /api/v1, MCP, or the public /db export.",
           "Do not move brand metadata or brand mention tables into public grubber.db.",
           "Treat newsletter/Gmail-derived content as personal-only.",
           "Do not depend on Adology brand data for this Grubber universe.",
-          "Keep /monitor and /monitor/data aggregate-only; do not return raw brand rows, raw mention rows, transcripts, article bodies, Gmail/newsletter content, or private source links."
+          "Keep /monitor and /monitor/data aggregate-only; do not return raw brand rows, raw mention rows, transcripts, article bodies, Gmail/newsletter content, or private source links.",
+          "Do not describe Grubber as multi-tenant until tenant/account isolation exists.",
+          "If /db is unavailable, keep it fail-closed rather than serving an unvalidated or corrupt SQLite object."
         ]
       }
     ],

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T23:00:00-05:00",
+  "generatedAt": "2026-08-28T19:30:53-05:00",
   "scope": {
     "dateLabel": "Friday, August 28, 2026",
     "defaultSort": "most-recently-modified",
@@ -17,7 +17,7 @@
       "August 13 write pass: set primary category on 5 macOS records, copyright on all 6, and completed the age-rating questionnaire for Mallinbook and Pfoliolio via the ASC API. Oenora, SharedSpaceLab, and SentiPods age ratings were deliberately left unset - each raises a content question the owner must answer.",
       "August 13 second write pass: uploaded SentiPods macOS screenshots, and removed GigStand from sale in all 175 territories.",
       "August 24 Grubber update: bd-grubber now owns the paid tech newsletter digest plan and a Fly-side global brand universe for podcast/news advertising-trend analysis. Brand metadata and derived mentions live in shared Fly Postgres brand_universe.* tables, with no raw brand API or public /db export.",
-      "August 26 Grubber monitor update: bd-grubber now serves /monitor and /monitor/data as aggregate-only operational surfaces. Live verification showed 69 shows, 1,335 episodes, 1,309 public news articles, 169 active topics, 6,745 brands, 3,795 derived brand mention rows, 15 daily digests, and one private brand report; /monitor remains excluded from OpenAPI and raw data export.",
+      "August 28 Grubber monitor/deploy update: bd-grubber release v40 now serves /monitor and /monitor/data as aggregate-only operational surfaces. Live verification showed 69 shows, 1,352 episodes, 1,374 public news articles, 162 active topics, 6,745 brands, 3,795 derived brand mention rows, 16 daily digests, and one private brand report. Counts fall back to the Fly Postgres brand_universe.artifact_snapshots table when the large SQLite cache is unavailable; /monitor remains excluded from OpenAPI and raw data export.",
       "August 13 correlation pass queried App Store Connect read-only, inspected current GitHub repositories, checked Fly.io app state, and verified first-party public URLs over HTTP and HTTPS.",
       "The public portfolio page at billdonner.com/apps and the 1041soft.com GitHub Pages configuration were treated as presentation surfaces, not as authoritative replacements for ASC or repository settings.",
       "August 14 reconciliation archived LtWatcher and card-server after checking their consumers and replacement paths; their ASC records remain retained.",
@@ -38,9 +38,9 @@
       "August 14 correction and completion: the registered IONOS domain is doubleqross.com, not doubleqross.app. Apex and www resolve, present the included Sectigo wildcard certificate through 2027-02-10, and redirect over HTTP and HTTPS to the maintained DoubleQross page at 1041soft.com/qross/. ASC 1.0 en-US now uses https://doubleqross.com/ as its marketing URL while retaining the maintained 1041soft.com support URL.",
       "August 14 screenshot audit: queried every mapped ASC version and inspected repository history for Screenker projects, critique scores, later visible product changes, and publish evidence. Nine apps have verified Screenker history; publication, critique, freshness, and ASC parity are now tracked as separate facts in the screenshot program.",
       "August 14 owner distribution decision: KinFlash is a near-term 1041soft.com public release; Flasherz Kids is obsolete; Cardz Studio, MastPex iOS, MastPex Mac, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.",
-      "August 24: 1041Soft LLC's Apple Developer Program conversion request was submitted to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. Apple acknowledged the request; organization approval and seller-name/account conversion are not yet verified."
-      ,"August 28 website reconciliation: billdonner.com/apps now lists six public-line entries — AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is explicitly independent of PickleFamilia; LT Watch and Flasherz Kids are removed as nonviable; Screenker, Mallinbook, Pfoliolio, and PickleFamilia remain on the 1041Soft release track and are excluded from the Bill Donner catalog."
-      ,"August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenora is identified as the next MCP-enabled app. Published site commit e1d0caf."
+      "August 24: 1041Soft LLC's Apple Developer Program conversion request was submitted to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. Apple acknowledged the request; organization approval and seller-name/account conversion are not yet verified.",
+      "August 28 website reconciliation: billdonner.com/apps now lists six public-line entries — AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is explicitly independent of PickleFamilia; LT Watch and Flasherz Kids are removed as nonviable; Screenker, Mallinbook, Pfoliolio, and PickleFamilia remain on the 1041Soft release track and are excluded from the Bill Donner catalog.",
+      "August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenora is identified as the next MCP-enabled app. Published site commit e1d0caf."
     ]
   },
   "summary": {
@@ -201,7 +201,7 @@
     }
   ],
   "flyOperations": {
-    "observedAt": "2026-08-26T14:45:20-05:00",
+    "observedAt": "2026-08-28T19:30:53-05:00",
     "costCurrency": "USD",
     "costStatus": "unavailable",
     "costNote": "The authenticated Fly CLI exposes deployment state on this machine, but no billing or usage amount was observed. Do not infer costs from deployment status.",
@@ -224,7 +224,7 @@
         "app": "bd-grubber",
         "entityId": "grubber-service",
         "status": "deployed",
-        "latestDeploy": "2026-08-26T19:37:47Z; image bd-grubber:deployment-01M0ZS79JJ29TK5ZQVCFQE04TE",
+        "latestDeploy": "2026-08-29T00:28:14Z; image bd-grubber:deployment-01M15EM8XTQ2RE2HDFR4M8CT5K@sha256:9a64ad38110d79edf380a896241b931b54d2cc4e4eed95281da81b3d256d8cd1",
         "cost": null
       },
       {
@@ -577,16 +577,17 @@
     },
     {
       "name": "Grubber",
-      "maturity": "active service and SentiPods client; obsolete prototype retained",
-      "summary": "Transcript-oriented service with live HTTP and MCP surfaces and SentiPods as the current client; grubber-ios is obsolete.",
+      "maturity": "active Grubber service plus current SentiPods client naming transition",
+      "summary": "Grubber is the service, corpus, and intended customer-facing product name; SentiPods is the current ASC client label until renamed. It is multi-client today, not true multi-tenant.",
       "highlights": [
         "grubber",
-        "grubber-ios",
-        "Sentipods"
+        "SentiPods/current ASC client",
+        "grubber-ios historical prototype"
       ],
       "watchpoints": [
-        "grubber-ios is obsolete by owner decision; SentiPods is the current mapped client",
-        "grubber /status was observed hanging while /shows remained responsive; server-side follow-up is needed"
+        "Decide whether to rename the SentiPods app, App Store metadata, and bundle-facing presentation to Grubber.",
+        "Do not describe Grubber as multi-tenant until account or tenant isolation exists.",
+        "Public /db currently fails closed while the large SQLite object-store transport is repaired; /monitor uses aggregate Postgres snapshots."
       ]
     },
     {
@@ -1106,13 +1107,13 @@
       "kind": "service",
       "cluster": "Grubber",
       "status": "live",
-      "lastModified": "2026-08-06",
+      "lastModified": "2026-08-28",
       "repo": "~/grubber",
       "bundleId": null,
-      "release": "Live read service at bd-grubber.fly.dev; M4 APNs device registration/push, fast topic updates, public live progress, an aggregate artifact monitor, and Fly-side brand/news analysis are deployed",
-      "description": "Transcript-oriented read service exposing HTTP, MCP, a staged podcast-versus-news analysis pipeline, and a private Fly Postgres brand universe for advertising-trend research.",
+      "release": "Live read service at bd-grubber.fly.dev; APNs device registration/push, fast topic updates, public live progress, aggregate artifact monitor, Fly Postgres artifact snapshots, and Fly-side brand/news analysis are deployed",
+      "description": "Transcript-oriented Grubber service exposing HTTP, MCP, a staged podcast-versus-news analysis pipeline, an aggregate-only monitor, and a private Fly Postgres brand universe for advertising-trend research.",
       "dependencies": [
-        "SentiPods"
+        "SentiPods/current client"
       ],
       "links": {
         "website": "https://bd-grubber.fly.dev",
@@ -1128,11 +1129,15 @@
         "The Mac producer runs text, audio, news, fast-analysis, and full-analysis launchd lanes; the analysis lanes use one SQLite lock to prevent concurrent-writer failures.",
         "2026-08-09: centralized the database lock across analysis, news pull, and export writers; test coverage confirms all producer database writers serialize safely.",
         "2026-08-24: brand_universe in bd-grubber-db contains 6,745 active brands: 188 curated core brands plus 6,557 Wikidata-expanded candidate brands with tier, confidence, external_ids, aliases, and provenance.",
-        "2026-08-24: scheduled Fly Machine grubber-brands-tick runs grubber tick --tier brands and is pinned to bd-grubber:deployment-01M0ZS79JJ29TK5ZQVCFQE04TE.",
+        "2026-08-28: scheduled Fly Machine grubber-brands-tick is pinned to bd-grubber:deployment-01M15EM8XTQ2RE2HDFR4M8CT5K@sha256:9a64ad38110d79edf380a896241b931b54d2cc4e4eed95281da81b3d256d8cd1.",
         "2026-08-24: latest private brand report brand-news-30d-latest covers 839 public news articles, 438 public podcast episodes, 4,814 scanned brands, and 3,795 derived mention rows.",
-        "2026-08-26: /monitor and /monitor/data are deployed as unauthenticated aggregate-only operational surfaces; live monitor data shows 69 shows, 1,335 episodes, 1,309 public news articles, 169 active topics, 6,745 brands, 3,795 derived brand mention rows, and 16 report/digest artifacts with no warnings.",
-        "2026-08-26: grubber.db bootstrap validates the cached SQLite file with PRAGMA quick_check and redownloads via streamed object-store get_object before atomic replace when the local cache is missing or malformed.",
-        "No raw brand tables, mention rows, paid newsletter content, Gmail-derived content, or Adology-derived data should be exposed through /api/v1, MCP, or the public /db export; /api/v1/brands/stats is the only public brand endpoint."
+        "2026-08-28: /monitor and /monitor/data are deployed as unauthenticated aggregate-only operational surfaces. Live monitor data shows 69 shows, 1,352 episodes, 1,374 public news articles, 162 active topics, 6,745 brands, 3,795 derived brand mention rows, and 17 report/digest artifacts. SQLite is currently unavailable on Fly, so these corpus counts come from brand_universe.artifact_snapshots in Fly Postgres.",
+        "2026-08-28: grubber.db bootstrap prefers a gzip transport object, validates the decompressed SQLite cache with PRAGMA quick_check, and atomically replaces the local cache only after validation. Producer sync refuses corrupt SQLite uploads and uses a fixed-length presigned PUT path for the gzip object.",
+        "No raw brand tables, mention rows, paid newsletter content, Gmail-derived content, or Adology-derived data should be exposed through /api/v1, MCP, or the public /db export; /api/v1/brands/stats is the only public brand endpoint.",
+        "2026-08-29T00:28:14Z: deployed bd-grubber:deployment-01M15EM8XTQ2RE2HDFR4M8CT5K@sha256:9a64ad38110d79edf380a896241b931b54d2cc4e4eed95281da81b3d256d8cd1 to bd-grubber and updated scheduled worker 781ed56fd20108 to the same image.",
+        "2026-08-28: corrupt raw Tigris grubber.db object was deleted; public /db returns 503 until a validated SQLite object/cache is present instead of redirecting to a bad DB.",
+        "2026-08-28 owner direction: Grubber should be the product name for both the service and the iOS/Mac client. SentiPods remains the current ASC app name/bundle record until the rename is explicitly executed.",
+        "Architecture note: Grubber is multi-client today, not true multi-tenant; there is no tenant/account isolation model yet."
       ]
     },
     {
@@ -1155,7 +1160,8 @@
       },
       "notes": [
         "No further release or ASC work is expected.",
-        "SentiPods is the current iOS and macOS client."
+        "SentiPods is the current iOS and macOS client.",
+        "Historical note: this older com.billdonner.grubber prototype explains why the Grubber client name existed before SentiPods."
       ]
     },
     {
@@ -1165,11 +1171,11 @@
       "cluster": "Grubber",
       "status": "asc-mapped",
       "productLine": "billdonner-free",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-08-28",
       "repo": "~/sentipods",
       "bundleId": "com.sentipods.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; iOS build 20 and macOS build 21 VALID",
-      "description": "Native iOS and macOS client for the grubber podcast-transcription service, with episode search and transcript navigation.",
+      "description": "Native iOS and macOS client for the Grubber podcast-transcription service, currently named SentiPods in ASC until the owner-approved Grubber naming direction is executed.",
       "dependencies": [
         "grubber"
       ],
@@ -1185,7 +1191,8 @@
         "ASC app ID 6797132650 was confirmed by live API query.",
         "ASC has no privacyPolicyUrl set. The newest repo metadata points support and privacy to https://1041soft.com, but that domain has no working HTTPS service.",
         "The client loads /shows first and treats /status metadata as best effort because /status was observed hanging.",
-        "Both iOS and native macOS targets use the ASC bundle id com.sentipods.app; stale .mac documentation was corrected."
+        "Both iOS and native macOS targets use the ASC bundle id com.sentipods.app; stale .mac documentation was corrected.",
+        "2026-08-28 owner direction: rename/product positioning should converge on Grubber for the iOS/Mac app as well as the backend; current ASC app ID 6797132650 and bundle com.sentipods.app still remain SentiPods until changed."
       ]
     },
     {
