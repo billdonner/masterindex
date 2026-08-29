@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-28T19:30:53-05:00",
+  "generatedAt": "2026-08-29T13:00:00-05:00",
   "scope": {
-    "dateLabel": "Friday, August 28, 2026",
+    "dateLabel": "Saturday, August 29, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
@@ -40,7 +40,8 @@
       "August 14 owner distribution decision: KinFlash is a near-term 1041soft.com public release; Flasherz Kids is obsolete; Cardz Studio, MastPex iOS, MastPex Mac, and workin On are internal-use apps expected to remain on TestFlight rather than proceed to public App Store release.",
       "August 24: 1041Soft LLC's Apple Developer Program conversion request was submitted to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. Apple acknowledged the request; organization approval and seller-name/account conversion are not yet verified.",
       "August 28 website reconciliation: billdonner.com/apps now lists six public-line entries — AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is explicitly independent of PickleFamilia; LT Watch and Flasherz Kids are removed as nonviable; Screenker, Mallinbook, Pfoliolio, and PickleFamilia remain on the 1041Soft release track and are excluded from the Bill Donner catalog.",
-      "August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenora is identified as the next MCP-enabled app. Published site commit e1d0caf."
+      "August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenara is identified as the next MCP-enabled app. Published site commit e1d0caf.",
+      "August 29 owner report: picklefamilia.com and picklefamilia.app were purchased through IONOS. The IONOS dashboard screenshot shows 88.92 GB webspace used, 12,963 files, 7 SFTP users, 2 standard databases, PHP Extended Support active, Site Scan reporting vulnerable websites, and Performance Level 2. DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing for the new domains are not yet verified."
     ]
   },
   "summary": {
@@ -1611,7 +1612,7 @@
       "kind": "app",
       "cluster": "PickledBalls",
       "status": "asc-mapped",
-      "lastModified": "2026-06-30",
+      "lastModified": "2026-08-29",
       "repo": "github:billdonner/picklefamilia-ios",
       "bundleId": "com.picklefamilia.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 2 VALID",
@@ -1620,11 +1621,16 @@
       "links": {
         "website": "https://billdonner.github.io/picklefamilia-ios/",
         "portfolioPage": "https://billdonner.com/apps/picklefamilia/",
+        "domains": [
+          "https://picklefamilia.com/",
+          "https://picklefamilia.app/"
+        ],
         "github": "https://github.com/billdonner/picklefamilia-ios",
         "appStore": null
       },
       "notes": [
-        "Repository is active on GitHub but not cloned on this machine."
+        "Repository is active on GitHub but not cloned on this machine.",
+        "Owner reported purchase of picklefamilia.com and picklefamilia.app through IONOS on 2026-08-29; domain configuration remains unverified."
       ]
     },
     {

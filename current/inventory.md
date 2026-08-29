@@ -296,6 +296,12 @@ domain is ready to use as DoubleQross's marketing URL in App Store Connect.
 ASC iOS 1.0 `en-US` now uses `https://doubleqross.com/` as its marketing URL; its support URL
 remains `https://1041soft.com/qross/support.html` so the maintained support content is not duplicated.
 
+Owner reported purchasing `picklefamilia.com` and `picklefamilia.app` through IONOS on 2026-08-29.
+DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing are not yet verified.
+The same IONOS dashboard showed 88.92 GB of webspace used, 12,963 files, 7 SFTP users, 2 standard
+databases, PHP Extended Support active, a Site Scan warning for vulnerable websites, and Performance
+Level 2; no payment or credential data is recorded here.
+
 **Rule: never enable GitHub Pages on a private repo.** Pages publishes `docs/` to the
 open web regardless of repo visibility, and bills Actions minutes on private repos.
 Add a subpath here instead.
