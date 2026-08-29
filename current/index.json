@@ -155,7 +155,7 @@
     ],
     "uncritiquedPublishedSets": [
       {
-        "entityId": "sentipods-app",
+        "entityId": "grubber-app",
         "ascSnapshot": "Mac 3; iPhone 3; iPad 3",
         "note": "Direct screenshots are complete in ASC, but no Screenker project or critique evidence was found."
       },
@@ -307,7 +307,7 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION",
           "MAC_OS 1.0 PREPARE_FOR_SUBMISSION"
         ],
-        "repo": "~/sentipods",
+        "repo": "~/grubber-app",
         "repoEvidence": "PRODUCT_BUNDLE_IDENTIFIER in project.yml, verified 2026-08-13",
         "localVersion": "1.0 (iOS 20, macOS 21); ASC macOS build 21 VALID"
       },
@@ -1161,21 +1161,22 @@
       "notes": [
         "No further release or ASC work is expected.",
         "SentiPods is the current iOS and macOS client.",
-        "Historical note: this older com.billdonner.grubber prototype explains why the Grubber client name existed before SentiPods."
+        "Historical note: this older com.billdonner.grubber prototype explains why the Grubber client name existed before SentiPods.",
+        "2026-08-29: GitHub repo renamed billdonner/grubber-ios -> billdonner/grubber-ios-legacy (unarchived, renamed, re-archived) to free the grubber-ios name space for the Grubber client rename."
       ]
     },
     {
-      "id": "sentipods-app",
-      "name": "SentiPods",
+      "id": "grubber-app",
+      "name": "Grubber app",
       "kind": "app",
       "cluster": "Grubber",
       "status": "asc-mapped",
       "productLine": "billdonner-free",
-      "lastModified": "2026-08-28",
-      "repo": "~/sentipods",
+      "lastModified": "2026-08-29",
+      "repo": "~/grubber-app",
       "bundleId": "com.sentipods.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; iOS build 20 and macOS build 21 VALID",
-      "description": "Native iOS and macOS client for the Grubber podcast-transcription service, currently named SentiPods in ASC until the owner-approved Grubber naming direction is executed.",
+      "description": "Native iOS and macOS client for the Grubber podcast-transcription service (repo grubber-app, formerly sentipods); still named SentiPods in ASC until the display-name change is executed.",
       "dependencies": [
         "grubber"
       ],
@@ -1192,7 +1193,8 @@
         "ASC has no privacyPolicyUrl set. The newest repo metadata points support and privacy to https://1041soft.com, but that domain has no working HTTPS service.",
         "The client loads /shows first and treats /status metadata as best effort because /status was observed hanging.",
         "Both iOS and native macOS targets use the ASC bundle id com.sentipods.app; stale .mac documentation was corrected.",
-        "2026-08-28 owner direction: rename/product positioning should converge on Grubber for the iOS/Mac app as well as the backend; current ASC app ID 6797132650 and bundle com.sentipods.app still remain SentiPods until changed."
+        "2026-08-28 owner direction: rename/product positioning should converge on Grubber for the iOS/Mac app as well as the backend; current ASC app ID 6797132650 and bundle com.sentipods.app still remain SentiPods until changed.",
+        "2026-08-29: GitHub repo renamed billdonner/sentipods -> billdonner/grubber-app (redirects in place); masterindex entity id renamed sentipods-app -> grubber-app. Bundle id com.sentipods.app and ASC app ID 6797132650 are deliberately kept; ASC display name change to Grubber is still pending. A native macOS target (real menus, replacing Mac Catalyst) is planned."
       ]
     },
     {
@@ -2429,7 +2431,7 @@
       "role": "Live operations dashboard with corrected seven-target production probes"
     },
     {
-      "repo": "~/sentipods",
+      "repo": "~/grubber-app",
       "branch": "main",
       "last2026Commit": "2026-08-13",
       "kind": "app",
