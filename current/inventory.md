@@ -183,7 +183,7 @@ byte. Source, restore commands, and recovery-key instructions are in `~/app-feed
 |---|---:|---:|---|
 | Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
 | amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
-| 100 Burfords | 1.1 (14) | 1.1 (14) draft, TestFlight VALID | Aligned at `54b9477`; two open P2s in the 1.1 re-caption work — see the entity notes |
+| 100 Burfords | 1.1 (16) | 1.1 (14) on TestFlight | Source ahead at `14e561a`; the two review P2s are fixed in 15-16, not yet uploaded |
 | DoubleQross | 394 | 394 VALID | Aligned; bundle id remains com.qross.app; store name DoubleQross; 12+ |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
