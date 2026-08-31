@@ -342,7 +342,7 @@
           "IOS 1.1 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/100Burfords",
-        "localVersion": "1.1 (9)"
+        "localVersion": "1.1 (16)"
       },
       {
         "name": "Zerver Monitor",
@@ -2301,7 +2301,7 @@
     {
       "repo": "~/100Burfords",
       "branch": "main",
-      "last2026Commit": "2026-08-06",
+      "last2026Commit": "2026-08-30",
       "kind": "app",
       "role": "ASC-mapped iOS app, sale-ready in ASC"
     },
