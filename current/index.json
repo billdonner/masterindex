@@ -264,7 +264,7 @@
         ],
         "repo": "~/pfolio-app",
         "repoEvidence": "GitHub repo billdonner/pfolio-app cloned locally on 2026-08-13",
-        "localVersion": "1.0.0 (39); ASC has builds through 40 VALID both platforms, 39 attached to the 1.0 versions"
+        "localVersion": "1.0.0 (43) local; ASC builds through 42 VALID both platforms, 42 attached to the 1.0 versions. NOT submitted — launching under Steve's LLC from a fresh record (see pfolio-entity plan)."
       },
       {
         "name": "amenbeats",
@@ -1511,7 +1511,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-20",
+      "lastModified": "2026-08-30",
       "repo": "~/pfolio-app",
       "bundleId": "com.pfolio.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; source and both VALID ASC builds aligned at 35",
@@ -1520,12 +1520,12 @@
         "pfolio"
       ],
       "links": {
-        "website": "https://billdonner.com/apps/pfoliolio/",
-        "privacyPolicy": "https://billdonner.github.io/pfolio-app/privacy.html",
+        "website": "https://pfoliolio.com/",
+        "privacyPolicy": "https://pfoliolio.com/privacy/",
         "backend": "https://bd-pfolio.fly.dev",
         "github": "https://github.com/billdonner/pfolio-app",
         "appStore": null,
-        "support": "https://billdonner.com/apps/pfoliolio/#support"
+        "support": "https://pfoliolio.com/"
       },
       "notes": [
         "Published to IONOS on 2026-08-14: /apps/pfoliolio is live and /apps/oliopfolio serves a canonical redirect to it.",
@@ -1538,7 +1538,7 @@
       "kind": "backend",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-08-23",
+      "lastModified": "2026-08-29",
       "repo": "github:billdonner/pfolio",
       "bundleId": null,
       "release": "Fly app bd-pfolio deployed with machine version 6 and a passing health check",
@@ -1548,7 +1548,7 @@
         "Oliopfolio"
       ],
       "links": {
-        "website": "https://bd-pfolio.fly.dev",
+        "website": "https://pfoliolio.com/",
         "github": "https://github.com/billdonner/pfolio",
         "health": "https://bd-pfolio.fly.dev/health"
       },
@@ -2588,14 +2588,14 @@
     {
       "repo": "~/pfolio-app",
       "branch": "main",
-      "last2026Commit": "2026-08-20",
+      "last2026Commit": "2026-08-30",
       "kind": "app",
       "role": "ASC-mapped native iOS and macOS Pfoliolio client"
     },
     {
       "repo": "github:billdonner/pfolio",
       "branch": "main",
-      "last2026Commit": "2026-08-23",
+      "last2026Commit": "2026-08-29",
       "kind": "backend",
       "role": "Live Pfoliolio backend; not cloned locally"
     },
