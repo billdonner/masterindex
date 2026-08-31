@@ -1182,7 +1182,7 @@
       "kind": "service",
       "cluster": "Grubber",
       "status": "live",
-      "lastModified": "2026-08-29",
+      "lastModified": "2026-08-30",
       "repo": "~/grubber",
       "bundleId": null,
       "release": "Live read service at bd-grubber.fly.dev; APNs device registration/push, fast topic updates, public live progress, aggregate artifact monitor, Fly Postgres artifact snapshots, and Fly-side brand/news analysis are deployed",
@@ -1213,7 +1213,8 @@
         "2026-08-28: corrupt raw Tigris grubber.db object was deleted; public /db returns 503 until a validated SQLite object/cache is present instead of redirecting to a bad DB.",
         "2026-08-28 owner direction: Grubber should be the product name for both the service and the iOS/Mac client. SentiPods remains the current ASC app name/bundle record until the rename is explicitly executed.",
         "Architecture note: Grubber is multi-client today, not true multi-tenant; there is no tenant/account isolation model yet.",
-        "2026-08-29: multi-tenant auth shipped and deployed (image deployment-01M17SPFJF86441EP6F1DKTBP1): grubber_auth.clients in shared Fly Postgres stores SHA-256 key hashes; api/auth.py merges env GRUBBER_API_KEYS (wins) with a 60s-TTL stale-ok DB cache shared by /api/v1 and /mcp; CLI grubber clients add/list/enable/disable. X-Client-Key contract unchanged. Live-verified: minted demo-tenant key served 200 on /api/v1/shows, then disabled."
+        "2026-08-29: multi-tenant auth shipped and deployed (image deployment-01M17SPFJF86441EP6F1DKTBP1): grubber_auth.clients in shared Fly Postgres stores SHA-256 key hashes; api/auth.py merges env GRUBBER_API_KEYS (wins) with a 60s-TTL stale-ok DB cache shared by /api/v1 and /mcp; CLI grubber clients add/list/enable/disable. X-Client-Key contract unchanged. Live-verified: minted demo-tenant key served 200 on /api/v1/shows, then disabled.",
+        "2026-08-30: Codex CLI review (codex-cli 0.151.0) of the editions + multi-tenant work found 3 issues, all fixed same day in commit after 3487495: auth DB key-cache refresh made single-flight (was an unauthenticated Postgres-dial-per-request DoS lever), weekly editions no longer drop topics that went stale mid-week, and /api/v1/editions answers empty/404 instead of 500 when the corpus predates the editions table. 279 tests pass. First editions published to production 2026-08-30 (daily-2026-08-29, weekly-2026-08-30) via manual build + Tigris sync + machine restart; producer takes over at its next 06 UTC tick."
       ]
     },
     {
@@ -1248,7 +1249,7 @@
       "cluster": "Grubber",
       "status": "asc-mapped",
       "productLine": "1041soft",
-      "lastModified": "2026-08-29",
+      "lastModified": "2026-08-30",
       "repo": "~/grubber-app",
       "bundleId": "com.sentipods.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; iOS build 20 and macOS build 21 VALID; store name Grubber Desk",
@@ -1274,7 +1275,8 @@
         "2026-08-29: GitHub repo renamed billdonner/sentipods -> billdonner/grubber-app (redirects in place); masterindex entity id renamed sentipods-app -> grubber-app. Bundle id com.sentipods.app and ASC app ID 6797132650 are deliberately kept; ASC display name change to Grubber is still pending. A native macOS target (real menus, replacing Mac Catalyst) is planned.",
         "2026-08-29: ASC store name changed SentiPods -> Grubber Desk via API (plain Grubber and Grubster were taken storewide). Device icon label is Grubber via CFBundleDisplayName. Repo renamed app sources to Grubber targets (GrubberMac native menus: Go menu cmd-1..5, Settings scene); iOS build 21 / macOS build 22 committed.",
         "2026-08-29: GrubberMac hosts an in-app MCP automation server on 127.0.0.1:9900 (new 9900-9909 port-registry block; off by default, Settings > Automation, keychain bearer token, sandbox gained network.server). Tools health_check/app_status/goto_section/open_episode/search_transcripts drive the app UI; corpus data remains on the server-side /mcp. Live-verified round trip; iOS build 22, macOS build 23.",
-        "2026-08-29 owner policy: Grubber is on the 1041soft.com commercial line, presented as a platform (app + API + MCP + newsletter) at 1041soft.com/grubber/. Distribution is PERMANENT TESTFLIGHT, INVITE-ONLY by design — do not submit to the App Store; TestFlight group 'sentients' (internal, no public link). Old /sentipods/ pages redirect to /grubber/. Builds uploaded 2026-08-29: iOS 23, macOS 24 (project bumped to 24/25). ASC privacy/support/marketing URL updates pending (scratchpad asc_urls.py)."
+        "2026-08-29 owner policy: Grubber is on the 1041soft.com commercial line, presented as a platform (app + API + MCP + newsletter) at 1041soft.com/grubber/. Distribution is PERMANENT TESTFLIGHT, INVITE-ONLY by design — do not submit to the App Store; TestFlight group 'sentients' (internal, no public link). Old /sentipods/ pages redirect to /grubber/. Builds uploaded 2026-08-29: iOS 23, macOS 24 (project bumped to 24/25). ASC privacy/support/marketing URL updates pending (scratchpad asc_urls.py).",
+        "2026-08-30: Codex CLI review of the MCP + Newsletter work found 5 issues, all fixed in 27c47c1: MCP open_episode/search now work when invoked from another section (initial-value onChange gap), stale episode-fetch race guarded, Settings displays the exact server token (keychain-failure mismatch), pre-auth HTTP parser classifies malformed vs incomplete (400 + drop instead of held-open connections), goto_section schema lists editions. 33 Mac tests pass; builds bumped iOS 25 / macOS 26."
       ]
     },
     {
