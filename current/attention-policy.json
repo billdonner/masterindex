@@ -1,0 +1,66 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Rules that decide which inventory conditions become actionable attention items. Edit this file to tune the board without changing tools/generate_attention.py.",
+  "timezone": {
+    "note": "Deadline maths is anchored to this zone, not to wherever the generator happens to run. Without it a UTC CI runner and the owner's Mac disagree about what day it is for about five hours each evening, and 'due in 2 days' silently becomes 'due in 1 day'.",
+    "value": "America/Chicago"
+  },
+  "publicLinks": {
+    "note": "An app without an App Store page is only a problem if the app has actually shipped. Statuses that have not shipped, or are deliberately never shipping, are not flagged.",
+    "appStorePageExpectedForStatuses": [
+      "ready-for-sale"
+    ],
+    "websiteExpectedForStatuses": [
+      "ready-for-sale",
+      "release-planned",
+      "asc-mapped",
+      "live"
+    ],
+    "websiteExpectedForKinds": [
+      "app",
+      "website",
+      "service",
+      "backend"
+    ],
+    "suppressedStatuses": [
+      "internal-only",
+      "obsolete",
+      "retired",
+      "concept-only",
+      "legacy-reference",
+      "lab",
+      "parked",
+      "deferred",
+      "local-only"
+    ],
+    "suppressedDistributions": [
+      "internal-testflight-planned",
+      "none-obsolete"
+    ],
+    "suppressedEntityIds": [
+      "app-feedback-inbox"
+    ]
+  },
+  "recentChange": {
+    "note": "Without a watermark this degrades to a single digest card instead of one card per changed entry, so the board never becomes a git log.",
+    "fallbackWindowDays": 7,
+    "maxIndividualCards": 12
+  },
+  "tasks": {
+    "note": "A task is only overdue if a real run has been recorded. Cadence alone cannot make something due, or every task is permanently due.",
+    "gracePeriodHours": 6,
+    "emitUninstrumentedDigest": true
+  },
+  "gaps": {
+    "note": "Only gaps explicitly dispositioned 'open' become cards. 'resolved' is history and 'accepted' is a recorded decision.",
+    "actionableDispositions": [
+      "open"
+    ],
+    "triageUndispositioned": true
+  },
+  "commitments": {
+    "note": "How close a target date has to be before it outranks everything else on the board.",
+    "imminentDays": 3,
+    "soonDays": 10
+  }
+}

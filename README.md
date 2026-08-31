@@ -27,6 +27,10 @@ indexmaker-hub/
   current/
     index.json
     inventory.md
+    attention.json
+    commitments.json
+    attention-policy.json
+    attention-state.json
   tasks/
     index.json
     templates/
@@ -54,6 +58,14 @@ Human-readable source:
 Task-routing source:
 
 - `tasks/index.json`
+
+Actionable-work source:
+
+- `current/attention.json` (derived; see `ATTENTION_BOARD.md`)
+
+Release-commitment source:
+
+- `current/commitments.json`
 
 Browsable source:
 
@@ -87,6 +99,7 @@ Refresh responsibilities:
 - re-scan current app and repo state
 - refresh `current/index.json`
 - refresh `current/inventory.md`
+- regenerate `current/attention.json` (`python3 tools/generate_attention.py`)
 - preserve `tasks/index.json` unless task definitions intentionally change
 - refresh `snapshots/YYYY-MM-DD/` if you want dated freezes
 - keep `site/` rendering against `current/index.json`

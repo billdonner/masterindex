@@ -1,6 +1,7 @@
 const state = {
   data: null,
   tasks: null,
+  attention: null,
   filters: { search: "", surface: "all", status: "all", review: "all", cluster: "all" },
   selectedEntityId: null,
   selectedCluster: null
@@ -79,15 +80,43 @@ function renderStats() {
   document.getElementById("statGrid").innerHTML = [stat("ASC apps", summary.ascApps), stat("Mapped ASC records", summary.mappedAscApps), stat("Coverage gaps", summary.unmatchedAscApps), stat("2026-active repos", summary.activeRepos)].join("");
 }
 function renderAttention() {
-  const missingLinks = state.data.entities.filter(entity => !hasPublicLink(entity)).length;
-  const activeTasks = Object.values(state.tasks?.entryTasks || {}).flat().filter(task => task.status === "active").length;
-  const cards = [
-    { label: "Public-link coverage", detail: `${missingLinks} of ${state.data.entities.length} entities have no verified website or App Store page recorded.`, filter: "missing-links" },
-    { label: "Recorded inventory gaps", detail: `${state.data.summary.unmatchedAscApps} unmatched ASC apps; ${state.data.gaps.length} gap records are retained in the current index.`, filter: "all" },
-    { label: "Active entity tasks", detail: `${activeTasks} targeted checks are registered; all entities also inherit the shared verification cadence.`, filter: "tasks" }
-  ];
-  document.getElementById("attentionList").innerHTML = cards.map(card => `<button class="attention-card" data-filter="${card.filter}"><strong>${escapeHtml(card.label)}</strong><span>${escapeHtml(card.detail)}</span><em>Review</em></button>`).join("");
-  document.querySelectorAll(".attention-card").forEach(card => card.addEventListener("click", () => { state.filters.review = card.dataset.filter; render(); }));
+  const list = document.getElementById("attentionList");
+  const board = state.attention;
+
+  if (!board) {
+    list.innerHTML = `<div class="attention-empty"><strong>Attention board unavailable</strong><span>current/attention.json could not be loaded. Run <code>python3 tools/generate_attention.py</code> to build it.</span></div>`;
+    document.getElementById("attentionSummary").textContent = "";
+    return;
+  }
+
+  const { high, medium, low, total, suppressed } = board.counts;
+  const reviewed = board.watermark?.lastReviewedAt;
+  document.getElementById("attentionSummary").textContent = total
+    ? `${high} high, ${medium} medium, ${low} low. ${suppressed} conditions suppressed as by-design or already resolved. Last reviewed: ${reviewed || "never"}.`
+    : `Nothing needs attention. ${suppressed} conditions were suppressed as by-design or already resolved.`;
+
+  if (!board.items.length) {
+    list.innerHTML = `<div class="attention-empty"><strong>Board is clear</strong><span>No open gaps, overdue tasks, or unreviewed changes.</span></div>`;
+    return;
+  }
+
+  list.innerHTML = board.items.map(item => `<button class="attention-card p-${escapeHtml(item.priority)}" data-entity="${escapeHtml(item.entityId || "")}" ${item.entityId ? "" : "disabled"}>
+    <span class="attention-flag">${escapeHtml(item.priority)} · ${escapeHtml(item.lane)}</span>
+    <strong>${escapeHtml(item.title)}</strong>
+    <span>${escapeHtml(item.body)}</span>
+    <em>${escapeHtml(item.action)}</em>
+  </button>`).join("");
+
+  list.querySelectorAll(".attention-card[data-entity]:not([disabled])").forEach(card => {
+    card.addEventListener("click", () => {
+      state.selectedEntityId = card.dataset.entity;
+      state.filters.surface = "all"; state.filters.status = "all"; state.filters.review = "all"; state.filters.cluster = "all";
+      state.filters.search = "";
+      document.getElementById("searchInput").value = "";
+      render();
+      document.getElementById("detailPanel").scrollIntoView({ behavior: "smooth", block: "center" });
+    });
+  });
 }
 function renderFilters() {
   renderChips("surfaceChips", surfaces, state.filters.surface, value => { state.filters.surface = value; render(); });
@@ -156,10 +185,15 @@ function applyUrlState() {
   if (reviewFilters.some(item => item.key === filter)) state.filters.review = filter;
 }
 async function init() {
-  const [inventoryResult, taskResult] = await Promise.all([fetch("../current/index.json"), fetch("../tasks/index.json")]);
+  const [inventoryResult, taskResult, attentionResult] = await Promise.all([
+    fetch("../current/index.json"),
+    fetch("../tasks/index.json"),
+    fetch("../current/attention.json").catch(() => null)
+  ]);
   if (!inventoryResult.ok) throw new Error(`Inventory load failed (${inventoryResult.status})`);
   state.data = await inventoryResult.json();
   state.tasks = taskResult.ok ? await taskResult.json() : { entryTasks: {} };
+  state.attention = attentionResult && attentionResult.ok ? await attentionResult.json() : null;
   state.selectedEntityId = state.data.entities[0]?.id || null;
   state.selectedCluster = state.data.clusters[0]?.name || null;
   applyUrlState();

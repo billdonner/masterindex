@@ -1,369 +1,210 @@
+#!/usr/bin/env python3
+"""Render the workin On board feed from the shared attention board.
+
+This tool no longer decides what is important. That decision lives in one
+place - `tools/generate_attention.py`, which writes `current/attention.json` -
+so the workin On tab and the web browser can never disagree about what needs
+attention.
+
+Responsibilities kept here:
+
+- shape attention items into workin On board cards
+- keep `masterindex.*` status keys stable so workin On upserts rather than duplicates
+- emit `workinon://post` shortcut URLs
+- write the human-readable folder README
+
+Run `tools/generate_attention.py` first, or pass --refresh to do both.
+"""
+
 from __future__ import annotations
 
+import argparse
 import json
-import math
 import subprocess
 import sys
-from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlencode
 
+LANE_ORDER = {"Needs Attention": 0, "Due Soon": 1, "Recent Activity": 2, "Summaries": 3}
+PRIORITY_ORDER = {"high": 0, "medium": 1, "low": 2}
 
-def read_json(path: Path):
+
+def read_json(path: Path) -> dict:
     return json.loads(path.read_text())
-
-
-def parse_date_value(value: str | None) -> float:
-    if not value or value == "no commits yet":
-        return float("-inf")
-    try:
-        return datetime.fromisoformat(value).timestamp()
-    except ValueError:
-        return float("-inf")
-
-
-def parse_datetime(value: str | None) -> datetime | None:
-    if not value or value == "no commits yet":
-        return None
-    try:
-        return datetime.fromisoformat(value)
-    except ValueError:
-        return None
-
-
-def days_since(value: str | None, now_dt: datetime) -> int | None:
-    ts = parse_date_value(value)
-    if not math.isfinite(ts):
-        return None
-    return int((now_dt.timestamp() - ts) // 86400)
 
 
 def encode_workinon_url(key: str, text: str) -> str:
     return f"workinon://post?{urlencode({'key': key, 'text': text})}"
 
 
-def board_key(kind: str, suffix: str) -> str:
-    return f"masterindex.{kind}.{suffix}"
+def board_card(item: dict) -> dict:
+    """One attention item becomes one workin On card, carrying its action."""
+    return {
+        "id": item["id"],
+        "type": item["kind"],
+        "entityId": item.get("entityId"),
+        "title": item["title"],
+        "body": item["body"],
+        "action": item["action"],
+        "priority": item["priority"],
+        "lane": item["lane"],
+        "sortDate": item.get("sortDate"),
+        "tags": item.get("tags", []),
+        "deepLink": item["deepLink"],
+        "statusKey": item["statusKey"],
+    }
 
 
-def deep_link(entity_id: str) -> str:
-    return f"site/index.html#{entity_id}"
+def digest_card(board: dict) -> dict:
+    counts = board["counts"]
+    watermark = board["watermark"]["lastReviewedAt"] or "never"
+    return {
+        "id": "masterindex-digest",
+        "type": "summary",
+        "entityId": None,
+        "title": f"{counts['total']} items need attention",
+        "body": f"{counts['high']} high, {counts['medium']} medium, {counts['low']} low. "
+        f"{counts['suppressed']} conditions were suppressed as by-design or already resolved. "
+        f"Last reviewed: {watermark}.",
+        "action": "Open the MasterIndex browser for the full picture.",
+        "priority": "high" if counts["high"] else "low",
+        "lane": "Summaries",
+        "sortDate": None,
+        "tags": ["summary", "digest"],
+        "deepLink": "site/index.html",
+        "statusKey": "masterindex.summary.digest",
+    }
 
 
-def latest_commit_subject(repo_path: str | None) -> str | None:
-    if not repo_path:
-        return None
-
-    path = Path(repo_path).expanduser()
-    if not path.exists():
-        return None
-
-    try:
-        result = subprocess.run(
-            ["git", "-C", str(path), "log", "-1", "--pretty=format:%s"],
-            check=True,
-            capture_output=True,
-            text=True,
-            timeout=5,
-        )
-    except (subprocess.SubprocessError, OSError):
-        return None
-
-    subject = result.stdout.strip()
-    return subject or None
-
-
-def recent_change_body(entity: dict) -> str:
-    modified = entity.get("lastModified")
-    commit_subject = latest_commit_subject(entity.get("repo"))
-    if commit_subject:
-        return f"Latest commit: {commit_subject}. Last modified {modified}."
-    return f"Last modified {modified}."
-
-
-def build_attention_items(index_data: dict) -> list[dict]:
-    items = []
-    for entity in index_data["entities"]:
-        has_website = bool(entity.get("links", {}).get("website"))
-        has_app_store = bool(entity.get("links", {}).get("appStore"))
-        is_app = entity["kind"] == "app"
-
-        if not has_website and not has_app_store:
-            items.append(
-                {
-                    "id": f"attention-{entity['id']}-no-public-links",
-                    "type": "attention",
-                    "entityId": entity["id"],
-                    "title": f"{entity['name']} missing public links",
-                    "body": "No verified website or public App Store page is recorded yet.",
-                    "priority": "low",
-                    "lane": "Needs Attention",
-                    "tags": ["links", "public", entity["cluster"].lower()],
-                    "deepLink": deep_link(entity["id"]),
-                    "statusKey": board_key("attention", f"{entity['id']}.no-public-links"),
-                }
-            )
-            continue
-
-        if is_app and not has_app_store:
-            body = (
-                "A website is recorded, but no verified public App Store page is in the index yet."
-                if has_website
-                else "No verified public App Store page is in the index yet."
-            )
-            items.append(
-                {
-                    "id": f"attention-{entity['id']}-missing-appstore-link",
-                    "type": "attention",
-                    "entityId": entity["id"],
-                    "title": f"{entity['name']} missing public App Store page",
-                    "body": body,
-                    "priority": "low",
-                    "lane": "Needs Attention",
-                    "tags": ["links", "app-store", entity["cluster"].lower()],
-                    "deepLink": deep_link(entity["id"]),
-                    "statusKey": board_key("attention", f"{entity['id']}.missing-appstore"),
-                }
-            )
-    return items
-
-
-def cadence_summary(cadence: dict | None) -> str:
-    value = (cadence or {}).get("value", "")
-    if "INTERVAL=6" in value:
-        return "Task is due in this six-hour cycle."
-    if "FREQ=DAILY" in value:
-        return "Task is due in the daily cycle."
-    if "FREQ=WEEKLY" in value:
-        return "Task is part of the weekly cycle."
-    return f"Task cadence: {value}." if value else "Task is due soon."
-
-
-def build_due_task_items(index_data: dict, task_data: dict) -> list[dict]:
-    entities_by_id = {entity["id"]: entity for entity in index_data["entities"]}
-    items = []
-
-    for entity_id, tasks in task_data.get("entryTasks", {}).items():
-        entity = entities_by_id.get(entity_id)
-        if not entity:
-            continue
-        for task in tasks:
-            if task.get("status") != "active":
-                continue
-            cadence_value = task.get("cadence", {}).get("value", "")
-            items.append(
-                {
-                    "id": f"due-{task['taskId']}",
-                    "type": "due-task",
-                    "entityId": entity_id,
-                    "taskId": task["taskId"],
-                    "title": f"{task['name']} due",
-                    "body": cadence_summary(task.get("cadence")),
-                    "priority": "high" if "INTERVAL=6" in cadence_value else "medium",
-                    "lane": "Due Soon",
-                    "tags": ["task", entity["kind"], entity["cluster"].lower()],
-                    "deepLink": deep_link(entity_id),
-                    "statusKey": board_key("due", task["taskId"]),
-                }
-            )
-    return items
-
-
-def build_recent_change_items(index_data: dict, now_dt: datetime) -> list[dict]:
-    items = []
-    for entity in index_data["entities"]:
-        age_days = days_since(entity.get("lastModified"), now_dt)
-        if age_days is None or age_days > 7:
-            continue
-        items.append(
-            {
-                "id": f"recent-{entity['id']}",
-                "type": "recent-change",
-                "entityId": entity["id"],
-                "title": f"{entity['name']} changed",
-                "body": recent_change_body(entity),
-                "priority": "medium" if age_days <= 2 else "low",
-                "lane": "Recent Activity",
-                "sortDate": entity["lastModified"],
-                "tags": ["recent", entity["kind"], entity["cluster"].lower()],
-                "deepLink": deep_link(entity["id"]),
-                "statusKey": board_key("recent", entity["id"]),
-            }
-        )
-    return items
-
-
-def build_summary_items(index_data: dict, feed_items: list[dict]) -> list[dict]:
-    missing_links_count = sum(1 for item in feed_items if item["type"] == "attention")
-    due_task_count = sum(1 for item in feed_items if item["type"] == "due-task")
-    recent_count = sum(1 for item in feed_items if item["type"] == "recent-change")
-    return [
-        {
-            "id": "summary-public-link-gaps",
-            "type": "summary",
-            "title": "Public link gaps",
-            "body": f"{missing_links_count} entries still need verified public links or App Store pages.",
-            "priority": "low",
-            "lane": "Summaries",
-            "tags": ["summary", "links"],
-            "statusKey": board_key("summary", "public-link-gaps"),
-        },
-        {
-            "id": "summary-due-tasks",
-            "type": "summary",
-            "title": "Tasks due soon",
-            "body": f"{due_task_count} recurring entry tasks are currently in the operational queue.",
-            "priority": "low",
-            "lane": "Summaries",
-            "tags": ["summary", "tasks"],
-            "statusKey": board_key("summary", "due-tasks"),
-        },
-        {
-            "id": "summary-recent-changes",
-            "type": "summary",
-            "title": "Recent changes",
-            "body": f"{recent_count} entries were modified in the last 7 days.",
-            "priority": "low",
-            "lane": "Summaries",
-            "tags": ["summary", "recent"],
-            "statusKey": board_key("summary", "recent-changes"),
-        },
-        {
-            "id": "summary-asc-gaps",
-            "type": "summary",
-            "title": "ASC coverage gaps",
-            "body": f"{index_data['summary']['unmatchedAscApps']} App Store Connect apps still do not map cleanly to an active local repository.",
-            "priority": "low",
-            "lane": "Summaries",
-            "tags": ["summary", "asc"],
-            "statusKey": board_key("summary", "asc-gaps"),
-        },
-    ]
-
-
-def priority_score(priority: str) -> int:
-    return {"high": 0, "medium": 1}.get(priority, 2)
-
-
-def type_score(item_type: str) -> int:
-    return {"recent-change": 0, "due-task": 1, "attention": 2, "summary": 3}.get(item_type, 4)
-
-
-def sort_items(items: list[dict]) -> list[dict]:
-    def recency_score(item: dict) -> float:
-        if item["type"] != "recent-change":
-            return float("inf")
-        dt = parse_datetime(item.get("sortDate"))
-        return -dt.timestamp() if dt else float("inf")
-
+def sort_cards(cards: list[dict]) -> list[dict]:
     return sorted(
-        items,
-        key=lambda item: (
-            type_score(item["type"]),
-            recency_score(item),
-            priority_score(item["priority"]),
-            item["title"],
+        cards,
+        key=lambda card: (
+            LANE_ORDER.get(card["lane"], 4),
+            PRIORITY_ORDER.get(card["priority"], 3),
+            card["sortDate"] is None,
+            str(card["sortDate"] or ""),
+            card["title"],
         ),
     )
 
 
-def materialize_shortcut_manifest(items: list[dict]) -> list[dict]:
+def shortcut_manifest_items(cards: list[dict]) -> list[dict]:
     manifest = []
-    for item in items:
-      text = f"{item['title']} - {item['body']}"
-      manifest.append(
-          {
-              "id": item["id"],
-              "title": item["title"],
-              "statusKey": item["statusKey"],
-              "url": encode_workinon_url(item["statusKey"], text),
-              "entityId": item.get("entityId"),
-              "taskId": item.get("taskId"),
-              "type": item["type"],
-              "priority": item["priority"],
-          }
-      )
+    for card in cards:
+        text = f"{card['title']} — {card['action']}" if card.get("action") else card["title"]
+        manifest.append(
+            {
+                "id": card["id"],
+                "title": card["title"],
+                "statusKey": card["statusKey"],
+                "url": encode_workinon_url(card["statusKey"], text),
+                "entityId": card.get("entityId"),
+                "type": card["type"],
+                "priority": card["priority"],
+            }
+        )
     return manifest
 
 
-def build_readme(feed: dict) -> str:
-    items = feed["items"]
+def build_readme(feed: dict, board: dict) -> str:
+    cards = feed["items"]
+    by_lane = {lane: sum(1 for card in cards if card["lane"] == lane) for lane in LANE_ORDER}
+    counts = board["counts"]
     return f"""# workin On Feed
 
 Generated for MasterIndex on {feed["generatedAt"]}.
 
 ## Purpose
 
-This folder contains the first working operational feed for the `workin On` app.
+The operational board for `workin On`. It shows only what needs a decision or
+an action; the web browser at `site/` remains the deep-dive surface.
+
+## Where the content comes from
+
+Every card is derived from `current/attention.json`, which is generated by
+`tools/generate_attention.py` from the inventory, the task registry, and the
+tuning rules in `current/attention-policy.json`. This tool does not decide what
+matters on its own, so the workin On tab and the web page always agree.
 
 ## Files
 
-- `board-feed.json` — canonical generated board items
+- `board-feed.json` — generated board cards
 - `shortcut-manifest.json` — ready-to-post `workinon://post` URLs for keyed status items
 
 ## Feed summary
 
-- Total cards: {len(items)}
-- Attention cards: {sum(1 for item in items if item["type"] == "attention")}
-- Due task cards: {sum(1 for item in items if item["type"] == "due-task")}
-- Recent change cards: {sum(1 for item in items if item["type"] == "recent-change")}
-- Summary cards: {sum(1 for item in items if item["type"] == "summary")}
+- Total cards: {len(cards)}
+- Needs Attention: {by_lane["Needs Attention"]}
+- Due Soon: {by_lane["Due Soon"]}
+- Recent Activity: {by_lane["Recent Activity"]}
+- Summaries: {by_lane["Summaries"]}
+
+By priority: {counts["high"]} high, {counts["medium"]} medium, {counts["low"]} low.
+{counts["suppressed"]} conditions were suppressed as by-design or already resolved.
+
+## Refreshing
+
+```sh
+python3 tools/generate_attention.py          # recompute what is actionable
+python3 tools/generate_workinon_feed.py      # render the board
+```
+
+Or `python3 tools/generate_workinon_feed.py --refresh` to do both.
+
+Once a review pass is done, `python3 tools/generate_attention.py --mark-reviewed`
+stamps the watermark so already-seen changes stop reappearing.
 
 ## Notes
 
 - Keys are namespaced as `masterindex.*` for safe upserts in workin On.
-- The web page remains the deep-dive surface.
-- workin On should surface these as operational status items, not as the full browser.
+- Every card carries an `action` field describing what to actually do.
+- Cards clear when the underlying condition is resolved in `current/index.json`.
 """
 
 
-def main():
-    hub_root = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path(__file__).resolve().parents[1]
-    current_index_path = hub_root / "current" / "index.json"
-    tasks_path = hub_root / "tasks" / "index.json"
-    output_dir = hub_root / "workinon"
-    board_feed_path = output_dir / "board-feed.json"
-    shortcut_manifest_path = output_dir / "shortcut-manifest.json"
-    summary_path = output_dir / "README.md"
+def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    parser.add_argument("root", nargs="?", default=None, help="MasterIndex checkout root (defaults to this script's repository).")
+    parser.add_argument("--refresh", action="store_true", help="Regenerate current/attention.json first.")
+    args = parser.parse_args()
 
-    index_data = read_json(current_index_path)
-    task_data = read_json(tasks_path)
-    now_dt = datetime.now().astimezone()
+    root = Path(args.root).resolve() if args.root else Path(__file__).resolve().parents[1]
+    attention_path = root / "current" / "attention.json"
 
-    attention = build_attention_items(index_data)
-    due_soon = build_due_task_items(index_data, task_data)
-    recent = build_recent_change_items(index_data, now_dt)
-    summaries = build_summary_items(index_data, [*attention, *due_soon, *recent])
-    items = sort_items([*attention, *due_soon, *recent, *summaries])
+    if args.refresh:
+        subprocess.run([sys.executable, str(root / "tools" / "generate_attention.py"), str(root)], check=True)
 
-    board_feed = {
-        "generatedAt": now_dt.isoformat(timespec="seconds"),
-        "sourceFiles": {
-            "inventory": "current/index.json",
-            "tasks": "tasks/index.json",
-        },
+    if not attention_path.exists():
+        raise SystemExit(f"{attention_path} not found. Run tools/generate_attention.py first, or pass --refresh.")
+
+    board = read_json(attention_path)
+    cards = sort_cards([*(board_card(item) for item in board["items"]), digest_card(board)])
+
+    feed = {
+        "generatedAt": board["generatedAt"],
+        "schemaVersion": "2.0",
+        "sourceFiles": {"attention": "current/attention.json"},
         "intendedSurface": "workin On",
-        "defaultLanes": [
-            "Needs Attention",
-            "Due Soon",
-            "Recently Changed",
-            "Summaries",
-        ],
-        "itemCount": len(items),
-        "items": items,
+        "defaultLanes": ["Needs Attention", "Due Soon", "Recent Activity", "Summaries"],
+        "watermark": board["watermark"],
+        "itemCount": len(cards),
+        "items": cards,
     }
 
-    shortcut_manifest = {
-        "generatedAt": board_feed["generatedAt"],
-        "namespace": "masterindex",
-        "items": materialize_shortcut_manifest(items),
-    }
-
+    output_dir = root / "workinon"
     output_dir.mkdir(parents=True, exist_ok=True)
-    board_feed_path.write_text(json.dumps(board_feed, indent=2) + "\n")
-    shortcut_manifest_path.write_text(json.dumps(shortcut_manifest, indent=2) + "\n")
-    summary_path.write_text(build_readme(board_feed))
-    print(f"Generated {board_feed['itemCount']} workin On board items in {output_dir}")
+    (output_dir / "board-feed.json").write_text(json.dumps(feed, indent=2, ensure_ascii=False) + "\n")
+    (output_dir / "shortcut-manifest.json").write_text(
+        json.dumps(
+            {"generatedAt": feed["generatedAt"], "namespace": "masterindex", "items": shortcut_manifest_items(cards)},
+            indent=2,
+            ensure_ascii=False,
+        )
+        + "\n"
+    )
+    (output_dir / "README.md").write_text(build_readme(feed, board))
+    print(f"Generated {feed['itemCount']} workin On board cards in {output_dir}")
 
 
 if __name__ == "__main__":

@@ -20,6 +20,7 @@ As of Friday, August 28, 2026.
 - The generated `billdonner.com/apps` catalog is live on IONOS with six active entries: AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is independently listed from PickleFamilia. LT Watch and Flasherz Kids are nonviable and removed from the public apps tree; Screenker, Mallinbook, Pfoliolio, and PickleFamilia belong to the 1041Soft release track.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
 - The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment. Owner confirmed on 2026-08-23 that amenbeats belongs on BillDonner.com.
+- Recorded gaps are explicitly dispositioned open, resolved, or accepted, and owner-stated release commitments are tracked in `current/commitments.json`; together they drive a generated attention board shared by the web browser and the `workin On` tab.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
@@ -317,6 +318,22 @@ product home.
 - `adspill` remains a two-person advertising-capacity research sandbox.
 - The Oenora Recognition API is live at `bd-oenora-recognition.fly.dev` and remains an Oenora dependency.
 - Oenora's public TestFlight invite, approved build 6, submitted build 7 with sealed-case tracking, three-device CloudKit soak, repaired recognition configuration, and notarized native Mac delivery are retained.
+
+## Attention Board
+
+Every `gaps[]` entry carries an explicit `disposition` — `open`, `resolved`, or
+`accepted` — plus a stable `id`, a short `title`, the `entityIds` it concerns,
+and, for open gaps, a concrete `nextAction`. Of 32 recorded gaps, 13 are open,
+15 are resolved history, and 4 are accepted decisions.
+
+Owner-stated release commitments live separately in `current/commitments.json`,
+because a target date is intent rather than an observed fact. Three App Store
+releases are ordered rather than dated, since their timing depends on Apple
+review and a collaborator's sign-off.
+
+Together these generate `current/attention.json`, a derived board of only the
+items needing a decision or an action, Shipping first. The web browser and the
+`workin On` tab both render it. See `ATTENTION_BOARD.md`.
 
 ## Remaining Gaps
 

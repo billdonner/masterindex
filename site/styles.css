@@ -144,6 +144,39 @@ body::before {
 .attention-card strong { font-family: "Avenir Next", "Helvetica Neue", Arial, sans-serif; margin-bottom: 5px; }
 .attention-card span { color: var(--muted); font: 0.87rem/1.35 "Avenir Next", "Helvetica Neue", Arial, sans-serif; }
 .attention-card em { margin-top: 9px; color: var(--accent); font: 0.76rem "Avenir Next", "Helvetica Neue", Arial, sans-serif; text-transform: uppercase; letter-spacing: .09em; }
+.attention-summary { margin-top: 10px; font-size: 0.85rem; color: var(--muted); }
+.attention-list { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.attention-card { border-left: 3px solid rgba(24, 33, 38, 0.16); }
+.attention-card[disabled] { cursor: default; opacity: 0.92; }
+.attention-card[disabled]:hover { transform: none; border-color: rgba(24, 33, 38, 0.09); }
+.attention-card.p-high { border-left-color: #bf5a36; }
+.attention-card.p-medium { border-left-color: #c9922f; }
+.attention-card.p-low { border-left-color: #2f7f77; }
+.attention-flag {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--muted);
+  font: 0.7rem "Avenir Next", "Helvetica Neue", Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+.attention-card em { font-style: normal; text-transform: none; letter-spacing: 0; line-height: 1.4; }
+.attention-card > span:not(.attention-flag) {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.attention-card { display: flex; flex-direction: column; }
+.attention-card em { margin-top: auto; padding-top: 9px; }
+.attention-empty {
+  grid-column: 1 / -1;
+  border: 1px dashed rgba(24, 33, 38, 0.18);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+.attention-empty strong { display: block; margin-bottom: 4px; }
+.attention-empty span { color: var(--muted); font-size: 0.87rem; }
 .hero {
   padding: 24px;
   overflow: hidden;

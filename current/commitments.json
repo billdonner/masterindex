@@ -1,0 +1,192 @@
+{
+  "schemaVersion": "1.0",
+  "description": "Owner-stated release commitments and target dates. Authoritative and hand-editable. This is intent, not observed fact, which is why it lives beside current/index.json rather than inside it.",
+  "statedOn": "2026-08-24",
+  "statedVia": "Owner roadmap, dictated",
+  "notes": [
+    "targetDate is the resolved calendar date. statedAs preserves the owner's original wording so a re-read can catch a misinterpretation.",
+    "precision records how firm the date is: 'day' was given explicitly, 'week' and 'month' were rounded from relative phrasing, 'none' means no date was given.",
+    "Set status to 'done' when shipped, or 'slipped' with a new targetDate. Do not delete a commitment that slipped - the history is the point.",
+    "The Apple/D&B critical-path item is deliberately NOT a commitment. It is a blocker, carried as gap apple-org-enrollment-dnb and referenced from the commitments it gates, so it appears once rather than twice.",
+    "Three App Store releases are ordered rather than dated: real timing depends on Apple review approval and Carol's sign-off, so queuePosition is the commitment and targetDate stays null. A null targetDate with a queuePosition is deliberate, not missing data.",
+    "2026-08-30: rebuilt against origin/main. AmenBeats marked done (submitted for review 2026-08-27). KinFlash split into Family and Studio commitments to match the two entities created 2026-08-30. Apple/D&B blockers repointed to gap apple-developer-org-conversion, which supersedes the earlier owner-stated record with Apple case 20000146677819."
+  ],
+  "commitments": [
+    {
+      "id": "amenbeats-public-release",
+      "title": "Ship Amen Beats",
+      "entityIds": [
+        "amenbeats-app"
+      ],
+      "targetDate": "2026-08-27",
+      "precision": "day",
+      "statedAs": "ready and needs to go out within three days",
+      "status": "done",
+      "blockedByGapIds": [],
+      "note": "Met on schedule. origin/main records amenbeats-app status 'submitted-for-review' with lastModified 2026-08-27, inside the three-day window. Shipped from billdonner.com on the always-free line, so it never sat behind the Apple/D&B critical path. Submitted, not yet live — App Store availability is Apple's clock, not a commitment slip.",
+      "confirmedOn": "2026-08-24",
+      "completedOn": "2026-08-27"
+    },
+    {
+      "id": "pickledballs-free-app-release",
+      "title": "Release the free PickledBalls court app",
+      "entityIds": [
+        "pickledballs-app"
+      ],
+      "targetDate": null,
+      "precision": "ordered",
+      "statedAs": "release the free app first — ordered rather than dated (2026-08-24)",
+      "status": "committed",
+      "blockedByGapIds": [
+        "peerlink-source-missing",
+        "apple-developer-org-conversion"
+      ],
+      "note": "Sequenced first among the PickledBalls parts, but no date was given. Still records the App Privacy questionnaire as a submission blocker.",
+      "queuePosition": 2,
+      "externalGates": [
+        "Apple review approval"
+      ],
+      "queueNote": "Shares the first slot with DoubleQross - whichever is ready. Must be in before KinFlash starts."
+    },
+    {
+      "id": "collective-schedule-generation",
+      "title": "Collective web app generating schedules",
+      "entityIds": [
+        "collective-engine"
+      ],
+      "targetDate": "2026-08-28",
+      "precision": "day",
+      "statedAs": "have the web app generating schedules by this Friday",
+      "status": "committed",
+      "blockedByGapIds": [],
+      "note": "Release 1 is deployed and healthy on Fly; collective.1041soft.com is not yet published. Target date passed 2026-08-28 with no confirmation here that the milestone landed; origin/main records continuing Collective work through 2026-08-30 but nothing that verifies schedule generation specifically."
+    },
+    {
+      "id": "collective-full-ui",
+      "title": "Full Collective UI",
+      "entityIds": [
+        "collective-engine",
+        "collective-comms"
+      ],
+      "targetDate": "2026-09-04",
+      "precision": "week",
+      "statedAs": "the full collective UI next week",
+      "status": "committed",
+      "blockedByGapIds": [],
+      "note": "Rounded to the end of next week. The notifier component is mapped to collective-comms by inference; confirm that mapping."
+    },
+    {
+      "id": "oenora-live",
+      "title": "Oenora live on Mac, iPad, and iOS",
+      "entityIds": [
+        "oenora-app",
+        "oenora-merchant",
+        "oenora-recognition-service"
+      ],
+      "targetDate": "2026-09-07",
+      "precision": "week",
+      "statedAs": "live within two weeks",
+      "status": "committed",
+      "blockedByGapIds": [
+        "macos-age-rating-unset"
+      ],
+      "note": "Age rating is unset because alcohol references are core subject matter. Owner committed 2026-08-24 to setting it on reaching their Mac; until that is confirmed it remains a hard submission gate on this dated commitment."
+    },
+    {
+      "id": "pfoliolio-live",
+      "title": "Pfoliolio live on Mac and iOS",
+      "entityIds": [
+        "pfolio-app",
+        "pfolio-backend"
+      ],
+      "targetDate": "2026-09-24",
+      "precision": "month",
+      "statedAs": "a one-month target",
+      "status": "committed",
+      "blockedByGapIds": [],
+      "note": "Both ASC builds aligned at 35; backend healthy."
+    },
+    {
+      "id": "qross-release-and-iaps",
+      "title": "Release DoubleQross via 1041soft.com, then add two IAPs",
+      "entityIds": [
+        "qross-app"
+      ],
+      "targetDate": null,
+      "precision": "ordered",
+      "statedAs": "once Carol's work is done, release it via 1041soft.com and then add two IAPs — ordered rather than dated (2026-08-24)",
+      "status": "committed",
+      "blockedByGapIds": [
+        "apple-developer-org-conversion"
+      ],
+      "note": "Gated on Carol's work rather than a date. Build 394 VALID, age rating 12+ declared.",
+      "queuePosition": 1,
+      "preferred": true,
+      "externalGates": [
+        "Carol sign-off",
+        "Apple review approval"
+      ],
+      "queueNote": "Takes the first slot if it is ready. If it is not, PickledBalls goes in first instead."
+    },
+    {
+      "id": "kinflash-family-release",
+      "title": "Release KinFlash Family (iOS, free)",
+      "entityIds": [
+        "kinflash-app"
+      ],
+      "targetDate": null,
+      "precision": "ordered",
+      "statedAs": "a Mac app with a small iOS companion; sister will help debug — ordered rather than dated (2026-08-24); split into two products 2026-08-30",
+      "status": "committed",
+      "blockedByGapIds": [
+        "apple-developer-org-conversion",
+        "kinflash-debug-collaborator-unrecorded"
+      ],
+      "note": "ASC record 6762008872, renamed KinFlash Family 2026-08-30. Free, no IAP. iOS 1.0 plus a stray macOS 1.0 that predates the split.",
+      "queuePosition": 3,
+      "externalGates": [
+        "Apple review approval"
+      ],
+      "afterCommitmentIds": [
+        "pickledballs-free-app-release"
+      ],
+      "queueNote": "Starts after PickledBalls is in."
+    },
+    {
+      "id": "kinflash-studio-release",
+      "title": "Release KinFlash Studio (macOS, paid)",
+      "entityIds": [
+        "kinflash-studio"
+      ],
+      "targetDate": null,
+      "precision": "ordered",
+      "statedAs": "a Mac app with a small iOS companion; sister will help debug — ordered rather than dated (2026-08-24); split into two products 2026-08-30",
+      "status": "committed",
+      "blockedByGapIds": [
+        "apple-developer-org-conversion",
+        "kinflash-debug-collaborator-unrecorded"
+      ],
+      "note": "ASC record 6806833310, bundle com.billdonner.kinflashstudio. macOS 1.0 PREPARE_FOR_SUBMISSION; Xcode Cloud product 'KinFlashMac' archives Studio.",
+      "queuePosition": 4,
+      "externalGates": [
+        "Apple review approval"
+      ],
+      "afterCommitmentIds": [
+        "kinflash-family-release"
+      ],
+      "queueNote": "Follows KinFlash Family.",
+      "preferred": false
+    }
+  ],
+  "releaseQueue": {
+    "description": "App Store release order. Position, not calendar date, is what was committed.",
+    "statedOn": "2026-08-24",
+    "order": [
+      "qross-release-and-iaps",
+      "pickledballs-free-app-release",
+      "kinflash-family-release",
+      "kinflash-studio-release"
+    ],
+    "note": "Slot 1 goes to DoubleQross if ready, otherwise PickledBalls. KinFlash follows PickledBalls being in, Family before Studio."
+  }
+}
