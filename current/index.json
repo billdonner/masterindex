@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-29T13:00:00-05:00",
+  "generatedAt": "2026-09-02T10:06:03-05:00",
   "scope": {
-    "dateLabel": "Saturday, August 29, 2026",
+    "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
     "roots": [
       "~/",
@@ -41,15 +41,16 @@
       "August 24: 1041Soft LLC's Apple Developer Program conversion request was submitted to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. Apple acknowledged the request; organization approval and seller-name/account conversion are not yet verified.",
       "August 28 website reconciliation: billdonner.com/apps now lists six public-line entries — AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is explicitly independent of PickleFamilia; LT Watch and Flasherz Kids are removed as nonviable; Screenker, Mallinbook, Pfoliolio, and PickleFamilia remain on the 1041Soft release track and are excluded from the Bill Donner catalog.",
       "August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenara is identified as the next MCP-enabled app. Published site commit e1d0caf.",
-      "August 29 owner report: picklefamilia.com and picklefamilia.app were purchased through IONOS. The IONOS dashboard screenshot shows 88.92 GB webspace used, 12,963 files, 7 SFTP users, 2 standard databases, PHP Extended Support active, Site Scan reporting vulnerable websites, and Performance Level 2. DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing for the new domains are not yet verified."
+      "August 29 owner report: picklefamilia.com and picklefamilia.app were purchased through IONOS. The IONOS dashboard screenshot shows 88.92 GB webspace used, 12,963 files, 7 SFTP users, 2 standard databases, PHP Extended Support active, Site Scan reporting vulnerable websites, and Performance Level 2. DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing for the new domains are not yet verified.",
+      "September 2 MedCommons update: billdonner/medcommonsPhp now contains a separate native SwiftUI iPhone/iPad DICOM research viewer under ios/DicomResearchViewer, committed and pushed as 1336dfa. It is explicitly research-only/not for diagnosis, bundles public sample DICOM fixtures with provenance and checksums, and has simulator XCTest plus no-signing iphoneos build evidence."
     ]
   },
   "summary": {
     "ascApps": 23,
     "mappedAscApps": 20,
     "unmatchedAscApps": 3,
-    "activeRepos": 55,
-    "clusters": 16,
+    "activeRepos": 56,
+    "clusters": 17,
     "liveServices": 7,
     "collaborators": 3,
     "unreachableServices": 0,
@@ -691,6 +692,21 @@
       "watchpoints": [
         "The engine is deployed, but notification channels require explicit provider configuration.",
         "Collective Comms sends only after a typed approval and requires pre-existing exact Messages group threads."
+      ]
+    },
+    {
+      "name": "MedCommons",
+      "maturity": "research prototype on legacy archive",
+      "summary": "Legacy MedCommons PHP/Python/Java source now also hosts a separate native SwiftUI iPhone/iPad DICOM research viewer prototype.",
+      "highlights": [
+        "medcommonsPhp legacy archive",
+        "DicomResearchViewer iOS/iPadOS prototype",
+        "bundled public DICOM sample fixtures"
+      ],
+      "watchpoints": [
+        "Research-only / not for diagnosis; no clinical claims or diagnostic workflow.",
+        "Parser support is deliberately narrow: uncompressed Explicit VR Little Endian, Implicit VR Little Endian, limited Big Endian metadata, and metadata-only handling for compressed or encapsulated pixel data.",
+        "Signed install on physical iPhone/iPad still requires a configured Apple development team."
       ]
     },
     {
@@ -2098,6 +2114,41 @@
         "2026-08-25: private Sites URL deployed at https://xpensexpunger.poobah52.chatgpt.site with support and privacy sections suitable for ASC draft metadata.",
         "2026-08-26: ~/xpensexpunger/docs/1041SOFT_EXPENSE_MAINTENANCE_PLAN.md defines the local monthly utility workflow for 1041soft.com expenses: import private local evidence, normalize in SQLite, export safe schema-v1 JSON to ~/1041soft/finance/scan-results, then run the 1041soft aggregator."
       ]
+    },
+    {
+      "id": "medcommons-dicom-viewer",
+      "name": "MedCommons DICOM Viewer",
+      "kind": "app research prototype",
+      "cluster": "MedCommons",
+      "status": "research-prototype",
+      "lastModified": "2026-09-02",
+      "repo": "~/medcommons",
+      "bundleId": "com.billdonner.DicomResearchViewer",
+      "productLine": null,
+      "pricingPolicy": null,
+      "release": "Native SwiftUI iPhone/iPad research viewer committed and pushed to billdonner/medcommonsPhp as 1336dfa on 2026-09-02. Simulator XCTest passed with 9 tests; generic iphoneos build passed with CODE_SIGNING_ALLOWED=NO. Signed physical-device installation needs DEVELOPMENT_TEAM.",
+      "distribution": "local-device-research; no ASC/TestFlight record observed",
+      "description": "Research-only DICOM viewer prototype for iPhone and iPad. It imports .dcm/.dicom files, loads bundled public fixtures offline, parses core metadata, renders narrow uncompressed 8/16-bit monochrome and 8-bit RGB pixel data with window/level presets, and reports unsupported compressed or metadata-only objects without rendering pixels.",
+      "dependencies": [
+        "SwiftUI",
+        "XcodeGen",
+        "CoreGraphics",
+        "UniformTypeIdentifiers",
+        "public pydicom/OHIF/TCIA sample fixtures"
+      ],
+      "links": {
+        "github": "https://github.com/billdonner/medcommonsPhp",
+        "website": null,
+        "appStore": null,
+        "testFlight": null
+      },
+      "notes": [
+        "Native app lives separately from the legacy PHP stack at ios/DicomResearchViewer.",
+        "Bundled fixtures: pydicom CT_small, pydicom MR_small, pydicom rtstruct, and OHIF/TCIA LIDC-IDRI CT slice; manifest records source URL, license note, de-identification note, checksum, modality, transfer syntax, image dimensions, pixel representation, and pixel-support flag.",
+        "In-app header and metadata views label the viewer as research-only/not for diagnosis.",
+        "Tests cover bundled CT/MR/RTSTRUCT/OHIF fixtures, implicit VR little endian, MONOCHROME1 inversion, signed rescale/windowing, compressed transfer-syntax metadata-only behavior, and malformed short input.",
+        "Second critic subagent could not run after implementation because the account hit a usage limit; the first critic pass ran before files existed and its actionable concerns were addressed in this commit."
+      ]
     }
   ],
   "collaborators": [
@@ -2695,6 +2746,13 @@
       "last2026Commit": "2026-08-22",
       "kind": "local review infrastructure",
       "role": "Active deterministic, read-only build-review controller with bounded evidence, cloud critic adapters, and append-only audit records"
+    },
+    {
+      "repo": "~/medcommons",
+      "branch": "master",
+      "last2026Commit": "2026-09-02",
+      "kind": "legacy archive + app research prototype",
+      "role": "Archived billdonner/medcommonsPhp legacy MedCommons source with a new native SwiftUI iPhone/iPad DICOM research viewer under ios/DicomResearchViewer; pushed commit 1336dfa"
     }
   ],
   "gaps": [

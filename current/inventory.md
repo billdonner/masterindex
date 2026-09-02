@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Friday, August 28, 2026.
+As of Wednesday, September 2, 2026.
 
 ## Scope
 
@@ -36,6 +36,16 @@ As of Friday, August 28, 2026.
 - Review Authority is an active local, read-only review controller. Its Milestone 1 vertical slice can inspect a registered build source, redact and content-address evidence, request a bounded cloud critique, and retain an audit record; it has no public release, UI, correction loop, or configured Git remote.
 - XpenseXpunger is a new 1041soft-commercial project at `~/xpensexpunger`. It is a separate Mac-first, local-first expense evidence scanner for Gmail receipts, local files, screenshots, PDFs, CSVs, and later Plaid Transactions. It must not be merged into `pfolio`, and `~/1041soft` is output-only for compatible `finance/scan-results/*.json` exports.
 - 1041Soft LLC's Apple Developer Program conversion request was submitted on 2026-08-24 to move the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID: `20000146677819`. Approval and seller-name/account conversion are still pending.
+
+- MedCommons now has a separate native SwiftUI iPhone/iPad DICOM research viewer in `~/medcommons/ios/DicomResearchViewer`, pushed to `billdonner/medcommonsPhp` at `1336dfa` on 2026-09-02. It is research-only/not for diagnosis, bundles public sample fixtures with a manifest and checksums, passed 9 simulator parser/rendering tests, and compiles for `iphoneos` with signing disabled; physical-device install still needs `DEVELOPMENT_TEAM`.
+
+## MedCommons / DICOM Research Viewer
+
+The legacy `billdonner/medcommonsPhp` archive now includes a separate native iPhone/iPad research prototype at `~/medcommons/ios/DicomResearchViewer`. It is a SwiftUI/XcodeGen app, not a modernization of the old PHP runtime and not a clinical viewer. The UI and README keep the boundary explicit: research only, not for diagnosis.
+
+Current capability: open local `.dcm`/`.dicom` files through the iOS document importer, load four bundled public sample objects offline, parse core metadata, render narrow uncompressed 8/16-bit monochrome and 8-bit RGB pixels, provide window/level sliders and CT presets, and show metadata/source provenance. Compressed or encapsulated transfer syntaxes are detected and left metadata-only.
+
+Verification recorded on 2026-09-02: `xcodebuild` simulator XCTest passed 9 tests covering the bundled CT/MR/RTSTRUCT/OHIF fixtures plus implicit VR, MONOCHROME1 inversion, signed rescale windowing, compressed transfer syntax handling, and malformed input. A generic `iphoneos` build passed with `CODE_SIGNING_ALLOWED=NO`; signed installation on Bill's iPhone/iPad still requires setting an Apple development team in Xcode.
 
 ## Product Lines
 
