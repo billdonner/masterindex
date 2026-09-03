@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T10:06:03-05:00",
+  "generatedAt": "2026-09-03T17:30:00-05:00",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -42,7 +42,8 @@
       "August 28 website reconciliation: billdonner.com/apps now lists six public-line entries — AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is explicitly independent of PickleFamilia; LT Watch and Flasherz Kids are removed as nonviable; Screenker, Mallinbook, Pfoliolio, and PickleFamilia remain on the 1041Soft release track and are excluded from the Bill Donner catalog.",
       "August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenara is identified as the next MCP-enabled app. Published site commit e1d0caf.",
       "August 29 owner report: picklefamilia.com and picklefamilia.app were purchased through IONOS. The IONOS dashboard screenshot shows 88.92 GB webspace used, 12,963 files, 7 SFTP users, 2 standard databases, PHP Extended Support active, Site Scan reporting vulnerable websites, and Performance Level 2. DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing for the new domains are not yet verified.",
-      "September 2 MedCommons update: billdonner/medcommonsPhp now contains a separate native SwiftUI iPhone/iPad DICOM research viewer under ios/DicomResearchViewer, committed and pushed as 1336dfa. It is explicitly research-only/not for diagnosis, bundles public sample DICOM fixtures with provenance and checksums, and has simulator XCTest plus no-signing iphoneos build evidence."
+      "September 2 MedCommons update: billdonner/medcommonsPhp now contains a separate native SwiftUI iPhone/iPad DICOM research viewer under ios/DicomResearchViewer, committed and pushed as 1336dfa. It is explicitly research-only/not for diagnosis, bundles public sample DICOM fixtures with provenance and checksums, and has simulator XCTest plus no-signing iphoneos build evidence.",
+      "September 3 1041Soft Apple conversion: Apple Developer Support (case 20000146677819) had replied on August 26 that the Individual-to-Organization migration could start at any time and asked the owner to confirm; the case then sat waiting on the owner, not on Apple. On September 3 the owner sent the go-ahead, and the same day added the Mercury business account (1041Soft LLC, ending 8399) as the sole payout bank in App Store Connect so pre-migration earnings route to the LLC. Migration start not yet confirmed by Apple; owner follow-up scheduled 2026-09-04 AM. The personal W-9 on file must be replaced with an LLC/EIN W-9 after migration completes."
     ]
   },
   "summary": {
@@ -2613,9 +2614,9 @@
     {
       "repo": "~/1041soft",
       "branch": "main",
-      "last2026Commit": "2026-08-13",
+      "last2026Commit": "2026-09-03",
       "kind": "business/admin",
-      "role": "1041Soft formation and product-planning repository"
+      "role": "1041Soft formation and product-planning repository; Step 8 (Apple org conversion) go-ahead sent and Mercury payout bank set 2026-09-03"
     },
     {
       "repo": "github:billdonner/1041soft-site",
@@ -2901,8 +2902,8 @@
     },
     {
       "kind": "1041soft-apple-developer-organization-conversion",
-      "observedAt": "2026-08-24",
-      "summary": "Pending Apple review. 1041Soft LLC submitted the Apple Developer Program request to convert the existing Individual membership to an Organization membership after D-U-N-S issuance. Apple support case ID 20000146677819. No approval, seller-name change, or converted organization membership has been verified yet."
+      "observedAt": "2026-09-03",
+      "summary": "Awaiting Apple to start the migration. Apple Developer Support case 20000146677819 replied 2026-08-26 that the Individual-to-Organization migration could begin on the owner's say-so; the owner's questions of 2026-08-27 held it, and the go-ahead was sent 2026-09-03. Same day, the Mercury account (1041Soft LLC, ending 8399) became the only payout bank in App Store Connect. Still unverified: migration start, seller-name change to 1041Soft LLC, and the post-migration LLC W-9. Source of truth: ~/1041soft/formation/articles-of-organization-checklist.md Step 8."
     },
     {
       "kind": "xpensexpunger-release-readiness",
