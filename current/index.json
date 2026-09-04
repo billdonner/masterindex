@@ -341,10 +341,10 @@
         "appId": "6766107636",
         "ascStates": [
           "IOS 1.0 READY_FOR_SALE",
-          "IOS 1.2 PREPARE_FOR_SUBMISSION"
+          "IOS 1.3 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/100Burfords",
-        "localVersion": "1.2 (18)"
+        "localVersion": "1.3 (21)"
       },
       {
         "name": "Zerver Monitor",
@@ -1173,10 +1173,10 @@
       "kind": "app",
       "cluster": "Oenora",
       "status": "ready-for-sale",
-      "lastModified": "2026-09-03",
+      "lastModified": "2026-09-04",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
-      "release": "iOS 1.0 READY_FOR_SALE; 1.2 in TestFlight at builds 17 and 18 (both VALID, uploaded from this Mac 2026-09-03); source project.yml at 1.2 (18); ASC 1.2 record renamed from the never-submitted 1.1, Prepare for Submission, not submitted by owner instruction",
+      "release": "iOS 1.0 READY_FOR_SALE; 1.3 record in Prepare for Submission (same record renamed 1.1 → 1.2 → 1.3); source project.yml at 1.3 (21); 1.2 abandoned 2026-09-04 and its TestFlight builds expired; no submission until owner says so",
       "description": "The only ASC-mapped app in this scan marked ready for sale.",
       "dependencies": [],
       "links": {
@@ -1186,6 +1186,7 @@
         "websiteSource": "verified HTTP 200 on 2026-08-02"
       },
       "notes": [
+        "2026-09-04: owner pulled the Re-Caption feature after the cartoonist saw a shared remix export. Feature removed from source (build 20), all 1.2 builds carrying it expired in TestFlight, feature-bearing 1.1 builds detached from the external group. Release re-targeted to 1.3 pending further small adjustments.",
         "2026-09-03: catalog extended to week 117 (17 new West Side Rag cartoons through 2026-08-30, 515 comments; week 115 has 96 of 112). Launch screen shows 'Now running for N weeks' from the catalog. Print critic pass over 118 exported Letter PDFs found and fixed a black frame on the Fan Club card render. Xcode Cloud product created (ciProduct a6fb8847…, workflow C6D6A4EE… manual ARCHIVE, App Store eligible, pinned Xcode 26.6); first cloud run started as the App-Store-safe archive lane. Owner: do not submit for review until told.",
         "Strong signal of finished packaging relative to the rest of the portfolio.",
         "Live ASC version is 1.0; 1.1 draft has TestFlight builds through 16 (VALID). Build 16 (uploaded 2026-09-01 07:11 PT) was built elsewhere — not from this Mac, and origin/main carries no matching commits (local project.yml still declares 1.1 (15)); next build from this machine must bump to 17.",
@@ -2363,7 +2364,7 @@
     {
       "repo": "~/100Burfords",
       "branch": "main",
-      "last2026Commit": "2026-09-03",
+      "last2026Commit": "2026-09-04",
       "kind": "app",
       "role": "ASC-mapped iOS app, sale-ready in ASC"
     },
