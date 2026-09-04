@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-14T13:17:31-05:00",
+  "generatedAt": "2026-09-04T15:27:32-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,119 +11,170 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 65,
+  "itemCount": 68,
   "items": [
     {
-      "id": "recent-company-site-1041soft",
+      "id": "recent-workinon-app",
       "type": "recent-change",
-      "entityId": "company-site-1041soft",
-      "title": "1041soft.com changed",
-      "body": "Last modified 2026-08-14.",
+      "entityId": "workinon-app",
+      "title": "workin On changed",
+      "body": "Latest commit: Add TestFlight hand-off script for cloud builds. Last modified 2026-09-04.",
       "priority": "medium",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
-      "tags": [
-        "recent",
-        "website",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#company-site-1041soft",
-      "statusKey": "masterindex.recent.company-site-1041soft"
-    },
-    {
-      "id": "recent-words123-app",
-      "type": "recent-change",
-      "entityId": "words123-app",
-      "title": "123 Words changed",
-      "body": "Last modified 2026-08-14.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-09-04",
       "tags": [
         "recent",
         "app",
         "standalone"
       ],
-      "deepLink": "site/index.html#words123-app",
-      "statusKey": "masterindex.recent.words123-app"
+      "deepLink": "site/index.html#workinon-app",
+      "statusKey": "masterindex.recent.workinon-app"
     },
     {
-      "id": "recent-app-feedback-inbox",
+      "id": "recent-burfords-app",
       "type": "recent-change",
-      "entityId": "app-feedback-inbox",
-      "title": "App Feedback changed",
-      "body": "Latest commit: keep feedback local and add triage dashboard. Last modified 2026-08-14.",
+      "entityId": "burfords-app",
+      "title": "100 Burfords changed",
+      "body": "Latest commit: Stamp a READER REMIX mark on every re-captioned panel; bump to 1.2 (19). Last modified 2026-09-03.",
       "priority": "medium",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-09-03",
+      "tags": [
+        "recent",
+        "app",
+        "oenora"
+      ],
+      "deepLink": "site/index.html#burfords-app",
+      "statusKey": "masterindex.recent.burfords-app"
+    },
+    {
+      "id": "recent-collective-comms",
+      "type": "recent-change",
+      "entityId": "collective-comms",
+      "title": "Collective Comms changed",
+      "body": "Latest commit: Settle the name ambiguities, and stop calling one person twice ambiguous. Last modified 2026-09-02.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-02",
       "tags": [
         "recent",
         "tool",
-        "standalone"
+        "pickleball collective"
       ],
-      "deepLink": "site/index.html#app-feedback-inbox",
-      "statusKey": "masterindex.recent.app-feedback-inbox"
+      "deepLink": "site/index.html#collective-comms",
+      "statusKey": "masterindex.recent.collective-comms"
     },
     {
-      "id": "recent-portfolio-app-directory",
+      "id": "recent-collective-engine",
       "type": "recent-change",
-      "entityId": "portfolio-app-directory",
-      "title": "Bill Donner Apps changed",
-      "body": "Latest commit: 100 Burfords: clear drift \u2014 local truth is 1.1 (9) @ 2026-08-06. Last modified 2026-08-14.",
+      "entityId": "collective-engine",
+      "title": "Collective Engine changed",
+      "body": "Latest commit: Steve off Friday 2026-09-11 and off the schedule standing; Friday 8 of 8. Last modified 2026-09-02.",
       "priority": "medium",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-09-02",
       "tags": [
         "recent",
-        "website",
-        "standalone"
+        "service",
+        "pickleball collective"
       ],
-      "deepLink": "site/index.html#portfolio-app-directory",
-      "statusKey": "masterindex.recent.portfolio-app-directory"
+      "deepLink": "site/index.html#collective-engine",
+      "statusKey": "masterindex.recent.collective-engine"
     },
     {
-      "id": "recent-qross-app",
+      "id": "recent-medcommons-dicom-viewer",
       "type": "recent-change",
-      "entityId": "qross-app",
-      "title": "DoubleQross changed",
-      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-14.",
+      "entityId": "medcommons-dicom-viewer",
+      "title": "MedCommons DICOM Viewer changed",
+      "body": "Latest commit: Add native iOS DICOM research viewer. Last modified 2026-09-02.",
       "priority": "medium",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-09-02",
+      "tags": [
+        "recent",
+        "app research prototype",
+        "medcommons"
+      ],
+      "deepLink": "site/index.html#medcommons-dicom-viewer",
+      "statusKey": "masterindex.recent.medcommons-dicom-viewer"
+    },
+    {
+      "id": "recent-product-authority",
+      "type": "recent-change",
+      "entityId": "product-authority",
+      "title": "Product Authority changed",
+      "body": "Latest commit: Add resume.sh for waking after mothball. Last modified 2026-09-02.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-02",
+      "tags": [
+        "recent",
+        "service",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#product-authority",
+      "statusKey": "masterindex.recent.product-authority"
+    },
+    {
+      "id": "recent-grubber-app",
+      "type": "recent-change",
+      "entityId": "grubber-app",
+      "title": "Grubber app changed",
+      "body": "Latest commit: fix: codex-review findings \u2014 pending nav consumption, fetch race, token display, parser outcomes, catalog. Last modified 2026-08-30.",
+      "priority": "low",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-30",
       "tags": [
         "recent",
         "app",
-        "qross"
+        "grubber"
       ],
-      "deepLink": "site/index.html#qross-app",
-      "statusKey": "masterindex.recent.qross-app"
+      "deepLink": "site/index.html#grubber-app",
+      "statusKey": "masterindex.recent.grubber-app"
     },
     {
-      "id": "recent-clubwatch-app",
+      "id": "recent-kinflash-app",
       "type": "recent-change",
-      "entityId": "clubwatch-app",
-      "title": "LtWatcher changed",
-      "body": "Latest commit: chore: retire LtWatcher. Last modified 2026-08-14.",
-      "priority": "medium",
+      "entityId": "kinflash-app",
+      "title": "KinFlash Family changed",
+      "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-08-30.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-08-30",
       "tags": [
         "recent",
         "app",
-        "ltwatcher"
+        "kinflash"
       ],
-      "deepLink": "site/index.html#clubwatch-app",
-      "statusKey": "masterindex.recent.clubwatch-app"
+      "deepLink": "site/index.html#kinflash-app",
+      "statusKey": "masterindex.recent.kinflash-app"
+    },
+    {
+      "id": "recent-kinflash-studio",
+      "type": "recent-change",
+      "entityId": "kinflash-studio",
+      "title": "KinFlash Studio changed",
+      "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-08-30.",
+      "priority": "low",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-30",
+      "tags": [
+        "recent",
+        "app",
+        "kinflash"
+      ],
+      "deepLink": "site/index.html#kinflash-studio",
+      "statusKey": "masterindex.recent.kinflash-studio"
     },
     {
       "id": "recent-oenora-app",
       "type": "recent-change",
       "entityId": "oenora-app",
       "title": "Oenora changed",
-      "body": "Latest commit: Add macOS App Store collateral. Last modified 2026-08-14.",
-      "priority": "medium",
+      "body": "Latest commit: AppStore: rebuild galleries on the refreshed captures. Last modified 2026-08-30.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-08-30",
       "tags": [
         "recent",
         "app",
@@ -137,10 +188,10 @@
       "type": "recent-change",
       "entityId": "pfolio-app",
       "title": "Pfoliolio changed",
-      "body": "Latest commit: chore: align source with ASC build 35. Last modified 2026-08-14.",
-      "priority": "medium",
+      "body": "Latest commit: Merge pull request #31 from billdonner/chore/pfoliolio-links. Last modified 2026-08-30.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-08-30",
       "tags": [
         "recent",
         "app",
@@ -150,167 +201,48 @@
       "statusKey": "masterindex.recent.pfolio-app"
     },
     {
-      "id": "recent-sentipods-app",
+      "id": "recent-grubber-service",
       "type": "recent-change",
-      "entityId": "sentipods-app",
-      "title": "SentiPods changed",
-      "body": "Latest commit: docs: align macOS bundle and release state. Last modified 2026-08-14.",
-      "priority": "medium",
+      "entityId": "grubber-service",
+      "title": "grubber changed",
+      "body": "Latest commit: fix: codex-review findings \u2014 single-flight auth refresh, weekly stale topics, missing-editions-table handling. Last modified 2026-08-30.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
-      "tags": [
-        "recent",
-        "app",
-        "grubber"
-      ],
-      "deepLink": "site/index.html#sentipods-app",
-      "statusKey": "masterindex.recent.sentipods-app"
-    },
-    {
-      "id": "recent-amenbeats-app",
-      "type": "recent-change",
-      "entityId": "amenbeats-app",
-      "title": "amenbeats changed",
-      "body": "Last modified 2026-08-14.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
-      "tags": [
-        "recent",
-        "app",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#amenbeats-app",
-      "statusKey": "masterindex.recent.amenbeats-app"
-    },
-    {
-      "id": "recent-card-server-backend",
-      "type": "recent-change",
-      "entityId": "card-server-backend",
-      "title": "card-server changed",
-      "body": "Latest commit: chore: retire card-server. Last modified 2026-08-14.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
-      "tags": [
-        "recent",
-        "backend",
-        "qross"
-      ],
-      "deepLink": "site/index.html#card-server-backend",
-      "statusKey": "masterindex.recent.card-server-backend"
-    },
-    {
-      "id": "recent-clubsync-backend",
-      "type": "recent-change",
-      "entityId": "clubsync-backend",
-      "title": "clubsync changed",
-      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-14.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
-      "tags": [
-        "recent",
-        "backend",
-        "ltwatcher"
-      ],
-      "deepLink": "site/index.html#clubsync-backend",
-      "statusKey": "masterindex.recent.clubsync-backend"
-    },
-    {
-      "id": "recent-server-monitor-service",
-      "type": "recent-change",
-      "entityId": "server-monitor-service",
-      "title": "server-monitor changed",
-      "body": "Latest commit: chore: exclude local environment from deploys. Last modified 2026-08-14.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-14",
+      "sortDate": "2026-08-30",
       "tags": [
         "recent",
         "service",
+        "grubber"
+      ],
+      "deepLink": "site/index.html#grubber-service",
+      "statusKey": "masterindex.recent.grubber-service"
+    },
+    {
+      "id": "recent-picklefamilia-asc-app",
+      "type": "recent-change",
+      "entityId": "picklefamilia-asc-app",
+      "title": "PickleFamilia changed",
+      "body": "Last modified 2026-08-29.",
+      "priority": "low",
+      "lane": "Recent Activity",
+      "sortDate": "2026-08-29",
+      "tags": [
+        "recent",
+        "app",
         "pickledballs"
       ],
-      "deepLink": "site/index.html#server-monitor-service",
-      "statusKey": "masterindex.recent.server-monitor-service"
-    },
-    {
-      "id": "recent-mallinbook-app",
-      "type": "recent-change",
-      "entityId": "mallinbook-app",
-      "title": "Mallinbook changed",
-      "body": "Last modified 2026-08-13.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-13",
-      "tags": [
-        "recent",
-        "app",
-        "mallinbook"
-      ],
-      "deepLink": "site/index.html#mallinbook-app",
-      "statusKey": "masterindex.recent.mallinbook-app"
-    },
-    {
-      "id": "recent-screenker-asc-app",
-      "type": "recent-change",
-      "entityId": "screenker-asc-app",
-      "title": "Screenker changed",
-      "body": "Last modified 2026-08-13.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-13",
-      "tags": [
-        "recent",
-        "app",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#screenker-asc-app",
-      "statusKey": "masterindex.recent.screenker-asc-app"
-    },
-    {
-      "id": "recent-sharedspace-lab",
-      "type": "recent-change",
-      "entityId": "sharedspace-lab",
-      "title": "SharedSpaceLab changed",
-      "body": "Latest commit: Add macOS App Store collateral. Last modified 2026-08-13.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-13",
-      "tags": [
-        "recent",
-        "app",
-        "codex experiments"
-      ],
-      "deepLink": "site/index.html#sharedspace-lab",
-      "statusKey": "masterindex.recent.sharedspace-lab"
-    },
-    {
-      "id": "recent-card-engine-backend",
-      "type": "recent-change",
-      "entityId": "card-engine-backend",
-      "title": "card-engine changed",
-      "body": "Latest commit: Add MasterIndex agent handoff. Last modified 2026-08-13.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-13",
-      "tags": [
-        "recent",
-        "backend",
-        "flasherz"
-      ],
-      "deepLink": "site/index.html#card-engine-backend",
-      "statusKey": "masterindex.recent.card-engine-backend"
+      "deepLink": "site/index.html#picklefamilia-asc-app",
+      "statusKey": "masterindex.recent.picklefamilia-asc-app"
     },
     {
       "id": "recent-pfolio-backend",
       "type": "recent-change",
       "entityId": "pfolio-backend",
       "title": "pfolio changed",
-      "body": "Last modified 2026-08-13.",
-      "priority": "medium",
+      "body": "Last modified 2026-08-29.",
+      "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-13",
+      "sortDate": "2026-08-29",
       "tags": [
         "recent",
         "backend",
@@ -320,72 +252,38 @@
       "statusKey": "masterindex.recent.pfolio-backend"
     },
     {
-      "id": "recent-zerver-monitor-asc-app",
+      "id": "recent-portfolio-app-directory",
       "type": "recent-change",
-      "entityId": "zerver-monitor-asc-app",
-      "title": "Zerver Monitor changed",
-      "body": "Latest commit: chore: prepare TestFlight build 5. Last modified 2026-08-11.",
+      "entityId": "portfolio-app-directory",
+      "title": "Bill Donner Apps changed",
+      "body": "Latest commit: workin On: TestFlight-only, Xcode Cloud lane, 1.0 builds 1-3, review fixes, branch divergence gap. Last modified 2026-08-28.",
       "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-11",
+      "sortDate": "2026-08-28",
       "tags": [
         "recent",
-        "app",
-        "pickledballs"
-      ],
-      "deepLink": "site/index.html#zerver-monitor-asc-app",
-      "statusKey": "masterindex.recent.zerver-monitor-asc-app"
-    },
-    {
-      "id": "recent-oenora-recognition-service",
-      "type": "recent-change",
-      "entityId": "oenora-recognition-service",
-      "title": "Oenora Recognition API changed",
-      "body": "Latest commit: Add macOS App Store collateral. Last modified 2026-08-09.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-09",
-      "tags": [
-        "recent",
-        "service",
-        "oenora"
-      ],
-      "deepLink": "site/index.html#oenora-recognition-service",
-      "statusKey": "masterindex.recent.oenora-recognition-service"
-    },
-    {
-      "id": "recent-local-model-lab",
-      "type": "recent-change",
-      "entityId": "local-model-lab",
-      "title": "local-model-lab (mlxsrv) changed",
-      "body": "Last modified 2026-08-09.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-09",
-      "tags": [
-        "recent",
-        "service",
+        "website",
         "standalone"
       ],
-      "deepLink": "site/index.html#local-model-lab",
-      "statusKey": "masterindex.recent.local-model-lab"
+      "deepLink": "site/index.html#portfolio-app-directory",
+      "statusKey": "masterindex.recent.portfolio-app-directory"
     },
     {
-      "id": "recent-workinon-app",
+      "id": "recent-nagz-app",
       "type": "recent-change",
-      "entityId": "workinon-app",
-      "title": "workin On changed",
-      "body": "Latest commit: Add MasterIndex operational feed surfaces. Last modified 2026-08-09.",
+      "entityId": "nagz-app",
+      "title": "Nagz changed",
+      "body": "Latest commit: Catch up APIEndpoint.swift with 8 server-side routes; pin via tests. Last modified 2026-08-28.",
       "priority": "low",
       "lane": "Recent Activity",
-      "sortDate": "2026-08-09",
+      "sortDate": "2026-08-28",
       "tags": [
         "recent",
         "app",
-        "nagz"
+        "household communications"
       ],
-      "deepLink": "site/index.html#workinon-app",
-      "statusKey": "masterindex.recent.workinon-app"
+      "deepLink": "site/index.html#nagz-app",
+      "statusKey": "masterindex.recent.nagz-app"
     },
     {
       "id": "due-nagzerver-health-check",
@@ -399,7 +297,7 @@
       "tags": [
         "task",
         "backend",
-        "nagz"
+        "infrastructure"
       ],
       "deepLink": "site/index.html#nagzerver-backend",
       "statusKey": "masterindex.due.nagzerver-health-check"
@@ -439,29 +337,12 @@
       "statusKey": "masterindex.due.app-feedback-operational-check"
     },
     {
-      "id": "due-famster-link-check",
+      "id": "due-cardz-studio-testflight-continuity",
       "type": "due-task",
-      "entityId": "famster-app",
-      "taskId": "famster-link-check",
-      "title": "Famster link check due",
-      "body": "Task is part of the weekly cycle.",
-      "priority": "medium",
-      "lane": "Due Soon",
-      "tags": [
-        "task",
-        "app",
-        "famster"
-      ],
-      "deepLink": "site/index.html#famster-app",
-      "statusKey": "masterindex.due.famster-link-check"
-    },
-    {
-      "id": "due-flasherz-release-check",
-      "type": "due-task",
-      "entityId": "obo-ios-app",
-      "taskId": "flasherz-release-check",
-      "title": "Flasherz Kids release check due",
-      "body": "Task is part of the weekly cycle.",
+      "entityId": "cardz-studio-ios-app",
+      "taskId": "cardz-studio-testflight-continuity",
+      "title": "Cardz Studio TestFlight continuity due",
+      "body": "Task cadence: FREQ=MONTHLY;INTERVAL=1.",
       "priority": "medium",
       "lane": "Due Soon",
       "tags": [
@@ -469,25 +350,76 @@
         "app",
         "flasherz"
       ],
-      "deepLink": "site/index.html#obo-ios-app",
-      "statusKey": "masterindex.due.flasherz-release-check"
+      "deepLink": "site/index.html#cardz-studio-ios-app",
+      "statusKey": "masterindex.due.cardz-studio-testflight-continuity"
     },
     {
-      "id": "due-nagz-release-check",
+      "id": "due-grubber-brand-news-analysis-check",
       "type": "due-task",
-      "entityId": "nagz-app",
-      "taskId": "nagz-release-check",
-      "title": "Nagz release check due",
+      "entityId": "grubber-service",
+      "taskId": "grubber-brand-news-analysis-check",
+      "title": "Grubber brand/news analysis check due",
+      "body": "Task is due in the daily cycle.",
+      "priority": "medium",
+      "lane": "Due Soon",
+      "tags": [
+        "task",
+        "service",
+        "grubber"
+      ],
+      "deepLink": "site/index.html#grubber-service",
+      "statusKey": "masterindex.due.grubber-brand-news-analysis-check"
+    },
+    {
+      "id": "due-kinflash-release-readiness",
+      "type": "due-task",
+      "entityId": "kinflash-app",
+      "taskId": "kinflash-release-readiness",
+      "title": "KinFlash release readiness due",
       "body": "Task is due in the daily cycle.",
       "priority": "medium",
       "lane": "Due Soon",
       "tags": [
         "task",
         "app",
-        "nagz"
+        "kinflash"
       ],
-      "deepLink": "site/index.html#nagz-app",
-      "statusKey": "masterindex.due.nagz-release-check"
+      "deepLink": "site/index.html#kinflash-app",
+      "statusKey": "masterindex.due.kinflash-release-readiness"
+    },
+    {
+      "id": "due-mastpex-mac-testflight-continuity",
+      "type": "due-task",
+      "entityId": "mastpex-macos-asc-app",
+      "taskId": "mastpex-mac-testflight-continuity",
+      "title": "MastPex Mac TestFlight continuity due",
+      "body": "Task cadence: FREQ=MONTHLY;INTERVAL=1.",
+      "priority": "medium",
+      "lane": "Due Soon",
+      "tags": [
+        "task",
+        "app",
+        "infrastructure"
+      ],
+      "deepLink": "site/index.html#mastpex-macos-asc-app",
+      "statusKey": "masterindex.due.mastpex-mac-testflight-continuity"
+    },
+    {
+      "id": "due-mastpex-ios-testflight-continuity",
+      "type": "due-task",
+      "entityId": "mastpex-ios-asc-app",
+      "taskId": "mastpex-ios-testflight-continuity",
+      "title": "MastPex iOS TestFlight continuity due",
+      "body": "Task cadence: FREQ=MONTHLY;INTERVAL=1.",
+      "priority": "medium",
+      "lane": "Due Soon",
+      "tags": [
+        "task",
+        "app",
+        "infrastructure"
+      ],
+      "deepLink": "site/index.html#mastpex-ios-asc-app",
+      "statusKey": "masterindex.due.mastpex-ios-testflight-continuity"
     },
     {
       "id": "due-pickledballs-link-and-release-check",
@@ -524,6 +456,23 @@
       "statusKey": "masterindex.due.qross-release-check"
     },
     {
+      "id": "due-sharedspace-household-successor-check",
+      "type": "due-task",
+      "entityId": "sharedspace-lab",
+      "taskId": "sharedspace-household-successor-check",
+      "title": "SharedSpace household successor check due",
+      "body": "Task is part of the weekly cycle.",
+      "priority": "medium",
+      "lane": "Due Soon",
+      "tags": [
+        "task",
+        "app",
+        "household communications"
+      ],
+      "deepLink": "site/index.html#sharedspace-lab",
+      "statusKey": "masterindex.due.sharedspace-household-successor-check"
+    },
+    {
       "id": "due-server-monitor-link-check",
       "type": "due-task",
       "entityId": "server-monitor-service",
@@ -541,21 +490,21 @@
       "statusKey": "masterindex.due.server-monitor-link-check"
     },
     {
-      "id": "due-workinon-release-check",
+      "id": "due-workinon-testflight-continuity",
       "type": "due-task",
       "entityId": "workinon-app",
-      "taskId": "workinon-release-check",
-      "title": "workin On release check due",
-      "body": "Task is part of the weekly cycle.",
+      "taskId": "workinon-testflight-continuity",
+      "title": "workin On TestFlight continuity due",
+      "body": "Task cadence: FREQ=MONTHLY;INTERVAL=1.",
       "priority": "medium",
       "lane": "Due Soon",
       "tags": [
         "task",
         "app",
-        "nagz"
+        "standalone"
       ],
       "deepLink": "site/index.html#workinon-app",
-      "statusKey": "masterindex.due.workinon-release-check"
+      "statusKey": "masterindex.due.workinon-testflight-continuity"
     },
     {
       "id": "attention-app-feedback-inbox-no-public-links",
@@ -590,6 +539,22 @@
       "statusKey": "masterindex.attention.cardz-studio-ios-app.no-public-links"
     },
     {
+      "id": "attention-collective-comms-no-public-links",
+      "type": "attention",
+      "entityId": "collective-comms",
+      "title": "Collective Comms missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "pickleball collective"
+      ],
+      "deepLink": "site/index.html#collective-comms",
+      "statusKey": "masterindex.attention.collective-comms.no-public-links"
+    },
+    {
       "id": "attention-conversationlab-package-no-public-links",
       "type": "attention",
       "entityId": "conversationlab-package",
@@ -600,7 +565,7 @@
       "tags": [
         "links",
         "public",
-        "codex experiments"
+        "household communications"
       ],
       "deepLink": "site/index.html#conversationlab-package",
       "statusKey": "masterindex.attention.conversationlab-package.no-public-links"
@@ -616,7 +581,7 @@
       "tags": [
         "links",
         "public",
-        "codex experiments"
+        "household communications"
       ],
       "deepLink": "site/index.html#coordinationlab-package",
       "statusKey": "masterindex.attention.coordinationlab-package.no-public-links"
@@ -648,7 +613,7 @@
       "tags": [
         "links",
         "app-store",
-        "famster"
+        "household communications"
       ],
       "deepLink": "site/index.html#famster-app",
       "statusKey": "masterindex.attention.famster-app.missing-appstore"
@@ -670,10 +635,42 @@
       "statusKey": "masterindex.attention.obo-ios-app.missing-appstore"
     },
     {
+      "id": "attention-grubber-app-missing-appstore-link",
+      "type": "attention",
+      "entityId": "grubber-app",
+      "title": "Grubber app missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "app-store",
+        "grubber"
+      ],
+      "deepLink": "site/index.html#grubber-app",
+      "statusKey": "masterindex.attention.grubber-app.missing-appstore"
+    },
+    {
+      "id": "attention-hoabooklet-app-missing-appstore-link",
+      "type": "attention",
+      "entityId": "hoabooklet-app",
+      "title": "HOABooklet missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "app-store",
+        "hoabooklet"
+      ],
+      "deepLink": "site/index.html#hoabooklet-app",
+      "statusKey": "masterindex.attention.hoabooklet-app.missing-appstore"
+    },
+    {
       "id": "attention-kinflash-app-missing-appstore-link",
       "type": "attention",
       "entityId": "kinflash-app",
-      "title": "KinFlash missing public App Store page",
+      "title": "KinFlash Family missing public App Store page",
       "body": "A website is recorded, but no verified public App Store page is in the index yet.",
       "priority": "low",
       "lane": "Needs Attention",
@@ -684,6 +681,22 @@
       ],
       "deepLink": "site/index.html#kinflash-app",
       "statusKey": "masterindex.attention.kinflash-app.missing-appstore"
+    },
+    {
+      "id": "attention-kinflash-studio-missing-appstore-link",
+      "type": "attention",
+      "entityId": "kinflash-studio",
+      "title": "KinFlash Studio missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "app-store",
+        "kinflash"
+      ],
+      "deepLink": "site/index.html#kinflash-studio",
+      "statusKey": "masterindex.attention.kinflash-studio.missing-appstore"
     },
     {
       "id": "attention-clubwatch-app-no-public-links",
@@ -700,22 +713,6 @@
       ],
       "deepLink": "site/index.html#clubwatch-app",
       "statusKey": "masterindex.attention.clubwatch-app.no-public-links"
-    },
-    {
-      "id": "attention-mallinbook-app-missing-appstore-link",
-      "type": "attention",
-      "entityId": "mallinbook-app",
-      "title": "Mallinbook missing public App Store page",
-      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "app-store",
-        "mallinbook"
-      ],
-      "deepLink": "site/index.html#mallinbook-app",
-      "statusKey": "masterindex.attention.mallinbook-app.missing-appstore"
     },
     {
       "id": "attention-mastpex-ios-asc-app-no-public-links",
@@ -750,6 +747,22 @@
       "statusKey": "masterindex.attention.mastpex-macos-asc-app.no-public-links"
     },
     {
+      "id": "attention-medcommons-dicom-viewer-no-public-links",
+      "type": "attention",
+      "entityId": "medcommons-dicom-viewer",
+      "title": "MedCommons DICOM Viewer missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "medcommons"
+      ],
+      "deepLink": "site/index.html#medcommons-dicom-viewer",
+      "statusKey": "masterindex.attention.medcommons-dicom-viewer.no-public-links"
+    },
+    {
       "id": "attention-nagz-app-missing-appstore-link",
       "type": "attention",
       "entityId": "nagz-app",
@@ -760,26 +773,26 @@
       "tags": [
         "links",
         "app-store",
-        "nagz"
+        "household communications"
       ],
       "deepLink": "site/index.html#nagz-app",
       "statusKey": "masterindex.attention.nagz-app.missing-appstore"
     },
     {
-      "id": "attention-oenora-app-no-public-links",
+      "id": "attention-oenora-app-missing-appstore-link",
       "type": "attention",
       "entityId": "oenora-app",
-      "title": "Oenora missing public links",
-      "body": "No verified website or public App Store page is recorded yet.",
+      "title": "Oenora missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
       "priority": "low",
       "lane": "Needs Attention",
       "tags": [
         "links",
-        "public",
+        "app-store",
         "standalone"
       ],
       "deepLink": "site/index.html#oenora-app",
-      "statusKey": "masterindex.attention.oenora-app.no-public-links"
+      "statusKey": "masterindex.attention.oenora-app.missing-appstore"
     },
     {
       "id": "attention-pfolio-app-missing-appstore-link",
@@ -830,6 +843,22 @@
       "statusKey": "masterindex.attention.pickledballs-app.missing-appstore"
     },
     {
+      "id": "attention-review-authority-no-public-links",
+      "type": "attention",
+      "entityId": "review-authority",
+      "title": "Review Authority missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#review-authority",
+      "statusKey": "masterindex.attention.review-authority.no-public-links"
+    },
+    {
       "id": "attention-screenker-asc-app-missing-appstore-link",
       "type": "attention",
       "entityId": "screenker-asc-app",
@@ -846,22 +875,6 @@
       "statusKey": "masterindex.attention.screenker-asc-app.missing-appstore"
     },
     {
-      "id": "attention-sentipods-app-missing-appstore-link",
-      "type": "attention",
-      "entityId": "sentipods-app",
-      "title": "SentiPods missing public App Store page",
-      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "app-store",
-        "grubber"
-      ],
-      "deepLink": "site/index.html#sentipods-app",
-      "statusKey": "masterindex.attention.sentipods-app.missing-appstore"
-    },
-    {
       "id": "attention-sharedspace-lab-no-public-links",
       "type": "attention",
       "entityId": "sharedspace-lab",
@@ -872,10 +885,26 @@
       "tags": [
         "links",
         "public",
-        "codex experiments"
+        "household communications"
       ],
       "deepLink": "site/index.html#sharedspace-lab",
       "statusKey": "masterindex.attention.sharedspace-lab.no-public-links"
+    },
+    {
+      "id": "attention-xpensexpunger-app-missing-appstore-link",
+      "type": "attention",
+      "entityId": "xpensexpunger-app",
+      "title": "XpenseXpunger missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "app-store",
+        "expense evidence"
+      ],
+      "deepLink": "site/index.html#xpensexpunger-app",
+      "statusKey": "masterindex.attention.xpensexpunger-app.missing-appstore"
     },
     {
       "id": "attention-zerver-monitor-asc-app-missing-appstore-link",
@@ -990,6 +1019,22 @@
       "statusKey": "masterindex.attention.local-model-lab.no-public-links"
     },
     {
+      "id": "attention-oenora-merchant-no-public-links",
+      "type": "attention",
+      "entityId": "oenora-merchant",
+      "title": "oenora-merchant missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "oenora"
+      ],
+      "deepLink": "site/index.html#oenora-merchant",
+      "statusKey": "masterindex.attention.oenora-merchant.no-public-links"
+    },
+    {
       "id": "attention-picklefortunes-app-no-public-links",
       "type": "attention",
       "entityId": "picklefortunes-app",
@@ -1016,7 +1061,7 @@
       "tags": [
         "links",
         "app-store",
-        "nagz"
+        "standalone"
       ],
       "deepLink": "site/index.html#workinon-app",
       "statusKey": "masterindex.attention.workinon-app.missing-appstore"
@@ -1038,7 +1083,7 @@
       "id": "summary-public-link-gaps",
       "type": "summary",
       "title": "Public link gaps",
-      "body": "29 entries still need verified public links or App Store pages.",
+      "body": "35 entries still need verified public links or App Store pages.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -1051,7 +1096,7 @@
       "id": "summary-recent-changes",
       "type": "summary",
       "title": "Recent changes",
-      "body": "22 entries were modified in the last 7 days.",
+      "body": "16 entries were modified in the last 7 days.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -1064,7 +1109,7 @@
       "id": "summary-due-tasks",
       "type": "summary",
       "title": "Tasks due soon",
-      "body": "10 recurring entry tasks are currently in the operational queue.",
+      "body": "13 recurring entry tasks are currently in the operational queue.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

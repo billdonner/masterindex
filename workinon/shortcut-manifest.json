@@ -1,223 +1,163 @@
 {
-  "generatedAt": "2026-08-14T13:17:31-05:00",
+  "generatedAt": "2026-09-04T15:27:32-05:00",
   "namespace": "masterindex",
   "items": [
     {
-      "id": "recent-company-site-1041soft",
-      "title": "1041soft.com changed",
-      "statusKey": "masterindex.recent.company-site-1041soft",
-      "url": "workinon://post?key=masterindex.recent.company-site-1041soft&text=1041soft.com+changed+-+Last+modified+2026-08-14.",
-      "entityId": "company-site-1041soft",
+      "id": "recent-workinon-app",
+      "title": "workin On changed",
+      "statusKey": "masterindex.recent.workinon-app",
+      "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+Add+TestFlight+hand-off+script+for+cloud+builds.+Last+modified+2026-09-04.",
+      "entityId": "workinon-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
     },
     {
-      "id": "recent-words123-app",
-      "title": "123 Words changed",
-      "statusKey": "masterindex.recent.words123-app",
-      "url": "workinon://post?key=masterindex.recent.words123-app&text=123+Words+changed+-+Last+modified+2026-08-14.",
-      "entityId": "words123-app",
+      "id": "recent-burfords-app",
+      "title": "100 Burfords changed",
+      "statusKey": "masterindex.recent.burfords-app",
+      "url": "workinon://post?key=masterindex.recent.burfords-app&text=100+Burfords+changed+-+Latest+commit%3A+Stamp+a+READER+REMIX+mark+on+every+re-captioned+panel%3B+bump+to+1.2+%2819%29.+Last+modified+2026-09-03.",
+      "entityId": "burfords-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
     },
     {
-      "id": "recent-app-feedback-inbox",
-      "title": "App Feedback changed",
-      "statusKey": "masterindex.recent.app-feedback-inbox",
-      "url": "workinon://post?key=masterindex.recent.app-feedback-inbox&text=App+Feedback+changed+-+Latest+commit%3A+keep+feedback+local+and+add+triage+dashboard.+Last+modified+2026-08-14.",
-      "entityId": "app-feedback-inbox",
+      "id": "recent-collective-comms",
+      "title": "Collective Comms changed",
+      "statusKey": "masterindex.recent.collective-comms",
+      "url": "workinon://post?key=masterindex.recent.collective-comms&text=Collective+Comms+changed+-+Latest+commit%3A+Settle+the+name+ambiguities%2C+and+stop+calling+one+person+twice+ambiguous.+Last+modified+2026-09-02.",
+      "entityId": "collective-comms",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
     },
     {
-      "id": "recent-portfolio-app-directory",
-      "title": "Bill Donner Apps changed",
-      "statusKey": "masterindex.recent.portfolio-app-directory",
-      "url": "workinon://post?key=masterindex.recent.portfolio-app-directory&text=Bill+Donner+Apps+changed+-+Latest+commit%3A+100+Burfords%3A+clear+drift+%E2%80%94+local+truth+is+1.1+%289%29+%40+2026-08-06.+Last+modified+2026-08-14.",
-      "entityId": "portfolio-app-directory",
+      "id": "recent-collective-engine",
+      "title": "Collective Engine changed",
+      "statusKey": "masterindex.recent.collective-engine",
+      "url": "workinon://post?key=masterindex.recent.collective-engine&text=Collective+Engine+changed+-+Latest+commit%3A+Steve+off+Friday+2026-09-11+and+off+the+schedule+standing%3B+Friday+8+of+8.+Last+modified+2026-09-02.",
+      "entityId": "collective-engine",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
     },
     {
-      "id": "recent-qross-app",
-      "title": "DoubleQross changed",
-      "statusKey": "masterindex.recent.qross-app",
-      "url": "workinon://post?key=masterindex.recent.qross-app&text=DoubleQross+changed+-+Latest+commit%3A+Add+MasterIndex+agent+handoff.+Last+modified+2026-08-14.",
-      "entityId": "qross-app",
+      "id": "recent-medcommons-dicom-viewer",
+      "title": "MedCommons DICOM Viewer changed",
+      "statusKey": "masterindex.recent.medcommons-dicom-viewer",
+      "url": "workinon://post?key=masterindex.recent.medcommons-dicom-viewer&text=MedCommons+DICOM+Viewer+changed+-+Latest+commit%3A+Add+native+iOS+DICOM+research+viewer.+Last+modified+2026-09-02.",
+      "entityId": "medcommons-dicom-viewer",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
     },
     {
-      "id": "recent-clubwatch-app",
-      "title": "LtWatcher changed",
-      "statusKey": "masterindex.recent.clubwatch-app",
-      "url": "workinon://post?key=masterindex.recent.clubwatch-app&text=LtWatcher+changed+-+Latest+commit%3A+chore%3A+retire+LtWatcher.+Last+modified+2026-08-14.",
-      "entityId": "clubwatch-app",
+      "id": "recent-product-authority",
+      "title": "Product Authority changed",
+      "statusKey": "masterindex.recent.product-authority",
+      "url": "workinon://post?key=masterindex.recent.product-authority&text=Product+Authority+changed+-+Latest+commit%3A+Add+resume.sh+for+waking+after+mothball.+Last+modified+2026-09-02.",
+      "entityId": "product-authority",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
+    },
+    {
+      "id": "recent-grubber-app",
+      "title": "Grubber app changed",
+      "statusKey": "masterindex.recent.grubber-app",
+      "url": "workinon://post?key=masterindex.recent.grubber-app&text=Grubber+app+changed+-+Latest+commit%3A+fix%3A+codex-review+findings+%E2%80%94+pending+nav+consumption%2C+fetch+race%2C+token+display%2C+parser+outcomes%2C+catalog.+Last+modified+2026-08-30.",
+      "entityId": "grubber-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "low"
+    },
+    {
+      "id": "recent-kinflash-app",
+      "title": "KinFlash Family changed",
+      "statusKey": "masterindex.recent.kinflash-app",
+      "url": "workinon://post?key=masterindex.recent.kinflash-app&text=KinFlash+Family+changed+-+Latest+commit%3A+Allocate+the+IPs+Fly+does+not.+Last+modified+2026-08-30.",
+      "entityId": "kinflash-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "low"
+    },
+    {
+      "id": "recent-kinflash-studio",
+      "title": "KinFlash Studio changed",
+      "statusKey": "masterindex.recent.kinflash-studio",
+      "url": "workinon://post?key=masterindex.recent.kinflash-studio&text=KinFlash+Studio+changed+-+Latest+commit%3A+Allocate+the+IPs+Fly+does+not.+Last+modified+2026-08-30.",
+      "entityId": "kinflash-studio",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "low"
     },
     {
       "id": "recent-oenora-app",
       "title": "Oenora changed",
       "statusKey": "masterindex.recent.oenora-app",
-      "url": "workinon://post?key=masterindex.recent.oenora-app&text=Oenora+changed+-+Latest+commit%3A+Add+macOS+App+Store+collateral.+Last+modified+2026-08-14.",
+      "url": "workinon://post?key=masterindex.recent.oenora-app&text=Oenora+changed+-+Latest+commit%3A+AppStore%3A+rebuild+galleries+on+the+refreshed+captures.+Last+modified+2026-08-30.",
       "entityId": "oenora-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-pfolio-app",
       "title": "Pfoliolio changed",
       "statusKey": "masterindex.recent.pfolio-app",
-      "url": "workinon://post?key=masterindex.recent.pfolio-app&text=Pfoliolio+changed+-+Latest+commit%3A+chore%3A+align+source+with+ASC+build+35.+Last+modified+2026-08-14.",
+      "url": "workinon://post?key=masterindex.recent.pfolio-app&text=Pfoliolio+changed+-+Latest+commit%3A+Merge+pull+request+%2331+from+billdonner%2Fchore%2Fpfoliolio-links.+Last+modified+2026-08-30.",
       "entityId": "pfolio-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
-      "id": "recent-sentipods-app",
-      "title": "SentiPods changed",
-      "statusKey": "masterindex.recent.sentipods-app",
-      "url": "workinon://post?key=masterindex.recent.sentipods-app&text=SentiPods+changed+-+Latest+commit%3A+docs%3A+align+macOS+bundle+and+release+state.+Last+modified+2026-08-14.",
-      "entityId": "sentipods-app",
+      "id": "recent-grubber-service",
+      "title": "grubber changed",
+      "statusKey": "masterindex.recent.grubber-service",
+      "url": "workinon://post?key=masterindex.recent.grubber-service&text=grubber+changed+-+Latest+commit%3A+fix%3A+codex-review+findings+%E2%80%94+single-flight+auth+refresh%2C+weekly+stale+topics%2C+missing-editions-table+handling.+Last+modified+2026-08-30.",
+      "entityId": "grubber-service",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
-      "id": "recent-amenbeats-app",
-      "title": "amenbeats changed",
-      "statusKey": "masterindex.recent.amenbeats-app",
-      "url": "workinon://post?key=masterindex.recent.amenbeats-app&text=amenbeats+changed+-+Last+modified+2026-08-14.",
-      "entityId": "amenbeats-app",
+      "id": "recent-picklefamilia-asc-app",
+      "title": "PickleFamilia changed",
+      "statusKey": "masterindex.recent.picklefamilia-asc-app",
+      "url": "workinon://post?key=masterindex.recent.picklefamilia-asc-app&text=PickleFamilia+changed+-+Last+modified+2026-08-29.",
+      "entityId": "picklefamilia-asc-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-card-server-backend",
-      "title": "card-server changed",
-      "statusKey": "masterindex.recent.card-server-backend",
-      "url": "workinon://post?key=masterindex.recent.card-server-backend&text=card-server+changed+-+Latest+commit%3A+chore%3A+retire+card-server.+Last+modified+2026-08-14.",
-      "entityId": "card-server-backend",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-clubsync-backend",
-      "title": "clubsync changed",
-      "statusKey": "masterindex.recent.clubsync-backend",
-      "url": "workinon://post?key=masterindex.recent.clubsync-backend&text=clubsync+changed+-+Latest+commit%3A+Add+MasterIndex+agent+handoff.+Last+modified+2026-08-14.",
-      "entityId": "clubsync-backend",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-server-monitor-service",
-      "title": "server-monitor changed",
-      "statusKey": "masterindex.recent.server-monitor-service",
-      "url": "workinon://post?key=masterindex.recent.server-monitor-service&text=server-monitor+changed+-+Latest+commit%3A+chore%3A+exclude+local+environment+from+deploys.+Last+modified+2026-08-14.",
-      "entityId": "server-monitor-service",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-mallinbook-app",
-      "title": "Mallinbook changed",
-      "statusKey": "masterindex.recent.mallinbook-app",
-      "url": "workinon://post?key=masterindex.recent.mallinbook-app&text=Mallinbook+changed+-+Last+modified+2026-08-13.",
-      "entityId": "mallinbook-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-screenker-asc-app",
-      "title": "Screenker changed",
-      "statusKey": "masterindex.recent.screenker-asc-app",
-      "url": "workinon://post?key=masterindex.recent.screenker-asc-app&text=Screenker+changed+-+Last+modified+2026-08-13.",
-      "entityId": "screenker-asc-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-sharedspace-lab",
-      "title": "SharedSpaceLab changed",
-      "statusKey": "masterindex.recent.sharedspace-lab",
-      "url": "workinon://post?key=masterindex.recent.sharedspace-lab&text=SharedSpaceLab+changed+-+Latest+commit%3A+Add+macOS+App+Store+collateral.+Last+modified+2026-08-13.",
-      "entityId": "sharedspace-lab",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-card-engine-backend",
-      "title": "card-engine changed",
-      "statusKey": "masterindex.recent.card-engine-backend",
-      "url": "workinon://post?key=masterindex.recent.card-engine-backend&text=card-engine+changed+-+Latest+commit%3A+Add+MasterIndex+agent+handoff.+Last+modified+2026-08-13.",
-      "entityId": "card-engine-backend",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-pfolio-backend",
       "title": "pfolio changed",
       "statusKey": "masterindex.recent.pfolio-backend",
-      "url": "workinon://post?key=masterindex.recent.pfolio-backend&text=pfolio+changed+-+Last+modified+2026-08-13.",
+      "url": "workinon://post?key=masterindex.recent.pfolio-backend&text=pfolio+changed+-+Last+modified+2026-08-29.",
       "entityId": "pfolio-backend",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
-      "id": "recent-zerver-monitor-asc-app",
-      "title": "Zerver Monitor changed",
-      "statusKey": "masterindex.recent.zerver-monitor-asc-app",
-      "url": "workinon://post?key=masterindex.recent.zerver-monitor-asc-app&text=Zerver+Monitor+changed+-+Latest+commit%3A+chore%3A+prepare+TestFlight+build+5.+Last+modified+2026-08-11.",
-      "entityId": "zerver-monitor-asc-app",
+      "id": "recent-portfolio-app-directory",
+      "title": "Bill Donner Apps changed",
+      "statusKey": "masterindex.recent.portfolio-app-directory",
+      "url": "workinon://post?key=masterindex.recent.portfolio-app-directory&text=Bill+Donner+Apps+changed+-+Latest+commit%3A+workin+On%3A+TestFlight-only%2C+Xcode+Cloud+lane%2C+1.0+builds+1-3%2C+review+fixes%2C+branch+divergence+gap.+Last+modified+2026-08-28.",
+      "entityId": "portfolio-app-directory",
       "taskId": null,
       "type": "recent-change",
       "priority": "low"
     },
     {
-      "id": "recent-oenora-recognition-service",
-      "title": "Oenora Recognition API changed",
-      "statusKey": "masterindex.recent.oenora-recognition-service",
-      "url": "workinon://post?key=masterindex.recent.oenora-recognition-service&text=Oenora+Recognition+API+changed+-+Latest+commit%3A+Add+macOS+App+Store+collateral.+Last+modified+2026-08-09.",
-      "entityId": "oenora-recognition-service",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-local-model-lab",
-      "title": "local-model-lab (mlxsrv) changed",
-      "statusKey": "masterindex.recent.local-model-lab",
-      "url": "workinon://post?key=masterindex.recent.local-model-lab&text=local-model-lab+%28mlxsrv%29+changed+-+Last+modified+2026-08-09.",
-      "entityId": "local-model-lab",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-workinon-app",
-      "title": "workin On changed",
-      "statusKey": "masterindex.recent.workinon-app",
-      "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+Add+MasterIndex+operational+feed+surfaces.+Last+modified+2026-08-09.",
-      "entityId": "workinon-app",
+      "id": "recent-nagz-app",
+      "title": "Nagz changed",
+      "statusKey": "masterindex.recent.nagz-app",
+      "url": "workinon://post?key=masterindex.recent.nagz-app&text=Nagz+changed+-+Latest+commit%3A+Catch+up+APIEndpoint.swift+with+8+server-side+routes%3B+pin+via+tests.+Last+modified+2026-08-28.",
+      "entityId": "nagz-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "low"
@@ -253,32 +193,52 @@
       "priority": "medium"
     },
     {
-      "id": "due-famster-link-check",
-      "title": "Famster link check due",
-      "statusKey": "masterindex.due.famster-link-check",
-      "url": "workinon://post?key=masterindex.due.famster-link-check&text=Famster+link+check+due+-+Task+is+part+of+the+weekly+cycle.",
-      "entityId": "famster-app",
-      "taskId": "famster-link-check",
+      "id": "due-cardz-studio-testflight-continuity",
+      "title": "Cardz Studio TestFlight continuity due",
+      "statusKey": "masterindex.due.cardz-studio-testflight-continuity",
+      "url": "workinon://post?key=masterindex.due.cardz-studio-testflight-continuity&text=Cardz+Studio+TestFlight+continuity+due+-+Task+cadence%3A+FREQ%3DMONTHLY%3BINTERVAL%3D1.",
+      "entityId": "cardz-studio-ios-app",
+      "taskId": "cardz-studio-testflight-continuity",
       "type": "due-task",
       "priority": "medium"
     },
     {
-      "id": "due-flasherz-release-check",
-      "title": "Flasherz Kids release check due",
-      "statusKey": "masterindex.due.flasherz-release-check",
-      "url": "workinon://post?key=masterindex.due.flasherz-release-check&text=Flasherz+Kids+release+check+due+-+Task+is+part+of+the+weekly+cycle.",
-      "entityId": "obo-ios-app",
-      "taskId": "flasherz-release-check",
+      "id": "due-grubber-brand-news-analysis-check",
+      "title": "Grubber brand/news analysis check due",
+      "statusKey": "masterindex.due.grubber-brand-news-analysis-check",
+      "url": "workinon://post?key=masterindex.due.grubber-brand-news-analysis-check&text=Grubber+brand%2Fnews+analysis+check+due+-+Task+is+due+in+the+daily+cycle.",
+      "entityId": "grubber-service",
+      "taskId": "grubber-brand-news-analysis-check",
       "type": "due-task",
       "priority": "medium"
     },
     {
-      "id": "due-nagz-release-check",
-      "title": "Nagz release check due",
-      "statusKey": "masterindex.due.nagz-release-check",
-      "url": "workinon://post?key=masterindex.due.nagz-release-check&text=Nagz+release+check+due+-+Task+is+due+in+the+daily+cycle.",
-      "entityId": "nagz-app",
-      "taskId": "nagz-release-check",
+      "id": "due-kinflash-release-readiness",
+      "title": "KinFlash release readiness due",
+      "statusKey": "masterindex.due.kinflash-release-readiness",
+      "url": "workinon://post?key=masterindex.due.kinflash-release-readiness&text=KinFlash+release+readiness+due+-+Task+is+due+in+the+daily+cycle.",
+      "entityId": "kinflash-app",
+      "taskId": "kinflash-release-readiness",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-mastpex-mac-testflight-continuity",
+      "title": "MastPex Mac TestFlight continuity due",
+      "statusKey": "masterindex.due.mastpex-mac-testflight-continuity",
+      "url": "workinon://post?key=masterindex.due.mastpex-mac-testflight-continuity&text=MastPex+Mac+TestFlight+continuity+due+-+Task+cadence%3A+FREQ%3DMONTHLY%3BINTERVAL%3D1.",
+      "entityId": "mastpex-macos-asc-app",
+      "taskId": "mastpex-mac-testflight-continuity",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
+      "id": "due-mastpex-ios-testflight-continuity",
+      "title": "MastPex iOS TestFlight continuity due",
+      "statusKey": "masterindex.due.mastpex-ios-testflight-continuity",
+      "url": "workinon://post?key=masterindex.due.mastpex-ios-testflight-continuity&text=MastPex+iOS+TestFlight+continuity+due+-+Task+cadence%3A+FREQ%3DMONTHLY%3BINTERVAL%3D1.",
+      "entityId": "mastpex-ios-asc-app",
+      "taskId": "mastpex-ios-testflight-continuity",
       "type": "due-task",
       "priority": "medium"
     },
@@ -303,6 +263,16 @@
       "priority": "medium"
     },
     {
+      "id": "due-sharedspace-household-successor-check",
+      "title": "SharedSpace household successor check due",
+      "statusKey": "masterindex.due.sharedspace-household-successor-check",
+      "url": "workinon://post?key=masterindex.due.sharedspace-household-successor-check&text=SharedSpace+household+successor+check+due+-+Task+is+part+of+the+weekly+cycle.",
+      "entityId": "sharedspace-lab",
+      "taskId": "sharedspace-household-successor-check",
+      "type": "due-task",
+      "priority": "medium"
+    },
+    {
       "id": "due-server-monitor-link-check",
       "title": "server-monitor link check due",
       "statusKey": "masterindex.due.server-monitor-link-check",
@@ -313,12 +283,12 @@
       "priority": "medium"
     },
     {
-      "id": "due-workinon-release-check",
-      "title": "workin On release check due",
-      "statusKey": "masterindex.due.workinon-release-check",
-      "url": "workinon://post?key=masterindex.due.workinon-release-check&text=workin+On+release+check+due+-+Task+is+part+of+the+weekly+cycle.",
+      "id": "due-workinon-testflight-continuity",
+      "title": "workin On TestFlight continuity due",
+      "statusKey": "masterindex.due.workinon-testflight-continuity",
+      "url": "workinon://post?key=masterindex.due.workinon-testflight-continuity&text=workin+On+TestFlight+continuity+due+-+Task+cadence%3A+FREQ%3DMONTHLY%3BINTERVAL%3D1.",
       "entityId": "workinon-app",
-      "taskId": "workinon-release-check",
+      "taskId": "workinon-testflight-continuity",
       "type": "due-task",
       "priority": "medium"
     },
@@ -338,6 +308,16 @@
       "statusKey": "masterindex.attention.cardz-studio-ios-app.no-public-links",
       "url": "workinon://post?key=masterindex.attention.cardz-studio-ios-app.no-public-links&text=Cardz+Studio+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
       "entityId": "cardz-studio-ios-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-collective-comms-no-public-links",
+      "title": "Collective Comms missing public links",
+      "statusKey": "masterindex.attention.collective-comms.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.collective-comms.no-public-links&text=Collective+Comms+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "collective-comms",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -393,11 +373,41 @@
       "priority": "low"
     },
     {
+      "id": "attention-grubber-app-missing-appstore-link",
+      "title": "Grubber app missing public App Store page",
+      "statusKey": "masterindex.attention.grubber-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.grubber-app.missing-appstore&text=Grubber+app+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "grubber-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-hoabooklet-app-missing-appstore-link",
+      "title": "HOABooklet missing public App Store page",
+      "statusKey": "masterindex.attention.hoabooklet-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.hoabooklet-app.missing-appstore&text=HOABooklet+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "hoabooklet-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
       "id": "attention-kinflash-app-missing-appstore-link",
-      "title": "KinFlash missing public App Store page",
+      "title": "KinFlash Family missing public App Store page",
       "statusKey": "masterindex.attention.kinflash-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.kinflash-app.missing-appstore&text=KinFlash+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "url": "workinon://post?key=masterindex.attention.kinflash-app.missing-appstore&text=KinFlash+Family+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
       "entityId": "kinflash-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-kinflash-studio-missing-appstore-link",
+      "title": "KinFlash Studio missing public App Store page",
+      "statusKey": "masterindex.attention.kinflash-studio.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.kinflash-studio.missing-appstore&text=KinFlash+Studio+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "kinflash-studio",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -408,16 +418,6 @@
       "statusKey": "masterindex.attention.clubwatch-app.no-public-links",
       "url": "workinon://post?key=masterindex.attention.clubwatch-app.no-public-links&text=LtWatcher+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
       "entityId": "clubwatch-app",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
-      "id": "attention-mallinbook-app-missing-appstore-link",
-      "title": "Mallinbook missing public App Store page",
-      "statusKey": "masterindex.attention.mallinbook-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.mallinbook-app.missing-appstore&text=Mallinbook+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "mallinbook-app",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -443,6 +443,16 @@
       "priority": "low"
     },
     {
+      "id": "attention-medcommons-dicom-viewer-no-public-links",
+      "title": "MedCommons DICOM Viewer missing public links",
+      "statusKey": "masterindex.attention.medcommons-dicom-viewer.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.medcommons-dicom-viewer.no-public-links&text=MedCommons+DICOM+Viewer+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "medcommons-dicom-viewer",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
       "id": "attention-nagz-app-missing-appstore-link",
       "title": "Nagz missing public App Store page",
       "statusKey": "masterindex.attention.nagz-app.missing-appstore",
@@ -453,10 +463,10 @@
       "priority": "low"
     },
     {
-      "id": "attention-oenora-app-no-public-links",
-      "title": "Oenora missing public links",
-      "statusKey": "masterindex.attention.oenora-app.no-public-links",
-      "url": "workinon://post?key=masterindex.attention.oenora-app.no-public-links&text=Oenora+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "id": "attention-oenora-app-missing-appstore-link",
+      "title": "Oenora missing public App Store page",
+      "statusKey": "masterindex.attention.oenora-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.oenora-app.missing-appstore&text=Oenora+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
       "entityId": "oenora-app",
       "taskId": null,
       "type": "attention",
@@ -493,6 +503,16 @@
       "priority": "low"
     },
     {
+      "id": "attention-review-authority-no-public-links",
+      "title": "Review Authority missing public links",
+      "statusKey": "masterindex.attention.review-authority.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.review-authority.no-public-links&text=Review+Authority+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "review-authority",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
       "id": "attention-screenker-asc-app-missing-appstore-link",
       "title": "Screenker missing public App Store page",
       "statusKey": "masterindex.attention.screenker-asc-app.missing-appstore",
@@ -503,21 +523,21 @@
       "priority": "low"
     },
     {
-      "id": "attention-sentipods-app-missing-appstore-link",
-      "title": "SentiPods missing public App Store page",
-      "statusKey": "masterindex.attention.sentipods-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.sentipods-app.missing-appstore&text=SentiPods+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "sentipods-app",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
       "id": "attention-sharedspace-lab-no-public-links",
       "title": "SharedSpaceLab missing public links",
       "statusKey": "masterindex.attention.sharedspace-lab.no-public-links",
       "url": "workinon://post?key=masterindex.attention.sharedspace-lab.no-public-links&text=SharedSpaceLab+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
       "entityId": "sharedspace-lab",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-xpensexpunger-app-missing-appstore-link",
+      "title": "XpenseXpunger missing public App Store page",
+      "statusKey": "masterindex.attention.xpensexpunger-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.xpensexpunger-app.missing-appstore&text=XpenseXpunger+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "xpensexpunger-app",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -593,6 +613,16 @@
       "priority": "low"
     },
     {
+      "id": "attention-oenora-merchant-no-public-links",
+      "title": "oenora-merchant missing public links",
+      "statusKey": "masterindex.attention.oenora-merchant.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.oenora-merchant.no-public-links&text=oenora-merchant+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "oenora-merchant",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
       "id": "attention-picklefortunes-app-no-public-links",
       "title": "picklefortunes missing public links",
       "statusKey": "masterindex.attention.picklefortunes-app.no-public-links",
@@ -626,7 +656,7 @@
       "id": "summary-public-link-gaps",
       "title": "Public link gaps",
       "statusKey": "masterindex.summary.public-link-gaps",
-      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+29+entries+still+need+verified+public+links+or+App+Store+pages.",
+      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+35+entries+still+need+verified+public+links+or+App+Store+pages.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -636,7 +666,7 @@
       "id": "summary-recent-changes",
       "title": "Recent changes",
       "statusKey": "masterindex.summary.recent-changes",
-      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+22+entries+were+modified+in+the+last+7+days.",
+      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+16+entries+were+modified+in+the+last+7+days.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -646,7 +676,7 @@
       "id": "summary-due-tasks",
       "title": "Tasks due soon",
       "statusKey": "masterindex.summary.due-tasks",
-      "url": "workinon://post?key=masterindex.summary.due-tasks&text=Tasks+due+soon+-+10+recurring+entry+tasks+are+currently+in+the+operational+queue.",
+      "url": "workinon://post?key=masterindex.summary.due-tasks&text=Tasks+due+soon+-+13+recurring+entry+tasks+are+currently+in+the+operational+queue.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
