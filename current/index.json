@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T17:30:00-05:00",
+  "generatedAt": "2026-09-04T09:00:00-05:00",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -333,7 +333,7 @@
           "IOS 1.0 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/workinon",
-        "localVersion": "0.9.1 (67)"
+        "localVersion": "1.0 (68) local on feat/github-tabs; cloud builds 1.0 (1..3) VALID, build 1 attached to the 1.0 version, build 3 in F&F beta"
       },
       {
         "name": "100 Burfords",
@@ -920,14 +920,14 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "internal-only",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-09-04",
       "repo": "~/workinon",
       "bundleId": "com.workinon.app",
       "productLine": "billdonner-free",
       "pricingPolicy": "always-free",
-      "release": "Internal-use app expected to remain on TestFlight; workinOn 0.9.1 (67) was uploaded on 2026-08-09; no public App Store release is planned",
-      "distribution": "internal-testflight-planned",
-      "description": "AI-powered focus list app with widget, share extension, URL scheme, nagzerver-backed sync, and a bundled MasterIndex operational board.",
+      "release": "TestFlight-only by owner decision (2026-09-04). Xcode Cloud archive lane live: 1.0 builds 1-3 uploaded 2026-09-02..04 from the `release` branch; build 3 is in beta with the 'workin F&F' group. ASC iOS 1.0 record stays PREPARE_FOR_SUBMISSION with build 1 attached; no review submission and none planned.",
+      "distribution": "internal-testflight",
+      "description": "AI-powered focus list app with widget, share extension, watch app, URL scheme, nagzerver-backed sync, GitHub source-backed tabs, an Hourly status feed, and (on the unmerged main line) a bundled MasterIndex operational board.",
       "dependencies": [
         "nagzerver",
         "workinon-mcp"
@@ -936,15 +936,16 @@
         "website": "https://billdonner.github.io/workinon/",
         "testFlight": "https://testflight.apple.com/join/FbsJBmc7",
         "appStore": null,
-        "privacyPolicy": "https://billdonner.github.io/workinon/privacy.html",
-        "support": "https://billdonner.github.io/workinon/support.html",
-        "portfolioPage": "https://billdonner.com/apps/workinon/"
+        "privacyPolicy": "https://1041soft.com/workinon/privacy.html",
+        "support": "https://1041soft.com/workinon/support.html",
+        "portfolioPage": "https://billdonner.com/apps/workinon/",
+        "privacyPolicyMirror": "https://billdonner.github.io/workinon/privacy.html"
       },
       "notes": [
         "Silent APNs pushes update the list without opening the app.",
-        "MasterIndex board now loads from a bundled operational feed, groups cards by lane, and supports inline row detail reveal in both the MasterIndex and Focus tabs.",
-        "Recent-change MasterIndex cards use concise titles such as 'Qross changed' and now include latest git commit subjects in the body when the entity repo is available; missing repos fall back to last-modified dates.",
-        "2026-08-10: added MasterIndex operational-feed surfaces, feed tests, shortcuts updates, and bundled board-feed data; no new ASC release was observed.",
+        "2026-09-02: Xcode Cloud product created; 'Archive - App Store' workflow archives on push to `release`, pinned Xcode 26.6 / macOS 26.6.2, because this Mac's macOS 27 beta archives fail App Store ingestion. GRDB is consumed from the billdonner/GRDB.swift fork (pinned 7.10.0) since Xcode Cloud requires every detected repo to be owner-connected. Helpers: scripts/xcode-cloud-archive.py, scripts/asc-testflight.py, scripts/asc-submit.py.",
+        "2026-09-04: Codex review fixes shipped in builds 2-3: removed production seeding of developer-internal Twilio/Apple statuses into the Hourly tab; privacy policy and GitHub-tab copy now disclose the sync service; PrivacyInfo.xcprivacy added to all five targets; legacy user lists named 'Hourly' migrate to 'Hourly (mine)'; GitHub tab rename/delete now moves or removes the Keychain token and server registration.",
+        "BRANCH DIVERGENCE (open decision): remote `main` (248e3cf, 2026-08-10, MasterIndex operational-feed surfaces, build 67) never merged with `feat/github-tabs` (builds 66-68 and every 1.0 cloud build). A merge conflicts in nine files including a ContentView rewrite to a TabView. The `release` branch tracks feat/github-tabs; the MasterIndex board is therefore NOT in the shipping build.",
         "The existing 93-point Screenker gallery remains useful as TestFlight and internal documentation, but no public ASC marketing-gallery work is scheduled."
       ]
     },
@@ -2592,10 +2593,10 @@
     },
     {
       "repo": "~/workinon",
-      "branch": "main",
-      "last2026Commit": "2026-08-10",
+      "branch": "feat/github-tabs (release branch = same); main diverged",
+      "last2026Commit": "2026-09-04",
       "kind": "app",
-      "role": "ASC-mapped workin On app; local 0.9.1 (67) with MasterIndex board/feed detail work uploaded to TestFlight"
+      "role": "ASC-mapped workin On app; TestFlight-only; Xcode Cloud archive lane from `release`; main (MasterIndex board) unmerged with the shipping line"
     },
     {
       "repo": "~/workinon-mcp",
@@ -2909,6 +2910,11 @@
       "kind": "xpensexpunger-release-readiness",
       "observedAt": "2026-08-26",
       "summary": "XpenseXpunger initial CLI MVP, private product/support/privacy site, and 1041soft.com expense-maintenance utility plan are in place. App Store Connect record, bundle id, signed app archive, TestFlight build, and storefront screenshots remain unverified; keep this separate from pfolio and keep ~/1041soft output-only."
+    },
+    {
+      "kind": "branch-divergence",
+      "observedAt": "2026-09-04",
+      "summary": "workinon: remote main (MasterIndex operational board, 2026-08-10) and feat/github-tabs (GitHub tabs, Hourly feed, all 1.0 cloud builds) diverged from build 62 and conflict in nine files. The shipping `release` branch follows feat/github-tabs, so the MasterIndex board is absent from TestFlight. Owner decision needed on whether to merge before continuing either line."
     }
   ],
   "taskRegistry": {
