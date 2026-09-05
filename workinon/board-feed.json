@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T15:27:32-05:00",
+  "generatedAt": "2026-09-05T12:23:01-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,8 +11,161 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 68,
+  "itemCount": 71,
   "items": [
+    {
+      "id": "recent-burfords-app",
+      "type": "recent-change",
+      "entityId": "burfords-app",
+      "title": "100 Burfords changed",
+      "body": "Latest commit: AppStore: iPhone-landscape gallery, 7 slides. Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "oenora"
+      ],
+      "deepLink": "site/index.html#burfords-app",
+      "statusKey": "masterindex.recent.burfords-app"
+    },
+    {
+      "id": "recent-amenbeats-app",
+      "type": "recent-change",
+      "entityId": "amenbeats-app",
+      "title": "AmenBeats changed",
+      "body": "Latest commit: HANDOFF: landscape required on all devices; add the Kid-mode fix list. Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#amenbeats-app",
+      "statusKey": "masterindex.recent.amenbeats-app"
+    },
+    {
+      "id": "recent-obo-ios-app",
+      "type": "recent-change",
+      "entityId": "obo-ios-app",
+      "title": "Flasherz Kids changed",
+      "body": "Latest commit: Add DeckCache with disk-backed freshness checking for flashcard decks. Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "flasherz"
+      ],
+      "deepLink": "site/index.html#obo-ios-app",
+      "statusKey": "masterindex.recent.obo-ios-app"
+    },
+    {
+      "id": "recent-grubber-app",
+      "type": "recent-change",
+      "entityId": "grubber-app",
+      "title": "Grubber app changed",
+      "body": "Latest commit: fix: codex-review findings \u2014 pending nav consumption, fetch race, token display, parser outcomes, catalog. Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "grubber"
+      ],
+      "deepLink": "site/index.html#grubber-app",
+      "statusKey": "masterindex.recent.grubber-app"
+    },
+    {
+      "id": "recent-hoabooklet-app",
+      "type": "recent-change",
+      "entityId": "hoabooklet-app",
+      "title": "HOABooklet changed",
+      "body": "Latest commit: RELEASE.md: rename COMPLETE \u2014 new ASC record 6806080022 live, URLs set. Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "hoabooklet"
+      ],
+      "deepLink": "site/index.html#hoabooklet-app",
+      "statusKey": "masterindex.recent.hoabooklet-app"
+    },
+    {
+      "id": "recent-kinflash-app",
+      "type": "recent-change",
+      "entityId": "kinflash-app",
+      "title": "KinFlash Family changed",
+      "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "kinflash"
+      ],
+      "deepLink": "site/index.html#kinflash-app",
+      "statusKey": "masterindex.recent.kinflash-app"
+    },
+    {
+      "id": "recent-kinflash-studio",
+      "type": "recent-change",
+      "entityId": "kinflash-studio",
+      "title": "KinFlash Studio changed",
+      "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "kinflash"
+      ],
+      "deepLink": "site/index.html#kinflash-studio",
+      "statusKey": "masterindex.recent.kinflash-studio"
+    },
+    {
+      "id": "recent-mastpex-ios-asc-app",
+      "type": "recent-change",
+      "entityId": "mastpex-ios-asc-app",
+      "title": "MastPex IOS changed",
+      "body": "Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "infrastructure"
+      ],
+      "deepLink": "site/index.html#mastpex-ios-asc-app",
+      "statusKey": "masterindex.recent.mastpex-ios-asc-app"
+    },
+    {
+      "id": "recent-mastpex-macos-asc-app",
+      "type": "recent-change",
+      "entityId": "mastpex-macos-asc-app",
+      "title": "MastPex Mac changed",
+      "body": "Last modified 2026-09-05.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-05",
+      "tags": [
+        "recent",
+        "app",
+        "infrastructure"
+      ],
+      "deepLink": "site/index.html#mastpex-macos-asc-app",
+      "statusKey": "masterindex.recent.mastpex-macos-asc-app"
+    },
     {
       "id": "recent-workinon-app",
       "type": "recent-change",
@@ -31,29 +184,12 @@
       "statusKey": "masterindex.recent.workinon-app"
     },
     {
-      "id": "recent-burfords-app",
-      "type": "recent-change",
-      "entityId": "burfords-app",
-      "title": "100 Burfords changed",
-      "body": "Latest commit: Stamp a READER REMIX mark on every re-captioned panel; bump to 1.2 (19). Last modified 2026-09-03.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-09-03",
-      "tags": [
-        "recent",
-        "app",
-        "oenora"
-      ],
-      "deepLink": "site/index.html#burfords-app",
-      "statusKey": "masterindex.recent.burfords-app"
-    },
-    {
       "id": "recent-collective-comms",
       "type": "recent-change",
       "entityId": "collective-comms",
       "title": "Collective Comms changed",
       "body": "Latest commit: Settle the name ambiguities, and stop calling one person twice ambiguous. Last modified 2026-09-02.",
-      "priority": "medium",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-02",
       "tags": [
@@ -69,8 +205,8 @@
       "type": "recent-change",
       "entityId": "collective-engine",
       "title": "Collective Engine changed",
-      "body": "Latest commit: Steve off Friday 2026-09-11 and off the schedule standing; Friday 8 of 8. Last modified 2026-09-02.",
-      "priority": "medium",
+      "body": "Latest commit: SMS availability writes the weekly profile; owner draft alerts twice a day; fix import day-rule bind. Last modified 2026-09-02.",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-02",
       "tags": [
@@ -87,7 +223,7 @@
       "entityId": "medcommons-dicom-viewer",
       "title": "MedCommons DICOM Viewer changed",
       "body": "Latest commit: Add native iOS DICOM research viewer. Last modified 2026-09-02.",
-      "priority": "medium",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-02",
       "tags": [
@@ -104,7 +240,7 @@
       "entityId": "product-authority",
       "title": "Product Authority changed",
       "body": "Latest commit: Add resume.sh for waking after mothball. Last modified 2026-09-02.",
-      "priority": "medium",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-02",
       "tags": [
@@ -114,57 +250,6 @@
       ],
       "deepLink": "site/index.html#product-authority",
       "statusKey": "masterindex.recent.product-authority"
-    },
-    {
-      "id": "recent-grubber-app",
-      "type": "recent-change",
-      "entityId": "grubber-app",
-      "title": "Grubber app changed",
-      "body": "Latest commit: fix: codex-review findings \u2014 pending nav consumption, fetch race, token display, parser outcomes, catalog. Last modified 2026-08-30.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-30",
-      "tags": [
-        "recent",
-        "app",
-        "grubber"
-      ],
-      "deepLink": "site/index.html#grubber-app",
-      "statusKey": "masterindex.recent.grubber-app"
-    },
-    {
-      "id": "recent-kinflash-app",
-      "type": "recent-change",
-      "entityId": "kinflash-app",
-      "title": "KinFlash Family changed",
-      "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-08-30.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-30",
-      "tags": [
-        "recent",
-        "app",
-        "kinflash"
-      ],
-      "deepLink": "site/index.html#kinflash-app",
-      "statusKey": "masterindex.recent.kinflash-app"
-    },
-    {
-      "id": "recent-kinflash-studio",
-      "type": "recent-change",
-      "entityId": "kinflash-studio",
-      "title": "KinFlash Studio changed",
-      "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-08-30.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-30",
-      "tags": [
-        "recent",
-        "app",
-        "kinflash"
-      ],
-      "deepLink": "site/index.html#kinflash-studio",
-      "statusKey": "masterindex.recent.kinflash-studio"
     },
     {
       "id": "recent-oenora-app",
@@ -250,40 +335,6 @@
       ],
       "deepLink": "site/index.html#pfolio-backend",
       "statusKey": "masterindex.recent.pfolio-backend"
-    },
-    {
-      "id": "recent-portfolio-app-directory",
-      "type": "recent-change",
-      "entityId": "portfolio-app-directory",
-      "title": "Bill Donner Apps changed",
-      "body": "Latest commit: workin On: TestFlight-only, Xcode Cloud lane, 1.0 builds 1-3, review fixes, branch divergence gap. Last modified 2026-08-28.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-28",
-      "tags": [
-        "recent",
-        "website",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#portfolio-app-directory",
-      "statusKey": "masterindex.recent.portfolio-app-directory"
-    },
-    {
-      "id": "recent-nagz-app",
-      "type": "recent-change",
-      "entityId": "nagz-app",
-      "title": "Nagz changed",
-      "body": "Latest commit: Catch up APIEndpoint.swift with 8 server-side routes; pin via tests. Last modified 2026-08-28.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-28",
-      "tags": [
-        "recent",
-        "app",
-        "household communications"
-      ],
-      "deepLink": "site/index.html#nagz-app",
-      "statusKey": "masterindex.recent.nagz-app"
     },
     {
       "id": "due-nagzerver-health-check",
@@ -505,6 +556,22 @@
       ],
       "deepLink": "site/index.html#workinon-app",
       "statusKey": "masterindex.due.workinon-testflight-continuity"
+    },
+    {
+      "id": "attention-amenbeats-app-missing-appstore-link",
+      "type": "attention",
+      "entityId": "amenbeats-app",
+      "title": "AmenBeats missing public App Store page",
+      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "app-store",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#amenbeats-app",
+      "statusKey": "masterindex.attention.amenbeats-app.missing-appstore"
     },
     {
       "id": "attention-app-feedback-inbox-no-public-links",
@@ -939,22 +1006,6 @@
       "statusKey": "masterindex.attention.adspill-sim.no-public-links"
     },
     {
-      "id": "attention-amenbeats-app-missing-appstore-link",
-      "type": "attention",
-      "entityId": "amenbeats-app",
-      "title": "amenbeats missing public App Store page",
-      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "app-store",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#amenbeats-app",
-      "statusKey": "masterindex.attention.amenbeats-app.missing-appstore"
-    },
-    {
       "id": "attention-card-server-backend-no-public-links",
       "type": "attention",
       "entityId": "card-server-backend",
@@ -1070,7 +1121,7 @@
       "id": "summary-asc-gaps",
       "type": "summary",
       "title": "ASC coverage gaps",
-      "body": "3 App Store Connect apps still do not map cleanly to an active local repository.",
+      "body": "1 App Store Connect apps still do not map cleanly to an active local repository.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -1096,7 +1147,7 @@
       "id": "summary-recent-changes",
       "type": "summary",
       "title": "Recent changes",
-      "body": "16 entries were modified in the last 7 days.",
+      "body": "19 entries were modified in the last 7 days.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

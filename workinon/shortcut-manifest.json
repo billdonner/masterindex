@@ -1,23 +1,103 @@
 {
-  "generatedAt": "2026-09-04T15:27:32-05:00",
+  "generatedAt": "2026-09-05T12:23:01-05:00",
   "namespace": "masterindex",
   "items": [
+    {
+      "id": "recent-burfords-app",
+      "title": "100 Burfords changed",
+      "statusKey": "masterindex.recent.burfords-app",
+      "url": "workinon://post?key=masterindex.recent.burfords-app&text=100+Burfords+changed+-+Latest+commit%3A+AppStore%3A+iPhone-landscape+gallery%2C+7+slides.+Last+modified+2026-09-05.",
+      "entityId": "burfords-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-amenbeats-app",
+      "title": "AmenBeats changed",
+      "statusKey": "masterindex.recent.amenbeats-app",
+      "url": "workinon://post?key=masterindex.recent.amenbeats-app&text=AmenBeats+changed+-+Latest+commit%3A+HANDOFF%3A+landscape+required+on+all+devices%3B+add+the+Kid-mode+fix+list.+Last+modified+2026-09-05.",
+      "entityId": "amenbeats-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-obo-ios-app",
+      "title": "Flasherz Kids changed",
+      "statusKey": "masterindex.recent.obo-ios-app",
+      "url": "workinon://post?key=masterindex.recent.obo-ios-app&text=Flasherz+Kids+changed+-+Latest+commit%3A+Add+DeckCache+with+disk-backed+freshness+checking+for+flashcard+decks.+Last+modified+2026-09-05.",
+      "entityId": "obo-ios-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-grubber-app",
+      "title": "Grubber app changed",
+      "statusKey": "masterindex.recent.grubber-app",
+      "url": "workinon://post?key=masterindex.recent.grubber-app&text=Grubber+app+changed+-+Latest+commit%3A+fix%3A+codex-review+findings+%E2%80%94+pending+nav+consumption%2C+fetch+race%2C+token+display%2C+parser+outcomes%2C+catalog.+Last+modified+2026-09-05.",
+      "entityId": "grubber-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-hoabooklet-app",
+      "title": "HOABooklet changed",
+      "statusKey": "masterindex.recent.hoabooklet-app",
+      "url": "workinon://post?key=masterindex.recent.hoabooklet-app&text=HOABooklet+changed+-+Latest+commit%3A+RELEASE.md%3A+rename+COMPLETE+%E2%80%94+new+ASC+record+6806080022+live%2C+URLs+set.+Last+modified+2026-09-05.",
+      "entityId": "hoabooklet-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-kinflash-app",
+      "title": "KinFlash Family changed",
+      "statusKey": "masterindex.recent.kinflash-app",
+      "url": "workinon://post?key=masterindex.recent.kinflash-app&text=KinFlash+Family+changed+-+Latest+commit%3A+Allocate+the+IPs+Fly+does+not.+Last+modified+2026-09-05.",
+      "entityId": "kinflash-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-kinflash-studio",
+      "title": "KinFlash Studio changed",
+      "statusKey": "masterindex.recent.kinflash-studio",
+      "url": "workinon://post?key=masterindex.recent.kinflash-studio&text=KinFlash+Studio+changed+-+Latest+commit%3A+Allocate+the+IPs+Fly+does+not.+Last+modified+2026-09-05.",
+      "entityId": "kinflash-studio",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-mastpex-ios-asc-app",
+      "title": "MastPex IOS changed",
+      "statusKey": "masterindex.recent.mastpex-ios-asc-app",
+      "url": "workinon://post?key=masterindex.recent.mastpex-ios-asc-app&text=MastPex+IOS+changed+-+Last+modified+2026-09-05.",
+      "entityId": "mastpex-ios-asc-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-mastpex-macos-asc-app",
+      "title": "MastPex Mac changed",
+      "statusKey": "masterindex.recent.mastpex-macos-asc-app",
+      "url": "workinon://post?key=masterindex.recent.mastpex-macos-asc-app&text=MastPex+Mac+changed+-+Last+modified+2026-09-05.",
+      "entityId": "mastpex-macos-asc-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
     {
       "id": "recent-workinon-app",
       "title": "workin On changed",
       "statusKey": "masterindex.recent.workinon-app",
       "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+Add+TestFlight+hand-off+script+for+cloud+builds.+Last+modified+2026-09-04.",
       "entityId": "workinon-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-burfords-app",
-      "title": "100 Burfords changed",
-      "statusKey": "masterindex.recent.burfords-app",
-      "url": "workinon://post?key=masterindex.recent.burfords-app&text=100+Burfords+changed+-+Latest+commit%3A+Stamp+a+READER+REMIX+mark+on+every+re-captioned+panel%3B+bump+to+1.2+%2819%29.+Last+modified+2026-09-03.",
-      "entityId": "burfords-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
@@ -30,17 +110,17 @@
       "entityId": "collective-comms",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-collective-engine",
       "title": "Collective Engine changed",
       "statusKey": "masterindex.recent.collective-engine",
-      "url": "workinon://post?key=masterindex.recent.collective-engine&text=Collective+Engine+changed+-+Latest+commit%3A+Steve+off+Friday+2026-09-11+and+off+the+schedule+standing%3B+Friday+8+of+8.+Last+modified+2026-09-02.",
+      "url": "workinon://post?key=masterindex.recent.collective-engine&text=Collective+Engine+changed+-+Latest+commit%3A+SMS+availability+writes+the+weekly+profile%3B+owner+draft+alerts+twice+a+day%3B+fix+import+day-rule+bind.+Last+modified+2026-09-02.",
       "entityId": "collective-engine",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-medcommons-dicom-viewer",
@@ -50,7 +130,7 @@
       "entityId": "medcommons-dicom-viewer",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-product-authority",
@@ -58,36 +138,6 @@
       "statusKey": "masterindex.recent.product-authority",
       "url": "workinon://post?key=masterindex.recent.product-authority&text=Product+Authority+changed+-+Latest+commit%3A+Add+resume.sh+for+waking+after+mothball.+Last+modified+2026-09-02.",
       "entityId": "product-authority",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-grubber-app",
-      "title": "Grubber app changed",
-      "statusKey": "masterindex.recent.grubber-app",
-      "url": "workinon://post?key=masterindex.recent.grubber-app&text=Grubber+app+changed+-+Latest+commit%3A+fix%3A+codex-review+findings+%E2%80%94+pending+nav+consumption%2C+fetch+race%2C+token+display%2C+parser+outcomes%2C+catalog.+Last+modified+2026-08-30.",
-      "entityId": "grubber-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-kinflash-app",
-      "title": "KinFlash Family changed",
-      "statusKey": "masterindex.recent.kinflash-app",
-      "url": "workinon://post?key=masterindex.recent.kinflash-app&text=KinFlash+Family+changed+-+Latest+commit%3A+Allocate+the+IPs+Fly+does+not.+Last+modified+2026-08-30.",
-      "entityId": "kinflash-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-kinflash-studio",
-      "title": "KinFlash Studio changed",
-      "statusKey": "masterindex.recent.kinflash-studio",
-      "url": "workinon://post?key=masterindex.recent.kinflash-studio&text=KinFlash+Studio+changed+-+Latest+commit%3A+Allocate+the+IPs+Fly+does+not.+Last+modified+2026-08-30.",
-      "entityId": "kinflash-studio",
       "taskId": null,
       "type": "recent-change",
       "priority": "low"
@@ -138,26 +188,6 @@
       "statusKey": "masterindex.recent.pfolio-backend",
       "url": "workinon://post?key=masterindex.recent.pfolio-backend&text=pfolio+changed+-+Last+modified+2026-08-29.",
       "entityId": "pfolio-backend",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-portfolio-app-directory",
-      "title": "Bill Donner Apps changed",
-      "statusKey": "masterindex.recent.portfolio-app-directory",
-      "url": "workinon://post?key=masterindex.recent.portfolio-app-directory&text=Bill+Donner+Apps+changed+-+Latest+commit%3A+workin+On%3A+TestFlight-only%2C+Xcode+Cloud+lane%2C+1.0+builds+1-3%2C+review+fixes%2C+branch+divergence+gap.+Last+modified+2026-08-28.",
-      "entityId": "portfolio-app-directory",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-nagz-app",
-      "title": "Nagz changed",
-      "statusKey": "masterindex.recent.nagz-app",
-      "url": "workinon://post?key=masterindex.recent.nagz-app&text=Nagz+changed+-+Latest+commit%3A+Catch+up+APIEndpoint.swift+with+8+server-side+routes%3B+pin+via+tests.+Last+modified+2026-08-28.",
-      "entityId": "nagz-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "low"
@@ -291,6 +321,16 @@
       "taskId": "workinon-testflight-continuity",
       "type": "due-task",
       "priority": "medium"
+    },
+    {
+      "id": "attention-amenbeats-app-missing-appstore-link",
+      "title": "AmenBeats missing public App Store page",
+      "statusKey": "masterindex.attention.amenbeats-app.missing-appstore",
+      "url": "workinon://post?key=masterindex.attention.amenbeats-app.missing-appstore&text=AmenBeats+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
+      "entityId": "amenbeats-app",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
     },
     {
       "id": "attention-app-feedback-inbox-no-public-links",
@@ -563,16 +603,6 @@
       "priority": "low"
     },
     {
-      "id": "attention-amenbeats-app-missing-appstore-link",
-      "title": "amenbeats missing public App Store page",
-      "statusKey": "masterindex.attention.amenbeats-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.amenbeats-app.missing-appstore&text=amenbeats+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "amenbeats-app",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
       "id": "attention-card-server-backend-no-public-links",
       "title": "card-server missing public links",
       "statusKey": "masterindex.attention.card-server-backend.no-public-links",
@@ -646,7 +676,7 @@
       "id": "summary-asc-gaps",
       "title": "ASC coverage gaps",
       "statusKey": "masterindex.summary.asc-gaps",
-      "url": "workinon://post?key=masterindex.summary.asc-gaps&text=ASC+coverage+gaps+-+3+App+Store+Connect+apps+still+do+not+map+cleanly+to+an+active+local+repository.",
+      "url": "workinon://post?key=masterindex.summary.asc-gaps&text=ASC+coverage+gaps+-+1+App+Store+Connect+apps+still+do+not+map+cleanly+to+an+active+local+repository.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -666,7 +696,7 @@
       "id": "summary-recent-changes",
       "title": "Recent changes",
       "statusKey": "masterindex.summary.recent-changes",
-      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+16+entries+were+modified+in+the+last+7+days.",
+      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+19+entries+were+modified+in+the+last+7+days.",
       "entityId": null,
       "taskId": null,
       "type": "summary",

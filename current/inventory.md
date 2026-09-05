@@ -10,7 +10,7 @@ As of Wednesday, September 2, 2026.
 
 ## Executive Summary
 
-- ASC contains 23 app records: 20 map in the primary ASC inventory, two MastPex records are internal-use/TestFlight apps, and GigStand is the intentionally retained retired record.
+- ASC contains 21 app records as of 2026-09-05: 20 map in the primary ASC inventory and GigStand is the intentionally retained retired record. Since the 2026-08-14 scan, Flasherz Kids, both MastPex records, and the original HOABooklet/Mallinbook record (6785245339) were deleted; HOABooklet now lives on new record 6806080022 with no builds yet, and KinFlash Studio gained record 6806833310. SentiPods is now named Grubber Desk and KinFlash is KinFlash Family in ASC.
 - LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
@@ -56,7 +56,7 @@ Personal utilities, experiments, and children-oriented apps. Users are never cha
 version and MCP surface are optional. `SharedSpaceLab`, `Nagz`, `workin On`, `AmenBeats`,
 `SentiPods`, `Flasherz Kids`, and `Zerver Monitor` belong to this product family. `workin On`
 and `Flasherz Kids` are internal-use/obsolete rather than public releases; `MastPex IOS` and
-`MastPex Mac` remain internal-use/TestFlight-only.
+`MastPex Mac` no longer have ASC records (gone by 2026-09-05) and their source path is missing locally.
 
 ### 1041soft.com — commercial
 
@@ -229,9 +229,9 @@ No current consumer was found to require Card Server, so these do not block reti
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
-| Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record retained |
+| Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record deleted (404 on 2026-09-05) |
 | PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| KinFlash Studio (Mac, authoring) | com.billdonner.kinflashstudio | ~/kinflash | Paid; ASC record NOT YET CREATED — manual click required |
+| KinFlash Studio (Mac, authoring) | com.billdonner.kinflashstudio | ~/kinflash | Paid; ASC record 6806833310, macOS 1.0.1 builds 3 and 6 VALID via Xcode Cloud |
 | KinFlash Family (iOS, player) | com.billdonner.kinflash | ~/kinflash | Free, no IAP; keeps ASC record 6762008872, which needs renaming from "KinFlash" |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | 123 Words | com.123words.app | github:billdonner/123words | 1.11 READY_FOR_SALE; 1.12 draft |
@@ -239,7 +239,7 @@ No current consumer was found to require Card Server, so these do not block reti
 
 Unmatched or intentionally retained:
 
-- MastPex IOS and MastPex Mac are internal/TestFlight-only apps in the shared MasterIndex Explorer repository; they are not public-release placeholders.
+- MastPex IOS and MastPex Mac were internal/TestFlight-only apps in the shared MasterIndex Explorer repository; as of 2026-09-05 neither ASC record exists and the repository path is absent on this machine, so both are treated as retired.
 - GigStand is retired, removed from all 175 territories, and permanently retained by ASC because it was previously sold.
 
 ## Services
