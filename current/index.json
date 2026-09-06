@@ -2183,6 +2183,29 @@
         "Tests cover bundled CT/MR/RTSTRUCT/OHIF fixtures, implicit VR little endian, MONOCHROME1 inversion, signed rescale/windowing, compressed transfer-syntax metadata-only behavior, and malformed short input.",
         "Second critic subagent could not run after implementation because the account hit a usage limit; the first critic pass ran before files existed and its actionable concerns were addressed in this commit."
       ]
+    },
+    {
+      "id": "collective-console",
+      "name": "Collective Console",
+      "kind": "app",
+      "cluster": "Pickleball Collective",
+      "status": "in-development",
+      "lastModified": "2026-09-06",
+      "repo": "~/collective-console",
+      "bundleId": "com.billdonner.collectiveconsole",
+      "productLine": "1041soft-internal",
+      "pricingPolicy": "internal",
+      "distribution": "local-only",
+      "description": "Mac app (SwiftUI, xcodegen) that exercises collective-engine with a simulated club: runs the CollectiveSimulation package through the real solver in-process, a phone wall against a local engine (SIMULATION_API=1) with personas via Ollama or scripted lines, and an in-app MCP server on 127.0.0.1:9910 (off by default). Never prod, never Twilio.",
+      "dependencies": [
+        "collective-engine"
+      ],
+      "links": {
+        "github": "https://github.com/billdonner/collective-console"
+      },
+      "notes": [
+        "2026-09-06: created; ADR-008 in collective-engine records the decisions it rests on."
+      ]
     }
   ],
   "collaborators": [
