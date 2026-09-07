@@ -2645,7 +2645,7 @@
     },
     {
       "repo": "~/workinon",
-      "branch": "main (= release = feat/github-tabs at de2bb2e)",
+      "branch": "main (release tracks it; feat/github-tabs deleted 2026-09-07)",
       "last2026Commit": "2026-09-07",
       "kind": "app",
       "role": "ASC-mapped workin On app; TestFlight-only; Xcode Cloud archive lane from `release`; MasterIndex board merged into the shipping line"
