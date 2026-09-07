@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-05T12:23:01-05:00",
+  "generatedAt": "2026-09-07T13:25:07-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,8 +11,42 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 71,
+  "itemCount": 68,
   "items": [
+    {
+      "id": "recent-workinon-app",
+      "type": "recent-change",
+      "entityId": "workinon-app",
+      "title": "workin On changed",
+      "body": "Latest commit: asc-testflight: tolerate builds already declared exempt via Info.plist. Last modified 2026-09-07.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-07",
+      "tags": [
+        "recent",
+        "app",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#workinon-app",
+      "statusKey": "masterindex.recent.workinon-app"
+    },
+    {
+      "id": "recent-collective-console",
+      "type": "recent-change",
+      "entityId": "collective-console",
+      "title": "Collective Console changed",
+      "body": "Latest commit: Each preset's simulated phones get their own number block; switching clubs clears the engine's outbound; build 11. Last modified 2026-09-06.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-06",
+      "tags": [
+        "recent",
+        "app",
+        "pickleball collective"
+      ],
+      "deepLink": "site/index.html#collective-console",
+      "statusKey": "masterindex.recent.collective-console"
+    },
     {
       "id": "recent-burfords-app",
       "type": "recent-change",
@@ -35,7 +69,7 @@
       "type": "recent-change",
       "entityId": "amenbeats-app",
       "title": "AmenBeats changed",
-      "body": "Latest commit: HANDOFF: landscape required on all devices; add the Kid-mode fix list. Last modified 2026-09-05.",
+      "body": "Latest commit: CLAUDE.md: the build-number fix worked, and why. Last modified 2026-09-05.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-09-05",
@@ -167,23 +201,6 @@
       "statusKey": "masterindex.recent.mastpex-macos-asc-app"
     },
     {
-      "id": "recent-workinon-app",
-      "type": "recent-change",
-      "entityId": "workinon-app",
-      "title": "workin On changed",
-      "body": "Latest commit: Add TestFlight hand-off script for cloud builds. Last modified 2026-09-04.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-09-04",
-      "tags": [
-        "recent",
-        "app",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#workinon-app",
-      "statusKey": "masterindex.recent.workinon-app"
-    },
-    {
       "id": "recent-collective-comms",
       "type": "recent-change",
       "entityId": "collective-comms",
@@ -205,7 +222,7 @@
       "type": "recent-change",
       "entityId": "collective-engine",
       "title": "Collective Engine changed",
-      "body": "Latest commit: SMS availability writes the weekly profile; owner draft alerts twice a day; fix import day-rule bind. Last modified 2026-09-02.",
+      "body": "Latest commit: nudges command: the 8:55 booker nudges from the database. Last modified 2026-09-02.",
       "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-02",
@@ -250,91 +267,6 @@
       ],
       "deepLink": "site/index.html#product-authority",
       "statusKey": "masterindex.recent.product-authority"
-    },
-    {
-      "id": "recent-oenora-app",
-      "type": "recent-change",
-      "entityId": "oenora-app",
-      "title": "Oenora changed",
-      "body": "Latest commit: AppStore: rebuild galleries on the refreshed captures. Last modified 2026-08-30.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-30",
-      "tags": [
-        "recent",
-        "app",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#oenora-app",
-      "statusKey": "masterindex.recent.oenora-app"
-    },
-    {
-      "id": "recent-pfolio-app",
-      "type": "recent-change",
-      "entityId": "pfolio-app",
-      "title": "Pfoliolio changed",
-      "body": "Latest commit: Merge pull request #31 from billdonner/chore/pfoliolio-links. Last modified 2026-08-30.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-30",
-      "tags": [
-        "recent",
-        "app",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#pfolio-app",
-      "statusKey": "masterindex.recent.pfolio-app"
-    },
-    {
-      "id": "recent-grubber-service",
-      "type": "recent-change",
-      "entityId": "grubber-service",
-      "title": "grubber changed",
-      "body": "Latest commit: fix: codex-review findings \u2014 single-flight auth refresh, weekly stale topics, missing-editions-table handling. Last modified 2026-08-30.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-30",
-      "tags": [
-        "recent",
-        "service",
-        "grubber"
-      ],
-      "deepLink": "site/index.html#grubber-service",
-      "statusKey": "masterindex.recent.grubber-service"
-    },
-    {
-      "id": "recent-picklefamilia-asc-app",
-      "type": "recent-change",
-      "entityId": "picklefamilia-asc-app",
-      "title": "PickleFamilia changed",
-      "body": "Last modified 2026-08-29.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-29",
-      "tags": [
-        "recent",
-        "app",
-        "pickledballs"
-      ],
-      "deepLink": "site/index.html#picklefamilia-asc-app",
-      "statusKey": "masterindex.recent.picklefamilia-asc-app"
-    },
-    {
-      "id": "recent-pfolio-backend",
-      "type": "recent-change",
-      "entityId": "pfolio-backend",
-      "title": "pfolio changed",
-      "body": "Last modified 2026-08-29.",
-      "priority": "low",
-      "lane": "Recent Activity",
-      "sortDate": "2026-08-29",
-      "tags": [
-        "recent",
-        "backend",
-        "standalone"
-      ],
-      "deepLink": "site/index.html#pfolio-backend",
-      "statusKey": "masterindex.recent.pfolio-backend"
     },
     {
       "id": "due-nagzerver-health-check",
@@ -620,6 +552,22 @@
       ],
       "deepLink": "site/index.html#collective-comms",
       "statusKey": "masterindex.attention.collective-comms.no-public-links"
+    },
+    {
+      "id": "attention-collective-console-no-public-links",
+      "type": "attention",
+      "entityId": "collective-console",
+      "title": "Collective Console missing public links",
+      "body": "No verified website or public App Store page is recorded yet.",
+      "priority": "low",
+      "lane": "Needs Attention",
+      "tags": [
+        "links",
+        "public",
+        "pickleball collective"
+      ],
+      "deepLink": "site/index.html#collective-console",
+      "statusKey": "masterindex.attention.collective-console.no-public-links"
     },
     {
       "id": "attention-conversationlab-package-no-public-links",
@@ -1134,7 +1082,7 @@
       "id": "summary-public-link-gaps",
       "type": "summary",
       "title": "Public link gaps",
-      "body": "35 entries still need verified public links or App Store pages.",
+      "body": "36 entries still need verified public links or App Store pages.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -1147,7 +1095,7 @@
       "id": "summary-recent-changes",
       "type": "summary",
       "title": "Recent changes",
-      "body": "19 entries were modified in the last 7 days.",
+      "body": "15 entries were modified in the last 7 days.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

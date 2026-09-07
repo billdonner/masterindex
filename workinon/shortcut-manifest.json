@@ -1,7 +1,27 @@
 {
-  "generatedAt": "2026-09-05T12:23:01-05:00",
+  "generatedAt": "2026-09-07T13:25:07-05:00",
   "namespace": "masterindex",
   "items": [
+    {
+      "id": "recent-workinon-app",
+      "title": "workin On changed",
+      "statusKey": "masterindex.recent.workinon-app",
+      "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+asc-testflight%3A+tolerate+builds+already+declared+exempt+via+Info.plist.+Last+modified+2026-09-07.",
+      "entityId": "workinon-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-collective-console",
+      "title": "Collective Console changed",
+      "statusKey": "masterindex.recent.collective-console",
+      "url": "workinon://post?key=masterindex.recent.collective-console&text=Collective+Console+changed+-+Latest+commit%3A+Each+preset%27s+simulated+phones+get+their+own+number+block%3B+switching+clubs+clears+the+engine%27s+outbound%3B+build+11.+Last+modified+2026-09-06.",
+      "entityId": "collective-console",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
     {
       "id": "recent-burfords-app",
       "title": "100 Burfords changed",
@@ -16,7 +36,7 @@
       "id": "recent-amenbeats-app",
       "title": "AmenBeats changed",
       "statusKey": "masterindex.recent.amenbeats-app",
-      "url": "workinon://post?key=masterindex.recent.amenbeats-app&text=AmenBeats+changed+-+Latest+commit%3A+HANDOFF%3A+landscape+required+on+all+devices%3B+add+the+Kid-mode+fix+list.+Last+modified+2026-09-05.",
+      "url": "workinon://post?key=masterindex.recent.amenbeats-app&text=AmenBeats+changed+-+Latest+commit%3A+CLAUDE.md%3A+the+build-number+fix+worked%2C+and+why.+Last+modified+2026-09-05.",
       "entityId": "amenbeats-app",
       "taskId": null,
       "type": "recent-change",
@@ -93,16 +113,6 @@
       "priority": "medium"
     },
     {
-      "id": "recent-workinon-app",
-      "title": "workin On changed",
-      "statusKey": "masterindex.recent.workinon-app",
-      "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+Add+TestFlight+hand-off+script+for+cloud+builds.+Last+modified+2026-09-04.",
-      "entityId": "workinon-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
       "id": "recent-collective-comms",
       "title": "Collective Comms changed",
       "statusKey": "masterindex.recent.collective-comms",
@@ -116,7 +126,7 @@
       "id": "recent-collective-engine",
       "title": "Collective Engine changed",
       "statusKey": "masterindex.recent.collective-engine",
-      "url": "workinon://post?key=masterindex.recent.collective-engine&text=Collective+Engine+changed+-+Latest+commit%3A+SMS+availability+writes+the+weekly+profile%3B+owner+draft+alerts+twice+a+day%3B+fix+import+day-rule+bind.+Last+modified+2026-09-02.",
+      "url": "workinon://post?key=masterindex.recent.collective-engine&text=Collective+Engine+changed+-+Latest+commit%3A+nudges+command%3A+the+8%3A55+booker+nudges+from+the+database.+Last+modified+2026-09-02.",
       "entityId": "collective-engine",
       "taskId": null,
       "type": "recent-change",
@@ -138,56 +148,6 @@
       "statusKey": "masterindex.recent.product-authority",
       "url": "workinon://post?key=masterindex.recent.product-authority&text=Product+Authority+changed+-+Latest+commit%3A+Add+resume.sh+for+waking+after+mothball.+Last+modified+2026-09-02.",
       "entityId": "product-authority",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-oenora-app",
-      "title": "Oenora changed",
-      "statusKey": "masterindex.recent.oenora-app",
-      "url": "workinon://post?key=masterindex.recent.oenora-app&text=Oenora+changed+-+Latest+commit%3A+AppStore%3A+rebuild+galleries+on+the+refreshed+captures.+Last+modified+2026-08-30.",
-      "entityId": "oenora-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-pfolio-app",
-      "title": "Pfoliolio changed",
-      "statusKey": "masterindex.recent.pfolio-app",
-      "url": "workinon://post?key=masterindex.recent.pfolio-app&text=Pfoliolio+changed+-+Latest+commit%3A+Merge+pull+request+%2331+from+billdonner%2Fchore%2Fpfoliolio-links.+Last+modified+2026-08-30.",
-      "entityId": "pfolio-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-grubber-service",
-      "title": "grubber changed",
-      "statusKey": "masterindex.recent.grubber-service",
-      "url": "workinon://post?key=masterindex.recent.grubber-service&text=grubber+changed+-+Latest+commit%3A+fix%3A+codex-review+findings+%E2%80%94+single-flight+auth+refresh%2C+weekly+stale+topics%2C+missing-editions-table+handling.+Last+modified+2026-08-30.",
-      "entityId": "grubber-service",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-picklefamilia-asc-app",
-      "title": "PickleFamilia changed",
-      "statusKey": "masterindex.recent.picklefamilia-asc-app",
-      "url": "workinon://post?key=masterindex.recent.picklefamilia-asc-app&text=PickleFamilia+changed+-+Last+modified+2026-08-29.",
-      "entityId": "picklefamilia-asc-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "low"
-    },
-    {
-      "id": "recent-pfolio-backend",
-      "title": "pfolio changed",
-      "statusKey": "masterindex.recent.pfolio-backend",
-      "url": "workinon://post?key=masterindex.recent.pfolio-backend&text=pfolio+changed+-+Last+modified+2026-08-29.",
-      "entityId": "pfolio-backend",
       "taskId": null,
       "type": "recent-change",
       "priority": "low"
@@ -358,6 +318,16 @@
       "statusKey": "masterindex.attention.collective-comms.no-public-links",
       "url": "workinon://post?key=masterindex.attention.collective-comms.no-public-links&text=Collective+Comms+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
       "entityId": "collective-comms",
+      "taskId": null,
+      "type": "attention",
+      "priority": "low"
+    },
+    {
+      "id": "attention-collective-console-no-public-links",
+      "title": "Collective Console missing public links",
+      "statusKey": "masterindex.attention.collective-console.no-public-links",
+      "url": "workinon://post?key=masterindex.attention.collective-console.no-public-links&text=Collective+Console+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
+      "entityId": "collective-console",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -686,7 +656,7 @@
       "id": "summary-public-link-gaps",
       "title": "Public link gaps",
       "statusKey": "masterindex.summary.public-link-gaps",
-      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+35+entries+still+need+verified+public+links+or+App+Store+pages.",
+      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+36+entries+still+need+verified+public+links+or+App+Store+pages.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -696,7 +666,7 @@
       "id": "summary-recent-changes",
       "title": "Recent changes",
       "statusKey": "masterindex.summary.recent-changes",
-      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+19+entries+were+modified+in+the+last+7+days.",
+      "url": "workinon://post?key=masterindex.summary.recent-changes&text=Recent+changes+-+15+entries+were+modified+in+the+last+7+days.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
