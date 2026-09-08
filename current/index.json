@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T13:00:00-05:00",
+  "generatedAt": "2026-09-08T14:30:00-05:00",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -211,7 +211,7 @@
     "services": [
       {
         "app": "bd-cardzerver",
-        "entityId": "card-server-backend",
+        "entityId": "card-engine-backend",
         "status": "deployed",
         "latestDeploy": "2026-07-06T01:01:00-05:00",
         "cost": null
@@ -219,7 +219,7 @@
       {
         "app": "bd-nagzerver",
         "entityId": "nagzerver-backend",
-        "status": "deployed",
+        "status": "suspended-no-machines",
         "latestDeploy": "2026-06-30T21:01:00-05:00",
         "cost": null
       },
@@ -803,6 +803,7 @@
         "portfolioPage": "https://billdonner.com/apps/pickledballs/"
       },
       "notes": [
+        "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Uses JSON plus GRDB SQLite locally.",
         "Current project.yml links local packages CourtScheduler, vendored PickleFortunesKit, and PeerLink.",
         "PeerLink is expected at ../peerlink for local builds; that sibling package was missing on this machine during the 2026-08-13 cleanup.",
@@ -876,38 +877,10 @@
         "appStore": null
       },
       "notes": [
+        "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Shares API versioning with nagzerver and nagz-web.",
         "The source contains real family, connection, and reminder flows with more than 215 tests; substantive product work last occurred in April 2026.",
         "Do not add a new Nagz feature by default. First decide whether it belongs in SharedSpaceLab or in a narrowly retained Nagzerver compatibility surface."
-      ]
-    },
-    {
-      "id": "obo-ios-app",
-      "name": "Flasherz Kids",
-      "kind": "app",
-      "cluster": "Flasherz",
-      "status": "obsolete",
-      "productLine": "billdonner-free",
-      "lastModified": "2026-09-05",
-      "repo": "~/obo-ios",
-      "bundleId": "com.billdonner.obo",
-      "release": "Obsolete by owner decision on 2026-08-14; ASC record 6759509933 no longer exists (API 404 on 2026-09-05)",
-      "distribution": "none-obsolete",
-      "description": "SwiftUI flashcard app for kids, branded Flasherz, backed by the live card-engine service at bd-cardzerver.fly.dev.",
-      "dependencies": [
-        "card-engine",
-        "obo",
-        "card-server"
-      ],
-      "links": {
-        "website": "https://billdonner.github.io/obo-ios/",
-        "appStore": null,
-        "portfolioPage": "https://billdonner.com/apps/flasherz-kids/"
-      },
-      "notes": [
-        "Falls back to bundled sample decks when the server is unavailable.",
-        "Do not perform new release, screenshot, or public-listing work; preserve the repository and ASC record as history unless the owner later requests archival.",
-        "2026-09-05: the ASC record is gone (404); the earlier instruction to preserve it can no longer be honored. Repository ~/obo-ios remains as history."
       ]
     },
     {
@@ -963,6 +936,7 @@
         "privacyPolicyMirror": "https://billdonner.github.io/workinon/privacy.html"
       },
       "notes": [
+        "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Silent APNs pushes update the list without opening the app.",
         "2026-09-02: Xcode Cloud product created; 'Archive - App Store' workflow archives on push to `release`, pinned Xcode 26.6 / macOS 26.6.2, because this Mac's macOS 27 beta archives fail App Store ingestion. GRDB is consumed from the billdonner/GRDB.swift fork (pinned 7.10.0) since Xcode Cloud requires every detected repo to be owner-connected. Helpers: scripts/xcode-cloud-archive.py, scripts/asc-testflight.py, scripts/asc-submit.py.",
         "2026-09-04: Codex review fixes shipped in builds 2-3: removed production seeding of developer-internal Twilio/Apple statuses into the Hourly tab; privacy policy and GitHub-tab copy now disclose the sync service; PrivacyInfo.xcprivacy added to all five targets; legacy user lists named 'Hourly' migrate to 'Hourly (mine)'; GitHub tab rename/delete now moves or removes the Keychain token and server registration.",
@@ -1266,31 +1240,6 @@
       ]
     },
     {
-      "id": "grubber-ios-app",
-      "name": "grubber-ios",
-      "kind": "app",
-      "cluster": "Grubber",
-      "status": "obsolete",
-      "lastModified": "2026-08-14",
-      "repo": "~/grubber-ios",
-      "bundleId": "com.billdonner.grubber",
-      "release": "Obsolete by owner decision on 2026-08-14; superseded by SentiPods",
-      "description": "Historical prototype client for the grubber service, retained only as source history.",
-      "dependencies": [
-        "grubber"
-      ],
-      "links": {
-        "website": null,
-        "appStore": null
-      },
-      "notes": [
-        "No further release or ASC work is expected.",
-        "SentiPods is the current iOS and macOS client.",
-        "Historical note: this older com.billdonner.grubber prototype explains why the Grubber client name existed before SentiPods.",
-        "2026-08-29: GitHub repo renamed billdonner/grubber-ios -> billdonner/grubber-ios-legacy (unarchived, renamed, re-archived) to free the grubber-ios name space for the Grubber client rename."
-      ]
-    },
-    {
       "id": "grubber-app",
       "name": "Grubber app",
       "kind": "app",
@@ -1333,11 +1282,11 @@
       "name": "nagzerver",
       "kind": "backend",
       "cluster": "Infrastructure",
-      "status": "live",
-      "lastModified": "2026-08-14",
+      "status": "reference-only",
+      "lastModified": "2026-09-08",
       "repo": "~/nagzerver",
       "bundleId": null,
-      "release": "Live on Fly at bd-nagzerver.fly.dev",
+      "release": "Fly app bd-nagzerver suspended with zero machines; unreachable since 2026-08-18 13:34 (Server Monitor: 51k consecutive timeouts). Kept for reference and occasional testing only. bd-postgres nagz DB and Upstash Redis remain up.",
       "description": "Mixed shared production backend serving Nagz, current PickledBalls and legacy PickleFamilia APIs, workin On sync and APNs, plus residual clubwatch transport routes.",
       "dependencies": [
         "Nagz",
@@ -1350,6 +1299,7 @@
         "websiteSource": "local docs"
       },
       "notes": [
+        "2026-09-08: Owner decision: nagzerver is retained for reference and occasional testing, not as production infrastructure. The runtime dependency of PickledBalls, workin On, PickleFamilia, Nagz and api.famster.app on nagzerver is to be removed; until each consumer is decoupled, treat that dependency as broken, not merely down.",
         "Do not retire this service as part of any Nagz or Famster decision; active non-Nagz consumers depend on it.",
         "Production exposes 37 /api/v1/pb paths, 14 /api/v1/pickle paths, seven /api/v1/workinon paths, and four residual clubwatch/LtWatcher paths in addition to the Nagz family API.",
         "Fly release v100 source was missing from Git main and was recovered exactly to private branch recovery/deployed-2026-06-30 at commit a57211b.",
@@ -1376,28 +1326,6 @@
       "notes": [
         "Not an active production dependency or monitored service.",
         "The database is retained to preserve data until the PickledBalls v2 decision."
-      ]
-    },
-    {
-      "id": "card-server-backend",
-      "name": "card-server",
-      "kind": "backend",
-      "cluster": "Qross",
-      "status": "retired",
-      "lastModified": "2026-08-14",
-      "repo": "~/card-server",
-      "bundleId": null,
-      "release": "Retired 2026-08-14; GitHub repository archived and Fly deployment descriptor removed",
-      "description": "Swift/Hummingbird card and trivia backend that targets the same Fly app name as card-engine.",
-      "dependencies": [
-        "card-engine (successor)"
-      ],
-      "links": {
-        "github": "https://github.com/billdonner/card-server"
-      },
-      "notes": [
-        "Card Engine is the verified deployed source for bd-cardzerver.fly.dev and all observed current consumers.",
-        "Legacy tests exposed two contract differences against Card Engine: nonexistent bulk delete returns 422 rather than 200, and an invalid daily-score date returns 404 rather than 400."
       ]
     },
     {
@@ -1450,6 +1378,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Production config omits deferred Clubsync, uses public Nagzerver and Card Engine health endpoints, and identifies Card Engine with the canonical card-engine-backend id.",
         "Live /api/status showed successful HTTP 200 probes for Nagzerver and Cardzerver after deployment; remaining warning colors are database metric thresholds, not endpoint failures."
       ]
@@ -1599,6 +1528,7 @@
         "health": "https://bd-pfolio.fly.dev/health"
       },
       "notes": [
+        "2026-09-08: local dev uvicorn on 127.0.0.1:9840 retired by owner decision; only the Fly deployment counts.",
         "The backend is live but is not cloned on this machine.",
         "Local dev on port 9840 (range 9840-9849).",
         "Multi-user shipped: Sign in with Apple + per-user sessions. The legacy shared PF_API_TOKEN still authenticates and resolves to PF_DEFAULT_USER_ID, so pre-multi-user installs keep working; POST /auth/apple/claim upgrades one in place with no data loss and no Plaid re-linking.",
@@ -1630,6 +1560,7 @@
         "github": "https://github.com/billdonner/oenora"
       },
       "notes": [
+        "2026-09-08: the two stray local Server/server.py instances (ports 9856 and 9899, the latter squatting on lifetime_monitor's range) were stopped by owner decision.",
         "Age rating remains unset because alcohol references are core subject matter.",
         "Initial commit f634ccf (2026-08-08) contains the offline capture spike, shared domain package, tests, decision records, and product specification.",
         "Working spike supports camera or photo-library import, on-device Vision OCR, restart-safe local persistence, candidate review/correction, and confirmed Wine, Vintage, and Bottle records.",
@@ -1818,10 +1749,10 @@
       "kind": "tool",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-08-22",
+      "lastModified": "2026-09-08",
       "repo": "~/app-feedback",
       "bundleId": null,
-      "release": "Local dashboard live at 127.0.0.1:4317; silent launchd collection runs at login and every two hours, with content-addressed encrypted and verified iCloud Drive snapshots",
+      "release": "Moved to this Mac 2026-09-08: repo cloned to ~/app-feedback, com.billdonner.app-feedback-server and -collect loaded in user launchd, dashboard answering at 127.0.0.1:4317, first collection run from this Mac. Owner wants this used as the primary feedback inbox.",
       "description": "Account-wide local triage inbox for TestFlight comments, screenshots, crash feedback, and App Store reviews across active apps.",
       "dependencies": [],
       "links": {
@@ -1829,6 +1760,7 @@
         "github": "https://github.com/billdonner/app-feedback"
       },
       "notes": [
+        "2026-09-08: Brought to front by owner decision. Previously ran only on OldM1. This Mac has no backup key in Keychain (com.billdonner.app-feedback.backup lives on OldM1), so encrypted iCloud snapshots and restore of OldM1 triage state are pending until that key is copied here; newest OldM1 snapshot is 2026-09-04T02:09Z. ~/.local/bin/node symlinked to Homebrew node for the server plist.",
         "The initial 2026-08-14 collection scanned 21 non-retired ASC apps and stored 41 deduplicated items: 36 screenshot submissions and 5 crash reports, with 36 screenshot files preserved and zero API errors.",
         "A launchd-triggered second pass queued zero items, recognized all 41 existing source ids, reported zero errors, and exited 0.",
         "Triage supports New, Triaged, and Done states; high, normal, and low priority; app/type/status/priority/text filters; local notes; preserved screenshots; and copy-ready issue text.",
@@ -1926,87 +1858,6 @@
       ]
     },
     {
-      "id": "adspill-sim",
-      "name": "adspill",
-      "kind": "package",
-      "cluster": "adspill",
-      "status": "lab",
-      "lastModified": "2026-07-29",
-      "repo": "github:billdonner/adspill",
-      "bundleId": null,
-      "release": null,
-      "description": "Two-person research collaboration (Bill + Jim, @jrforster) exploring how to sell excess advertising capacity. Split into Project 1 — an ad-exchange/auction modeling sandbox (Python discrete-event sim: a pure sealed/open x first/second-price clearing core, a deterministic scale harness, and a real-time browser monitor UI) — and Project 2 — a self-serve create-and-sell layer for long-tail local video ads (Jim's track, framing stage).",
-      "dependencies": [],
-      "links": {
-        "website": null,
-        "appStore": null,
-        "github": "https://github.com/billdonner/adspill"
-      },
-      "notes": [
-        "Symmetric full-admin access for @billdonner and @jrforster; coordination via git + GitHub issues/PRs, human nudges via send-jim / send-bill CLIs (Gmail/iCloud SMTP, no drafts).",
-        "Project 1 (Bill): /sim - pure clear() auction core (8 unit tests green), scale harness (~20k avails in ~12s), monitor.html live board. stdlib-only, no store/network; storage + wire protocols deliberately deferred. Bill now treats this as a personal sandbox on v0 defaults.",
-        "Project 2 (Jim): self-serve create-and-sell for long-tail local video ads; framing only, no build yet.",
-        "FloSports/NWL diligence (docs/flosports-diligence.md) reframed the effort: empty ad slots are a demand + rights + sales-cost problem, not a plumbing/exchange one (Flo is already fully programmatic). Pivotal gating question, answerable only by a team: do Northwoods League teams retain in-stream ad rights after Flo's exclusive global deal?",
-        "Bill has stepped back to an observer role on Project 2, tracking progress for his own edification."
-      ]
-    },
-    {
-      "id": "mastpex-ios-asc-app",
-      "name": "MastPex IOS",
-      "kind": "app",
-      "cluster": "Infrastructure",
-      "status": "retired",
-      "lastModified": "2026-09-05",
-      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
-      "bundleId": "com.billdonner.mastpex",
-      "productLine": "billdonner-free",
-      "pricingPolicy": "always-free",
-      "release": "ASC record no longer present in the account (live app list 2026-09-05); recorded repo path ~/Documents/Codex/2026-08-02/masterindex-explorer does not exist on this machine",
-      "distribution": "internal-testflight-planned",
-      "description": "Native iPhone and iPad explorer for a compatible MasterIndex: browse a read-only software portfolio map with search, relationships, drill-down, links, and explicit gaps.",
-      "dependencies": [
-        "MasterIndex"
-      ],
-      "links": {
-        "website": null,
-        "appStore": null
-      },
-      "notes": [
-        "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact iOS ASC bundle ID com.billdonner.mastpex.",
-        "No verified public website or App Store product page was found in the current link pass.",
-        "Maintain TestFlight continuity and functional capture evidence; do not build a public marketing gallery.",
-        "2026-09-05: neither MastPex record appears in the live ASC app list and the source path is absent locally; treated as retired unless the owner restores either."
-      ]
-    },
-    {
-      "id": "mastpex-macos-asc-app",
-      "name": "MastPex Mac",
-      "kind": "app",
-      "cluster": "Infrastructure",
-      "status": "retired",
-      "lastModified": "2026-09-05",
-      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
-      "bundleId": "com.billdonner.mastpex.mac",
-      "productLine": "billdonner-free",
-      "pricingPolicy": "always-free",
-      "release": "ASC record no longer present in the account (live app list 2026-09-05); recorded repo path ~/Documents/Codex/2026-08-02/masterindex-explorer does not exist on this machine",
-      "distribution": "internal-testflight-planned",
-      "description": "Native Mac explorer for a compatible MasterIndex: a read-only desktop map of apps, repositories, services, links, relationships, and known gaps.",
-      "dependencies": [
-        "MasterIndex"
-      ],
-      "links": {
-        "website": null,
-        "appStore": null
-      },
-      "notes": [
-        "Source match verified 2026-08-07: MastPex.xcodeproj in this project declares the exact macOS ASC bundle ID com.billdonner.mastpex.mac.",
-        "No verified public website or App Store product page was found in the current link pass.",
-        "Maintain TestFlight continuity and functional capture evidence; do not build a public marketing gallery.",
-        "2026-09-05: neither MastPex record appears in the live ASC app list and the source path is absent locally; treated as retired unless the owner restores either."
-      ]
-    },
-    {
       "id": "oenora-recognition-service",
       "name": "Oenora Recognition API",
       "kind": "service",
@@ -2036,8 +1887,8 @@
       "name": "oenora-merchant",
       "kind": "tool",
       "cluster": "Oenora",
-      "status": "active",
-      "lastModified": "2026-08-24",
+      "status": "stopped",
+      "lastModified": "2026-09-08",
       "repo": "~/oenora-merchant",
       "description": "Perpetual simulated wine merchant: deterministic Swift market engine that builds and vends a synthetic inventory as a real Oenora CellarSnapshot. Replaces oenora's generate-synthetic-cellar.py; serves as living test harness and demo-cellar factory.",
       "dependencies": [
@@ -2047,13 +1898,14 @@
         "github": "https://github.com/billdonner/oenora-merchant"
       },
       "notes": [
+        "2026-09-08: Owner paused the perpetual loop. Restart later with scripts/fly-deploy.sh (recreates the hourly scheduled machine).",
         "Perpetual loop runs on Fly: app bd-oenora-merchant, hourly scheduled machine 'merchant-tick' (ord) trades one sim day per run and pushes shop/ via a repo deploy key; judgement via Claude API (claude-opus-5) every 7th sim day. Deploy engine changes with scripts/fly-deploy.sh.",
         "OenoraCore made Linux-portable for this (CloudKit canImport-gated, swift-crypto on Linux). Local launchd loop removed 2026-08-20; merchant-day.sh kept as offline fallback only.",
         "CLI installed at ~/bin/oenora-merchant (init/tick/status/catalog); shop/ state committed to the repo as the audit trail.",
         "2026-08-22: wired to real Offering/IndicationOfInterest records (matching oenora's ADR-009) instead of an internal-only pricebook — every racked bottle gets a listing at intake, selling records a buyer IndicationOfInterest and withdraws it, the published catalog reads Offering records directly. Backfilled the live shop's pre-existing ~130 bottles. Fly image bumped to swift:6.1 (swift-asn1 needs tools 6.1).",
         "2026-08-24: confirmed live and trading autonomously - 31 hourly runs since the Offering wiring shipped (sim day 89 -> 120), cash grew from $96.5k to $105.3k, no failed runs."
       ],
-      "release": "Fly app bd-oenora-merchant, scheduled machine 'merchant-tick' (ord), fires hourly, one sim day per run. Verified healthy 2026-08-24: sim day 120, cash $105,314.51, cloud judgement (Claude API, claude-opus-5) firing every 7th sim day with sound reasoning (e.g. holding markup after high-ticket wines cleared at full freight). No manual intervention since the Fly migration on 2026-08-20."
+      "release": "Stopped by owner decision 2026-09-08 (\"for now\"). Fly app bd-oenora-merchant retained; shop/ state is committed in the repo. The hourly merchant-tick machine 080e9306f63d48 could not be destroyed from the agent session; destroy it by hand or it will keep firing hourly."
     },
     {
       "id": "collective-engine",
@@ -2303,8 +2155,8 @@
         "PickleFamilia (legacy)",
         "LtWatcher transport (residual routes only)"
       ],
-      "note": "Mixed shared production backend. Fly release v100 source is preserved at private branch recovery/deployed-2026-06-30 because its PickledBalls and PickleFamilia implementation was absent from Git main; do not retire it with Nagz.",
-      "status": "live"
+      "note": "Suspended with zero machines since 2026-08-18; kept for reference/occasional testing. Consumers are to be decoupled (owner decision 2026-09-08). Mixed shared production backend. Fly release v100 source is preserved at private branch recovery/deployed-2026-06-30 because its PickledBalls and PickleFamilia implementation was absent from Git main; do not retire it with Nagz.",
+      "status": "reference-only"
     },
     {
       "name": "bd-clubsync.fly.dev",
@@ -2477,13 +2329,6 @@
       "role": "Live Python/FastAPI source for bd-cardzerver.fly.dev"
     },
     {
-      "repo": "~/card-server",
-      "branch": "main",
-      "last2026Commit": "2026-08-14",
-      "kind": "archived backend",
-      "role": "Retired Swift/Hummingbird alternate; Card Engine is the live successor"
-    },
-    {
       "repo": "~/card-studio",
       "branch": "main",
       "last2026Commit": "2026-08-01",
@@ -2524,13 +2369,6 @@
       "last2026Commit": "2026-08-09",
       "kind": "backend/service",
       "role": "Live transcript and M3 trend-analysis service with budget-gated LLM enrichment"
-    },
-    {
-      "repo": "~/grubber-ios",
-      "branch": "main",
-      "last2026Commit": "2026-07-31",
-      "kind": "obsolete app",
-      "role": "Obsolete prototype client retained as history; superseded by SentiPods"
     },
     {
       "repo": "~/kinflash",
@@ -2594,13 +2432,6 @@
       "last2026Commit": "2026-03-15",
       "kind": "docs hub",
       "role": "OBO ecosystem hub"
-    },
-    {
-      "repo": "~/obo-ios",
-      "branch": "main",
-      "last2026Commit": "2026-08-01",
-      "kind": "app",
-      "role": "ASC-mapped Flasherz Kids app"
     },
     {
       "repo": "~/pickledballs",
@@ -2750,13 +2581,6 @@
       "role": "Local-model experiment explicitly on hold; not cloned locally"
     },
     {
-      "repo": "~/Documents/Codex/2026-08-02/masterindex-explorer",
-      "branch": "main",
-      "last2026Commit": "2026-08-05",
-      "kind": "multiplatform app",
-      "role": "ASC-mapped MastPex iOS + macOS read-only explorer for a compatible MasterIndex (path missing locally and ASC records gone as of 2026-09-05)"
-    },
-    {
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "branch": "main",
       "last2026Commit": "2026-08-05",
@@ -2776,13 +2600,6 @@
       "last2026Commit": "2026-08-14",
       "kind": "app experiment",
       "role": "Active local-first household-communications successor prototype for iPhone, wall-mounted iPad, and Mac Catalyst"
-    },
-    {
-      "repo": "github:billdonner/adspill",
-      "branch": "main",
-      "last2026Commit": "2026-07-29",
-      "kind": "package",
-      "role": "Bill and Jim advertising-capacity research sandbox; not cloned on this machine"
     },
     {
       "repo": "~/collective-engine",
@@ -2984,6 +2801,21 @@
       "kind": "fly-app-destroyed",
       "observedAt": "2026-09-08",
       "summary": "Fly apps bd-arca (source ~/sharon, one 1GB volume arca_data, stopped since 2026-06-08) and bd-podcast-brands (stopped since 2026-06-11) were destroyed on 2026-09-08 by owner decision. Neither had an inventory entity. ~/sharon/fly.toml still names bd-arca; redeploying would require a new app."
+    },
+    {
+      "kind": "owner-cleanup",
+      "observedAt": "2026-09-08",
+      "summary": "Removed entities obo-ios-app, mastpex-ios-asc-app, mastpex-macos-asc-app, card-server-backend, grubber-ios-app and adspill-sim from the inventory by owner decision. ~/obo-ios is still on disk (not deleted); card-server and grubber-ios were already absent locally; adspill stays on GitHub."
+    },
+    {
+      "kind": "nagzerver-decoupling",
+      "observedAt": "2026-09-08",
+      "summary": "nagzerver is reference-only. PickledBalls, workin On, PickleFamilia, Nagz and the api.famster.app alias still code against it; each needs its nagzerver dependency removed. No consumer has been changed yet."
+    },
+    {
+      "kind": "fly-app-unindexed",
+      "observedAt": "2026-09-08",
+      "summary": "Fly app bd-kinflash-ai (suspended, deployed 2026-09-02) has no inventory entity."
     }
   ],
   "taskRegistry": {

@@ -1,12 +1,52 @@
 {
-  "generatedAt": "2026-09-07T13:25:07-05:00",
+  "generatedAt": "2026-09-08T10:05:03-05:00",
   "namespace": "masterindex",
   "items": [
+    {
+      "id": "recent-burfords-app",
+      "title": "100 Burfords changed",
+      "statusKey": "masterindex.recent.burfords-app",
+      "url": "workinon://post?key=masterindex.recent.burfords-app&text=100+Burfords+changed+-+Latest+commit%3A+CLAUDE.md%3A+CloudKit+catalog+lane+and+one-time+setup.+Last+modified+2026-09-08.",
+      "entityId": "burfords-app",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-app-feedback-inbox",
+      "title": "App Feedback changed",
+      "statusKey": "masterindex.recent.app-feedback-inbox",
+      "url": "workinon://post?key=masterindex.recent.app-feedback-inbox&text=App+Feedback+changed+-+Latest+commit%3A+Prune+from+a+local+ledger+instead+of+listing+iCloud+Drive.+Last+modified+2026-09-08.",
+      "entityId": "app-feedback-inbox",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-nagzerver-backend",
+      "title": "nagzerver changed",
+      "statusKey": "masterindex.recent.nagzerver-backend",
+      "url": "workinon://post?key=masterindex.recent.nagzerver-backend&text=nagzerver+changed+-+Latest+commit%3A+Add+pickleball+sign-ups+module+%28pickle_%2A+tables%2C+%2Fapi%2Fv1%2Fpickle%2C+%2Fp%2F%7Bslug%7D%29.+Last+modified+2026-09-08.",
+      "entityId": "nagzerver-backend",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
+    {
+      "id": "recent-oenora-merchant",
+      "title": "oenora-merchant changed",
+      "statusKey": "masterindex.recent.oenora-merchant",
+      "url": "workinon://post?key=masterindex.recent.oenora-merchant&text=oenora-merchant+changed+-+Latest+commit%3A+Mirror+CellarStore%27s+richer+interestReceived+wording+%28buyer%2C+wine%2C+quoted+message%29.+Last+modified+2026-09-08.",
+      "entityId": "oenora-merchant",
+      "taskId": null,
+      "type": "recent-change",
+      "priority": "medium"
+    },
     {
       "id": "recent-workinon-app",
       "title": "workin On changed",
       "statusKey": "masterindex.recent.workinon-app",
-      "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+asc-testflight%3A+tolerate+builds+already+declared+exempt+via+Info.plist.+Last+modified+2026-09-07.",
+      "url": "workinon://post?key=masterindex.recent.workinon-app&text=workin+On+changed+-+Latest+commit%3A+Bundle+MasterIndex+board+feed+generated+2026-09-07+%2868+cards%29.+Last+modified+2026-09-07.",
       "entityId": "workinon-app",
       "taskId": null,
       "type": "recent-change",
@@ -16,18 +56,8 @@
       "id": "recent-collective-console",
       "title": "Collective Console changed",
       "statusKey": "masterindex.recent.collective-console",
-      "url": "workinon://post?key=masterindex.recent.collective-console&text=Collective+Console+changed+-+Latest+commit%3A+Each+preset%27s+simulated+phones+get+their+own+number+block%3B+switching+clubs+clears+the+engine%27s+outbound%3B+build+11.+Last+modified+2026-09-06.",
+      "url": "workinon://post?key=masterindex.recent.collective-console&text=Collective+Console+changed+-+Latest+commit%3A+Poker+preset%3A+third+Wednesday%2C+nine+invitees%2C+minimum+five%3B+build+12.+Last+modified+2026-09-06.",
       "entityId": "collective-console",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-burfords-app",
-      "title": "100 Burfords changed",
-      "statusKey": "masterindex.recent.burfords-app",
-      "url": "workinon://post?key=masterindex.recent.burfords-app&text=100+Burfords+changed+-+Latest+commit%3A+AppStore%3A+iPhone-landscape+gallery%2C+7+slides.+Last+modified+2026-09-05.",
-      "entityId": "burfords-app",
       "taskId": null,
       "type": "recent-change",
       "priority": "medium"
@@ -36,21 +66,11 @@
       "id": "recent-amenbeats-app",
       "title": "AmenBeats changed",
       "statusKey": "masterindex.recent.amenbeats-app",
-      "url": "workinon://post?key=masterindex.recent.amenbeats-app&text=AmenBeats+changed+-+Latest+commit%3A+CLAUDE.md%3A+the+build-number+fix+worked%2C+and+why.+Last+modified+2026-09-05.",
+      "url": "workinon://post?key=masterindex.recent.amenbeats-app&text=AmenBeats+changed+-+Latest+commit%3A+Add+scripts%2Fasc_state.py.+Last+modified+2026-09-05.",
       "entityId": "amenbeats-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-obo-ios-app",
-      "title": "Flasherz Kids changed",
-      "statusKey": "masterindex.recent.obo-ios-app",
-      "url": "workinon://post?key=masterindex.recent.obo-ios-app&text=Flasherz+Kids+changed+-+Latest+commit%3A+Add+DeckCache+with+disk-backed+freshness+checking+for+flashcard+decks.+Last+modified+2026-09-05.",
-      "entityId": "obo-ios-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-grubber-app",
@@ -60,7 +80,7 @@
       "entityId": "grubber-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-hoabooklet-app",
@@ -70,7 +90,7 @@
       "entityId": "hoabooklet-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-kinflash-app",
@@ -80,7 +100,7 @@
       "entityId": "kinflash-app",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-kinflash-studio",
@@ -90,27 +110,7 @@
       "entityId": "kinflash-studio",
       "taskId": null,
       "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-mastpex-ios-asc-app",
-      "title": "MastPex IOS changed",
-      "statusKey": "masterindex.recent.mastpex-ios-asc-app",
-      "url": "workinon://post?key=masterindex.recent.mastpex-ios-asc-app&text=MastPex+IOS+changed+-+Last+modified+2026-09-05.",
-      "entityId": "mastpex-ios-asc-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
-    },
-    {
-      "id": "recent-mastpex-macos-asc-app",
-      "title": "MastPex Mac changed",
-      "statusKey": "masterindex.recent.mastpex-macos-asc-app",
-      "url": "workinon://post?key=masterindex.recent.mastpex-macos-asc-app&text=MastPex+Mac+changed+-+Last+modified+2026-09-05.",
-      "entityId": "mastpex-macos-asc-app",
-      "taskId": null,
-      "type": "recent-change",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "recent-collective-comms",
@@ -126,7 +126,7 @@
       "id": "recent-collective-engine",
       "title": "Collective Engine changed",
       "statusKey": "masterindex.recent.collective-engine",
-      "url": "workinon://post?key=masterindex.recent.collective-engine&text=Collective+Engine+changed+-+Latest+commit%3A+nudges+command%3A+the+8%3A55+booker+nudges+from+the+database.+Last+modified+2026-09-02.",
+      "url": "workinon://post?key=masterindex.recent.collective-engine&text=Collective+Engine+changed+-+Latest+commit%3A+rsvp+command%3A+in%2Fout+answers+written+to+a+game+by+name%2C+with+the+count+against+the+minimum.+Last+modified+2026-09-02.",
       "entityId": "collective-engine",
       "taskId": null,
       "type": "recent-change",
@@ -209,26 +209,6 @@
       "url": "workinon://post?key=masterindex.due.kinflash-release-readiness&text=KinFlash+release+readiness+due+-+Task+is+due+in+the+daily+cycle.",
       "entityId": "kinflash-app",
       "taskId": "kinflash-release-readiness",
-      "type": "due-task",
-      "priority": "medium"
-    },
-    {
-      "id": "due-mastpex-mac-testflight-continuity",
-      "title": "MastPex Mac TestFlight continuity due",
-      "statusKey": "masterindex.due.mastpex-mac-testflight-continuity",
-      "url": "workinon://post?key=masterindex.due.mastpex-mac-testflight-continuity&text=MastPex+Mac+TestFlight+continuity+due+-+Task+cadence%3A+FREQ%3DMONTHLY%3BINTERVAL%3D1.",
-      "entityId": "mastpex-macos-asc-app",
-      "taskId": "mastpex-mac-testflight-continuity",
-      "type": "due-task",
-      "priority": "medium"
-    },
-    {
-      "id": "due-mastpex-ios-testflight-continuity",
-      "title": "MastPex iOS TestFlight continuity due",
-      "statusKey": "masterindex.due.mastpex-ios-testflight-continuity",
-      "url": "workinon://post?key=masterindex.due.mastpex-ios-testflight-continuity&text=MastPex+iOS+TestFlight+continuity+due+-+Task+cadence%3A+FREQ%3DMONTHLY%3BINTERVAL%3D1.",
-      "entityId": "mastpex-ios-asc-app",
-      "taskId": "mastpex-ios-testflight-continuity",
       "type": "due-task",
       "priority": "medium"
     },
@@ -373,16 +353,6 @@
       "priority": "low"
     },
     {
-      "id": "attention-obo-ios-app-missing-appstore-link",
-      "title": "Flasherz Kids missing public App Store page",
-      "statusKey": "masterindex.attention.obo-ios-app.missing-appstore",
-      "url": "workinon://post?key=masterindex.attention.obo-ios-app.missing-appstore&text=Flasherz+Kids+missing+public+App+Store+page+-+A+website+is+recorded%2C+but+no+verified+public+App+Store+page+is+in+the+index+yet.",
-      "entityId": "obo-ios-app",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
       "id": "attention-grubber-app-missing-appstore-link",
       "title": "Grubber app missing public App Store page",
       "statusKey": "masterindex.attention.grubber-app.missing-appstore",
@@ -428,26 +398,6 @@
       "statusKey": "masterindex.attention.clubwatch-app.no-public-links",
       "url": "workinon://post?key=masterindex.attention.clubwatch-app.no-public-links&text=LtWatcher+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
       "entityId": "clubwatch-app",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
-      "id": "attention-mastpex-ios-asc-app-no-public-links",
-      "title": "MastPex IOS missing public links",
-      "statusKey": "masterindex.attention.mastpex-ios-asc-app.no-public-links",
-      "url": "workinon://post?key=masterindex.attention.mastpex-ios-asc-app.no-public-links&text=MastPex+IOS+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
-      "entityId": "mastpex-ios-asc-app",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
-      "id": "attention-mastpex-macos-asc-app-no-public-links",
-      "title": "MastPex Mac missing public links",
-      "statusKey": "masterindex.attention.mastpex-macos-asc-app.no-public-links",
-      "url": "workinon://post?key=masterindex.attention.mastpex-macos-asc-app.no-public-links&text=MastPex+Mac+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
-      "entityId": "mastpex-macos-asc-app",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -563,41 +513,11 @@
       "priority": "low"
     },
     {
-      "id": "attention-adspill-sim-no-public-links",
-      "title": "adspill missing public links",
-      "statusKey": "masterindex.attention.adspill-sim.no-public-links",
-      "url": "workinon://post?key=masterindex.attention.adspill-sim.no-public-links&text=adspill+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
-      "entityId": "adspill-sim",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
-      "id": "attention-card-server-backend-no-public-links",
-      "title": "card-server missing public links",
-      "statusKey": "masterindex.attention.card-server-backend.no-public-links",
-      "url": "workinon://post?key=masterindex.attention.card-server-backend.no-public-links&text=card-server+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
-      "entityId": "card-server-backend",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
       "id": "attention-clubsync-backend-no-public-links",
       "title": "clubsync missing public links",
       "statusKey": "masterindex.attention.clubsync-backend.no-public-links",
       "url": "workinon://post?key=masterindex.attention.clubsync-backend.no-public-links&text=clubsync+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
       "entityId": "clubsync-backend",
-      "taskId": null,
-      "type": "attention",
-      "priority": "low"
-    },
-    {
-      "id": "attention-grubber-ios-app-no-public-links",
-      "title": "grubber-ios missing public links",
-      "statusKey": "masterindex.attention.grubber-ios-app.no-public-links",
-      "url": "workinon://post?key=masterindex.attention.grubber-ios-app.no-public-links&text=grubber-ios+missing+public+links+-+No+verified+website+or+public+App+Store+page+is+recorded+yet.",
-      "entityId": "grubber-ios-app",
       "taskId": null,
       "type": "attention",
       "priority": "low"
@@ -656,7 +576,7 @@
       "id": "summary-public-link-gaps",
       "title": "Public link gaps",
       "statusKey": "masterindex.summary.public-link-gaps",
-      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+36+entries+still+need+verified+public+links+or+App+Store+pages.",
+      "url": "workinon://post?key=masterindex.summary.public-link-gaps&text=Public+link+gaps+-+30+entries+still+need+verified+public+links+or+App+Store+pages.",
       "entityId": null,
       "taskId": null,
       "type": "summary",
@@ -676,7 +596,7 @@
       "id": "summary-due-tasks",
       "title": "Tasks due soon",
       "statusKey": "masterindex.summary.due-tasks",
-      "url": "workinon://post?key=masterindex.summary.due-tasks&text=Tasks+due+soon+-+13+recurring+entry+tasks+are+currently+in+the+operational+queue.",
+      "url": "workinon://post?key=masterindex.summary.due-tasks&text=Tasks+due+soon+-+11+recurring+entry+tasks+are+currently+in+the+operational+queue.",
       "entityId": null,
       "taskId": null,
       "type": "summary",

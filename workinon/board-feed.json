@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-07T13:25:07-05:00",
+  "generatedAt": "2026-09-08T10:05:03-05:00",
   "sourceFiles": {
     "inventory": "current/index.json",
     "tasks": "tasks/index.json"
@@ -11,14 +11,82 @@
     "Recently Changed",
     "Summaries"
   ],
-  "itemCount": 68,
+  "itemCount": 60,
   "items": [
+    {
+      "id": "recent-burfords-app",
+      "type": "recent-change",
+      "entityId": "burfords-app",
+      "title": "100 Burfords changed",
+      "body": "Latest commit: CLAUDE.md: CloudKit catalog lane and one-time setup. Last modified 2026-09-08.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-08",
+      "tags": [
+        "recent",
+        "app",
+        "oenora"
+      ],
+      "deepLink": "site/index.html#burfords-app",
+      "statusKey": "masterindex.recent.burfords-app"
+    },
+    {
+      "id": "recent-app-feedback-inbox",
+      "type": "recent-change",
+      "entityId": "app-feedback-inbox",
+      "title": "App Feedback changed",
+      "body": "Latest commit: Prune from a local ledger instead of listing iCloud Drive. Last modified 2026-09-08.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-08",
+      "tags": [
+        "recent",
+        "tool",
+        "standalone"
+      ],
+      "deepLink": "site/index.html#app-feedback-inbox",
+      "statusKey": "masterindex.recent.app-feedback-inbox"
+    },
+    {
+      "id": "recent-nagzerver-backend",
+      "type": "recent-change",
+      "entityId": "nagzerver-backend",
+      "title": "nagzerver changed",
+      "body": "Latest commit: Add pickleball sign-ups module (pickle_* tables, /api/v1/pickle, /p/{slug}). Last modified 2026-09-08.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-08",
+      "tags": [
+        "recent",
+        "backend",
+        "infrastructure"
+      ],
+      "deepLink": "site/index.html#nagzerver-backend",
+      "statusKey": "masterindex.recent.nagzerver-backend"
+    },
+    {
+      "id": "recent-oenora-merchant",
+      "type": "recent-change",
+      "entityId": "oenora-merchant",
+      "title": "oenora-merchant changed",
+      "body": "Latest commit: Mirror CellarStore's richer interestReceived wording (buyer, wine, quoted message). Last modified 2026-09-08.",
+      "priority": "medium",
+      "lane": "Recent Activity",
+      "sortDate": "2026-09-08",
+      "tags": [
+        "recent",
+        "tool",
+        "oenora"
+      ],
+      "deepLink": "site/index.html#oenora-merchant",
+      "statusKey": "masterindex.recent.oenora-merchant"
+    },
     {
       "id": "recent-workinon-app",
       "type": "recent-change",
       "entityId": "workinon-app",
       "title": "workin On changed",
-      "body": "Latest commit: asc-testflight: tolerate builds already declared exempt via Info.plist. Last modified 2026-09-07.",
+      "body": "Latest commit: Bundle MasterIndex board feed generated 2026-09-07 (68 cards). Last modified 2026-09-07.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-09-07",
@@ -35,7 +103,7 @@
       "type": "recent-change",
       "entityId": "collective-console",
       "title": "Collective Console changed",
-      "body": "Latest commit: Each preset's simulated phones get their own number block; switching clubs clears the engine's outbound; build 11. Last modified 2026-09-06.",
+      "body": "Latest commit: Poker preset: third Wednesday, nine invitees, minimum five; build 12. Last modified 2026-09-06.",
       "priority": "medium",
       "lane": "Recent Activity",
       "sortDate": "2026-09-06",
@@ -48,29 +116,12 @@
       "statusKey": "masterindex.recent.collective-console"
     },
     {
-      "id": "recent-burfords-app",
-      "type": "recent-change",
-      "entityId": "burfords-app",
-      "title": "100 Burfords changed",
-      "body": "Latest commit: AppStore: iPhone-landscape gallery, 7 slides. Last modified 2026-09-05.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-09-05",
-      "tags": [
-        "recent",
-        "app",
-        "oenora"
-      ],
-      "deepLink": "site/index.html#burfords-app",
-      "statusKey": "masterindex.recent.burfords-app"
-    },
-    {
       "id": "recent-amenbeats-app",
       "type": "recent-change",
       "entityId": "amenbeats-app",
       "title": "AmenBeats changed",
-      "body": "Latest commit: CLAUDE.md: the build-number fix worked, and why. Last modified 2026-09-05.",
-      "priority": "medium",
+      "body": "Latest commit: Add scripts/asc_state.py. Last modified 2026-09-05.",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-05",
       "tags": [
@@ -82,29 +133,12 @@
       "statusKey": "masterindex.recent.amenbeats-app"
     },
     {
-      "id": "recent-obo-ios-app",
-      "type": "recent-change",
-      "entityId": "obo-ios-app",
-      "title": "Flasherz Kids changed",
-      "body": "Latest commit: Add DeckCache with disk-backed freshness checking for flashcard decks. Last modified 2026-09-05.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-09-05",
-      "tags": [
-        "recent",
-        "app",
-        "flasherz"
-      ],
-      "deepLink": "site/index.html#obo-ios-app",
-      "statusKey": "masterindex.recent.obo-ios-app"
-    },
-    {
       "id": "recent-grubber-app",
       "type": "recent-change",
       "entityId": "grubber-app",
       "title": "Grubber app changed",
       "body": "Latest commit: fix: codex-review findings \u2014 pending nav consumption, fetch race, token display, parser outcomes, catalog. Last modified 2026-09-05.",
-      "priority": "medium",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-05",
       "tags": [
@@ -121,7 +155,7 @@
       "entityId": "hoabooklet-app",
       "title": "HOABooklet changed",
       "body": "Latest commit: RELEASE.md: rename COMPLETE \u2014 new ASC record 6806080022 live, URLs set. Last modified 2026-09-05.",
-      "priority": "medium",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-05",
       "tags": [
@@ -138,7 +172,7 @@
       "entityId": "kinflash-app",
       "title": "KinFlash Family changed",
       "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-09-05.",
-      "priority": "medium",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-05",
       "tags": [
@@ -155,7 +189,7 @@
       "entityId": "kinflash-studio",
       "title": "KinFlash Studio changed",
       "body": "Latest commit: Allocate the IPs Fly does not. Last modified 2026-09-05.",
-      "priority": "medium",
+      "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-05",
       "tags": [
@@ -165,40 +199,6 @@
       ],
       "deepLink": "site/index.html#kinflash-studio",
       "statusKey": "masterindex.recent.kinflash-studio"
-    },
-    {
-      "id": "recent-mastpex-ios-asc-app",
-      "type": "recent-change",
-      "entityId": "mastpex-ios-asc-app",
-      "title": "MastPex IOS changed",
-      "body": "Last modified 2026-09-05.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-09-05",
-      "tags": [
-        "recent",
-        "app",
-        "infrastructure"
-      ],
-      "deepLink": "site/index.html#mastpex-ios-asc-app",
-      "statusKey": "masterindex.recent.mastpex-ios-asc-app"
-    },
-    {
-      "id": "recent-mastpex-macos-asc-app",
-      "type": "recent-change",
-      "entityId": "mastpex-macos-asc-app",
-      "title": "MastPex Mac changed",
-      "body": "Last modified 2026-09-05.",
-      "priority": "medium",
-      "lane": "Recent Activity",
-      "sortDate": "2026-09-05",
-      "tags": [
-        "recent",
-        "app",
-        "infrastructure"
-      ],
-      "deepLink": "site/index.html#mastpex-macos-asc-app",
-      "statusKey": "masterindex.recent.mastpex-macos-asc-app"
     },
     {
       "id": "recent-collective-comms",
@@ -222,7 +222,7 @@
       "type": "recent-change",
       "entityId": "collective-engine",
       "title": "Collective Engine changed",
-      "body": "Latest commit: nudges command: the 8:55 booker nudges from the database. Last modified 2026-09-02.",
+      "body": "Latest commit: rsvp command: in/out answers written to a game by name, with the count against the minimum. Last modified 2026-09-02.",
       "priority": "low",
       "lane": "Recent Activity",
       "sortDate": "2026-09-02",
@@ -369,40 +369,6 @@
       ],
       "deepLink": "site/index.html#kinflash-app",
       "statusKey": "masterindex.due.kinflash-release-readiness"
-    },
-    {
-      "id": "due-mastpex-mac-testflight-continuity",
-      "type": "due-task",
-      "entityId": "mastpex-macos-asc-app",
-      "taskId": "mastpex-mac-testflight-continuity",
-      "title": "MastPex Mac TestFlight continuity due",
-      "body": "Task cadence: FREQ=MONTHLY;INTERVAL=1.",
-      "priority": "medium",
-      "lane": "Due Soon",
-      "tags": [
-        "task",
-        "app",
-        "infrastructure"
-      ],
-      "deepLink": "site/index.html#mastpex-macos-asc-app",
-      "statusKey": "masterindex.due.mastpex-mac-testflight-continuity"
-    },
-    {
-      "id": "due-mastpex-ios-testflight-continuity",
-      "type": "due-task",
-      "entityId": "mastpex-ios-asc-app",
-      "taskId": "mastpex-ios-testflight-continuity",
-      "title": "MastPex iOS TestFlight continuity due",
-      "body": "Task cadence: FREQ=MONTHLY;INTERVAL=1.",
-      "priority": "medium",
-      "lane": "Due Soon",
-      "tags": [
-        "task",
-        "app",
-        "infrastructure"
-      ],
-      "deepLink": "site/index.html#mastpex-ios-asc-app",
-      "statusKey": "masterindex.due.mastpex-ios-testflight-continuity"
     },
     {
       "id": "due-pickledballs-link-and-release-check",
@@ -634,22 +600,6 @@
       "statusKey": "masterindex.attention.famster-app.missing-appstore"
     },
     {
-      "id": "attention-obo-ios-app-missing-appstore-link",
-      "type": "attention",
-      "entityId": "obo-ios-app",
-      "title": "Flasherz Kids missing public App Store page",
-      "body": "A website is recorded, but no verified public App Store page is in the index yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "app-store",
-        "flasherz"
-      ],
-      "deepLink": "site/index.html#obo-ios-app",
-      "statusKey": "masterindex.attention.obo-ios-app.missing-appstore"
-    },
-    {
       "id": "attention-grubber-app-missing-appstore-link",
       "type": "attention",
       "entityId": "grubber-app",
@@ -728,38 +678,6 @@
       ],
       "deepLink": "site/index.html#clubwatch-app",
       "statusKey": "masterindex.attention.clubwatch-app.no-public-links"
-    },
-    {
-      "id": "attention-mastpex-ios-asc-app-no-public-links",
-      "type": "attention",
-      "entityId": "mastpex-ios-asc-app",
-      "title": "MastPex IOS missing public links",
-      "body": "No verified website or public App Store page is recorded yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "public",
-        "infrastructure"
-      ],
-      "deepLink": "site/index.html#mastpex-ios-asc-app",
-      "statusKey": "masterindex.attention.mastpex-ios-asc-app.no-public-links"
-    },
-    {
-      "id": "attention-mastpex-macos-asc-app-no-public-links",
-      "type": "attention",
-      "entityId": "mastpex-macos-asc-app",
-      "title": "MastPex Mac missing public links",
-      "body": "No verified website or public App Store page is recorded yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "public",
-        "infrastructure"
-      ],
-      "deepLink": "site/index.html#mastpex-macos-asc-app",
-      "statusKey": "masterindex.attention.mastpex-macos-asc-app.no-public-links"
     },
     {
       "id": "attention-medcommons-dicom-viewer-no-public-links",
@@ -938,38 +856,6 @@
       "statusKey": "masterindex.attention.zerver-monitor-asc-app.missing-appstore"
     },
     {
-      "id": "attention-adspill-sim-no-public-links",
-      "type": "attention",
-      "entityId": "adspill-sim",
-      "title": "adspill missing public links",
-      "body": "No verified website or public App Store page is recorded yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "public",
-        "adspill"
-      ],
-      "deepLink": "site/index.html#adspill-sim",
-      "statusKey": "masterindex.attention.adspill-sim.no-public-links"
-    },
-    {
-      "id": "attention-card-server-backend-no-public-links",
-      "type": "attention",
-      "entityId": "card-server-backend",
-      "title": "card-server missing public links",
-      "body": "No verified website or public App Store page is recorded yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "public",
-        "qross"
-      ],
-      "deepLink": "site/index.html#card-server-backend",
-      "statusKey": "masterindex.attention.card-server-backend.no-public-links"
-    },
-    {
       "id": "attention-clubsync-backend-no-public-links",
       "type": "attention",
       "entityId": "clubsync-backend",
@@ -984,22 +870,6 @@
       ],
       "deepLink": "site/index.html#clubsync-backend",
       "statusKey": "masterindex.attention.clubsync-backend.no-public-links"
-    },
-    {
-      "id": "attention-grubber-ios-app-no-public-links",
-      "type": "attention",
-      "entityId": "grubber-ios-app",
-      "title": "grubber-ios missing public links",
-      "body": "No verified website or public App Store page is recorded yet.",
-      "priority": "low",
-      "lane": "Needs Attention",
-      "tags": [
-        "links",
-        "public",
-        "grubber"
-      ],
-      "deepLink": "site/index.html#grubber-ios-app",
-      "statusKey": "masterindex.attention.grubber-ios-app.no-public-links"
     },
     {
       "id": "attention-local-model-lab-no-public-links",
@@ -1082,7 +952,7 @@
       "id": "summary-public-link-gaps",
       "type": "summary",
       "title": "Public link gaps",
-      "body": "36 entries still need verified public links or App Store pages.",
+      "body": "30 entries still need verified public links or App Store pages.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [
@@ -1108,7 +978,7 @@
       "id": "summary-due-tasks",
       "type": "summary",
       "title": "Tasks due soon",
-      "body": "13 recurring entry tasks are currently in the operational queue.",
+      "body": "11 recurring entry tasks are currently in the operational queue.",
       "priority": "low",
       "lane": "Summaries",
       "tags": [

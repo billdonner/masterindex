@@ -1,6 +1,6 @@
 # workin On Feed
 
-Generated for MasterIndex on 2026-09-07T13:25:07-05:00.
+Generated for MasterIndex on 2026-09-08T10:05:03-05:00.
 
 ## Purpose
 
@@ -13,9 +13,9 @@ This folder contains the first working operational feed for the `workin On` app.
 
 ## Feed summary
 
-- Total cards: 68
-- Attention cards: 36
-- Due task cards: 13
+- Total cards: 60
+- Attention cards: 30
+- Due task cards: 11
 - Recent change cards: 15
 - Summary cards: 4
 

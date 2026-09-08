@@ -8,6 +8,14 @@ As of Wednesday, September 2, 2026.
 - Applied no handoff directives because `current/handoffs/index.json` has none.
 - Performed the requested retirements, operational fixes, website publications, and feedback-workflow replacement; observed facts and remaining product gaps are kept distinct below.
 
+## Owner decisions 2026-09-08
+
+- Nagzerver is reference-only: the Fly app has had no machines since 2026-08-18. It is kept for occasional testing, and every consumer (PickledBalls, workin On, PickleFamilia, Nagz, api.famster.app) is to have its nagzerver dependency removed.
+- App Feedback is now the primary feedback inbox and runs on this Mac (repo at `~/app-feedback`, both launchd jobs loaded, dashboard at 127.0.0.1:4317). The backup key still lives only in OldM1's Keychain.
+- Removed from the inventory: Flasherz Kids (`obo-ios`), both MastPex placeholders, Card Server, `grubber-ios`, and `adspill`.
+- oenora-merchant is paused; its Fly app stays but the hourly machine must be destroyed by hand.
+- Fly apps `bd-arca` and `bd-podcast-brands` were destroyed. The local pfolio uvicorn and the two stray Oenora dev servers were stopped.
+
 ## Executive Summary
 
 - ASC contains 21 app records as of 2026-09-05: 20 map in the primary ASC inventory and GigStand is the intentionally retained retired record. Since the 2026-08-14 scan, Flasherz Kids, both MastPex records, and the original HOABooklet/Mallinbook record (6785245339) were deleted; HOABooklet now lives on new record 6806080022 with no builds yet, and KinFlash Studio gained record 6806833310. SentiPods is now named Grubber Desk and KinFlash is KinFlash Family in ASC.
@@ -229,7 +237,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
-| Flasherz Kids | com.billdonner.obo | ~/obo-ios | Obsolete; ASC record deleted (404 on 2026-09-05) |
+| Flasherz Kids | com.billdonner.obo | ~/obo-ios | Removed from inventory 2026-09-08 (obsolete; ASC record deleted) |
 | PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | KinFlash Studio (Mac, authoring) | com.billdonner.kinflashstudio | ~/kinflash | Paid; ASC record 6806833310, macOS 1.0.1 builds 3 and 6 VALID via Xcode Cloud |
 | KinFlash Family (iOS, player) | com.billdonner.kinflash | ~/kinflash | Free, no IAP; keeps ASC record 6762008872, which needs renaming from "KinFlash" |
