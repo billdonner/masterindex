@@ -2979,6 +2979,11 @@
       "kind": "local-path-missing",
       "observedAt": "2026-09-05",
       "summary": "~/Documents/Codex/2026-08-02/masterindex-explorer (MastPex source) does not exist on this machine."
+    },
+    {
+      "kind": "fly-app-destroyed",
+      "observedAt": "2026-09-08",
+      "summary": "Fly apps bd-arca (source ~/sharon, one 1GB volume arca_data, stopped since 2026-06-08) and bd-podcast-brands (stopped since 2026-06-11) were destroyed on 2026-09-08 by owner decision. Neither had an inventory entity. ~/sharon/fly.toml still names bd-arca; redeploying would require a new app."
     }
   ],
   "taskRegistry": {

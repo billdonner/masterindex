@@ -255,7 +255,7 @@ Unmatched or intentionally retained:
 | bd-oenora-recognition.fly.dev | ~/oenora | live | Oenora |
 | bd-clubsync.fly.dev | ~/clubsync | deferred | PickledBalls v2 only |
 
-Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`, plus suspended `bd-arca` and `bd-podcast-brands`.
+Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`. Suspended `bd-arca` (source ~/sharon) and `bd-podcast-brands` were destroyed 2026-09-08 by owner decision.
 
 ### Nagzerver source recovery
 
