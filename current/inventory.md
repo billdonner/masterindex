@@ -13,7 +13,7 @@ As of Wednesday, September 2, 2026.
 - Nagzerver is reference-only: the Fly app has had no machines since 2026-08-18. It is kept for occasional testing, and every consumer (PickledBalls, workin On, PickleFamilia, Nagz, api.famster.app) is to have its nagzerver dependency removed.
 - App Feedback is now the primary feedback inbox and runs on this Mac (repo at `~/app-feedback`, both launchd jobs loaded, dashboard at 127.0.0.1:4317). The backup key still lives only in OldM1's Keychain.
 - Removed from the inventory: Flasherz Kids (`obo-ios`), both MastPex placeholders, Card Server, `grubber-ios`, and `adspill`.
-- oenora-merchant is paused; its Fly app stays but the hourly machine must be destroyed by hand.
+- oenora-merchant is paused; its Fly app stays with zero machines (hourly machine destroyed).
 - Fly apps `bd-arca` and `bd-podcast-brands` were destroyed. The local pfolio uvicorn and the two stray Oenora dev servers were stopped.
 
 ## Executive Summary
