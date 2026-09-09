@@ -495,20 +495,17 @@
     "repoEvidence": "ASC record confirmed by live API 2026-09-05",
     "localVersion": "ASC macOS 1.0.1 builds 3 (2026-08-30) and 6 (2026-09-01) VALID via Xcode Cloud",
     "ascVerified": "2026-09-05"
+   },
+   {
+    "appId": "6809919090",
+    "name": "MURDL 16",
+    "bundleId": "com.billdonner.murdl27",
+    "entity": "murdl-app"
    }
   ],
   "unmatched": [
    "GigStand"
-  ],
-  "6809919090": {
-   "name": "MURDL 16",
-   "bundleId": "com.billdonner.murdl27",
-   "platforms": [
-    "MAC_OS"
-   ],
-   "state": "WAITING_FOR_REVIEW",
-   "entity": "murdl-app"
-  }
+  ]
  },
  "clusters": [
   {
