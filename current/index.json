@@ -497,10 +497,15 @@
     "ascVerified": "2026-09-05"
    },
    {
-    "appId": "6809919090",
     "name": "MURDL 16",
     "bundleId": "com.billdonner.murdl27",
-    "entity": "murdl-app"
+    "appId": "6809919090",
+    "ascStates": [
+     "MAC_OS 2.1 WAITING_FOR_REVIEW"
+    ],
+    "repo": "~/Murdl27",
+    "repoEvidence": "GitHub repo billdonner/murdl27 created 2026-09-03 from ~/Murdl27",
+    "localVersion": "2.1 (12) local; App Store build is Xcode Cloud build 2"
    }
   ],
   "unmatched": [
