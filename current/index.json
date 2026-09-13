@@ -830,10 +830,10 @@
       "kind": "app",
       "cluster": "Qross",
       "status": "asc-mapped",
-      "lastModified": "2026-08-24",
+      "lastModified": "2026-09-13",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
-      "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 394 VALID on ASC 2026-08-23 (393 and 392 also VALID); store name DoubleQross; age rating 12+ declared 2026-08-19",
+      "release": "Local Release 407 installed/launched on Titanic without debugger (2026-09-13); ASC iOS 1.0 PREPARE_FOR_SUBMISSION selects 395, latest upload 396 VALID (verified 2026-09-12). Scoredux draft copy updated; matching binary/screenshots and privacy review required. Age rating 12+ unchanged.",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
         "card-engine",
@@ -842,7 +842,7 @@
       ],
       "links": {
         "website": "https://doubleqross.com/",
-        "portfolioPage": "https://billdonner.com/apps/qross/",
+        "portfolioPage": null,
         "testFlight": "https://testflight.apple.com/join/W6VjPWV6",
         "appStore": null
       },
@@ -850,16 +850,24 @@
         "name": "doubleqross.com",
         "registrar": "IONOS",
         "status": "live-webspace",
-        "observedAt": "2026-08-24",
+        "observedAt": "2026-09-12",
         "intendedDestination": "IONOS webspace /qross (serves the product site directly; same folder as the catalog downloads)"
       },
       "notes": [
         "Stores a large local question cache with GRDB.",
+        "2026-09-13: Release 407 second-crossing visual treatment installed/launched on Titanic without debugger or uninstall. Two independent AI reviewers approved matched plain/enhanced captures; 975 unit tests passed, 2 existing skips, 3 final UI playthroughs passed (4x4 paired and 5x5 large text). Deeper untouched neon tiles, cyan segmented second trail, accessible phase label; no gameplay/scoring changes. Physical VoiceOver/sound/haptics and iPad captures remain unverified. No ASC/backend changes or checks this session. See qross/docs/reviews/second-crossing/README.md.",
+        "2026-09-12 latest: Release 406 corrects Daily/adjacency tips; no gameplay changes. Installed/launched on Titanic without debugger. Ten content tests passed; eight public files byte-verified and four pages checked at mobile/desktop widths. ASC draft and general TestFlight description updated/read back. Canonical copy: qross/docs/appstore-copy.md; audit: qross/docs/content-consistency-2026-09-11.md. No binary upload/submission, price or questionnaire changes.",
+        "2026-09-12 publishing correction: GitHub Pages had again exposed main:/docs. Replaced with public-site-20260912, root commit 18672c7 containing only redirects; rebuild completed and two internal URLs now return 404. Do not restore /docs publishing. 1041soft-site commit 0fafed1 redirects legacy Qross pages to doubleqross.com. Prior indexing/copies require owner follow-up.",
+        "2026-09-12 gap: billdonner.com/apps/qross/ returned an IONOS parking page, so portfolioPage is not a verified destination. Catalog URL remains healthy (200 gzip, 45952469 bytes). ASC privacy questionnaire and current iPhone/iPad screenshot visual review remain release gates.",
+        "2026-09-11 latest: Scoredux build 405 installed and launched on Titanic as Release without debugger. Implements panel fixes: Quit preserves question state, delivered-only hint billing, timeout review, accurate assist costs/help, coherent route advice, same-board retry, early resume and spare-pool persistence, readable controls and accessibility labels/Reduce Motion. 970 unit tests and six UI checks passed across final runs; two existing skips, no runtime warnings. Scoring protocol v4 and Daily v3 unchanged; no backend deployment or ASC upload. See qross/docs/scoredux.md.",
+        "2026-09-11 build 404: installed and launched on Titanic as Release without debugger. Restores second starting-corner selection in Double Cross, 2n perfect route, separate trails, protocol v4 reset. Palette/design selectors moved to Settings > Appearance. Combined unit/Appearance run: 946 passed, 2 skipped; two Double Cross UI tests passed separately. Backend test-only commit 3fb998d pushed, 180 tests passed; runtime remains 15290cb with Daily v3 unchanged. No ASC upload. See qross/docs/scoredux.md.",
+        "2026-09-11 follow-up: Scoredux build 403 installed on Titanic as Release. Incomplete scores now scale by estimated route progress, and loss results say estimated moves remaining. Scoring protocol is v3; build 402 scores reset. See qross/docs/scoredux.md for verification and branch handoff.",
+        "2026-09-11: Scoredux build 402 on feature/scoredux builds on the vibrant UI with higher-is-better scoring and a one-time legacy score reset. 296 focused app regression tests passed. This is a local device release, not an ASC upload; delivery status is tracked in qross/docs/scoredux.md.",
         "The live backend is the Python card-engine deployment at bd-cardzerver.fly.dev.",
         "The retired card-server repository corrected its historical Qross App Store ID before archival; Card Engine remains the only live backend.",
         "The included Sectigo certificate covers both *.doubleqross.com and doubleqross.com and is valid through 2027-02-10.",
-        "ASC iOS 1.0 en-US marketingUrl was updated to https://doubleqross.com/ on 2026-08-14; supportUrl remains https://1041soft.com/qross/support.html.",
-        "RESOLVED 2026-08-24: doubleqross.com is the canonical product page — connected to IONOS webspace /qross via the panel's Connect-to-webspace flow, serving the repo's corrected docs/ pages (uploaded via SFTP). billdonner.github.io/qross remains live as a mirror of the same content; 1041soft.com/qross is legacy. Site deploys = sftp put of docs/*.html into /qross (keychain credential, see qross scripts/export-catalog.sh pattern).",
+        "2026-09-12 verified ASC marketing, support and privacy URLs all use doubleqross.com; general TestFlight URLs now match.",
+        "doubleqross.com serves IONOS webspace /qross directly. Deploy only the explicit public allowlist in qross/scripts/publish-content.py, never docs globs. The GitHub and 1041soft legacy pages now redirect to this canonical site.",
         "Recent activity (through 2026-08-24): two external Codex reviews fixed 11 verified defects (soft-locks, daily-exploit, Leg-2 empty-goal, DC scoring floor 2n-1); Double Cross Leg 2 reworked to walked-choice (#198); efficiency % scoring shipped (#197); Carol's full PR stack merged (palettes to 16, Tahiti, onboarding); subtopic search upgraded (#178/#179, enrich pass pending); issue board triaged 29→8; test suite 891/0. Open: PR #172 and decisions #193 (both Carol), qclean-enrich catalog republish, MLX-lab hint-judge queue."
       ]
     },
@@ -1363,6 +1371,8 @@
       },
       "notes": [
         "Live /openapi.json identifies the service as card-engine version 0.1.0.",
+        "2026-09-11 follow-up: feature/scoredux 15290cb pushed and deployed; /api/v3/daily-scores applies progress-scaled losses in an isolated v3 table. 164 backend tests passed and live leaderboard GET returned 200. This supersedes the v2 deployment below; preserve feature/scoredux before any main redeploy.",
+        "2026-09-11: feature/scoredux commit 909f171 deployed to bd-cardzerver; versioned /api/v2/daily-scores and challenge scoring checks are live, 164 backend tests passed. Preserve these changes before any main-branch redeploy. Canonical ~/card-engine was absent; working checkout is /private/tmp/scoredux-card-engine and branch is pushed to GitHub.",
         "The 256 MB Fly machine was OOM-killed and restarted on 2026-08-13; direct /health is currently 200.",
         "One of the main architecture ambiguities in the inventory."
       ]
@@ -2895,9 +2905,9 @@
     "brandedDomains": {
       "doubleqross.com": {
         "registrar": "IONOS",
-        "status": "live-https-redirect",
-        "intendedDestination": "https://1041soft.com/qross/",
-        "redirectType": "HTTPS HTTP redirect, not frame forwarding",
+        "status": "live-webspace",
+        "intendedDestination": "IONOS webspace /qross",
+        "redirectType": "Direct canonical product site; legacy 1041soft and GitHub pages redirect here",
         "includeWww": true
       }
     },

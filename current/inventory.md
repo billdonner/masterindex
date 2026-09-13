@@ -33,7 +33,7 @@ As of Wednesday, September 2, 2026.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
 - `grubber-ios` is obsolete by owner decision; SentiPods is the current grubber client.
 - Grubber is the service, corpus, and intended product name for the podcast/news analysis system; SentiPods is the current ASC client label until a rename is executed. It is multi-client, not true multi-tenant. Grubber also owns the paid tech newsletter digest plan, the Fly-side global brand-universe supplement, and an aggregate artifact monitor at `https://bd-grubber.fly.dev/monitor`. Newsletter/Gmail-derived content is personal-only; brand metadata, derived brand mentions, and aggregate artifact snapshots live in Fly Postgres for server-side advertising-trend analysis, not in the public `/db` export or raw brand API routes. As of 2026-08-28, the live monitor reports 69 shows, 1,352 episodes, 1,374 public news articles, 162 active topics, 6,745 active brands, 3,795 derived brand mention rows, 16 daily digests, and one private brand report; `/monitor` is aggregate-only and excluded from OpenAPI. Public `/db` currently fails closed while the large validated SQLite transport is repaired.
-- `doubleqross.com` is live at IONOS and now serves the DoubleQross product site directly (apex and `www`, Sectigo certificate through February 10, 2027): the domain is connected to the webspace `/qross` directory, which also hosts the app's catalog downloads. Pages are sourced from the qross repo's `docs/` and deployed by SFTP; `1041soft.com/qross/` is legacy and `billdonner.github.io/qross` mirrors the same content.
+- `doubleqross.com` serves the IONOS `/qross` product site directly; deploy only the explicit public-file allowlist from the qross repo. As of September 12, 2026, legacy `1041soft.com/qross/` and `billdonner.github.io/qross` redirect here. The GitHub mirror no longer publishes internal docs.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 - KinFlash is **two products with two App Store records**, re-split 2026-08-30 after a brief period merged under one record. **KinFlash Studio** (macOS, `com.billdonner.kinflashstudio`) authors trees, flashcards and games and is where every purchase happens; **KinFlash Family** (iOS, `com.billdonner.kinflash`) is free, plays what Studio produced, and cannot take payment at all. Note the assignment: Family keeps the ORIGINAL identifier and the existing record 6762008872 — whose iOS 1.0 dates from April — and Studio is the one needing a new record, which the ASC API cannot create; it is a manual click and currently blocks splitting the Xcode Cloud workflows. The earlier plan had these reversed, with the Mac on `com.billdonner.kinflash` and iOS on `com.billdonner.kinflashplay`; neither `kinflashplay` nor the name "KinFlash Play" is used any more. The merge was undone because one record cannot tell TestFlight which of two dissimilar apps a Mac should install, and it demonstrably handed over the iOS player instead of the authoring app; `SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO` does not help, since TestFlight resolves per record. Pricing direction (proposed, not approved) is an annual subscription in Studio gating generation and hosted AI, with everything already produced free forever to the author and her recipients, and bring-your-own-API-key kept as a privacy option at the same price — see `~/kinflash/PRICING.md`. Hosted AI is now load-bearing and unbuilt: granny will not obtain an Anthropic key, and the subscription's justification rests on it. Public page: `billdonner.com/apps/kinflash/`. Two risks stand: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Ten game designs are proposed in the repo (`GAMES_DESIGN.md`), and the first — "How Are We Related?" — is built end to end. Two decisions were settled: living relatives may appear **per game**, chosen at generation and recorded in the file, with a game that excludes them naming none of them anywhere, not even as a wrong answer; and a game is its own small exportable document (`.kinflashgame`) rather than something inside the tree package. Nine games remain unbuilt.
 - Pickleball Collective now has two active local sources: Collective Engine is the deployed multi-tenant scheduler, and Collective Comms is the approval-gated dedicated-Mac messaging utility. Neither is an App Store product.
@@ -203,7 +203,7 @@ byte. Source, restore commands, and recovery-key instructions are in `~/app-feed
 | Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
 | amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
 | 100 Burfords | 1.1 (16) | 1.1 (14) on TestFlight | Source ahead at `14e561a`; the two review P2s are fixed in 15-16, not yet uploaded |
-| DoubleQross | 394 | 394 VALID | Aligned; bundle id remains com.qross.app; store name DoubleQross; 12+ |
+| DoubleQross | 407 local Release | 396 VALID; 395 selected | Not aligned: Scoredux draft updated, binary/screenshots pending; 12+ unchanged |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
 | Oenora iOS | 1.0 (7) | 7 VALID, external beta submitted; 6 remains approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
@@ -255,7 +255,34 @@ Unmatched or intentionally retained:
 | Service | Source | State | Consumers |
 |---|---|---|---|
 | bd-nagzerver.fly.dev | ~/nagzerver | live | Nagz, workin On, PickledBalls, legacy PickleFamilia |
-| bd-cardzerver.fly.dev | ~/card-engine | live | Qross, Flasherz Kids, Cardz Studio, card-studio |
+| bd-cardzerver.fly.dev | ~/card-engine (absent locally; Scoredux checkout at /private/tmp/scoredux-card-engine) | live; feature/scoredux 909f171 deployed 2026-09-11 | Qross, Flasherz Kids, Cardz Studio, card-studio |
+
+Scoredux latest (2026-09-11): build 405 installed and launched on Titanic as
+Release without debugger. Panel fixes preserve questions through Quit, charge only
+delivered hints, retain timeout review, clarify costs/advice/retry, and repair early
+resume and replay pools. 970 unit tests and six UI checks passed across final runs;
+two existing skips, no runtime warnings. Scoring v4 and Daily v3 unchanged; no
+backend deployment or ASC upload. Details: `qross/docs/scoredux.md`.
+
+Scoredux build 404 (2026-09-11): installed and launched on Titanic as
+Release without debugger. Double Cross again picks a second starting corner;
+perfect route is 2n, trails remain separate, and protocol v4 resets prior games.
+Design/palette selectors moved to Settings > Appearance. Combined tests: 946
+passed, 2 skipped; both Double Cross UI flows passed separately. Backend
+test-only `3fb998d` is pushed (180 tests passing); live runtime remains `15290cb`
+and Daily v3 is unchanged. No ASC upload. See `qross/docs/scoredux.md`.
+
+Scoredux follow-up (2026-09-11): build 403 is installed on Titanic as Release;
+incomplete scores scale by estimated route progress. Backend `15290cb` is pushed
+and deployed with `/api/v3/daily-scores`; 164 backend tests passed. This supersedes
+the build 402/v2 handoff below. Both repositories remain on `feature/scoredux`.
+
+Earlier Scoredux handoff (2026-09-11): Qross build 402 is on `feature/scoredux`, based on
+the vibrant UI, with 296 focused app regression tests passing. This is a local
+device release, not an ASC upload; see `qross/docs/scoredux.md` for delivery.
+The backend's matching branch is pushed and deployed, with 164 tests passing.
+Preserve its versioned daily-score routes and challenge checks before deploying
+from main. Legacy scores are intentionally reset on first Scoredux launch.
 | bd-grubber.fly.dev | ~/grubber | live | SentiPods, grubber clients |
 | bd-server-monitor.fly.dev | ~/server-monitor | live | operations, Zerver Monitor |
 | bd-pfolio.fly.dev | github:billdonner/pfolio | live | Pfoliolio |
@@ -308,12 +335,19 @@ Observed paths: `/qross/`, `/nagz/`, `/workinon/`, `/flasherz/`, `/zervermonitor
 `/screenker/`, `/mallinbook/`, `/sentipods/`, `/pfolio/` — each with support and
 privacy pages. All 24 routes verified 200 over HTTPS.
 
-`doubleqross.com` was registered and activated at IONOS on 2026-08-14. Apex and `www` resolve
-through IONOS, present the included Sectigo certificate covering both names through 2027-02-10,
-and return HTTP/2 302 over HTTPS to `https://1041soft.com/qross/`, which returns 200. The branded
-domain is ready to use as DoubleQross's marketing URL in App Store Connect.
-ASC iOS 1.0 `en-US` now uses `https://doubleqross.com/` as its marketing URL; its support URL
-remains `https://1041soft.com/qross/support.html` so the maintained support content is not duplicated.
+`doubleqross.com` directly serves the IONOS `/qross` public site. ASC marketing,
+support and privacy URLs all use this domain (verified September 12, 2026).
+Legacy 1041soft pages redirect here, commit `0fafed1`. GitHub Pages had again
+exposed `main:/docs`; it now publishes only redirects from `public-site-20260912`
+(`18672c7`), with two internal URLs verified 404 after rebuilding. Do not restore
+whole-docs publishing. The portfolio `/apps/qross/` URL is parked; catalog works.
+Release 407 is installed/launched on Titanic without debugger (September 13).
+Two AI reviewers approved the second-crossing treatment; 975 unit tests passed
+with two existing skips, and three final UI playthroughs passed, including large
+text. Review: `qross/docs/reviews/second-crossing/README.md`. The September 12
+content verification remains the latest public-site check. ASC binary remains 395 selected / 396 newest uploaded;
+matching screenshots, privacy questionnaire and accessibility review remain gates.
+Details: `qross/docs/content-consistency-2026-09-11.md`.
 
 Owner reported purchasing `picklefamilia.com` and `picklefamilia.app` through IONOS on 2026-08-29.
 DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing are not yet verified.
