@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08",
+  "generatedAt": "2026-09-13",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -514,11 +514,26 @@
   },
   "clusters": [
     {
-      "name": "PickledBalls",
-      "maturity": "active beta or transition product",
-      "summary": "Organizer and sports cluster centered on current PickledBalls; Clubsync and HarvestSync are deferred until PickledBalls v2.",
+      "name": "PickleFamilia",
+      "maturity": "live scheduling engine plus court app in TestFlight",
+      "summary": "PickleFamilia is the family name (ADR-009, 2026-09-13): collective-engine is the club's record and channels (text, Claude/MCP, club pages, member API); PickleFamilia Companion (repo pickledballs) is the court app and, signed in, the member's window on the club. Each stands alone; they meet at the handoff and the member API.",
       "highlights": [
-        "PickledBalls",
+        "collective-engine",
+        "PickleFamilia Companion",
+        "CourtScheduler",
+        "collective-comms"
+      ],
+      "watchpoints": [
+        "picklefamilia.com DNS and FAMILY_HOST not yet set on Fly",
+        "Companion App Store name change and App Privacy questionnaire pending in ASC",
+        "collective-comms is the pre-Twilio Mac path; texting now goes through the engine"
+      ]
+    },
+    {
+      "name": "PickledBalls",
+      "maturity": "folded into PickleFamilia",
+      "summary": "Superseded: PickledBalls is PickleFamilia Companion in the PickleFamilia cluster. Kept for Clubsync/HarvestSync history.",
+      "highlights": [
         "CourtScheduler",
         "server-monitor",
         "nagzerver"
@@ -715,16 +730,19 @@
       ]
     },
     {
-      "name": "Pickleball Collective",
-      "maturity": "active scheduling engine and local operations tooling",
-      "summary": "Multi-tenant pickleball scheduling engine paired with a dedicated-Mac communications utility for the OO Pickleball Collective.",
+      "name": "PickleFamilia",
+      "maturity": "live scheduling engine plus court app in TestFlight",
+      "summary": "PickleFamilia is the family name (ADR-009, 2026-09-13): collective-engine is the club's record and channels (text, Claude/MCP, club pages, member API); PickleFamilia Companion (repo pickledballs) is the court app and, signed in, the member's window on the club. Each stands alone; they meet at the handoff and the member API.",
       "highlights": [
         "collective-engine",
+        "PickleFamilia Companion",
+        "CourtScheduler",
         "collective-comms"
       ],
       "watchpoints": [
-        "The engine is deployed, but notification channels require explicit provider configuration.",
-        "Collective Comms sends only after a typed approval and requires pre-existing exact Messages group threads."
+        "picklefamilia.com DNS and FAMILY_HOST not yet set on Fly",
+        "Companion App Store name change and App Privacy questionnaire pending in ASC",
+        "collective-comms is the pre-Twilio Mac path; texting now goes through the engine"
       ]
     },
     {
@@ -747,7 +765,6 @@
       "maturity": "inventory gap",
       "summary": "App Store Connect records with no verified local source repository or public product record in the current portfolio scan.",
       "highlights": [
-        "PickleFamilia",
         "Screenker"
       ],
       "watchpoints": [
@@ -789,20 +806,20 @@
     },
     {
       "id": "pickledballs-app",
-      "name": "PickledBalls",
+      "name": "PickleFamilia Companion",
       "kind": "app",
-      "cluster": "PickledBalls",
+      "cluster": "PickleFamilia",
       "status": "asc-mapped",
-      "lastModified": "2026-07-31",
+      "lastModified": "2026-09-13",
       "repo": "~/pickledballs",
       "bundleId": "com.pickledballs.app",
-      "release": "TestFlight 1.0 (354) live; ASC iOS 1.0 PREPARE_FOR_SUBMISSION with metadata complete (Sports category, Free in 175 territories, copyright, privacy/support URLs). Remaining before submit: App Privacy questionnaire (ASC web UI). Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
-      "description": "Pickleball, tennis, and ping pong session-management app by 1041Soft, shipping in organizer-focus mode (free Organizer tier; Organizer Pro planned) with a documented path toward PickleNagz.",
+      "release": "TestFlight 1.0 (364) built 2026-09-13; ASC iOS 1.0 PREPARE_FOR_SUBMISSION. Display name and App Store name are PickleFamilia Companion since build 364; bundle id unchanged. Remaining before submit: App Privacy questionnaire (ASC web UI), App Store name change in ASC. Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
+      "description": "PickleFamilia Companion (repo pickledballs): the court app of the PickleFamilia family by 1041Soft — rounds, matchups, scores, nearby live play — and, signed in by a texted code, the member's window on their club: their week, availability, and the club's pages from collective-engine.",
       "dependencies": [
         "CourtScheduler",
         "PickleFortunesKit",
         "PeerLink",
-        "nagzerver"
+        "collective-engine"
       ],
       "links": {
         "website": "https://pickledballs.billdonner.com",
@@ -814,6 +831,7 @@
         "portfolioPage": "https://billdonner.com/apps/pickledballs/"
       },
       "notes": [
+        "2026-09-13: renamed PickleFamilia Companion (ADR-009 in collective-engine). Branch picklefamilia merged to main: the member app (sign in by texted code, week, availability, club pages, calendar) over collective-engine via the local package ../collective-engine/CollectiveKit. nagzerver dependency dropped from the index; the code path is dormant under organizer focus mode.",
         "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Uses JSON plus GRDB SQLite locally.",
         "Current project.yml links local packages CourtScheduler, vendored PickleFortunesKit, and PeerLink.",
@@ -833,7 +851,7 @@
       "lastModified": "2026-09-13",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
-      "release": "Local Release 407 installed/launched on Titanic without debugger (2026-09-13); ASC iOS 1.0 PREPARE_FOR_SUBMISSION selects 395, latest upload 396 VALID (verified 2026-09-12). Scoredux draft copy updated; matching binary/screenshots and privacy review required. Age rating 12+ unchanged.",
+      "release": "Local Release 408 installed/launched on Titanic without debugger (2026-09-13); ASC iOS 1.0 PREPARE_FOR_SUBMISSION selects 395, latest upload 396 VALID (verified 2026-09-12). Scoredux draft copy updated; matching binary/screenshots and privacy review required. Age rating 12+ unchanged.",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
         "card-engine",
@@ -855,6 +873,7 @@
       },
       "notes": [
         "Stores a large local question cache with GRDB.",
+        "2026-09-13: Release 408 adds first-question-only Double Cross post-miss Jumble rescue, with existing swap and total 200 points / 3 lives including wrong penalty. Pending decision survives relaunch; replacement misses cannot repeat rescue. 980 unit tests passed, 2 existing skips, 5 final UI scenarios plus final-copy rerun passed. No scoring reset/protocol change/backend deployment/ASC upload. Installed/launched on Titanic as Release without debugger or uninstall. Review: qross/docs/reviews/opening-rescue/README.md.",
         "2026-09-13: Release 407 second-crossing visual treatment installed/launched on Titanic without debugger or uninstall. Two independent AI reviewers approved matched plain/enhanced captures; 975 unit tests passed, 2 existing skips, 3 final UI playthroughs passed (4x4 paired and 5x5 large text). Deeper untouched neon tiles, cyan segmented second trail, accessible phase label; no gameplay/scoring changes. Physical VoiceOver/sound/haptics and iPad captures remain unverified. No ASC/backend changes or checks this session. See qross/docs/reviews/second-crossing/README.md.",
         "2026-09-12 latest: Release 406 corrects Daily/adjacency tips; no gameplay changes. Installed/launched on Titanic without debugger. Ten content tests passed; eight public files byte-verified and four pages checked at mobile/desktop widths. ASC draft and general TestFlight description updated/read back. Canonical copy: qross/docs/appstore-copy.md; audit: qross/docs/content-consistency-2026-09-11.md. No binary upload/submission, price or questionnaire changes.",
         "2026-09-12 publishing correction: GitHub Pages had again exposed main:/docs. Replaced with public-site-20260912, root commit 18672c7 containing only redirects; rebuild completed and two internal URLs now return 404. Do not restore /docs publishing. 1041soft-site commit 0fafed1 redirects legacy Qross pages to doubleqross.com. Prior indexing/copies require owner follow-up.",
@@ -1691,27 +1710,24 @@
     },
     {
       "id": "picklefamilia-asc-app",
-      "name": "PickleFamilia",
+      "name": "PickleFamilia (legacy ASC record)",
       "kind": "app",
-      "cluster": "PickledBalls",
-      "status": "asc-mapped",
-      "lastModified": "2026-08-29",
+      "cluster": "PickleFamilia",
+      "status": "legacy",
+      "lastModified": "2026-09-13",
       "repo": "github:billdonner/picklefamilia-ios",
       "bundleId": "com.picklefamilia.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 2 VALID",
-      "description": "Weekly game scheduling and self-service player slot coordination app.",
+      "description": "Legacy App Store Connect record of the old organizer app on nagzerver's retired pickle module. Not revived: PickleFamilia is the family name (ADR-009); the app is PickleFamilia Companion. The record is kept only as the name's reservation.",
       "dependencies": [],
       "links": {
         "website": "https://billdonner.github.io/picklefamilia-ios/",
         "portfolioPage": "https://billdonner.com/apps/picklefamilia/",
-        "domains": [
-          "https://picklefamilia.com/",
-          "https://picklefamilia.app/"
-        ],
         "github": "https://github.com/billdonner/picklefamilia-ios",
         "appStore": null
       },
       "notes": [
+        "2026-09-13: superseded by ADR-009 in collective-engine. picklefamilia.com and picklefamilia.app are served by collective-engine (FAMILY_HOST), see that entry.",
         "Repository is active on GitHub but not cloned on this machine.",
         "Owner reported purchase of picklefamilia.com and picklefamilia.app through IONOS on 2026-08-29; domain configuration remains unverified."
       ]
@@ -1932,21 +1948,25 @@
       "id": "collective-engine",
       "name": "Collective Engine",
       "kind": "service",
-      "cluster": "Pickleball Collective",
+      "cluster": "PickleFamilia",
       "status": "live",
-      "lastModified": "2026-09-02",
+      "lastModified": "2026-09-13",
       "repo": "~/collective-engine",
       "bundleId": null,
-      "release": "Release 1 is deployed with a healthy Fly service at bd-collective-engine.fly.dev; automation channels remain unconfigured by default. Its intended public host, collective.1041soft.com, is not yet published.",
-      "description": "Multi-tenant pickleball scheduling service with preference capture, court reservations, a deterministic balancing auction, review and publication workflows, and an authorized MCP surface.",
+      "release": "Live on Fly at bd-collective-engine.fly.dev; serves oocollective.org (SITE_HOST) since 2026-09-11 and, once DNS and FAMILY_HOST are set, picklefamilia.com as the family front page (ADR-009).",
+      "description": "Multi-tenant club scheduling engine — the club's record: members, weeks, availability by SMS agent or the Companion app, court/table bookings, a deterministic balancing auction, review and publication, club pages, a member API (CollectiveKit) and an authorized MCP surface. Runs OO Pickleball Collective and a poker society.",
       "dependencies": [
         "collective-comms"
       ],
       "links": {
         "website": "https://bd-collective-engine.fly.dev/health",
-        "appStore": null
+        "appStore": null,
+        "clubSite": "https://oocollective.org/",
+        "familySite": "https://picklefamilia.com/",
+        "familySiteSource": "domains registered 2026-08-29 (IONOS); engine support landed 2026-09-13; DNS/cert pending"
       },
       "notes": [
+        "2026-09-13: ADR-009 — PickleFamilia is the family name over the engine and PickleFamilia Companion; FAMILY_HOST serves the family page. The collective.1041soft.com host was never real (ADR-006).",
         "Release 1 uses PostgreSQL tenancy and row-level security; unconfigured auth, email, push, or secret settings disable their related routes rather than accepting unverified input.",
         "Trial auctions are non-mutating and notify nobody; publishing requires a reviewed code.",
         "2026-08-21: fixed the downstream handoff payload capacity invariant and made its digest RFC 8785 canonical; handoff payloads can now be verified and written to a file.",
@@ -1963,9 +1983,9 @@
       "id": "collective-comms",
       "name": "Collective Comms",
       "kind": "tool",
-      "cluster": "Pickleball Collective",
+      "cluster": "PickleFamilia",
       "status": "active",
-      "lastModified": "2026-09-02",
+      "lastModified": "2026-09-13",
       "repo": "~/collective-comms",
       "bundleId": null,
       "release": "Local dedicated-Mac operations tool; no App Store or public web release observed.",

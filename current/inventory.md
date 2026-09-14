@@ -36,7 +36,7 @@ As of Wednesday, September 2, 2026.
 - `doubleqross.com` serves the IONOS `/qross` product site directly; deploy only the explicit public-file allowlist from the qross repo. As of September 12, 2026, legacy `1041soft.com/qross/` and `billdonner.github.io/qross` redirect here. The GitHub mirror no longer publishes internal docs.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
 - KinFlash is **two products with two App Store records**, re-split 2026-08-30 after a brief period merged under one record. **KinFlash Studio** (macOS, `com.billdonner.kinflashstudio`) authors trees, flashcards and games and is where every purchase happens; **KinFlash Family** (iOS, `com.billdonner.kinflash`) is free, plays what Studio produced, and cannot take payment at all. Note the assignment: Family keeps the ORIGINAL identifier and the existing record 6762008872 — whose iOS 1.0 dates from April — and Studio is the one needing a new record, which the ASC API cannot create; it is a manual click and currently blocks splitting the Xcode Cloud workflows. The earlier plan had these reversed, with the Mac on `com.billdonner.kinflash` and iOS on `com.billdonner.kinflashplay`; neither `kinflashplay` nor the name "KinFlash Play" is used any more. The merge was undone because one record cannot tell TestFlight which of two dissimilar apps a Mac should install, and it demonstrably handed over the iOS player instead of the authoring app; `SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO` does not help, since TestFlight resolves per record. Pricing direction (proposed, not approved) is an annual subscription in Studio gating generation and hosted AI, with everything already produced free forever to the author and her recipients, and bring-your-own-API-key kept as a privacy option at the same price — see `~/kinflash/PRICING.md`. Hosted AI is now load-bearing and unbuilt: granny will not obtain an Anthropic key, and the subscription's justification rests on it. Public page: `billdonner.com/apps/kinflash/`. Two risks stand: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Ten game designs are proposed in the repo (`GAMES_DESIGN.md`), and the first — "How Are We Related?" — is built end to end. Two decisions were settled: living relatives may appear **per game**, chosen at generation and recorded in the file, with a game that excludes them naming none of them anywhere, not even as a wrong answer; and a game is its own small exportable document (`.kinflashgame`) rather than something inside the tree package. Nine games remain unbuilt.
-- Pickleball Collective now has two active local sources: Collective Engine is the deployed multi-tenant scheduler, and Collective Comms is the approval-gated dedicated-Mac messaging utility. Neither is an App Store product.
+- PickleFamilia is the family name (ADR-009 in collective-engine, 2026-09-13) over Collective Engine — the deployed multi-tenant club scheduler, the club's record and channels — and PickleFamilia Companion (repo pickledballs, bundle com.pickledballs.app), the court app that, signed in by a texted code, is also the member's window on the club. Collective Comms is the older approval-gated dedicated-Mac messaging utility. The old picklefamilia-ios organizer app is not revived; its ASC record is legacy. picklefamilia.com is served by the engine once DNS and FAMILY_HOST are set.
 - Collective Engine now emits file-based, RFC 8785-canonical handoff payloads with verification tooling. Collective Comms now defaults one-to-one delivery to SMS, supports explicit overrides, and surfaces invalid Messages targets rather than silently dropping sends.
 - Operational evidence on August 21 confirmed that an iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three. The scheduler also records its handoff-only Tuesday court split as non-authoritative.
 - Collective Engine now exposes court-seat capacity and attendance limit separately, preventing a rotational opening from being shown to a player as a full day.
@@ -203,7 +203,7 @@ byte. Source, restore commands, and recovery-key instructions are in `~/app-feed
 | Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
 | amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
 | 100 Burfords | 1.1 (16) | 1.1 (14) on TestFlight | Source ahead at `14e561a`; the two review P2s are fixed in 15-16, not yet uploaded |
-| DoubleQross | 407 local Release | 396 VALID; 395 selected | Not aligned: Scoredux draft updated, binary/screenshots pending; 12+ unchanged |
+| DoubleQross | 408 local Release | 396 VALID; 395 selected | Not aligned: Scoredux draft updated, binary/screenshots pending; 12+ unchanged |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
 | Oenora iOS | 1.0 (7) | 7 VALID, external beta submitted; 6 remains approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
@@ -238,7 +238,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | Removed from inventory 2026-09-08 (obsolete; ASC record deleted) |
-| PickleFamilia | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
+| PickleFamilia (legacy record) | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; superseded by PickleFamilia Companion (ADR-009) |
 | KinFlash Studio (Mac, authoring) | com.billdonner.kinflashstudio | ~/kinflash | Paid; ASC record 6806833310, macOS 1.0.1 builds 3 and 6 VALID via Xcode Cloud |
 | KinFlash Family (iOS, player) | com.billdonner.kinflash | ~/kinflash | Free, no IAP; keeps ASC record 6762008872, which needs renaming from "KinFlash" |
 | PickledBalls | com.pickledballs.app | ~/pickledballs | iOS 1.0 PREPARE_FOR_SUBMISSION |
@@ -341,7 +341,11 @@ Legacy 1041soft pages redirect here, commit `0fafed1`. GitHub Pages had again
 exposed `main:/docs`; it now publishes only redirects from `public-site-20260912`
 (`18672c7`), with two internal URLs verified 404 after rebuilding. Do not restore
 whole-docs publishing. The portfolio `/apps/qross/` URL is parked; catalog works.
-Release 407 is installed/launched on Titanic without debugger (September 13).
+Release 408 is installed/launched on Titanic without debugger (September 13).
+It adds first-question-only Double Cross Jumble rescue: 980 unit tests passed,
+two existing skips, five final UI scenarios and a wording rerun passed. Pending
+decisions survive relaunch. Review: `qross/docs/reviews/opening-rescue/README.md`.
+The preceding 407 second-crossing work also remains included.
 Two AI reviewers approved the second-crossing treatment; 975 unit tests passed
 with two existing skips, and three final UI playthroughs passed, including large
 text. Review: `qross/docs/reviews/second-crossing/README.md`. The September 12
@@ -349,7 +353,7 @@ content verification remains the latest public-site check. ASC binary remains 39
 matching screenshots, privacy questionnaire and accessibility review remain gates.
 Details: `qross/docs/content-consistency-2026-09-11.md`.
 
-Owner reported purchasing `picklefamilia.com` and `picklefamilia.app` through IONOS on 2026-08-29.
+Owner reported purchasing `picklefamilia.com` and `picklefamilia.app` through IONOS on 2026-08-29. As of 2026-09-13 collective-engine serves the family page on that host (`FAMILY_HOST`); DNS at IONOS and `fly certs add` are the remaining steps.
 DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing are not yet verified.
 The same IONOS dashboard showed 88.92 GB of webspace used, 12,963 files, 7 SFTP users, 2 standard
 databases, PHP Extended Support active, a Site Scan warning for vulnerable websites, and Performance
