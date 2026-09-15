@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-14",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -505,7 +505,8 @@
         ],
         "repo": "~/Murdl27",
         "repoEvidence": "GitHub repo billdonner/murdl27 created 2026-09-03 from ~/Murdl27",
-        "localVersion": "2.1 (12) local; App Store build is Xcode Cloud build 2"
+        "localVersion": "2.1 (3) local; ASC builds 11 (local, invalid at submission), 2 and 3 (Xcode Cloud) VALID; build 3 attached to 2.1 and submitted 2026-09-14",
+        "ascVerified": "2026-09-14"
       }
     ],
     "unmatched": [
@@ -2107,12 +2108,12 @@
       "kind": "app",
       "cluster": "MURDL",
       "status": "in-review",
-      "lastModified": "2026-09-08",
+      "lastModified": "2026-09-14",
       "repo": "~/Murdl27",
       "bundleId": "com.billdonner.murdl27",
       "productLine": "1041soft-commercial",
       "pricingPolicy": "free",
-      "release": "Record 6809919090 (SKU murd001), macOS only. Version 2.1 submitted 2026-09-08, WAITING_FOR_REVIEW, Xcode Cloud build 2 attached. Name 'MURDL' and bundle id com.billdonner.murdl are held by another Apple account, hence 'MURDL 16' and murdl27. Team NEAY582ME4. Local archives from this Mac get Invalid Binary at submission; ship only via Xcode Cloud (product 'Murdl': 'Build - main' on main, 'Archive - App Store' on release, pinned Xcode 26.6; wizard 'Default' workflow disabled). Listing copy ~/coworking/MURDL-AppStore.md, five 2560x1600 screenshots, category Games/Word+Puzzle, 4+, free in 175 territories.",
+      "release": "Record 6809919090 (SKU murd001), macOS only. Version 2.1 rejected 2026-09-11 (guideline 4: no way to reopen a closed main window); fixed 2026-09-11 (board is a Window scene, Window > Game Board / Command-0), archived by Xcode Cloud as build 3 on 2026-09-14 and resubmitted the same day, WAITING_FOR_REVIEW. Name 'MURDL' and bundle id com.billdonner.murdl are held by another Apple account, hence 'MURDL 16' and murdl27. Team NEAY582ME4 (migrating to 1041Soft LLC; Xcode Cloud endpoints were 404 from 2026-09-10 until 2026-09-14). Local archives from this Mac get Invalid Binary at submission; ship only via Xcode Cloud (product 'Murdl': 'Build - main' on main, 'Archive - App Store' on release, pinned Xcode 26.6; the release-push trigger did not fire during the migration, so runs may need a manual POST ciBuildRuns). Build number follows the Xcode Cloud run counter; project.yml tracks it (3). Listing copy ~/coworking/MURDL-AppStore.md, five 2560x1600 screenshots, category Games/Word+Puzzle, 4+, free in 175 territories.",
       "distribution": "public-release-planned",
       "description": "Native macOS SwiftUI rebuild of the archived MURDL word game: 2/4/8/16 boards, guesses = boards + 5, Classic/Stopwatch/Sprint modes, score book, grid or strip layouts with arrow navigation, floating keyboard window, full keyboard play. Engine is the cross-platform MurdlCore Swift package (tested on Windows and macOS in CI) with a C bridge (MurdlBridge.dll / dylib). A C#/Avalonia desktop front end in Windows/ is the Windows build and also runs natively on macOS.",
       "dependencies": [],
@@ -2125,8 +2126,9 @@
       },
       "notes": [
         "2026-09-02..08: built from ~/old-swift/MURDL in one session: code review fixes, board counts, timers, scores, layouts, keyboard window, MurdlCore package + Windows CI, MurdlBridge C ABI, Avalonia desktop app, Mac App Store submission.",
-        "Windows app is CI-verified (desktop.yml builds, runs, and screenshots it on windows-latest; uploads MURDL-windows-x64 and a self-contained MURDL-macOS-arm64 bundle) but has not been reviewed by Bill on the Mac yet; Microsoft Store is deferred.",
-        "Self-playing web showcase with an accuracy slider lives in Showcase/murdl_spectator.html and as a claude.ai artifact."
+        "Self-playing web showcase with an accuracy slider lives in Showcase/murdl_spectator.html and as a claude.ai artifact.",
+        "Windows app is CI-verified (desktop.yml builds, runs, and screenshots it on windows-latest; uploads MURDL-windows-x64 and a self-contained MURDL-macOS-arm64 bundle). Windows/README.md (2026-09-12) documents feature parity with the Mac app and how to hand the CI zip to a tester; not yet reviewed by Bill on the Mac; Microsoft Store deferred.",
+        "2026-09-11..14: App Review rejection (guideline 4) fixed in commit 6aa44b4; resubmission blocked for three days by the team migration, then done 2026-09-14 as Xcode Cloud build 3. Lesson: after a rejection the version stays bound to the rejected reviewSubmission; close it in the ASC web UI, then create a fresh submission via the API."
       ]
     }
   ],
