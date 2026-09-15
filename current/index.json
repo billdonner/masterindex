@@ -43,7 +43,8 @@
       "August 28 1041Soft homepage update: the hero is toned down and now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenara is identified as the next MCP-enabled app. Published site commit e1d0caf.",
       "August 29 owner report: picklefamilia.com and picklefamilia.app were purchased through IONOS. The IONOS dashboard screenshot shows 88.92 GB webspace used, 12,963 files, 7 SFTP users, 2 standard databases, PHP Extended Support active, Site Scan reporting vulnerable websites, and Performance Level 2. DNS, SSL, redirects, canonical-domain choice, auto-renewal, and renewal pricing for the new domains are not yet verified.",
       "September 2 MedCommons update: billdonner/medcommonsPhp now contains a separate native SwiftUI iPhone/iPad DICOM research viewer under ios/DicomResearchViewer, committed and pushed as 1336dfa. It is explicitly research-only/not for diagnosis, bundles public sample DICOM fixtures with provenance and checksums, and has simulator XCTest plus no-signing iphoneos build evidence.",
-      "September 3 1041Soft Apple conversion: Apple Developer Support (case 20000146677819) had replied on August 26 that the Individual-to-Organization migration could start at any time and asked the owner to confirm; the case then sat waiting on the owner, not on Apple. On September 3 the owner sent the go-ahead, and the same day added the Mercury business account (1041Soft LLC, ending 8399) as the sole payout bank in App Store Connect so pre-migration earnings route to the LLC. Migration start not yet confirmed by Apple; owner follow-up scheduled 2026-09-04 AM. The personal W-9 on file must be replaced with an LLC/EIN W-9 after migration completes."
+      "September 3 1041Soft Apple conversion: Apple Developer Support (case 20000146677819) had replied on August 26 that the Individual-to-Organization migration could start at any time and asked the owner to confirm; the case then sat waiting on the owner, not on Apple. On September 3 the owner sent the go-ahead, and the same day added the Mercury business account (1041Soft LLC, ending 8399) as the sole payout bank in App Store Connect so pre-migration earnings route to the LLC. Migration start not yet confirmed by Apple; owner follow-up scheduled 2026-09-04 AM. The personal W-9 on file must be replaced with an LLC/EIN W-9 after migration completes.",
+      "2026-09-14 website migration: owner reports Apple moved all apps to 1041Soft. Both public websites now reflect a unified 1041Soft app home. Website deployment was verified by HTTP; App Store Connect was not queried in this website update, so retained app states, team membership, and seller-name facts were not independently reverified."
     ]
   },
   "summary": {
@@ -66,17 +67,17 @@
   "productLines": [
     {
       "id": "billdonner-free",
-      "name": "BillDonner.com",
-      "domain": "https://billdonner.com/",
+      "name": "Always-free apps (formerly BillDonner.com)",
+      "domain": "https://1041soft.com/",
       "pricingPolicy": "always-free",
-      "commitment": "Personal utilities, experiments, and children-oriented apps; users are never charged and Mac or MCP surfaces are optional."
+      "commitment": "Historical always-free pricing commitment retained. These apps now share the 1041Soft product home; BillDonner.com is a personal portfolio linking outward. The website migration does not change app pricing."
     },
     {
       "id": "1041soft-commercial",
       "name": "1041soft.com",
       "domain": "https://1041soft.com/",
       "pricingPolicy": "commercial",
-      "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model."
+      "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model. Since 2026-09-14, 1041Soft also hosts the formerly BillDonner.com app family; the shared domain does not imply every app is paid."
     }
   ],
   "screenshotOperations": {
@@ -783,17 +784,22 @@
       "kind": "app",
       "cluster": "HOABooklet",
       "status": "asc-mapped",
-      "lastModified": "2026-09-05",
+      "lastModified": "2026-09-14",
       "repo": "~/hoabooklet",
       "bundleId": "com.hoabooklet.app",
       "release": "ASC record 6806080022 (new, created 2026-08-27 for the HOABooklet rename; old record 6785245339 deleted): iOS + macOS 1.0 PREPARE_FOR_SUBMISSION, no builds uploaded yet; project.yml 1.0 (18); repo cloned at ~/hoabooklet",
       "description": "Document-based macOS (flagship authoring) + iOS (companion) directory-book app: maintains member/resident rosters and generates print-ready saddle-stitch booklet PDFs, a web view, and Word export from one source of truth. A .hoabooklet package = SQLite (GRDB) + lossless photos + frozen editions, synced via iCloud Documents.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.com/apps/hoabooklet/",
+        "website": "https://1041soft.com/hoabooklet/",
         "appStore": null,
         "github": "https://github.com/billdonner/hoabooklet",
-        "support": "https://billdonner.com/apps/hoabooklet/#support"
+        "support": "https://1041soft.com/hoabooklet/",
+        "companyPage": "https://1041soft.com/hoabooklet/",
+        "portfolioPage": "https://billdonner.com/apps/hoabooklet/",
+        "previousWebsite": "https://billdonner.com/apps/hoabooklet/",
+        "privacyPolicy": "https://1041soft.com/hoabooklet/privacy",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "2026-09-05: ASC identity CHANGED with the rename after all - the old bookmaker/Mallinbook record 6785245339 returns 404 and a fresh record 6806080022 (SKU hoa001) carries iOS and macOS 1.0 with zero builds. hoabooklet RELEASE.md commit bd27e30 records the new record and the URLs set on it. Build 18 from the old record did not carry over; the next upload is the first on the new record.",
@@ -804,7 +810,8 @@
         "Local version 1.0 (14) is one build ahead of TestFlight (13) — committed, not yet uploaded.",
         "~/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
         "PARKED 2026-08-03 by owner: resume near the iOS 27 release, when App Store submission can go through the release iOS-27 toolchain. State at park: build 18 live on TestFlight (both platforms); feature-complete for v1 (custom pages, filler pool, recto section starts with PD art dividers, menu parity, -exportPDF); 67 app + 27 MCP tests green; mallinbook-mcp installed at ~/bin and registered with Claude Code; 44-page Maplecrest print PDF ready for the bindery. Resume checklist: confirm xcode-select is the release Xcode, archive via scripts/preflight-testflight.sh flow, then App Store metadata/review.",
-        "Renamed from Mallinbook 2026-08-27 (app, bundle ID, iCloud container, .hoabooklet extension, repo, hoabooklet-mcp). ASC rename complete 2026-08-27: new record HOABooklet 6806080022 (com.hoabooklet.app, SKU hoa001) with support/privacy URLs set; old record 6785245339 deleted (its builds/screenshots gone — fresh upload needed)."
+        "Renamed from Mallinbook 2026-08-27 (app, bundle ID, iCloud container, .hoabooklet extension, repo, hoabooklet-mcp). ASC rename complete 2026-08-27: new record HOABooklet 6806080022 (com.hoabooklet.app, SKU hoa001) with support/privacy URLs set; old record 6785245339 deleted (its builds/screenshots gone — fresh upload needed).",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -825,13 +832,15 @@
         "picklefamilia-core"
       ],
       "links": {
-        "website": "https://pickledballs.billdonner.com",
-        "websiteSource": "verified HTTP 200 on 2026-08-13",
+        "website": "https://1041soft.com/pickledballs/",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification.",
         "appStore": null,
-        "privacyPolicy": "https://pickledballs.billdonner.com/privacy.html",
-        "support": "https://pickledballs.billdonner.com/support.html",
+        "privacyPolicy": "https://1041soft.com/pickledballs/privacy.html",
+        "support": "https://1041soft.com/pickledballs/support.html",
         "testFlight": "https://testflight.apple.com/join/xa71Ymwt",
-        "portfolioPage": "https://billdonner.com/apps/pickledballs/"
+        "portfolioPage": "https://billdonner.com/apps/pickledballs/",
+        "companyPage": "https://1041soft.com/pickledballs/",
+        "previousWebsite": "https://pickledballs.billdonner.com"
       },
       "notes": [
         "2026-09-14: the core (models, scheduler adapters, member Collective, live-play wire format, handoff, parsers; 13 files + 17 test files) moved to ~/picklefamilia-core; this target compiles the sources in. Branch picklefamilia merged to main. Three UI tests fail on main from the branch's Home redesign (roster tile, Settings Roster row, screenshot harness); pre-existing.",
@@ -843,7 +852,8 @@
         "SharedAI unlinked from v1.0 (2026-07-23) — re-add when the Instructor tier ships.",
         "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
         "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
-        "HarvestSync and Clubsync are deferred until PickledBalls v2; they are not part of the current useful product path."
+        "HarvestSync and Clubsync are deferred until PickledBalls v2; they are not part of the current useful product path.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -864,9 +874,10 @@
       ],
       "links": {
         "website": "https://doubleqross.com/",
-        "portfolioPage": null,
+        "portfolioPage": "https://billdonner.com/apps/qross/",
         "testFlight": "https://testflight.apple.com/join/W6VjPWV6",
-        "appStore": null
+        "appStore": null,
+        "companyPage": "https://1041soft.com/qross/"
       },
       "domain": {
         "name": "doubleqross.com",
@@ -891,7 +902,8 @@
         "The included Sectigo certificate covers both *.doubleqross.com and doubleqross.com and is valid through 2027-02-10.",
         "2026-09-12 verified ASC marketing, support and privacy URLs all use doubleqross.com; general TestFlight URLs now match.",
         "doubleqross.com serves IONOS webspace /qross directly. Deploy only the explicit public allowlist in qross/scripts/publish-content.py, never docs globs. The GitHub and 1041soft legacy pages now redirect to this canonical site.",
-        "Recent activity (through 2026-08-24): two external Codex reviews fixed 11 verified defects (soft-locks, daily-exploit, Leg-2 empty-goal, DC scoring floor 2n-1); Double Cross Leg 2 reworked to walked-choice (#198); efficiency % scoring shipped (#197); Carol's full PR stack merged (palettes to 16, Tahiti, onboarding); subtopic search upgraded (#178/#179, enrich pass pending); issue board triaged 29→8; test suite 891/0. Open: PR #172 and decisions #193 (both Carol), qclean-enrich catalog republish, MLX-lab hint-judge queue."
+        "Recent activity (through 2026-08-24): two external Codex reviews fixed 11 verified defects (soft-locks, daily-exploit, Leg-2 empty-goal, DC scoring floor 2n-1); Double Cross Leg 2 reworked to walked-choice (#198); efficiency % scoring shipped (#197); Carol's full PR stack merged (palettes to 16, Tahiti, onboarding); subtopic search upgraded (#178/#179, enrich pass pending); issue board triaged 29→8; test suite 891/0. Open: PR #172 and decisions #193 (both Carol), qclean-enrich catalog republish, MLX-lab hint-judge queue.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -956,7 +968,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "internal-only",
-      "lastModified": "2026-09-07",
+      "lastModified": "2026-09-14",
       "repo": "~/workinon",
       "bundleId": "com.workinon.app",
       "productLine": "billdonner-free",
@@ -969,13 +981,16 @@
         "workinon-mcp"
       ],
       "links": {
-        "website": "https://billdonner.github.io/workinon/",
+        "website": "https://1041soft.com/workinon/",
         "testFlight": "https://testflight.apple.com/join/FbsJBmc7",
         "appStore": null,
         "privacyPolicy": "https://1041soft.com/workinon/privacy.html",
         "support": "https://1041soft.com/workinon/support.html",
         "portfolioPage": "https://billdonner.com/apps/workinon/",
-        "privacyPolicyMirror": "https://billdonner.github.io/workinon/privacy.html"
+        "privacyPolicyMirror": "https://billdonner.github.io/workinon/privacy.html",
+        "companyPage": "https://1041soft.com/workinon/",
+        "previousWebsite": "https://billdonner.github.io/workinon/",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
@@ -983,7 +998,8 @@
         "2026-09-02: Xcode Cloud product created; 'Archive - App Store' workflow archives on push to `release`, pinned Xcode 26.6 / macOS 26.6.2, because this Mac's macOS 27 beta archives fail App Store ingestion. GRDB is consumed from the billdonner/GRDB.swift fork (pinned 7.10.0) since Xcode Cloud requires every detected repo to be owner-connected. Helpers: scripts/xcode-cloud-archive.py, scripts/asc-testflight.py, scripts/asc-submit.py.",
         "2026-09-04: Codex review fixes shipped in builds 2-3: removed production seeding of developer-internal Twilio/Apple statuses into the Hourly tab; privacy policy and GitHub-tab copy now disclose the sync service; PrivacyInfo.xcprivacy added to all five targets; legacy user lists named 'Hourly' migrate to 'Hourly (mine)'; GitHub tab rename/delete now moves or removes the Keychain token and server registration.",
         "2026-09-07: branch divergence closed. origin/main (MasterIndex board) merged into feat/github-tabs as de2bb2e; main, release and feat/github-tabs all point at it. Feed rows live in a hidden 'MasterIndex' list rendered by a bottom-tab MasterIndexTabView, so they never mix into Focus lists or the widget. main's one-time clearAll bootstrap reset was dropped in the merge.",
-        "The existing 93-point Screenker gallery remains useful as TestFlight and internal documentation, but no public ASC marketing-gallery work is scheduled."
+        "The existing 93-point Screenker gallery remains useful as TestFlight and internal documentation, but no public ASC marketing-gallery work is scheduled.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1043,7 +1059,7 @@
       "kind": "app",
       "cluster": "KinFlash",
       "status": "release-planned",
-      "lastModified": "2026-09-05",
+      "lastModified": "2026-09-14",
       "repo": "~/kinflash",
       "bundleId": "com.billdonner.kinflash",
       "productLine": "1041soft-commercial",
@@ -1053,10 +1069,16 @@
       "description": "Free iOS player. Plays games authored in KinFlash Studio and browses the family tree; cannot author or take payment. Read-only is a compile-time constant (AuthoringPolicy), not a setting.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.com/apps/kinflash/",
+        "website": "https://1041soft.com/kinflash/",
         "testFlight": "https://testflight.apple.com/join/WkcUxvt3",
         "appStore": null,
-        "github": "https://github.com/billdonner/kinflash"
+        "github": "https://github.com/billdonner/kinflash",
+        "companyPage": "https://1041soft.com/kinflash/",
+        "portfolioPage": "https://billdonner.com/apps/kinflash/",
+        "previousWebsite": "https://billdonner.com/apps/kinflash/",
+        "support": "https://1041soft.com/kinflash/support.html",
+        "privacyPolicy": "https://1041soft.com/kinflash/privacy.html",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "Bundle identity comes from xcconfig.",
@@ -1105,7 +1127,8 @@
         "2026-08-27: heirloom books are a feature, not a business (selling books was considered and rejected). TreeNarrativeMarkdown and PDFExporter already exist. Open fork recorded: a book needs the whole tree, so generating one on the phone would mean the seat carries the family archive rather than a few questions — proposed instead that the phone requests a book and the Mac sends the finished PDF.",
         "2026-08-27 OPEN: seat price; where the age bands fall; whether the tree's owner needs a seat; whether anything beyond games can be pushed; whether delivered content can be revoked; and what happens to seats when the tree's owner dies.",
         "Codex review 2026-08-30 of the day's changes found three real defects, all fixed: the read-only companion opened packages read-write and ran migrate() unconditionally, so it wrote to — and could silently upgrade the schema of — the author's only copy of their tree; openPackage released its security-scoped resource in a defer while GRDB kept reading, the same bug already fixed on the Mac side and left on iOS; and Config/Local.xcconfig.example still set the deleted KINFLASH_BUNDLE_PREFIX. Suites after: 398 iOS unit, 10 iOS UI, 93 macOS, all green. Codex found no path where iOS can mutate a tree, and confirmed SampleGame never touches the user's real database.",
-        "2026-09-05: live ASC shows iOS 1.0.1 build 28 VALID (2026-09-01), with builds 25, 9, 7 behind it."
+        "2026-09-05: live ASC shows iOS 1.0.1 build 28 VALID (2026-09-01), with builds 25, 9, 7 behind it.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1124,10 +1147,11 @@
       "description": "Paid macOS authoring app. Builds the family tree via guided AI interviews, generates flashcards and self-contained .kinflashgame files, and hosts the in-app MCP server (port 9870).",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.com/apps/kinflash/",
+        "website": "https://1041soft.com/kinflash/",
         "testFlight": null,
         "appStore": null,
-        "github": "https://github.com/billdonner/kinflash"
+        "github": "https://github.com/billdonner/kinflash",
+        "portfolioPage": "https://billdonner.com/apps/kinflash/"
       },
       "notes": [
         "Bundle identity comes from xcconfig.",
@@ -1212,17 +1236,22 @@
       "kind": "app",
       "cluster": "Oenora",
       "status": "ready-for-sale",
-      "lastModified": "2026-09-08",
+      "lastModified": "2026-09-14",
       "repo": "~/100Burfords",
       "bundleId": "com.billdonner.burfords",
       "release": "iOS 1.0 READY_FOR_DISTRIBUTION; 1.3 in Prepare for Submission with Xcode Cloud build 7 attached (CloudKit catalog + week 118); local project.yml at 1.3 (22)",
       "description": "The only ASC-mapped app in this scan marked ready for sale.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.github.io/100Burfords/",
+        "website": "https://1041soft.com/100burfords/",
         "appStore": "https://apps.apple.com/ca/app/100-burfords/id6766107636",
         "appStoreSource": "verified web search",
-        "websiteSource": "verified HTTP 200 on 2026-08-02"
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification.",
+        "companyPage": "https://1041soft.com/100burfords/",
+        "portfolioPage": "https://billdonner.com/apps/100burfords/",
+        "previousWebsite": "https://billdonner.github.io/100Burfords/",
+        "support": "https://1041soft.com/100burfords/#support",
+        "privacyPolicy": "https://1041soft.com/100burfords/privacy.html"
       },
       "notes": [
         "2026-09-04: owner pulled the Re-Caption feature after the cartoonist saw a shared remix export. Feature removed from source (build 20), all 1.2 builds carrying it expired in TestFlight, feature-bearing 1.1 builds detached from the external group. Release re-targeted to 1.3 pending further small adjustments.",
@@ -1237,7 +1266,8 @@
         "Re-Caption feature shipped 2026-08-30 (builds 10-15): reader-written captions with 4 styles/3 sizes, Vision-detected dialog rewriting baked into the artwork at original lettering scale, per-panel persistence, print/share via existing sheet; ITSAppUsesNonExemptEncryption declared from build 13; build 15 applies all 7 findings from the 2026-08-30 code review (persistence race, stale-render, overflow clipping, perf debounce, test-state reset, font single-sourcing).",
         "CLOSED 2026-08-30, same evening: both P2s are fixed. c3fa62a ('Apply remaining code-review fixes', 1.1 (15)) added `message: Text(jobName)` to the Print/Share ShareLink (PrintService.swift:148) and gated the Print/Share button on bubblesLoaded. The gate was still not enough — loadBubbles() sets bubblesLoaded and THEN calls rebuildEditedImage(), which debounces 250ms and renders off the main thread, so a tap inside that window still composed from the original artwork. 14e561a ('Close the Print/Share window properly', 1.1 (16)) gates on `canCompose` = bubblesLoaded && editedImage != nil, which waits for the rewritten artwork to exist. Build succeeds. The second ShareLink (PrintService.swift:196, 'Save Card Image') still has no message:, deliberately left — it saves a fan-club card rather than sharing a captioned panel.",
         "2026-09-05: iPhone-landscape App Store gallery (7 slides) and full-screen title-bar legibility fix committed; still 1.3 (21), TestFlight 1.3 build 5 VALID (Xcode Cloud numbering).",
-        "Submission prep 2026-09-08: Xcode Cloud run 7 (main @ 099653a, CloudKit catalog included) archived and uploaded as build 7; attached to 1.3 replacing local build 16 (local archives fail ITMS-90111). What's New and description updated for CloudKit weekly delivery; screenshots (7 iPhone/6 iPad) and review details already in place. Ready to submit; unverified: whether week 118 is published to CloudKit production (no cktool user token on the Mac)."
+        "Submission prep 2026-09-08: Xcode Cloud run 7 (main @ 099653a, CloudKit catalog included) archived and uploaded as build 7; attached to 1.3 replacing local build 16 (local archives fail ITMS-90111). What's New and description updated for CloudKit weekly delivery; screenshots (7 iPhone/6 iPad) and review details already in place. Ready to submit; unverified: whether week 118 is published to CloudKit production (no cktool user token on the Mac).",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1288,7 +1318,7 @@
       "cluster": "Grubber",
       "status": "asc-mapped",
       "productLine": "1041soft",
-      "lastModified": "2026-09-05",
+      "lastModified": "2026-09-14",
       "repo": "~/grubber-app",
       "bundleId": "com.sentipods.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; iOS build 20 and macOS build 21 VALID; store name Grubber Desk",
@@ -1300,9 +1330,12 @@
         "website": "https://1041soft.com/grubber/",
         "support": "https://1041soft.com/grubber/support.html",
         "backend": "https://bd-grubber.fly.dev",
-        "websiteSource": "1041soft-site repo commit 713b958; HTTP 200 verified 2026-08-29",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification.",
         "appStore": null,
-        "privacy": "https://1041soft.com/grubber/privacy/"
+        "privacy": "https://1041soft.com/grubber/privacy/",
+        "companyPage": "https://1041soft.com/grubber/",
+        "portfolioPage": "https://billdonner.com/apps/grubber/",
+        "privacyPolicy": "https://1041soft.com/grubber/privacy/"
       },
       "notes": [
         "Uses grubber's /api/v1 surface with an X-Client-Key.",
@@ -1316,7 +1349,8 @@
         "2026-08-29: GrubberMac hosts an in-app MCP automation server on 127.0.0.1:9900 (new 9900-9909 port-registry block; off by default, Settings > Automation, keychain bearer token, sandbox gained network.server). Tools health_check/app_status/goto_section/open_episode/search_transcripts drive the app UI; corpus data remains on the server-side /mcp. Live-verified round trip; iOS build 22, macOS build 23.",
         "2026-08-29 owner policy: Grubber is on the 1041soft.com commercial line, presented as a platform (app + API + MCP + newsletter) at 1041soft.com/grubber/. Distribution is PERMANENT TESTFLIGHT, INVITE-ONLY by design — do not submit to the App Store; TestFlight group 'sentients' (internal, no public link). Old /sentipods/ pages redirect to /grubber/. Builds uploaded 2026-08-29: iOS 23, macOS 24 (project bumped to 24/25). ASC privacy/support/marketing URL updates pending (scratchpad asc_urls.py).",
         "2026-08-30: Codex CLI review of the MCP + Newsletter work found 5 issues, all fixed in 27c47c1: MCP open_episode/search now work when invoked from another section (initial-value onChange gap), stale episode-fetch race guarded, Settings displays the exact server token (keychain-failure mismatch), pre-auth HTTP parser classifies malformed vs incomplete (400 + drop instead of held-open connections), goto_section schema lists editions. 33 Mac tests pass; builds bumped iOS 25 / macOS 26.",
-        "2026-09-05: ASC store name is now Grubber Desk (record 6797132650, bundle unchanged com.sentipods.app); iOS build 23 VALID 2026-08-29."
+        "2026-09-05: ASC store name is now Grubber Desk (record 6797132650, bundle unchanged com.sentipods.app); iOS build 23 VALID 2026-08-29.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1508,20 +1542,26 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-09-14",
       "repo": "github:billdonner/123words",
       "bundleId": "com.123words.app",
       "release": "iOS 1.11 READY_FOR_SALE and 1.12 PREPARE_FOR_SUBMISSION; source and ASC 1.12 build 59 VALID on 2026-08-14",
       "description": "Kids 2–7 reading app: read, spell, count, race the clock; five mini-games, 220+ spoken words.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.github.io/123words/",
+        "website": "https://1041soft.com/123words/",
         "portfolioPage": "https://billdonner.com/apps/123words/",
         "appStore": "https://apps.apple.com/us/app/id6766975041",
-        "github": "https://github.com/billdonner/123words"
+        "github": "https://github.com/billdonner/123words",
+        "companyPage": "https://1041soft.com/123words/",
+        "previousWebsite": "https://billdonner.github.io/123words/",
+        "support": "https://1041soft.com/123words/support.html",
+        "privacyPolicy": "https://1041soft.com/123words/privacy.html",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
-        "GitHub source is aligned to the open ASC 1.12 train at build 59; the initial 1.11 upload was rejected because that train is closed, then the corrected 1.12 upload succeeded."
+        "GitHub source is aligned to the open ASC 1.12 train at build 59; the initial 1.11 upload was rejected because that train is closed, then the corrected 1.12 upload succeeded.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1530,7 +1570,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-30",
+      "lastModified": "2026-09-14",
       "repo": "~/pfolio-app",
       "bundleId": "com.pfolio.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; source and both VALID ASC builds aligned at 35",
@@ -1544,11 +1584,14 @@
         "backend": "https://bd-pfolio.fly.dev",
         "github": "https://github.com/billdonner/pfolio-app",
         "appStore": null,
-        "support": "https://pfoliolio.com/"
+        "support": "https://pfoliolio.com/",
+        "companyPage": "https://1041soft.com/pfolio/",
+        "portfolioPage": "https://billdonner.com/apps/pfolio/"
       },
       "notes": [
         "Published to IONOS on 2026-08-14: /apps/pfoliolio is live and /apps/oliopfolio serves a canonical redirect to it.",
-        "The published files match the generated MasterIndex artifacts by SHA-1."
+        "The published files match the generated MasterIndex artifacts by SHA-1.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1589,7 +1632,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-30",
+      "lastModified": "2026-09-14",
       "repo": "~/oenora",
       "bundleId": "com.billdonner.oenora",
       "release": "ASC app 6799520155: builds unified at 17 on BOTH platforms, uploaded and VALID 2026-08-30 (superseding same-day iOS 16 / macOS 15; earlier: iOS 1,3-10, macOS 2-7) These builds add the merchant marketplace channel (multi-merchant catalogs, buyer interest, shopkeeper mode with publish/check-interest, shop branding), full iPad feature parity incl. rear-label capture depth and onboarding, Finder-style cellar sorting, richer interest History, fill-in-the-blank research composer, in-app Mac MCP automation server (ADR-010, port 9850), and server-metered AI spend tracking (/v1/spend, Settings > AI Spending). Universal purchase (ADR-007); Founders Beta public link live. Xcode Cloud lane documented and repo-ready (ci_post_clone.sh); workflows pending one GUI step.",
@@ -1601,7 +1644,12 @@
         "website": "https://1041soft.com/oenora/",
         "appStore": null,
         "publicTestFlight": "https://testflight.apple.com/join/M6vwHjHB",
-        "github": "https://github.com/billdonner/oenora"
+        "github": "https://github.com/billdonner/oenora",
+        "companyPage": "https://1041soft.com/oenora/",
+        "portfolioPage": "https://billdonner.com/apps/oenora/",
+        "support": "https://1041soft.com/oenora/",
+        "privacyPolicy": "https://1041soft.com/oenora/privacy",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "2026-09-08: the two stray local Server/server.py instances (ports 9856 and 9899, the latter squatting on lifetime_monitor's range) were stopped by owner decision.",
@@ -1631,7 +1679,8 @@
         "2026-08-17 evening: iPad promoted to full desk role after Jon's Mac failed — hard idiom fork at the app root gives iPhone and iPad entirely separate view trees (only OenoraCore and non-visual services shared; research client and suggestion filtering moved into core). iPad gains sidebar shell, card cellar, finger-scaled rack map, case grid, full Research with GPT/Claude choice, iPad-designed capture-and-confirm, Safety, Guide. Shipped as iOS build 9: internal group immediately, external WAITING_FOR_REVIEW.",
         "2026-08-22: ADR-009 — Offering (asking price) + IndicationOfInterest (buyer contact) shipped: domain model, CloudKit sync, and phone UI (list/manage from Cellar menu). No commerce mechanism — a sale is still ordinary removeBottle. Not yet in a TestFlight build (project.yml unbumped); website/privacy/App Store copy updated to describe it.",
         "2026-08-23: masterindex drift fixed — the release summary and links.website field were stale (still described the pre-ADR-007 Developer ID Mac posture; website field pointed at billdonner.com/apps/oenora/, which 404s). Corrected against a fresh ASC API check; support/privacy live at 1041soft.com/oenora/.",
-        "2026-08-23: full code review of ADR-009 (Offering/IndicationOfInterest) via Codex. 5 findings fixed: bootstrap sync never uploaded existing offerings/interests (bumped bootstrap generation 2->3); two offline devices could each create an active Offering for the same bottle (fixed with a deterministic canonicalActiveOffering picker, earliest createdAt + UUID tiebreak, so every device converges without a write-back race); sold/departed bottles could still render in the For Sale list (now requires bottle.isActive too); pasting a very large price could trap on Double-to-Int conversion (added finite + bounds checks); the offering sheet cleared fields or dismissed even when the underlying store call failed (create/withdraw/recordInterest now return Bool). 2 findings documented as accepted risk in ADR-009 rather than fixed: interest can sync in against an already-withdrawn offering (harmless, matches the no-revalidation design of every other applyRemote* path); bare-UUID CloudKit record names collide across all record types, not just these two (pre-existing, whole-sync-layer scope). Verified: iOS and Mac targets both build clean, all 48 OenoraCore tests pass. Not yet tested on a physical device and not yet in a TestFlight build - project.yml is still at iOS 10 / Mac 7 (unbumped). Next step: install on-device via Xcode, run through TEST_PLAN.md section 12, then bump build numbers before any TestFlight upload."
+        "2026-08-23: full code review of ADR-009 (Offering/IndicationOfInterest) via Codex. 5 findings fixed: bootstrap sync never uploaded existing offerings/interests (bumped bootstrap generation 2->3); two offline devices could each create an active Offering for the same bottle (fixed with a deterministic canonicalActiveOffering picker, earliest createdAt + UUID tiebreak, so every device converges without a write-back race); sold/departed bottles could still render in the For Sale list (now requires bottle.isActive too); pasting a very large price could trap on Double-to-Int conversion (added finite + bounds checks); the offering sheet cleared fields or dismissed even when the underlying store call failed (create/withdraw/recordInterest now return Bool). 2 findings documented as accepted risk in ADR-009 rather than fixed: interest can sync in against an already-withdrawn offering (harmless, matches the no-revalidation design of every other applyRemote* path); bare-UUID CloudKit record names collide across all record types, not just these two (pre-existing, whole-sync-layer scope). Verified: iOS and Mac targets both build clean, all 48 OenoraCore tests pass. Not yet tested on a physical device and not yet in a TestFlight build - project.yml is still at iOS 10 / Mac 7 (unbumped). Next step: install on-device via Xcode, run through TEST_PLAN.md section 12, then bump build numbers before any TestFlight upload.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1648,12 +1697,16 @@
       "description": "Pocket 16-step sequencer for studying and remixing well-known drum breaks.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.com/apps/amenbeats/",
+        "website": "https://1041soft.com/amenbeats/",
         "testFlight": "https://testflight.apple.com/join/YNtJvFDf",
         "github": "https://github.com/billdonner/drumbeats",
         "appStore": null,
-        "privacyPolicy": "https://billdonner.com/apps/amenbeats/privacy",
-        "support": "https://billdonner.com/apps/amenbeats/"
+        "privacyPolicy": "https://1041soft.com/amenbeats/privacy/",
+        "support": "https://1041soft.com/amenbeats/support.html",
+        "companyPage": "https://1041soft.com/amenbeats/",
+        "portfolioPage": "https://billdonner.com/apps/amenbeats/",
+        "previousWebsite": "https://billdonner.com/apps/amenbeats/",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "2026-08-27: iOS 1.0 (build 14) SUBMITTED and Waiting for Review (submission id 1a964916-b3e9-4e8b-b1b2-beccaad36747, submitted by bill donner). Free, no IAP, no data collection; age rating 4+ with parentalControls=true; contentRightsDeclaration=DOES_NOT_USE_THIRD_PARTY_CONTENT.",
@@ -1662,7 +1715,8 @@
         "2026-09-05: pulled from Waiting for Review (now DEVELOPER_REJECTED, the editable state) per owner decision to make AmenBeats landscape-only on every device in both Pro and Kid modes, plus a Kid-mode screen redesign. Work is specified in ~/drumbeats/HANDOFF-landscape-only.md; nothing in the app has changed yet. Resubmission requires new landscape screenshot sets.",
         "2026-09-14: Owner confirmed sending a reply from billdonner@gmail.com to devprograms@apple.com in case 20000146677819, Migration to a company account, asking whether migration is blocking AmenBeats 1.0 build 16 submitted September 6, what steps remain, and the expected timing. Awaiting Apple response; migration impact is unconfirmed. Thread: https://mail.google.com/mail/#all/1a03fa9200586e03",
         "2026-09-14: Lisa at Apple Developer Support confirmed enrollment CX276BJ992 was verified and approved September 13 and said TestFlight builds, tester groups, and feedback should transfer. This does not independently verify completion of the membership migration or seller-name change. Source: https://mail.google.com/mail/#all/1a0a02a3cb7b0b03",
-        "2026-09-14: ASC state checked by API (builds, appStoreVersions, reviewSubmissions): WAITING_FOR_REVIEW since 09-06 on build 16. Migration follow-up to Lisa sent 09-14 03:23 UTC; her reply confirmed enrollment approval but did not address this submission."
+        "2026-09-14: ASC state checked by API (builds, appStoreVersions, reviewSubmissions): WAITING_FOR_REVIEW since 09-06 on build 16. Migration follow-up to Lisa sent 09-14 03:23 UTC; her reply confirmed enrollment approval but did not address this submission.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1671,24 +1725,28 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-09-14",
       "repo": "github:billdonner/screenker",
       "bundleId": "com.screenker.app",
       "release": "ASC macOS 1.0 PREPARE_FOR_SUBMISSION; build 44 VALID",
       "description": "Mac studio for creating and evaluating App Store screenshot galleries.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.github.io/screenker/",
-        "support": "https://billdonner.github.io/screenker/support.html",
-        "privacyPolicy": "https://billdonner.github.io/screenker/privacy.html",
+        "website": "https://1041soft.com/screenker/",
+        "support": "https://1041soft.com/screenker/",
+        "privacyPolicy": "https://1041soft.com/screenker/privacy",
         "portfolioPage": "https://billdonner.com/apps/screenker/",
         "github": "https://github.com/billdonner/screenker",
-        "appStore": null
+        "appStore": null,
+        "companyPage": "https://1041soft.com/screenker/",
+        "previousWebsite": "https://billdonner.github.io/screenker/",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "Current ASC links all return 200.",
         "The repository's newest collateral points at the now-live 1041soft.com site, while ASC still uses the verified billdonner.github.io pages; align the public URLs only after Screenker's product-line assignment is explicit.",
-        "Screenker's own six-slot Mac gallery was re-shot, critiqued at 86/100, and republished on 2026-08-10. It clears the general 85 gate but not the 90 commercial target."
+        "Screenker's own six-slot Mac gallery was re-shot, critiqued at 86/100, and republished on 2026-08-10. It clears the general 85 gate but not the 90 commercial target.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1721,22 +1779,28 @@
       "kind": "app",
       "cluster": "PickleFamilia",
       "status": "legacy",
-      "lastModified": "2026-09-13",
+      "lastModified": "2026-09-14",
       "repo": "github:billdonner/picklefamilia-ios",
       "bundleId": "com.picklefamilia.app",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; build 2 VALID",
       "description": "Legacy App Store Connect record of the old organizer app on nagzerver's retired pickle module. Not revived: PickleFamilia is the family name (ADR-009); the app is PickleFamilia Companion. The record is kept only as the name's reservation.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.github.io/picklefamilia-ios/",
+        "website": "https://1041soft.com/picklefamilia/",
         "portfolioPage": "https://billdonner.com/apps/picklefamilia/",
         "github": "https://github.com/billdonner/picklefamilia-ios",
-        "appStore": null
+        "appStore": null,
+        "companyPage": "https://1041soft.com/picklefamilia/",
+        "previousWebsite": "https://billdonner.github.io/picklefamilia-ios/",
+        "support": "https://1041soft.com/picklefamilia/support.html",
+        "privacyPolicy": "https://1041soft.com/picklefamilia/privacy.html",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "2026-09-13: superseded by ADR-009 in collective-engine. picklefamilia.com and picklefamilia.app are served by collective-engine (FAMILY_HOST), see that entry.",
         "Repository is active on GitHub but not cloned on this machine.",
-        "Owner reported purchase of picklefamilia.com and picklefamilia.app through IONOS on 2026-08-29; domain configuration remains unverified."
+        "Owner reported purchase of picklefamilia.com and picklefamilia.app through IONOS on 2026-08-29; domain configuration remains unverified.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -1745,22 +1809,24 @@
       "kind": "website",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-08-14",
-      "repo": "github:billdonner/1041soft-site",
+      "lastModified": "2026-09-14",
+      "repo": "~/1041soft-site",
       "bundleId": null,
       "productLine": "1041soft-commercial",
-      "release": "Public GitHub Pages site with apex and www DNS on GitHub Pages, HTTPS enforced, and a Let's Encrypt certificate valid through 2026-11-12; homepage MCP/voice positioning updated 2026-08-28",
-      "description": "Company landing page and shared support/privacy source for Screenker, Mallinbook, SentiPods, and Pfoliolio.",
+      "release": "Published through GitHub Pages on 2026-09-14 at commit 746320a; deployment run 34919820497 succeeded. Custom-domain homepage and new app routes returned HTTP 200.",
+      "description": "Unified company app portfolio: 14 catalog entries, with product, support, privacy, App Store, and beta destinations. Includes the apps formerly based at BillDonner.com.",
       "dependencies": [],
       "links": {
         "website": "https://1041soft.com/",
-        "github": "https://github.com/billdonner/1041soft-site"
+        "github": "https://github.com/billdonner/1041soft-site",
+        "deployment": "https://github.com/billdonner/1041soft-site/actions/runs/34919820497"
       },
       "notes": [
         "The apex resolves to GitHub Pages addresses and www is a CNAME to billdonner.github.io.",
         "Canonical app web assets were consolidated here; private app-repository Pages sites were disabled to stop exposing their docs directories.",
         "Only public web assets were migrated; internal plans, ADRs, reviews, and contributor documentation remain in private repositories.",
-        "Homepage commit e1d0caf emphasizes MCP control from Claude and ChatGPT, including voice workflows, and identifies Oenora as next."
+        "Homepage commit e1d0caf emphasizes MCP control from Claude and ChatGPT, including voice workflows, and identifies Oenora as next.",
+        "2026-09-14: Added AmenBeats, MURDL 16, 123 Words, 100 Burfords, PickledBalls, and workinOn to the homepage; migrated supporting pages and assets. Removed the blanket claim that no apps had been submitted. Preserved newer DoubleQross redirects to its dedicated product site. Shared description source: ~/1041soft-site/data/portfolio.json."
       ]
     },
     {
@@ -1769,22 +1835,22 @@
       "kind": "website",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-08-28",
-      "repo": "~/masterindex",
+      "lastModified": "2026-09-14",
+      "repo": "~/website",
       "bundleId": null,
       "productLine": "billdonner-free",
-      "release": "Published to IONOS on 2026-08-28 from the billdonner.com website source with 6 active entries",
-      "description": "Public directory of App Store, TestFlight, and in-development apps.",
+      "release": "Published to IONOS by SFTP on 2026-09-14 from local commit 8262c66; 24 public files uploaded. Homepage, catalog, representative app pages, screenshot/privacy forwarding pages, biography, and music pages verified live.",
+      "description": "Personal app portfolio retaining 14 app descriptions; every product action points to 1041Soft. BillDonner.com no longer serves as the app product home.",
       "dependencies": [],
       "links": {
         "website": "https://billdonner.com/apps/"
       },
       "notes": [
-        "The live catalog lists 6 active entries: AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods.",
-        "PickledBalls is a separate public free app from PickleFamilia and has its own catalog/support route.",
-        "LT Watch and Flasherz Kids are nonviable and removed from the public apps tree; Screenker, Mallinbook, Pfoliolio, and PickleFamilia belong to the 1041Soft release track.",
         "Pfoliolio has a live marketing and support route; the obsolete Oliopfolio path redirects to it.",
-        "The previous IONOS catalog was retained under /_archive before publication, and the old LtWatcher directory was moved there."
+        "The previous IONOS catalog was retained under /_archive before publication, and the old LtWatcher directory was moved there.",
+        "Historical six-entry catalog and separate domain-based product assignments are superseded by the 2026-09-14 unified portfolio. Retired app exclusions remain unchanged.",
+        "Generator ~/website/build_apps.py reads data/portfolio.json; synchronize with --catalog ../1041soft-site/data/portfolio.json. The personal ASC --refresh workflow is retired. SFTP password was entered through a secure dialog; it is not stored in this index.",
+        "The generated website currently retains older PickledBalls and KinFlash descriptions; newer PickleFamilia Companion branding and the KinFlash Family/Studio split remain recorded in their app entities."
       ]
     },
     {
@@ -2127,17 +2193,23 @@
       "description": "Native macOS SwiftUI rebuild of the archived MURDL word game: 2/4/8/16 boards, guesses = boards + 5, Classic/Stopwatch/Sprint modes, score book, grid or strip layouts with arrow navigation, floating keyboard window, full keyboard play. Engine is the cross-platform MurdlCore Swift package (tested on Windows and macOS in CI) with a C bridge (MurdlBridge.dll / dylib). A C#/Avalonia desktop front end in Windows/ is the Windows build and also runs natively on macOS.",
       "dependencies": [],
       "links": {
-        "website": "https://billdonner.com/apps/murdl/",
-        "privacyPolicy": "https://billdonner.com/apps/murdl/privacy/",
+        "website": "https://1041soft.com/murdl/",
+        "privacyPolicy": "https://1041soft.com/murdl/privacy/",
         "appStore": null,
         "github": "https://github.com/billdonner/murdl27",
-        "showcase": "https://claude.ai/code/artifact/4f1144eb-dbad-4f9e-811a-0db71edfd1eb"
+        "showcase": "https://claude.ai/code/artifact/4f1144eb-dbad-4f9e-811a-0db71edfd1eb",
+        "companyPage": "https://1041soft.com/murdl/",
+        "portfolioPage": "https://billdonner.com/apps/murdl/",
+        "previousWebsite": "https://billdonner.com/apps/murdl/",
+        "support": "https://1041soft.com/murdl/#support",
+        "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
         "2026-09-02..08: built from ~/old-swift/MURDL in one session: code review fixes, board counts, timers, scores, layouts, keyboard window, MurdlCore package + Windows CI, MurdlBridge C ABI, Avalonia desktop app, Mac App Store submission.",
         "Self-playing web showcase with an accuracy slider lives in Showcase/murdl_spectator.html and as a claude.ai artifact.",
         "Windows app is CI-verified (desktop.yml builds, runs, and screenshots it on windows-latest; uploads MURDL-windows-x64 and a self-contained MURDL-macOS-arm64 bundle). Windows/README.md (2026-09-12) documents feature parity with the Mac app and how to hand the CI zip to a tester; not yet reviewed by Bill on the Mac; Microsoft Store deferred.",
-        "2026-09-11..14: App Review rejection (guideline 4) fixed in commit 6aa44b4; resubmission blocked for three days by the team migration, then done 2026-09-14 as Xcode Cloud build 3. Lesson: after a rejection the version stays bound to the rejected reviewSubmission; close it in the ASC web UI, then create a fresh submission via the API."
+        "2026-09-11..14: App Review rejection (guideline 4) fixed in commit 6aa44b4; resubmission blocked for three days by the team migration, then done 2026-09-14 as Xcode Cloud build 3. Lesson: after a rejection the version stays bound to the rejected reviewSubmission; close it in the ASC web UI, then create a fresh submission via the API.",
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
       ]
     },
     {
@@ -2628,9 +2700,9 @@
     {
       "repo": "github:billdonner/1041soft-site",
       "branch": "main",
-      "last2026Commit": "2026-08-13",
+      "last2026Commit": "2026-09-14",
       "kind": "website",
-      "role": "Company site plus shared support/privacy pages; GitHub Pages built but custom-domain DNS and HTTPS are misconfigured"
+      "role": "Unified 14-entry app portfolio and support/privacy pages; GitHub Pages and 1041soft.com HTTPS verified live at 746320a."
     },
     {
       "repo": "github:billdonner/billdonner.github.io",
@@ -2850,8 +2922,8 @@
     },
     {
       "kind": "portfolio-website-stale-resolved",
-      "observedAt": "2026-08-14",
-      "summary": "Resolved. The generated 19-entry billdonner.com catalog is live on IONOS, retired LtWatcher returns 404, Pfoliolio returns 200, and Oliopfolio serves the canonical redirect. Live files match the generated artifacts."
+      "observedAt": "2026-09-14",
+      "summary": "Superseded/resolved by the owner-authorized 2026-09-14 migration: 1041Soft hosts all 14 catalog apps; BillDonner.com retains descriptions and points product actions to 1041Soft. Historical domain assignments no longer control presentation; pricing commitments and ASC states remain independently tracked."
     },
     {
       "kind": "version-build-drift-resolved",
@@ -2880,13 +2952,13 @@
     },
     {
       "kind": "product-line-presentation-drift",
-      "observedAt": "2026-08-14",
-      "summary": "Owner established two product lines: BillDonner.com apps are permanently free, while 1041soft.com is commercial-grade. The 1041soft.com page now filters to the six current release-track products and excludes the seven BillDonner.com assignments recorded on 2026-08-27. The separate BillDonner.com catalog still needs its corresponding presentation refresh."
+      "observedAt": "2026-09-14",
+      "summary": "Superseded/resolved by the owner-authorized 2026-09-14 migration: 1041Soft hosts all 14 catalog apps; BillDonner.com retains descriptions and points product actions to 1041Soft. Historical domain assignments no longer control presentation; pricing commitments and ASC states remain independently tracked."
     },
     {
       "kind": "1041soft-release-track-filtered",
-      "observedAt": "2026-08-27",
-      "summary": "Owner assigned SharedSpaceLab, Nagz, workin On, AmenBeats, SentiPods, Flasherz Kids, and Zerver Monitor to the BillDonner.com always-free product line. Removed them from the 1041soft.com page. The 1041soft.com page now lists DoubleQross, Oenora, Screenker, Mallinbook, Pfoliolio, and PickleFamilia as release-track projects; no 1041Soft app is currently approved for App Store release. Flasherz Kids remains an obsolete ASC record, not an active product."
+      "observedAt": "2026-09-14",
+      "summary": "Superseded/resolved by the owner-authorized 2026-09-14 migration: 1041Soft hosts all 14 catalog apps; BillDonner.com retains descriptions and points product actions to 1041Soft. Historical domain assignments no longer control presentation; pricing commitments and ASC states remain independently tracked."
     },
     {
       "kind": "feedback-workflow-redesign-resolved",
@@ -2938,6 +3010,16 @@
       "kind": "fly-app-unindexed",
       "observedAt": "2026-09-08",
       "summary": "Fly app bd-kinflash-ai (suspended, deployed 2026-09-02) has no inventory entity."
+    },
+    {
+      "kind": "website-product-copy-followup",
+      "observedAt": "2026-09-14",
+      "summary": "Both websites intentionally carried over existing descriptions. The public PickledBalls and KinFlash copy predates the indexed PickleFamilia Companion rename and KinFlash Family/Studio split; reconcile product copy in a separate update without overwriting newer app-release facts."
+    },
+    {
+      "kind": "legacy-murdl-root-privacy-route",
+      "observedAt": "2026-09-14",
+      "summary": "Observed after IONOS publication: https://billdonner.com/murdl/privacy/ still returns 404. The published portfolio policy route https://billdonner.com/apps/murdl/privacy/ serves the forwarding page and https://1041soft.com/murdl/privacy/ returns 200. Root /murdl/ redirects correctly. Legacy root privacy compatibility remains unresolved."
     }
   ],
   "taskRegistry": {

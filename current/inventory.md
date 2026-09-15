@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Wednesday, September 2, 2026.
+As of Monday, September 14, 2026 (targeted website update; retained app observations have their own dates).
 
 ## Scope
 
@@ -31,9 +31,9 @@ As of Wednesday, September 2, 2026.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
 - The registry tracks 57 repositories, of which 52 remain active after the feedback replacement, prior retirements, and the `grubber-ios` obsolete decision.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
-- The generated `billdonner.com/apps` catalog is live on IONOS with six active entries: AmenBeats, 123 Words, 100 Burfords, PickledBalls, workin On, and SentiPods. PickledBalls is independently listed from PickleFamilia. LT Watch and Flasherz Kids are nonviable and removed from the public apps tree; Screenker, Mallinbook, Pfoliolio, and PickleFamilia belong to the 1041Soft release track.
+- The 14-entry `billdonner.com/apps/` personal portfolio is live on IONOS as of September 14. Descriptions remain here; product, support, and privacy actions point to 1041Soft.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
-- The portfolio now has two explicit product lines: BillDonner.com apps are permanently free, while 1041soft.com products carry the commercial-grade release and support commitment. Owner confirmed on 2026-08-23 that amenbeats belongs on BillDonner.com.
+- All apps now share 1041Soft as their company home. Historical always-free and commercial pricing commitments remain distinct; the domain move does not change pricing.
 - Nagz, Famster, and SharedSpaceLab are now recorded as one household-communications lineage rather than three independent products: SharedSpaceLab is the active successor prototype, Nagz is the working legacy reference, and Famster is a concept-only shell.
 - workin On is TestFlight-only by owner decision (2026-09-04) and now ships through an Xcode Cloud archive lane (push to `release`), the first BillDonner.com app to do so; the MasterIndex board line and the shipping GitHub-tabs line were merged on 2026-09-07, so `main` and `release` are the same commit again.
 - Nagzerver remains mixed production infrastructure for Nagz, PickledBalls, PickleFamilia, and workin On. Its exact deployed source was recovered to private branch `recovery/deployed-2026-06-30` because Git `main` could not reproduce production.
@@ -41,7 +41,7 @@ As of Wednesday, September 2, 2026.
 - Grubber is the service, corpus, and intended product name for the podcast/news analysis system; SentiPods is the current ASC client label until a rename is executed. It is multi-client, not true multi-tenant. Grubber also owns the paid tech newsletter digest plan, the Fly-side global brand-universe supplement, and an aggregate artifact monitor at `https://bd-grubber.fly.dev/monitor`. Newsletter/Gmail-derived content is personal-only; brand metadata, derived brand mentions, and aggregate artifact snapshots live in Fly Postgres for server-side advertising-trend analysis, not in the public `/db` export or raw brand API routes. As of 2026-08-28, the live monitor reports 69 shows, 1,352 episodes, 1,374 public news articles, 162 active topics, 6,745 active brands, 3,795 derived brand mention rows, 16 daily digests, and one private brand report; `/monitor` is aggregate-only and excluded from OpenAPI. Public `/db` currently fails closed while the large validated SQLite transport is repaired.
 - `doubleqross.com` serves the IONOS `/qross` product site directly; deploy only the explicit public-file allowlist from the qross repo. As of September 12, 2026, legacy `1041soft.com/qross/` and `billdonner.github.io/qross` redirect here. The GitHub mirror no longer publishes internal docs.
 - The screenshot program now distinguishes Screenker provenance, critique score, freshness, publication, and live ASC parity. Nine apps have verified Screenker history; the immediate correction schedule and future release rubric are in `docs/screenshot-operations.md`.
-- KinFlash is **two products with two App Store records**, re-split 2026-08-30 after a brief period merged under one record. **KinFlash Studio** (macOS, `com.billdonner.kinflashstudio`) authors trees, flashcards and games and is where every purchase happens; **KinFlash Family** (iOS, `com.billdonner.kinflash`) is free, plays what Studio produced, and cannot take payment at all. Note the assignment: Family keeps the ORIGINAL identifier and the existing record 6762008872 — whose iOS 1.0 dates from April — and Studio is the one needing a new record, which the ASC API cannot create; it is a manual click and currently blocks splitting the Xcode Cloud workflows. The earlier plan had these reversed, with the Mac on `com.billdonner.kinflash` and iOS on `com.billdonner.kinflashplay`; neither `kinflashplay` nor the name "KinFlash Play" is used any more. The merge was undone because one record cannot tell TestFlight which of two dissimilar apps a Mac should install, and it demonstrably handed over the iOS player instead of the authoring app; `SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO` does not help, since TestFlight resolves per record. Pricing direction (proposed, not approved) is an annual subscription in Studio gating generation and hosted AI, with everything already produced free forever to the author and her recipients, and bring-your-own-API-key kept as a privacy option at the same price — see `~/kinflash/PRICING.md`. Hosted AI is now load-bearing and unbuilt: granny will not obtain an Anthropic key, and the subscription's justification rests on it. Public page: `billdonner.com/apps/kinflash/`. Two risks stand: `billdonner.com` expires 2026-12-14 and will host the Support and Privacy URLs, and the live page still advertises "optional cloud sync backup" for an app that has no sync of any kind. Ten game designs are proposed in the repo (`GAMES_DESIGN.md`), and the first — "How Are We Related?" — is built end to end. Two decisions were settled: living relatives may appear **per game**, chosen at generation and recorded in the file, with a game that excludes them naming none of them anywhere, not even as a wrong answer; and a game is its own small exportable document (`.kinflashgame`) rather than something inside the tree package. Nine games remain unbuilt.
+- KinFlash is **two products with two App Store records**, re-split 2026-08-30 after a brief period merged under one record. **KinFlash Studio** (macOS, `com.billdonner.kinflashstudio`) authors trees, flashcards and games and is where every purchase happens; **KinFlash Family** (iOS, `com.billdonner.kinflash`) is free, plays what Studio produced, and cannot take payment at all. Note the assignment: Family keeps the ORIGINAL identifier and the existing record 6762008872 — whose iOS 1.0 dates from April — and Studio is the one needing a new record, which the ASC API cannot create; it is a manual click and currently blocks splitting the Xcode Cloud workflows. The earlier plan had these reversed, with the Mac on `com.billdonner.kinflash` and iOS on `com.billdonner.kinflashplay`; neither `kinflashplay` nor the name "KinFlash Play" is used any more. The merge was undone because one record cannot tell TestFlight which of two dissimilar apps a Mac should install, and it demonstrably handed over the iOS player instead of the authoring app; `SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO` does not help, since TestFlight resolves per record. Pricing direction (proposed, not approved) is an annual subscription in Studio gating generation and hosted AI, with everything already produced free forever to the author and her recipients, and bring-your-own-API-key kept as a privacy option at the same price — see `~/kinflash/PRICING.md`. Hosted AI is now load-bearing and unbuilt: granny will not obtain an Anthropic key, and the subscription's justification rests on it. Public company page: `1041soft.com/kinflash/`; the personal portfolio links there. The former BillDonner.com support/privacy hosting assignment is superseded. Website copy still needs reconciliation with the Family/Studio split. Ten game designs are proposed in the repo (`GAMES_DESIGN.md`), and the first — "How Are We Related?" — is built end to end. Two decisions were settled: living relatives may appear **per game**, chosen at generation and recorded in the file, with a game that excludes them naming none of them anywhere, not even as a wrong answer; and a game is its own small exportable document (`.kinflashgame`) rather than something inside the tree package. Nine games remain unbuilt.
 - PickleFamilia is the family name (ADR-009 in collective-engine, 2026-09-13) over Collective Engine — the deployed multi-tenant club scheduler, the club's record and channels — and PickleFamilia Companion (repo pickledballs, bundle com.pickledballs.app), the court app that, signed in by a texted code, is also the member's window on the club. Collective Comms is the older approval-gated dedicated-Mac messaging utility. The old picklefamilia-ios organizer app is not revived; its ASC record is legacy. picklefamilia.com and picklefamilia.app are live on the engine since 2026-09-13. The Companion's core is the PickleFamiliaCore package (~/picklefamilia-core), which the iOS app compiles in and the coming Android app (Swift SDK for Android, Kotlin UI, full parity) will link. The engine's main carries the web-service prototype (club types, browser sign-in, admin panel at /admin) awaiting deploy.
 - Collective Engine now emits file-based, RFC 8785-canonical handoff payloads with verification tooling. Collective Comms now defaults one-to-one delivery to SMS, supports explicit overrides, and surfaces invalid Messages targets rather than silently dropping sends.
 - Operational evidence on August 21 confirmed that an iMessage send reached 16 iPhone players but silently missed 3 Android players; SMS resend delivered to all three. The scheduler also records its handoff-only Tuesday court split as non-authoritative.
@@ -64,26 +64,11 @@ Verification recorded on 2026-09-02: `xcodebuild` simulator XCTest passed 9 test
 
 ## Product Lines
 
-### BillDonner.com — always free
-
-Personal utilities, experiments, and children-oriented apps. Users are never charged; a Mac
-version and MCP surface are optional. `SharedSpaceLab`, `Nagz`, `workin On`, `AmenBeats`,
-`SentiPods`, `Flasherz Kids`, and `Zerver Monitor` belong to this product family. `workin On`
-and `Flasherz Kids` are internal-use/obsolete rather than public releases; `MastPex IOS` and
-`MastPex Mac` no longer have ASC records (gone by 2026-09-05) and their source path is missing locally.
-
-### 1041soft.com — commercial
-
-Products intended for sale or another explicit revenue model. These carry a higher quality,
-testing, documentation, privacy, and support bar; they should normally have a real Mac version
-and an MCP or automation surface when that fits the product. KinFlash is the newest confirmed
-assignment and is planned for near-term release.
-
-The 1041Soft release-track page now lists DoubleQross, Oenora, Screenker, Mallinbook,
-Pfoliolio, PickleFamilia, and other current release-track entries; none is currently approved for App Store release. The BillDonner.com assignments above are excluded from that page. The 1041Soft homepage now foregrounds MCP control from Claude and ChatGPT, including voice workflows; Oenora is the next planned MCP-enabled app. KinFlash's public page was decided on
-2026-08-19: it lives at `billdonner.com/apps/kinflash/`, not on 1041soft.com and
-not on GitHub Pages, following the existing one-page-per-app pattern under
-`/apps/<name>/`.
+All apps now share **1041Soft** as their company home (owner instruction, September 14).
+BillDonner.com is the personal portfolio, with descriptions and outbound company links.
+The old `billdonner-free` and `1041soft-commercial` identifiers are retained for stable
+pricing/history references. Previously free apps do not become paid because of this move.
+The website work did not query or modify App Store Connect metadata or release states.
 
 ## Expense Evidence / XpenseXpunger
 
@@ -323,23 +308,19 @@ redeployment; until then, main is not a reproducible source for production.
 
 ## Website Publication
 
-- `tools/generate_billdonner_apps.py` generates the active catalog from canonical JSON.
-- `publish/billdonner.com/apps/index.html` is the historical MasterIndex publication path; the current six-entry catalog is maintained in `~/website` and includes PickledBalls independently from PickleFamilia.
-- `publish/billdonner.com/apps/pfoliolio/index.html` supplies the marketing and support route expected by ASC.
-- `publish/billdonner.com/apps/oliopfolio/index.html` redirects the obsolete name to Pfoliolio.
-- The current generated files were published to IONOS on 2026-08-28; live verification passed for the homepage, `/apps/`, `/apps/pickledballs/`, and retained support routes.
-- The previous catalog and LtWatcher directory were retained under `/_archive`; the public LtWatcher route now returns 404.
+- **1041soft.com:** unified 14-entry portfolio deployed through GitHub Pages at commit `746320a` on September 14. Deployment run `34919820497` succeeded; the custom-domain homepage and new MURDL, 123 Words, and PickledBalls pages returned HTTP 200.
+- **billdonner.com:** local source `~/website`, commit `8262c66`, published to IONOS September 14. All 24 changed public files uploaded successfully. Homepage, catalog, app descriptions, screenshot/privacy forwarding pages, biography, and music pages were verified live.
+- The canonical shared description file is `~/1041soft-site/data/portfolio.json`. Run `python3 build_apps.py --catalog ../1041soft-site/data/portfolio.json` in `~/website` to synchronize the personal portfolio. The personal ASC `--refresh` workflow is retired.
+- MasterIndex's `publish/billdonner.com/` tree and `tools/generate_billdonner_apps.py` are historical publication artifacts; do not use them to overwrite the current website.
+- Existing app descriptions were retained. Public copy still needs reconciliation with the newer PickleFamilia Companion name and KinFlash Family/Studio split recorded elsewhere in this index.
+- Legacy `/murdl/privacy/` on BillDonner.com still returns 404. The current `/apps/murdl/privacy/` forwarding page and `https://1041soft.com/murdl/privacy/` work. Root `/murdl/` redirects correctly; the old root privacy route remains a compatibility follow-up.
 
-### Company Website — `1041soft.com` (live 2026-08-28)
+### Company Website — `1041soft.com` (updated 2026-09-14)
 
-Canonical app-website home. Public repo `billdonner/1041soft-site`, served by GitHub
-Pages, Let's Encrypt certificate covering apex and `www`, valid to 2026-11-12, HTTPS
-enforced with HTTP 301ing to it. DNS at Namecheap: apex A records to
-`185.199.108–111.153`, `www` CNAME to `billdonner.github.io.`
-
-Observed paths: `/qross/`, `/nagz/`, `/workinon/`, `/flasherz/`, `/zervermonitor/`,
-`/screenker/`, `/mallinbook/`, `/sentipods/`, `/pfolio/` — each with support and
-privacy pages. All 24 routes verified 200 over HTTPS.
+Canonical company app home at `~/1041soft-site`, public repo `billdonner/1041soft-site`,
+served by GitHub Pages over HTTPS. Added homepage entries for AmenBeats, MURDL 16,
+123 Words, 100 Burfords, PickledBalls, and workinOn alongside the existing eight.
+Support/privacy content and required assets were carried over from their existing sources.
 
 `doubleqross.com` directly serves the IONOS `/qross` public site. ASC marketing,
 support and privacy URLs all use this domain (verified September 12, 2026).
@@ -369,10 +350,7 @@ Level 2; no payment or credential data is recorded here.
 open web regardless of repo visibility, and bills Actions minutes on private repos.
 Add a subpath here instead.
 
-This site coexists with the now-live `billdonner.com/apps` portfolio catalog. The owner has now
-assigned workin On and amenbeats exclusively to the permanently free BillDonner.com line, making
-any 1041soft.com homepage promotion for those apps a presentation drift rather than a canonical
-product home.
+This site is the company home for all apps. The now-live `billdonner.com/apps/` personal portfolio keeps descriptions and links outward; the earlier exclusive domain assignments are superseded.
 
 ## Preserved Main-Only Facts
 
