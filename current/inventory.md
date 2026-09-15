@@ -8,6 +8,12 @@ As of Wednesday, September 2, 2026.
 - Applied no handoff directives because `current/handoffs/index.json` has none.
 - Performed the requested retirements, operational fixes, website publications, and feedback-workflow replacement; observed facts and remaining product gaps are kept distinct below.
 
+## AmenBeats and Apple migration update — 2026-09-14
+
+- Owner reports AmenBeats 1.0 build 16 submitted September 6, superseding the September 5 withdrawal. Current App Store Connect state was not independently checked in this update.
+- Owner confirmed sending a follow-up to Apple Developer Support in case `20000146677819`, asking whether migration is blocking or delaying the build, what steps remain, and expected timing. Lisa replied the same day (enrollment approved) without addressing the submission. ASC verified by API 2026-09-14: build 16 WAITING_FOR_REVIEW since September 6, most likely held while ASC shows "Developer Information Update In Process"; do not withdraw or resubmit. [Support thread](https://mail.google.com/mail/#all/1a03fa9200586e03).
+- Lisa's September 14 reply confirmed enrollment `CX276BJ992` was verified and approved September 13 and said TestFlight builds, tester groups, and feedback should transfer. Owner accepted the Program License Agreement September 14 and the Certificates, Identifiers & Profiles portal came back the same day (verified by API). The developer-information update is still in process in ASC; seller-name change, LLC W-9, and Paid Apps re-acceptance wait on that.
+
 ## Owner decisions 2026-09-08
 
 - Nagzerver is reference-only: the Fly app has had no machines since 2026-08-18. It is kept for occasional testing, and every consumer (PickledBalls, workin On, PickleFamilia, Nagz, api.famster.app) is to have its nagzerver dependency removed.
@@ -44,7 +50,7 @@ As of Wednesday, September 2, 2026.
 - Collective Engine's Fly deployment has a healthy `/health` endpoint, but its intended `collective.1041soft.com` host is still NXDOMAIN; publish that DNS record and the corresponding exact-match Auth0 URLs before calling it publicly reachable. Collective Comms now verifies the producer's canonical handoff digest and blocks publication on a mismatch.
 - Review Authority is an active local, read-only review controller. Its Milestone 1 vertical slice can inspect a registered build source, redact and content-address evidence, request a bounded cloud critique, and retain an audit record; it has no public release, UI, correction loop, or configured Git remote.
 - XpenseXpunger is a new 1041soft-commercial project at `~/xpensexpunger`. It is a separate Mac-first, local-first expense evidence scanner for Gmail receipts, local files, screenshots, PDFs, CSVs, and later Plaid Transactions. It must not be merged into `pfolio`, and `~/1041soft` is output-only for compatible `finance/scan-results/*.json` exports.
-- 1041Soft LLC's Apple Developer Program conversion (Individual to Organization) is now authorized: Apple support case `20000146677819` replied 2026-08-26 that migration could start on the owner's confirmation, and the go-ahead was sent 2026-09-03. The Mercury business account (ending 8399) was made the sole App Store Connect payout bank the same day. Apple has not yet confirmed the migration started; the LLC W-9 replaces the personal one after completion. Detail lives in `~/1041soft/formation/articles-of-organization-checklist.md`.
+- 1041Soft LLC's Apple Developer Program conversion (Individual to Organization) is now authorized: Apple support case `20000146677819` replied 2026-08-26 that migration could start on the owner's confirmation, and the go-ahead was sent 2026-09-03. The Mercury business account (ending 8399) was made the sole App Store Connect payout bank the same day. Update September 14: Apple confirmed enrollment approval on September 13; full migration completion remains unverified. The LLC W-9 replaces the personal one after completion. Detail lives in `~/1041soft/formation/articles-of-organization-checklist.md`.
 
 - MedCommons now has a separate native SwiftUI iPhone/iPad DICOM research viewer in `~/medcommons/ios/DicomResearchViewer`, pushed to `billdonner/medcommonsPhp` at `1336dfa` on 2026-09-02. It is research-only/not for diagnosis, bundles public sample fixtures with a manifest and checksums, passed 9 simulator parser/rendering tests, and compiles for `iphoneos` with signing disabled; physical-device install still needs `DEVELOPMENT_TEAM`.
 
@@ -224,7 +230,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | App | Bundle ID | Repository | State |
 |---|---|---|---|
 | Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| amenbeats | com.billdonner.drumbeats | github:billdonner/drumbeats | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| AmenBeats | com.billdonner.drumbeats | ~/drumbeats | 1.0 build 16 WAITING_FOR_REVIEW since September 6 (ASC verified 2026-09-14); likely held by the team migration's developer-information update |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | Active successor prototype; iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
@@ -387,7 +393,7 @@ product home.
 - Oenora's existing ASC macOS 1.0 record has no builds after the project deliberately replaced Catalyst with a native Developer ID target using `com.billdonner.oenora.mac`.
 - Nagzerver Git `main` does not reproduce the deployed PickledBalls and PickleFamilia API. The exact deployed source is preserved on `recovery/deployed-2026-06-30`, but its one failing schedule test must be resolved before review and merge.
 - SharedSpaceLab's public product name, product-line assignment, business model, and eventual server boundary remain undecided. Famster must not be expanded as a parallel implementation while those decisions are open.
-- 1041Soft LLC's Apple Developer organization conversion is pending Apple review under case ID `20000146677819`. No approval, seller-name change, or converted organization membership has been verified yet.
+- 1041Soft LLC's enrollment `CX276BJ992` was approved September 13, confirmed by Apple September 14 under case `20000146677819`. Full membership migration completion and seller-name change remain unverified; awaiting Apple's reply on whether migration is affecting AmenBeats 1.0 build 16.
 
 ## Operational Rule
 

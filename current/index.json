@@ -274,12 +274,12 @@
         "bundleId": "com.billdonner.drumbeats",
         "appId": "6778510642",
         "ascStates": [
-          "IOS 1.0 DEVELOPER_REJECTED"
+          "IOS 1.0 WAITING_FOR_REVIEW"
         ],
         "repo": "github:billdonner/drumbeats",
         "repoEvidence": "GitHub repo, not cloned on this machine as of 2026-08-13",
-        "localVersion": "1.0 (15) in project.yml; ASC builds 14 plus Xcode Cloud 2 and 3 VALID (2026-08-27); 1.0 pulled from review to DEVELOPER_REJECTED 2026-09-05",
-        "ascVerified": "2026-09-05"
+        "localVersion": "1.0 (15) in project.yml; ASC build 16 VALID (2026-09-06) attached to 1.0 and WAITING_FOR_REVIEW since 2026-09-06; builds 2, 3 (Xcode Cloud) VALID, 8-14 expired",
+        "ascVerified": "2026-09-14"
       },
       {
         "name": "Oenora",
@@ -1636,12 +1636,12 @@
       "name": "AmenBeats",
       "kind": "app",
       "cluster": "Standalone",
-      "status": "pulled-from-review",
-      "lastModified": "2026-09-05",
+      "status": "waiting-for-review",
+      "lastModified": "2026-09-14",
       "repo": "~/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
       "productLine": "billdonner-free",
-      "release": "ASC iOS 1.0 DEVELOPER_REJECTED: the 2026-08-27 review submission was cancelled on 2026-09-05 so the app can go landscape-only in both modes; builds 14 and Xcode Cloud 2/3 VALID; project.yml 1.0 (15)",
+      "release": "ASC verified by API 2026-09-14: iOS 1.0 WAITING_FOR_REVIEW, build 16 attached, review submission b57551af-97b8-455b-a0be-0283ceefb642 submitted 2026-09-06 22:02 UTC (8 days in queue). The 09-05 withdrawal and the 08-27/09-02 submissions are COMPLETE/superseded. Likely parked by the team's Individual-to-Organization migration: ASC shows 'Developer Information Update In Process' and the org Program License Agreement is not yet in effect. Do not withdraw or resubmit; if still waiting two business days after that banner clears, ask Lisa (case 20000146677819). project.yml says build 15 while ASC has 16; set project.yml to 16 before the next build.",
       "description": "Pocket 16-step sequencer for studying and remixing well-known drum breaks.",
       "dependencies": [],
       "links": {
@@ -1656,7 +1656,10 @@
         "2026-08-27: iOS 1.0 (build 14) SUBMITTED and Waiting for Review (submission id 1a964916-b3e9-4e8b-b1b2-beccaad36747, submitted by bill donner). Free, no IAP, no data collection; age rating 4+ with parentalControls=true; contentRightsDeclaration=DOES_NOT_USE_THIRD_PARTY_CONTENT.",
         "Build 14 contents: parent-configurable Kid mode (curated beats, tempo range, volume ceiling, optional mute/solo), always-on event tape with save/replay shows, Kid mode landscape on all devices with a full-width grid and 4/8/12/16 sizes, welcome screen on every Pro launch. 106 unit + 9 UI tests green.",
         "Owner confirmed on 2026-08-23 that amenbeats belongs on BillDonner.com rather than 1041soft.com.",
-        "2026-09-05: pulled from Waiting for Review (now DEVELOPER_REJECTED, the editable state) per owner decision to make AmenBeats landscape-only on every device in both Pro and Kid modes, plus a Kid-mode screen redesign. Work is specified in ~/drumbeats/HANDOFF-landscape-only.md; nothing in the app has changed yet. Resubmission requires new landscape screenshot sets."
+        "2026-09-05: pulled from Waiting for Review (now DEVELOPER_REJECTED, the editable state) per owner decision to make AmenBeats landscape-only on every device in both Pro and Kid modes, plus a Kid-mode screen redesign. Work is specified in ~/drumbeats/HANDOFF-landscape-only.md; nothing in the app has changed yet. Resubmission requires new landscape screenshot sets.",
+        "2026-09-14: Owner confirmed sending a reply from billdonner@gmail.com to devprograms@apple.com in case 20000146677819, Migration to a company account, asking whether migration is blocking AmenBeats 1.0 build 16 submitted September 6, what steps remain, and the expected timing. Awaiting Apple response; migration impact is unconfirmed. Thread: https://mail.google.com/mail/#all/1a03fa9200586e03",
+        "2026-09-14: Lisa at Apple Developer Support confirmed enrollment CX276BJ992 was verified and approved September 13 and said TestFlight builds, tester groups, and feedback should transfer. This does not independently verify completion of the membership migration or seller-name change. Source: https://mail.google.com/mail/#all/1a0a02a3cb7b0b03",
+        "2026-09-14: ASC state checked by API (builds, appStoreVersions, reviewSubmissions): WAITING_FOR_REVIEW since 09-06 on build 16. Migration follow-up to Lisa sent 09-14 03:23 UTC; her reply confirmed enrollment approval but did not address this submission."
       ]
     },
     {
@@ -2844,8 +2847,8 @@
     },
     {
       "kind": "1041soft-apple-developer-organization-conversion",
-      "observedAt": "2026-09-03",
-      "summary": "Awaiting Apple to start the migration. Apple Developer Support case 20000146677819 replied 2026-08-26 that the Individual-to-Organization migration could begin on the owner's say-so; the owner's questions of 2026-08-27 held it, and the go-ahead was sent 2026-09-03. Same day, the Mercury account (1041Soft LLC, ending 8399) became the only payout bank in App Store Connect. Still unverified: migration start, seller-name change to 1041Soft LLC, and the post-migration LLC W-9. Source of truth: ~/1041soft/formation/articles-of-organization-checklist.md Step 8."
+      "observedAt": "2026-09-14",
+      "summary": "Apple Developer Support case 20000146677819: Lisa confirmed September 14 that enrollment CX276BJ992 was verified and approved September 13; TestFlight builds, tester groups, and feedback transfer. Owner accepted the Program License Agreement September 14. Certificates, Identifiers & Profiles portal restored the same day (ASC API: bundleIds, certificates, profiles, devices all 200 for team NEAY582ME4). App Store Connect still shows 'Developer Information Update In Process: until it's complete, the updated Program License Agreement may not go into effect', so the seller-name change to 1041Soft LLC, the LLC W-9, and the Paid Apps re-acceptance remain pending until that banner clears. AmenBeats 1.0 build 16 verified WAITING_FOR_REVIEW since September 6, most likely held by the same update. Mercury ending 8399 became the sole ASC payout bank September 3. Related checklist: ~/1041soft/formation/articles-of-organization-checklist.md Step 8; correspondence log formation/apple-migration-correspondence.md."
     },
     {
       "kind": "xpensexpunger-release-readiness",
