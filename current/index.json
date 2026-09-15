@@ -862,10 +862,10 @@
       "kind": "app",
       "cluster": "Qross",
       "status": "asc-mapped",
-      "lastModified": "2026-09-13",
+      "lastModified": "2026-09-14",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
-      "release": "Local Release 408 installed/launched on Titanic without debugger (2026-09-13); ASC iOS 1.0 PREPARE_FOR_SUBMISSION selects 395, latest upload 396 VALID (verified 2026-09-12). Scoredux draft copy updated; matching binary/screenshots and privacy review required. Age rating 12+ unchanged.",
+      "release": "TestFlight 1.0 (411) VALID, internal and external IN_BETA_TESTING; beta review APPROVED (verified 2026-09-14). Uploaded from validated source 3e648ad, merged to main c94a2f7 via owner-approved PR #227. Tester notes published. App Store submission unchanged.",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
         "card-engine",
@@ -887,6 +887,9 @@
         "intendedDestination": "IONOS webspace /qross (serves the product site directly; same folder as the catalog downloads)"
       },
       "notes": [
+        "2026-09-14 completed TestFlight delivery: 1.0 (411), ASC build 40241617-7d49-4144-865a-0f7f5b05ba80, upload successful and VALID. Apple beta review APPROVED; both internalBuildState and externalBuildState IN_BETA_TESTING, autoNotifyEnabled true. Existing external qross-xtesters group assigned; internal qross-gamer has access to all builds. English tester notes saved and read back. Expires 2026-12-13. Owner explicitly approved administrator merge of PR #227, merged main c94a2f7; clean main preflight passed and source tree matched validated release commit 3e648ad. Archive ~/qross/build/Qross-411.xcarchive; IPA ~/qross/build/export-411/Qross.ipa. Unit preflight 992 tests, 2 existing skips, 0 failures. Earlier pending-review/upload notes are historical and resolved. No App Store review submission.",
+        "2026-09-14 release continuation: Bill explicitly authorized administrator merge of PR #227 and upload. PR merged as c94a2f7; clean main passes preflight and its source tree exactly matches Apple-validated build 411 (3e648ad). Upload underway via altool; final ASC processing and group availability still pending. Previous REVIEW_REQUIRED notes describe the resolved earlier gate.",
+        "2026-09-14: Owner requested TestFlight and MasterIndex update. Build 411 committed with tester notes; clean isolated checkout /private/tmp/qross-testflight-411. PR https://github.com/billdonner/qross/pull/227 is REVIEW_REQUIRED; normal merge blocked by base-branch policy, and preflight correctly rejects non-main release checkout. Archive and signed IPA export succeeded: ~/qross/build/Qross-411.xcarchive and ~/qross/build/export-411/Qross.ipa. Apple altool validation succeeded with no errors on 2026-09-14; upload requires review/merge or explicit owner authorization for administrator merge. Unit preflight: 992 tests, 2 existing skips, 0 failures. Recent UI checks cover Color/Mono, real system Light-Dark-Light, Help-first Info navigation, and compact results footer. Internal/external TestFlight groups verified; latest uploaded build 396 remains VALID. No App Store submission.",
         "Stores a large local question cache with GRDB.",
         "2026-09-13: Release 408 adds first-question-only Double Cross post-miss Jumble rescue, with existing swap and total 200 points / 3 lives including wrong penalty. Pending decision survives relaunch; replacement misses cannot repeat rescue. 980 unit tests passed, 2 existing skips, 5 final UI scenarios plus final-copy rerun passed. No scoring reset/protocol change/backend deployment/ASC upload. Installed/launched on Titanic as Release without debugger or uninstall. Review: qross/docs/reviews/opening-rescue/README.md.",
         "2026-09-13: Release 407 second-crossing visual treatment installed/launched on Titanic without debugger or uninstall. Two independent AI reviewers approved matched plain/enhanced captures; 975 unit tests passed, 2 existing skips, 3 final UI playthroughs passed (4x4 paired and 5x5 large text). Deeper untouched neon tiles, cyan segmented second trail, accessible phase label; no gameplay/scoring changes. Physical VoiceOver/sound/haptics and iPad captures remain unverified. No ASC/backend changes or checks this session. See qross/docs/reviews/second-crossing/README.md.",
@@ -1689,7 +1692,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "waiting-for-review",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-09-15",
       "repo": "~/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
       "productLine": "billdonner-free",
@@ -1716,7 +1719,8 @@
         "2026-09-14: Owner confirmed sending a reply from billdonner@gmail.com to devprograms@apple.com in case 20000146677819, Migration to a company account, asking whether migration is blocking AmenBeats 1.0 build 16 submitted September 6, what steps remain, and the expected timing. Awaiting Apple response; migration impact is unconfirmed. Thread: https://mail.google.com/mail/#all/1a03fa9200586e03",
         "2026-09-14: Lisa at Apple Developer Support confirmed enrollment CX276BJ992 was verified and approved September 13 and said TestFlight builds, tester groups, and feedback should transfer. This does not independently verify completion of the membership migration or seller-name change. Source: https://mail.google.com/mail/#all/1a0a02a3cb7b0b03",
         "2026-09-14: ASC state checked by API (builds, appStoreVersions, reviewSubmissions): WAITING_FOR_REVIEW since 09-06 on build 16. Migration follow-up to Lisa sent 09-14 03:23 UTC; her reply confirmed enrollment approval but did not address this submission.",
-        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
+        "2026-09-15: still WAITING_FOR_REVIEW (build 16). Team migration completed 2026-09-14 17:01 UTC; the remaining ASC Business tasks (LLC W-9, Paid Apps) may still gate release. Recheck after they are done."
       ]
     },
     {
@@ -2183,12 +2187,12 @@
       "kind": "app",
       "cluster": "MURDL",
       "status": "in-review",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-09-15",
       "repo": "~/Murdl27",
       "bundleId": "com.billdonner.murdl27",
       "productLine": "1041soft-commercial",
       "pricingPolicy": "free",
-      "release": "Record 6809919090 (SKU murd001), macOS only. Version 2.1 rejected 2026-09-11 (guideline 4: no way to reopen a closed main window); fixed 2026-09-11 (board is a Window scene, Window > Game Board / Command-0), archived by Xcode Cloud as build 3 on 2026-09-14 and resubmitted the same day, WAITING_FOR_REVIEW. Name 'MURDL' and bundle id com.billdonner.murdl are held by another Apple account, hence 'MURDL 16' and murdl27. Team NEAY582ME4 (migrating to 1041Soft LLC; Xcode Cloud endpoints were 404 from 2026-09-10 until 2026-09-14). Local archives from this Mac get Invalid Binary at submission; ship only via Xcode Cloud (product 'Murdl': 'Build - main' on main, 'Archive - App Store' on release, pinned Xcode 26.6; the release-push trigger did not fire during the migration, so runs may need a manual POST ciBuildRuns). Build number follows the Xcode Cloud run counter; project.yml tracks it (3). Listing copy ~/coworking/MURDL-AppStore.md, five 2560x1600 screenshots, category Games/Word+Puzzle, 4+, free in 175 territories.",
+      "release": "Record 6809919090 (SKU murd001), macOS only. Version 2.1 rejected 2026-09-11 (guideline 4: no way to reopen a closed main window); fixed 2026-09-11 (board is a Window scene, Window > Game Board / Command-0), archived by Xcode Cloud as build 3 on 2026-09-14 and resubmitted the same day, WAITING_FOR_REVIEW. Name 'MURDL' and bundle id com.billdonner.murdl are held by another Apple account, hence 'MURDL 16' and murdl27. Team NEAY582ME4 (Program License Agreement assigned to 1041Soft LLC 2026-09-14 17:01 UTC; Xcode Cloud endpoints were 404 from 2026-09-10 until 2026-09-14). Local archives from this Mac get Invalid Binary at submission; ship only via Xcode Cloud (product 'Murdl': 'Build - main' on main, 'Archive - App Store' on release, pinned Xcode 26.6; the release-push trigger did not fire during the migration, so runs may need a manual POST ciBuildRuns). Build number follows the Xcode Cloud run counter; project.yml tracks it (3). Listing copy ~/coworking/MURDL-AppStore.md, five 2560x1600 screenshots, category Games/Word+Puzzle, 4+, free in 175 territories.",
       "distribution": "public-release-planned",
       "description": "Native macOS SwiftUI rebuild of the archived MURDL word game: 2/4/8/16 boards, guesses = boards + 5, Classic/Stopwatch/Sprint modes, score book, grid or strip layouts with arrow navigation, floating keyboard window, full keyboard play. Engine is the cross-platform MurdlCore Swift package (tested on Windows and macOS in CI) with a C bridge (MurdlBridge.dll / dylib). A C#/Avalonia desktop front end in Windows/ is the Windows build and also runs natively on macOS.",
       "dependencies": [],
@@ -2967,8 +2971,8 @@
     },
     {
       "kind": "1041soft-apple-developer-organization-conversion",
-      "observedAt": "2026-09-14",
-      "summary": "Apple Developer Support case 20000146677819: Lisa confirmed September 14 that enrollment CX276BJ992 was verified and approved September 13; TestFlight builds, tester groups, and feedback transfer. Owner accepted the Program License Agreement September 14. Certificates, Identifiers & Profiles portal restored the same day (ASC API: bundleIds, certificates, profiles, devices all 200 for team NEAY582ME4). App Store Connect still shows 'Developer Information Update In Process: until it's complete, the updated Program License Agreement may not go into effect', so the seller-name change to 1041Soft LLC, the LLC W-9, and the Paid Apps re-acceptance remain pending until that banner clears. AmenBeats 1.0 build 16 verified WAITING_FOR_REVIEW since September 6, most likely held by the same update. Mercury ending 8399 became the sole ASC payout bank September 3. Related checklist: ~/1041soft/formation/articles-of-organization-checklist.md Step 8; correspondence log formation/apple-migration-correspondence.md."
+      "observedAt": "2026-09-15",
+      "summary": "RESOLVED for the membership: at 2026-09-14 17:01 UTC Apple assigned the Program License Agreement to 1041Soft LLC, Team NEAY582ME4 (Consent to Assignment signed; case 20000146677819, enrollment CX276BJ992). 1041Soft LLC is now the legal owner of every app on the team in both product lines; TestFlight builds, tester groups, and feedback carried over per Apple. Still open: ASC Business tasks for the new entity (W-9 under the LLC EIN, Paid Apps agreement as the organization; Mercury 8399 is the bank on file since September 3) — the App Store developer name updates only after Apple processes those. AmenBeats 1.0 build 16 still WAITING_FOR_REVIEW since September 6 and MURDL 16 2.1 build 3 since September 14 18:19 UTC (ASC verified 2026-09-15). Record: ~/1041soft/formation/articles-of-organization-checklist.md Step 8 and formation/apple-migration-correspondence.md."
     },
     {
       "kind": "xpensexpunger-release-readiness",
