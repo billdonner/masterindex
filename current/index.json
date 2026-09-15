@@ -737,13 +737,15 @@
       "highlights": [
         "collective-engine",
         "PickleFamilia Companion",
+        "PickleFamiliaCore",
         "CourtScheduler",
         "collective-comms"
       ],
       "watchpoints": [
-        "picklefamilia.com DNS and FAMILY_HOST not yet set on Fly",
-        "Companion App Store name change and App Privacy questionnaire pending in ASC",
-        "collective-comms is the pre-Twilio Mac path; texting now goes through the engine"
+        "Engine main is ahead of Fly: policy/club types, browser sign-in, admin panel not yet deployed",
+        "Sign-up page and rolling-cadence call job not built yet",
+        "Companion App Privacy questionnaire pending; no TestFlight upload until Bill says",
+        "Linux CI for the core needs PORTFOLIO_READ_TOKEN"
       ]
     },
     {
@@ -811,16 +813,16 @@
       "kind": "app",
       "cluster": "PickleFamilia",
       "status": "asc-mapped",
-      "lastModified": "2026-09-13",
+      "lastModified": "2026-09-14",
       "repo": "~/pickledballs",
       "bundleId": "com.pickledballs.app",
-      "release": "TestFlight 1.0 (364) built 2026-09-13; ASC iOS 1.0 PREPARE_FOR_SUBMISSION. Display name and App Store name are PickleFamilia Companion since build 364; bundle id unchanged. Remaining before submit: App Privacy questionnaire (ASC web UI), App Store name change in ASC. Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
+      "release": "Build 364 installed on Bill's iPhone 2026-09-14 (no TestFlight upload until Bill says); ASC iOS 1.0 PREPARE_FOR_SUBMISSION. Display name and App Store name are PickleFamilia Companion since build 364; bundle id unchanged. Remaining before submit: App Privacy questionnaire (ASC web UI), App Store name change in ASC. Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
       "description": "PickleFamilia Companion (repo pickledballs): the court app of the PickleFamilia family by 1041Soft — rounds, matchups, scores, nearby live play — and, signed in by a texted code, the member's window on their club: their week, availability, and the club's pages from collective-engine.",
       "dependencies": [
         "CourtScheduler",
         "PickleFortunesKit",
         "PeerLink",
-        "collective-engine"
+        "picklefamilia-core"
       ],
       "links": {
         "website": "https://pickledballs.billdonner.com",
@@ -832,6 +834,7 @@
         "portfolioPage": "https://billdonner.com/apps/pickledballs/"
       },
       "notes": [
+        "2026-09-14: the core (models, scheduler adapters, member Collective, live-play wire format, handoff, parsers; 13 files + 17 test files) moved to ~/picklefamilia-core; this target compiles the sources in. Branch picklefamilia merged to main. Three UI tests fail on main from the branch's Home redesign (roster tile, Settings Roster row, screenshot harness); pre-existing.",
         "2026-09-13: renamed PickleFamilia Companion (ADR-009 in collective-engine). Branch picklefamilia merged to main: the member app (sign in by texted code, week, availability, club pages, calendar) over collective-engine via the local package ../collective-engine/CollectiveKit. nagzerver dependency dropped from the index; the code path is dormant under organizer focus mode.",
         "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Uses JSON plus GRDB SQLite locally.",
@@ -1954,10 +1957,10 @@
       "kind": "service",
       "cluster": "PickleFamilia",
       "status": "live",
-      "lastModified": "2026-09-13",
+      "lastModified": "2026-09-14",
       "repo": "~/collective-engine",
       "bundleId": null,
-      "release": "Live on Fly at bd-collective-engine.fly.dev; serves oocollective.org (SITE_HOST) since 2026-09-11 and, once DNS and FAMILY_HOST are set, picklefamilia.com as the family front page (ADR-009).",
+      "release": "Live on Fly at bd-collective-engine.fly.dev. Serves oocollective.org (SITE_HOST) and, since 2026-09-13, picklefamilia.com and its www as the family front page (FAMILY_HOST, poker hidden); picklefamilia.app and its www redirect to it. On main but not yet deployed (2026-09-14): the club-type policy (courts booked|fixed, cadence weekly|rolling, the usual week), the policy command, browser sign-in by texted code, and the admin panel at /admin on a club's host (this week, roster, club; open next week, solve and publish, call off, texts seen).",
       "description": "Multi-tenant club scheduling engine — the club's record: members, weeks, availability by SMS agent or the Companion app, court/table bookings, a deterministic balancing auction, review and publication, club pages, a member API (CollectiveKit) and an authorized MCP surface. Runs OO Pickleball Collective and a poker society.",
       "dependencies": [
         "collective-comms"
@@ -1967,9 +1970,12 @@
         "appStore": null,
         "clubSite": "https://oocollective.org/",
         "familySite": "https://picklefamilia.com/",
-        "familySiteSource": "domains registered 2026-08-29 (IONOS); engine support landed 2026-09-13; DNS/cert pending"
+        "familySiteSource": "domains registered 2026-08-29 (IONOS); engine support landed 2026-09-13; DNS/cert pending",
+        "adminPanel": "https://oocollective.org/admin",
+        "adminPanelSource": "on main 2026-09-14, deploy pending"
       },
       "notes": [
+        "2026-09-14: prototype web service — policy gains the club's kind (CourtsMode, Cadence, WeeklyPattern, call point), fixed courts book themselves at week open through a house membership, browser sign-in sets the session cookie, AdminRoutes/AdminPage serve /admin. Sign-up page (/signup, SIGNUP_CODE) and the rolling-cadence call job are next; poker stays record-only until after 2026-09-23.",
         "2026-09-13: ADR-009 — PickleFamilia is the family name over the engine and PickleFamilia Companion; FAMILY_HOST serves the family page. The collective.1041soft.com host was never real (ADR-006).",
         "Release 1 uses PostgreSQL tenancy and row-level security; unconfigured auth, email, push, or secret settings disable their related routes rather than accepting unverified input.",
         "Trial auctions are non-mutating and notify nobody; publishing requires a reviewed code.",
@@ -2133,6 +2139,48 @@
         "Windows app is CI-verified (desktop.yml builds, runs, and screenshots it on windows-latest; uploads MURDL-windows-x64 and a self-contained MURDL-macOS-arm64 bundle). Windows/README.md (2026-09-12) documents feature parity with the Mac app and how to hand the CI zip to a tester; not yet reviewed by Bill on the Mac; Microsoft Store deferred.",
         "2026-09-11..14: App Review rejection (guideline 4) fixed in commit 6aa44b4; resubmission blocked for three days by the team migration, then done 2026-09-14 as Xcode Cloud build 3. Lesson: after a rejection the version stays bound to the rejected reviewSubmission; close it in the ASC web UI, then create a fresh submission via the API."
       ]
+    },
+    {
+      "id": "picklefamilia-core",
+      "name": "PickleFamiliaCore",
+      "kind": "library",
+      "cluster": "PickleFamilia",
+      "status": "active",
+      "lastModified": "2026-09-14",
+      "repo": "~/picklefamilia-core",
+      "bundleId": null,
+      "release": "Private package (github:billdonner/picklefamilia-core), builds and tests on macOS; Linux CI workflow written, needs the PORTFOLIO_READ_TOKEN secret (all path deps are private).",
+      "description": "The Companion's core as a Swift package: models, CourtScheduler adapters, the member's Collective (sign in by texted code, week, availability), live play's wire format, the handoff, the parsers. Foundation only; the phone fills three ports (SecretStore, CalendarWriter, CoreLog). iOS compiles the sources in; the Android app (Swift SDK for Android + Kotlin/Compose UI, feature parity on-court included, decided 2026-09-14) links it.",
+      "dependencies": [
+        "CourtScheduler",
+        "collective-engine",
+        "PeerLink"
+      ],
+      "links": {
+        "github": "https://github.com/billdonner/picklefamilia-core"
+      },
+      "notes": [
+        "Depends on ../collective-engine/CollectiveKit by path; swift-crypto off Apple platforms.",
+        "Android toolchain spike not started; no Swift SDK for Android installed."
+      ]
+    },
+    {
+      "id": "picklefamilia-umbrella",
+      "name": "PickleFamilia (family)",
+      "kind": "docs",
+      "cluster": "PickleFamilia",
+      "status": "active",
+      "lastModified": "2026-09-14",
+      "repo": "~/picklefamilia",
+      "bundleId": null,
+      "release": "Private repo (github:billdonner/picklefamilia) holding the family README; nothing that compiles.",
+      "description": "The family name over collective-engine and PickleFamilia Companion (ADR-009). picklefamilia.com is served by the engine.",
+      "dependencies": [],
+      "links": {
+        "github": "https://github.com/billdonner/picklefamilia",
+        "familySite": "https://picklefamilia.com/"
+      },
+      "notes": []
     }
   ],
   "collaborators": [
