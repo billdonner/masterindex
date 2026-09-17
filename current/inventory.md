@@ -8,6 +8,18 @@ As of Monday, September 14, 2026 (targeted website update; retained app observat
 - Applied no handoff directives because `current/handoffs/index.json` has none.
 - Performed the requested retirements, operational fixes, website publications, and feedback-workflow replacement; observed facts and remaining product gaps are kept distinct below.
 
+## AmenBeats submitted — 2026-09-16
+
+- Owner approved the TestFlight beta and authorized submission. AmenBeats 1.0 build 17 was submitted at 21:07 UTC (4:07 PM Central). Both the app version and submission `b57551af-97b8-455b-a0be-0283ceefb642` are **WAITING_FOR_REVIEW**, verified by ASC API. Automatic release after approval remains selected.
+- The earlier TestFlight-only instructions below are historical and superseded by this approval.
+
+## AmenBeats TestFlight update — 2026-09-16
+
+- Build 16 was rejected September 15 for undiscoverable parental controls and an unresponsive Kid-mode exit.
+- Build 17 is VALID and IN_BETA_TESTING for the existing internal TestFlight group. Xcode Cloud run 17 succeeded from `02aecfa`; parent PIN/recovery, compact lock help, and fitted Kid layouts are included.
+- App Store 1.0 is PREPARE_FOR_SUBMISSION with build 17 selected. Corrected description and reviewer steps are saved. **Not submitted**, per owner request; test the beta first.
+- External/public-link distribution of build 17 has not been requested; its external beta state is READY_FOR_BETA_SUBMISSION.
+
 ## AmenBeats and Apple migration update — 2026-09-14
 
 - Owner reports AmenBeats 1.0 build 16 submitted September 6, superseding the September 5 withdrawal. Current App Store Connect state was not independently checked in this update.
@@ -194,7 +206,7 @@ byte. Source, restore commands, and recovery-key instructions are in `~/app-feed
 | Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
 | amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
 | 100 Burfords | 1.1 (16) | 1.1 (14) on TestFlight | Source ahead at `14e561a`; the two review P2s are fixed in 15-16, not yet uploaded |
-| DoubleQross | 1.0 (411), main c94a2f7 | 411 VALID; internal + external IN_BETA_TESTING | Beta review APPROVED; tester notes published; expires 2026-12-13. Verified 2026-09-14. App Store submission unchanged. |
+| DoubleQross | 1.0 (412), main f58bf71 | 412 VALID; internal + external IN_BETA_TESTING | Beta review APPROVED; tester notes published; expires 2026-12-14. ASC verified 2026-09-15. Modified local Release 412 installed/launched on Titanic 2026-09-16; preference/contact/palette repairs remain uncommitted, not uploaded. App Store submission unchanged. |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
 | Oenora iOS | 1.0 (7) | 7 VALID, external beta submitted; 6 remains approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
@@ -215,7 +227,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | App | Bundle ID | Repository | State |
 |---|---|---|---|
 | Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| AmenBeats | com.billdonner.drumbeats | ~/drumbeats | 1.0 build 16 WAITING_FOR_REVIEW since September 6 (ASC verified 2026-09-14); likely held by the team migration's developer-information update |
+| AmenBeats | com.billdonner.drumbeats | ~/drumbeats | 1.0 build 17 WAITING_FOR_REVIEW; submitted September 16 at 21:07 UTC after owner beta approval (ASC verified) |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | Active successor prototype; iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
@@ -226,7 +238,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | Famster | com.famster.app | ~/famster-ios | Concept-only shell; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
-| DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION |
+| DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION; still selects 395. Copyright/reviewer contacts missing; screenshots stale (verified 2026-09-15). |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | Removed from inventory 2026-09-08 (obsolete; ASC record deleted) |
 | PickleFamilia (legacy record) | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; superseded by PickleFamilia Companion (ADR-009) |
