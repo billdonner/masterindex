@@ -57,7 +57,8 @@
     "collaborators": 3,
     "unreachableServices": 0,
     "ascMacOsRecords": 9,
-    "ascMacOsWithMacTarget": 6
+    "ascMacOsWithMacTarget": 6,
+    "legalOwner": "1041Soft LLC"
   },
   "automation": {
     "taskRegistry": "tasks/index.json",
@@ -70,14 +71,20 @@
       "name": "Always-free apps (formerly BillDonner.com)",
       "domain": "https://1041soft.com/",
       "pricingPolicy": "always-free",
-      "commitment": "Historical always-free pricing commitment retained. These apps now share the 1041Soft product home; BillDonner.com is a personal portfolio linking outward. The website migration does not change app pricing."
+      "commitment": "Historical always-free pricing commitment retained. These apps now share the 1041Soft product home; BillDonner.com is a personal portfolio linking outward. The website migration does not change app pricing.",
+      "legalOwner": "1041Soft LLC",
+      "appStoreSeller": "1041Soft LLC (Apple Developer Program membership assigned 2026-09-14, Team NEAY582ME4)",
+      "ownershipNote": "Legal ownership and the App Store seller are 1041Soft LLC for every app in this line. The two product lines are marketing positioning, not two owners."
     },
     {
       "id": "1041soft-commercial",
       "name": "1041soft.com",
       "domain": "https://1041soft.com/",
       "pricingPolicy": "commercial",
-      "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model. Since 2026-09-14, 1041Soft also hosts the formerly BillDonner.com app family; the shared domain does not imply every app is paid."
+      "commitment": "Commercial-grade products with a higher release and support bar, normally including a real Mac version, an MCP or automation surface when appropriate, and an explicit revenue model. Since 2026-09-14, 1041Soft also hosts the formerly BillDonner.com app family; the shared domain does not imply every app is paid.",
+      "legalOwner": "1041Soft LLC",
+      "appStoreSeller": "1041Soft LLC (Apple Developer Program membership assigned 2026-09-14, Team NEAY582ME4)",
+      "ownershipNote": "Legal ownership and the App Store seller are 1041Soft LLC for every app in this line. The two product lines are marketing positioning, not two owners."
     }
   ],
   "screenshotOperations": {
@@ -2979,8 +2986,8 @@
     },
     {
       "kind": "1041soft-apple-developer-organization-conversion",
-      "observedAt": "2026-09-15",
-      "summary": "RESOLVED for the membership: at 2026-09-14 17:01 UTC Apple assigned the Program License Agreement to 1041Soft LLC, Team NEAY582ME4 (Consent to Assignment signed; case 20000146677819, enrollment CX276BJ992). 1041Soft LLC is now the legal owner of every app on the team in both product lines; TestFlight builds, tester groups, and feedback carried over per Apple. Still open: ASC Business tasks for the new entity (W-9 under the LLC EIN, Paid Apps agreement as the organization; Mercury 8399 is the bank on file since September 3) — the App Store developer name updates only after Apple processes those. AmenBeats 1.0 build 16 still WAITING_FOR_REVIEW since September 6 and MURDL 16 2.1 build 3 since September 14 18:19 UTC (ASC verified 2026-09-15). Record: ~/1041soft/formation/articles-of-organization-checklist.md Step 8 and formation/apple-migration-correspondence.md."
+      "observedAt": "2026-09-19",
+      "summary": "RESOLVED for the membership: at 2026-09-14 17:01 UTC Apple assigned the Program License Agreement to 1041Soft LLC, Team NEAY582ME4 (Consent to Assignment signed; case 20000146677819, enrollment CX276BJ992). 1041Soft LLC is now the legal owner of every app on the team in both product lines; TestFlight builds, tester groups, and feedback carried over per Apple. Still open: ASC Business tasks for the new entity (W-9 under the LLC EIN, Paid Apps agreement as the organization; Mercury 8399 is the bank on file since September 3) — the App Store developer name updates only after Apple processes those. AmenBeats 1.0 build 16 still WAITING_FOR_REVIEW since September 6 and MURDL 16 2.1 build 3 since September 14 18:19 UTC (ASC verified 2026-09-15). Record: ~/1041soft/formation/articles-of-organization-checklist.md Step 8 and formation/apple-migration-correspondence.md. 2026-09-19: owner completed the new entity's ASC Business tasks (W-9 under the LLC EIN Active; Paid Apps and Free Apps agreements accepted, Pending on Apple's side through Jan 12, 2027; Mercury 8399 Processing). Post-migration follow-through done the same day: every 1041soft-site privacy page names 1041Soft LLC as publisher and responsible party and copyright lines read 1041Soft LLC (pushed, GitHub Pages); billdonner.com catalog says 'Apps published by 1041Soft LLC' (committed in ~/website, awaiting the owner's interactive IONOS deploy.sh). Twilio: the primary customer profile's business_type still says Sole Proprietorship; Twilio refuses edits to an approved bundle (error 70002), and the toll-free verification record already carries 1041SOFT LLC with the EIN, so it is left as is."
     },
     {
       "kind": "xpensexpunger-release-readiness",
