@@ -1827,7 +1827,7 @@
       "kind": "website",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-09-20",
       "repo": "~/1041soft-site",
       "bundleId": null,
       "productLine": "1041soft-commercial",
@@ -1837,14 +1837,18 @@
       "links": {
         "website": "https://1041soft.com/",
         "github": "https://github.com/billdonner/1041soft-site",
-        "deployment": "https://github.com/billdonner/1041soft-site/actions/runs/34919820497"
+        "deployment": "https://github.com/billdonner/1041soft-site/actions/runs/34919820497",
+        "support": "mailto:support@1041soft.com",
+        "info": "mailto:info@1041soft.com",
+        "finance": "mailto:finance@1041soft.com"
       },
       "notes": [
         "The apex resolves to GitHub Pages addresses and www is a CNAME to billdonner.github.io.",
         "Canonical app web assets were consolidated here; private app-repository Pages sites were disabled to stop exposing their docs directories.",
         "Only public web assets were migrated; internal plans, ADRs, reviews, and contributor documentation remain in private repositories.",
         "Homepage commit e1d0caf emphasizes MCP control from Claude and ChatGPT, including voice workflows, and identifies Oenora as next.",
-        "2026-09-14: Added AmenBeats, MURDL 16, 123 Words, 100 Burfords, PickledBalls, and workinOn to the homepage; migrated supporting pages and assets. Removed the blanket claim that no apps had been submitted. Preserved newer DoubleQross redirects to its dedicated product site. Shared description source: ~/1041soft-site/data/portfolio.json."
+        "2026-09-14: Added AmenBeats, MURDL 16, 123 Words, 100 Burfords, PickledBalls, and workinOn to the homepage; migrated supporting pages and assets. Removed the blanket claim that no apps had been submitted. Preserved newer DoubleQross redirects to its dedicated product site. Shared description source: ~/1041soft-site/data/portfolio.json.",
+        "2026-09-20: role addresses support@, info@, finance@1041soft.com live as Private Email aliases; App Store support URLs may now point at support@1041soft.com."
       ]
     },
     {
@@ -3039,6 +3043,11 @@
       "kind": "legacy-murdl-root-privacy-route",
       "observedAt": "2026-09-14",
       "summary": "Observed after IONOS publication: https://billdonner.com/murdl/privacy/ still returns 404. The published portfolio policy route https://billdonner.com/apps/murdl/privacy/ serves the forwarding page and https://1041soft.com/murdl/privacy/ returns 200. Root /murdl/ redirects correctly. Legacy root privacy compatibility remains unresolved."
+    },
+    {
+      "kind": "1041soft-company-email-established",
+      "observedAt": "2026-09-20",
+      "summary": "1041Soft LLC company email is fully operational as of 2026-09-20. Namecheap Private Email Launch plan (one 5 GB mailbox, bill@1041soft.com) renewed for a year on 2026-09-19 (order 214573002). Role addresses support@, info@ and finance@1041soft.com are free aliases on that mailbox. All 1041soft.com mail forwards to billdonner@gmail.com (proven by Gmail send-as verification codes); Gmail labels 1041Soft/Support, Info, Apple, Finance with filters on the original To address and on Apple/vendor sender domains do the triage; Gmail can send as all four addresses through mail.privateemail.com:465. Operational fact for any agent: Private Email IMAP/SMTP accept only an app password (webmail Settings > Security > App Passwords), never the mailbox password, and the SMTP username is always bill@1041soft.com even when sending as an alias. Owner chose not to change contact emails at Mercury, Namecheap or Twilio; vendor mail is caught by the Finance sender-domain filter, and Twilio (which emails nothing) is polled by API in the daily 8:30 AM Chicago check."
     }
   ],
   "taskRegistry": {

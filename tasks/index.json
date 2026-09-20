@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-28T19:30:53-05:00",
+  "generatedAt": "2026-09-20T09:40:00-05:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -73,6 +73,34 @@
         "Do not publish, delete, reorder, or replace App Store Connect assets during the audit.",
         "Do not treat an old critique score as current after an invalidation trigger.",
         "Read current/handoffs/index.json before acting."
+      ]
+    },
+    {
+      "taskId": "1041soft-morning-check",
+      "name": "1041Soft morning check",
+      "status": "active",
+      "cadence": {
+        "kind": "rrule",
+        "value": "FREQ=DAILY;BYHOUR=8;BYMINUTE=30"
+      },
+      "timezone": "America/Chicago",
+      "purpose": "Daily 8:30 AM Chicago sweep of everything the 1041Soft LLC owner must act on: Apple Developer Support case 20000146677819 and the ASC legal-entity/agreement state, App Review queues for every app in flight, unread mail under the Gmail 1041Soft/* labels, and Twilio balance/spend via API.",
+      "expectedInputs": [
+        "Gmail (billdonner@gmail.com) labels 1041Soft/Support, Info, Apple, Finance",
+        "App Store Connect API (key MN6H2P6385)",
+        "Twilio API (~/.twilio.env)",
+        "~/1041soft/formation/articles-of-organization-checklist.md"
+      ],
+      "expectedOutputs": [
+        "One table, action items first, to the owner",
+        "Apple-related events logged in ~/1041soft/formation/*.md and pushed",
+        "MasterIndex entity/gap updates when review or entity state changes"
+      ],
+      "owner": "Claude Code session on the Mac (CronCreate job, session-only, 7-day expiry; definition persisted in the 1041soft project memory as project_1041soft_morning_check.md)",
+      "guardrails": [
+        "Read-only against Apple, Gmail and Twilio; never send, submit or pay on the owner's behalf.",
+        "Do not resubmit or withdraw App Review submissions.",
+        "Report a gap when a source cannot be reached rather than guessing."
       ]
     }
   ],

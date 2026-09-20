@@ -8,6 +8,11 @@ As of Monday, September 14, 2026 (targeted website update; retained app observat
 - Applied no handoff directives because `current/handoffs/index.json` has none.
 - Performed the requested retirements, operational fixes, website publications, and feedback-workflow replacement; observed facts and remaining product gaps are kept distinct below.
 
+## 1041Soft company email and daily check — 2026-09-20
+
+- Company email is complete: one Private Email mailbox (`bill@1041soft.com`, renewed to 2027-09) with free aliases `support@`, `info@` and `finance@1041soft.com`; everything forwards to billdonner@gmail.com, Gmail filters label it under `1041Soft/Support|Info|Apple|Finance`, and Gmail sends as all four addresses via `mail.privateemail.com:465`. Private Email clients need an app password, and the SMTP username is always `bill@1041soft.com`.
+- A daily 8:30 AM Chicago "morning check" (tasks/index.json `1041soft-morning-check`) sweeps the Apple support case and entity state, App Review queues, the four Gmail labels and Twilio's balance, and logs Apple events to `~/1041soft/formation/`.
+
 ## AmenBeats submitted — 2026-09-16
 
 - Owner approved the TestFlight beta and authorized submission. AmenBeats 1.0 build 17 was submitted at 21:07 UTC (4:07 PM Central). Both the app version and submission `b57551af-97b8-455b-a0be-0283ceefb642` are **WAITING_FOR_REVIEW**, verified by ASC API. Automatic release after approval remains selected.
