@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-17",
+  "generatedAt": "2026-09-20",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -510,12 +510,13 @@
         "appId": "6809919090",
         "ascStates": [
           "MAC_OS 2.1 READY_FOR_DISTRIBUTION",
-          "IOS 2.2 PREPARE_FOR_SUBMISSION"
+          "MAC_OS 2.2 PREPARE_FOR_SUBMISSION",
+          "IOS 2.2 WAITING_FOR_REVIEW"
         ],
         "repo": "~/Murdl27",
         "repoEvidence": "GitHub repo billdonner/murdl27 created 2026-09-03 from ~/Murdl27",
-        "localVersion": "2.2 (10) local; ASC macOS 2.1 build 3 released; macOS 2.2 build 9 and iOS 2.2 builds 8 and 10 VALID (Xcode Cloud); iOS build 10 attached to 2.2",
-        "ascVerified": "2026-09-17"
+        "localVersion": "2.2 (12) local; iOS build 12 attached to 2.2 and submitted 2026-09-20; Mac 2.2 has no build",
+        "ascVerified": "2026-09-20"
       }
     ],
     "unmatched": [
@@ -2204,13 +2205,13 @@
       "name": "MURDL 16",
       "kind": "app",
       "cluster": "MURDL",
-      "status": "released",
-      "lastModified": "2026-09-19",
+      "status": "in-review",
+      "lastModified": "2026-09-20",
       "repo": "~/Murdl27",
       "bundleId": "com.billdonner.murdl27",
       "productLine": "1041soft-commercial",
       "pricingPolicy": "free",
-      "release": "Record 6809919090 (SKU murd001). macOS 2.1 build 3 APPROVED 2026-09-17 (Ready for Distribution). iOS added 2026-09-17 on the same record and bundle id (universal purchase): version 2.2, iPad-only (device family 2), iOS 26 floor, Xcode Cloud build 10 attached, listing text copied from the Mac version, two iPad 13\" screenshots uploaded, NOT yet submitted. Name 'MURDL' and bundle id com.billdonner.murdl are held by another Apple account, hence 'MURDL 16' and murdl27. Team NEAY582ME4 (org migration to 1041Soft LLC still shows the 'Developer Information Update' banner). Ship only via Xcode Cloud (product 'Murdl', four workflows: Build/Archive x Mac/iOS, all manual-start, pinned Xcode 26.6); local archives get Invalid Binary. Build numbers follow the cloud counter for both platforms; project.yml tracks it (10). Listing copy ~/coworking/MURDL-AppStore.md, category Games/Word+Puzzle, 4+, free in 175 territories.",
+      "release": "Record 6809919090 (SKU murd001). macOS 2.1 build 3 approved 2026-09-17 (Ready for Distribution). iOS 2.2 build 12 (universal iPhone + iPad, universal purchase on the same record) SUBMITTED for review 2026-09-20 21:03Z, submission 510391f8, WAITING_FOR_REVIEW. Since 2026-09-17 the iOS app gained: 1-board game, win card with confetti, share-as-text (engine shareText), single-board paged iPhone view with a switcher strip, board ceremony, keyboard swipe, pinch to fit, current 14,855-word guess list, starter sequences in Help, date-seeded Daily per board count with its own streak, high-contrast palette with tile glyphs, VoiceOver labels, guess distribution, iCloud key-value score sync, Sequence and Rescue variants, and 9 landscape iPad + 9 portrait iPhone screenshots from scripts/screenshots.sh. All URLs now 1041soft.com/murdl (live Mac 2.1 listing still shows billdonner.com until Mac 2.2 ships). macOS 2.2 version exists on ASC with no build yet. Name 'MURDL' and bundle id com.billdonner.murdl are held by another account, hence 'MURDL 16' and murdl27. Team NEAY582ME4. Xcode Cloud: four manual-start workflows pinned to Xcode 26.6; build numbers follow its counter (project.yml 12). Local archives work again as of 2026-09-20 (released macOS 27 + Xcode 27). Listing copy ~/coworking/MURDL-AppStore.md (iOS section).",
       "distribution": "public-release-planned",
       "description": "Native macOS SwiftUI rebuild of the archived MURDL word game: 2/4/8/16 boards, guesses = boards + 5, Classic/Stopwatch/Sprint modes, score book, grid or strip layouts with arrow navigation, floating keyboard window, full keyboard play. Engine is the cross-platform MurdlCore Swift package (tested on Windows and macOS in CI) with a C bridge (MurdlBridge.dll / dylib). A C#/Avalonia desktop front end in Windows/ is the Windows build and also runs natively on macOS.",
       "dependencies": [],
@@ -2232,7 +2233,7 @@
         "Windows app is CI-verified (desktop.yml builds, runs, and screenshots it on windows-latest; uploads MURDL-windows-x64 and a self-contained MURDL-macOS-arm64 bundle). Windows/README.md (2026-09-12) documents feature parity with the Mac app and how to hand the CI zip to a tester; not yet reviewed by Bill on the Mac; Microsoft Store deferred.",
         "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
         "2026-09-11..17: App Review rejection (guideline 4) fixed in 6aa44b4, resubmitted 2026-09-14 as build 3, approved 2026-09-17. After a rejection the version stays bound to the rejected reviewSubmission; close it in the ASC web UI, then create a fresh submission via the API.",
-        "2026-09-17 iOS: XcodeGen target MurdlIOS shares Models/Views with the Mac app; Sources/MurdlIOS has the app entry, two-row header, docked keyboard with Clear, iOS Help. Grid picks the column count with the biggest tiles among those that fill every row (8 boards = 2x4 on iPad portrait). Phase B planned: iPhone portrait-only, one board per page. Local Xcode is now 27.0 only (Simulator.app missing); cloud archives pin 26.6."
+        "2026-09-17..20 iOS build-out (see release) done in one session; research 2026-09-18 set the backlog (remaining: number-emoji share block for 8/16 boards, per-board keyboard state, ghost letters/solve-assist, lighter hints). Pricing decision: stay free everywhere; a paid-iOS/free-Mac split is impossible on one record."
       ]
     },
     {
