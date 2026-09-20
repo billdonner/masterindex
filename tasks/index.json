@@ -96,12 +96,13 @@
         "Apple-related events logged in ~/1041soft/formation/*.md and pushed",
         "MasterIndex entity/gap updates when review or entity state changes"
       ],
-      "owner": "Claude Code session on the Mac (CronCreate job, session-only, 7-day expiry; definition persisted in the 1041soft project memory as project_1041soft_morning_check.md)",
+      "owner": "Bill (initiates) + Claude Code on the Mac (executes). Definition of record: ~/.claude/projects/-Users-billdonner-1041soft/memory/project_1041soft_morning_check.md.",
       "guardrails": [
         "Read-only against Apple, Gmail and Twilio; never send, submit or pay on the owner's behalf.",
         "Do not resubmit or withdraw App Review submissions.",
         "Report a gap when a source cannot be reached rather than guessing."
-      ]
+      ],
+      "trigger": "Owner-initiated: Bill says 'check' in a Claude Code session in ~/1041soft at about 8:30 AM Chicago. A session-scoped CronCreate timer may pre-fire it while a session is open (7-day expiry, not persisted); the timer is a convenience, not the mechanism of record."
     }
   ],
   "entryTasks": {
