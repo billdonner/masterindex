@@ -2179,11 +2179,11 @@
     },
     {
       "id": "collective-console",
-      "name": "Collective Console",
+      "name": "PickleFamilia Console",
       "kind": "app",
-      "cluster": "Pickleball Collective",
+      "cluster": "PickleFamilia",
       "status": "in-development",
-      "lastModified": "2026-09-06",
+      "lastModified": "2026-09-20",
       "repo": "~/collective-console",
       "bundleId": "com.billdonner.collectiveconsole",
       "productLine": "1041soft-internal",
@@ -2197,7 +2197,8 @@
         "github": "https://github.com/billdonner/collective-console"
       },
       "notes": [
-        "2026-09-06: created; ADR-008 in collective-engine records the decisions it rests on."
+        "2026-09-06: created; ADR-008 in collective-engine records the decisions it rests on.",
+        "Renamed from \"Collective Console\" 2026-09-20 (display name only; repo, bundle id and port 9910 unchanged). The family's rehearsal bench: deliberately not merged into the Companion, which runs real clubs."
       ]
     },
     {
