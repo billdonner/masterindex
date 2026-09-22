@@ -287,7 +287,7 @@
         "repo": "~/drumbeats",
         "repoEvidence": "Local checkout and pushed main verified 2026-09-16",
         "localVersion": "1.0 (17); build 17 VALID, internal IN_BETA_TESTING, submitted for App Store review 2026-09-16 21:07 UTC and WAITING_FOR_REVIEW.",
-        "ascVerified": "2026-09-16"
+        "ascVerified": "2026-09-21"
       },
       {
         "name": "Oenora",
@@ -401,11 +401,11 @@
         "bundleId": "com.qross.app",
         "appId": "6759799988",
         "ascStates": [
-          "IOS 1.0 PREPARE_FOR_SUBMISSION"
+          "IOS 1.0 WAITING_FOR_REVIEW"
         ],
         "repo": "~/qross",
-        "localVersion": "1.0 (392); ASC build 392 VALID",
-        "ascVerified": "2026-09-05"
+        "localVersion": "1.0 (415) submitted 2026-09-21; WAITING_FOR_REVIEW",
+        "ascVerified": "2026-09-21"
       },
       {
         "name": "LtWatcher",
@@ -509,14 +509,14 @@
         "bundleId": "com.billdonner.murdl27",
         "appId": "6809919090",
         "ascStates": [
-          "MAC_OS 2.1 READY_FOR_DISTRIBUTION",
-          "MAC_OS 2.2 PREPARE_FOR_SUBMISSION",
-          "IOS 2.2 WAITING_FOR_REVIEW"
+          "MAC_OS 2.1 READY_FOR_SALE",
+          "IOS 2.2 WAITING_FOR_REVIEW",
+          "MAC_OS 2.2 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/Murdl27",
         "repoEvidence": "GitHub repo billdonner/murdl27 created 2026-09-03 from ~/Murdl27",
         "localVersion": "2.2 (12) local; iOS build 12 attached to 2.2 and submitted 2026-09-20; Mac 2.2 has no build",
-        "ascVerified": "2026-09-20"
+        "ascVerified": "2026-09-21"
       }
     ],
     "unmatched": [
@@ -870,8 +870,8 @@
       "name": "DoubleQross",
       "kind": "app",
       "cluster": "Qross",
-      "status": "asc-mapped",
-      "lastModified": "2026-09-16",
+      "status": "waiting-for-review",
+      "lastModified": "2026-09-21",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
       "release": "TestFlight 1.0 (412) VALID; internal and external IN_BETA_TESTING; beta review APPROVED (verified 2026-09-15). Main f58bf71, owner-approved administrator merge of PR #231; source b78c8dd. Tester notes published. App Store submission unchanged.",
@@ -919,7 +919,8 @@
         "2026-09-12 verified ASC marketing, support and privacy URLs all use doubleqross.com; general TestFlight URLs now match.",
         "doubleqross.com serves IONOS webspace /qross directly. Deploy only the explicit public allowlist in qross/scripts/publish-content.py, never docs globs. The GitHub and 1041soft legacy pages now redirect to this canonical site.",
         "Recent activity (through 2026-08-24): two external Codex reviews fixed 11 verified defects (soft-locks, daily-exploit, Leg-2 empty-goal, DC scoring floor 2n-1); Double Cross Leg 2 reworked to walked-choice (#198); efficiency % scoring shipped (#197); Carol's full PR stack merged (palettes to 16, Tahiti, onboarding); subtopic search upgraded (#178/#179, enrich pass pending); issue board triaged 29→8; test suite 891/0. Open: PR #172 and decisions #193 (both Carol), qclean-enrich catalog republish, MLX-lab hint-judge queue.",
-        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
+        "2026-09-21 (verified by ASC API): iOS 1.0 build 415 WAITING_FOR_REVIEW, submitted 2026-09-21 08:03 UTC, free, no IAP included."
       ]
     },
     {
@@ -1705,7 +1706,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "waiting-for-review",
-      "lastModified": "2026-09-16",
+      "lastModified": "2026-09-21",
       "repo": "~/drumbeats",
       "bundleId": "com.billdonner.drumbeats",
       "productLine": "billdonner-free",
@@ -1735,7 +1736,8 @@
         "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
         "2026-09-15: still WAITING_FOR_REVIEW (build 16). Team migration completed 2026-09-14 17:01 UTC; the remaining ASC Business tasks (LLC W-9, Paid Apps) may still gate release. Recheck after they are done.",
         "2026-09-16: Build 16 was rejected September 15 under 2.3.6 (parental controls not located) and 2.1(a) (unresponsive exit). Build 17 adds a device-local parent PIN with recovery, a compact lock after first tap and hold-for-help, fitted Kid layouts with paged lists, and native Pro scrolling. 110 unit tests passed; PIN flow tested on iPhone/iPad simulators and development builds installed on Titanic/ProPad. TestFlight testing is next; no resubmission authorized yet.",
-        "2026-09-16 21:07 UTC: Owner said the beta is good and authorized submission. Verified selected build 17 and reviewer notes, marked the prior rejected item resolved, and resubmitted. Apple returned WAITING_FOR_REVIEW for both submission and app version."
+        "2026-09-16 21:07 UTC: Owner said the beta is good and authorized submission. Verified selected build 17 and reviewer notes, marked the prior rejected item resolved, and resubmitted. Apple returned WAITING_FOR_REVIEW for both submission and app version.",
+        "2026-09-21 (verified by ASC API): still WAITING_FOR_REVIEW on build 17 since 09-16. No Apple mail. Next step if still waiting on 09-23: ask Nara (case 20000146677819) whether the pending entity is holding it."
       ]
     },
     {
@@ -2207,7 +2209,7 @@
       "kind": "app",
       "cluster": "MURDL",
       "status": "in-review",
-      "lastModified": "2026-09-20",
+      "lastModified": "2026-09-21",
       "repo": "~/Murdl27",
       "bundleId": "com.billdonner.murdl27",
       "productLine": "1041soft-commercial",
@@ -2234,7 +2236,8 @@
         "Windows app is CI-verified (desktop.yml builds, runs, and screenshots it on windows-latest; uploads MURDL-windows-x64 and a self-contained MURDL-macOS-arm64 bundle). Windows/README.md (2026-09-12) documents feature parity with the Mac app and how to hand the CI zip to a tester; not yet reviewed by Bill on the Mac; Microsoft Store deferred.",
         "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
         "2026-09-11..17: App Review rejection (guideline 4) fixed in 6aa44b4, resubmitted 2026-09-14 as build 3, approved 2026-09-17. After a rejection the version stays bound to the rejected reviewSubmission; close it in the ASC web UI, then create a fresh submission via the API.",
-        "2026-09-17..20 iOS build-out (see release) done in one session; research 2026-09-18 set the backlog (remaining: number-emoji share block for 8/16 boards, per-board keyboard state, ghost letters/solve-assist, lighter hints). Pricing decision: stay free everywhere; a paid-iOS/free-Mac split is impossible on one record."
+        "2026-09-17..20 iOS build-out (see release) done in one session; research 2026-09-18 set the backlog (remaining: number-emoji share block for 8/16 boards, per-board keyboard state, ghost letters/solve-assist, lighter hints). Pricing decision: stay free everywhere; a paid-iOS/free-Mac split is impossible on one record.",
+        "2026-09-21 (verified by ASC API): iOS 2.2 build 12 WAITING_FOR_REVIEW, submitted 2026-09-20 21:03 UTC; macOS 2.1 build 3 READY_FOR_SALE; macOS 2.2 PREPARE_FOR_SUBMISSION with no build attached."
       ]
     },
     {
@@ -2992,8 +2995,8 @@
     },
     {
       "kind": "1041soft-apple-developer-organization-conversion",
-      "observedAt": "2026-09-19",
-      "summary": "RESOLVED for the membership: at 2026-09-14 17:01 UTC Apple assigned the Program License Agreement to 1041Soft LLC, Team NEAY582ME4 (Consent to Assignment signed; case 20000146677819, enrollment CX276BJ992). 1041Soft LLC is now the legal owner of every app on the team in both product lines; TestFlight builds, tester groups, and feedback carried over per Apple. Still open: ASC Business tasks for the new entity (W-9 under the LLC EIN, Paid Apps agreement as the organization; Mercury 8399 is the bank on file since September 3) — the App Store developer name updates only after Apple processes those. AmenBeats 1.0 build 16 still WAITING_FOR_REVIEW since September 6 and MURDL 16 2.1 build 3 since September 14 18:19 UTC (ASC verified 2026-09-15). Record: ~/1041soft/formation/articles-of-organization-checklist.md Step 8 and formation/apple-migration-correspondence.md. 2026-09-19: owner completed the new entity's ASC Business tasks (W-9 under the LLC EIN Active; Paid Apps and Free Apps agreements accepted, Pending on Apple's side through Jan 12, 2027; Mercury 8399 Processing). Post-migration follow-through done the same day: every 1041soft-site privacy page names 1041Soft LLC as publisher and responsible party and copyright lines read 1041Soft LLC (pushed, GitHub Pages); billdonner.com catalog says 'Apps published by 1041Soft LLC' (committed in ~/website, awaiting the owner's interactive IONOS deploy.sh). Twilio: the primary customer profile's business_type still says Sole Proprietorship; Twilio refuses edits to an approved bundle (error 70002), and the toll-free verification record already carries 1041SOFT LLC with the EIN, so it is left as is."
+      "observedAt": "2026-09-21",
+      "summary": "RESOLVED for the membership: at 2026-09-14 17:01 UTC Apple assigned the Program License Agreement to 1041Soft LLC, Team NEAY582ME4 (Consent to Assignment signed; case 20000146677819, enrollment CX276BJ992). 1041Soft LLC is now the legal owner of every app on the team in both product lines; TestFlight builds, tester groups, and feedback carried over per Apple. Still open: ASC Business tasks for the new entity (W-9 under the LLC EIN, Paid Apps agreement as the organization; Mercury 8399 is the bank on file since September 3) — the App Store developer name updates only after Apple processes those. AmenBeats 1.0 build 16 still WAITING_FOR_REVIEW since September 6 and MURDL 16 2.1 build 3 since September 14 18:19 UTC (ASC verified 2026-09-15). Record: ~/1041soft/formation/articles-of-organization-checklist.md Step 8 and formation/apple-migration-correspondence.md. 2026-09-19: owner completed the new entity's ASC Business tasks (W-9 under the LLC EIN Active; Paid Apps and Free Apps agreements accepted, Pending on Apple's side through Jan 12, 2027; Mercury 8399 Processing). Post-migration follow-through done the same day: every 1041soft-site privacy page names 1041Soft LLC as publisher and responsible party and copyright lines read 1041Soft LLC (pushed, GitHub Pages); billdonner.com catalog says 'Apps published by 1041Soft LLC' (committed in ~/website, awaiting the owner's interactive IONOS deploy.sh). Twilio: the primary customer profile's business_type still says Sole Proprietorship; Twilio refuses edits to an approved bundle (error 70002), and the toll-free verification record already carries 1041SOFT LLC with the EIN, so it is left as is. 2026-09-21 morning check: no Apple mail; entity presumed still Pending; three apps in the review queue (AmenBeats build 17 since 09-16, MURDL 16 iOS build 12 since 09-20, DoubleQross build 415 since 09-21). Twilio balance $30.91 with $16.70 spent in September; top-up likely needed by early October."
     },
     {
       "kind": "xpensexpunger-release-readiness",

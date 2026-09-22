@@ -232,7 +232,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | App | Bundle ID | Repository | State |
 |---|---|---|---|
 | Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| AmenBeats | com.billdonner.drumbeats | ~/drumbeats | 1.0 build 17 WAITING_FOR_REVIEW; submitted September 16 at 21:07 UTC after owner beta approval (ASC verified) |
+| AmenBeats | com.billdonner.drumbeats | ~/drumbeats | 1.0 build 17 WAITING_FOR_REVIEW since September 16 (ASC verified 2026-09-21); escalate to Developer Support if still waiting September 23 |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | Active successor prototype; iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
