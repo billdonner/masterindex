@@ -2181,16 +2181,16 @@
     },
     {
       "id": "collective-console",
-      "name": "PickleFamilia Console",
+      "name": "PickleFamilia Simulator",
       "kind": "app",
       "cluster": "PickleFamilia",
       "status": "in-development",
-      "lastModified": "2026-09-20",
+      "lastModified": "2026-09-22",
       "repo": "~/collective-console",
       "bundleId": "com.billdonner.collectiveconsole",
       "productLine": "1041soft-internal",
       "pricingPolicy": "internal",
-      "distribution": "local-only",
+      "distribution": "TestFlight, internal testers only (Bill); never invited, never reviewed, never App Store. ASC record pending Bill (macOS, com.billdonner.collectiveconsole); ship via scripts/testflight.sh",
       "description": "Mac app (SwiftUI, xcodegen) that exercises collective-engine with a simulated club: runs the CollectiveSimulation package through the real solver in-process, a phone wall against a local engine (SIMULATION_API=1) with personas via Ollama or scripted lines, and an in-app MCP server on 127.0.0.1:9910 (off by default). Never prod, never Twilio.",
       "dependencies": [
         "collective-engine"
