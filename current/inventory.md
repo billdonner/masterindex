@@ -211,7 +211,7 @@ byte. Source, restore commands, and recovery-key instructions are in `~/app-feed
 | Pfoliolio | 35 | iOS + macOS 35 VALID | Aligned |
 | amenbeats | 8 | 8 VALID | Aligned in GitHub commit `aea6725` |
 | 100 Burfords | 1.1 (16) | 1.1 (14) on TestFlight | Source ahead at `14e561a`; the two review P2s are fixed in 15-16, not yet uploaded |
-| DoubleQross | 1.0 (412), main f58bf71 | 412 VALID; internal + external IN_BETA_TESTING | Beta review APPROVED; tester notes published; expires 2026-12-14. ASC verified 2026-09-15. Modified local Release 412 installed/launched on Titanic 2026-09-16; preference/contact/palette repairs remain uncommitted, not uploaded. App Store submission unchanged. |
+| DoubleQross | 1.0 (415) | iOS 1.0 Ready for Distribution | Approved and publicly downloadable, free, on the App Store (verified 2026-09-23). Earlier TestFlight 412 remains VALID for internal and external testing. |
 | 123 Words | 1.12 (59) | 59 VALID | Aligned to the open 1.12 train in commit `3f89587` |
 | SentiPods | iOS 20, macOS 21 | macOS 21 VALID | Aligned |
 | Oenora iOS | 1.0 (7) | 7 VALID, external beta submitted; 6 remains approved | Aligned; native Mac uses a separate notarized Developer ID bundle |
@@ -240,10 +240,11 @@ No current consumer was found to require Card Server, so these do not block reti
 | Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | workin On | com.workinon.app | ~/workinon | Internal/TestFlight-only; iOS 1.0 retained |
 | 100 Burfords | com.billdonner.burfords | ~/100Burfords | 1.0 READY_FOR_SALE; 1.1 draft |
+| MURDL 16 | com.billdonner.murdl27 | ~/Murdl27 | iOS 2.2 READY_FOR_DISTRIBUTION, free and publicly downloadable; macOS 2.1 remains live, while macOS 2.2 is PREPARE_FOR_SUBMISSION with no build (verified 2026-09-23). |
 | Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | Famster | com.famster.app | ~/famster-ios | Concept-only shell; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
-| DoubleQross | com.qross.app | ~/qross | iOS 1.0 PREPARE_FOR_SUBMISSION; still selects 395. Copyright/reviewer contacts missing; screenshots stale (verified 2026-09-15). |
+| DoubleQross | com.qross.app | ~/qross | iOS 1.0 READY_FOR_DISTRIBUTION, free and publicly downloadable (verified 2026-09-23). |
 | LtWatcher | com.ltwatch.app | archived github:billdonner/clubwatch | Retired; ASC record retained |
 | Flasherz Kids | com.billdonner.obo | ~/obo-ios | Removed from inventory 2026-09-08 (obsolete; ASC record deleted) |
 | PickleFamilia (legacy record) | com.picklefamilia.app | github:billdonner/picklefamilia-ios | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; superseded by PickleFamilia Companion (ADR-009) |
@@ -325,19 +326,21 @@ redeployment; until then, main is not a reproducible source for production.
 
 ## Website Publication
 
-- **1041soft.com:** unified 14-entry portfolio deployed through GitHub Pages at commit `746320a` on September 14. Deployment run `34919820497` succeeded; the custom-domain homepage and new MURDL, 123 Words, and PickledBalls pages returned HTTP 200.
+- **1041soft.com:** unified 14-entry portfolio deployed through GitHub Pages. On September 23, commit `3c3a58d` added direct App Store download links and free-release copy for MURDL 16 and DoubleQross; GitHub Pages propagation follows the push.
 - **billdonner.com:** local source `~/website`, commit `8262c66`, published to IONOS September 14. All 24 changed public files uploaded successfully. Homepage, catalog, app descriptions, screenshot/privacy forwarding pages, biography, and music pages were verified live.
 - The canonical shared description file is `~/1041soft-site/data/portfolio.json`. Run `python3 build_apps.py --catalog ../1041soft-site/data/portfolio.json` in `~/website` to synchronize the personal portfolio. The personal ASC `--refresh` workflow is retired.
 - MasterIndex's `publish/billdonner.com/` tree and `tools/generate_billdonner_apps.py` are historical publication artifacts; do not use them to overwrite the current website.
 - Existing app descriptions were retained. Public copy still needs reconciliation with the newer PickleFamilia Companion name and KinFlash Family/Studio split recorded elsewhere in this index.
 - Legacy `/murdl/privacy/` on BillDonner.com still returns 404. The current `/apps/murdl/privacy/` forwarding page and `https://1041soft.com/murdl/privacy/` work. Root `/murdl/` redirects correctly; the old root privacy route remains a compatibility follow-up.
 
-### Company Website — `1041soft.com` (updated 2026-09-14)
+### Company Website — `1041soft.com` (updated 2026-09-23)
 
 Canonical company app home at `~/1041soft-site`, public repo `billdonner/1041soft-site`,
 served by GitHub Pages over HTTPS. Added homepage entries for AmenBeats, MURDL 16,
 123 Words, 100 Burfords, PickledBalls, and workinOn alongside the existing eight.
 Support/privacy content and required assets were carried over from their existing sources.
+
+On September 23, MURDL 16 and DoubleQross were recorded as free, publicly downloadable App Store releases, with direct store links added to the company homepage.
 
 `doubleqross.com` directly serves the IONOS `/qross` public site. ASC marketing,
 support and privacy URLs all use this domain (verified September 12, 2026).

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20",
+  "generatedAt": "2026-09-23",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -401,11 +401,11 @@
         "bundleId": "com.qross.app",
         "appId": "6759799988",
         "ascStates": [
-          "IOS 1.0 WAITING_FOR_REVIEW"
+          "IOS 1.0 READY_FOR_DISTRIBUTION"
         ],
         "repo": "~/qross",
-        "localVersion": "1.0 (415) submitted 2026-09-21; WAITING_FOR_REVIEW",
-        "ascVerified": "2026-09-21"
+        "localVersion": "1.0 (415) approved and READY_FOR_DISTRIBUTION; available on the public App Store",
+        "ascVerified": "2026-09-23"
       },
       {
         "name": "LtWatcher",
@@ -510,13 +510,13 @@
         "appId": "6809919090",
         "ascStates": [
           "MAC_OS 2.1 READY_FOR_SALE",
-          "IOS 2.2 WAITING_FOR_REVIEW",
+          "IOS 2.2 READY_FOR_DISTRIBUTION",
           "MAC_OS 2.2 PREPARE_FOR_SUBMISSION"
         ],
         "repo": "~/Murdl27",
         "repoEvidence": "GitHub repo billdonner/murdl27 created 2026-09-03 from ~/Murdl27",
-        "localVersion": "2.2 (12) local; iOS build 12 attached to 2.2 and submitted 2026-09-20; Mac 2.2 has no build",
-        "ascVerified": "2026-09-21"
+        "localVersion": "2.2 (12) iOS released and READY_FOR_DISTRIBUTION; Mac 2.2 has no build",
+        "ascVerified": "2026-09-23"
       }
     ],
     "unmatched": [
@@ -870,11 +870,11 @@
       "name": "DoubleQross",
       "kind": "app",
       "cluster": "Qross",
-      "status": "waiting-for-review",
-      "lastModified": "2026-09-21",
+      "status": "ready-for-distribution",
+      "lastModified": "2026-09-23",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
-      "release": "TestFlight 1.0 (412) VALID; internal and external IN_BETA_TESTING; beta review APPROVED (verified 2026-09-15). Main f58bf71, owner-approved administrator merge of PR #231; source b78c8dd. Tester notes published. App Store submission unchanged.",
+      "release": "iOS 1.0 build 415 is approved and Ready for Distribution in App Store Connect (verified 2026-09-23); it is free and downloadable on the public App Store. Earlier TestFlight 1.0 (412) remains VALID; internal and external IN_BETA_TESTING; beta review APPROVED (verified 2026-09-15).",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
         "card-engine",
@@ -885,7 +885,7 @@
         "website": "https://doubleqross.com/",
         "portfolioPage": "https://billdonner.com/apps/qross/",
         "testFlight": "https://testflight.apple.com/join/W6VjPWV6",
-        "appStore": null,
+        "appStore": "https://apps.apple.com/us/app/doubleqross/id6759799988",
         "companyPage": "https://1041soft.com/qross/"
       },
       "domain": {
@@ -896,6 +896,7 @@
         "intendedDestination": "IONOS webspace /qross (serves the product site directly; same folder as the catalog downloads)"
       },
       "notes": [
+        "2026-09-23 (verified in App Store Connect and by owner): iOS 1.0 is READY_FOR_DISTRIBUTION and publicly downloadable, free, at the recorded App Store link. The version retains the manual-release preference, but ASC exposes no release action because it has already reached Ready for Distribution.",
         "2026-09-16 local device delivery: modified Release build 412 installed and launched on Titanic without debugger or uninstall. Uncommitted repairs on fix/carol-topic-clarity preserve topic selections through temporary board states/catalog refreshes/tutorial replay/schema upgrades; expose difficulty preference; add live Color/Mono preview, opt-in Original Pastels, and Contact Us/Email Us copy with 1041Soft About credit. Full unit suite 998 executed, 2 existing skips, 0 failures; contact/appearance and original-palette UI checks passed. Question content and ratings unchanged. TestFlight remains the prior published 412; no upload or ASC verification this session. Notes/screens: qross/docs/reviews/feedback-repairs-2026-09-16/README.md.",
         "2026-09-15 live App Store readiness audit: version 1.0 remains PREPARE_FOR_SUBMISSION with build 395 selected. Copyright and all reviewer contact fields missing; review notes empty. Three iPhone and three iPad screenshots uploaded; inspected first of each shows old UI/scoring. Website HTTP 200 still describes build 405 as a private Scoredux preview. Privacy questionnaire, price/territories and account agreements still need verification. Build 412 TestFlight status unchanged. Read-only audit; no App Review submission or metadata edits. Report: qross/docs/reviews/app-store-readiness/2026-09-15.md.",
         "2026-09-15 completed release 412: Bill explicitly approved administrator merge and upload of PR #231. Review fixed pack topic ID/name mismatch and sorted results separators; 993 unit tests, 2 existing skips, 0 failures. Clean main f58bf71 preflight passed; archive build/Qross-412.xcarchive and export build/export-412/Qross.ipa succeeded. Apple upload 739d5992-7f66-4d75-8375-6bf3971f5d67 VALID, beta review APPROVED; internal/external IN_BETA_TESTING, notes read back. Expires 2026-12-14. Final direct Titanic install failed twice because device was unavailable (CoreDevice 4016); do not claim that local installation completed. Double Cross rules unchanged. Release review: docs/feedback/2026-09-15/code-review-412.md. Prior pending-review note is resolved. No App Store submission.",
@@ -2208,20 +2209,20 @@
       "name": "MURDL 16",
       "kind": "app",
       "cluster": "MURDL",
-      "status": "in-review",
-      "lastModified": "2026-09-21",
+      "status": "ready-for-distribution",
+      "lastModified": "2026-09-23",
       "repo": "~/Murdl27",
       "bundleId": "com.billdonner.murdl27",
       "productLine": "1041soft-commercial",
       "pricingPolicy": "free",
-      "release": "Record 6809919090 (SKU murd001). macOS 2.1 build 3 approved 2026-09-17 (Ready for Distribution). iOS 2.2 build 12 (universal iPhone + iPad, universal purchase on the same record) SUBMITTED for review 2026-09-20 21:03Z, submission 510391f8, WAITING_FOR_REVIEW. Since 2026-09-17 the iOS app gained: 1-board game, win card with confetti, share-as-text (engine shareText), single-board paged iPhone view with a switcher strip, board ceremony, keyboard swipe, pinch to fit, current 14,855-word guess list, starter sequences in Help, date-seeded Daily per board count with its own streak, high-contrast palette with tile glyphs, VoiceOver labels, guess distribution, iCloud key-value score sync, Sequence and Rescue variants, and 9 landscape iPad + 9 portrait iPhone screenshots from scripts/screenshots.sh. All URLs now 1041soft.com/murdl (live Mac 2.1 listing still shows billdonner.com until Mac 2.2 ships). macOS 2.2 version exists on ASC with no build yet. Name 'MURDL' and bundle id com.billdonner.murdl are held by another account, hence 'MURDL 16' and murdl27. Team NEAY582ME4. Xcode Cloud: four manual-start workflows pinned to Xcode 26.6; build numbers follow its counter (project.yml 12). Local archives work again as of 2026-09-20 (released macOS 27 + Xcode 27). Listing copy ~/coworking/MURDL-AppStore.md (iOS section).",
-      "distribution": "public-release-planned",
+      "release": "Record 6809919090 (SKU murd001). macOS 2.1 build 3 is live; iOS 2.2 build 12 (universal iPhone + iPad, universal purchase on the same record) is approved and Ready for Distribution (verified 2026-09-23), free and downloadable on the public App Store. macOS 2.2 remains Prepare for Submission with no build. Since 2026-09-17 the iOS app gained: 1-board game, win card with confetti, share-as-text (engine shareText), single-board paged iPhone view with a switcher strip, board ceremony, keyboard swipe, pinch to fit, current 14,855-word guess list, starter sequences in Help, date-seeded Daily per board count with its own streak, high-contrast palette with tile glyphs, VoiceOver labels, guess distribution, iCloud key-value score sync, Sequence and Rescue variants, and 9 landscape iPad + 9 portrait iPhone screenshots from scripts/screenshots.sh. All URLs now 1041soft.com/murdl. Name 'MURDL' and bundle id com.billdonner.murdl are held by another account, hence 'MURDL 16' and murdl27. Team NEAY582ME4. Xcode Cloud: four manual-start workflows pinned to Xcode 26.6; build numbers follow its counter (project.yml 12). Local archives work again as of 2026-09-20 (released macOS 27 + Xcode 27). Listing copy ~/coworking/MURDL-AppStore.md (iOS section).",
+      "distribution": "public-app-store",
       "description": "Native macOS SwiftUI rebuild of the archived MURDL word game: 2/4/8/16 boards, guesses = boards + 5, Classic/Stopwatch/Sprint modes, score book, grid or strip layouts with arrow navigation, floating keyboard window, full keyboard play. Engine is the cross-platform MurdlCore Swift package (tested on Windows and macOS in CI) with a C bridge (MurdlBridge.dll / dylib). A C#/Avalonia desktop front end in Windows/ is the Windows build and also runs natively on macOS.",
       "dependencies": [],
       "links": {
         "website": "https://1041soft.com/murdl/",
         "privacyPolicy": "https://1041soft.com/murdl/privacy/",
-        "appStore": null,
+        "appStore": "https://apps.apple.com/us/app/murdl-16/id6809919090",
         "github": "https://github.com/billdonner/murdl27",
         "showcase": "https://claude.ai/code/artifact/4f1144eb-dbad-4f9e-811a-0db71edfd1eb",
         "companyPage": "https://1041soft.com/murdl/",
@@ -2231,6 +2232,7 @@
         "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
+        "2026-09-23 (verified in App Store Connect and by owner): iOS 2.2 is READY_FOR_DISTRIBUTION and publicly downloadable, free, on the App Store. The existing macOS 2.1 version remains live; macOS 2.2 is still a separate draft with no attached build.",
         "2026-09-02..08: built from ~/old-swift/MURDL in one session: code review fixes, board counts, timers, scores, layouts, keyboard window, MurdlCore package + Windows CI, MurdlBridge C ABI, Avalonia desktop app, Mac App Store submission.",
         "Self-playing web showcase with an accuracy slider lives in Showcase/murdl_spectator.html and as a claude.ai artifact.",
         "Windows app is CI-verified (desktop.yml builds, runs, and screenshots it on windows-latest; uploads MURDL-windows-x64 and a self-contained MURDL-macOS-arm64 bundle). Windows/README.md (2026-09-12) documents feature parity with the Mac app and how to hand the CI zip to a tester; not yet reviewed by Bill on the Mac; Microsoft Store deferred.",
