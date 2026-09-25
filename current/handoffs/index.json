@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T00:54:42Z",
+  "generatedAt": "2026-09-25T05:04:23Z",
   "schemaVersion": "1.0",
   "description": "Canonical, targeted behavior changes for the next MasterIndex maintenance cycle. This registry is intentionally separate from facts in current/index.json and schedules in tasks/index.json.",
   "readOrder": [
@@ -20,7 +20,7 @@
       "from": "pickledballs",
       "createdAt": "2026-09-22",
       "status": "active",
-      "summary": "The Companion (build 388) now covers every CompanionAdminRoutes endpoint. Nine admin capabilities still have no /admin API \u2014 remove member, revoke booker/grant admin, rename/renumber a member, move players on a published week, club settings, venue/courts, availability on someone's behalf, closures; archive/delete stays shell-only.",
+      "summary": "The Companion (build 388) now covers every CompanionAdminRoutes endpoint. Nine admin capabilities still have no /admin API \u2014 remove member, revoke booker/grant admin, rename/renumber a member, move players on a published week, club settings, venue/courts, availability on someone's behalf, closures; archive/delete stays shell-only. Added 2026-09-25: a timeZone field on the member contract (the app infers it for now), and GET \u2026/me/bookings readable by every member.",
       "spec": "collective-engine: docs/COMPANION-ADMIN-GAPS-2026-09-22.md (commit 5fb79fa on simulation)",
       "keep": "A 403 on /api/v1/collectives/{id}/admin/* must mean 'not for you', never invalidate the session \u2014 bookers read the admin home."
     }
