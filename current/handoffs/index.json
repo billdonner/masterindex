@@ -20,13 +20,13 @@
       "from": "pickledballs",
       "createdAt": "2026-09-22",
       "status": "superseded",
-      "summary": "The Companion (build 388) now covers every CompanionAdminRoutes endpoint. Nine admin capabilities still have no /admin API \u2014 remove member, revoke booker/grant admin, rename/renumber a member, move players on a published week, club settings, venue/courts, availability on someone's behalf, closures; archive/delete stays shell-only. Added 2026-09-25: a timeZone field on the member contract (the app infers it for now), and GET \u2026/me/bookings readable by every member.",
+      "summary": "The Companion (build 388) now covers every CompanionAdminRoutes endpoint. Nine admin capabilities still have no /admin API — remove member, revoke booker/grant admin, rename/renumber a member, move players on a published week, club settings, venue/courts, availability on someone's behalf, closures; archive/delete stays shell-only. Added 2026-09-25: a timeZone field on the member contract (the app infers it for now), and GET …/me/bookings readable by every member.",
       "spec": "collective-engine: docs/COMPANION-ADMIN-GAPS-2026-09-22.md (commit 5fb79fa on simulation)",
-      "keep": "A 403 on /api/v1/collectives/{id}/admin/* must mean 'not for you', never invalidate the session \u2014 bookers read the admin home.",
+      "keep": "A 403 on /api/v1/collectives/{id}/admin/* must mean 'not for you', never invalidate the session — bookers read the admin home.",
       "engineStatus": {
         "updatedAt": "2026-09-25",
         "live": "Since e038ddd (deployed 2026-09-22), under /api/v1/collectives/{id}/admin with CollectiveKit types: PATCH roster/{membershipId} (rename/renumber), DELETE roster/{membershipId} (remove), DELETE roster/{membershipId}/booker, POST roster/{membershipId}/admin, PUT members/{membershipId}/week (availability on someone's behalf), GET+PUT club (settings), POST sessions/{sessionId}/seat|unseat + POST weeks/{weekId}/amend (move players on a published week; 'sessions' not 'games' because games/{date} holds that segment).",
-        "stillOpen": "venue/courts, closures (closedDates), timeZone on the member contract, GET \u2026/me/bookings for every member. Archive/delete stays shell-only by design.",
+        "stillOpen": "venue/courts, closures (closedDates), timeZone on the member contract, GET …/me/bookings for every member. Archive/delete stays shell-only by design.",
         "docs": "collective-engine docs/COMPANION-ADMIN-GAPS-2026-09-22.md ('Now in the engine') and docs/COMPANION-HANDOFF-2026-09-24.md"
       },
       "supersededBy": "companion-app-gaps-2026-09-25"
@@ -39,7 +39,7 @@
       "from": "collective-engine",
       "createdAt": "2026-09-25",
       "status": "active",
-      "summary": "What the Companion cannot do yet, by role. Live on the engine, to build in the app: rename/renumber/remove member, revoke booker, make admin, club settings, venue and courts, closed days, seat/unseat + amend on a published week, enter someone's days, history; timeZone on the member contract; GET me/bookings open to players. Also live since 083d37a (same evening): add a game, hold a court without playing, send later/unsend, withdraw an answer, player usual days (me/standing). Still undecided, build nothing: a player asking to join a published game. Added 2026-09-26 (\u00a76): GET me/alerts 'Needs attention' block first on the club page for every member; Join on published games (PUT me/games attending true); club options joinIntoExtras / joinCutoffHour.",
+      "summary": "What the Companion cannot do yet, by role. Live on the engine, to build in the app: rename/renumber/remove member, revoke booker, make admin, club settings, venue and courts, closed days, seat/unseat + amend on a published week, enter someone's days, history; timeZone on the member contract; GET me/bookings open to players. Also live since 083d37a (same evening): add a game, hold a court without playing, send later/unsend, withdraw an answer, player usual days (me/standing). Still undecided, build nothing: a player asking to join a published game. Added 2026-09-26 (§6): GET me/alerts 'Needs attention' block first on the club page for every member; Join on published games (PUT me/games attending true); club options joinIntoExtras / joinCutoffHour.",
       "spec": "collective-engine: docs/COMPANION-HANDOFF-2026-09-25.md",
       "keep": "A 403 on /admin/* means 'not for you', never a sign-out. No archive/close/delete buttons (Bill, 2026-09-25)."
     },
@@ -63,8 +63,12 @@
       "from": "pickledballs",
       "createdAt": "2026-09-26",
       "status": "active",
-      "summary": "Session hand-off: builds 384\u2013393 shipped (Admin segment, engine hand-off 09-25/26, Pong, club clock, cancellation warning, App Store copy + screenshots). Open: IONOS deploy (Bill), Companion page deploy (engine session), iPad Admin screenshot (needs POST /simulation/week), Cancellations page (needs admin/cancellations), hand-off \u00a72.",
-      "spec": "pickledballs: Docs/HANDOFF-2026-09-26.md"
+      "summary": "Session hand-off: builds 384–393 shipped (Admin segment, engine hand-off 09-25/26, Pong, club clock, cancellation warning, App Store copy + screenshots). Open: IONOS deploy (Bill), Companion page deploy (engine session), iPad Admin screenshot (needs POST /simulation/week), Cancellations page (needs admin/cancellations), hand-off §2.",
+      "spec": "pickledballs: Docs/HANDOFF-2026-09-26.md",
+      "engineReply": {
+        "updatedAt": "2026-09-26",
+        "done": "POST /simulation/week {collective, startsOn: next-monday|YYYY-MM-DD, published: true, courts?} is live on the rehearsal engine (237b1af): opens, tops up courts, enters days for every member, solves, publishes; a published week is left alone. Details in collective-engine docs/COMPANION-ADMIN-GAPS-2026-09-22.md (end)."
+      }
     }
   ]
 }
