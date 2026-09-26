@@ -39,7 +39,7 @@
       "from": "collective-engine",
       "createdAt": "2026-09-25",
       "status": "active",
-      "summary": "What the Companion cannot do yet, by role. Live on the engine, to build in the app: rename/renumber/remove member, revoke booker, make admin, club settings, venue and courts, closed days, seat/unseat + amend on a published week, enter someone's days, history; timeZone on the member contract; GET me/bookings open to players. Also live since 083d37a (same evening): add a game, hold a court without playing, send later/unsend, withdraw an answer, player usual days (me/standing). Still undecided, build nothing: a player asking to join a published game.",
+      "summary": "What the Companion cannot do yet, by role. Live on the engine, to build in the app: rename/renumber/remove member, revoke booker, make admin, club settings, venue and courts, closed days, seat/unseat + amend on a published week, enter someone's days, history; timeZone on the member contract; GET me/bookings open to players. Also live since 083d37a (same evening): add a game, hold a court without playing, send later/unsend, withdraw an answer, player usual days (me/standing). Still undecided, build nothing: a player asking to join a published game. Added 2026-09-26 (§6): GET me/alerts 'Needs attention' block first on the club page for every member; Join on published games (PUT me/games attending true); club options joinIntoExtras / joinCutoffHour.",
       "spec": "collective-engine: docs/COMPANION-HANDOFF-2026-09-25.md",
       "keep": "A 403 on /admin/* means 'not for you', never a sign-out. No archive/close/delete buttons (Bill, 2026-09-25)."
     }
