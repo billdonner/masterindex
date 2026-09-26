@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T15:18:59Z",
+  "generatedAt": "2026-09-26T19:33:03Z",
   "schemaVersion": "1.0",
   "description": "Canonical, targeted behavior changes for the next MasterIndex maintenance cycle. This registry is intentionally separate from facts in current/index.json and schedules in tasks/index.json.",
   "readOrder": [
@@ -54,6 +54,17 @@
       "summary": "Cancellations: the text agent should ask 'are you sure' with the impact (seated vs seats, hours to start) before recording a cancel of a published game, matching the app's new Can't-play confirmation; PUT me/games reply should say the outcome; new GET admin/cancellations?weeks=N (CancellationReport: per member, per game, late-cancel rate) for bookers and admin; optional PublishedWeek.Game.minimumToRun.",
       "spec": "collective-engine: docs/COMPANION-ADMIN-GAPS-2026-09-22.md, section 'Added 2026-09-26: cancellations'",
       "keep": "The app already warns from the published week; the engine's reckoning should say the same numbers."
+    },
+    {
+      "id": "companion-session-handoff-2026-09-26",
+      "targets": [
+        "pickledballs"
+      ],
+      "from": "pickledballs",
+      "createdAt": "2026-09-26",
+      "status": "active",
+      "summary": "Session hand-off: builds 384\u2013393 shipped (Admin segment, engine hand-off 09-25/26, Pong, club clock, cancellation warning, App Store copy + screenshots). Open: IONOS deploy (Bill), Companion page deploy (engine session), iPad Admin screenshot (needs POST /simulation/week), Cancellations page (needs admin/cancellations), hand-off \u00a72.",
+      "spec": "pickledballs: Docs/HANDOFF-2026-09-26.md"
     }
   ]
 }
