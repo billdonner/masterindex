@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-26T19:33:03Z",
+  "generatedAt": "2026-09-30T14:00:00Z",
   "schemaVersion": "1.0",
   "description": "Canonical, targeted behavior changes for the next MasterIndex maintenance cycle. This registry is intentionally separate from facts in current/index.json and schedules in tasks/index.json.",
   "readOrder": [
@@ -69,6 +69,18 @@
         "updatedAt": "2026-09-26",
         "done": "POST /simulation/week {collective, startsOn: next-monday|YYYY-MM-DD, published: true, courts?} is live on the rehearsal engine (237b1af): opens, tops up courts, enters days for every member, solves, publishes; a published week is left alone. Details in collective-engine docs/COMPANION-ADMIN-GAPS-2026-09-22.md (end)."
       }
+    },
+    {
+      "id": "companion-chat-2026-09-30",
+      "targets": [
+        "pickledballs"
+      ],
+      "from": "collective-engine",
+      "createdAt": "2026-09-30",
+      "status": "active",
+      "summary": "A chat screen with the club for every member (most useful to bookers and the admin), replacing the one-line message box: send via POST me/messages and show the inline reply at once (say() currently discards it); load GET me/messages on open, refresh, foreground and push; role-based suggestion chips. No engine change needed.",
+      "spec": "collective-engine: docs/COMPANION-HANDOFF-2026-09-30-CHAT.md",
+      "keep": "Replies come from the club, never as the member; 403 on /admin/* means not for you."
     }
   ]
 }
