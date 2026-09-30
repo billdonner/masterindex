@@ -13,6 +13,11 @@ As of Monday, September 14, 2026 (targeted website update; retained app observat
 - Company email is complete: one Private Email mailbox (`bill@1041soft.com`, renewed to 2027-09) with free aliases `support@`, `info@` and `finance@1041soft.com`; everything forwards to billdonner@gmail.com, Gmail filters label it under `1041Soft/Support|Info|Apple|Finance`, and Gmail sends as all four addresses via `mail.privateemail.com:465`. Private Email clients need an app password, and the SMTP username is always `bill@1041soft.com`.
 - A daily 8:30 AM Chicago "morning check" (tasks/index.json `1041soft-morning-check`, owner-initiated by saying "check" in a Claude Code session; any session timer is only a convenience) sweeps the Apple support case and entity state, App Review queues, the four Gmail labels and Twilio's balance, and logs Apple events to `~/1041soft/formation/`.
 
+## AmenBeats live in the App Store — 2026-09-30
+
+- Apple’s public lookup now returns AmenBeats 1.0, app ID `6778510642`, sold by 1041Soft LLC, with release timestamp `2026-09-30T07:00:00Z`. The public listing is [AmenBeats on the App Store](https://apps.apple.com/us/app/amenbeats/id6778510642).
+- This supersedes the previous App Review queue status; the old submission notes remain below as history.
+
 ## AmenBeats submitted — 2026-09-16
 
 - Owner approved the TestFlight beta and authorized submission. AmenBeats 1.0 build 17 was submitted at 21:07 UTC (4:07 PM Central). Both the app version and submission `b57551af-97b8-455b-a0be-0283ceefb642` are **WAITING_FOR_REVIEW**, verified by ASC API. Automatic release after approval remains selected.
@@ -232,7 +237,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | App | Bundle ID | Repository | State |
 |---|---|---|---|
 | Pfoliolio | com.pfolio.app | ~/pfolio-app | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| AmenBeats | com.billdonner.drumbeats | ~/drumbeats | 1.0 build 17 WAITING_FOR_REVIEW since September 16 (ASC verified 2026-09-21); escalate to Developer Support if still waiting September 23 |
+| AmenBeats | com.billdonner.drumbeats | ~/drumbeats | iOS 1.0 READY_FOR_SALE; public App Store listing verified 2026-09-30 ([app ID 6778510642](https://apps.apple.com/us/app/amenbeats/id6778510642)). |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | Active successor prototype; iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
