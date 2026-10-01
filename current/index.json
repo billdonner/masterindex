@@ -1740,7 +1740,8 @@
         "2026-09-16 21:07 UTC: Owner said the beta is good and authorized submission. Verified selected build 17 and reviewer notes, marked the prior rejected item resolved, and resubmitted. Apple returned WAITING_FOR_REVIEW for both submission and app version.",
         "2026-09-21 (verified by ASC API): still WAITING_FOR_REVIEW on build 17 since 09-16. No Apple mail. Next step if still waiting on 09-23: ask Nara (case 20000146677819) whether the pending entity is holding it.",
         "2026-09-30: Public App Store release verified through Apple's lookup endpoint: AmenBeats 1.0, app ID 6778510642, seller 1041Soft LLC, release timestamp 2026-09-30T07:00:00Z.",
-        "2026-09-30 (verified by ASC API): 1.1 version created, PREPARE_FOR_SUBMISSION, build 19 (beat-strip pickers) attached, What's New set, 9 iPhone + 9 iPad screenshots refreshed from Screenker. Builds 18 and 19 IN_BETA_TESTING for the internal group; owner approved build 19. Not yet submitted for review."
+        "2026-09-30 (verified by ASC API): 1.1 version created, PREPARE_FOR_SUBMISSION, build 19 (beat-strip pickers) attached, What's New set, 9 iPhone + 9 iPad screenshots refreshed from Screenker. Builds 18 and 19 IN_BETA_TESTING for the internal group; owner approved build 19. Not yet submitted for review.",
+        "2026-10-01 01:36 UTC (verified by ASC API): owner authorized; 1.1 build 19 submitted for review, submission 27229f58-16e8-4366-8569-22364a96e15a. Version and submission both WAITING_FOR_REVIEW; release after approval. 1.0 remains live."
       ]
     },
     {
