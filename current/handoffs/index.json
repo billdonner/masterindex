@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T14:00:00Z",
+  "generatedAt": "2026-10-01T02:00:00Z",
   "schemaVersion": "1.0",
   "description": "Canonical, targeted behavior changes for the next MasterIndex maintenance cycle. This registry is intentionally separate from facts in current/index.json and schedules in tasks/index.json.",
   "readOrder": [
@@ -78,9 +78,10 @@
       "from": "collective-engine",
       "createdAt": "2026-09-30",
       "status": "active",
-      "summary": "A chat screen with the club for every member (most useful to bookers and the admin), replacing the one-line message box: send via POST me/messages and show the inline reply at once (say() currently discards it); load GET me/messages on open, refresh, foreground and push; role-based suggestion chips. No engine change needed.",
+      "summary": "A chat screen with the club for every member (most useful to bookers and the admin), replacing the one-line message box: send via POST me/messages and show the inline reply at once (say() currently discards it); load GET me/messages on open, refresh, foreground and push; role-based suggestion chips. No engine change needed. ADDENDUM (later 2026-09-30, live on prod for OO): an admin's messages are answered by the ADMIN CHAT — the club's own tools as that admin. Screen needs: typing indicator (replies 5-30 s, don't time out under 90 s); Yes/No quick buttons under any reply ending 'Go ahead?' that send 'yes'/'no'; plain text replies. Nothing new to call.",
       "spec": "collective-engine: docs/COMPANION-HANDOFF-2026-09-30-CHAT.md",
-      "keep": "Replies come from the club, never as the member; 403 on /admin/* means not for you."
+      "keep": "Replies come from the club, never as the member; 403 on /admin/* means not for you.",
+      "updatedAt": "2026-09-30"
     }
   ]
 }
