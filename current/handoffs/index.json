@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T05:00:00Z",
+  "generatedAt": "2026-10-04T15:00:00Z",
   "schemaVersion": "1.0",
   "description": "Canonical, targeted behavior changes for the next MasterIndex maintenance cycle. This registry is intentionally separate from facts in current/index.json and schedules in tasks/index.json.",
   "readOrder": [
@@ -82,6 +82,18 @@
       "spec": "collective-engine: docs/COMPANION-HANDOFF-2026-09-30-CHAT.md",
       "keep": "Replies come from the club, never as the member; 403 on /admin/* means not for you.",
       "updatedAt": "2026-10-01"
+    },
+    {
+      "id": "companion-bookings-refresh-2026-10-04",
+      "targets": [
+        "pickledballs"
+      ],
+      "from": "collective-engine",
+      "createdAt": "2026-10-04",
+      "status": "active",
+      "summary": "Bookings screen goes stale: Bill saw courts in the log long before the app's Bookings page (Melissa's Mon Oct 12 court 2, texted 9:00 and recorded 9:01 on 2026-10-04, was on the website at 9:36 but not in the app). CollectivePagesViews.swift loads the BookingsSheet only in .task (first appearance) and on pull-to-refresh; a TabView keeps the view alive, so returning to the tab shows the first load. Please reload the sheet when the tab becomes visible again (onAppear / task(id:) keyed on a visit counter), when the app returns to the foreground (scenePhase .active), and when a push for this club arrives; cheap to call — the engine builds it live. Same pattern likely applies to the schedule and members screens in that file.",
+      "spec": "pickledballs: PickledBalls/Views/CollectivePagesViews.swift lines ~312-318 (.task / .refreshable)",
+      "keep": "Pull-to-refresh stays. No engine change needed."
     }
   ]
 }
