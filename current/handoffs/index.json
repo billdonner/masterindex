@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T17:59:19Z",
+  "generatedAt": "2026-10-04T20:00:00Z",
   "schemaVersion": "1.0",
   "description": "Canonical, targeted behavior changes for the next MasterIndex maintenance cycle. This registry is intentionally separate from facts in current/index.json and schedules in tasks/index.json.",
   "readOrder": [
@@ -20,13 +20,13 @@
       "from": "pickledballs",
       "createdAt": "2026-09-22",
       "status": "superseded",
-      "summary": "The Companion (build 388) now covers every CompanionAdminRoutes endpoint. Nine admin capabilities still have no /admin API \u2014 remove member, revoke booker/grant admin, rename/renumber a member, move players on a published week, club settings, venue/courts, availability on someone's behalf, closures; archive/delete stays shell-only. Added 2026-09-25: a timeZone field on the member contract (the app infers it for now), and GET \u2026/me/bookings readable by every member.",
+      "summary": "The Companion (build 388) now covers every CompanionAdminRoutes endpoint. Nine admin capabilities still have no /admin API — remove member, revoke booker/grant admin, rename/renumber a member, move players on a published week, club settings, venue/courts, availability on someone's behalf, closures; archive/delete stays shell-only. Added 2026-09-25: a timeZone field on the member contract (the app infers it for now), and GET …/me/bookings readable by every member.",
       "spec": "collective-engine: docs/COMPANION-ADMIN-GAPS-2026-09-22.md (commit 5fb79fa on simulation)",
-      "keep": "A 403 on /api/v1/collectives/{id}/admin/* must mean 'not for you', never invalidate the session \u2014 bookers read the admin home.",
+      "keep": "A 403 on /api/v1/collectives/{id}/admin/* must mean 'not for you', never invalidate the session — bookers read the admin home.",
       "engineStatus": {
         "updatedAt": "2026-09-25",
         "live": "Since e038ddd (deployed 2026-09-22), under /api/v1/collectives/{id}/admin with CollectiveKit types: PATCH roster/{membershipId} (rename/renumber), DELETE roster/{membershipId} (remove), DELETE roster/{membershipId}/booker, POST roster/{membershipId}/admin, PUT members/{membershipId}/week (availability on someone's behalf), GET+PUT club (settings), POST sessions/{sessionId}/seat|unseat + POST weeks/{weekId}/amend (move players on a published week; 'sessions' not 'games' because games/{date} holds that segment).",
-        "stillOpen": "venue/courts, closures (closedDates), timeZone on the member contract, GET \u2026/me/bookings for every member. Archive/delete stays shell-only by design.",
+        "stillOpen": "venue/courts, closures (closedDates), timeZone on the member contract, GET …/me/bookings for every member. Archive/delete stays shell-only by design.",
         "docs": "collective-engine docs/COMPANION-ADMIN-GAPS-2026-09-22.md ('Now in the engine') and docs/COMPANION-HANDOFF-2026-09-24.md"
       },
       "supersededBy": "companion-app-gaps-2026-09-25"
@@ -39,7 +39,7 @@
       "from": "collective-engine",
       "createdAt": "2026-09-25",
       "status": "active",
-      "summary": "What the Companion cannot do yet, by role. Live on the engine, to build in the app: rename/renumber/remove member, revoke booker, make admin, club settings, venue and courts, closed days, seat/unseat + amend on a published week, enter someone's days, history; timeZone on the member contract; GET me/bookings open to players. Also live since 083d37a (same evening): add a game, hold a court without playing, send later/unsend, withdraw an answer, player usual days (me/standing). Still undecided, build nothing: a player asking to join a published game. Added 2026-09-26 (\u00a76): GET me/alerts 'Needs attention' block first on the club page for every member; Join on published games (PUT me/games attending true); club options joinIntoExtras / joinCutoffHour.",
+      "summary": "What the Companion cannot do yet, by role. Live on the engine, to build in the app: rename/renumber/remove member, revoke booker, make admin, club settings, venue and courts, closed days, seat/unseat + amend on a published week, enter someone's days, history; timeZone on the member contract; GET me/bookings open to players. Also live since 083d37a (same evening): add a game, hold a court without playing, send later/unsend, withdraw an answer, player usual days (me/standing). Still undecided, build nothing: a player asking to join a published game. Added 2026-09-26 (§6): GET me/alerts 'Needs attention' block first on the club page for every member; Join on published games (PUT me/games attending true); club options joinIntoExtras / joinCutoffHour.",
       "spec": "collective-engine: docs/COMPANION-HANDOFF-2026-09-25.md",
       "keep": "A 403 on /admin/* means 'not for you', never a sign-out. No archive/close/delete buttons (Bill, 2026-09-25)."
     },
@@ -63,7 +63,7 @@
       "from": "pickledballs",
       "createdAt": "2026-09-26",
       "status": "active",
-      "summary": "Session hand-off: builds 384\u2013393 shipped (Admin segment, engine hand-off 09-25/26, Pong, club clock, cancellation warning, App Store copy + screenshots). Open: IONOS deploy (Bill), Companion page deploy (engine session), iPad Admin screenshot (needs POST /simulation/week), Cancellations page (needs admin/cancellations), hand-off \u00a72.",
+      "summary": "Session hand-off: builds 384–393 shipped (Admin segment, engine hand-off 09-25/26, Pong, club clock, cancellation warning, App Store copy + screenshots). Open: IONOS deploy (Bill), Companion page deploy (engine session), iPad Admin screenshot (needs POST /simulation/week), Cancellations page (needs admin/cancellations), hand-off §2.",
       "spec": "pickledballs: Docs/HANDOFF-2026-09-26.md",
       "engineReply": {
         "updatedAt": "2026-09-26",
@@ -78,7 +78,7 @@
       "from": "collective-engine",
       "createdAt": "2026-09-30",
       "status": "active",
-      "summary": "A chat screen with the club for every member (most useful to bookers and the admin), replacing the one-line message box: send via POST me/messages and show the inline reply at once (say() currently discards it); load GET me/messages on open, refresh, foreground and push; role-based suggestion chips. No engine change needed. ADDENDUM (later 2026-09-30, live on prod for OO): an admin's messages are answered by the ADMIN CHAT \u2014 the club's own tools as that admin. Screen needs: typing indicator (replies 5-30 s, don't time out under 90 s); Yes/No quick buttons under any reply ending 'Go ahead?' that send 'yes'/'no'; plain text replies. Nothing new to call. ADDENDUM 2 (live 2026-10-01): replies carry cards \u2014 MemberMessageResponse.blocks ([ChatBlock] in CollectiveKit: game card with courts/booker/players/'Rounds to print' URL; confirm card with Yes/No that send confirm.yes/no; link row). Streaming: same POST with 'Accept: text/event-stream' gives 'status' events (typing caption) then one 'reply' event. reply text always says it all, so cards are optional to draw.",
+      "summary": "A chat screen with the club for every member (most useful to bookers and the admin), replacing the one-line message box: send via POST me/messages and show the inline reply at once (say() currently discards it); load GET me/messages on open, refresh, foreground and push; role-based suggestion chips. No engine change needed. ADDENDUM (later 2026-09-30, live on prod for OO): an admin's messages are answered by the ADMIN CHAT — the club's own tools as that admin. Screen needs: typing indicator (replies 5-30 s, don't time out under 90 s); Yes/No quick buttons under any reply ending 'Go ahead?' that send 'yes'/'no'; plain text replies. Nothing new to call. ADDENDUM 2 (live 2026-10-01): replies carry cards — MemberMessageResponse.blocks ([ChatBlock] in CollectiveKit: game card with courts/booker/players/'Rounds to print' URL; confirm card with Yes/No that send confirm.yes/no; link row). Streaming: same POST with 'Accept: text/event-stream' gives 'status' events (typing caption) then one 'reply' event. reply text always says it all, so cards are optional to draw.",
       "spec": "collective-engine: docs/COMPANION-HANDOFF-2026-09-30-CHAT.md",
       "keep": "Replies come from the club, never as the member; 403 on /admin/* means not for you.",
       "updatedAt": "2026-10-01"
@@ -91,7 +91,7 @@
       "from": "collective-engine",
       "createdAt": "2026-10-04",
       "status": "done",
-      "summary": "Bookings screen goes stale: Bill saw courts in the log long before the app's Bookings page (Melissa's Mon Oct 12 court 2, texted 9:00 and recorded 9:01 on 2026-10-04, was on the website at 9:36 but not in the app). CollectivePagesViews.swift loads the BookingsSheet only in .task (first appearance) and on pull-to-refresh; a TabView keeps the view alive, so returning to the tab shows the first load. Please reload the sheet when the tab becomes visible again (onAppear / task(id:) keyed on a visit counter), when the app returns to the foreground (scenePhase .active), and when a push for this club arrives; cheap to call \u2014 the engine builds it live. Same pattern likely applies to the schedule and members screens in that file.",
+      "summary": "Bookings screen goes stale: Bill saw courts in the log long before the app's Bookings page (Melissa's Mon Oct 12 court 2, texted 9:00 and recorded 9:01 on 2026-10-04, was on the website at 9:36 but not in the app). CollectivePagesViews.swift loads the BookingsSheet only in .task (first appearance) and on pull-to-refresh; a TabView keeps the view alive, so returning to the tab shows the first load. Please reload the sheet when the tab becomes visible again (onAppear / task(id:) keyed on a visit counter), when the app returns to the foreground (scenePhase .active), and when a push for this club arrives; cheap to call — the engine builds it live. Same pattern likely applies to the schedule and members screens in that file.",
       "spec": "pickledballs: PickledBalls/Views/CollectivePagesViews.swift lines ~312-318 (.task / .refreshable)",
       "keep": "Pull-to-refresh stays. No engine change needed.",
       "companionStatus": {
@@ -109,9 +109,10 @@
       "from": "collective-engine",
       "createdAt": "2026-10-04",
       "status": "active",
-      "summary": "Bill (admin), 2026-10-04: 'I tried to add Jan to Wednesday by tapping on the entry in the Collective weeks listing; it opened the game and the courts playing there; I went down, picked Jan's name out of the list and added it, but it didn't do anything. I do understand it's a separate list but I think this is just the wrong move in general.' Engine side: Jan had been added minutes earlier through the admin chat (amendment published, Jan texted), so the seat call likely found her already on the game and the app showed nothing. Asks: (1) any add/remove from a game screen must show what happened \u2014 the engine's answer, including a refusal ('already on this game', 'staged; send it?') \u2014 never silence; (2) a change to a published week is staged until sent: show the staged state and a 'Send to the players whose games changed' button, or route the whole action through the admin chat (which already stages, confirms and sends); (3) rethink the picker: Bill finds 'pick a name from a separate list inside the game' the wrong move \u2014 consider making the admin chat the place for moves ('put Jan on Wednesday') with the game screen showing players and a 'Change this game in the chat' entry that prefills the chat.",
+      "summary": "Bill (admin), 2026-10-04: 'I tried to add Jan to Wednesday by tapping on the entry in the Collective weeks listing; it opened the game and the courts playing there; I went down, picked Jan's name out of the list and added it, but it didn't do anything. I do understand it's a separate list but I think this is just the wrong move in general.' Engine side: Jan had been added minutes earlier through the admin chat (amendment published, Jan texted), so the seat call likely found her already on the game and the app showed nothing. Asks: (1) any add/remove from a game screen must show what happened — the engine's answer, including a refusal ('already on this game', 'staged; send it?') — never silence; (2) a change to a published week is staged until sent: show the staged state and a 'Send to the players whose games changed' button, or route the whole action through the admin chat (which already stages, confirms and sends); (3) rethink the picker: Bill finds 'pick a name from a separate list inside the game' the wrong move — consider making the admin chat the place for moves ('put Jan on Wednesday') with the game screen showing players and a 'Change this game in the chat' entry that prefills the chat. UPDATE (later 2026-10-04, live, engine aac1116): there is no staging any more. admin/sessions/{id}/seat|unseat on a published week now publishes at once as the week's next version and texts only the member moved; the response's amendment flag is false and its text says 'Published as version N; 1 told (Name only).' Drop any 'Send to the players whose games changed' step and the staged state; just show the engine's sentence. The amend route stays only for an old change left staged.",
       "spec": "engine routes: admin/sessions/{id}/seat|unseat (CompanionAdminRoutes), POST me/messages (admin chat)",
-      "keep": "Publishing only on the admin's word."
+      "keep": "Publishing only on the admin's word.",
+      "updatedAt": "2026-10-04"
     }
   ]
 }
