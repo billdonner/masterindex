@@ -117,6 +117,11 @@ When the owner says "put X in Pickles":
 Pickles content is publicly reachable at that URL. Do not add anything the
 owner has marked private.
 
+Status (2026-10-10, owner): Pickles is for holding and viewing documents
+only. Club members may contribute later; hosting on collective-engine
+(picklefamilia.com) was discussed and deferred, not decided. Do not move it
+or add saving/sign-in without the owner's go-ahead.
+
 ## Full system reference
 
 For a verified, detailed map of this repository's architecture, readers,
