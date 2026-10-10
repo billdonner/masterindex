@@ -7,6 +7,7 @@ on:
       - current/**
       - tasks/**
       - site/**
+      - pickles/**
       - index.html
       - .github/workflows/pages.yml
   workflow_dispatch:
@@ -32,7 +33,7 @@ jobs:
         run: |
           mkdir _site
           cp index.html _site/
-          cp -R site current tasks _site/
+          cp -R site current tasks pickles _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

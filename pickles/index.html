@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pickles</title>
+<style>
+  :root { --bg:#0e0f0c; --fg:#f2f2ea; --dim:#9a9c8e; --accent:#9bd35a; --tile:#1b1d17; --line:#2c2f26; }
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--fg);
+    font:clamp(18px,1.4vw,30px)/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  a { color:var(--accent); }
+  #list { padding:3vh 4vw; }
+  h1 { font-size:clamp(36px,4vw,80px); margin:0 0 3vh; color:var(--accent); letter-spacing:.02em; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,22em),1fr)); gap:2vh 2vw; }
+  .tile { background:var(--tile); border:2px solid var(--line); border-radius:14px; padding:1.2em 1.4em;
+    cursor:pointer; text-align:left; color:inherit; font:inherit; }
+  .tile:hover, .tile:focus { border-color:var(--accent); outline:none; }
+  .tile b { display:block; font-size:1.25em; }
+  .tile small { color:var(--dim); }
+  .empty { color:var(--dim); }
+  #viewer { position:fixed; inset:0; display:none; flex-direction:column; background:var(--bg); }
+  #viewer.on { display:flex; }
+  #bar { display:flex; gap:1em; align-items:center; padding:.5em 1em; border-bottom:1px solid var(--line);
+    font-size:.8em; color:var(--dim); }
+  #bar .t { flex:1; color:var(--fg); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  #bar button { background:var(--tile); color:var(--fg); border:1px solid var(--line); border-radius:8px;
+    padding:.3em .8em; font:inherit; cursor:pointer; }
+  #stage { flex:1; overflow:auto; display:flex; justify-content:center; }
+  #stage iframe, #stage object { width:100%; height:100%; border:0; background:#fff; }
+  #stage img, #stage video { max-width:100%; max-height:100%; object-fit:contain; margin:auto; }
+  #stage .doc { max-width:52em; width:100%; padding:4vh 4vw; font-size:clamp(22px,1.8vw,40px); }
+  #stage pre.doc { white-space:pre-wrap; font-family:ui-monospace,Menlo,monospace; font-size:clamp(18px,1.4vw,32px); }
+  .doc img { max-width:100%; }
+  .doc table { border-collapse:collapse; } .doc td, .doc th { border:1px solid var(--line); padding:.3em .6em; }
+  body.fs #bar { opacity:0; transition:opacity .3s; } body.fs #bar:hover { opacity:1; }
+  @media (max-width:600px) { #list { padding:16px; } #bar .hint { display:none; } }
+</style>
+</head>
+<body>
+<main id="list">
+  <h1>Pickles</h1>
+  <div class="grid" id="grid"></div>
+</main>
+<section id="viewer" aria-live="polite">
+  <div id="bar">
+    <button id="back" title="Esc">&larr; All</button>
+    <span class="t" id="vtitle"></span>
+    <span class="hint">&larr; &rarr; switch &middot; F full screen &middot; Esc back</span>
+    <button id="prev">&lsaquo;</button><button id="next">&rsaquo;</button>
+    <button id="fsbtn">Full screen</button>
+  </div>
+  <div id="stage"></div>
+</section>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script>
+let docs = [], cur = -1;
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+async function load() {
+  try {
+    const r = await fetch('manifest.json', { cache: 'no-store' });
+    docs = (await r.json()).documents || [];
+  } catch { docs = []; }
+  $('grid').innerHTML = docs.length ? docs.map((d, i) =>
+    `<button class="tile" data-i="${i}"><b>${esc(d.title)}</b>` +
+    `<small>${esc(d.kind)} &middot; ${esc((d.added || '').slice(0, 10))}</small>` +
+    (d.note ? `<div>${esc(d.note)}</div>` : '') + `</button>`).join('')
+    : '<p class="empty">Nothing in the jar yet.</p>';
+  const want = new URLSearchParams(location.search).get('doc');
+  if (want) { const i = docs.findIndex(d => d.file === want || d.file === 'files/' + want); if (i >= 0) show(i, false); }
+}
+
+async function show(i, push = true) {
+  cur = (i + docs.length) % docs.length;
+  const d = docs[cur], src = encodeURI(d.file), stage = $('stage');
+  $('vtitle').textContent = d.title;
+  $('viewer').classList.add('on');
+  if (push) history.pushState({ i: cur }, '', '?doc=' + encodeURIComponent(d.file.replace(/^files\//, '')));
+  stage.innerHTML = '';
+  if (d.kind === 'pdf') stage.innerHTML = `<iframe src="${src}#view=FitH" title="${esc(d.title)}"></iframe>`;
+  else if (d.kind === 'html') stage.innerHTML = `<iframe src="${src}" title="${esc(d.title)}"></iframe>`;
+  else if (d.kind === 'image') stage.innerHTML = `<img src="${src}" alt="${esc(d.title)}">`;
+  else if (d.kind === 'video') stage.innerHTML = `<video src="${src}" controls autoplay></video>`;
+  else if (d.kind === 'markdown' || d.kind === 'text') {
+    const t = await (await fetch(src, { cache: 'no-store' })).text();
+    if (d.kind === 'markdown' && window.marked) stage.innerHTML = `<article class="doc">${marked.parse(t)}</article>`;
+    else { const p = document.createElement('pre'); p.className = 'doc'; p.textContent = t; stage.appendChild(p); }
+  } else stage.innerHTML = `<p class="doc">This file type cannot be shown in the browser. <a href="${src}" download>Download ${esc(d.title)}</a></p>`;
+}
+
+function close(push = true) {
+  $('viewer').classList.remove('on'); $('stage').innerHTML = ''; cur = -1;
+  if (push) history.pushState({}, '', location.pathname);
+}
+
+function fullscreen() {
+  if (document.fullscreenElement) document.exitFullscreen();
+  else document.documentElement.requestFullscreen?.();
+}
+
+$('grid').addEventListener('click', e => { const t = e.target.closest('.tile'); if (t) show(+t.dataset.i); });
+$('back').onclick = () => close();
+$('prev').onclick = () => show(cur - 1);
+$('next').onclick = () => show(cur + 1);
+$('fsbtn').onclick = fullscreen;
+document.addEventListener('fullscreenchange', () => document.body.classList.toggle('fs', !!document.fullscreenElement));
+document.addEventListener('keydown', e => {
+  if (e.key === 'f' || e.key === 'F') fullscreen();
+  if (cur < 0) return;
+  if (e.key === 'Escape' && !document.fullscreenElement) close();
+  if (e.key === 'ArrowRight' || e.key === 'PageDown') show(cur + 1);
+  if (e.key === 'ArrowLeft' || e.key === 'PageUp') show(cur - 1);
+});
+window.addEventListener('popstate', () => {
+  const want = new URLSearchParams(location.search).get('doc');
+  const i = want ? docs.findIndex(d => d.file === 'files/' + want) : -1;
+  i >= 0 ? show(i, false) : close(false);
+});
+load();
+</script>
+</body>
+</html>

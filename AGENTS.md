@@ -98,6 +98,25 @@ automated test suite. Validate it with `tools/masterindex-drift-check.sh
   *other repositories' own* agent instructions and review process (see
   `agent-ops/README.md`). Neither replaces the other.
 
+## Pickles (owner's big-screen document shelf)
+
+`pickles/` is a standalone document viewer published with the GitHub Pages
+site at `https://billdonner.github.io/masterindex/pickles/`. It is not part of the inventory schema.
+
+When the owner says "put X in Pickles":
+
+1. Copy the file into `pickles/files/` with a short kebab-case name.
+   Browser-viewable formats: PDF, images, video, Markdown, plain text, HTML.
+   Convert Word/Pages/Keynote/PowerPoint to PDF first.
+2. Optionally set a display title or note in `pickles/titles.json`.
+3. Commit, then run `python3 tools/update_pickles_manifest.py` (it reads git
+   history for "added" dates), commit `pickles/manifest.json`, and push to
+   `main`. The Pages workflow deploys within a minute or two.
+4. Report the direct link: `https://billdonner.github.io/masterindex/pickles/?doc=<filename>`.
+
+Pickles content is publicly reachable at that URL. Do not add anything the
+owner has marked private.
+
 ## Full system reference
 
 For a verified, detailed map of this repository's architecture, readers,
