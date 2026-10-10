@@ -1,3 +1,11 @@
 {
-  "documents": []
+  "documents": [
+    {
+      "file": "files/pickleball-power-serve.md",
+      "title": "My Pickleball Power Serve",
+      "note": "Right-handed drop serve",
+      "kind": "markdown",
+      "added": "2026-10-10T19:23:25+00:00"
+    }
+  ]
 }
