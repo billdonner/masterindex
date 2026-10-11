@@ -401,3 +401,7 @@ This site is the company home for all apps. The now-live `billdonner.com/apps/` 
 ## Operational Rule
 
 Use `current/index.json` as source of truth, `tasks/index.json` for recurring routing, and `current/handoffs/index.json` for next-cycle directives. Public websites and `site/` are presentation surfaces and must be checked against JSON, ASC, repository settings, and live deployments.
+
+## Devices (2026-10-11)
+
+Bill's iPhone is **Gigundic** (iPhone 18 Pro Max), replacing **Titanic** (iPhone 15 Pro Max, `00008130-00146CC82091401C`), retired. UDID not yet recorded (unpaired at announcement). Earlier Titanic mentions in this file are historical. The SE "rowboat" is unchanged.
