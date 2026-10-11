@@ -404,4 +404,4 @@ Use `current/index.json` as source of truth, `tasks/index.json` for recurring ro
 
 ## Devices (2026-10-11)
 
-Bill's iPhone is **Gigundic** (iPhone 18 Pro Max), replacing **Titanic** (iPhone 15 Pro Max, `00008130-00146CC82091401C`), retired. UDID not yet recorded (unpaired at announcement). Earlier Titanic mentions in this file are historical. The SE "rowboat" is unchanged.
+Bill's iPhone is **Gigundic** (iPhone 18 Pro Max), replacing **Titanic** (iPhone 15 Pro Max, `00008130-00146CC82091401C`), retired. UDID `00008160-000854E90491400A`. Earlier Titanic mentions in this file are historical. The SE "rowboat" is unchanged.
