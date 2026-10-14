@@ -788,6 +788,27 @@
   ],
   "entities": [
     {
+      "id": "adosocial-app",
+      "name": "AdoSocial",
+      "kind": "app",
+      "cluster": "Adology",
+      "status": "internal-preview",
+      "lastModified": "2026-10-14",
+      "repo": "~/adosocial",
+      "bundleId": "com.getadology.adosocial.preview",
+      "release": "0.1.0 (1) installed on Gigundic (Release, no debugger); no ASC app record or TestFlight upload yet",
+      "description": "Adology's creator analytics iOS app (own-account insights, then niche/space analysis). Repo owned by Adology (adologyai/adosocial); Bill does Xcode/TestFlight/App Store on the 1041 Soft team.",
+      "dependencies": [],
+      "links": {
+        "repo": "https://github.com/adologyai/adosocial",
+        "appStore": null,
+        "testFlight": null
+      },
+      "notes": [
+        "2026-10-14: Created. iOS 27 minimum, XcodeGen, team NEAY582ME4 via Config/Base.xcconfig. Preview bundle id com.getadology.adosocial.preview is TestFlight-only; com.getadology.adosocial reserved for public v1.0 from Adology's own Apple account (ADR-001: Apple transfers only released apps). Welcome issue adologyai/adosocial#2 assigned to James; email nudge sent. Pending: ASC app record, James's Apple ID email for ASC invite, TestFlight build 1."
+      ]
+    },
+    {
       "id": "hoabooklet-app",
       "name": "HOABooklet",
       "kind": "app",
