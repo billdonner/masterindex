@@ -796,7 +796,7 @@
       "lastModified": "2026-10-14",
       "repo": "~/adosocial",
       "bundleId": "com.getadology.adosocial.preview",
-      "release": "0.1.0 (1) VALID, internal IN_BETA_TESTING (ASC app 6822978492 'AdSocial', SKU asdoc001); group 'AdoSocial Team' = Bill + James",
+      "release": "0.1.0 (3) internal IN_BETA_TESTING (ASC app 6822978492 'AdSocial'); group 'AdoSocial Team' = Bill + James",
       "description": "Adology's creator analytics iOS app (own-account insights, then niche/space analysis). Repo owned by Adology (adologyai/adosocial); Bill does Xcode/TestFlight/App Store on the 1041 Soft team.",
       "dependencies": [],
       "links": {
@@ -806,6 +806,7 @@
         "appStoreConnect": "https://appstoreconnect.apple.com/apps/6822978492"
       },
       "notes": [
+        "2026-10-14: ADR-002 (four canvases compact/tall/wide/spread, Duo = linked two-page Spread, design gate, AdoDesign/AdoCore packages) and ADR-003 (direct sources; deferred) merged. Built with Xcode 27.1 RC (/Applications/Xcode 2.app), min iOS 27.0. Builds 2 (package split) and 3 (Canvas/Spread) on TestFlight. scripts/shots.sh captures all four canvases (Duo needs the unfolded 'iPhone Duo (experiment)' sim, inner display LCD-1). Screenker MCP via committed .mcp.json + SCREENKER_TOKEN. Open: chunk C #9 token lint, chunk D #10 visual direction; James not yet added to Screenker TestFlight group (API add blocked by permission classifier; do it in ASC).",
         "2026-10-14: Chunked workflow live (PR #4): idea → breakdown → Bill applies `ready` → one ≤400-line PR with Closes #N → Bill merges; pr-guard is a required check (verified fail on missing link, pass when restored).",
         "2026-10-14: Build 1 uploaded via scripts/release-testflight.sh (delivery 41e9b9b5-7097-4e7f-a5b1-8a90ec1d9add), cloud-managed distribution signing; VALID and internal IN_BETA_TESTING; What to Test read back. James's existing ASC user jamesdonner@gmail.com given DEVELOPER + provisioning, visible app limited to AdSocial. ASC name is 'AdSocial' while CFBundleDisplayName is 'AdoSocial'.",
         "2026-10-14: Created. iOS 27 minimum, XcodeGen, team NEAY582ME4 via Config/Base.xcconfig. Preview bundle id com.getadology.adosocial.preview is TestFlight-only; com.getadology.adosocial reserved for public v1.0 from Adology's own Apple account (ADR-001: Apple transfers only released apps). Welcome issue adologyai/adosocial#2 assigned to James; email nudge sent. Pending: ASC app record, James's Apple ID email for ASC invite, TestFlight build 1."
