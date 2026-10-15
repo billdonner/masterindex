@@ -806,6 +806,7 @@
         "appStoreConnect": "https://appstoreconnect.apple.com/apps/6822978492"
       },
       "notes": [
+        "2026-10-14: Chunked workflow live (PR #4): idea → breakdown → Bill applies `ready` → one ≤400-line PR with Closes #N → Bill merges; pr-guard is a required check (verified fail on missing link, pass when restored).",
         "2026-10-14: Build 1 uploaded via scripts/release-testflight.sh (delivery 41e9b9b5-7097-4e7f-a5b1-8a90ec1d9add), cloud-managed distribution signing; VALID and internal IN_BETA_TESTING; What to Test read back. James's existing ASC user jamesdonner@gmail.com given DEVELOPER + provisioning, visible app limited to AdSocial. ASC name is 'AdSocial' while CFBundleDisplayName is 'AdoSocial'.",
         "2026-10-14: Created. iOS 27 minimum, XcodeGen, team NEAY582ME4 via Config/Base.xcconfig. Preview bundle id com.getadology.adosocial.preview is TestFlight-only; com.getadology.adosocial reserved for public v1.0 from Adology's own Apple account (ADR-001: Apple transfers only released apps). Welcome issue adologyai/adosocial#2 assigned to James; email nudge sent. Pending: ASC app record, James's Apple ID email for ASC invite, TestFlight build 1."
       ]
