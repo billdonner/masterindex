@@ -788,6 +788,28 @@
   ],
   "entities": [
     {
+      "id": "expunger-app",
+      "name": "Expunger",
+      "kind": "app",
+      "cluster": "Standalone",
+      "status": "development",
+      "lastModified": "2026-10-16",
+      "repo": "~/expunger",
+      "bundleId": "com.billdonner.expunger",
+      "release": "1.0.0 (1) — local dev builds; no App Store Connect record yet",
+      "description": "Native macOS photo-dedup app for Apple Photos: finds exact copies, bursts and similar shots, picks keepers, backs up originals and deletes the rest after the Photos confirmation. Every operation is a menu item and an MCP tool (in-app streamable-HTTP server on 127.0.0.1:9920).",
+      "dependencies": [],
+      "links": {
+        "repo": "https://github.com/billdonner/expunger",
+        "appStore": null,
+        "testFlight": null,
+        "appStoreConnect": null
+      },
+      "notes": [
+        "2026-10-16: built phases 1–5 + backups; tuned on Bill's 6,538-image library (720 clusters, ~5 GB reclaimable). TestFlight blocked on creating the ASC app record."
+      ]
+    },
+    {
       "id": "adosocial-app",
       "name": "AdoSocial",
       "kind": "app",
