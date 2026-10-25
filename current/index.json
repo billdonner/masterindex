@@ -876,10 +876,10 @@
       "kind": "app",
       "cluster": "PickleFamilia",
       "status": "asc-mapped",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-10-24",
       "repo": "~/pickledballs",
       "bundleId": "com.pickledballs.app",
-      "release": "Build 364 installed on Bill's iPhone 2026-09-14 (no TestFlight upload until Bill says); ASC iOS 1.0 PREPARE_FOR_SUBMISSION. Display name and App Store name are PickleFamilia Companion since build 364; bundle id unchanged. Remaining before submit: App Privacy questionnaire (ASC web UI), App Store name change in ASC. Next ship must be 1.0.2 (1.0.1 is a dead expired TestFlight version).",
+      "release": "Build 417 committed 2026-10-24 (family review fixes: free release with no prices, AI consent 5.1.2(i), privacy manifest, data-loss fixes); not yet uploaded. ASC iOS 1.0 PREPARE_FOR_SUBMISSION with build 396 attached; latest uploaded 415. Content rights set and review notes updated 2026-10-24. Remaining before submit: deploy engine, upload + attach 417, App Privacy questionnaire (ASC web UI), submit. Version 1.0 is correct (builds 396-415 are under 1.0).",
       "description": "PickleFamilia Companion (repo pickledballs): the court app of the PickleFamilia family by 1041Soft — rounds, matchups, scores, nearby live play — and, signed in by a texted code, the member's window on their club: their week, availability, and the club's pages from collective-engine.",
       "dependencies": [
         "CourtScheduler",
@@ -909,7 +909,8 @@
         "All 0.1 TestFlight builds expired 2026-07-31; only 1.0 (354) visible to testers.",
         "Site fully deployed 2026-08-02 — support.html and privacy.html both verified live (200).",
         "HarvestSync and Clubsync are deferred until PickledBalls v2; they are not part of the current useful product path.",
-        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
+        "2026-10-24: Codex + Claude family review; see ~/picklefamilia/docs/REVIEW-2026-10-24.md."
       ]
     },
     {
@@ -2099,10 +2100,10 @@
       "kind": "service",
       "cluster": "PickleFamilia",
       "status": "live",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-10-24",
       "repo": "~/collective-engine",
       "bundleId": null,
-      "release": "Live on Fly at bd-collective-engine.fly.dev. Serves oocollective.org (SITE_HOST) and, since 2026-09-13, picklefamilia.com and its www as the family front page (FAMILY_HOST, poker hidden); picklefamilia.app and its www redirect to it. On main but not yet deployed (2026-09-14): the club-type policy (courts booked|fixed, cadence weekly|rolling, the usual week), the policy command, browser sign-in by texted code, and the admin panel at /admin on a club's host (this week, roster, club; open next week, solve and publish, call off, texts seen).",
+      "release": "Live on Fly at bd-collective-engine.fly.dev, deployed from branch `simulation` (v215, 2026-10-24 03:12 UTC; origin/main is 205 commits behind). Commits 01c28d2 + 6738c56 (security fixes incl. a live reflected XSS, unauthenticated MCP crash, cross-club inbound-text leak; AASA; review member survives deletion) are pushed to `simulation` but NOT deployed.",
       "description": "Multi-tenant club scheduling engine — the club's record: members, weeks, availability by SMS agent or the Companion app, court/table bookings, a deterministic balancing auction, review and publication, club pages, a member API (CollectiveKit) and an authorized MCP surface. Runs OO Pickleball Collective and a poker society.",
       "dependencies": [
         "collective-comms"
@@ -2128,7 +2129,8 @@
         "Observed 2026-08-22: Fly reports one started machine, a healthy PostgreSQL cluster, and HTTP 200 at /health. collective.1041soft.com remains NXDOMAIN, so the deployed service is not reachable at its intended Release 1 host; adding the DNS record also requires exact-match Auth0 URL updates.",
         "2026-08-30: PWA screens reworked after owner walkthrough (published weeks read as history, roster edits survive the poll, booker-limited operations view); new booker sheet artifact (trial --booker) published beside the public week page as booker.html.",
         "2026-08-30 (later): booker.html live at billdonner.com/oocollective/; PWA links published pages via COLLECTIVE_PUBLIC_REFERENCE_URL through /api/v1/meta; night-before time format pinned to POSIX locale (was host-dependent). Fly deploy of these pending.",
-        "2026-09-02: hosted-SMS delivery built and deployed (ADR-005). Twilio inbound (STOP/HELP/reply log, signature-verified) + outbound TwilioChannel, NightBeforeService (server-clock nightly, armed at publish and boot), endpoints CLI (phone numbers into DB, encrypted), operator messaging surface (send to chosen/all, reply log, per-day note) with a Messages web tab. Messages render explicit (state the games; no personal-page refs yet). Toll-free +1-855-678-2642 live. Migrations 009-011. Cutover experiment reached 21 of 22 members in one evening; next week (Sep 7+) planned as the clean all-Twilio cutover with no M1 access needed."
+        "2026-09-02: hosted-SMS delivery built and deployed (ADR-005). Twilio inbound (STOP/HELP/reply log, signature-verified) + outbound TwilioChannel, NightBeforeService (server-clock nightly, armed at publish and boot), endpoints CLI (phone numbers into DB, encrypted), operator messaging surface (send to chosen/all, reply log, per-day note) with a Messages web tab. Messages render explicit (state the games; no personal-page refs yet). Toll-free +1-855-678-2642 live. Migrations 009-011. Cutover experiment reached 21 of 22 members in one evening; next week (Sep 7+) planned as the clean all-Twilio cutover with no M1 access needed.",
+        "2026-10-24: family review; deploy of 01c28d2/6738c56 pending (fly deploy)."
       ]
     },
     {
@@ -2137,7 +2139,7 @@
       "kind": "tool",
       "cluster": "PickleFamilia",
       "status": "active",
-      "lastModified": "2026-09-13",
+      "lastModified": "2026-10-24",
       "repo": "~/collective-comms",
       "bundleId": null,
       "release": "Local dedicated-Mac operations tool; no App Store or public web release observed.",
@@ -2236,7 +2238,7 @@
       "kind": "app",
       "cluster": "PickleFamilia",
       "status": "in-development",
-      "lastModified": "2026-09-22",
+      "lastModified": "2026-10-24",
       "repo": "~/collective-console",
       "bundleId": "com.billdonner.collectiveconsole",
       "productLine": "1041soft-internal",
@@ -2298,7 +2300,7 @@
       "kind": "library",
       "cluster": "PickleFamilia",
       "status": "active",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-10-24",
       "repo": "~/picklefamilia-core",
       "bundleId": null,
       "release": "Private package (github:billdonner/picklefamilia-core), builds and tests on macOS; Linux CI workflow written, needs the PORTFOLIO_READ_TOKEN secret (all path deps are private).",
@@ -2322,7 +2324,7 @@
       "kind": "docs",
       "cluster": "PickleFamilia",
       "status": "active",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-10-24",
       "repo": "~/picklefamilia",
       "bundleId": null,
       "release": "Private repo (github:billdonner/picklefamilia) holding the family README; nothing that compiles.",
