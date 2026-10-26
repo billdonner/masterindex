@@ -53,6 +53,7 @@ As of Sunday, October 26, 2026 (targeted repository refresh; retained app observ
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
 - The registry tracks 57 repositories. `~/pfolio` is again a verified local backend source; its named TOML family fixtures support isolated local portfolio scenarios without changing the Fly or ASC release state.
 - A separate local `~/qross-pipeline` checkout tracks the same Qross remote for correction-card work; its rounds 54 and 55 merged 320 and 262 cards respectively and do not by themselves change the released DoubleQross app record.
+- Qross reserve round 56 recorded its pull-request reference after the two card-import rounds; it is content-pipeline bookkeeping and does not alter the released DoubleQross app record.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - The 14-entry `billdonner.com/apps/` personal portfolio is live on IONOS as of September 14. Descriptions remain here; product, support, and privacy actions point to 1041Soft.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.
@@ -241,7 +242,7 @@ No current consumer was found to require Card Server, so these do not block reti
 | AmenBeats | com.billdonner.drumbeats | ~/drumbeats | iOS 1.0 READY_FOR_SALE; public App Store listing verified 2026-09-30 ([app ID 6778510642](https://apps.apple.com/us/app/amenbeats/id6778510642)). |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | Active successor prototype; iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| Screenker | com.screenker.app | github:billdonner/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION |
+| Screenker | com.screenker.app | ~/ofinterest/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION; source records TestFlight build 46, ASC processing state unverified in this refresh |
 | SentiPods | com.sentipods.app | ~/sentipods | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | workin On | com.workinon.app | ~/workinon | Internal/TestFlight-only; iOS 1.0 retained |

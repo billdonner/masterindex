@@ -1801,10 +1801,10 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "asc-mapped",
-      "lastModified": "2026-09-14",
-      "repo": "github:billdonner/screenker",
+      "lastModified": "2026-09-30",
+      "repo": "~/ofinterest/screenker",
       "bundleId": "com.screenker.app",
-      "release": "ASC macOS 1.0 PREPARE_FOR_SUBMISSION; build 44 VALID",
+      "release": "ASC macOS 1.0 PREPARE_FOR_SUBMISSION; build 44 was previously verified VALID. Source records build 46 as a TestFlight delivery; its current ASC processing state was not verified during this refresh.",
       "description": "Mac studio for creating and evaluating App Store screenshot galleries.",
       "dependencies": [],
       "links": {
@@ -1822,7 +1822,8 @@
         "Current ASC links all return 200.",
         "The repository's newest collateral points at the now-live 1041soft.com site, while ASC still uses the verified billdonner.github.io pages; align the public URLs only after Screenker's product-line assignment is explicit.",
         "Screenker's own six-slot Mac gallery was re-shot, critiqued at 86/100, and republished on 2026-08-10. It clears the general 85 gate but not the 90 commercial target.",
-        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
+        "Observed 2026-09-30 from the local source: build 46 includes fixes for phantom external-change alerts, lost MCP edits, the close deadlock, and the iPhone 6.9-inch landscape destination. It was prepared as a TestFlight build; no fresh ASC-state claim is made here."
       ]
     },
     {
@@ -2839,11 +2840,11 @@
       "role": "ASC-mapped Zerver Monitor iPhone, widget, and watch client"
     },
     {
-      "repo": "github:billdonner/screenker",
+      "repo": "~/ofinterest/screenker",
       "branch": "main",
-      "last2026Commit": "2026-08-13",
+      "last2026Commit": "2026-09-30",
       "kind": "app",
-      "role": "ASC-mapped macOS screenshot studio; not cloned locally"
+      "role": "ASC-mapped macOS screenshot studio; verified local checkout under ~/ofinterest"
     },
     {
       "repo": "~/drumbeats",
