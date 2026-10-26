@@ -1,6 +1,6 @@
 # MasterIndex Inventory
 
-As of Monday, September 14, 2026 (targeted website update; retained app observations have their own dates).
+As of Sunday, October 26, 2026 (targeted repository refresh; retained app observations have their own dates).
 
 ## Scope
 
@@ -46,12 +46,13 @@ As of Monday, September 14, 2026 (targeted website update; retained app observat
 
 ## Executive Summary
 
-- ASC contains 21 app records as of 2026-09-05: 20 map in the primary ASC inventory and GigStand is the intentionally retained retired record. Since the 2026-08-14 scan, Flasherz Kids, both MastPex records, and the original HOABooklet/Mallinbook record (6785245339) were deleted; HOABooklet now lives on new record 6806080022 with no builds yet, and KinFlash Studio gained record 6806833310. SentiPods is now named Grubber Desk and KinFlash is KinFlash Family in ASC.
+- ASC contains 22 app records in the current inventory: 21 map in the primary ASC inventory and one unmatched legacy record is retained. Since the 2026-08-14 scan, Flasherz Kids, both MastPex records, and the original HOABooklet/Mallinbook record (6785245339) were deleted; HOABooklet now lives on new record 6806080022 with no builds yet, and KinFlash Studio gained record 6806833310. SentiPods is now named Grubber Desk and KinFlash is KinFlash Family in ASC.
 - LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
 - Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
-- The registry tracks 57 repositories, of which 52 remain active after the feedback replacement, prior retirements, and the `grubber-ios` obsolete decision.
+- The registry tracks 57 repositories. `~/pfolio` is again a verified local backend source; its named TOML family fixtures support isolated local portfolio scenarios without changing the Fly or ASC release state.
+- A separate local `~/qross-pipeline` checkout tracks the same Qross remote for correction-card work; its round 54 merged 320 cards and does not by itself change the released DoubleQross app record.
 - Canonical-main records for local-model-lab, adspill, and the Oenora Recognition API are preserved.
 - The 14-entry `billdonner.com/apps/` personal portfolio is live on IONOS as of September 14. Descriptions remain here; product, support, and privacy actions point to 1041Soft.
 - App Feedback replaces the repeating TestFlight email loop with a local 41-item triage inbox across 21 active ASC apps. The working data stays on this Mac; client-encrypted recovery snapshots are versioned in iCloud Drive.

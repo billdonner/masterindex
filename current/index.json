@@ -48,12 +48,12 @@
     ]
   },
   "summary": {
-    "ascApps": 21,
-    "mappedAscApps": 20,
+    "ascApps": 22,
+    "mappedAscApps": 21,
     "unmatchedAscApps": 1,
-    "activeRepos": 56,
-    "clusters": 17,
-    "liveServices": 7,
+    "activeRepos": 57,
+    "clusters": 18,
+    "liveServices": 6,
     "collaborators": 3,
     "unreachableServices": 0,
     "ascMacOsRecords": 9,
@@ -919,7 +919,7 @@
       "kind": "app",
       "cluster": "Qross",
       "status": "ready-for-distribution",
-      "lastModified": "2026-09-23",
+      "lastModified": "2026-10-26",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
       "release": "iOS 1.0 build 415 is approved and Ready for Distribution in App Store Connect (verified 2026-09-23); it is free and downloadable on the public App Store. Earlier TestFlight 1.0 (412) remains VALID; internal and external IN_BETA_TESTING; beta review APPROVED (verified 2026-09-15).",
@@ -969,7 +969,8 @@
         "doubleqross.com serves IONOS webspace /qross directly. Deploy only the explicit public allowlist in qross/scripts/publish-content.py, never docs globs. The GitHub and 1041soft legacy pages now redirect to this canonical site.",
         "Recent activity (through 2026-08-24): two external Codex reviews fixed 11 verified defects (soft-locks, daily-exploit, Leg-2 empty-goal, DC scoring floor 2n-1); Double Cross Leg 2 reworked to walked-choice (#198); efficiency % scoring shipped (#197); Carol's full PR stack merged (palettes to 16, Tahiti, onboarding); subtopic search upgraded (#178/#179, enrich pass pending); issue board triaged 29→8; test suite 891/0. Open: PR #172 and decisions #193 (both Carol), qclean-enrich catalog republish, MLX-lab hint-judge queue.",
         "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
-        "2026-09-21 (verified by ASC API): iOS 1.0 build 415 WAITING_FOR_REVIEW, submitted 2026-09-21 08:03 UTC, free, no IAP included."
+        "2026-09-21 (verified by ASC API): iOS 1.0 build 415 WAITING_FOR_REVIEW, submitted 2026-09-21 08:03 UTC, free, no IAP included.",
+        "Observed 2026-10-26: a separate local checkout at ~/qross-pipeline tracks the same github:billdonner/qross remote. Its reserve round 54 merged 320 correction cards; this is content-pipeline work, not an observed ASC release change."
       ]
     },
     {
@@ -1034,7 +1035,7 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "internal-only",
-      "lastModified": "2026-09-14",
+      "lastModified": "2026-10-25",
       "repo": "~/workinon",
       "bundleId": "com.workinon.app",
       "productLine": "billdonner-free",
@@ -1065,7 +1066,8 @@
         "2026-09-04: Codex review fixes shipped in builds 2-3: removed production seeding of developer-internal Twilio/Apple statuses into the Hourly tab; privacy policy and GitHub-tab copy now disclose the sync service; PrivacyInfo.xcprivacy added to all five targets; legacy user lists named 'Hourly' migrate to 'Hourly (mine)'; GitHub tab rename/delete now moves or removes the Keychain token and server registration.",
         "2026-09-07: branch divergence closed. origin/main (MasterIndex board) merged into feat/github-tabs as de2bb2e; main, release and feat/github-tabs all point at it. Feed rows live in a hidden 'MasterIndex' list rendered by a bottom-tab MasterIndexTabView, so they never mix into Focus lists or the widget. main's one-time clearAll bootstrap reset was dropped in the merge.",
         "The existing 93-point Screenker gallery remains useful as TestFlight and internal documentation, but no public ASC marketing-gallery work is scheduled.",
-        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update."
+        "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
+        "Observed 2026-10-25: `pfolio local <family> [--fresh]` can seed a named local backend database from ~/pfolio/families and open the Mac client against it; this is development support and does not change the recorded ASC release state."
       ]
     },
     {
@@ -1666,8 +1668,8 @@
       "kind": "backend",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-08-29",
-      "repo": "github:billdonner/pfolio",
+      "lastModified": "2026-10-25",
+      "repo": "~/pfolio",
       "bundleId": null,
       "release": "Fly app bd-pfolio deployed with machine version 6 and a passing health check",
       "description": "PostgreSQL-backed portfolio service used by Pfoliolio, with Plaid production integration and chat support.",
@@ -1682,14 +1684,15 @@
       },
       "notes": [
         "2026-09-08: local dev uvicorn on 127.0.0.1:9840 retired by owner decision; only the Fly deployment counts.",
-        "The backend is live but is not cloned on this machine.",
+        "The backend source is cloned locally at ~/pfolio; its Fly deployment remains the only recorded live backend.",
         "Local dev on port 9840 (range 9840-9849).",
         "Multi-user shipped: Sign in with Apple + per-user sessions. The legacy shared PF_API_TOKEN still authenticates and resolves to PF_DEFAULT_USER_ID, so pre-multi-user installs keep working; POST /auth/apple/claim upgrades one in place with no data loss and no Plaid re-linking.",
         "Fund look-through: GET /portfolio/exposure/{ticker} returns direct + indirect exposure with its own coverage figure. On the demo portfolio NVIDIA went from $85,000 direct to $130,454 true (+53%); Broadcom from $0 to $17,326.",
         "CUSIP->ticker resolution via openFIGI is load-bearing, not a fallback: real N-PORT filings carried a ticker on 122 of 35,556 constituent rows. PF_OPENFIGI_API_KEY (free) cuts a full 22k-CUSIP pass from ~90 min to ~3 min.",
         "pfolio-mcp: 16-tool stdio MCP server, registered in Claude Code. Deliberately an HTTP client over the API, never a second DB client.",
         "Open: paid-app entitlement table exists (migration 018) but nothing reads it; Plaid Investments production access still pending Plaid review.",
-        "All work merged to main 2026-08-09; every PR closed in both repos. Steve's four PRs were closed as superseded on 2026-08-08 with comments tracing where the work landed, and his classification backlog moved to issue #7 so it did not close with PR #3."
+        "All work merged to main 2026-08-09; every PR closed in both repos. Steve's four PRs were closed as superseded on 2026-08-08 with comments tracing where the work landed, and his classification backlog moved to issue #7 so it did not close with PR #3.",
+        "Observed 2026-10-25: named TOML family fixtures can seed independent local databases, including the baseline $6.28M sample family and a retired 70/30 couple scenario; tests cover totals and target allocation groups."
       ]
     },
     {
@@ -2807,13 +2810,20 @@
       "kind": "app",
       "role": "ASC-mapped iOS build 5 plus native Developer ID macOS cellar app; CloudKit sync verified"
     },
-    {
-      "repo": "~/pfolio-app",
+  {
+   "repo": "~/pfolio-app",
       "branch": "main",
       "last2026Commit": "2026-08-30",
       "kind": "app",
-      "role": "ASC-mapped native iOS and macOS Pfoliolio client"
-    },
+   "role": "ASC-mapped native iOS and macOS Pfoliolio client"
+  },
+  {
+   "repo": "~/pfolio",
+   "branch": "feat/family-files",
+   "last2026Commit": "2026-10-25",
+   "kind": "backend",
+   "role": "Active local source for the deployed Pfoliolio backend, including named local portfolio-family fixtures"
+  },
     {
       "repo": "github:billdonner/pfolio",
       "branch": "main",
