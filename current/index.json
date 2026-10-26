@@ -970,7 +970,7 @@
         "Recent activity (through 2026-08-24): two external Codex reviews fixed 11 verified defects (soft-locks, daily-exploit, Leg-2 empty-goal, DC scoring floor 2n-1); Double Cross Leg 2 reworked to walked-choice (#198); efficiency % scoring shipped (#197); Carol's full PR stack merged (palettes to 16, Tahiti, onboarding); subtopic search upgraded (#178/#179, enrich pass pending); issue board triaged 29→8; test suite 891/0. Open: PR #172 and decisions #193 (both Carol), qclean-enrich catalog republish, MLX-lab hint-judge queue.",
         "2026-09-14: Public app portfolio now routes through 1041Soft; BillDonner.com retains descriptions with company links. App Store Connect metadata and current release state were not changed or queried by this website update.",
         "2026-09-21 (verified by ASC API): iOS 1.0 build 415 WAITING_FOR_REVIEW, submitted 2026-09-21 08:03 UTC, free, no IAP included.",
-        "Observed 2026-10-26: a separate local checkout at ~/qross-pipeline tracks the same github:billdonner/qross remote. Its reserve round 54 merged 320 correction cards; this is content-pipeline work, not an observed ASC release change."
+        "Observed 2026-10-26: a separate local checkout at ~/qross-pipeline tracks the same github:billdonner/qross remote. Reserve rounds 54 and 55 merged 320 and 262 correction cards respectively; this is content-pipeline work, not an observed ASC release change."
       ]
     },
     {
