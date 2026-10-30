@@ -876,10 +876,10 @@
       "kind": "app",
       "cluster": "PickleFamilia",
       "status": "asc-mapped",
-      "lastModified": "2026-10-24",
+      "lastModified": "2026-10-29",
       "repo": "~/pickledballs",
       "bundleId": "com.pickledballs.app",
-      "release": "Build 417 committed 2026-10-24 (family review fixes: free release with no prices, AI consent 5.1.2(i), privacy manifest, data-loss fixes); not yet uploaded. ASC iOS 1.0 PREPARE_FOR_SUBMISSION with build 396 attached; latest uploaded 415. Content rights set and review notes updated 2026-10-24. Remaining before submit: deploy engine, upload + attach 417, App Privacy questionnaire (ASC web UI), submit. Version 1.0 is correct (builds 396-415 are under 1.0).",
+      "release": "Build 421 uploaded 2026-10-29 (VALID) and attached to ASC iOS 1.0 (PREPARE_FOR_SUBMISSION). Content rights set and review notes updated 2026-10-24; review sign-in (Sam, Morning Dinkers) verified on prod 2026-10-29. Remaining before submit: App Privacy questionnaire (ASC web UI), then Submit for Review.",
       "description": "PickleFamilia Companion (repo pickledballs): the court app of the PickleFamilia family by 1041Soft — rounds, matchups, scores, nearby live play — and, signed in by a texted code, the member's window on their club: their week, availability, and the club's pages from collective-engine.",
       "dependencies": [
         "CourtScheduler",
@@ -2811,20 +2811,20 @@
       "kind": "app",
       "role": "ASC-mapped iOS build 5 plus native Developer ID macOS cellar app; CloudKit sync verified"
     },
-  {
-   "repo": "~/pfolio-app",
+    {
+      "repo": "~/pfolio-app",
       "branch": "main",
       "last2026Commit": "2026-08-30",
       "kind": "app",
-   "role": "ASC-mapped native iOS and macOS Pfoliolio client"
-  },
-  {
-   "repo": "~/pfolio",
-   "branch": "feat/family-files",
-   "last2026Commit": "2026-10-25",
-   "kind": "backend",
-   "role": "Active local source for the deployed Pfoliolio backend, including named local portfolio-family fixtures"
-  },
+      "role": "ASC-mapped native iOS and macOS Pfoliolio client"
+    },
+    {
+      "repo": "~/pfolio",
+      "branch": "feat/family-files",
+      "last2026Commit": "2026-10-25",
+      "kind": "backend",
+      "role": "Active local source for the deployed Pfoliolio backend, including named local portfolio-family fixtures"
+    },
     {
       "repo": "github:billdonner/pfolio",
       "branch": "main",
