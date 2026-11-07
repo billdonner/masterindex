@@ -890,13 +890,14 @@
       "links": {
         "website": "https://1041soft.com/pickledballs/",
         "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification.",
-        "appStore": null,
+        "appStore": "https://apps.apple.com/us/app/picklefamilia-companion/id6762310890",
         "privacyPolicy": "https://1041soft.com/pickledballs/privacy.html",
         "support": "https://1041soft.com/pickledballs/support.html",
         "testFlight": "https://testflight.apple.com/join/xa71Ymwt",
         "portfolioPage": "https://billdonner.com/apps/pickledballs/",
         "companyPage": "https://1041soft.com/pickledballs/",
-        "previousWebsite": "https://pickledballs.billdonner.com"
+        "previousWebsite": "https://pickledballs.billdonner.com",
+        "appStoreSource": "ASC API: version 1.0 READY_FOR_SALE, 2026-11-06"
       },
       "notes": [
         "2026-09-14: the core (models, scheduler adapters, member Collective, live-play wire format, handoff, parsers; 13 files + 17 test files) moved to ~/picklefamilia-core; this target compiles the sources in. Branch picklefamilia merged to main. Three UI tests fail on main from the branch's Home redesign (roster tile, Settings Roster row, screenshot harness); pre-existing.",
