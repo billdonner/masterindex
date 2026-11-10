@@ -2105,11 +2105,11 @@
       "kind": "service",
       "cluster": "PickleFamilia",
       "status": "live",
-      "lastModified": "2026-10-24",
+      "lastModified": "2026-11-10",
       "repo": "~/collective-engine",
       "bundleId": null,
-      "release": "Live on Fly at bd-collective-engine.fly.dev, deployed from branch `simulation` (v215, 2026-10-24 03:12 UTC; origin/main is 205 commits behind). Commits 01c28d2 + 6738c56 (security fixes incl. a live reflected XSS, unauthenticated MCP crash, cross-club inbound-text leak; AASA; review member survives deletion) are pushed to `simulation` but NOT deployed.",
-      "description": "Multi-tenant club scheduling engine — the club's record: members, weeks, availability by SMS agent or the Companion app, court/table bookings, a deterministic balancing auction, review and publication, club pages, a member API (CollectiveKit) and an authorized MCP surface. Runs OO Pickleball Collective and a poker society.",
+      "release": "Live on Fly at bd-collective-engine.fly.dev (v228, 2026-11-08). Deploys from `main`, the one canonical branch since 2026-11-10, when `simulation` was fast-forwarded into it (the remote `simulation` alias goes 2026-11-17). See ~/picklefamilia/docs/MAINTAINING.md.",
+      "description": "Multi-tenant club scheduling engine — the club's record: members, weeks, availability by SMS agent or the Companion app, court/table bookings, a deterministic balancing auction, review and publication, club pages, a member API (EngineWire, the embedded contract package) and an authorized MCP surface. Runs OO Pickleball Collective and a poker society.",
       "dependencies": [
         "collective-comms"
       ],
