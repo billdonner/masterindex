@@ -243,12 +243,12 @@ No current consumer was found to require Card Server, so these do not block reti
 | AmenBeats | com.billdonner.drumbeats | ~/drumbeats | iOS 1.0 READY_FOR_SALE; public App Store listing verified 2026-09-30 ([app ID 6778510642](https://apps.apple.com/us/app/amenbeats/id6778510642)). |
 | Oenora | com.billdonner.oenora | ~/oenora | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | SharedSpaceLab | com.1041soft.experiments.sharedspacelab | ~/Documents/Codex/Experiments/SharedSpaceLab | Active successor prototype; iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
-| Screenker | com.screenker.app | ~/ofinterest/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION; source records TestFlight build 46, ASC processing state unverified in this refresh |
+| Screenker | com.screenker.app | ~/screenker | macOS 1.0 PREPARE_FOR_SUBMISSION; source records TestFlight build 46, ASC processing state unverified in this refresh. Local source path corrected 2026-11-11. |
 | SentiPods | com.sentipods.app | ~/sentipods | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | Mallinbook | com.mallinbook.app | github:billdonner/mallinbook | iOS + macOS 1.0 PREPARE_FOR_SUBMISSION |
 | workin On | com.workinon.app | ~/workinon | Internal/TestFlight-only; iOS 1.0 retained |
 | 100 Burfords | com.billdonner.burfords | ~/100Burfords | 1.0 READY_FOR_SALE; 1.1 draft |
-| MURDL 16 | com.billdonner.murdl27 | ~/Murdl27 | iOS 2.2 READY_FOR_DISTRIBUTION, free and publicly downloadable; macOS 2.1 remains live, while macOS 2.2 is PREPARE_FOR_SUBMISSION with no build (verified 2026-09-23). |
+| MURDL 16 | com.billdonner.murdl27 | ~/Murdl27 | iOS 2.2 READY_FOR_DISTRIBUTION, free and publicly downloadable; macOS 2.1 remains live, while macOS 2.2 is PREPARE_FOR_SUBMISSION with no build (verified 2026-09-23). Local 2026-11-11 work adds a verified Screenker CaptureKit responder for iPhone, landscape iPad, and native Mac screenshots (commit `ff3f2d7`); no ASC state was changed. |
 | Zerver Monitor | com.billdonner.ZerverMonitor | ~/server-monitor-ios | iOS 1.0 PREPARE_FOR_SUBMISSION |
 | Famster | com.famster.app | ~/famster-ios | Concept-only shell; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
 | Nagz | com.nagz.app | ~/nagz-ios | Working legacy reference; iOS 1.0 PREPARE_FOR_SUBMISSION retained |
