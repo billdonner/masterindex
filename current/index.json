@@ -1989,7 +1989,7 @@
       "kind": "tool",
       "cluster": "Standalone",
       "status": "active",
-      "lastModified": "2026-08-22",
+      "lastModified": "2026-11-15",
       "repo": "~/review-authority",
       "bundleId": null,
       "release": "Milestone 1 local read-only vertical slice is complete; no App Store, public website, correction loop, consensus flow, or UI observed.",
@@ -1999,9 +1999,11 @@
       ],
       "links": {
         "website": null,
-        "appStore": null
+        "appStore": null,
+        "github": "https://github.com/billdonner/review-authority"
       },
       "notes": [
+        "2026-11-15: rescued from the M1 (now reachable as oldm1, 192.168.1.202; the previously recorded 192.168.1.220 no longer answers). All 8 commits cloned to ~/review-authority on this Mac and pushed to a new private GitHub repository; full-history bundle at ~/archive/bundles/review-authority-20261115.bundle. The M1's audit database (~/.review-authority/authority.sqlite3) is copied to ~/archive/review-authority-m1-state/authority-20261115.sqlite3 and passes an integrity check. On this Mac the 28 tests pass in a fresh environment. Owner intent: run Review Authority and Product Authority on one machine as separate things. This supersedes the 2026-08-22 note that the repository has no remote.",
         "The completed M1 slice supports a local Git-inspection source and a private-network M3 source through the same boundary; it was exercised end to end against ~/oenora with one Claude Opus 5 critic.",
         "Read-only behavior is enforced in code: Git inspection is allowlisted, M3 requests refuse non-private hosts and write-class operations, named decisions remain advisory-only, and evidence containing key material is refused egress rather than redacted.",
         "Evidence is deterministically redacted and content-addressed. Critic claims that cite evidence not supplied to that critic are discarded; provider, model, rubric, evidence IDs, tokens, and cost are retained in the append-only audit trail.",
@@ -2014,7 +2016,7 @@
       "kind": "service",
       "cluster": "Standalone",
       "status": "parked",
-      "lastModified": "2026-09-02",
+      "lastModified": "2026-11-15",
       "repo": "~/ProductAuthority",
       "bundleId": null,
       "release": "Read-only M3 review interface for the Review Authority on the private LAN. Four endpoints plus four evidence kinds (build_identity, git_log, source_file, ax_tree). Mothballed 2026-08-30 with both machines; wake with ~/ProductAuthority/resume.sh.",
@@ -2029,6 +2031,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15 observed: despite the recorded 2026-08-30 mothball, launchd agent com.billdonner.product-authority is running on this Mac and port 9820 answers (403 to a non-allowlisted peer). Its peer allowlist still names 192.168.1.220, which no longer answers; the M1 is now at 192.168.1.202. Nothing is using it.",
         "Serves http://192.168.1.104:9820 under launchd com.billdonner.product-authority; counterpart to review-authority on the M1 at 192.168.1.220.",
         "Read-only by construction: every git call passes an allowlist (rev-parse, log, show, status, diff, ls-files, describe, config, branch, cat-file) and runs with --no-optional-locks. Verified that HEAD, branch, status, index mtime, reflog and stash are unchanged across a maximal evidence sweep.",
         "Access is gated by an explicit peer allowlist (PA_ALLOW=192.168.1.220) checked before bearer-token authentication, so a leaked token alone is insufficient. Shared secret lives in the login Keychain, never on disk in a repo.",
