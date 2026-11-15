@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T14:58:08-06:00",
+  "generatedAt": "2026-11-15T15:03:42-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -114,6 +114,21 @@
       "focus": "parked",
       "updatedAt": "2026-11-15T14:58:08-06:00",
       "text": "Parked on Fly (stopped, will not auto-start). Being replaced by the monitoring rebuild."
+    },
+    "xpensexpunger-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:03:41-06:00",
+      "text": "Personal use; a first-class project all the same."
+    },
+    "medcommons-dicom-viewer": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:03:42-06:00",
+      "text": "Personal use; a first-class project all the same."
+    },
+    "review-authority": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:03:42-06:00",
+      "text": "Personal use; a first-class project. Code lives only on the M1 with no remote: rescue it to GitHub. Plan: run on one machine beside Product Authority."
     }
   }
 }
