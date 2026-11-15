@@ -1347,7 +1347,7 @@
       "kind": "service",
       "cluster": "Grubber",
       "status": "live",
-      "lastModified": "2026-08-30",
+      "lastModified": "2026-11-15",
       "repo": "~/grubber",
       "bundleId": null,
       "release": "Live read service at bd-grubber.fly.dev; APNs device registration/push, fast topic updates, public live progress, aggregate artifact monitor, Fly Postgres artifact snapshots, and Fly-side brand/news analysis are deployed",
@@ -1361,6 +1361,8 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
+        "On wake the service re-downloads grubber.db (about 430 MB) from object storage, so database-backed endpoints are unavailable for roughly 30 seconds or more after a cold start; /healthz answers immediately.",
         "Public API and MCP are treated as the stable contract.",
         "M2 adds idempotent embeddings, topic clustering, daily rollups, and /api/v1/trending plus /api/v1/topics/{topic_id}.",
         "M3 adds budget-gated LLM labels, claim comparisons, and markdown or JSON daily digests at /api/v1/digest/today and /api/v1/digest/{yyyy-mm-dd}.",
@@ -1458,12 +1460,12 @@
       "name": "clubsync",
       "kind": "backend",
       "cluster": "LtWatcher",
-      "status": "deferred",
-      "lastModified": "2026-08-14",
+      "status": "retired",
+      "lastModified": "2026-11-15",
       "repo": "~/clubsync",
       "bundleId": null,
-      "release": "Application tier intentionally deferred until PickledBalls v2; bd-clubsync-db remains deployed",
-      "description": "Deferred sports-facility synchronization backend retained for possible PickledBalls v2 work.",
+      "release": "Retired 2026-11-15 by owner decision. Fly database app bd-clubsync-db destroyed after a verified backup; the application tier had already been removed. Preserved: source in ~/clubsync and on GitHub, full-history bundle ~/archive/bundles/clubsync-20261115.bundle, database dump ~/archive/db-backups/clubsync-20261115.dump (PostgreSQL 17 custom format, 35 MB live size).",
+      "description": "Retired sports-facility synchronization backend (Life Time schedule harvesting, court-slot snapshots, watches and notifications). Source and data are preserved for import into future features.",
       "dependencies": [
         "PickledBalls v2"
       ],
@@ -1471,6 +1473,9 @@
         "github": "https://github.com/billdonner/clubsync"
       },
       "notes": [
+        "2026-11-15: before destruction the dump was restored into a scratch local database and row counts matched the live database exactly (court_slots 4101, schedule_events 13512, scrape_runs 11877, notifications 259, schedule_snapshots 57, watches 7, users 5, api_tokens 5, clubs 3, devices 2, source_sessions 1).",
+        "Owner intent: the Life Time schedule-examination features are to be kept for eventual import into future features. Do not delete ~/clubsync or the archive files.",
+        "The PickleFamilia Companion source still points its harvest sync at https://bd-clubsync.fly.dev (PickledBalls/Data/HarvestSync.swift); that host no longer exists, so the feature is inert in shipping builds.",
         "Not an active production dependency or monitored service.",
         "The database is retained to preserve data until the PickledBalls v2 decision."
       ]
@@ -1481,7 +1486,7 @@
       "kind": "backend",
       "cluster": "Flasherz",
       "status": "live",
-      "lastModified": "2026-08-13",
+      "lastModified": "2026-11-15",
       "repo": "~/card-engine",
       "bundleId": null,
       "release": "Live on Fly at bd-cardzerver.fly.dev; machine version 134 started with passing health check",
@@ -1498,6 +1503,8 @@
         "openapi": "https://bd-cardzerver.fly.dev/openapi.json"
       },
       "notes": [
+        "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
+        "Owner asked to revisit whether bd-cardzerver should be always-on after DoubleQross 1.2 ships.",
         "Live /openapi.json identifies the service as card-engine version 0.1.0.",
         "2026-09-11 follow-up: feature/scoredux 15290cb pushed and deployed; /api/v3/daily-scores applies progress-scaled losses in an isolated v3 table. 164 backend tests passed and live leaderboard GET returned 200. This supersedes the v2 deployment below; preserve feature/scoredux before any main redeploy.",
         "2026-09-11: feature/scoredux commit 909f171 deployed to bd-cardzerver; versioned /api/v2/daily-scores and challenge scoring checks are live, 164 backend tests passed. Preserve these changes before any main-branch redeploy. Canonical ~/card-engine was absent; working checkout is /private/tmp/scoredux-card-engine and branch is pushed to GitHub.",
@@ -1511,7 +1518,7 @@
       "kind": "service",
       "cluster": "PickledBalls",
       "status": "live",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-11-15",
       "repo": "~/server-monitor",
       "bundleId": null,
       "release": "Fly production deployment verified 2026-08-14 with seven configured targets and current probes",
@@ -1527,6 +1534,8 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
+        "While awake the monitor probes Card Engine every 15 s and Grubber every 60 s, which keeps those machines awake; they can only sleep when the monitor itself is asleep.",
         "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Production config omits deferred Clubsync, uses public Nagzerver and Card Engine health endpoints, and identifies Card Engine with the canonical card-engine-backend id.",
         "Live /api/status showed successful HTTP 200 probes for Nagzerver and Cardzerver after deployment; remaining warning colors are database metric thresholds, not endpoint failures."
@@ -1671,7 +1680,7 @@
       "kind": "backend",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-10-25",
+      "lastModified": "2026-11-15",
       "repo": "~/pfolio",
       "bundleId": null,
       "release": "Fly app bd-pfolio deployed with machine version 6 and a passing health check",
@@ -1686,6 +1695,7 @@
         "health": "https://bd-pfolio.fly.dev/health"
       },
       "notes": [
+        "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
         "2026-09-08: local dev uvicorn on 127.0.0.1:9840 retired by owner decision; only the Fly deployment counts.",
         "The backend source is cloned locally at ~/pfolio; its Fly deployment remains the only recorded live backend.",
         "Local dev on port 9840 (range 9840-9849).",
@@ -2446,11 +2456,11 @@
     {
       "name": "bd-clubsync.fly.dev",
       "repo": "~/clubsync",
-      "status": "deferred",
+      "status": "retired",
       "consumers": [
         "PickledBalls v2 (future)"
       ],
-      "note": "Application tier intentionally deferred until PickledBalls v2; bd-clubsync-db is retained."
+      "note": "Retired 2026-11-15: bd-clubsync-db destroyed after a verified backup; application tier already absent. Source and database dump preserved (see clubsync-backend)."
     },
     {
       "name": "bd-cardzerver.fly.dev",
@@ -2462,7 +2472,7 @@
         "card-studio",
         "likely Cardz Studio"
       ],
-      "note": "Live OpenAPI identifies Card Engine 0.1.0; the competing Card Server deployment definition was removed and its repository archived."
+      "note": "Sleeps when idle since 2026-11-15. Live OpenAPI identifies Card Engine 0.1.0; the competing Card Server deployment definition was removed and its repository archived."
     },
     {
       "name": "bd-grubber.fly.dev",
@@ -2470,7 +2480,7 @@
       "consumers": [
         "SentiPods"
       ],
-      "note": "Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive.",
+      "note": "Sleeps when idle since 2026-11-15. Transcript read service with HTTP, MCP, and M3 trend-analysis surfaces; LLM work is budget-gated at $5 soft and $10 hard per UTC day. /status was observed hanging during the Sentipods August 2 smoke test while /shows remained responsive.",
       "status": "live"
     },
     {
@@ -2480,7 +2490,7 @@
       "consumers": [
         "operations and monitoring"
       ],
-      "note": "Seven-target production config verified live with current Nagzerver and Card Engine probes; Clubsync is intentionally omitted."
+      "note": "Sleeps when idle since 2026-11-15. Seven-target production config verified live with current Nagzerver and Card Engine probes; Clubsync is intentionally omitted."
     },
     {
       "name": "api.famster.app",
@@ -2498,7 +2508,7 @@
         "Pfoliolio",
         "Oliopfolio (Mac + iOS)"
       ],
-      "note": "Fly machine version 6 is started with a passing health check; /health reports database, Plaid production, and chat healthy.",
+      "note": "Sleeps when idle since 2026-11-15. Fly machine version 6 is started with a passing health check; /health reports database, Plaid production, and chat healthy.",
       "status": "live"
     },
     {
@@ -2994,9 +3004,9 @@
       "summary": "Resolved by owner decision: grubber-ios is obsolete and superseded by SentiPods. Retain its repository as history; do not pursue ASC mapping or release work."
     },
     {
-      "kind": "service-deferred",
-      "observedAt": "2026-08-14",
-      "summary": "Clubsync is intentionally deferred until PickledBalls v2. Its application tier remains absent and bd-clubsync-db is retained; LtWatcher is retired and current PickledBalls no longer records Clubsync as an active dependency."
+      "kind": "service-retired",
+      "observedAt": "2026-11-15",
+      "summary": "Clubsync retired 2026-11-15: bd-clubsync-db destroyed after a verified backup. Source, bundle and database dump are preserved for future import. The Companion's harvest-sync code still references the removed host."
     },
     {
       "kind": "monitor-configuration-drift-resolved",

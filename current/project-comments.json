@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T14:23:41-06:00",
+  "generatedAt": "2026-11-15T14:42:38-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -14,8 +14,8 @@
       "focus": "now"
     },
     "qross-app": {
-      "text": "1.1 distributing (IAP for the expanded database). Working on multiuser.",
-      "updatedAt": "2026-11-15T14:20:52-06:00",
+      "text": "1.1 distributing (IAP for the expanded database). Working on multiuser. After 1.2 ships: revisit whether cardzerver should be always-on.",
+      "updatedAt": "2026-11-15T14:42:38-06:00",
       "focus": "now"
     },
     "picklefamilia-umbrella": {
@@ -101,6 +101,18 @@
     "workinon-app": {
       "focus": "parked",
       "updatedAt": "2026-11-15T14:23:41-06:00"
+    },
+    "pfolio-backend": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T14:42:38-06:00"
+    },
+    "grubber-service": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:42:38-06:00"
+    },
+    "server-monitor-service": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:42:38-06:00"
     }
   }
 }

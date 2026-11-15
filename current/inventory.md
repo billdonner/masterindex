@@ -48,7 +48,7 @@ As of Sunday, October 26, 2026 (targeted repository refresh; retained app observ
 
 - ASC contains 22 app records in the current inventory: 21 map in the primary ASC inventory and one unmatched legacy record is retained. Since the 2026-08-14 scan, Flasherz Kids, both MastPex records, and the original HOABooklet/Mallinbook record (6785245339) were deleted; HOABooklet now lives on new record 6806080022 with no builds yet, and KinFlash Studio gained record 6806833310. SentiPods is now named Grubber Desk and KinFlash is KinFlash Family in ASC.
 - LtWatcher is retired. `billdonner/clubwatch` is archived read-only and its ASC record is retained.
-- Clubsync is deferred until PickledBalls v2. Its application tier is not deployed; `bd-clubsync-db` remains deployed to preserve data.
+- Clubsync was retired 2026-11-15. `bd-clubsync-db` was destroyed after a verified backup; the source (`~/clubsync`, GitHub, `~/archive/bundles/clubsync-20261115.bundle`) and database dump (`~/archive/db-backups/clubsync-20261115.dump`) are preserved so its Life Time schedule features can be imported into future work.
 - Card Server is retired after consumer and replacement checks. `billdonner/card-server` is archived, its Fly descriptor is removed, and Card Engine remains the sole verified source for `bd-cardzerver.fly.dev`.
 - Server Monitor is repaired and deployed. Its seven production targets omit Clubsync and its direct Nagzerver and Card Engine HTTP probes return 200.
 - The registry tracks 57 repositories. `~/pfolio` is again a verified local backend source; its named TOML family fixtures support isolated local portfolio scenarios without changing the Fly or ASC release state.
@@ -305,9 +305,9 @@ from main. Legacy scores are intentionally reset on first Scoredux launch.
 | bd-pfolio.fly.dev | github:billdonner/pfolio | live | Pfoliolio |
 | api.famster.app | ~/nagzerver | alias | Famster concept shell; same deployment and API as Nagzerver |
 | bd-oenora-recognition.fly.dev | ~/oenora | live | Oenora |
-| bd-clubsync.fly.dev | ~/clubsync | deferred | PickledBalls v2 only |
+| bd-clubsync.fly.dev | ~/clubsync | retired 2026-11-15 | none; source and data preserved |
 
-Fly also contains live infrastructure apps `bd-postgres` and `bd-clubsync-db`. Suspended `bd-arca` (source ~/sharon) and `bd-podcast-brands` were destroyed 2026-09-08 by owner decision.
+Fly also contains the live infrastructure app `bd-postgres`; `bd-clubsync-db` was destroyed 2026-11-15 after a verified backup. Since 2026-11-15 `bd-cardzerver`, `bd-grubber`, `bd-pfolio` and `bd-server-monitor` sleep when idle. Suspended `bd-arca` (source ~/sharon) and `bd-podcast-brands` were destroyed 2026-09-08 by owner decision.
 
 ### Nagzerver source recovery
 
