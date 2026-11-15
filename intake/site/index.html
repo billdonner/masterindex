@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MasterIndex Project Intake</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">MasterIndex · local control surface</p>
+      <h1>Start a project with a clean record.</h1>
+      <p class="lede">Capture the idea first. Provisioning a local Git repository and private GitHub repository is a separate, confirmed action.</p>
+    </header>
+
+    <section class="card" aria-labelledby="new-project-title">
+      <div class="heading"><div><p class="eyebrow">Step 1</p><h2 id="new-project-title">Capture an idea</h2></div><p>Two facts are enough to begin.</p></div>
+      <form id="captureForm">
+        <label>Project name<input id="name" name="name" required minlength="2" maxlength="100" placeholder="PantryPal" autocomplete="off"></label>
+        <label>Purpose<textarea id="purpose" name="purpose" required minlength="8" maxlength="2000" placeholder="A shared household pantry and shopping-list app."></textarea></label>
+        <div class="options"><label>Project shape<select id="kind" name="kind"><option value="project">Open project</option><option value="app">App</option><option value="website">Website</option><option value="service">Service</option><option value="backend">Backend</option><option value="package">Shared package</option></select></label><label>Optional repo slug<input id="slug" name="slug" pattern="[a-z0-9][a-z0-9-]{1,62}" placeholder="pantry-pal" autocomplete="off"></label></div>
+        <button type="submit">Capture idea</button>
+      </form>
+      <p id="captureMessage" class="message" role="status"></p>
+    </section>
+
+    <section class="card" aria-labelledby="ideas-title">
+      <div class="heading"><div><p class="eyebrow">Step 2</p><h2 id="ideas-title">Review before creating anything</h2></div><p id="count">Loading ideas…</p></div>
+      <div id="projectList" class="project-list"></div>
+    </section>
+  </main>
+  <template id="projectTemplate"><article class="project"><div><p class="state"></p><h3></h3><p class="purpose"></p><dl><div><dt>Folder</dt><dd class="directory"></dd></div><div><dt>GitHub</dt><dd class="github"></dd></div></dl></div><div class="actions"><p class="safety"></p><button class="provision" type="button">Review &amp; provision</button></div></article></template>
+  <dialog id="provisionDialog"><form id="provisionForm" method="dialog"><p class="eyebrow">Irreversible enough to confirm</p><h2>Provision project</h2><p id="provisionSummary"></p><ul><li>Create the local folder, Git repository, and initial commit.</li><li>Create a <strong>private</strong> GitHub repository and push it.</li><li>Register an incubating project and weekly review task in MasterIndex.</li></ul><label>Type the exact project name to continue<input id="confirmation" required autocomplete="off"></label><div class="dialog-actions"><button value="cancel" type="button" id="cancel">Cancel</button><button value="confirm" type="submit" id="confirm">Create project</button></div><p id="provisionMessage" class="message" role="status"></p></form></dialog>
+  <script src="/app.js"></script>
+</body>
+</html>

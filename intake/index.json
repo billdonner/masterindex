@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-11-10T13:50:00-06:00",
+  "schemaVersion": "1.0",
+  "description": "Reviewable project ideas captured before they become provisioned MasterIndex entities.",
+  "defaults": {
+    "githubOwner": "billdonner",
+    "visibility": "private",
+    "workspaceParent": "~",
+    "entityKind": "project",
+    "entityStatus": "incubating"
+  },
+  "projects": []
+}

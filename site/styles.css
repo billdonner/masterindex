@@ -274,6 +274,7 @@ body::before {
 .b-app { background: rgba(47, 127, 119, 0.12); color: #12514a; border-color: rgba(47, 127, 119, 0.18); }
 .b-backend { background: rgba(145, 109, 46, 0.14); color: #694b16; border-color: rgba(145, 109, 46, 0.2); }
 .b-package { background: rgba(91, 98, 163, 0.12); color: #3c447e; border-color: rgba(91, 98, 163, 0.18); }
+.b-project { background: rgba(109, 71, 128, 0.12); color: #5d3971; border-color: rgba(109, 71, 128, 0.18); }
 .b-service { background: rgba(191, 90, 54, 0.12); color: #844028; border-color: rgba(191, 90, 54, 0.16); }
 .b-live { background: rgba(46, 124, 72, 0.14); color: #23613b; border-color: rgba(46, 124, 72, 0.18); }
 .b-asc { background: rgba(17, 91, 153, 0.12); color: #174c77; border-color: rgba(17, 91, 153, 0.18); }

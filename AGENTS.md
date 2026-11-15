@@ -135,3 +135,25 @@ repositories in this portfolio (AGENTS.md normalization, independent
 review, cross-agent-system review, adjudication). It does not change how
 Master Index itself is read or written. See `agent-ops/README.md` before
 using it.
+
+## Portfolio query MCP
+
+`mcp/server.py` is the local MCP query interface for this registry. Its
+portfolio tools read the canonical JSON files on every request. The only
+write-capable exception is the documented Project Intake flow:
+`capture_project_idea` records a reviewable idea and `provision_project`
+requires exact-name confirmation before creating its local/private-GitHub
+repository and updating the canonical registry in the required write order.
+It must never perform other inventory mutations or operational actions, or
+become a second source of truth. Use its freshness tool before making
+time-sensitive claims, and follow
+`docs/portfolio-query-and-refresh-protocol.md` and
+`docs/project-intake-protocol.md` when appropriate.
+
+## Terminal monitor comments
+
+`current/project-comments.json` contains owner-entered annotations displayed
+by `tools/project_monitor.py`. It is intentionally separate from the
+inventory: comments are not observed facts, must not be copied into entity
+state without verification, and may be edited or cleared by the owner through
+the monitor.

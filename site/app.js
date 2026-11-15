@@ -6,11 +6,11 @@ const state = {
   selectedCluster: null
 };
 
-const badgeClassMap = { app: "b-app", backend: "b-backend", package: "b-package", service: "b-service", website: "b-service" };
+const badgeClassMap = { app: "b-app", backend: "b-backend", package: "b-package", service: "b-service", website: "b-service", project: "b-project" };
 const surfaces = [
   { key: "all", label: "Everything" }, { key: "app", label: "Apps" },
   { key: "backend", label: "Backends" }, { key: "service", label: "Services" },
-  { key: "package", label: "Packages" }, { key: "website", label: "Websites" }
+  { key: "package", label: "Packages" }, { key: "website", label: "Websites" }, { key: "project", label: "Projects" }
 ];
 const statuses = [
   { key: "all", label: "All statuses" }, { key: "asc-mapped", label: "ASC mapped" },
@@ -34,8 +34,8 @@ function parseDateValue(value) { const ms = Date.parse(value); return Number.isN
 function sortByMostRecent(items, getter) {
   return [...items].sort((a, b) => parseDateValue(getter(b)) - parseDateValue(getter(a)) || String(a.name || a.repo).localeCompare(String(b.name || b.repo)));
 }
-function kindLabel(kind) { return ({ app: "Application", backend: "Backend", service: "Service", package: "Shared package", website: "Website" })[kind] || kind; }
-function statusText(entity) { return ({ "ready-for-sale": "Ready for sale", "asc-mapped": "ASC mapped", live: "Live", "live-degraded-probes": "Live, probes degraded", "asc-unmapped": "ASC only / unlinked", deferred: "Deferred", retired: "Retired", parked: "Parked", unreachable: "Unreachable", misconfigured: "Misconfigured", stale: "Stale", "active-alternate": "Active alternate", "active-prototype": "Active prototype", "legacy-reference": "Legacy reference", "concept-only": "Concept only", obsolete: "Obsolete", gap: "Gap", lab: "Lab", "local-only": "Local only", active: "Active" })[entity.status] || entity.status; }
+function kindLabel(kind) { return ({ app: "Application", backend: "Backend", service: "Service", package: "Shared package", website: "Website", project: "Incubating project" })[kind] || kind; }
+function statusText(entity) { return ({ "ready-for-sale": "Ready for sale", "asc-mapped": "ASC mapped", live: "Live", "live-degraded-probes": "Live, probes degraded", "asc-unmapped": "ASC only / unlinked", deferred: "Deferred", retired: "Retired", parked: "Parked", unreachable: "Unreachable", misconfigured: "Misconfigured", stale: "Stale", "active-alternate": "Active alternate", "active-prototype": "Active prototype", "legacy-reference": "Legacy reference", "concept-only": "Concept only", obsolete: "Obsolete", gap: "Gap", lab: "Lab", "local-only": "Local only", active: "Active", incubating: "Incubating" })[entity.status] || entity.status; }
 function stat(label, value) { return `<div class="stat"><strong>${escapeHtml(value)}</strong><span>${escapeHtml(label)}</span></div>`; }
 function entityTasks(entityId) { return (state.tasks?.entryTasks?.[entityId] || []).filter(task => task.status === "active"); }
 function hasPublicLink(entity) { return Object.values(entity.links || {}).some(value => typeof value === "string" && /^https?:\/\//.test(value)); }

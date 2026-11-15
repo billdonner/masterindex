@@ -59,6 +59,14 @@ Browsable source:
 
 - `site/index.html`
 
+Portfolio question interface:
+
+- `mcp/server.py` — a local MCP server; see `mcp/README.md`
+- `intake/app.py` — a loopback-only Project Intake app; see
+  `docs/project-intake-protocol.md`
+- `tools/project_monitor.py --interactive` — terminal status dashboard with
+  owner comments; see `docs/terminal-project-monitor.md`
+
 Operational design references:
 
 - `WORKINON_BOARD_SCHEMA.md`
@@ -98,3 +106,5 @@ Refresh responsibilities:
 - App Store Connect access was available for the initial August 1, 2026 inventory, but future refresh runs should always report when ASC access is unavailable.
 - The task registry is intentionally separate from `current/index.json` so housekeeping agents can evolve without destabilizing the core inventory schema.
 - Verified external public links should be captured whenever available, including websites, service URLs, and public App Store pages.
+- For changing facts, use the MCP freshness check and the provenance-first
+  refresh protocol in `docs/portfolio-query-and-refresh-protocol.md`.
