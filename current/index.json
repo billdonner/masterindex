@@ -839,16 +839,16 @@
       "name": "HOABooklet",
       "kind": "app",
       "cluster": "HOABooklet",
-      "status": "asc-mapped",
-      "lastModified": "2026-09-14",
+      "status": "ready-for-distribution",
+      "lastModified": "2026-11-15",
       "repo": "~/hoabooklet",
       "bundleId": "com.hoabooklet.app",
-      "release": "ASC record 6806080022 (new, created 2026-08-27 for the HOABooklet rename; old record 6785245339 deleted): iOS + macOS 1.0 PREPARE_FOR_SUBMISSION, no builds uploaded yet; project.yml 1.0 (18); repo cloned at ~/hoabooklet",
+      "release": "iOS and macOS 1.0.1 are Ready for Distribution and live on the public App Store (public listing shows 1.0.1 released 2026-10-19; App Store Connect screenshot from owner 2026-11-15 shows both platforms Ready for Distribution). Earlier: ASC record 6806080022 (new, created 2026-08-27 for the HOABooklet rename; old record 6785245339 deleted): iOS + macOS 1.0 PREPARE_FOR_SUBMISSION, no builds uploaded yet; project.yml 1.0 (18); repo cloned at ~/hoabooklet",
       "description": "Document-based macOS (flagship authoring) + iOS (companion) directory-book app: maintains member/resident rosters and generates print-ready saddle-stitch booklet PDFs, a web view, and Word export from one source of truth. A .hoabooklet package = SQLite (GRDB) + lossless photos + frozen editions, synced via iCloud Documents.",
       "dependencies": [],
       "links": {
         "website": "https://1041soft.com/hoabooklet/",
-        "appStore": null,
+        "appStore": "https://apps.apple.com/us/app/hoabooklet/id6806080022",
         "github": "https://github.com/billdonner/hoabooklet",
         "support": "https://1041soft.com/hoabooklet/",
         "companyPage": "https://1041soft.com/hoabooklet/",
@@ -858,6 +858,7 @@
         "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
+        "2026-11-15: status corrected from asc-mapped to ready-for-distribution. Observed on the public App Store (1.0.1, released 2026-10-19) and in the owner's App Store Connect screenshot.",
         "2026-09-05: ASC identity CHANGED with the rename after all - the old bookmaker/Mallinbook record 6785245339 returns 404 and a fresh record 6806080022 (SKU hoa001) carries iOS and macOS 1.0 with zero builds. hoabooklet RELEASE.md commit bd27e30 records the new record and the URLs set on it. Build 18 from the old record did not carry over; the next upload is the first on the new record.",
         "GitHub project.yml and ASC both identify build 18 as current; the prior build 13/14 inventory was stale.",
         "github:billdonner/bookmaker (Python FastAPI/WeasyPrint engine) stays as the read-only reference implementation and one-time lossless photo-extraction pipeline.",
