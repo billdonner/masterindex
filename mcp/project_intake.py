@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import sys
 import subprocess
 from datetime import datetime
 from pathlib import Path
@@ -136,7 +137,7 @@ class ProjectIntakeStore:
             "creates": [
                 f"local Git repository {project['proposed']['directory']}",
                 f"private GitHub repository {project['proposed']['github']['owner']}/{project['proposed']['github']['name']}",
-                "README.md, AGENTS.md, and .gitignore scaffold",
+                "README.md, AGENTS.md, CLAUDE.md, and .gitignore scaffold",
                 "canonical MasterIndex entity, repository record, and weekly intent-review task"
             ],
             "doesNotCreate": ["App Store Connect records", "domains", "deployments", "billing", "public websites"],
@@ -163,6 +164,8 @@ class ProjectIntakeStore:
             "Keep product decisions and project-specific implementation guidance in this repository. Do not treat an idea-stage record as a release commitment.\n",
             encoding="utf-8",
         )
+        # Claude Code loads CLAUDE.md, not AGENTS.md; this keeps one set of instructions for every agent.
+        (destination / "CLAUDE.md").write_text("@AGENTS.md\n", encoding="utf-8")
         (destination / ".gitignore").write_text(".DS_Store\n.env\n.env.*\n!.env.example\n", encoding="utf-8")
 
     def _register_in_masterindex(self, project: dict[str, Any], github_url: str | None) -> None:
@@ -211,7 +214,16 @@ class ProjectIntakeStore:
         tasks["generatedAt"] = observed_at
         write_json(self.tasks_path, tasks)
 
-    def provision(self, *, project_id: str, confirmation: str, create_github: bool = True) -> dict[str, Any]:
+    def _set_owner_focus(self, project_id: str, focus: str | None, note: str | None) -> None:
+        """Record the owner's focus tier and note through the project monitor, the ledger's one writer here."""
+        monitor = [sys.executable, str(self.root / "tools" / "project_monitor.py"), "--root", str(self.root), "--no-publish"]
+        if focus:
+            self._run([*monitor, "--focus", project_id, focus])
+        if note:
+            self._run([*monitor, "--comment", project_id, note])
+
+    def provision(self, *, project_id: str, confirmation: str, create_github: bool = True,
+                  focus: str | None = None, note: str | None = None) -> dict[str, Any]:
         registry, project = self._project(project_id)
         if project.get("state") != "captured":
             raise IntakeError(f"Only a captured project can be provisioned (current state: {project.get('state')}).")
@@ -231,13 +243,14 @@ class ProjectIntakeStore:
             self._write_scaffold(project, destination)
             local_created = True
             self._run(["git", "init", "-b", "main"], cwd=destination)
-            self._run(["git", "add", "README.md", "AGENTS.md", ".gitignore"], cwd=destination)
+            self._run(["git", "add", "README.md", "AGENTS.md", "CLAUDE.md", ".gitignore"], cwd=destination)
             self._run(["git", "commit", "-m", "Initial project scaffold"], cwd=destination)
             if create_github:
                 github = project["proposed"]["github"]
                 github_url = f"https://github.com/{github['owner']}/{github['name']}"
                 self._run(["gh", "repo", "create", f"{github['owner']}/{github['name']}", "--private", "--source", str(destination), "--remote", "origin", "--push"], cwd=destination)
             self._register_in_masterindex(project, github_url)
+            self._set_owner_focus(project["id"], focus, note)
         except Exception as exc:
             project["state"] = "provisioning-needs-attention"
             project["lastModified"] = now()

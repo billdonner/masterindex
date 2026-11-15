@@ -1,3 +1,7 @@
+
+## Project Intake — 2026-11-15
+
+- **Mahjong for Men** (`mahjong-for-men-project`) entered the Incubator through the owner intake. Purpose: A Mahjong tutorial with a male slant. Probably an iPhone app, maybe a Mac app too, and maybe an Android app later. Repository: `~/mahjong-for-men`. It is an idea-stage scaffold, not a release commitment.
 # MasterIndex Inventory
 
 As of Sunday, October 26, 2026 (targeted repository refresh; retained app observations have their own dates).

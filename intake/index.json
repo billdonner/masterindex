@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-10T13:50:00-06:00",
+  "generatedAt": "2026-11-15T17:19:29-06:00",
   "schemaVersion": "1.0",
   "description": "Reviewable project ideas captured before they become provisioned MasterIndex entities.",
   "defaults": {
@@ -9,5 +9,45 @@
     "entityKind": "project",
     "entityStatus": "incubating"
   },
-  "projects": []
+  "projects": [
+    {
+      "id": "mahjong-for-men-project",
+      "name": "Mahjong for Men",
+      "slug": "mahjong-for-men",
+      "purpose": "A Mahjong tutorial with a male slant. Probably an iPhone app, maybe a Mac app too, and maybe an Android app later.",
+      "kind": "app",
+      "state": "provisioned",
+      "createdAt": "2026-11-15T17:19:21-06:00",
+      "lastModified": "2026-11-15T17:19:29-06:00",
+      "proposed": {
+        "directory": "~/mahjong-for-men",
+        "github": {
+          "owner": "billdonner",
+          "name": "mahjong-for-men",
+          "visibility": "private"
+        },
+        "cluster": "Incubator",
+        "entityStatus": "incubating"
+      },
+      "openDecisions": [
+        "Choose the initial user/platform and product-line posture.",
+        "Confirm the project kind before its first implementation milestone.",
+        "Keep the GitHub repository private unless its release plan explicitly changes."
+      ],
+      "provenance": {
+        "observedAt": "2026-11-15T17:19:21-06:00",
+        "source": {
+          "kind": "owner-intake",
+          "authority": "owner-report"
+        },
+        "confidence": "reported"
+      },
+      "provisionedAt": "2026-11-15T17:19:29-06:00",
+      "provision": {
+        "directory": "/Users/billdonner/mahjong-for-men",
+        "githubUrl": "https://github.com/billdonner/mahjong-for-men",
+        "masterIndexRegistered": true
+      }
+    }
+  ]
 }

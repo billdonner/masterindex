@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30",
+  "generatedAt": "2026-11-15T17:19:28-06:00",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -52,7 +52,7 @@
     "mappedAscApps": 21,
     "unmatchedAscApps": 1,
     "activeRepos": 57,
-    "clusters": 18,
+    "clusters": 19,
     "liveServices": 6,
     "collaborators": 3,
     "unreachableServices": 0,
@@ -786,6 +786,15 @@
       "watchpoints": [
         "Local source repositories are still unverified.",
         "Verified public product pages exist, but no standalone source repository was found in the latest scan."
+      ]
+    },
+    {
+      "name": "Incubator",
+      "maturity": "captured ideas and newly scaffolded projects",
+      "summary": "Projects enter here through the MasterIndex intake before they have a committed product or release posture.",
+      "highlights": [],
+      "watchpoints": [
+        "Confirm platform, product line, and scope before advancing an incubating project."
       ]
     }
   ],
@@ -2432,6 +2441,36 @@
         "2026-11-15: tools/project_monitor.py takes --root and works on any index with this layout. staging/ is a second, invented index for testing, published at /staging/current/monitor.json with its own ledger. Each published feed names itself and says where its edits are saved.",
         "2026-11-15: added as its own entity at the owner's request so the project that tracks the portfolio is itself tracked."
       ]
+    },
+    {
+      "id": "mahjong-for-men-project",
+      "name": "Mahjong for Men",
+      "kind": "app",
+      "status": "incubating",
+      "cluster": "Incubator",
+      "repo": "~/mahjong-for-men",
+      "bundleId": null,
+      "description": "A Mahjong tutorial with a male slant. Probably an iPhone app, maybe a Mac app too, and maybe an Android app later.",
+      "dependencies": [],
+      "links": {
+        "github": "https://github.com/billdonner/mahjong-for-men"
+      },
+      "release": "Idea captured and repository scaffolded; no release posture selected.",
+      "lastModified": "2026-11-15",
+      "notes": [
+        "Created through MasterIndex Project Intake.",
+        "Choose the initial user/platform and product-line posture.",
+        "Confirm the project kind before its first implementation milestone.",
+        "Keep the GitHub repository private unless its release plan explicitly changes."
+      ],
+      "provenance": {
+        "observedAt": "2026-11-15T17:19:28-06:00",
+        "source": {
+          "kind": "MasterIndex project intake",
+          "authority": "owner-report"
+        },
+        "confidence": "reported"
+      }
     }
   ],
   "collaborators": [
@@ -3008,6 +3047,13 @@
       "last2026Commit": "2026-09-02",
       "kind": "legacy archive + app research prototype",
       "role": "Archived billdonner/medcommonsPhp legacy MedCommons source with a new native SwiftUI iPhone/iPad DICOM research viewer under ios/DicomResearchViewer; pushed commit 1336dfa"
+    },
+    {
+      "repo": "~/mahjong-for-men",
+      "branch": "main",
+      "last2026Commit": "2026-11-15",
+      "kind": "app/incubator",
+      "role": "A Mahjong tutorial with a male slant. Probably an iPhone app, maybe a Mac app too, and maybe an Android app later."
     }
   ],
   "gaps": [

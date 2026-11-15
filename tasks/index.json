@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T09:40:00-05:00",
+  "generatedAt": "2026-11-15T17:19:28-06:00",
   "schemaVersion": "1.0",
   "description": "Recurring and agentic task registry for MasterIndex entities.",
   "defaultExecutionAssumptions": {
@@ -455,6 +455,25 @@
         ]
       }
     ],
-    "oenora-recognition-service": []
+    "oenora-recognition-service": [],
+    "mahjong-for-men-project": [
+      {
+        "taskId": "mahjong-for-men-project-intent-review",
+        "name": "Mahjong for Men intent review",
+        "status": "active",
+        "cadence": {
+          "kind": "rrule",
+          "value": "FREQ=WEEKLY;INTERVAL=1"
+        },
+        "purpose": "Review the project purpose, platform, product line, and next evidence before committing implementation scope.",
+        "expectedInputs": [
+          "intake/index.json",
+          "~/mahjong-for-men"
+        ],
+        "expectedOutputs": [
+          "Updated MasterIndex entity facts or an explicit decision/gap"
+        ]
+      }
+    ]
   }
 }
