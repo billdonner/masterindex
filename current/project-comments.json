@@ -72,8 +72,9 @@
       "updatedAt" : "2026-11-15T16:55:32-06:00"
     },
     "mahjong-for-men-project" : {
-      "text" : "New idea: a Mahjong tutorial with a male slant. Decide the first platform (iPhone likely) and what the tutorial covers.",
-      "updatedAt" : "2026-11-15T17:19:29-06:00"
+      "focus" : "now",
+      "text" : "American Mahjong tutorial with a video-game feel. iPhone and Mac together, separate interfaces. Next: open a session in the repo and shape the first lesson.",
+      "updatedAt" : "2026-11-15T17:23:26-06:00"
     },
     "masterindex" : {
       "focus" : "now",
@@ -131,9 +132,9 @@
       "updatedAt" : "2026-11-15T15:59:38-06:00"
     },
     "qross-app" : {
-      "focus" : "now",
+      "focus" : "maint",
       "text" : "1.1 distributing (IAP for the expanded database). Working on multiuser. After 1.2 ships: revisit whether cardzerver should be always-on.",
-      "updatedAt" : "2026-11-15T14:42:38-06:00"
+      "updatedAt" : "2026-11-15T17:23:25-06:00"
     },
     "review-authority" : {
       "focus" : "maint",
@@ -166,6 +167,6 @@
     }
   },
   "description" : "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
-  "generatedAt" : "2026-11-15T17:19:29-06:00",
+  "generatedAt" : "2026-11-15T17:23:26-06:00",
   "schemaVersion" : "1.0"
 }

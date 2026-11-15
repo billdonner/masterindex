@@ -2450,17 +2450,19 @@
       "cluster": "Incubator",
       "repo": "~/mahjong-for-men",
       "bundleId": null,
-      "description": "A Mahjong tutorial with a male slant. Probably an iPhone app, maybe a Mac app too, and maybe an Android app later.",
-      "dependencies": [],
+      "description": "An American Mahjong tutorial with a video-game feel, aimed at men. iPhone and Mac apps built together with separate interfaces; the Mac app has a full menu system. Possibly Android later.",
+      "dependencies": [
+        "screenker-asc-app"
+      ],
       "links": {
         "github": "https://github.com/billdonner/mahjong-for-men"
       },
       "release": "Idea captured and repository scaffolded; no release posture selected.",
       "lastModified": "2026-11-15",
       "notes": [
+        "2026-11-15 (owner decisions): American Mahjong (the card-based game). \"A male slant\" means the tutorial has a video-game feel. iPhone and Mac are built together from the start with separate interfaces, not one shared layout; the Mac app gets a full menu system. The app is to have a relationship to Screenker (not yet defined). Android is a possible later platform.",
         "Created through MasterIndex Project Intake.",
-        "Choose the initial user/platform and product-line posture.",
-        "Confirm the project kind before its first implementation milestone.",
+        "Still open: the product-line posture, pricing, and what the Screenker relationship consists of.",
         "Keep the GitHub repository private unless its release plan explicitly changes."
       ],
       "provenance": {
