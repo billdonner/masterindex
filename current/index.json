@@ -1456,6 +1456,7 @@
         "websiteSource": "local docs"
       },
       "notes": [
+        "2026-11-15: the Fly-managed Upstash Redis nagz-redis was destroyed by owner decision; nothing used it after bd-nagzerver left Fly. Its password, previously written in server-monitor's config, is removed from current files and is now void. A future Nagz revival needs a new Redis.",
         "2026-11-15 observed: bd-nagzerver no longer appears in the Fly app list at all (previously recorded as suspended with zero machines). Source is kept at ~/nagzerver and the private GitHub repository; owner wants Nagz and Famster code retained.",
         "2026-09-08: Owner decision: nagzerver is retained for reference and occasional testing, not as production infrastructure. The runtime dependency of PickledBalls, workin On, PickleFamilia, Nagz and api.famster.app on nagzerver is to be removed; until each consumer is decoupled, treat that dependency as broken, not merely down.",
         "Do not retire this service as part of any Nagz or Famster decision; active non-Nagz consumers depend on it.",
@@ -1970,7 +1971,7 @@
       "kind": "tool",
       "cluster": "Standalone",
       "status": "live",
-      "lastModified": "2026-09-08",
+      "lastModified": "2026-11-15",
       "repo": "~/app-feedback",
       "bundleId": null,
       "release": "Moved to this Mac 2026-09-08: repo cloned to ~/app-feedback, com.billdonner.app-feedback-server and -collect loaded in user launchd, dashboard answering at 127.0.0.1:4317, first collection run from this Mac. Owner wants this used as the primary feedback inbox.",
@@ -1981,6 +1982,7 @@
         "github": "https://github.com/billdonner/app-feedback"
       },
       "notes": [
+        "2026-11-15: a new backup key was created in this Mac's login Keychain (owner does not need the OldM1 key or its old snapshots). A collection run then exited 0 and published a verified encrypted snapshot to iCloud Drive; the LATEST pointer file could not be updated from launchd (Operation not permitted). This supersedes the 2026-09-08 note that the key was pending.",
         "2026-09-08: Brought to front by owner decision. Previously ran only on OldM1. This Mac has no backup key in Keychain (com.billdonner.app-feedback.backup lives on OldM1), so encrypted iCloud snapshots and restore of OldM1 triage state are pending until that key is copied here; newest OldM1 snapshot is 2026-09-04T02:09Z. ~/.local/bin/node symlinked to Homebrew node for the server plist.",
         "The initial 2026-08-14 collection scanned 21 non-retired ASC apps and stored 41 deduplicated items: 36 screenshot submissions and 5 crash reports, with 36 screenshot files preserved and zero API errors.",
         "A launchd-triggered second pass queued zero items, recognized all 41 existing source ids, reported zero errors, and exited 0.",

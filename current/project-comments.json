@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T15:23:39-06:00",
+  "generatedAt": "2026-11-15T15:45:20-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -126,8 +126,8 @@
     },
     "app-feedback-inbox": {
       "focus": "maint",
-      "updatedAt": "2026-11-15T15:11:25-06:00",
-      "text": "Working: collects every 2 hours, dashboard at 127.0.0.1:4317. Wants a terminal interface like the other monitors; later a combined monitor or Systrix. Backup key never set up on this Mac."
+      "updatedAt": "2026-11-15T15:45:20-06:00",
+      "text": "Working: collects every 2 hours, backups on. Dashboard at 127.0.0.1:4317. Wants a terminal interface like the other monitors; later a combined monitor or Systrix."
     },
     "company-site-1041soft": {
       "focus": "maint",
