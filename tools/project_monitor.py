@@ -5,9 +5,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import shutil
 import subprocess
+import sys
 import time
 from datetime import datetime
 from pathlib import Path
@@ -162,26 +164,57 @@ def build_rows(root: Path, *, include_all: bool, inspect_local: bool) -> tuple[l
     return rows, {"indexGeneratedAt": index.get("generatedAt"), "commentsUpdatedAt": comment_data.get("generatedAt")}
 
 
+# ANSI styles. Colour is used only on a terminal, and never when NO_COLOR is set.
+STYLE = {"bold": "1", "dim": "2", "red": "31", "green": "32", "yellow": "33", "blue": "34", "cyan": "36", "bold green": "1;32"}
+FOCUS_STYLE = {"now": "bold green", "maint": "blue", "parked": "dim", "": "yellow"}
+
+
+def use_color() -> bool:
+    return sys.stdout.isatty() and "NO_COLOR" not in os.environ
+
+
+def paint(text: str, style: str, enabled: bool) -> str:
+    return f"\033[{STYLE[style]}m{text}\033[0m" if enabled and style else text
+
+
+def local_style(local: str) -> str:
+    if local in {"missing", "unreadable", "not-git"}:
+        return "red"
+    return "yellow" if local.endswith(" dirty") else ""
+
+
 def render(rows: list[dict[str, Any]], metadata: dict[str, Any], *, clear: bool = False) -> None:
     if clear:
         print("\033[2J\033[H", end="")
+    color = use_color()
     width = shutil.get_terminal_size(fallback=(150, 40)).columns
     name_width, status_width, local_width, work_width = 25, 23, 24, 11
     fixed = name_width + status_width + local_width + work_width + 45
     comment_width = max(18, width - fixed)
-    print(f"MasterIndex Project Monitor  ·  {len(rows)} shown  ·  recorded inventory {metadata['indexGeneratedAt']}  ·  refreshed {now()}")
+    print(paint(f"MasterIndex Project Monitor  ·  {len(rows)} shown  ·  recorded inventory {metadata['indexGeneratedAt']}  ·  refreshed {now()}", "bold", color))
     in_focus = sum(row["focus"] == "now" for row in rows)
     over = f" — over your limit of {NOW_LIMIT}, park something" if in_focus > NOW_LIMIT else ""
-    print(f"Focus now: {in_focus}{over}  ·  Agent = open terminal sessions  ·  Local = read-only Git status  ·  focus and comments are yours, not verified facts.")
-    print(f"{'#':>2}  {'Focus':<6}  {'Agent':<12}  {'Project':<{name_width}}  {'Status':<{status_width}}  {'Local':<{local_width}}  {'Work':<{work_width}}  {'Updated':<10}  Comment")
+    print(paint(f"Focus now: {in_focus}{over}", "red" if over else "bold green", color)
+          + "  ·  Agent = open terminal sessions  ·  Local = read-only Git status  ·  focus and comments are yours, not verified facts.")
+    print(paint(f"{'#':>2}  {'Focus':<6}  {'Agent':<12}  {'Project':<{name_width}}  {'Status':<{status_width}}  {'Local':<{local_width}}  {'Work':<{work_width}}  {'Updated':<10}  Comment", "bold", color))
     print("─" * min(width, fixed + comment_width))
     for number, row in enumerate(rows, start=1):
         status = f"{row['kind']} · {row['status']}"
-        print(
-            f"{number:>2}  {row['focus'] or '·':<6}  {truncate(row['session'], 12):<12}  {truncate(row['name'], name_width):<{name_width}}  {truncate(status, status_width):<{status_width}}  "
-            f"{truncate(row['local'], local_width):<{local_width}}  {truncate(row['work'], work_width):<{work_width}}  "
-            f"{truncate(row['modified'], 10):<10}  {truncate(row['comment'], comment_width)}"
-        )
+        focus_style = FOCUS_STYLE[row["focus"]]
+        parked = row["focus"] == "parked"
+        # Each cell is padded first and painted second, so colour never shifts a column.
+        cells = [
+            (f"{number:>2}", "dim" if parked else ""),
+            (f"{row['focus'] or '·':<6}", focus_style),
+            (f"{truncate(row['session'], 12):<12}", "dim" if parked else ("cyan" if row["session"] else "")),
+            (f"{truncate(row['name'], name_width):<{name_width}}", "bold" if row["focus"] == "now" else focus_style if parked else ""),
+            (f"{truncate(status, status_width):<{status_width}}", "dim" if parked else ""),
+            (f"{truncate(row['local'], local_width):<{local_width}}", local_style(row["local"]) or ("dim" if parked else "")),
+            (f"{truncate(row['work'], work_width):<{work_width}}", "dim" if parked or row["work"].startswith("0 ") else ""),
+            (f"{truncate(row['modified'], 10):<10}", "dim"),
+            (truncate(row["comment"], comment_width), "dim" if parked or not row["comment"] else ""),
+        ]
+        print("  ".join(paint(text, style, color) for text, style in cells))
 
 
 def resolve_row(rows: list[dict[str, Any]], reference: str) -> dict[str, Any] | None:

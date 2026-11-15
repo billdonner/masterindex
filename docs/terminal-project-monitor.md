@@ -44,6 +44,11 @@ monitor> f 4 none       # clear
 `parked`. The header counts your `now` projects and says so when there are more
 than five. From a shell: `project-monitor --focus qross-app now`.
 
+On a terminal the display is coloured: `now` in bold green, `maint` in blue,
+`parked` rows dimmed, a project with no focus yet in yellow, open agent
+sessions in cyan, a dirty working tree in yellow and a missing repo in red.
+Set `NO_COLOR=1` to turn colour off; piped output is always plain.
+
 The Agent column shows which projects have a Claude Code or Codex terminal
 session open right now (from `tools/agent_sessions.py`; see
 `docs/agent-session-restore.md`).

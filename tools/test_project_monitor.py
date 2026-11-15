@@ -50,6 +50,10 @@ def main():
             {"agent": "codex", "cwd": str(Path.home() / "Demo")}, {"agent": "claude", "cwd": str(Path.home() / "demo")}])
         assert monitor.open_session("~/demo", open_sessions) == "claude+codex"
         assert monitor.open_session("~/other", open_sessions) == "" and monitor.open_session(None, open_sessions) == ""
+    # Colour wraps an already-padded cell and is a no-op when disabled.
+    assert monitor.paint("now   ", "bold green", True) == "\033[1;32mnow   \033[0m"
+    assert monitor.paint("now   ", "bold green", False) == "now   " and monitor.paint("x", "", True) == "x"
+    assert monitor.local_style("main dirty") == "yellow" and monitor.local_style("missing") == "red" and monitor.local_style("main clean") == ""
     print("Project monitor tests passed")
 
 

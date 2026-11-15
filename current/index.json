@@ -2005,10 +2005,10 @@
       "lastModified": "2026-11-15",
       "repo": "~/review-authority",
       "bundleId": null,
-      "release": "Milestone 1 local read-only vertical slice is complete; no App Store, public website, correction loop, consensus flow, or UI observed.",
+      "release": "Milestone 1 (read-only review, one critic) complete. Running on this Mac since 2026-11-15 against the local Product Authority; started clean with a new database at ~/.review-authority.",
       "description": "Deterministic review controller that brokers bounded, redacted build evidence from a Product Authority source to replaceable cloud critics and records an append-only audit trail.",
       "dependencies": [
-        "oenora"
+        "product-authority"
       ],
       "links": {
         "website": null,
@@ -2016,6 +2016,8 @@
         "github": "https://github.com/billdonner/review-authority"
       },
       "notes": [
+        "2026-11-15: first review on this Mac ran end to end through the local Product Authority: qross-app, functional critic, claude-opus-5, 9 evidence items (253,839 bytes), 7 findings (2 medium, 3 low, 2 info), disposition pass, 96,325 input and 15,570 output tokens, recorded cost $0.87. Run with ~/bin/ra-review <app-id>. The anthropic SDK is now a declared dependency.",
+        "2026-11-15 (owner goal): have every product critiqued periodically through this process so improvement suggestions surface as models evolve and features are added; complementary to Screenker, which is to be integrated. Not yet built: coverage beyond the three registered apps, a schedule, multiple critics, and the Screenker link.",
         "2026-11-15: rescued from the M1 (now reachable as oldm1, 192.168.1.202; the previously recorded 192.168.1.220 no longer answers). All 8 commits cloned to ~/review-authority on this Mac and pushed to a new private GitHub repository; full-history bundle at ~/archive/bundles/review-authority-20261115.bundle. The M1's audit database (~/.review-authority/authority.sqlite3) is copied to ~/archive/review-authority-m1-state/authority-20261115.sqlite3 and passes an integrity check. On this Mac the 28 tests pass in a fresh environment. Owner intent: run Review Authority and Product Authority on one machine as separate things. This supersedes the 2026-08-22 note that the repository has no remote.",
         "The completed M1 slice supports a local Git-inspection source and a private-network M3 source through the same boundary; it was exercised end to end against ~/oenora with one Claude Opus 5 critic.",
         "Read-only behavior is enforced in code: Git inspection is allowlisted, M3 requests refuse non-private hosts and write-class operations, named decisions remain advisory-only, and evidence containing key material is refused egress rather than redacted.",
@@ -2028,12 +2030,12 @@
       "name": "Product Authority",
       "kind": "service",
       "cluster": "Standalone",
-      "status": "parked",
+      "status": "active",
       "lastModified": "2026-11-15",
       "repo": "~/ProductAuthority",
       "bundleId": null,
-      "release": "Read-only M3 review interface for the Review Authority on the private LAN. Four endpoints plus four evidence kinds (build_identity, git_log, source_file, ax_tree). Mothballed 2026-08-30 with both machines; wake with ~/ProductAuthority/resume.sh.",
-      "description": "Read-only HTTP interface on the Product Authority machine (M3) exposing per-target build identity, git history, recently-touched source and accessibility trees to the Review Authority (M1) under a bounded collection plan.",
+      "release": "Running on this Mac since 2026-11-15, bound to 127.0.0.1:9820 and admitting loopback only (launchd com.billdonner.product-authority). Four endpoints, four evidence kinds (build_identity, git_log, source_file, ax_tree); apps: oenora-app, qross-app, pfolio-app.",
+      "description": "Read-only HTTP interface exposing per-target build identity, git history, recently-touched source and accessibility trees to the Review Authority under a bounded collection plan. Both now run on the same Mac as separate processes.",
       "dependencies": [
         "oenora-app",
         "qross-app",
@@ -2045,6 +2047,7 @@
         "github": "https://github.com/billdonner/product-authority"
       },
       "notes": [
+        "2026-11-15 (owner decision): one-machine setup. The service no longer listens on the LAN (a request to 192.168.1.104:9820 gets no answer; loopback without the token gets 401; with the token /v1/health and /v1/apps answer). The M1, the GitHub message board (m1-m3-exchange, now archived) and the exchange poller are retired from this design; earlier notes about them are history.",
         "2026-11-15: pushed to a new private GitHub repository; previously ~/ProductAuthority was the only copy.",
         "2026-11-15: stopped by owner decision. Both launchd agents (com.billdonner.product-authority, com.billdonner.exchange-poll) are booted out and disabled so they stay off across logins; port 9820 is closed. resume.sh now re-enables them before loading.",
         "2026-11-15 observed: despite the recorded 2026-08-30 mothball, launchd agent com.billdonner.product-authority is running on this Mac and port 9820 answers (403 to a non-allowlisted peer). Its peer allowlist still names 192.168.1.220, which no longer answers; the M1 is now at 192.168.1.202. Nothing is using it.",
@@ -2402,6 +2405,27 @@
         "2026-11-15 (owner): Systrix carries the Apple home-display strategy that SharedSpaceLab previously held, and is the intended home of the monitoring rebuild that replaces server-monitor. It is updated when one of the other apps requires it rather than on its own schedule.",
         "2026-11-15 (owner): App Feedback and the other terminal monitors may later be integrated here or into a combined monitor. flywall (the local Fly Infrastructure Desk at ~/flywall, not under version control) is kept separate for now.",
         "Local prototype per README: SQLite registry and observation storage, collector leases, loopback-only Core API, YAML dashboard decoder/validator; optional live Fly Machine collector via FLY_API_TOKEN."
+      ]
+    },
+    {
+      "id": "masterindex",
+      "name": "MasterIndex",
+      "kind": "tool",
+      "cluster": "Infrastructure",
+      "status": "active",
+      "lastModified": "2026-11-15",
+      "repo": "~/masterindex",
+      "bundleId": null,
+      "release": "Public GitHub repository with a GitHub Pages site; no build or deployed runtime of its own.",
+      "description": "The canonical portfolio index and its tools: the inventory and task registry, the terminal project monitor (project-monitor) with owner focus tiers and comments, agent session tracking and restore (agent-sessions), the local portfolio query MCP server, the Project Intake flow, and the Pickles document shelf.",
+      "dependencies": [],
+      "links": {
+        "website": "https://billdonner.github.io/masterindex/",
+        "github": "https://github.com/billdonner/masterindex",
+        "appStore": null
+      },
+      "notes": [
+        "2026-11-15: added as its own entity at the owner's request so the project that tracks the portfolio is itself tracked."
       ]
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T15:45:20-06:00",
+  "generatedAt": "2026-11-15T15:59:38-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -117,8 +117,8 @@
     },
     "review-authority": {
       "focus": "maint",
-      "updatedAt": "2026-11-15T15:05:10-06:00",
-      "text": "Personal use; a first-class project. Rescued from the M1 to this Mac and GitHub (2026-11-15). Next: run on one machine beside Product Authority."
+      "updatedAt": "2026-11-15T15:59:38-06:00",
+      "text": "Personal use; first-class. Working on this Mac: ra-review <app>. Goal: periodic critique of every product; integrate with Screenker."
     },
     "local-model-lab": {
       "focus": "parked",
@@ -142,9 +142,9 @@
       "updatedAt": "2026-11-15T15:06:16-06:00"
     },
     "product-authority": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T15:06:16-06:00",
-      "text": "Stopped 2026-11-15 (agents disabled). To be set up beside Review Authority on one machine after a concept review."
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:59:38-06:00",
+      "text": "Running on this Mac, local only, beside Review Authority."
     },
     "systrix": {
       "focus": "now",
@@ -155,6 +155,10 @@
       "focus": "maint",
       "updatedAt": "2026-11-15T15:17:20-06:00",
       "text": "Sleeps when idle. Revisit always-on after DoubleQross 1.2 ships."
+    },
+    "masterindex": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:59:11-06:00"
     }
   }
 }
