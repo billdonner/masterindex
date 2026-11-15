@@ -165,7 +165,10 @@ def build_rows(root: Path, *, include_all: bool, inspect_local: bool) -> tuple[l
 
 
 # ANSI styles. Colour is used only on a terminal, and never when NO_COLOR is set.
-STYLE = {"bold": "1", "dim": "2", "red": "31", "green": "32", "yellow": "33", "blue": "34", "cyan": "36", "bold green": "1;32"}
+# Fixed 256-colour codes rather than the terminal's 16 theme colours: many themes
+# (Ghostty's default included) render "green" as a muted olive.
+STYLE = {"bold": "1", "dim": "2", "red": "38;5;196", "green": "38;5;46", "yellow": "38;5;220", "blue": "38;5;39",
+         "cyan": "38;5;51", "bold green": "1;38;5;46"}
 FOCUS_STYLE = {"now": "bold green", "maint": "blue", "parked": "dim", "": "yellow"}
 
 
@@ -207,7 +210,7 @@ def render(rows: list[dict[str, Any]], metadata: dict[str, Any], *, clear: bool 
             (f"{number:>2}", "dim" if parked else ""),
             (f"{row['focus'] or '·':<6}", focus_style),
             (f"{truncate(row['session'], 12):<12}", "dim" if parked else ("cyan" if row["session"] else "")),
-            (f"{truncate(row['name'], name_width):<{name_width}}", "bold" if row["focus"] == "now" else focus_style if parked else ""),
+            (f"{truncate(row['name'], name_width):<{name_width}}", "bold green" if row["focus"] == "now" else focus_style if parked else ""),
             (f"{truncate(status, status_width):<{status_width}}", "dim" if parked else ""),
             (f"{truncate(row['local'], local_width):<{local_width}}", local_style(row["local"]) or ("dim" if parked else "")),
             (f"{truncate(row['work'], work_width):<{work_width}}", "dim" if parked or row["work"].startswith("0 ") else ""),
