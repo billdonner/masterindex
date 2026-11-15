@@ -1550,9 +1550,9 @@
       "cluster": "Household Communications",
       "program": "household-communications",
       "programRole": "active-successor-prototype",
-      "status": "active-prototype",
+      "status": "retired",
       "productLine": "billdonner-free",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-11-15",
       "repo": "~/Documents/Codex/Experiments/SharedSpaceLab",
       "bundleId": "com.1041soft.experiments.sharedspacelab",
       "release": "ASC iOS + macOS 1.0 PREPARE_FOR_SUBMISSION; GitHub project 0.1 (2) supports Mac Catalyst; no uploaded ASC builds",
@@ -1567,6 +1567,7 @@
         "github": "https://github.com/billdonner/sharedspacelab"
       },
       "notes": [
+        "2026-11-15: retired by owner decision. The Apple home-display strategy now runs through the Systrix project. Source is kept for reuse there: private GitHub repository https://github.com/billdonner/sharedspacelab and full-history bundle ~/archive/bundles/sharedspacelab-20261115.bundle. The recorded local clone under ~/Documents/Codex/Experiments is no longer on this Mac.",
         "The current runtime is deliberately independent of Nagz, Famster, PickledBalls, accounts, and remote backends; that is a technical boundary, not a denial of product lineage.",
         "Provides adaptive iPhone/iPad household UI, nearby peer chat through Multipeer Connectivity, family broadcasts, commitments, roles, schedules, two-person lifecycles, and multi-person rehearsals.",
         "The repository reports 52 tests, includes a local MCP server and harness, and supports Mac Catalyst rather than a native Mac target.",
@@ -1579,8 +1580,8 @@
       "name": "ConversationLab",
       "kind": "package",
       "cluster": "Household Communications",
-      "status": "lab",
-      "lastModified": "2026-08-05",
+      "status": "retired",
+      "lastModified": "2026-11-15",
       "repo": "~/Documents/Codex/Experiments/ConversationLab",
       "bundleId": null,
       "release": "Local clone verified at ~/Documents/Codex/Experiments/ConversationLab",
@@ -1593,6 +1594,7 @@
         "github": "https://github.com/billdonner/conversationlab"
       },
       "notes": [
+        "2026-11-15: retired by owner decision. The Apple home-display strategy now runs through the Systrix project. Source is kept for reuse there: private GitHub repository https://github.com/billdonner/conversationlab and full-history bundle ~/archive/bundles/conversationlab-20261115.bundle. The recorded local clone under ~/Documents/Codex/Experiments is no longer on this Mac.",
         "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product."
       ]
     },
@@ -1601,8 +1603,8 @@
       "name": "CoordinationLab",
       "kind": "package",
       "cluster": "Household Communications",
-      "status": "lab",
-      "lastModified": "2026-08-05",
+      "status": "retired",
+      "lastModified": "2026-11-15",
       "repo": "~/Documents/Codex/Experiments/CoordinationLab",
       "bundleId": null,
       "release": "Local clone verified at ~/Documents/Codex/Experiments/CoordinationLab",
@@ -1615,6 +1617,7 @@
         "github": "https://github.com/billdonner/coordinationlab"
       },
       "notes": [
+        "2026-11-15: retired by owner decision. The Apple home-display strategy now runs through the Systrix project. Source is kept for reuse there: private GitHub repository https://github.com/billdonner/coordinationlab and full-history bundle ~/archive/bundles/coordinationlab-20261115.bundle. The recorded local clone under ~/Documents/Codex/Experiments is no longer on this Mac.",
         "Created July 31, 2026 and cloned locally; preserve as a reusable kernel rather than a standalone product."
       ]
     },
