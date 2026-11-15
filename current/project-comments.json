@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T15:05:10-06:00",
+  "generatedAt": "2026-11-15T15:06:16-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -129,6 +129,32 @@
       "focus": "maint",
       "updatedAt": "2026-11-15T15:05:10-06:00",
       "text": "Personal use; a first-class project. Rescued from the M1 to this Mac and GitHub (2026-11-15). Next: run on one machine beside Product Authority."
+    },
+    "local-model-lab": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T15:06:16-06:00"
+    },
+    "app-feedback-inbox": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:06:16-06:00",
+      "text": "Working: collects every 2 hours, dashboard at 127.0.0.1:4317. Unfinished: backup key was never set up on this Mac."
+    },
+    "company-site-1041soft": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:06:16-06:00"
+    },
+    "portfolio-app-directory": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:06:16-06:00"
+    },
+    "oenora-recognition-service": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:06:16-06:00"
+    },
+    "product-authority": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T15:06:16-06:00",
+      "text": "Stopped 2026-11-15 (agents disabled). To be set up beside Review Authority on one machine after a concept review."
     }
   }
 }

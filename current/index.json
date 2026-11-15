@@ -2031,6 +2031,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: stopped by owner decision. Both launchd agents (com.billdonner.product-authority, com.billdonner.exchange-poll) are booted out and disabled so they stay off across logins; port 9820 is closed. resume.sh now re-enables them before loading.",
         "2026-11-15 observed: despite the recorded 2026-08-30 mothball, launchd agent com.billdonner.product-authority is running on this Mac and port 9820 answers (403 to a non-allowlisted peer). Its peer allowlist still names 192.168.1.220, which no longer answers; the M1 is now at 192.168.1.202. Nothing is using it.",
         "Serves http://192.168.1.104:9820 under launchd com.billdonner.product-authority; counterpart to review-authority on the M1 at 192.168.1.220.",
         "Read-only by construction: every git call passes an allowlist (rev-parse, log, show, status, diff, ls-files, describe, config, branch, cat-file) and runs with --no-optional-locks. Verified that HEAD, branch, status, index mtime, reflog and stash are unchanged across a maximal evidence sweep.",
