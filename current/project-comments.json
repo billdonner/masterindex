@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T15:11:25-06:00",
+  "generatedAt": "2026-11-15T15:17:20-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -150,6 +150,11 @@
       "focus": "now",
       "updatedAt": "2026-11-15T15:11:25-06:00",
       "text": "Updated only when another app requires it. Home of the monitoring rebuild and the Apple home-display strategy. No commits yet."
+    },
+    "card-engine-backend": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T15:17:20-06:00",
+      "text": "Sleeps when idle. Revisit always-on after DoubleQross 1.2 ships."
     }
   }
 }
