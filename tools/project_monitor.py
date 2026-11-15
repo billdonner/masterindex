@@ -33,6 +33,7 @@ def read_json(path: Path) -> dict[str, Any]:
 
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
     # Sorted keys and " : " match what the iOS app writes, so the two writers do not reformat each other's work.
     text = json.dumps(data, indent=2, ensure_ascii=False, sort_keys=True, separators=(",", " : "))
