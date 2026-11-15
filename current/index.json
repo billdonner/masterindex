@@ -2039,9 +2039,11 @@
       ],
       "links": {
         "website": "https://claude.ai/code/artifact/0eccaeca-7a85-4579-9c1f-a1431a4996f3",
-        "appStore": null
+        "appStore": null,
+        "github": "https://github.com/billdonner/product-authority"
       },
       "notes": [
+        "2026-11-15: pushed to a new private GitHub repository; previously ~/ProductAuthority was the only copy.",
         "2026-11-15: stopped by owner decision. Both launchd agents (com.billdonner.product-authority, com.billdonner.exchange-poll) are booted out and disabled so they stay off across logins; port 9820 is closed. resume.sh now re-enables them before loading.",
         "2026-11-15 observed: despite the recorded 2026-08-30 mothball, launchd agent com.billdonner.product-authority is running on this Mac and port 9820 answers (403 to a non-allowlisted peer). Its peer allowlist still names 192.168.1.220, which no longer answers; the M1 is now at 192.168.1.202. Nothing is using it.",
         "Serves http://192.168.1.104:9820 under launchd com.billdonner.product-authority; counterpart to review-authority on the M1 at 192.168.1.220.",
@@ -2385,14 +2387,16 @@
       "lastModified": "2026-11-15",
       "repo": "~/systrix",
       "bundleId": null,
-      "release": "Local prototype only; nothing deployed. The Git repository at ~/systrix has no commits yet and no remote (observed 2026-11-15).",
+      "release": "Local prototype only; nothing deployed. First commit made and pushed to a private GitHub repository 2026-11-15; swift build succeeds.",
       "description": "Server-first metrics collection, monitoring and declarative dashboard framework for 1041soft: a continuously running Core service, an optional Mac administration app, and display clients for iOS, widgets and Apple home displays.",
       "dependencies": [],
       "links": {
         "website": null,
-        "appStore": null
+        "appStore": null,
+        "github": "https://github.com/billdonner/systrix"
       },
       "notes": [
+        "2026-11-15: flywall (~/flywall) now has its own private repository, github.com/billdonner/flywall. Its nested working clone of server-monitor is not part of that repo; that work is preserved on the flywall-next branch of billdonner/server-monitor.",
         "2026-11-15 (owner): Systrix carries the Apple home-display strategy that SharedSpaceLab previously held, and is the intended home of the monitoring rebuild that replaces server-monitor. It is updated when one of the other apps requires it rather than on its own schedule.",
         "2026-11-15 (owner): App Feedback and the other terminal monitors may later be integrated here or into a combined monitor. flywall (the local Fly Infrastructure Desk at ~/flywall, not under version control) is kept separate for now.",
         "Local prototype per README: SQLite registry and observation storage, collector leases, loopback-only Core API, YAML dashboard decoder/validator; optional live Fly Machine collector via FLY_API_TOKEN."
