@@ -1,167 +1,168 @@
 {
-  "generatedAt": "2026-11-15T16:49:52-06:00",
-  "schemaVersion": "1.0",
-  "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
-  "comments": {
-    "murdl-app": {
-      "text": "In the App Store. Working on the next version: multiuser.",
-      "updatedAt": "2026-11-15T14:20:52-06:00",
-      "focus": "now"
+  "comments" : {
+    "adosocial-app" : {
+      "focus" : "maint",
+      "text" : "Keep around.",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "qross-app": {
-      "text": "1.1 distributing (IAP for the expanded database). Working on multiuser. After 1.2 ships: revisit whether cardzerver should be always-on.",
-      "updatedAt": "2026-11-15T14:42:38-06:00",
-      "focus": "now"
+    "amenbeats-app" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:23:41-06:00"
     },
-    "picklefamilia-umbrella": {
-      "text": "One umbrella: iOS Companion, Android, web app, engine, Twilio. Track the whole family here.",
-      "updatedAt": "2026-11-15T14:20:52-06:00",
-      "focus": "now"
+    "app-feedback-inbox" : {
+      "focus" : "maint",
+      "text" : "Working: collects every 2 hours, backups on. Dashboard at 127.0.0.1:4317. Wants a terminal interface like the other monitors; later a combined monitor or Systrix.",
+      "updatedAt" : "2026-11-15T15:45:20-06:00"
     },
-    "collective-engine": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:20:52-06:00"
+    "burfords-app" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:23:41-06:00"
     },
-    "pickledballs-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:20:52-06:00"
+    "card-engine-backend" : {
+      "focus" : "maint",
+      "text" : "Sleeps when idle. Revisit always-on after DoubleQross 1.2 ships.",
+      "updatedAt" : "2026-11-15T15:17:20-06:00"
     },
-    "picklefamilia-core": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:20:52-06:00"
+    "collective-comms" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:20:52-06:00"
     },
-    "collective-console": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:20:52-06:00"
+    "collective-console" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:20:52-06:00"
     },
-    "collective-comms": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:20:52-06:00"
+    "collective-engine" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:20:52-06:00"
     },
-    "screenker-asc-app": {
-      "focus": "now",
-      "updatedAt": "2026-11-15T15:11:25-06:00",
-      "text": "Staying in testing. Re-examine its relationship with MCP and with the apps, so everything needed can be orchestrated."
+    "company-site-1041soft" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T15:06:16-06:00"
     },
-    "expunger-app": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T14:23:40-06:00",
-      "text": "Test program; unlikely to go beyond TestFlight."
+    "expunger-app" : {
+      "focus" : "parked",
+      "text" : "Test program; unlikely to go beyond TestFlight.",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "adosocial-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:23:40-06:00",
-      "text": "Keep around."
+    "grubber-app" : {
+      "focus" : "maint",
+      "text" : "Lost interest for now; could be parked.",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "pfolio-app": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T14:23:40-06:00"
+    "grubber-service" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:42:38-06:00"
     },
-    "kinflash-app": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T14:23:40-06:00",
-      "text": "Bring into active development very soon."
+    "hoabooklet-app" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "kinflash-studio": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T14:23:40-06:00",
-      "text": "Bring into active development very soon."
+    "kinflash-app" : {
+      "focus" : "parked",
+      "text" : "Bring into active development very soon.",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "oenora-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:23:40-06:00",
-      "text": "Will be worked on soon."
+    "kinflash-studio" : {
+      "focus" : "parked",
+      "text" : "Bring into active development very soon.",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "hoabooklet-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:23:40-06:00"
+    "local-model-lab" : {
+      "focus" : "parked",
+      "text" : "live test 1794783312",
+      "updatedAt" : "2026-11-15T16:55:12-06:00"
     },
-    "grubber-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:23:40-06:00",
-      "text": "Lost interest for now; could be parked."
+    "masterindex" : {
+      "focus" : "now",
+      "pin" : "1",
+      "text" : "The portfolio index, this monitor and session restore. Active while the portfolio rework is under way.",
+      "updatedAt" : "2026-11-15T16:07:26-06:00"
     },
-    "amenbeats-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:23:41-06:00"
+    "medcommons-dicom-viewer" : {
+      "focus" : "maint",
+      "text" : "Personal use; a first-class project all the same.",
+      "updatedAt" : "2026-11-15T15:03:42-06:00"
     },
-    "burfords-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:23:41-06:00"
+    "murdl-app" : {
+      "focus" : "now",
+      "text" : "In the App Store. Working on the next version: multiuser.",
+      "updatedAt" : "2026-11-15T14:20:52-06:00"
     },
-    "words123-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:23:41-06:00"
+    "oenora-app" : {
+      "focus" : "maint",
+      "text" : "Will be worked on soon.",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "workinon-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T16:49:52-06:00",
-      "text": "Now shows this project list on the phone (build 69). Next: edit from the phone, AI filtering, remove the old Focus product."
+    "oenora-recognition-service" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T15:06:16-06:00"
     },
-    "pfolio-backend": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T14:42:38-06:00"
+    "pfolio-app" : {
+      "focus" : "parked",
+      "updatedAt" : "2026-11-15T14:23:40-06:00"
     },
-    "grubber-service": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T14:42:38-06:00"
+    "pfolio-backend" : {
+      "focus" : "parked",
+      "updatedAt" : "2026-11-15T14:42:38-06:00"
     },
-    "xpensexpunger-app": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:03:41-06:00",
-      "text": "Personal use; a first-class project all the same."
+    "pickledballs-app" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:20:52-06:00"
     },
-    "medcommons-dicom-viewer": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:03:42-06:00",
-      "text": "Personal use; a first-class project all the same."
+    "picklefamilia-core" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:20:52-06:00"
     },
-    "review-authority": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:59:38-06:00",
-      "text": "Personal use; first-class. Working on this Mac: ra-review <app>. Goal: periodic critique of every product; integrate with Screenker."
+    "picklefamilia-umbrella" : {
+      "focus" : "now",
+      "text" : "One umbrella: iOS Companion, Android, web app, engine, Twilio. Track the whole family here.",
+      "updatedAt" : "2026-11-15T14:20:52-06:00"
     },
-    "local-model-lab": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T15:06:16-06:00"
+    "portfolio-app-directory" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T15:06:16-06:00"
     },
-    "app-feedback-inbox": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:45:20-06:00",
-      "text": "Working: collects every 2 hours, backups on. Dashboard at 127.0.0.1:4317. Wants a terminal interface like the other monitors; later a combined monitor or Systrix."
+    "product-authority" : {
+      "focus" : "maint",
+      "text" : "Running on this Mac, local only, beside Review Authority.",
+      "updatedAt" : "2026-11-15T15:59:38-06:00"
     },
-    "company-site-1041soft": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:06:16-06:00"
+    "qross-app" : {
+      "focus" : "now",
+      "text" : "1.1 distributing (IAP for the expanded database). Working on multiuser. After 1.2 ships: revisit whether cardzerver should be always-on.",
+      "updatedAt" : "2026-11-15T14:42:38-06:00"
     },
-    "portfolio-app-directory": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:06:16-06:00"
+    "review-authority" : {
+      "focus" : "maint",
+      "text" : "Personal use; first-class. Working on this Mac: ra-review <app>. Goal: periodic critique of every product; integrate with Screenker.",
+      "updatedAt" : "2026-11-15T15:59:38-06:00"
     },
-    "oenora-recognition-service": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:06:16-06:00"
+    "screenker-asc-app" : {
+      "focus" : "now",
+      "text" : "Staying in testing. Re-examine its relationship with MCP and with the apps, so everything needed can be orchestrated.",
+      "updatedAt" : "2026-11-15T15:11:25-06:00"
     },
-    "product-authority": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:59:38-06:00",
-      "text": "Running on this Mac, local only, beside Review Authority."
+    "systrix" : {
+      "focus" : "now",
+      "text" : "Updated only when another app requires it. Home of the monitoring rebuild and the Apple home-display strategy.",
+      "updatedAt" : "2026-11-15T15:23:39-06:00"
     },
-    "systrix": {
-      "focus": "now",
-      "updatedAt": "2026-11-15T15:23:39-06:00",
-      "text": "Updated only when another app requires it. Home of the monitoring rebuild and the Apple home-display strategy."
+    "words123-app" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T14:23:41-06:00"
     },
-    "card-engine-backend": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:17:20-06:00",
-      "text": "Sleeps when idle. Revisit always-on after DoubleQross 1.2 ships."
+    "workinon-app" : {
+      "focus" : "maint",
+      "text" : "Now shows this project list on the phone (build 69). Next: edit from the phone, AI filtering, remove the old Focus product.",
+      "updatedAt" : "2026-11-15T16:49:52-06:00"
     },
-    "masterindex": {
-      "focus": "now",
-      "updatedAt": "2026-11-15T16:07:26-06:00",
-      "pin": "1",
-      "text": "The portfolio index, this monitor and session restore. Active while the portfolio rework is under way."
+    "xpensexpunger-app" : {
+      "focus" : "maint",
+      "text" : "Personal use; a first-class project all the same.",
+      "updatedAt" : "2026-11-15T15:03:41-06:00"
     }
-  }
+  },
+  "description" : "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
+  "generatedAt" : "2026-11-15T16:55:12-06:00",
+  "schemaVersion" : "1.0"
 }
