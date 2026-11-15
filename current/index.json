@@ -1361,6 +1361,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: the stopped daily scheduled machine grubber-brands-tick (last ran 2026-08-29) was destroyed by owner decision; its configuration is saved at ~/archive/fly-machine-configs/bd-grubber-brands-tick-20261115.txt. bd-grubber now has one machine.",
         "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
         "On wake the service re-downloads grubber.db (about 430 MB) from object storage, so database-backed endpoints are unavailable for roughly 30 seconds or more after a cold start; /healthz answers immediately.",
         "Public API and MCP are treated as the stable contract.",
@@ -1517,7 +1518,7 @@
       "name": "server-monitor",
       "kind": "service",
       "cluster": "PickledBalls",
-      "status": "live",
+      "status": "parked",
       "lastModified": "2026-11-15",
       "repo": "~/server-monitor",
       "bundleId": null,
@@ -1534,6 +1535,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: parked by owner decision while monitoring is rebuilt. The Fly machine is stopped and set not to auto-start, so requests to bd-server-monitor.fly.dev fail until it is started manually (fly machine start 8d9995aede1728 -a bd-server-monitor). It no longer probes or wakes other services.",
         "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
         "While awake the monitor probes Card Engine every 15 s and Grubber every 60 s, which keeps those machines awake; they can only sleep when the monitor itself is asleep.",
         "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
@@ -2486,11 +2488,11 @@
     {
       "name": "bd-server-monitor.fly.dev",
       "repo": "~/server-monitor",
-      "status": "live",
+      "status": "parked",
       "consumers": [
         "operations and monitoring"
       ],
-      "note": "Sleeps when idle since 2026-11-15. Seven-target production config verified live with current Nagzerver and Card Engine probes; Clubsync is intentionally omitted."
+      "note": "Parked 2026-11-15: machine stopped, auto-start off. Sleeps when idle since 2026-11-15. Seven-target production config verified live with current Nagzerver and Card Engine probes; Clubsync is intentionally omitted."
     },
     {
       "name": "api.famster.app",
