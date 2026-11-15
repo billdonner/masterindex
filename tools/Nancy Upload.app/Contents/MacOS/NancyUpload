@@ -1,0 +1,6 @@
+#!/bin/zsh
+# Finder launcher for Nancy's password-protected IONOS uploader.
+set -eu
+launcher_dir="${0:A:h}"
+export NANCY_GUI=1
+exec "$launcher_dir/nancy-sftp-upload.command"
