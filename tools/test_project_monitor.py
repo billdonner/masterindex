@@ -1,0 +1,57 @@
+"""Non-destructive checks for the terminal monitor and its comment ledger."""
+
+import importlib.util
+import json
+import tempfile
+from pathlib import Path
+
+MODULE_PATH = Path(__file__).with_name("project_monitor.py")
+SPEC = importlib.util.spec_from_file_location("project_monitor", MODULE_PATH)
+monitor = importlib.util.module_from_spec(SPEC)
+SPEC.loader.exec_module(monitor)
+
+
+def write(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(value), encoding="utf-8")
+
+
+def main():
+    with tempfile.TemporaryDirectory() as directory:
+        root = Path(directory)
+        write(root / "current" / "index.json", {"generatedAt": "2026-01-01", "entities": [
+            {"id": "active-app", "name": "Active App", "kind": "app", "status": "active", "lastModified": "2026-01-01", "repo": None},
+            {"id": "retired-app", "name": "Retired App", "kind": "app", "status": "retired", "lastModified": "2025-01-01", "repo": None}
+        ]})
+        write(root / "tasks" / "index.json", {"entryTasks": {"active-app": [{"status": "active"}]}})
+        write(root / "current" / "handoffs" / "index.json", {"directives": [{"status": "active", "targets": ["active"]}]})
+        monitor.set_comment(root, "active-app", "Check screenshots")
+        rows, _ = monitor.build_rows(root, include_all=False, inspect_local=False)
+        assert len(rows) == 1 and rows[0]["comment"] == "Check screenshots" and rows[0]["work"] == "1 task H"
+        rows, _ = monitor.build_rows(root, include_all=True, inspect_local=False)
+        assert len(rows) == 2
+        # Focus is kept when the comment is cleared, and "now" sorts ahead of newer unfocused work.
+        monitor.set_focus(root, "retired-app", "now")
+        monitor.set_focus(root, "active-app", "parked")
+        monitor.set_comment(root, "active-app", "")
+        comments = monitor.load_comments(root)
+        assert monitor.comment_text(comments, "active-app") == "" and monitor.focus_of(comments, "active-app") == "parked"
+        rows, _ = monitor.build_rows(root, include_all=True, inspect_local=False)
+        assert [row["id"] for row in rows] == ["retired-app", "active-app"]
+        monitor.set_focus(root, "active-app", "none")
+        assert "active-app" not in monitor.load_comments(root)["comments"]
+        try:
+            monitor.set_focus(root, "active-app", "urgent")
+            raise AssertionError("an unknown focus tier must be rejected")
+        except ValueError:
+            pass
+        # An open agent session is matched to its project by directory, ignoring case.
+        open_sessions = monitor.sessions_by_repo([
+            {"agent": "codex", "cwd": str(Path.home() / "Demo")}, {"agent": "claude", "cwd": str(Path.home() / "demo")}])
+        assert monitor.open_session("~/demo", open_sessions) == "claude+codex"
+        assert monitor.open_session("~/other", open_sessions) == "" and monitor.open_session(None, open_sessions) == ""
+    print("Project monitor tests passed")
+
+
+if __name__ == "__main__":
+    main()
