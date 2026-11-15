@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-11-15",
+  "schemaVersion": "1.0",
+  "description": "Invented tasks for the staging index.",
+  "globalTasks": [],
+  "entryTasks": {
+    "alpha-app": [
+      {
+        "taskId": "alpha-check",
+        "name": "Alpha check",
+        "status": "active"
+      },
+      {
+        "taskId": "alpha-old",
+        "name": "Old",
+        "status": "retired"
+      }
+    ],
+    "charlie-site": [
+      {
+        "taskId": "charlie-links",
+        "name": "Links",
+        "status": "active"
+      }
+    ]
+  }
+}

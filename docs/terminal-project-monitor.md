@@ -82,3 +82,14 @@ monitor, and after each `--comment`, `--focus` or `--pin` command. Add
 
 The iOS app can edit the same ledger: it commits through GitHub. The monitor
 pulls those edits when it starts, on `r`, and before each edit command.
+
+## Other indexes
+
+Nothing in the monitor is tied to this repository's index. `--root PATH` works
+on any folder with the same layout (`current/index.json`, `tasks/index.json`,
+`current/handoffs/index.json`), with its own ledger. `staging/` is one: an
+invented index for testing.
+
+Each published feed describes itself: it carries the index's `name` and a
+`ledger` entry (`repository` and `path`) saying where its edits are saved. A
+display therefore needs only the feed's address, and can show any index.

@@ -17,7 +17,7 @@ from typing import Any
 
 import agent_sessions
 
-ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_ROOT = Path(__file__).resolve().parents[1]
 HIDDEN_BY_DEFAULT = {"retired", "legacy", "legacy-reference", "reference-only", "stopped", "concept-only"}
 # Owner's attention, separate from recorded status. Value is the sort rank; unset sorts after "now".
 FOCUS_RANK = {"now": 0, "": 1, "maint": 2, "parked": 3}
@@ -178,10 +178,25 @@ def build_rows(root: Path, *, include_all: bool, inspect_local: bool) -> tuple[l
     rows.sort(key=lambda row: (row.get("modified") or "", row["name"] or ""), reverse=True)
     # Stable sorts: by focus tier, pinned projects first within a tier, then newest first.
     rows.sort(key=lambda row: (FOCUS_RANK[row["focus"]], not row["pin"]))
-    return rows, {"indexGeneratedAt": index.get("generatedAt"), "commentsUpdatedAt": comment_data.get("generatedAt")}
+    return rows, {"indexGeneratedAt": index.get("generatedAt"), "commentsUpdatedAt": comment_data.get("generatedAt"),
+                  "name": index.get("name") or "MasterIndex"}
 
 
-def export_feed(root: Path) -> dict[str, Any]:
+def ledger_location(root: Path) -> dict[str, str] | None:
+    """Where this index's owner ledger lives on GitHub, so a reader of the feed knows where edits go.
+
+    Derived from the Git checkout: the repository from the Actions environment or
+    the origin remote, the path from where this index sits inside the repository.
+    """
+    repository = os.environ.get("GITHUB_REPOSITORY", "")
+    if not repository:
+        match = re.search(r"github\.com[:/]([^/]+/[^/]+?)(?:\.git)?$", git(root, "remote", "get-url", "origin").stdout.strip())
+        repository = match.group(1) if match else ""
+    prefix = git(root, "rev-parse", "--show-prefix").stdout.strip()
+    return {"repository": repository, "path": f"{prefix}current/project-comments.json"} if repository else None
+
+
+def export_feed(root: Path, name: str | None = None) -> dict[str, Any]:
     """The monitor's list as portable JSON for other displays (the iOS app reads this).
 
     Same rows, same order as the terminal. Facts about this Mac (Git state, open
@@ -202,7 +217,9 @@ def export_feed(root: Path) -> dict[str, Any]:
             "latestNote": notes[0] if isinstance(notes, list) and notes else None,
             "links": {name: url for name, url in (entity.get("links") or {}).items() if isinstance(url, str) and url.startswith("http")},
         })
-    return {"schemaVersion": "1.0", "generatedAt": now(), "indexGeneratedAt": metadata["indexGeneratedAt"],
+    # The feed describes itself: its name and where its edits are saved. A reader needs only this file's address.
+    return {"schemaVersion": "1.1", "name": name or metadata["name"],
+            "ledger": ledger_location(root), "generatedAt": now(), "indexGeneratedAt": metadata["indexGeneratedAt"],
             "nowLimit": NOW_LIMIT, "projects": projects}
 
 
@@ -261,7 +278,7 @@ def render(rows: list[dict[str, Any]], metadata: dict[str, Any], *, clear: bool 
     name_width, status_width, local_width, work_width = 25, 23, 24, 11
     fixed = name_width + status_width + local_width + work_width + 45
     comment_width = max(18, width - fixed)
-    print(paint(f"MasterIndex Project Monitor  ·  {len(rows)} shown  ·  recorded inventory {metadata['indexGeneratedAt']}  ·  refreshed {now()}", "bold", color))
+    print(paint(f"{metadata['name']} Project Monitor  ·  {len(rows)} shown  ·  recorded inventory {metadata['indexGeneratedAt']}  ·  refreshed {now()}", "bold", color))
     in_focus = sum(row["focus"] == "now" for row in rows)
     over = f" — over your limit of {NOW_LIMIT}, park something" if in_focus > NOW_LIMIT else ""
     print(paint(f"Focus now: {in_focus}{over}", "red" if over else "bold green", color)
@@ -371,13 +388,17 @@ def main() -> None:
     parser.add_argument("--interactive", action="store_true", help="Keep the monitor open and accept comment commands.")
     parser.add_argument("--watch", type=int, metavar="SECONDS", help="Refresh the read-only display repeatedly; implies non-interactive mode.")
     parser.add_argument("--comment", nargs=2, metavar=("ENTITY_ID", "TEXT"), help="Set a comment without opening the interactive monitor.")
+    parser.add_argument("--root", metavar="PATH", type=Path, default=DEFAULT_ROOT,
+                        help="The index to work on: a folder holding current/ and tasks/. Defaults to this repository.")
+    parser.add_argument("--name", help="With --export: the index's display name (default: the index's own name, or MasterIndex).")
     parser.add_argument("--export", metavar="PATH", help="Write the list as JSON for other displays and exit.")
     parser.add_argument("--no-publish", action="store_true", help="Do not commit and push owner edits.")
     parser.add_argument("--pin", metavar="ENTITY_ID", help="Pin a project to the top of its focus tier, or unpin it.")
     parser.add_argument("--focus", nargs=2, metavar=("ENTITY_ID", "TIER"), help="Set your focus on a project: now, maint, parked, or none.")
     arguments = parser.parse_args()
+    ROOT = arguments.root.resolve()
     if arguments.export:
-        write_json(Path(arguments.export), export_feed(ROOT))
+        write_json(Path(arguments.export).resolve(), export_feed(ROOT, arguments.name))
         return
     if arguments.pin or arguments.comment or arguments.focus:
         sync_from_remote(ROOT)

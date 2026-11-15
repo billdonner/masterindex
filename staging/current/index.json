@@ -1,0 +1,145 @@
+{
+  "name": "Staging",
+  "generatedAt": "2026-11-15",
+  "scope": {
+    "notes": [
+      "An invented index for testing and staging. Nothing here is real."
+    ]
+  },
+  "summary": {},
+  "ascApps": {},
+  "clusters": [
+    {
+      "name": "Staging"
+    }
+  ],
+  "services": [],
+  "repos": [],
+  "gaps": [],
+  "entities": [
+    {
+      "id": "alpha-app",
+      "name": "Alpha App",
+      "kind": "app",
+      "cluster": "Staging",
+      "status": "live",
+      "lastModified": "2026-11-15",
+      "repo": null,
+      "bundleId": null,
+      "release": "Alpha App: invented release text for testing.",
+      "description": "An invented iOS app that is being worked on.",
+      "dependencies": [],
+      "links": {
+        "appStore": "https://example.com/alpha",
+        "website": "https://example.com"
+      },
+      "notes": [
+        "Alpha App: invented note."
+      ]
+    },
+    {
+      "id": "bravo-service",
+      "name": "Bravo Service",
+      "kind": "service",
+      "cluster": "Staging",
+      "status": "development",
+      "lastModified": "2026-11-14",
+      "repo": null,
+      "bundleId": null,
+      "release": "Bravo Service: invented release text for testing.",
+      "description": "An invented backend service.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "Bravo Service: invented note."
+      ]
+    },
+    {
+      "id": "charlie-site",
+      "name": "Charlie Site",
+      "kind": "website",
+      "cluster": "Staging",
+      "status": "live",
+      "lastModified": "2026-11-01",
+      "repo": null,
+      "bundleId": null,
+      "release": "Charlie Site: invented release text for testing.",
+      "description": "An invented website that only needs upkeep.",
+      "dependencies": [],
+      "links": {
+        "website": "https://example.com/charlie"
+      },
+      "notes": [
+        "Charlie Site: invented note."
+      ]
+    },
+    {
+      "id": "delta-tool",
+      "name": "Delta Tool",
+      "kind": "tool",
+      "cluster": "Staging",
+      "status": "active",
+      "lastModified": "2026-10-20",
+      "repo": null,
+      "bundleId": null,
+      "release": "Delta Tool: invented release text for testing.",
+      "description": "An invented command-line tool.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "Delta Tool: invented note."
+      ]
+    },
+    {
+      "id": "echo-library",
+      "name": "Echo Library",
+      "kind": "library",
+      "cluster": "Staging",
+      "status": "parked",
+      "lastModified": "2026-09-05",
+      "repo": null,
+      "bundleId": null,
+      "release": "Echo Library: invented release text for testing.",
+      "description": "An invented library that is shelved.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "Echo Library: invented note."
+      ]
+    },
+    {
+      "id": "foxtrot-app",
+      "name": "Foxtrot App",
+      "kind": "app",
+      "cluster": "Staging",
+      "status": "development",
+      "lastModified": "2026-11-10",
+      "repo": null,
+      "bundleId": null,
+      "release": "Foxtrot App: invented release text for testing.",
+      "description": "An invented app nobody has sorted yet.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "Foxtrot App: invented note."
+      ]
+    },
+    {
+      "id": "golf-legacy",
+      "name": "Golf Legacy",
+      "kind": "app",
+      "cluster": "Staging",
+      "status": "retired",
+      "lastModified": "2025-01-01",
+      "repo": null,
+      "bundleId": null,
+      "release": "Golf Legacy: invented release text for testing.",
+      "description": "An invented retired app; it must not appear in the list.",
+      "dependencies": [],
+      "links": {},
+      "notes": [
+        "Golf Legacy: invented note."
+      ]
+    }
+  ]
+}

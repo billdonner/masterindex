@@ -52,6 +52,8 @@ def main():
         feed = monitor.export_feed(root)
         first = feed["projects"][0]
         assert [project["id"] for project in feed["projects"]] == ["active-app"] and feed["nowLimit"] == monitor.NOW_LIMIT
+        # Outside a Git checkout there is nowhere to save edits, and the feed says so.
+        assert feed["name"] == "MasterIndex" and feed["ledger"] is None and monitor.export_feed(root, "Staging")["name"] == "Staging"
         assert first["focus"] == "now" and first["pinned"] is False and first["activeTasks"] == 1
         assert first["links"] == {"appStore": "https://example.com/app"} and first["latestNote"] == "newest"
         monitor.set_focus(root, "active-app", "none")

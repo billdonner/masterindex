@@ -1,0 +1,28 @@
+{
+  "comments" : {
+    "alpha-app" : {
+      "focus" : "now",
+      "pin" : "1",
+      "text" : "Ship the next build.",
+      "updatedAt" : "2026-11-15T17:07:10-06:00"
+    },
+    "bravo-service" : {
+      "focus" : "now",
+      "updatedAt" : "2026-11-15T17:07:06-06:00"
+    },
+    "charlie-site" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T17:07:07-06:00"
+    },
+    "delta-tool" : {
+      "focus" : "maint",
+      "updatedAt" : "2026-11-15T17:07:08-06:00"
+    },
+    "echo-library" : {
+      "focus" : "parked",
+      "updatedAt" : "2026-11-15T17:07:08-06:00"
+    }
+  },
+  "generatedAt" : "2026-11-15T17:07:10-06:00",
+  "schemaVersion" : "1.0"
+}
