@@ -79,3 +79,6 @@ So that the phone sees your edits, the monitor commits and pushes
 `current/project-comments.json` by itself: when you quit the interactive
 monitor, and after each `--comment`, `--focus` or `--pin` command. Add
 `--no-publish` to keep a change local.
+
+The iOS app can edit the same ledger: it commits through GitHub. The monitor
+pulls those edits when it starts, on `r`, and before each edit command.

@@ -34,7 +34,9 @@ def read_json(path: Path) -> dict[str, Any]:
 
 def write_json(path: Path, data: dict[str, Any]) -> None:
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    # Sorted keys and " : " match what the iOS app writes, so the two writers do not reformat each other's work.
+    text = json.dumps(data, indent=2, ensure_ascii=False, sort_keys=True, separators=(",", " : "))
+    temporary.write_text(text + "\n", encoding="utf-8")
     temporary.replace(path)
 
 
@@ -204,18 +206,29 @@ def export_feed(root: Path) -> dict[str, Any]:
             "nowLimit": NOW_LIMIT, "projects": projects}
 
 
+def git(root: Path, *arguments: str) -> subprocess.CompletedProcess[str]:
+    return subprocess.run(["git", *arguments], cwd=root, text=True, capture_output=True, timeout=60, check=False)
+
+
+def sync_from_remote(root: Path) -> bool:
+    """Bring in edits made elsewhere (the iOS app commits the ledger through GitHub)."""
+    try:
+        return git(root, "pull", "--rebase", "--autostash", "--quiet").returncode == 0
+    except (OSError, subprocess.TimeoutExpired):
+        return False
+
+
 def publish_owner_edits(root: Path) -> str:
     """Commit and push the owner ledger so other displays see focus, pins and notes."""
     ledger = "current/project-comments.json"
-    def git(*arguments: str) -> subprocess.CompletedProcess[str]:
-        return subprocess.run(["git", *arguments], cwd=root, text=True, capture_output=True, timeout=60, check=False)
-    if not git("status", "--porcelain", "--", ledger).stdout.strip():
+    if not git(root, "status", "--porcelain", "--", ledger).stdout.strip():
         return ""
-    if git("commit", "-m", "Owner focus and notes update (project monitor)", "--", ledger).returncode:
-        return "Could not commit your changes; they are saved locally."
-    if git("push").returncode:
-        return "Saved and committed, but the push failed; run git push in ~/masterindex."
-    return "Published your changes."
+    if git(root, "commit", "-m", "Owner focus and notes update (project monitor)", "--", ledger).returncode:
+        return "Could not commit your changes; they are saved locally.\n"
+    sync_from_remote(root)
+    if git(root, "push").returncode:
+        return "Saved and committed, but the push failed; run git push in ~/masterindex.\n"
+    return "Published your changes.\n"
 
 
 # ANSI styles. Colour is used only on a terminal, and never when NO_COLOR is set.
@@ -281,12 +294,13 @@ def resolve_row(rows: list[dict[str, Any]], reference: str) -> dict[str, Any] | 
 
 
 def interactive(root: Path, include_all: bool, inspect_local: bool) -> None:
+    sync_from_remote(root)
     try:
         interactive_loop(root, include_all, inspect_local)
     finally:
         message = publish_owner_edits(root)
         if message:
-            print(message)
+            print(message, end="")
 
 
 def interactive_loop(root: Path, include_all: bool, inspect_local: bool) -> None:
@@ -302,6 +316,7 @@ def interactive_loop(root: Path, include_all: bool, inspect_local: bool) -> None
         if command in {"q", "quit", "exit"}:
             return
         if command in {"r", "refresh", ""}:
+            sync_from_remote(root)
             continue
         if command in {"a", "all"}:
             include_all = not include_all
@@ -364,6 +379,8 @@ def main() -> None:
     if arguments.export:
         write_json(Path(arguments.export), export_feed(ROOT))
         return
+    if arguments.pin or arguments.comment or arguments.focus:
+        sync_from_remote(ROOT)
     if arguments.pin:
         index = read_json(ROOT / "current" / "index.json")
         if arguments.pin not in {entity["id"] for entity in index.get("entities", [])}:
