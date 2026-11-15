@@ -1,11 +1,12 @@
 {
-  "generatedAt": "2026-11-15T14:20:52-06:00",
+  "generatedAt": "2026-11-15T14:23:41-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
     "zerver-monitor-asc-app": {
-      "text": "should retire",
-      "updatedAt": "2026-11-12T14:13:56-06:00"
+      "text": "Should retire; to be replaced by whatever monitoring comes out of the portfolio rework.",
+      "updatedAt": "2026-11-15T14:23:41-06:00",
+      "focus": "parked"
     },
     "murdl-app": {
       "text": "In the App Store. Working on the next version: multiuser.",
@@ -41,6 +42,65 @@
     "collective-comms": {
       "focus": "maint",
       "updatedAt": "2026-11-15T14:20:52-06:00"
+    },
+    "screenker-asc-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:40-06:00",
+      "text": "Staying in testing for a while."
+    },
+    "expunger-app": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T14:23:40-06:00",
+      "text": "Test program; unlikely to go beyond TestFlight."
+    },
+    "adosocial-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:40-06:00",
+      "text": "Keep around."
+    },
+    "pfolio-app": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T14:23:40-06:00"
+    },
+    "kinflash-app": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T14:23:40-06:00",
+      "text": "Bring into active development very soon."
+    },
+    "kinflash-studio": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T14:23:40-06:00",
+      "text": "Bring into active development very soon."
+    },
+    "oenora-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:40-06:00",
+      "text": "Will be worked on soon."
+    },
+    "hoabooklet-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:40-06:00"
+    },
+    "grubber-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:40-06:00",
+      "text": "Lost interest for now; could be parked."
+    },
+    "amenbeats-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:41-06:00"
+    },
+    "burfords-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:41-06:00"
+    },
+    "words123-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:23:41-06:00"
+    },
+    "workinon-app": {
+      "focus": "parked",
+      "updatedAt": "2026-11-15T14:23:41-06:00"
     }
   }
 }
