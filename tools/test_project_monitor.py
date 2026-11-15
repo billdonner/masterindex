@@ -44,6 +44,16 @@ def main():
         rows, _ = monitor.build_rows(root, include_all=True, inspect_local=False)
         assert [row["id"] for row in rows] == ["active-app", "retired-app"] and rows[0]["pin"]
         assert monitor.toggle_pin(root, "active-app") is False
+        # The exported feed carries the same order and owner fields, and only real links.
+        index_path = root / "current" / "index.json"
+        index = json.loads(index_path.read_text())
+        index["entities"][0].update({"links": {"appStore": "https://example.com/app", "website": None}, "notes": ["newest", "older"]})
+        write(index_path, index)
+        feed = monitor.export_feed(root)
+        first = feed["projects"][0]
+        assert [project["id"] for project in feed["projects"]] == ["active-app"] and feed["nowLimit"] == monitor.NOW_LIMIT
+        assert first["focus"] == "now" and first["pinned"] is False and first["activeTasks"] == 1
+        assert first["links"] == {"appStore": "https://example.com/app"} and first["latestNote"] == "newest"
         monitor.set_focus(root, "active-app", "none")
         assert "active-app" not in monitor.load_comments(root)["comments"]
         try:

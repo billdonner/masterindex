@@ -9,6 +9,8 @@ on:
       - site/**
       - pickles/**
       - index.html
+      - tools/project_monitor.py
+      - tools/agent_sessions.py
       - .github/workflows/pages.yml
   workflow_dispatch:
 
@@ -34,6 +36,8 @@ jobs:
           mkdir _site
           cp index.html _site/
           cp -R site current tasks pickles _site/
+      - name: Build the project list feed (read by the iOS app)
+        run: python3 tools/project_monitor.py --export _site/current/monitor.json
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -61,3 +61,21 @@ session open right now (from `tools/agent_sessions.py`; see
 Comments and focus live in `current/project-comments.json`. They are owner-entered
 annotations, deliberately separate from verified facts in `current/index.json`,
 and are never treated as source evidence by a refresh agent.
+
+## The published list
+
+The same list is published as JSON for other displays, starting with the iOS
+app workin On:
+
+`https://billdonner.github.io/masterindex/current/monitor.json`
+
+The site workflow builds it on every push with
+`tools/project_monitor.py --export`, so it always matches the index and your
+ledger. It leaves out the two columns that are facts about this Mac (Git state
+and open agent sessions). The file is public, like the rest of this repository,
+so your focus tiers and comments are publicly readable.
+
+So that the phone sees your edits, the monitor commits and pushes
+`current/project-comments.json` by itself: when you quit the interactive
+monitor, and after each `--comment`, `--focus` or `--pin` command. Add
+`--no-publish` to keep a change local.

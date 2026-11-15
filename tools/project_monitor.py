@@ -165,6 +165,7 @@ def build_rows(root: Path, *, include_all: bool, inspect_local: bool) -> tuple[l
         tasks_count = len([task for task in tasks.get("entryTasks", {}).get(entity_id, []) if task.get("status") == "active"])
         handoff = "H" if handoff_matches(entity, active_handoff_targets) else ""
         rows.append({
+            "entity": entity, "tasks": tasks_count,
             "id": entity_id, "name": entity.get("name"), "kind": entity.get("kind"), "status": entity.get("status"),
             "modified": entity.get("lastModified"), "local": local_git_state(entity.get("repo")) if inspect_local else "not checked",
             "work": f"{tasks_count} task{'s' if tasks_count != 1 else ''}{' ' + handoff if handoff else ''}",
@@ -176,6 +177,45 @@ def build_rows(root: Path, *, include_all: bool, inspect_local: bool) -> tuple[l
     # Stable sorts: by focus tier, pinned projects first within a tier, then newest first.
     rows.sort(key=lambda row: (FOCUS_RANK[row["focus"]], not row["pin"]))
     return rows, {"indexGeneratedAt": index.get("generatedAt"), "commentsUpdatedAt": comment_data.get("generatedAt")}
+
+
+def export_feed(root: Path) -> dict[str, Any]:
+    """The monitor's list as portable JSON for other displays (the iOS app reads this).
+
+    Same rows, same order as the terminal. Facts about this Mac (Git state, open
+    agent sessions) are left out: the feed is built wherever the site is published.
+    """
+    rows, metadata = build_rows(root, include_all=False, inspect_local=False)
+    comments = load_comments(root).get("comments", {})
+    projects = []
+    for row in rows:
+        entity = row["entity"]
+        notes = entity.get("notes")
+        projects.append({
+            "id": row["id"], "name": row["name"], "kind": row["kind"], "status": row["status"],
+            "cluster": entity.get("cluster"), "focus": row["focus"], "pinned": row["pin"],
+            "comment": row["comment"], "commentUpdatedAt": (comments.get(row["id"]) or {}).get("updatedAt"),
+            "modified": row["modified"], "activeTasks": row["tasks"],
+            "description": entity.get("description"), "release": entity.get("release"),
+            "latestNote": notes[0] if isinstance(notes, list) and notes else None,
+            "links": {name: url for name, url in (entity.get("links") or {}).items() if isinstance(url, str) and url.startswith("http")},
+        })
+    return {"schemaVersion": "1.0", "generatedAt": now(), "indexGeneratedAt": metadata["indexGeneratedAt"],
+            "nowLimit": NOW_LIMIT, "projects": projects}
+
+
+def publish_owner_edits(root: Path) -> str:
+    """Commit and push the owner ledger so other displays see focus, pins and notes."""
+    ledger = "current/project-comments.json"
+    def git(*arguments: str) -> subprocess.CompletedProcess[str]:
+        return subprocess.run(["git", *arguments], cwd=root, text=True, capture_output=True, timeout=60, check=False)
+    if not git("status", "--porcelain", "--", ledger).stdout.strip():
+        return ""
+    if git("commit", "-m", "Owner focus and notes update (project monitor)", "--", ledger).returncode:
+        return "Could not commit your changes; they are saved locally."
+    if git("push").returncode:
+        return "Saved and committed, but the push failed; run git push in ~/masterindex."
+    return "Published your changes."
 
 
 # ANSI styles. Colour is used only on a terminal, and never when NO_COLOR is set.
@@ -241,6 +281,15 @@ def resolve_row(rows: list[dict[str, Any]], reference: str) -> dict[str, Any] | 
 
 
 def interactive(root: Path, include_all: bool, inspect_local: bool) -> None:
+    try:
+        interactive_loop(root, include_all, inspect_local)
+    finally:
+        message = publish_owner_edits(root)
+        if message:
+            print(message)
+
+
+def interactive_loop(root: Path, include_all: bool, inspect_local: bool) -> None:
     while True:
         rows, metadata = build_rows(root, include_all=include_all, inspect_local=inspect_local)
         render(rows, metadata, clear=True)
@@ -307,14 +356,20 @@ def main() -> None:
     parser.add_argument("--interactive", action="store_true", help="Keep the monitor open and accept comment commands.")
     parser.add_argument("--watch", type=int, metavar="SECONDS", help="Refresh the read-only display repeatedly; implies non-interactive mode.")
     parser.add_argument("--comment", nargs=2, metavar=("ENTITY_ID", "TEXT"), help="Set a comment without opening the interactive monitor.")
+    parser.add_argument("--export", metavar="PATH", help="Write the list as JSON for other displays and exit.")
+    parser.add_argument("--no-publish", action="store_true", help="Do not commit and push owner edits.")
     parser.add_argument("--pin", metavar="ENTITY_ID", help="Pin a project to the top of its focus tier, or unpin it.")
     parser.add_argument("--focus", nargs=2, metavar=("ENTITY_ID", "TIER"), help="Set your focus on a project: now, maint, parked, or none.")
     arguments = parser.parse_args()
+    if arguments.export:
+        write_json(Path(arguments.export), export_feed(ROOT))
+        return
     if arguments.pin:
         index = read_json(ROOT / "current" / "index.json")
         if arguments.pin not in {entity["id"] for entity in index.get("entities", [])}:
             parser.error(f"unknown entity id: {arguments.pin}")
         print(f"{'Pinned' if toggle_pin(ROOT, arguments.pin) else 'Unpinned'} {arguments.pin}.")
+        print("" if arguments.no_publish else publish_owner_edits(ROOT), end="")
         return
     if arguments.comment or arguments.focus:
         entity_id, value = arguments.comment or arguments.focus
@@ -326,6 +381,7 @@ def main() -> None:
         except ValueError as error:
             parser.error(str(error))
         print(f"Saved {'comment' if arguments.comment else 'focus'} for {entity_id}.")
+        print("" if arguments.no_publish else publish_owner_edits(ROOT), end="")
         return
     if arguments.interactive:
         interactive(ROOT, arguments.all, not arguments.no_local)
