@@ -194,8 +194,8 @@
     {
       "id": "household-communications",
       "name": "Household Communications",
-      "status": "active-reframing",
-      "activeDirection": "SharedSpaceLab",
+      "status": "retired-into-systrix",
+      "activeDirection": "Systrix",
       "legacyReference": "Nagz",
       "conceptShell": "Famster",
       "reusableKernels": [
@@ -208,6 +208,9 @@
         "Choose the eventual public product name and product line.",
         "Choose whether any server-backed identity, remote messaging, or APNs behavior should be migrated from Nagz after the local household model is proven.",
         "Do not expand Famster independently while SharedSpaceLab is the active successor experiment."
+      ],
+      "notes": [
+        "2026-11-15: SharedSpaceLab, ConversationLab and CoordinationLab retired by owner decision; the Apple home-display strategy now runs through Systrix. Their source is kept for reuse."
       ]
     }
   ],
@@ -2363,6 +2366,28 @@
         "familySite": "https://picklefamilia.com/"
       },
       "notes": []
+    },
+    {
+      "id": "systrix",
+      "name": "Systrix",
+      "kind": "service",
+      "cluster": "Infrastructure",
+      "status": "development",
+      "lastModified": "2026-11-15",
+      "repo": "~/systrix",
+      "bundleId": null,
+      "release": "Local prototype only; nothing deployed. The Git repository at ~/systrix has no commits yet and no remote (observed 2026-11-15).",
+      "description": "Server-first metrics collection, monitoring and declarative dashboard framework for 1041soft: a continuously running Core service, an optional Mac administration app, and display clients for iOS, widgets and Apple home displays.",
+      "dependencies": [],
+      "links": {
+        "website": null,
+        "appStore": null
+      },
+      "notes": [
+        "2026-11-15 (owner): Systrix carries the Apple home-display strategy that SharedSpaceLab previously held, and is the intended home of the monitoring rebuild that replaces server-monitor. It is updated when one of the other apps requires it rather than on its own schedule.",
+        "2026-11-15 (owner): App Feedback and the other terminal monitors may later be integrated here or into a combined monitor. flywall (the local Fly Infrastructure Desk at ~/flywall, not under version control) is kept separate for now.",
+        "Local prototype per README: SQLite registry and observation storage, collector leases, loopback-only Core API, YAML dashboard decoder/validator; optional live Fly Machine collector via FLY_API_TOKEN."
+      ]
     }
   ],
   "collaborators": [
