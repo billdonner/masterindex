@@ -42,7 +42,7 @@ monitor> f 4 none       # clear
 
 `now` projects sort to the top, then unsorted ones, then `maint`, then
 `parked`. The header counts your `now` projects and says so when there are more
-than five. From a shell: `project-monitor --focus qross-app now`.
+than six. From a shell: `project-monitor --focus qross-app now`.
 
 On a terminal the display is coloured: `now` in bold green, `maint` in blue,
 `parked` rows dimmed, a project with no focus yet in yellow, open agent

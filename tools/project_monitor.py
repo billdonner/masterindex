@@ -21,7 +21,7 @@ ROOT = Path(__file__).resolve().parents[1]
 HIDDEN_BY_DEFAULT = {"retired", "legacy", "legacy-reference", "reference-only", "stopped", "concept-only"}
 # Owner's attention, separate from recorded status. Value is the sort rank; unset sorts after "now".
 FOCUS_RANK = {"now": 0, "": 1, "maint": 2, "parked": 3}
-NOW_LIMIT = 5
+NOW_LIMIT = 6
 
 
 def now() -> str:
