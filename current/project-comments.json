@@ -3,11 +3,6 @@
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
-    "zerver-monitor-asc-app": {
-      "text": "Should retire; to be replaced by whatever monitoring comes out of the portfolio rework.",
-      "updatedAt": "2026-11-15T14:23:41-06:00",
-      "focus": "parked"
-    },
     "murdl-app": {
       "text": "In the App Store. Working on the next version: multiuser.",
       "updatedAt": "2026-11-15T14:20:52-06:00",
@@ -109,11 +104,6 @@
     "grubber-service": {
       "focus": "maint",
       "updatedAt": "2026-11-15T14:42:38-06:00"
-    },
-    "server-monitor-service": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T14:58:08-06:00",
-      "text": "Parked on Fly (stopped, will not auto-start). Being replaced by the monitoring rebuild."
     },
     "xpensexpunger-app": {
       "focus": "maint",

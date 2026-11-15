@@ -988,7 +988,7 @@
       "programRole": "working-legacy-reference",
       "status": "legacy-reference",
       "productLine": "billdonner-free",
-      "lastModified": "2026-08-28",
+      "lastModified": "2026-11-15",
       "repo": "~/nagz-ios",
       "bundleId": "com.nagz.app",
       "release": "Working legacy implementation; ASC iOS 1.0 PREPARE_FOR_SUBMISSION remains retained",
@@ -1004,6 +1004,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15 (owner): stays legacy-reference; temporarily finished, to be kept even though the server is down. All local work is now on GitHub: the unpushed commit on dev/session-58 in nagz-ios and three commits plus a regenerated openapi.json in nagz-web were pushed today.",
         "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Shares API versioning with nagzerver and nagz-web.",
         "The source contains real family, connection, and reminder flows with more than 215 tests; substantive product work last occurred in April 2026.",
@@ -1015,8 +1016,8 @@
       "name": "Cardz Studio",
       "kind": "app",
       "cluster": "Flasherz",
-      "status": "internal-only",
-      "lastModified": "2026-08-14",
+      "status": "retired",
+      "lastModified": "2026-11-15",
       "repo": "~/cardz-studio-ios",
       "bundleId": "com.billdonner.cardz-studio",
       "release": "Internal-use app; ASC iOS 1.0 PREPARE_FOR_SUBMISSION retained for likely perpetual TestFlight distribution",
@@ -1031,6 +1032,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: retired in the index to match reality. ~/cardz-studio-ios was deleted 2026-07-27 (bundle in ~/archive/bundles/) and its server, cardz-studio, was destroyed on Fly 2026-03-04. The ASC record's state was not re-checked today.",
         "Operator-facing companion surface.",
         "No public App Store release or marketing gallery is planned; maintain functional TestFlight availability and internal testing evidence."
       ]
@@ -1083,8 +1085,8 @@
       "cluster": "Household Communications",
       "program": "household-communications",
       "programRole": "concept-shell",
-      "status": "concept-only",
-      "lastModified": "2026-08-14",
+      "status": "retired",
+      "lastModified": "2026-11-15",
       "repo": "~/famster-ios",
       "bundleId": "com.famster.app",
       "release": "Concept shell only; ASC iOS 1.0 PREPARE_FOR_SUBMISSION and TestFlight record remain retained",
@@ -1101,6 +1103,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15 (owner): retired from active work but only temporarily finished. Keep the code; it stays in the private GitHub repository billdonner/famster-ios even though its server is down. The ASC and TestFlight records were not changed.",
         "Home, Family, and Calendar are Coming Soon placeholders; the app has only seven Swift source files.",
         "1041Kit initialization is commented out, so the current app does not use its nominal auth, API, database, sync, or WebSocket package.",
         "api.famster.app is a custom-domain alias of the Nagzerver deployment, not a separate Famster backend; the app warms the wrong /version path and receives the static Nagz web fallback."
@@ -1282,8 +1285,8 @@
       "name": "picklefortunes",
       "kind": "app",
       "cluster": "picklefortunes",
-      "status": "local-only",
-      "lastModified": "2026-08-24",
+      "status": "retired",
+      "lastModified": "2026-11-15",
       "repo": "~/picklefortunes",
       "bundleId": "com.picklefortunes.app",
       "release": "Removed from ASC (2026-08-03 refresh); repo remains active locally.",
@@ -1297,6 +1300,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: retired in the index to match reality. The ASC record was deleted by the owner 2026-08-02; PickleFortunesKit was vendored into ~/pickledballs first. Bundle: ~/archive/bundles/picklefortunes-20260802.bundle; GitHub remote kept.",
         "Its shared kit is reused by PickledBalls.",
         "PickleFortunesKit vendored into ~/pickledballs/PickleFortunesKit before retirement — PickledBalls consumed it via a local SPM path.",
         "ASC listing deleted in the 2026-08 cleanup alongside PickleBrains, Alities, Quackman, screenkr2.",
@@ -1436,7 +1440,7 @@
       "kind": "backend",
       "cluster": "Infrastructure",
       "status": "reference-only",
-      "lastModified": "2026-09-08",
+      "lastModified": "2026-11-15",
       "repo": "~/nagzerver",
       "bundleId": null,
       "release": "Fly app bd-nagzerver suspended with zero machines; unreachable since 2026-08-18 13:34 (Server Monitor: 51k consecutive timeouts). Kept for reference and occasional testing only. bd-postgres nagz DB and Upstash Redis remain up.",
@@ -1452,6 +1456,7 @@
         "websiteSource": "local docs"
       },
       "notes": [
+        "2026-11-15 observed: bd-nagzerver no longer appears in the Fly app list at all (previously recorded as suspended with zero machines). Source is kept at ~/nagzerver and the private GitHub repository; owner wants Nagz and Famster code retained.",
         "2026-09-08: Owner decision: nagzerver is retained for reference and occasional testing, not as production infrastructure. The runtime dependency of PickledBalls, workin On, PickleFamilia, Nagz and api.famster.app on nagzerver is to be removed; until each consumer is decoupled, treat that dependency as broken, not merely down.",
         "Do not retire this service as part of any Nagz or Famster decision; active non-Nagz consumers depend on it.",
         "Production exposes 37 /api/v1/pb paths, 14 /api/v1/pickle paths, seven /api/v1/workinon paths, and four residual clubwatch/LtWatcher paths in addition to the Nagz family API.",
@@ -1486,12 +1491,12 @@
     },
     {
       "id": "card-engine-backend",
-      "name": "card-engine",
+      "name": "cardzerver (card-engine)",
       "kind": "backend",
       "cluster": "Flasherz",
       "status": "live",
       "lastModified": "2026-11-15",
-      "repo": "~/card-engine",
+      "repo": "~/cardzerver",
       "bundleId": null,
       "release": "Live on Fly at bd-cardzerver.fly.dev; machine version 134 started with passing health check",
       "description": "Deployed Python/FastAPI unified content backend for flashcards and trivia.",
@@ -1507,6 +1512,7 @@
         "openapi": "https://bd-cardzerver.fly.dev/openapi.json"
       },
       "notes": [
+        "2026-11-15: repo path corrected. ~/card-engine was deleted 2026-07-27 (history fully contained in cardzerver); the working repository is ~/cardzerver.",
         "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
         "Owner asked to revisit whether bd-cardzerver should be always-on after DoubleQross 1.2 ships.",
         "Live /openapi.json identifies the service as card-engine version 0.1.0.",
@@ -1521,7 +1527,7 @@
       "name": "server-monitor",
       "kind": "service",
       "cluster": "PickledBalls",
-      "status": "parked",
+      "status": "retired",
       "lastModified": "2026-11-15",
       "repo": "~/server-monitor",
       "bundleId": null,
@@ -1538,6 +1544,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: removed by owner decision; Fly app bd-server-monitor destroyed. Source is kept in the private GitHub repository billdonner/server-monitor and ~/server-monitor. Its Fly secrets (ADMIN_SECRET, CLUBSYNC_MONITOR_TOKEN) were destroyed with the app. Monitoring is to be rebuilt in Systrix.",
         "2026-11-15: parked by owner decision while monitoring is rebuilt. The Fly machine is stopped and set not to auto-start, so requests to bd-server-monitor.fly.dev fail until it is started manually (fly machine start 8d9995aede1728 -a bd-server-monitor). It no longer probes or wakes other services.",
         "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
         "While awake the monitor probes Card Engine every 15 s and Grubber every 60 s, which keeps those machines awake; they can only sleep when the monitor itself is asleep.",
@@ -1853,9 +1860,9 @@
       "name": "Zerver Monitor",
       "kind": "app",
       "cluster": "PickledBalls",
-      "status": "asc-mapped",
+      "status": "retired",
       "productLine": "billdonner-free",
-      "lastModified": "2026-08-11",
+      "lastModified": "2026-11-15",
       "repo": "~/server-monitor-ios",
       "bundleId": "com.billdonner.ZerverMonitor",
       "release": "ASC iOS 1.0 PREPARE_FOR_SUBMISSION; build 5 VALID",
@@ -1869,6 +1876,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: retired by owner decision along with server-monitor, whose Fly app was destroyed today, so the app has no service to read. Source remains at github.com/billdonner/server-monitor-ios. The ASC record (iOS 1.0 Prepare for Submission) was not changed.",
         "The prior index mapped this ASC app in ascApps but omitted its entity even though the local repo was present."
       ]
     },
@@ -2105,7 +2113,7 @@
       "kind": "tool",
       "cluster": "Oenora",
       "status": "stopped",
-      "lastModified": "2026-09-08",
+      "lastModified": "2026-11-15",
       "repo": "~/oenora-merchant",
       "description": "Perpetual simulated wine merchant: deterministic Swift market engine that builds and vends a synthetic inventory as a real Oenora CellarSnapshot. Replaces oenora's generate-synthetic-cellar.py; serves as living test harness and demo-cellar factory.",
       "dependencies": [
@@ -2115,6 +2123,7 @@
         "github": "https://github.com/billdonner/oenora-merchant"
       },
       "notes": [
+        "2026-11-15 (owner): leave as is. The Fly app bd-oenora-merchant exists with no machines.",
         "2026-09-08: Owner paused the perpetual loop. Restart later with scripts/fly-deploy.sh (recreates the hourly scheduled machine).",
         "Perpetual loop runs on Fly: app bd-oenora-merchant, hourly scheduled machine 'merchant-tick' (ord) trades one sim day per run and pushes shop/ via a repo deploy key; judgement via Claude API (claude-opus-5) every 7th sim day. Deploy engine changes with scripts/fly-deploy.sh.",
         "OenoraCore made Linux-portable for this (CloudKit canImport-gated, swift-crypto on Linux). Local launchd loop removed 2026-08-20; merchant-day.sh kept as offline fallback only.",
@@ -2484,7 +2493,7 @@
         "PickleFamilia (legacy)",
         "LtWatcher transport (residual routes only)"
       ],
-      "note": "Suspended with zero machines since 2026-08-18; kept for reference/occasional testing. Consumers are to be decoupled (owner decision 2026-09-08). Mixed shared production backend. Fly release v100 source is preserved at private branch recovery/deployed-2026-06-30 because its PickledBalls and PickleFamilia implementation was absent from Git main; do not retire it with Nagz.",
+      "note": "2026-11-15 observed: bd-nagzerver is no longer in the Fly app list. Suspended with zero machines since 2026-08-18; kept for reference/occasional testing. Consumers are to be decoupled (owner decision 2026-09-08). Mixed shared production backend. Fly release v100 source is preserved at private branch recovery/deployed-2026-06-30 because its PickledBalls and PickleFamilia implementation was absent from Git main; do not retire it with Nagz.",
       "status": "reference-only"
     },
     {
@@ -2520,11 +2529,11 @@
     {
       "name": "bd-server-monitor.fly.dev",
       "repo": "~/server-monitor",
-      "status": "parked",
+      "status": "retired",
       "consumers": [
         "operations and monitoring"
       ],
-      "note": "Parked 2026-11-15: machine stopped, auto-start off. Sleeps when idle since 2026-11-15. Seven-target production config verified live with current Nagzerver and Card Engine probes; Clubsync is intentionally omitted."
+      "note": "Fly app destroyed 2026-11-15 by owner decision. Parked 2026-11-15: machine stopped, auto-start off. Sleeps when idle since 2026-11-15. Seven-target production config verified live with current Nagzerver and Card Engine probes; Clubsync is intentionally omitted."
     },
     {
       "name": "api.famster.app",
@@ -2532,7 +2541,7 @@
       "consumers": [
         "Famster concept shell"
       ],
-      "note": "Custom-domain alias to the same Nagzerver deployment, not a separate Famster service. /api/v1/version returns the Nagz API version; /version returns the static Nagz web fallback that the Famster shell currently warms.",
+      "note": "2026-11-15 observed: bd-nagzerver is no longer in the Fly app list. Custom-domain alias to the same Nagzerver deployment, not a separate Famster service. /api/v1/version returns the Nagz API version; /version returns the static Nagz web fallback that the Famster shell currently warms.",
       "status": "alias"
     },
     {
