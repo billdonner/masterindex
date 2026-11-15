@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T16:07:26-06:00",
+  "generatedAt": "2026-11-15T16:49:52-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -94,8 +94,9 @@
       "updatedAt": "2026-11-15T14:23:41-06:00"
     },
     "workinon-app": {
-      "focus": "parked",
-      "updatedAt": "2026-11-15T14:23:41-06:00"
+      "focus": "maint",
+      "updatedAt": "2026-11-15T16:49:52-06:00",
+      "text": "Now shows this project list on the phone (build 69). Next: edit from the phone, AI filtering, remove the old Focus product."
     },
     "pfolio-backend": {
       "focus": "parked",
