@@ -38,6 +38,12 @@ def main():
         assert monitor.comment_text(comments, "active-app") == "" and monitor.focus_of(comments, "active-app") == "parked"
         rows, _ = monitor.build_rows(root, include_all=True, inspect_local=False)
         assert [row["id"] for row in rows] == ["retired-app", "active-app"]
+        # A pin lifts a project to the top of its own tier only, and toggles off again.
+        monitor.set_focus(root, "active-app", "now")
+        assert monitor.toggle_pin(root, "active-app") is True
+        rows, _ = monitor.build_rows(root, include_all=True, inspect_local=False)
+        assert [row["id"] for row in rows] == ["active-app", "retired-app"] and rows[0]["pin"]
+        assert monitor.toggle_pin(root, "active-app") is False
         monitor.set_focus(root, "active-app", "none")
         assert "active-app" not in monitor.load_comments(root)["comments"]
         try:

@@ -49,6 +49,9 @@ On a terminal the display is coloured: `now` in bold green, `maint` in blue,
 sessions in cyan, a dirty working tree in yellow and a missing repo in red.
 Set `NO_COLOR=1` to turn colour off; piped output is always plain.
 
+`p 4` pins a project to the top of its focus tier (shown as `now*`); `p 4`
+again unpins it. From a shell: `project-monitor --pin masterindex`.
+
 The Agent column shows which projects have a Claude Code or Codex terminal
 session open right now (from `tools/agent_sessions.py`; see
 `docs/agent-session-restore.md`).

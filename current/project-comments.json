@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T15:59:38-06:00",
+  "generatedAt": "2026-11-15T16:07:26-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
@@ -157,8 +157,10 @@
       "text": "Sleeps when idle. Revisit always-on after DoubleQross 1.2 ships."
     },
     "masterindex": {
-      "focus": "maint",
-      "updatedAt": "2026-11-15T15:59:11-06:00"
+      "focus": "now",
+      "updatedAt": "2026-11-15T16:07:26-06:00",
+      "pin": "1",
+      "text": "The portfolio index, this monitor and session restore. Active while the portfolio rework is under way."
     }
   }
 }

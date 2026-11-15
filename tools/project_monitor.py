@@ -68,7 +68,7 @@ def update_entry(root: Path, entity_id: str, field: str, value: str) -> None:
         entry[field] = value
     else:
         entry.pop(field, None)
-    if entry.get("text") or entry.get("focus"):
+    if entry.get("text") or entry.get("focus") or entry.get("pin"):
         comments[entity_id] = {**entry, "updatedAt": now()}
     else:
         comments.pop(entity_id, None)
@@ -85,6 +85,18 @@ def set_focus(root: Path, entity_id: str, focus: str) -> None:
     if focus not in FOCUS_RANK:
         raise ValueError(f"focus must be one of: now, maint, parked, none (got {focus!r})")
     update_entry(root, entity_id, "focus", focus)
+
+
+def is_pinned(comment_data: dict[str, Any], entity_id: str) -> bool:
+    entry = comment_data.get("comments", {}).get(entity_id, {})
+    return bool(entry.get("pin")) if isinstance(entry, dict) else False
+
+
+def toggle_pin(root: Path, entity_id: str) -> bool:
+    """Pin a project to the top of its focus tier, or unpin it. Returns the new state."""
+    pinned = not is_pinned(load_comments(root), entity_id)
+    update_entry(root, entity_id, "pin", "1" if pinned else "")
+    return pinned
 
 
 def sessions_by_repo(sessions: list[dict[str, Any]]) -> dict[str, str]:
@@ -157,10 +169,12 @@ def build_rows(root: Path, *, include_all: bool, inspect_local: bool) -> tuple[l
             "modified": entity.get("lastModified"), "local": local_git_state(entity.get("repo")) if inspect_local else "not checked",
             "work": f"{tasks_count} task{'s' if tasks_count != 1 else ''}{' ' + handoff if handoff else ''}",
             "comment": comment_text(comment_data, entity_id), "focus": focus_of(comment_data, entity_id),
+            "pin": is_pinned(comment_data, entity_id),
             "session": open_session(entity.get("repo"), open_sessions),
         })
     rows.sort(key=lambda row: (row.get("modified") or "", row["name"] or ""), reverse=True)
-    rows.sort(key=lambda row: FOCUS_RANK[row["focus"]])  # stable: newest first within each focus tier
+    # Stable sorts: by focus tier, pinned projects first within a tier, then newest first.
+    rows.sort(key=lambda row: (FOCUS_RANK[row["focus"]], not row["pin"]))
     return rows, {"indexGeneratedAt": index.get("generatedAt"), "commentsUpdatedAt": comment_data.get("generatedAt")}
 
 
@@ -208,7 +222,7 @@ def render(rows: list[dict[str, Any]], metadata: dict[str, Any], *, clear: bool 
         # Each cell is padded first and painted second, so colour never shifts a column.
         cells = [
             (f"{number:>2}", "dim" if parked else ""),
-            (f"{row['focus'] or '·':<6}", focus_style),
+            (f"{(row['focus'] or '·') + ('*' if row['pin'] else ''):<6}", focus_style),
             (f"{truncate(row['session'], 12):<12}", "dim" if parked else ("cyan" if row["session"] else "")),
             (f"{truncate(row['name'], name_width):<{name_width}}", "bold green" if row["focus"] == "now" else focus_style if parked else ""),
             (f"{truncate(status, status_width):<{status_width}}", "dim" if parked else ""),
@@ -230,7 +244,7 @@ def interactive(root: Path, include_all: bool, inspect_local: bool) -> None:
     while True:
         rows, metadata = build_rows(root, include_all=include_all, inspect_local=inspect_local)
         render(rows, metadata, clear=True)
-        print("\nCommands: <number> <comment> | f <number|id> now|maint|parked|none | c <number|id> <comment> | e <number|id> | x <number|id> | r refresh | a all/important | q quit")
+        print("\nCommands: <number> <comment> | f <number|id> now|maint|parked|none | p <number|id> pin to top | c <number|id> <comment> | e <number|id> | x <number|id> | r refresh | a all/important | q quit")
         try:
             command = input("monitor> ").strip()
         except (EOFError, KeyboardInterrupt):
@@ -251,6 +265,13 @@ def interactive(root: Path, include_all: bool, inspect_local: bool) -> None:
             set_comment(root, row["id"], replacement)
             continue
         parts = command.split(maxsplit=2)
+        if parts and parts[0] == "p" and len(parts) == 2:
+            row = resolve_row(rows, parts[1])
+            if row:
+                toggle_pin(root, row["id"])
+            else:
+                print("Unknown project; press Return to continue."); input()
+            continue
         if parts and parts[0] == "f" and len(parts) == 3:
             row = resolve_row(rows, parts[1])
             try:
@@ -286,8 +307,15 @@ def main() -> None:
     parser.add_argument("--interactive", action="store_true", help="Keep the monitor open and accept comment commands.")
     parser.add_argument("--watch", type=int, metavar="SECONDS", help="Refresh the read-only display repeatedly; implies non-interactive mode.")
     parser.add_argument("--comment", nargs=2, metavar=("ENTITY_ID", "TEXT"), help="Set a comment without opening the interactive monitor.")
+    parser.add_argument("--pin", metavar="ENTITY_ID", help="Pin a project to the top of its focus tier, or unpin it.")
     parser.add_argument("--focus", nargs=2, metavar=("ENTITY_ID", "TIER"), help="Set your focus on a project: now, maint, parked, or none.")
     arguments = parser.parse_args()
+    if arguments.pin:
+        index = read_json(ROOT / "current" / "index.json")
+        if arguments.pin not in {entity["id"] for entity in index.get("entities", [])}:
+            parser.error(f"unknown entity id: {arguments.pin}")
+        print(f"{'Pinned' if toggle_pin(ROOT, arguments.pin) else 'Unpinned'} {arguments.pin}.")
+        return
     if arguments.comment or arguments.focus:
         entity_id, value = arguments.comment or arguments.focus
         index = read_json(ROOT / "current" / "index.json")
