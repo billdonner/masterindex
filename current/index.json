@@ -920,10 +920,10 @@
       "kind": "app",
       "cluster": "Qross",
       "status": "ready-for-distribution",
-      "lastModified": "2026-10-26",
+      "lastModified": "2026-11-15",
       "repo": "~/qross",
       "bundleId": "com.qross.app",
-      "release": "iOS 1.0 build 415 is approved and Ready for Distribution in App Store Connect (verified 2026-09-23); it is free and downloadable on the public App Store. Earlier TestFlight 1.0 (412) remains VALID; internal and external IN_BETA_TESTING; beta review APPROVED (verified 2026-09-15).",
+      "release": "iOS 1.1 is live on the public App Store, free (public App Store listing shows version 1.1, released 2026-11-10; verified 2026-11-15). iOS 1.0 build 415 is approved and Ready for Distribution in App Store Connect (verified 2026-09-23); it is free and downloadable on the public App Store. Earlier TestFlight 1.0 (412) remains VALID; internal and external IN_BETA_TESTING; beta review APPROVED (verified 2026-09-15).",
       "description": "Trivia game app with local SQLite caching and a Fly-backed card API.",
       "dependencies": [
         "card-engine",
@@ -945,6 +945,7 @@
         "intendedDestination": "IONOS webspace /qross (serves the product site directly; same folder as the catalog downloads)"
       },
       "notes": [
+        "2026-11-15: public App Store listing shows version 1.1 released 2026-11-10 (observed). Owner states 1.1 includes the in-app purchase for the expanded database and that a multiuser version is in progress (owner-stated, not verified here).",
         "2026-09-23 (verified in App Store Connect and by owner): iOS 1.0 is READY_FOR_DISTRIBUTION and publicly downloadable, free, at the recorded App Store link. The version retains the manual-release preference, but ASC exposes no release action because it has already reached Ready for Distribution.",
         "2026-09-16 local device delivery: modified Release build 412 installed and launched on Titanic without debugger or uninstall. Uncommitted repairs on fix/carol-topic-clarity preserve topic selections through temporary board states/catalog refreshes/tutorial replay/schema upgrades; expose difficulty preference; add live Color/Mono preview, opt-in Original Pastels, and Contact Us/Email Us copy with 1041Soft About credit. Full unit suite 998 executed, 2 existing skips, 0 failures; contact/appearance and original-palette UI checks passed. Question content and ratings unchanged. TestFlight remains the prior published 412; no upload or ASC verification this session. Notes/screens: qross/docs/reviews/feedback-repairs-2026-09-16/README.md.",
         "2026-09-15 live App Store readiness audit: version 1.0 remains PREPARE_FOR_SUBMISSION with build 395 selected. Copyright and all reviewer contact fields missing; review notes empty. Three iPhone and three iPad screenshots uploaded; inspected first of each shows old UI/scoring. Website HTTP 200 still describes build 405 as a private Scoredux preview. Privacy questionnaire, price/territories and account agreements still need verification. Build 412 TestFlight status unchanged. Read-only audit; no App Review submission or metadata edits. Report: qross/docs/reviews/app-store-readiness/2026-09-15.md.",

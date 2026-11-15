@@ -1,11 +1,46 @@
 {
-  "generatedAt": "2026-11-12T14:13:56-06:00",
+  "generatedAt": "2026-11-15T14:20:52-06:00",
   "schemaVersion": "1.0",
   "description": "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
   "comments": {
     "zerver-monitor-asc-app": {
       "text": "should retire",
       "updatedAt": "2026-11-12T14:13:56-06:00"
+    },
+    "murdl-app": {
+      "text": "In the App Store. Working on the next version: multiuser.",
+      "updatedAt": "2026-11-15T14:20:52-06:00",
+      "focus": "now"
+    },
+    "qross-app": {
+      "text": "1.1 distributing (IAP for the expanded database). Working on multiuser.",
+      "updatedAt": "2026-11-15T14:20:52-06:00",
+      "focus": "now"
+    },
+    "picklefamilia-umbrella": {
+      "text": "One umbrella: iOS Companion, Android, web app, engine, Twilio. Track the whole family here.",
+      "updatedAt": "2026-11-15T14:20:52-06:00",
+      "focus": "now"
+    },
+    "collective-engine": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:20:52-06:00"
+    },
+    "pickledballs-app": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:20:52-06:00"
+    },
+    "picklefamilia-core": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:20:52-06:00"
+    },
+    "collective-console": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:20:52-06:00"
+    },
+    "collective-comms": {
+      "focus": "maint",
+      "updatedAt": "2026-11-15T14:20:52-06:00"
     }
   }
 }
