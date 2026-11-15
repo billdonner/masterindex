@@ -33,7 +33,6 @@ masterindex/
 ├── GITHUB_PUBLISHING.md          — raw-URL / publishing contract
 ├── TASK_LIFECYCLE.md             — task state model (design doc)
 ├── WEB_INFORMATION_ARCHITECTURE.md — site/ IA design doc
-├── WORKINON_BOARD_SCHEMA.md      — workin On card schema design doc
 ├── bootstrap/                    — reusable injection snippets for OTHER repos/agents
 │   ├── README.md
 │   ├── MASTERINDEX_UNIVERSAL_INJECTION.md
@@ -55,8 +54,6 @@ masterindex/
 ├── site/                          — static browser (index.html, app.js, styles.css)
 ├── tools/
 │   ├── masterindex-drift-check.sh — read-only validator/drift checker
-│   ├── generate_workinon_feed.py  — generator for workinon/board-feed.json
-│   └── generate_workinon_feed.mjs
 ├── workinon/
 │   ├── board-feed.json            — GENERATED operational feed for workin On
 │   ├── shortcut-manifest.json     — GENERATED workinon:// post URLs
@@ -234,3 +231,18 @@ masterindex/
 - Whether any other machines beyond this one currently pull this repo on
   a schedule (design intent is clear; live confirmation would require
   access this session doesn't have).
+
+## Update 2026-11-15: workin On integration replaced
+
+The operational-cards feed described above (`workinon/board-feed.json`,
+`workinon/shortcut-manifest.json`, `tools/generate_workinon_feed.{py,mjs}`,
+`WORKINON_BOARD_SCHEMA.md`) was removed by owner decision. workin On now shows
+the project list itself:
+
+- **Read:** the site workflow builds `current/monitor.json` with
+  `tools/project_monitor.py --export`; the app fetches it from GitHub Pages.
+- **Write:** the app commits `current/project-comments.json` through the
+  GitHub API. That file now has two writers, the terminal monitor and the app,
+  and they share its format.
+
+Mentions of the old feed elsewhere in this document are history.

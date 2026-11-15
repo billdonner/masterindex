@@ -21,7 +21,6 @@ indexmaker-hub/
   README.md
   AGENTS.md
   GITHUB_PUBLISHING.md
-  WORKINON_BOARD_SCHEMA.md
   WEB_INFORMATION_ARCHITECTURE.md
   TASK_LIFECYCLE.md
   current/
@@ -69,7 +68,6 @@ Portfolio question interface:
 
 Operational design references:
 
-- `WORKINON_BOARD_SCHEMA.md`
 - `WEB_INFORMATION_ARCHITECTURE.md`
 - `TASK_LIFECYCLE.md`
 

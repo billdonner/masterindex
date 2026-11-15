@@ -34,7 +34,7 @@ system.
   portfolio-level facts (identity, type, lifecycle, relationships,
   standardization state, pointers to that repository's own docs).
 - **Not** a trigger for existing Master Index applications. Nothing in
-  `site/`, `tools/`, or `workinon/` reads from or depends on `agent-ops/`.
+  `site/` or `tools/` reads from or depends on `agent-ops/`.
   It is safe to ignore this directory entirely and Master Index continues
   to work exactly as before.
 - **Not** a second inventory. `portfolio.yaml` here is an orchestration

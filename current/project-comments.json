@@ -152,8 +152,8 @@
     },
     "workinon-app" : {
       "focus" : "maint",
-      "text" : "Now shows this project list on the phone (build 69). Next: edit from the phone, AI filtering, remove the old Focus product.",
-      "updatedAt" : "2026-11-15T16:49:52-06:00"
+      "text" : "Shows and edits this list on the phone (build 70). Next: AI filtering. Needs a GitHub token entered once to edit.",
+      "updatedAt" : "2026-11-15T17:00:23-06:00"
     },
     "xpensexpunger-app" : {
       "focus" : "maint",
@@ -162,6 +162,6 @@
     }
   },
   "description" : "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
-  "generatedAt" : "2026-11-15T16:55:32-06:00",
+  "generatedAt" : "2026-11-15T17:00:23-06:00",
   "schemaVersion" : "1.0"
 }

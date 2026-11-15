@@ -1048,12 +1048,11 @@
       "bundleId": "com.workinon.app",
       "productLine": "billdonner-free",
       "pricingPolicy": "always-free",
-      "release": "TestFlight-only by owner decision (2026-09-04). Xcode Cloud archive lane live: 1.0 builds 1-3 uploaded 2026-09-02..04 from the `release` branch; build 3 is in beta with the 'workin F&F' group. ASC iOS 1.0 record stays PREPARE_FOR_SUBMISSION with build 1 attached; no review submission and none planned.",
+      "release": "Build 70, internal only: installed on the owner's iPhone from Xcode 2026-11-15. Earlier TestFlight builds are of the removed focus-list product.",
       "distribution": "internal-testflight",
-      "description": "iOS app reoriented 2026-11-15 to show the owner's MasterIndex project list (focus tier, pin, status and note per project) as its first screen, through the self-contained PortfolioKit Swift package. The original AI focus list, widget, share extension and watch app remain as the second tab and legacy surfaces.",
+      "description": "The owner's MasterIndex project list on iPhone and iPad: focus tier, pin, status and note per project, readable and editable. A one-file host for the self-contained PortfolioKit Swift package.",
       "dependencies": [
-        "nagzerver",
-        "workinon-mcp"
+        "masterindex"
       ],
       "links": {
         "website": "https://1041soft.com/workinon/",
@@ -1068,8 +1067,9 @@
         "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
-        "2026-11-15 (owner decision): the app's purpose is now the project list. Build 69 adds PortfolioKit (in the workinon repo), which reads https://billdonner.github.io/masterindex/current/monitor.json, built by tools/project_monitor.py --export on each site deploy. Read-only. Installed on the owner's iPhone from Xcode; not uploaded to TestFlight. 192 unit, 8 UI and 6 package tests pass.",
-        "Planned next: editing focus, pins and notes from the phone; on-device AI filtering of the list; removing the legacy Focus product and the old operational-cards feed (workinon/board-feed.json, tools/generate_workinon_feed.py, WORKINON_BOARD_SCHEMA.md are now superseded).",
+        "2026-11-15: build 70 removed the legacy focus-list product (focus list and chat, GRDB store, widget, share extension, watch app, App Intents, workinon:// URL scheme, nagzerver registration); 12,106 lines deleted. Its last version is the git tag legacy-focus-final. Installed on the owner's iPhone from Xcode; not uploaded to TestFlight.",
+        "2026-11-15: editing from the phone works by committing current/project-comments.json through the GitHub API with a fine-grained token kept in the device Keychain; a real round trip was run from this Mac. 11 package tests and 2 UI tests pass.",
+        "Out of date and not yet rewritten: the public pages at 1041soft.com/workinon and billdonner.com/apps/workinon, and the TestFlight listing, still describe the removed focus-list product. The earlier notes below describe that product.",
         "The nagzerver-backed features (GitHub tabs, push sync) cannot work: bd-nagzerver is no longer on Fly.",
         "2026-09-08: nagzerver dependency is slated for removal (owner decision); nagzerver is reference-only and has been unreachable since 2026-08-18.",
         "Silent APNs pushes update the list without opening the app.",
