@@ -2453,7 +2453,7 @@
       "status": "incubating",
       "cluster": "Incubator",
       "repo": "~/mahjong-for-men",
-      "bundleId": null,
+      "bundleId": "com.billdonner.mahjongformen",
       "description": "An American Mahjong tutorial with a video-game feel, aimed at men. iPhone and Mac apps built together with separate interfaces; the Mac app has a full menu system. Possibly Android later.",
       "dependencies": [
         "screenker-asc-app"
@@ -2461,10 +2461,11 @@
       "links": {
         "github": "https://github.com/billdonner/mahjong-for-men"
       },
-      "release": "Idea captured and repository scaffolded; no release posture selected.",
+      "release": "Version 0.1 (build 1) builds and runs locally on iPhone simulator and Mac; one playable mission. Not on TestFlight; no release posture selected.",
       "lastModified": "2026-11-15",
       "notes": [
         "2026-11-15 (owner decisions): American Mahjong (the card-based game). \"A male slant\" means the tutorial has a video-game feel. iPhone and Mac are built together from the start with separate interfaces, not one shared layout; the Mac app gets a full menu system. The app is to have a relationship to Screenker (not yet defined). Android is a possible later platform.",
+        "2026-11-15 (version 0.1): one mission, \"Know Your Suits\", playable on both platforms; missions 2 to 5 are placeholders. Owner direction: lessons stay short and pithy, and short AI-generated videos may illustrate them later. XcodeGen project with a shared MenjongKit package and separate iOS and Mac interface folders.",
         "Created through MasterIndex Project Intake.",
         "Still open: the product-line posture, pricing, and what the Screenker relationship consists of.",
         "Keep the GitHub repository private unless its release plan explicitly changes."
