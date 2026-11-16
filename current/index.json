@@ -1057,7 +1057,7 @@
       "bundleId": "com.workinon.app",
       "productLine": "billdonner-free",
       "pricingPolicy": "always-free",
-      "release": "Build 71, internal only: installed on the owner's iPhone from Xcode 2026-11-15. Earlier TestFlight builds are of the removed focus-list product.",
+      "release": "Build 72, internal only: installed on the owner's iPhone from Xcode 2026-11-15. Earlier TestFlight builds are of the removed focus-list product.",
       "distribution": "internal-testflight",
       "description": "The owner's MasterIndex project list on iPhone and iPad: focus tier, pin, status and note per project, readable and editable. A one-file host for the self-contained PortfolioKit Swift package.",
       "dependencies": [
@@ -1076,6 +1076,7 @@
         "websiteSource": "1041Soft website migration published 2026-09-14; public portfolio destination, not an ASC metadata verification."
       },
       "notes": [
+        "2026-11-15: build 72 adds three things. (1) New ideas can be sent from the phone into the index's intake inbox; the Mac checks them and provisioning stays on the Mac. (2) Each project shows the agent sessions open on it, published by agent-sessions from this Mac (project, agent and session name only). (3) A question typed into search is answered on the device: Apple's on-device model proposes a filter and plain code applies only the parts the question asked for. Eleven test questions against the real list all answered correctly in about a second each. 18 package tests and 6 UI tests pass; installed on the owner's iPhone.",
         "2026-11-15: build 71 shows any index. A feed now carries its own name and ledger location (schemaVersion 1.1), so an index is identified by its feed address alone; Settings lists indexes and adds one by address, each with its own cache, and tokens are kept per repository. The -portfolio-source launch argument overrides the index for one run. The app's UI tests and the real save test use the invented staging index (staging/ in this repository), not the owner's list. 13 package tests and 3 UI tests pass; installed on the owner's iPhone.",
         "2026-11-15: build 70 removed the legacy focus-list product (focus list and chat, GRDB store, widget, share extension, watch app, App Intents, workinon:// URL scheme, nagzerver registration); 12,106 lines deleted. Its last version is the git tag legacy-focus-final. Installed on the owner's iPhone from Xcode; not uploaded to TestFlight.",
         "2026-11-15: editing from the phone works by committing current/project-comments.json through the GitHub API with a fine-grained token kept in the device Keychain; a real round trip was run from this Mac. 11 package tests and 2 UI tests pass.",
@@ -2438,6 +2439,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: feed schema 1.2 adds per-project open sessions, the intake location and pending ideas. agent-sessions publishes current/sessions.json straight to GitHub when the set of open sessions changes. intake/index.json has an inbox for ideas sent from the phone.",
         "2026-11-15: tools/project_monitor.py takes --root and works on any index with this layout. staging/ is a second, invented index for testing, published at /staging/current/monitor.json with its own ledger. Each published feed names itself and says where its edits are saved.",
         "2026-11-15: added as its own entity at the owner's request so the project that tracks the portfolio is itself tracked."
       ]
