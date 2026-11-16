@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-11-16T12:43:28-0600",
+  "generatedAt": "2026-11-16T16:41:22-0600",
   "host": "Mac",
   "sessions": [
     {
       "entityId": "flywall",
       "agent": "claude",
-      "name": "flywall"
+      "name": "NICKNICK"
     },
     {
       "entityId": "mahjong-for-men-project",
