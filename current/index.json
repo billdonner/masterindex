@@ -2418,7 +2418,7 @@
       "lastModified": "2026-11-16",
       "repo": "~/systrix",
       "bundleId": null,
-      "release": "Running on the Mac only since 2026-11-15: the Core is a launchd agent (com.billdonner.systrix-core, 127.0.0.1:9930) feeding ~/Applications/Systrix.app. Nothing is deployed off the Mac.",
+      "release": "Core hosted on Fly since 2026-11-16, inside the bd-flywall machine (reached at https://bd-flywall.fly.dev/systrix behind flywall's password). ~/Applications/Systrix.app on the Mac reads it. Nothing runs continuously on the Mac.",
       "description": "Server-first metrics collection, monitoring and declarative dashboard framework for 1041soft: a continuously running Core service, an optional Mac administration app, and display clients for iOS, widgets and Apple home displays.",
       "dependencies": [],
       "links": {
@@ -2427,6 +2427,7 @@
         "github": "https://github.com/billdonner/systrix"
       },
       "notes": [
+        "2026-11-16 (owner direction): the Core moved off the Mac to Fly, as a second process in the bd-flywall machine, because the owner did not want the Mac always running. That machine sleeps when idle, so nothing is collected while nobody is looking; set min_machines_running = 1 in ~/flywall/fly.toml for round-the-clock collection. Deploy with ~/flywall/deploy.sh. An iOS app is intended later and would read the same address.",
         "2026-11-16 (owner direction): Systrix now shows two live dashboards, PickleFamilia Engine operations and the Fly fleet. The Fly fleet dashboard covers what flywall reads from Fly; flywall stays in place, unchanged, and keeps its catalog, /metrics probe and phone access. pf-monitor also stays.",
         "2026-11-15: flywall (~/flywall) now has its own private repository, github.com/billdonner/flywall. Its nested working clone of server-monitor is not part of that repo; that work is preserved on the flywall-next branch of billdonner/server-monitor.",
         "2026-11-15 (owner): Systrix carries the Apple home-display strategy that SharedSpaceLab previously held, and is the intended home of the monitoring rebuild that replaces server-monitor. It is updated when one of the other apps requires it rather than on its own schedule.",
@@ -2496,7 +2497,7 @@
       "kind": "service",
       "cluster": "Infrastructure",
       "status": "active",
-      "lastModified": "2026-11-15",
+      "lastModified": "2026-11-16",
       "repo": "~/flywall",
       "bundleId": null,
       "release": "Public copy deployed to Fly app bd-flywall on 2026-11-15 (https://bd-flywall.fly.dev, password protected). A local copy also runs on the Mac at port 8765.",
@@ -2508,6 +2509,7 @@
         "github": "https://github.com/billdonner/flywall"
       },
       "notes": [
+        "2026-11-16 (owner direction): the bd-flywall machine also hosts Systrix Core. The image builds it from ~/systrix, so deploy with ~/flywall/deploy.sh, not plain fly deploy. A third secret, SYSTRIX_PICKLEFAMILIA_TOKEN, holds the PickleFamilia Engine's OPS_TOKEN and must be set again if that token is rotated. The board itself is unchanged.",
         "2026-11-15 (owner decision): hosted publicly on Fly as bd-flywall, one 512 MB machine in ewr that sleeps when idle. Every request needs a password (HTTP Basic, any user name); the password is in the Mac's Keychain under service flywall-dashboard.",
         "The hosted copy reads Fly with a read-only org token named \"bd-flywall dashboard (read-only)\", stored as the Fly secret FLY_API_TOKEN. It cannot change anything on Fly. To remove the service: fly apps destroy bd-flywall, then revoke that token.",
         "2026-11-15: the Probe monitor section was removed because bd-server-monitor was destroyed. The board never probes apps that sleep when idle, so it does not wake them.",
