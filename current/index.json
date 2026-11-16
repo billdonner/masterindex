@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T17:19:28-06:00",
+  "generatedAt": "2026-11-15T21:20:00-06:00",
   "scope": {
     "dateLabel": "Wednesday, September 2, 2026",
     "defaultSort": "most-recently-modified",
@@ -262,6 +262,14 @@
         "latestDeploy": null,
         "cost": null,
         "note": "The inventory records a live clubsync service, but the authenticated personal Fly app list showed bd-clubsync-db rather than bd-clubsync. Resolve ownership/app-name mapping."
+      },
+      {
+        "app": "bd-flywall",
+        "entityId": "flywall",
+        "status": "deployed",
+        "latestDeploy": "2026-11-15T21:10:00-06:00",
+        "cost": null,
+        "note": "Created 2026-11-15. One shared-cpu 512 MB machine in ewr, min_machines_running = 0."
       }
     ]
   },
@@ -2421,7 +2429,7 @@
       "notes": [
         "2026-11-15: flywall (~/flywall) now has its own private repository, github.com/billdonner/flywall. Its nested working clone of server-monitor is not part of that repo; that work is preserved on the flywall-next branch of billdonner/server-monitor.",
         "2026-11-15 (owner): Systrix carries the Apple home-display strategy that SharedSpaceLab previously held, and is the intended home of the monitoring rebuild that replaces server-monitor. It is updated when one of the other apps requires it rather than on its own schedule.",
-        "2026-11-15 (owner): App Feedback and the other terminal monitors may later be integrated here or into a combined monitor. flywall (the local Fly Infrastructure Desk at ~/flywall, not under version control) is kept separate for now.",
+        "2026-11-15 (owner): App Feedback and the other terminal monitors may later be integrated here or into a combined monitor. flywall (the Fly Infrastructure Desk at ~/flywall; see the flywall entity) is kept separate for now.",
         "Local prototype per README: SQLite registry and observation storage, collector leases, loopback-only Core API, YAML dashboard decoder/validator; optional live Fly Machine collector via FLY_API_TOKEN."
       ]
     },
@@ -2480,6 +2488,30 @@
         },
         "confidence": "reported"
       }
+    },
+    {
+      "id": "flywall",
+      "name": "Infrastructure Desk (flywall)",
+      "kind": "service",
+      "cluster": "Infrastructure",
+      "status": "active",
+      "lastModified": "2026-11-15",
+      "repo": "~/flywall",
+      "bundleId": null,
+      "release": "Public copy deployed to Fly app bd-flywall on 2026-11-15 (https://bd-flywall.fly.dev, password protected). A local copy also runs on the Mac at port 8765.",
+      "description": "Read-only status board for the 1041soft Fly account: every Fly app with machine state and health checks, which apps sleep when idle, and documented infrastructure outside Fly.",
+      "dependencies": [],
+      "links": {
+        "website": "https://bd-flywall.fly.dev",
+        "appStore": null,
+        "github": "https://github.com/billdonner/flywall"
+      },
+      "notes": [
+        "2026-11-15 (owner decision): hosted publicly on Fly as bd-flywall, one 512 MB machine in ewr that sleeps when idle. Every request needs a password (HTTP Basic, any user name); the password is in the Mac's Keychain under service flywall-dashboard.",
+        "The hosted copy reads Fly with a read-only org token named \"bd-flywall dashboard (read-only)\", stored as the Fly secret FLY_API_TOKEN. It cannot change anything on Fly. To remove the service: fly apps destroy bd-flywall, then revoke that token.",
+        "2026-11-15: the Probe monitor section was removed because bd-server-monitor was destroyed. The board never probes apps that sleep when idle, so it does not wake them.",
+        "The website link returns HTTP 401 without the password; that is expected, not an outage."
+      ]
     }
   ],
   "collaborators": [
@@ -2655,9 +2687,25 @@
       ],
       "note": "Deployed multi-tenant scheduling service; notification channels are intentionally disabled until explicitly configured. The Fly health endpoint is live, but collective.1041soft.com is not yet published.",
       "status": "live"
+    },
+    {
+      "name": "bd-flywall.fly.dev",
+      "repo": "~/flywall",
+      "consumers": [
+        "Owner"
+      ],
+      "note": "Deployed 2026-11-15. Password-protected read-only status board for the Fly account; sleeps when idle. Answers HTTP 401 without the password.",
+      "status": "live"
     }
   ],
   "repos": [
+    {
+      "repo": "~/flywall",
+      "branch": "main",
+      "last2026Commit": "2026-11-15",
+      "kind": "local operations tool / service",
+      "role": "1041soft Infrastructure Desk: read-only Fly account status board, run locally and hosted as bd-flywall; source in private github:billdonner/flywall"
+    },
     {
       "repo": "~/xpensexpunger",
       "branch": "main",

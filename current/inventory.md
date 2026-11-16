@@ -311,7 +311,7 @@ from main. Legacy scores are intentionally reset on first Scoredux launch.
 | bd-oenora-recognition.fly.dev | ~/oenora | live | Oenora |
 | bd-clubsync.fly.dev | ~/clubsync | retired 2026-11-15 | none; source and data preserved |
 
-Fly also contains the live infrastructure app `bd-postgres`; `bd-clubsync-db` was destroyed 2026-11-15 after a verified backup. Since 2026-11-15 `bd-cardzerver`, `bd-grubber` and `bd-pfolio` sleep when idle; `bd-server-monitor` was destroyed the same day by owner decision (monitoring moves to Systrix). Suspended `bd-arca` (source ~/sharon) and `bd-podcast-brands` were destroyed 2026-09-08 by owner decision.
+Fly also contains the live infrastructure app `bd-postgres`; `bd-clubsync-db` was destroyed 2026-11-15 after a verified backup. Since 2026-11-15 `bd-cardzerver`, `bd-grubber` and `bd-pfolio` sleep when idle; `bd-server-monitor` was destroyed the same day by owner decision (monitoring moves to Systrix). `bd-flywall` was created 2026-11-15: the password-protected public copy of the Infrastructure Desk (`~/flywall`), reading Fly with a read-only token; it sleeps when idle. Suspended `bd-arca` (source ~/sharon) and `bd-podcast-brands` were destroyed 2026-09-08 by owner decision.
 
 ### Nagzerver source recovery
 
