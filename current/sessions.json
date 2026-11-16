@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-15T21:26:56-0600",
+  "generatedAt": "2026-11-15T21:46:32-0600",
   "host": "Mac",
   "sessions": [
     {
@@ -31,6 +31,11 @@
       "entityId": "qross-app",
       "agent": "claude",
       "name": "😎😎QROSS😎😎"
+    },
+    {
+      "entityId": "screenker-asc-app",
+      "agent": "claude",
+      "name": "SCREENKER"
     }
   ]
 }
