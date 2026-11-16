@@ -1129,7 +1129,7 @@
       "kind": "app",
       "cluster": "LtWatcher",
       "status": "retired",
-      "lastModified": "2026-08-14",
+      "lastModified": "2026-11-15",
       "repo": "~/clubwatch",
       "bundleId": "com.ltwatch.app",
       "release": "Retired 2026-08-14; GitHub repository archived read-only; ASC record retained",
@@ -1140,6 +1140,7 @@
         "appStore": null
       },
       "notes": [
+        "2026-11-15: its source, with history, now also lives in the clubsync repository at clients/ltwatch-ios, beside the server half of the feature; ~/clubsync/COURT-WATCH.md explains the whole feature and what is worth bringing into PickleFamilia. The owner is keeping the App Store Connect record for now. The archived GitHub repository billdonner/clubwatch is unchanged.",
         "Retired because its Clubsync dependency is not deployed and that capability is deferred until PickledBalls v2.",
         "No current production consumer depends on LtWatcher."
       ]
@@ -1497,6 +1498,7 @@
         "github": "https://github.com/billdonner/clubsync"
       },
       "notes": [
+        "2026-11-15: the LT Watch iOS client was brought into this repository (clients/ltwatch-ios, history preserved) and COURT-WATCH.md records the court-watch feature end to end, so both halves can be lifted into PickleFamilia together.",
         "2026-11-15: before destruction the dump was restored into a scratch local database and row counts matched the live database exactly (court_slots 4101, schedule_events 13512, scrape_runs 11877, notifications 259, schedule_snapshots 57, watches 7, users 5, api_tokens 5, clubs 3, devices 2, source_sessions 1).",
         "Owner intent: the Life Time schedule-examination features are to be kept for eventual import into future features. Do not delete ~/clubsync or the archive files.",
         "The PickleFamilia Companion source still points its harvest sync at https://bd-clubsync.fly.dev (PickledBalls/Data/HarvestSync.swift); that host no longer exists, so the feature is inert in shipping builds.",
