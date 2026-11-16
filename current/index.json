@@ -2427,6 +2427,7 @@
         "github": "https://github.com/billdonner/systrix"
       },
       "notes": [
+        "2026-11-16: third dashboard, Card Engine (cardzerver), live in the hosted Core. It reads /health and /metrics only while Fly shows bd-cardzerver started, so it never wakes it. cardzerver's /metrics was not answering that day; that and the counts Systrix still needs (paid library downloads, share links, daily scores) are in github.com/billdonner/card-engine/issues/8.",
         "2026-11-16 (owner direction): the Core moved off the Mac to Fly, as a second process in the bd-flywall machine, because the owner did not want the Mac always running. That machine sleeps when idle, so nothing is collected while nobody is looking; set min_machines_running = 1 in ~/flywall/fly.toml for round-the-clock collection. Deploy with ~/flywall/deploy.sh. An iOS app is intended later and would read the same address.",
         "2026-11-16 (owner direction): Systrix now shows two live dashboards, PickleFamilia Engine operations and the Fly fleet. The Fly fleet dashboard covers what flywall reads from Fly; flywall stays in place, unchanged, and keeps its catalog, /metrics probe and phone access. pf-monitor also stays.",
         "2026-11-15: flywall (~/flywall) now has its own private repository, github.com/billdonner/flywall. Its nested working clone of server-monitor is not part of that repo; that work is preserved on the flywall-next branch of billdonner/server-monitor.",
