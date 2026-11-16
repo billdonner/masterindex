@@ -2415,10 +2415,10 @@
       "kind": "service",
       "cluster": "Infrastructure",
       "status": "development",
-      "lastModified": "2026-11-15",
+      "lastModified": "2026-11-16",
       "repo": "~/systrix",
       "bundleId": null,
-      "release": "Local prototype only; nothing deployed. First commit made and pushed to a private GitHub repository 2026-11-15; swift build succeeds.",
+      "release": "Running on the Mac only since 2026-11-15: the Core is a launchd agent (com.billdonner.systrix-core, 127.0.0.1:9930) feeding ~/Applications/Systrix.app. Nothing is deployed off the Mac.",
       "description": "Server-first metrics collection, monitoring and declarative dashboard framework for 1041soft: a continuously running Core service, an optional Mac administration app, and display clients for iOS, widgets and Apple home displays.",
       "dependencies": [],
       "links": {
@@ -2427,6 +2427,7 @@
         "github": "https://github.com/billdonner/systrix"
       },
       "notes": [
+        "2026-11-16 (owner direction): Systrix now shows two live dashboards, PickleFamilia Engine operations and the Fly fleet. The Fly fleet dashboard covers what flywall reads from Fly; flywall stays in place, unchanged, and keeps its catalog, /metrics probe and phone access. pf-monitor also stays.",
         "2026-11-15: flywall (~/flywall) now has its own private repository, github.com/billdonner/flywall. Its nested working clone of server-monitor is not part of that repo; that work is preserved on the flywall-next branch of billdonner/server-monitor.",
         "2026-11-15 (owner): Systrix carries the Apple home-display strategy that SharedSpaceLab previously held, and is the intended home of the monitoring rebuild that replaces server-monitor. It is updated when one of the other apps requires it rather than on its own schedule.",
         "2026-11-15 (owner): App Feedback and the other terminal monitors may later be integrated here or into a combined monitor. flywall (the Fly Infrastructure Desk at ~/flywall; see the flywall entity) is kept separate for now.",
