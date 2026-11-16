@@ -9,12 +9,15 @@ minute), `restore` reopens the sessions that were open when they last died.
 from __future__ import annotations
 
 import argparse
+import base64
 import glob
 import json
 import os
 import plistlib
 import shlex
 import shutil
+import re
+import socket
 import sqlite3
 import subprocess
 import sys
@@ -24,6 +27,9 @@ from typing import Any, Callable
 
 HOME = Path.home()
 LEDGER = HOME / ".local" / "state" / "agent-sessions" / "ledger.json"
+PUBLISHED = HOME / ".local" / "state" / "agent-sessions" / "published.json"
+INDEX_ROOT = Path(__file__).resolve().parents[1]
+SESSIONS_FILE = "current/sessions.json"
 LAUNCH_LABEL = "com.billdonner.agent-sessions"
 LAUNCH_PLIST = HOME / "Library" / "LaunchAgents" / f"{LAUNCH_LABEL}.plist"
 BATCH_WINDOW = 600          # sessions last seen within 10 min of each other died together
@@ -188,6 +194,52 @@ def restore_candidates(ledger: dict[str, Any], live: list[dict[str, Any]]) -> li
     return sorted(batch, key=lambda entry: (entry["cwd"], entry["agent"]))
 
 
+# ── Publishing ───────────────────────────────────────────────────────────────
+
+def sessions_by_project(index: dict[str, Any], live: list[dict[str, Any]]) -> list[dict[str, str]]:
+    """Open sessions as (project, agent, name), for the projects the index knows.
+
+    Only that much is published: no prompts, no paths, no session ids. A session
+    in a folder that is not an indexed project is left out.
+    """
+    project_at = {str(HOME / entity["repo"][2:]).lower(): entity["id"] for entity in index.get("entities", [])
+                  if isinstance(entity.get("repo"), str) and entity["repo"].startswith("~/")}
+    found = [{"entityId": project_at[session["cwd"].lower()], "agent": session["agent"], "name": session.get("name") or ""}
+             for session in live if session["cwd"].lower() in project_at]
+    return sorted(found, key=lambda entry: (entry["entityId"], entry["agent"], entry["name"]))
+
+
+def publish_sessions(root: Path = INDEX_ROOT, state: Path = PUBLISHED) -> str:
+    """Publish which projects have a session open, when that has changed since the last publish.
+
+    Written straight to GitHub rather than through the checkout, because this
+    runs every minute in the background and must never disturb work in progress there.
+    """
+    sessions = sessions_by_project(json.loads((root / "current" / "index.json").read_text(encoding="utf-8")), live_sessions())
+    try:
+        if json.loads(state.read_text(encoding="utf-8")) == sessions:
+            return "unchanged"
+    except (OSError, ValueError):
+        pass
+    remote = run(["git", "-C", str(root), "remote", "get-url", "origin"]).strip()
+    match = re.search(r"github\.com[:/]([^/]+/[^/]+?)(?:\.git)?$", remote)
+    prefix = run(["git", "-C", str(root), "rev-parse", "--show-prefix"]).strip()
+    if not match or not shutil.which("gh"):
+        return "not published: no GitHub repository or gh"
+    endpoint = f"repos/{match.group(1)}/contents/{prefix}{SESSIONS_FILE}"
+    document = {"generatedAt": time.strftime("%Y-%m-%dT%H:%M:%S%z"), "host": socket.gethostname().split(".")[0], "sessions": sessions}
+    body = json.dumps(document, indent=2, ensure_ascii=False) + "\n"
+    sha = run(["gh", "api", endpoint, "--jq", ".sha"]).strip()
+    command = ["gh", "api", "-X", "PUT", endpoint, "-f", "message=Open agent sessions update",
+               "-f", f"content={base64.b64encode(body.encode()).decode()}"] + (["-f", f"sha={sha}"] if re.fullmatch(r"[0-9a-f]{40}", sha) else [])
+    result = subprocess.run(command, text=True, capture_output=True, timeout=30, check=False)
+    if result.returncode:
+        return f"not published: {result.stderr.strip()[:200]}"
+    state.parent.mkdir(parents=True, exist_ok=True)
+    state.write_text(json.dumps(sessions), encoding="utf-8")
+    return f"published {len(sessions)} session(s)"
+
+
 # ── Terminal ─────────────────────────────────────────────────────────────────
 
 GHOSTTY_SCRIPT = """
@@ -242,6 +294,16 @@ def command_list(arguments: argparse.Namespace) -> None:
 
 def command_snapshot(_: argparse.Namespace) -> None:
     save_ledger(record_snapshot(load_ledger(), live_sessions(), time.time()))
+    try:
+        outcome = publish_sessions()
+    except (OSError, ValueError, subprocess.TimeoutExpired) as error:
+        outcome = f"not published: {error}"
+    if outcome.startswith("not published"):
+        print(outcome, file=sys.stderr)
+
+
+def command_publish(_: argparse.Namespace) -> None:
+    print(publish_sessions())
 
 
 def command_restore(arguments: argparse.Namespace) -> None:
@@ -285,6 +347,8 @@ def command_install(_: argparse.Namespace) -> None:
     LAUNCH_PLIST.write_bytes(plistlib.dumps({
         "Label": LAUNCH_LABEL, "ProgramArguments": [shutil.which("python3") or sys.executable, script, "snapshot"],
         "StartInterval": 60, "RunAtLoad": True, "ProcessType": "Background",
+        # launchd's default PATH has neither Homebrew nor gh, which publishing needs.
+        "EnvironmentVariables": {"PATH": "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"},
         "StandardErrorPath": str(LEDGER.parent / "snapshot.err"),
     }))
     LEDGER.parent.mkdir(parents=True, exist_ok=True)
@@ -307,6 +371,7 @@ def main() -> None:
     restore.add_argument("--print", action="store_true", help="Print the resume commands instead of opening tabs.")
     restore.add_argument("--recap", action="store_true", help="Ask each session for a three-line recap on resume (uses tokens).")
     restore.set_defaults(handler=command_restore)
+    commands.add_parser("publish", help="Publish which projects have a session open (snapshot does this too).").set_defaults(handler=command_publish)
     commands.add_parser("install", help="Install the launchd agent that snapshots every minute.").set_defaults(handler=command_install)
     arguments = parser.parse_args()
     if not arguments.command:

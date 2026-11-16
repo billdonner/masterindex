@@ -56,6 +56,16 @@ def main():
         assert feed["name"] == "MasterIndex" and feed["ledger"] is None and monitor.export_feed(root, "Staging")["name"] == "Staging"
         assert first["focus"] == "now" and first["pinned"] is False and first["activeTasks"] == 1
         assert first["links"] == {"appStore": "https://example.com/app"} and first["latestNote"] == "newest"
+        # Optional extras: who has a session open, and ideas waiting in the intake registry.
+        assert first["sessions"] == [] and feed["ideas"] == [] and feed["intake"] is None and feed["sessionsObservedAt"] is None
+        write(root / "current" / "sessions.json", {"generatedAt": "2026-01-02T03:04:05-0600", "host": "Mac",
+              "sessions": [{"entityId": "active-app", "agent": "claude", "name": "APP"}, {"entityId": "gone", "agent": "codex", "name": ""}]})
+        write(root / "intake" / "index.json", {"inbox": [{"name": "Phone Idea", "purpose": "typed on the phone", "kind": "app", "submittedAt": "t1"},
+                                                          {"name": "Dup", "purpose": "p", "rejected": "name is taken"}],
+              "projects": [{"name": "Captured", "purpose": "p", "state": "captured", "createdAt": "t0"}, {"name": "Made", "state": "provisioned"}]})
+        feed = monitor.export_feed(root)
+        assert feed["projects"][0]["sessions"] == [{"agent": "claude", "name": "APP"}] and feed["sessionsHost"] == "Mac"
+        assert [(idea["name"], idea["state"]) for idea in feed["ideas"]] == [("Phone Idea", "sent"), ("Dup", "rejected"), ("Captured", "captured")]
         monitor.set_focus(root, "active-app", "none")
         assert "active-app" not in monitor.load_comments(root)["comments"]
         try:

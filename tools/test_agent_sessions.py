@@ -59,6 +59,14 @@ def main():
     sessions.record_snapshot(ledger, [], 1000 + sessions.KEEP_SECONDS + 1)
     assert "claude:early" not in ledger["sessions"] and "claude:a" in ledger["sessions"]
 
+    # Only the project, the agent and the session's name are published; unindexed folders are left out.
+    index = {"entities": [{"id": "app-one", "repo": "~/AppOne"}, {"id": "no-repo", "repo": None}, {"id": "remote", "repo": "github:x/y"}]}
+    live = [{"agent": "codex", "cwd": str(Path.home() / "appone"), "name": "", "sessionId": "s1", "lastPrompt": "secret plan"},
+            {"agent": "claude", "cwd": str(Path.home() / "AppOne"), "name": "ONE", "sessionId": "s2", "lastPrompt": "x"},
+            {"agent": "claude", "cwd": str(Path.home() / "scratch"), "name": "SCRATCH", "sessionId": "s3", "lastPrompt": "x"}]
+    assert sessions.sessions_by_project(index, live) == [
+        {"entityId": "app-one", "agent": "claude", "name": "ONE"}, {"entityId": "app-one", "agent": "codex", "name": ""}]
+
     assert sessions.resume_command(entry("claude", "abc")) == "claude --resume abc"
     assert sessions.resume_command(entry("codex", "abc")) == "codex resume abc"
     assert sessions.resume_command(entry("codex", "abc"), recap=True).startswith("codex resume abc 'We were interrupted")

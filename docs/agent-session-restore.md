@@ -60,3 +60,15 @@ Other agents can ask what is open with `agent-sessions list --json`, which is
 the lookup the Session routing rule in `AGENTS.md` needs.
 
 Tests: `python3 tools/test_agent_sessions.py`.
+
+## Publishing open sessions
+
+Every snapshot also publishes which indexed projects have a session open, so
+other displays (the iOS app) can show it. Only three things are published per
+session: the project, the agent, and the session's name. No prompts, folders
+or session ids leave this Mac.
+
+It writes `current/sessions.json` straight to GitHub with `gh api`, and only
+when the set of open sessions has changed. It never touches the local
+checkout, so it cannot disturb work in progress there; a `git pull` brings the
+file in. `agent-sessions publish` does it on demand.

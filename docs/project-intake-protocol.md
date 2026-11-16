@@ -70,3 +70,13 @@ repository. The first weekly intent review should either advance evidence
 (prototype, dependency decision, user outcome) or record that the project is
 still exploratory. Do not manufacture App Store, deployment, domain, or
 public-link facts merely because a repository now exists.
+
+## Ideas sent from a phone
+
+The iOS app can send an idea (a name, a purpose and a kind). It appends the
+idea to an `inbox` list in `intake/index.json` by committing through GitHub;
+it creates nothing else. The next time ideas are listed on the Mac (the intake
+page, the MCP tools, or `ProjectIntakeStore.list_projects()`), each inbox idea
+goes through the normal capture checks. One that passes becomes a captured
+idea; one that fails stays in the inbox with the reason. Provisioning is
+unchanged: it happens on the Mac, with the exact-name confirmation.

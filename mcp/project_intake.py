@@ -56,7 +56,33 @@ class ProjectIntakeStore:
     def registry(self) -> dict[str, Any]:
         return load_json(self.path)
 
+    def process_inbox(self) -> list[dict[str, Any]]:
+        """Turn ideas sent from elsewhere (the iOS app appends to `inbox`) into captured ideas.
+
+        Each goes through `capture`, so the same checks apply as for an idea
+        typed here. One that fails stays in the inbox with the reason, so its
+        sender can see why; nothing is dropped silently.
+        """
+        captured = []
+        for idea in [item for item in self.registry().get("inbox", []) if not item.get("rejected")]:
+            try:
+                captured.append(self.capture(name=idea.get("name", ""), purpose=idea.get("purpose", ""), kind=idea.get("kind") or "project"))
+                rejected = None
+            except IntakeError as error:
+                rejected = str(error)
+            registry = self.registry()                      # capture() rewrote it
+            for item in registry.get("inbox", []):
+                if item is not None and item.get("name") == idea.get("name") and item.get("submittedAt") == idea.get("submittedAt"):
+                    if rejected:
+                        item["rejected"] = rejected
+                    else:
+                        registry["inbox"].remove(item)
+                    break
+            write_json(self.path, registry)
+        return captured
+
     def list_projects(self) -> list[dict[str, Any]]:
+        self.process_inbox()
         return sorted(self.registry().get("projects", []), key=lambda project: project.get("createdAt", ""), reverse=True)
 
     def _existing_names(self) -> list[dict[str, str]]:

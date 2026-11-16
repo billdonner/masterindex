@@ -41,6 +41,14 @@ def write_json(path: Path, data: dict[str, Any]) -> None:
     temporary.replace(path)
 
 
+def read_optional(path: Path) -> dict[str, Any]:
+    """A JSON file that an index may not have."""
+    try:
+        return read_json(path)
+    except (OSError, ValueError):
+        return {}
+
+
 def comments_path(root: Path) -> Path:
     return root / "current" / "project-comments.json"
 
@@ -205,6 +213,19 @@ def export_feed(root: Path, name: str | None = None) -> dict[str, Any]:
     """
     rows, metadata = build_rows(root, include_all=False, inspect_local=False)
     comments = load_comments(root).get("comments", {})
+    published = read_optional(root / "current" / "sessions.json")
+    open_sessions: dict[str, list[dict[str, str]]] = {}
+    for session in published.get("sessions", []):
+        open_sessions.setdefault(session["entityId"], []).append({"agent": session["agent"], "name": session.get("name", "")})
+    intake = read_optional(root / "intake" / "index.json")
+    ledger = ledger_location(root)
+    # Ideas not yet turned into projects: sent from a phone and waiting, or captured and awaiting a decision.
+    ideas = [{"name": idea.get("name", ""), "purpose": idea.get("purpose", ""), "kind": idea.get("kind", "project"),
+              "state": "rejected" if idea.get("rejected") else "sent", "note": idea.get("rejected"), "createdAt": idea.get("submittedAt")}
+             for idea in intake.get("inbox", [])]
+    ideas += [{"name": idea["name"], "purpose": idea.get("purpose", ""), "kind": idea.get("kind", "project"),
+               "state": idea.get("state", "captured"), "note": None, "createdAt": idea.get("createdAt")}
+              for idea in intake.get("projects", []) if idea.get("state") != "provisioned"]
     projects = []
     for row in rows:
         entity = row["entity"]
@@ -217,10 +238,17 @@ def export_feed(root: Path, name: str | None = None) -> dict[str, Any]:
             "description": entity.get("description"), "release": entity.get("release"),
             "latestNote": notes[0] if isinstance(notes, list) and notes else None,
             "links": {name: url for name, url in (entity.get("links") or {}).items() if isinstance(url, str) and url.startswith("http")},
+            "sessions": open_sessions.get(row["id"], []),
         })
     # The feed describes itself: its name and where its edits are saved. A reader needs only this file's address.
-    return {"schemaVersion": "1.1", "name": name or metadata["name"],
-            "ledger": ledger_location(root), "generatedAt": now(), "indexGeneratedAt": metadata["indexGeneratedAt"],
+    return {"schemaVersion": "1.2", "name": name or metadata["name"],
+            "ledger": ledger, "generatedAt": now(), "indexGeneratedAt": metadata["indexGeneratedAt"],
+            # Where a new idea is sent, when this index takes them: the same repository, its intake registry.
+            "intake": {"repository": ledger["repository"], "path": ledger["path"].replace("current/project-comments.json", "intake/index.json")}
+                      if ledger and intake else None,
+            "ideas": ideas,
+            # Open agent sessions are a fact about one machine at one moment; say which and when.
+            "sessionsObservedAt": published.get("generatedAt"), "sessionsHost": published.get("host"),
             "nowLimit": NOW_LIMIT, "projects": projects}
 
 

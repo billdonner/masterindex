@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-11-15",
+  "schemaVersion": "1.0",
+  "description": "Invented intake registry for the staging index.",
+  "defaults": {
+    "githubOwner": "billdonner",
+    "visibility": "private",
+    "workspaceParent": "~",
+    "entityKind": "project",
+    "entityStatus": "incubating"
+  },
+  "inbox": [],
+  "projects": [
+    {
+      "id": "hotel-idea-project",
+      "name": "Hotel Idea",
+      "slug": "hotel-idea",
+      "purpose": "An invented idea that has been captured but not turned into a project.",
+      "kind": "app",
+      "state": "captured",
+      "createdAt": "2026-11-12T09:00:00-06:00"
+    }
+  ]
+}

@@ -41,6 +41,19 @@ def main():
             assert "already uses" in str(error)
         else:
             raise AssertionError("Duplicate project slugs must be refused")
+        # Ideas sent from a phone wait in the inbox; listing ideas captures the good ones and explains the rest.
+        registry = store.registry()
+        registry["inbox"] = [
+            {"name": "Trail Notes", "purpose": "A hiking log with offline maps.", "kind": "app", "submittedAt": "2026-01-02T00:00:00Z", "source": "ios"},
+            {"name": "Pantry Pal", "purpose": "The same name as an idea already captured.", "kind": "app", "submittedAt": "2026-01-02T00:00:01Z"},
+            {"name": "X", "purpose": "short", "submittedAt": "2026-01-02T00:00:02Z"}]
+        write(root / "intake" / "index.json", registry)
+        names = {project["name"]: project for project in store.list_projects()}
+        assert names["Trail Notes"]["state"] == "captured" and names["Trail Notes"]["kind"] == "app"
+        left = store.registry()["inbox"]
+        assert [item["name"] for item in left] == ["Pantry Pal", "X"] and all(item.get("rejected") for item in left)
+        assert "already uses" in left[0]["rejected"] and "2–100" in left[1]["rejected"]
+        assert len(store.list_projects()) == 2            # a rejected idea is not retried on every listing
     print("Project Intake tests passed")
 
 

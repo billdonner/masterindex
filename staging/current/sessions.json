@@ -1,0 +1,16 @@
+{
+    "generatedAt": "2026-11-15T09:00:00-0600",
+    "host": "Staging-Mac",
+    "sessions": [
+        {
+            "entityId": "alpha-app",
+            "agent": "claude",
+            "name": "ALPHA"
+        },
+        {
+            "entityId": "alpha-app",
+            "agent": "codex",
+            "name": ""
+        }
+    ]
+}
