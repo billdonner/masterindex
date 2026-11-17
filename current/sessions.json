@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T21:05:42-0600",
+  "generatedAt": "2026-11-17T15:54:27-0600",
   "host": "Mac",
   "sessions": [
     {
@@ -16,11 +16,6 @@
       "entityId": "mahjong-for-men-project",
       "agent": "claude",
       "name": "🤡🤡MENJONG🤡🤡"
-    },
-    {
-      "entityId": "masterindex",
-      "agent": "claude",
-      "name": "masterindex-fa"
     },
     {
       "entityId": "masterindex",
