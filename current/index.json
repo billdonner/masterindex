@@ -1520,7 +1520,7 @@
       "kind": "backend",
       "cluster": "Flasherz",
       "status": "live",
-      "lastModified": "2026-11-15",
+      "lastModified": "2026-11-17",
       "repo": "~/cardzerver",
       "bundleId": null,
       "release": "Live on Fly at bd-cardzerver.fly.dev; machine version 134 started with passing health check",
@@ -1537,6 +1537,7 @@
         "openapi": "https://bd-cardzerver.fly.dev/openapi.json"
       },
       "notes": [
+        "2026-11-17: Systrix reads this service's /health and /metrics for its Card Engine dashboard (issue 8, closed; commits 5783daa, 30a6cf8, 8ba5c65). /metrics went from 57 s per call to under a second, with a 4-second deadline and a partial-answer error field. It now counts Expanded Library downloads and failures, share and multiplayer links opened, and Daily scores. The app listens on IPv6, so it is reachable at bd-cardzerver.internal:8080. Recorded from the cardzerver session's handoff; see '/metrics (read by Systrix)' in ~/cardzerver/CLAUDE.md.",
         "2026-11-15: repo path corrected. ~/card-engine was deleted 2026-07-27 (history fully contained in cardzerver); the working repository is ~/cardzerver.",
         "2026-11-15: Fly machine set to sleep when idle (min_machines_running = 0), applied by redeploying the existing image with only that setting changed; the first request after an idle spell wakes it. Recorded in the repo's fly.toml.",
         "Owner asked to revisit whether bd-cardzerver should be always-on after DoubleQross 1.2 ships.",
@@ -2415,7 +2416,7 @@
       "kind": "service",
       "cluster": "Infrastructure",
       "status": "development",
-      "lastModified": "2026-11-16",
+      "lastModified": "2026-11-17",
       "repo": "~/systrix",
       "bundleId": null,
       "release": "Core hosted on Fly since 2026-11-16, inside the bd-flywall machine (reached at https://bd-flywall.fly.dev/systrix behind flywall's password). ~/Applications/Systrix.app on the Mac reads it. Nothing runs continuously on the Mac.",
@@ -2427,7 +2428,7 @@
         "github": "https://github.com/billdonner/systrix"
       },
       "notes": [
-        "2026-11-16: third dashboard, Card Engine (cardzerver), live in the hosted Core. It reads /health and /metrics only while Fly shows bd-cardzerver started, so it never wakes it. cardzerver's /metrics was not answering that day; that and the counts Systrix still needs (paid library downloads, share links, daily scores) are in github.com/billdonner/card-engine/issues/8.",
+        "2026-11-17: third dashboard, Card Engine (cardzerver), live in the hosted Core with real numbers: paid library downloads and failures, Daily scores, share and multiplayer links opened, question reports, content counts, database and memory. The Core reads http://bd-cardzerver.internal:8080 (Fly's private network, which cannot wake a stopped machine) and only while Fly shows the machine started; cardzerver was seen going back to sleep two minutes after a poll. What Systrix needed from cardzerver was card-engine issue 8, closed 2026-11-17. The download-failures card is orange until 2026-11-24 because of one test event from that work.",
         "2026-11-16 (owner direction): the Core moved off the Mac to Fly, as a second process in the bd-flywall machine, because the owner did not want the Mac always running. That machine sleeps when idle, so nothing is collected while nobody is looking; set min_machines_running = 1 in ~/flywall/fly.toml for round-the-clock collection. Deploy with ~/flywall/deploy.sh. An iOS app is intended later and would read the same address.",
         "2026-11-16 (owner direction): Systrix now shows two live dashboards, PickleFamilia Engine operations and the Fly fleet. The Fly fleet dashboard covers what flywall reads from Fly; flywall stays in place, unchanged, and keeps its catalog, /metrics probe and phone access. pf-monitor also stays.",
         "2026-11-15: flywall (~/flywall) now has its own private repository, github.com/billdonner/flywall. Its nested working clone of server-monitor is not part of that repo; that work is preserved on the flywall-next branch of billdonner/server-monitor.",
@@ -2499,7 +2500,7 @@
       "kind": "service",
       "cluster": "Infrastructure",
       "status": "active",
-      "lastModified": "2026-11-16",
+      "lastModified": "2026-11-17",
       "repo": "~/flywall",
       "bundleId": null,
       "release": "Public copy deployed to Fly app bd-flywall on 2026-11-15 (https://bd-flywall.fly.dev, password protected). A local copy also runs on the Mac at port 8765.",
@@ -2511,6 +2512,7 @@
         "github": "https://github.com/billdonner/flywall"
       },
       "notes": [
+        "2026-11-17: fly.toml gained SYSTRIX_CARDZERVER_APP and SYSTRIX_CARDZERVER_URL, so the hosted Systrix Core also reads cardzerver over Fly's private network. The board itself is unchanged.",
         "2026-11-16 (owner direction): the bd-flywall machine also hosts Systrix Core. The image builds it from ~/systrix, so deploy with ~/flywall/deploy.sh, not plain fly deploy. A third secret, SYSTRIX_PICKLEFAMILIA_TOKEN, holds the PickleFamilia Engine's OPS_TOKEN and must be set again if that token is rotated. The board itself is unchanged.",
         "2026-11-15 (owner decision): hosted publicly on Fly as bd-flywall, one 512 MB machine in ewr that sleeps when idle. Every request needs a password (HTTP Basic, any user name); the password is in the Mac's Keychain under service flywall-dashboard.",
         "The hosted copy reads Fly with a read-only org token named \"bd-flywall dashboard (read-only)\", stored as the Fly secret FLY_API_TOKEN. It cannot change anything on Fly. To remove the service: fly apps destroy bd-flywall, then revoke that token.",
