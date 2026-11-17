@@ -1,7 +1,12 @@
 {
-  "generatedAt": "2026-11-16T16:41:22-0600",
+  "generatedAt": "2026-11-16T18:58:31-0600",
   "host": "Mac",
   "sessions": [
+    {
+      "entityId": "card-engine-backend",
+      "agent": "claude",
+      "name": "CARDZERVER"
+    },
     {
       "entityId": "flywall",
       "agent": "claude",
