@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-17T15:54:27-0600",
+  "generatedAt": "2026-11-17T16:05:44-0600",
   "host": "Mac",
   "sessions": [
     {
@@ -26,6 +26,11 @@
       "entityId": "murdl-app",
       "agent": "claude",
       "name": "👅👅MUMURDL👅👅"
+    },
+    {
+      "entityId": "picklefamilia-umbrella",
+      "agent": "claude",
+      "name": "picklefamilia-ce"
     },
     {
       "entityId": "picklefamilia-umbrella",
