@@ -2475,7 +2475,7 @@
       "links": {
         "github": "https://github.com/billdonner/mahjong-for-men"
       },
-      "release": "Version 0.4.0 (build 9) builds and runs locally on iPhone simulator and Mac; the full six-phase, seventeen-mission campaign is playable. Not on TestFlight; no release posture selected.",
+      "release": "Version 0.4.0 (build 10) builds and runs locally on iPhone simulator and Mac; the full six-phase, seventeen-mission campaign is playable. Not on TestFlight; no release posture selected.",
       "lastModified": "2026-11-15",
       "notes": [
         "2026-11-15 (owner decisions): American Mahjong (the card-based game). \"A male slant\" means the tutorial has a video-game feel. iPhone and Mac are built together from the start with separate interfaces, not one shared layout; the Mac app gets a full menu system. The app is to have a relationship to Screenker (not yet defined). Android is a possible later platform.",
