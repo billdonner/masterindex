@@ -267,9 +267,21 @@
         "app": "bd-flywall",
         "entityId": "flywall",
         "status": "deployed",
-        "latestDeploy": "2026-11-15T21:10:00-06:00",
+        "latestDeploy": "2026-11-18T18:31:00Z",
         "cost": null,
-        "note": "Created 2026-11-15. One shared-cpu 512 MB machine in ewr, min_machines_running = 0."
+        "note": "Created 2026-11-15. One shared-cpu 512 MB machine in ewr (806d29f6e6e048 since 2026-11-18, when the deploy that attached the volume replaced the first one), min_machines_running = 0. One 1 GB volume, systrix_data, added 2026-11-18 by owner decision; Fly bills a volume whether or not the machine runs, and keeps daily snapshots for 5 days. No billing amount was observed.",
+        "volumes": [
+          {
+            "name": "systrix_data",
+            "id": "vol_r7y8nwqwe62jzpyr",
+            "sizeGB": 1,
+            "region": "ewr",
+            "mount": "/data",
+            "created": "2026-11-18",
+            "purpose": "Systrix Core's SQLite database, so counts pushed by App Feedback survive the machine sleeping",
+            "cost": null
+          }
+        ]
       }
     ]
   },
@@ -2416,10 +2428,10 @@
       "kind": "service",
       "cluster": "Infrastructure",
       "status": "development",
-      "lastModified": "2026-11-17",
+      "lastModified": "2026-11-18",
       "repo": "~/systrix",
       "bundleId": null,
-      "release": "Core hosted on Fly since 2026-11-16, inside the bd-flywall machine (reached at https://bd-flywall.fly.dev/systrix behind flywall's password). ~/Applications/Systrix.app on the Mac reads it. Nothing runs continuously on the Mac.",
+      "release": "Core hosted on Fly since 2026-11-16, inside the bd-flywall machine (reached at https://bd-flywall.fly.dev/systrix behind flywall's password), with its database on that app's 1 GB volume systrix_data since 2026-11-18. ~/Applications/Systrix.app on the Mac reads it. Nothing runs continuously on the Mac.",
       "description": "Server-first metrics collection, monitoring and declarative dashboard framework for 1041soft: a continuously running Core service, an optional Mac administration app, and display clients for iOS, widgets and Apple home displays.",
       "dependencies": [],
       "links": {
@@ -2428,6 +2440,7 @@
         "github": "https://github.com/billdonner/systrix"
       },
       "notes": [
+        "2026-11-18: fourth dashboard, App Feedback. It is pushed, not polled: App Feedback on the Mac posts counts to POST /v1/ingest every two hours; the Core names and defines them, and marks them stale after 5 hours. Verified with a hand-renamed push of App Feedback's real counts, including across a machine stop and wake; App Feedback's own switch-on is that session's work. The Fly fleet dashboard also lists attached volumes (count, size, mount path), read from the machine lists. Fixed along the way: the Core's listener never parsed request headers, so the ingest route had refused every token.",
         "2026-11-17: third dashboard, Card Engine (cardzerver), live in the hosted Core with real numbers: paid library downloads and failures, Daily scores, share and multiplayer links opened, question reports, content counts, database and memory. The Core reads http://bd-cardzerver.internal:8080 (Fly's private network, which cannot wake a stopped machine) and only while Fly shows the machine started; cardzerver was seen going back to sleep two minutes after a poll. What Systrix needed from cardzerver was card-engine issue 8, closed 2026-11-17. The download-failures card is orange until 2026-11-24 because of one test event from that work.",
         "2026-11-16 (owner direction): the Core moved off the Mac to Fly, as a second process in the bd-flywall machine, because the owner did not want the Mac always running. That machine sleeps when idle, so nothing is collected while nobody is looking; set min_machines_running = 1 in ~/flywall/fly.toml for round-the-clock collection. Deploy with ~/flywall/deploy.sh. An iOS app is intended later and would read the same address.",
         "2026-11-16 (owner direction): Systrix now shows two live dashboards, PickleFamilia Engine operations and the Fly fleet. The Fly fleet dashboard covers what flywall reads from Fly; flywall stays in place, unchanged, and keeps its catalog, /metrics probe and phone access. pf-monitor also stays.",
@@ -2500,7 +2513,7 @@
       "kind": "service",
       "cluster": "Infrastructure",
       "status": "active",
-      "lastModified": "2026-11-17",
+      "lastModified": "2026-11-18",
       "repo": "~/flywall",
       "bundleId": null,
       "release": "Public copy deployed to Fly app bd-flywall on 2026-11-15 (https://bd-flywall.fly.dev, password protected). A local copy also runs on the Mac at port 8765.",
@@ -2512,6 +2525,7 @@
         "github": "https://github.com/billdonner/flywall"
       },
       "notes": [
+        "2026-11-18 (owner decision): bd-flywall gained a 1 GB Fly volume, systrix_data, mounted at /data and used only by Systrix Core's database. The server also passes one write route, POST /systrix/v1/ingest, to the Core for App Feedback's pushes; it is not behind the board's password and is guarded by the bearer token in the secret SYSTRIX_INGEST_TOKEN (Mac copy: Keychain item com.billdonner.app-feedback.systrix-ingest). The Systrix Fly fleet dashboard now lists every attached volume.",
         "2026-11-17: fly.toml gained SYSTRIX_CARDZERVER_APP and SYSTRIX_CARDZERVER_URL, so the hosted Systrix Core also reads cardzerver over Fly's private network. The board itself is unchanged.",
         "2026-11-16 (owner direction): the bd-flywall machine also hosts Systrix Core. The image builds it from ~/systrix, so deploy with ~/flywall/deploy.sh, not plain fly deploy. A third secret, SYSTRIX_PICKLEFAMILIA_TOKEN, holds the PickleFamilia Engine's OPS_TOKEN and must be set again if that token is rotated. The board itself is unchanged.",
         "2026-11-15 (owner decision): hosted publicly on Fly as bd-flywall, one 512 MB machine in ewr that sleeps when idle. Every request needs a password (HTTP Basic, any user name); the password is in the Mac's Keychain under service flywall-dashboard.",
