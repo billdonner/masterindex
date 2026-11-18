@@ -813,10 +813,10 @@
       "kind": "app",
       "cluster": "Standalone",
       "status": "development",
-      "lastModified": "2026-10-16",
+      "lastModified": "2026-11-18",
       "repo": "~/expunger",
-      "bundleId": "com.billdonner.expunger",
-      "release": "1.0.0 (1) — local dev builds; no App Store Connect record yet",
+      "bundleId": "com.expunger.app",
+      "release": "1.0.0 (1) — local dev builds; App Store Connect record exists (app 6823817037, bundle com.expunger.app, seen 2026-11-17). The repo's default in Config/Base.xcconfig is still com.billdonner.expunger.",
       "description": "Native macOS photo-dedup app for Apple Photos: finds exact copies, bursts and similar shots, picks keepers, backs up originals and deletes the rest after the Photos confirmation. Every operation is a menu item and an MCP tool (in-app streamable-HTTP server on 127.0.0.1:9920).",
       "dependencies": [],
       "links": {
