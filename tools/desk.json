@@ -1,0 +1,41 @@
+{
+  "displays": [
+    {
+      "id": "projects",
+      "title": "Project monitor",
+      "kind": "terminal",
+      "command": "project-monitor --interactive",
+      "match": "bin/project-monitor --interactive"
+    },
+    {
+      "id": "picklefamilia",
+      "title": "PickleFamilia monitor",
+      "kind": "terminal",
+      "command": "pf-monitor",
+      "match": "^pf-monitor$"
+    },
+    {
+      "id": "flywall",
+      "title": "flywall (local)",
+      "kind": "service",
+      "command": "python3 server.py",
+      "cwd": "~/flywall",
+      "port": 8765,
+      "url": "http://127.0.0.1:8765"
+    },
+    {
+      "id": "systrix",
+      "title": "Systrix",
+      "kind": "app",
+      "path": "~/Applications/Systrix.app",
+      "process": "Systrix"
+    },
+    {
+      "id": "feedback",
+      "title": "App Feedback dashboard",
+      "kind": "page",
+      "port": 4317,
+      "url": "http://127.0.0.1:4317"
+    }
+  ]
+}
