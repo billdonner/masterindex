@@ -133,8 +133,8 @@
     },
     "qross-app" : {
       "focus" : "maint",
-      "text" : "1.1 distributing (IAP for the expanded database). Working on multiuser. After 1.2 ships: revisit whether cardzerver should be always-on.",
-      "updatedAt" : "2026-11-15T17:23:25-06:00"
+      "text" : "contract for cqrol",
+      "updatedAt" : "2026-11-18T18:57:28-06:00"
     },
     "review-authority" : {
       "focus" : "maint",
@@ -167,6 +167,6 @@
     }
   },
   "description" : "Owner-entered annotations for the terminal project monitor. These comments are not verified inventory facts.",
-  "generatedAt" : "2026-11-15T18:19:48-06:00",
+  "generatedAt" : "2026-11-18T18:57:28-06:00",
   "schemaVersion" : "1.0"
 }
