@@ -1,5 +1,61 @@
 {
-  "generatedAt": "2026-11-19T18:58:22-0600",
+  "generatedAt": "2026-11-19T18:59:37-0600",
   "host": "Mac",
-  "sessions": []
+  "sessions": [
+    {
+      "entityId": "app-feedback-inbox",
+      "agent": "claude",
+      "name": "APPFEEDBACK"
+    },
+    {
+      "entityId": "card-engine-backend",
+      "agent": "claude",
+      "name": "CARDZERVER"
+    },
+    {
+      "entityId": "flywall",
+      "agent": "claude",
+      "name": "NICKNICK"
+    },
+    {
+      "entityId": "mahjong-for-men-project",
+      "agent": "claude",
+      "name": "🤡🤡MENJONG🤡🤡"
+    },
+    {
+      "entityId": "masterindex",
+      "agent": "claude",
+      "name": "😟😟😟😟😟😟"
+    },
+    {
+      "entityId": "murdl-app",
+      "agent": "claude",
+      "name": "👅👅MUMURDL👅👅"
+    },
+    {
+      "entityId": "picklefamilia-umbrella",
+      "agent": "claude",
+      "name": "🥒🥒🥒🥒🥒🥒"
+    },
+    {
+      "entityId": "picklefamilia-umbrella",
+      "agent": "claude",
+      "name": "🥶🥶PickleFamilia🥶🥶"
+    },
+    {
+      "entityId": "qross-app",
+      "agent": "claude",
+      "name": "😎😎QROSS😎😎"
+    },
+    {
+      "entityId": "screenker-asc-app",
+      "agent": "claude",
+      "name": "✅✅SCREENKER✅✅"
+    },
+    {
+      "entityId": "systrix",
+      "agent": "claude",
+      "name": "SYSTRIX"
+    }
+  ]
 }
